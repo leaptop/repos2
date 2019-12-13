@@ -1,0 +1,40 @@
+# Project: C2.11_on_C
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 07.05.18 13:28
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/mainC2.11\ in\ c\ for\ devcPP.o
+LINKOBJ   = "Objects/MingW/mainC2.11 in c for devcPP.o"
+LIBS      = -L"I:/Dev-Cpp/lib/wx/gcc_lib" -L"I:/Dev-Cpp/lib" -L"I:/Dev-Cpp/MinGW32/lib"  
+INCS      = -I"I:/Dev-Cpp/MinGW32/include"
+CXXINCS   = -I"I:/Dev-Cpp/MinGW32/include" -I"I:/Dev-Cpp/" -I"I:/Dev-Cpp/include/common"
+RCINCS    = --include-dir "I:/Dev-Cpp/include/common"
+BIN       = Output/MingW/C2.11_on_C
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = gcc.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/mainC2.11\ in\ c\ for\ devcPP.o: $(GLOBALDEPS) mainC2.11\ in\ c\ for\ devcPP.c
+	$(CC) -c "mainC2.11 in c for devcPP.c" -o "Objects/MingW/mainC2.11 in c for devcPP.o" $(CFLAGS)

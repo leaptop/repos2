@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseDownCheck", "MouseDownCheck\MouseDownCheck.csproj", "{45DAA812-388F-4D4B-85FD-9786E026C45F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45DAA812-388F-4D4B-85FD-9786E026C45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DAA812-388F-4D4B-85FD-9786E026C45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DAA812-388F-4D4B-85FD-9786E026C45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DAA812-388F-4D4B-85FD-9786E026C45F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7171D61-65A1-4FBF-A8C6-D052794D8BD7}
+	EndGlobalSection
+EndGlobal

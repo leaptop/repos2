@@ -1,0 +1,244 @@
+
+<HTML>
+    <HEAD> 
+        <META http-equiv="Content-Type" content="text/html; charset=windows-1251">
+        <TITLE>Лабораторная работа 3.4</TITLE>
+    </HEAD>
+	
+	<LINK rel="stylesheet" type="text/css" href="style.css">
+	
+	<SCRIPT language="JavaScript">
+
+		var xmldoc = new ActiveXObject("Microsoft.XMLDOM"); 
+		xmldoc.load("data.xml"); 
+		var student_node;
+		var group_node;
+		var course_node;
+		var faculty_node;
+		
+		var maintable;
+		var isBuilt = false;
+		var array;
+		
+		maxsubject = new Number(0);
+
+					
+		function LoadDoc()
+		{
+			faculty_node = xmldoc.getElementsByTagName("faculty");
+			document.all.selectFaculty.options.length = 0;
+			for (var i=0; i<faculty_node.length; i++)
+			{
+				temp = faculty_node.item(i).getElementsByTagName("caption");
+				document.all.selectFaculty.options[i] = new Option(temp.item(0).text);
+			}
+			ChangeFaculty();
+		}
+		
+		function ChangeFaculty()
+		{
+			node = faculty_node.item(document.all.selectFaculty.selectedIndex);
+			course_node = node.getElementsByTagName("course");
+			document.all.selectCourse.options.length = 0;
+			for (var i=0; i<course_node.length; i++)
+			{
+				temp = course_node.item(i).getElementsByTagName("caption");
+				document.all.selectCourse.options[i] = new Option(temp.item(0).text);
+			}
+			ChangeCourse();
+		}
+		
+		function ChangeCourse()
+		{
+			node = course_node.item(document.all.selectCourse.selectedIndex);
+			group_node = node.getElementsByTagName("group");
+			document.all.selectGroup.options.length = 0;
+			for (var i=0; i<group_node.length; i++)
+			{
+				temp = group_node.item(i).getElementsByTagName("caption");
+				document.all.selectGroup.options[i] = new Option(temp.item(0).text);
+			}
+			ChangeGroup();
+		}
+		
+		function ChangeGroup()
+		{
+			node = group_node.item(document.all.selectGroup.selectedIndex);
+			student_node = node.getElementsByTagName("student");
+			document.all.selectStudent.options.length = 0;
+			for (var i=0; i<student_node.length; i++)
+			{
+				temp = student_node.item(i).getElementsByTagName("caption");
+				document.all.selectStudent.options[i] = new Option(temp.item(0).text);
+			}
+			BuildTable();
+		}
+
+		function ClearTable()
+		{
+			ClearCalc();
+			document.body.removeChild(maintable);
+			document.body.removeChild(button_calc);
+			document.body.removeChild(button_clear);
+		}
+		
+		function Spacing()
+		{
+			var spacing = document.createElement('p');
+			document.body.appendChild(spacing);
+		}
+		
+		function RadialUpdate()
+		{
+			iclick = parseInt(this.id.charAt(0),10);//10 - основание системы счисления
+			jclick = parseInt(this.id.charAt(2),10);//iclick - строка, jclick - столбец
+			array[iclick] = jclick;
+			//Calculate();// считает сразу после смены радио
+			
+			/*
+			temp = document.createElement('DIV'); temp.innerHTML = "";
+			
+			for (var j=0; j<=2; j++)
+			{
+				obj = document.getElementById(iclick+'-'+jclick);
+				obj.setAttribute("checked","none");
+				obj.setAttribute('checked',false);
+				obj.checked = false;
+				obj.checked = (j==jclick);		
+				obj.setAttribute('checked',j==jclick);
+			}
+
+			temp.innerHTML += iclick+'-'+jclick+'<br>';
+			document.body.appendChild(temp);
+			*/
+		}
+		
+		function setZ(){
+			document.getElementById("0-0").checked = true;
+			document.getElementById("1-0").checked = true;
+			document.getElementById("2-0").checked = true;
+			document.getElementById("3-0").checked = true;
+			document.getElementById("4-0").checked = true;
+			document.getElementById("5-0").checked = true;
+			document.getElementById("6-0").checked = true;
+		}
+
+		function BuildTable()
+		{
+			if (isBuilt) ClearTable(); 
+			isBuilt=true;
+						
+			var sum = 0;
+			var subjects  = student_node.item(document.all.selectStudent.selectedIndex).getElementsByTagName("*");
+			maintable = document.createElement('table');
+			maintable.setAttribute('border','2');
+			
+			// Строка заголовков столбцов
+			var newRow = maintable.insertRow(0); 
+			var newCell=newRow.insertCell(0); newCell.innerHTML="<center><b>Предмет</b></center>";  newCell.setAttribute('width','300px');
+			var newCell=newRow.insertCell(1); newCell.innerHTML="<center><b>0</b></center>";  
+			var newCell=newRow.insertCell(2); newCell.innerHTML="<center><b>1</b></center>"; 
+			var newCell=newRow.insertCell(3); newCell.innerHTML="<center><b>2</b></center>";
+			
+			// Список предметов с оценками
+			maxsubject = subjects.length-1;
+			array = new Array(maxsubject);
+			for (var i=0; i<maxsubject; i++)
+			{
+				var line = i+1;
+				var newRow  = maintable.insertRow(line);
+				cur_subj    = xmldoc.getElementsByTagName(subjects.item(line).nodeName);
+				var newCell = newRow.insertCell(0);
+				newCell.innerHTML = cur_subj.item(cur_subj.length-1).text;
+				for (var j=0; j<=2; j++)
+				{
+					var newCell = newRow.insertCell(j+1);
+					var newrad = document.createElement('input');
+					newrad.onclick = RadialUpdate;//кнопка "выполнить" перестанет работать, если это закоментить
+					newrad.setAttribute('type','radio');
+					//newrad.setAttribute('value',i);//
+					newrad.setAttribute('name','radiobutton'+i);
+					newrad.setAttribute('id',i+'-'+j);
+					if ((j+"")==subjects.item(line).text)
+					{
+						newrad.setAttribute('defaultChecked',true);
+						newrad.setAttribute('checked',true);
+						array[i] = j;
+						sum += j;
+					}
+					newCell.appendChild(newrad);
+				}
+			}
+			document.body.appendChild(maintable);
+			
+			Spacing();
+			
+			button_calc=document.createElement('input');
+			button_calc.setAttribute('type','button');
+			button_calc.setAttribute('value','Выполнить');
+			button_calc.onclick = Calculate;
+			document.body.appendChild(button_calc);			
+			
+			button_clear=document.createElement('input');
+			button_clear.setAttribute('type','button');
+			button_clear.setAttribute('value','Отменить');
+			button_clear.onclick = BuildTable;
+			document.body.appendChild(button_clear);
+			
+			button_setZ=document.createElement('input');
+			button_setZ.setAttribute('type','button');
+			button_setZ.setAttribute('value','setZ');
+			button_setZ.onclick = setZ;
+			document.body.appendChild(button_setZ);
+			
+			Spacing();
+			Calculate();
+			
+			/*
+			temp = document.getElementById('temp');
+			if (temp) document.body.removeChild(temp);	
+			temp = document.createElement('DIV'); temp.innerHTML = "";
+			temp.setAttribute('id','temp');
+			temp.innerHTML += student_node.length;
+			document.body.appendChild(temp);
+			*/
+		}
+		
+		function Calculate()
+		{
+			var sum = 0;
+			for (var i=0; i<maxsubject; i++) sum += array[i];
+			avg = (sum/maxsubject).toFixed(2);
+			
+			ClearCalc();
+			avgscore = document.createElement('DIV');
+			avgscore.setAttribute('id','avgscore_obj');
+			avgscore.innerHTML="Средний балл за контрольный срок равен "+avg; 
+			document.body.appendChild(avgscore);
+			
+			//chan = document.getElementById("0-0");
+			//chan.setAttribute(
+			
+			
+			
+			
+		}
+		
+		function ClearCalc()
+		{
+			avgscore = document.getElementById("avgscore_obj");
+			if (avgscore) document.body.removeChild(avgscore);			
+		}
+		
+    </SCRIPT>	
+	
+	<BODY BGCOLOR="white" TEXT="black" LINK="blue" ALINK="red" VLINK="green" onLoad="LoadDoc()">
+		Факультет: <select id="selectFaculty" size=1 style="width=70px"  onChange="ChangeFaculty()"></select>
+		Курс:      <select id="selectCourse"  size=1 style="width=40px"  onChange="ChangeCourse()" ></select>
+		Группа:    <select id="selectGroup"   size=1 style="width=80px"  onChange="ChangeGroup()"  ></select>
+		ФИО:       <select id="selectStudent" size=1 style="width=260px" onChange="BuildTable()"   ></select>
+		<p></p>
+	</BODY>
+	
+</HTML>
+

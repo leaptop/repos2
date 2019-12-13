@@ -1,0 +1,66 @@
+
+<HTML>
+	<HEAD> 
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<TITLE>Лабораторная работа 2.2</TITLE>
+	</HEAD>
+	
+	
+
+
+
+
+	<SCRIPT language="JavaScript">
+	
+	
+	
+		var cur_id     =   1;
+		var max_id     =  11;
+		
+		var delay_cur  =  70;
+		var delay_step =  10;
+		var delay_max  = 150;
+		var delay_min  =  10;
+		
+		var timer;
+		
+		function Start()
+		{
+			if (cur_id == max_id) cur_id = 0;
+			else                  cur_id++;
+			document.dedmoroz.src = "dedmoroz/s"+cur_id+".gif" 
+			timer = setTimeout("Start()", delay_cur);		
+		}
+		
+		function Stop()
+		{
+			clearTimeout(timer);	
+		}
+		
+		function ChangeSpeed(type)
+		{
+			if (type==0)
+			{
+				delay_cur -= delay_step;
+				if (delay_cur < delay_min) delay_cur = delay_min;
+			}
+			else
+			{
+				delay_cur += delay_step;
+				if (delay_cur > delay_max) delay_cur = delay_max;
+			}
+		}
+		
+	</SCRIPT>
+		
+	<BODY>
+		<IMG src="dedmoroz/s0.gif" name="dedmoroz">
+		<br><br>
+		<FORM name="form1">
+			<INPUT type="button" value="Старт"     onClick="Start();"   >
+			<INPUT type="button" value="Стоп"      onClick="Stop()"     >
+			<INPUT type="button" value="Быстрее"   onClick="ChangeSpeed(0)"  > 
+			<INPUT type="button" value="Медленнее" onClick="ChangeSpeed(1)" >
+		</FORM>
+	</BODY>
+</HTML> 

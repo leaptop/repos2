@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.1//RU">
+<!--при щелкании на пункт меню должно появиться четвртое меню-->
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=Windows-1251">
+		<title>Лабораторная 3.1</title>
+		<style type="text/css">
+			.MenuItem {
+				background-color: #F00000;
+				color: white;
+				font-family: Segoe UI;
+				border: 1px solid darkred;
+				position: absolute;
+				cursor: default;
+			}
+			.TopMenuItem {
+				width: 140px;
+				height: 30px;
+				padding-top: 0.5em;
+				font-size: 15px;
+				text-align: center;
+			}
+			.TopMenuItem:hover {
+				background-color: #FF1010;
+			}
+			.TopMenuItem44 {
+				width: 140px;
+				height: 30px;
+				padding-top: 0.5em;
+				font-size: 15px;
+				text-align: center;
+				display: none;
+			}
+
+			.DropMenu {
+				width: 120px;
+				top: 40px;
+				padding-bottom: 0.4em;
+				padding-top: 0.4em;
+				display: none;
+			}
+
+			.DropMenuItem {
+				width: 100%;
+				height: 1.9em;
+				padding-top: 0.4em;
+				font-size: 13px;
+				text-align: left;
+				text-indent: 1.5em;
+			}
+			.DropMenuItem:hover {			
+				background-color: #FF1010;
+			}
+		</style>
+		<script type="text/javascript">
+			var timers = [];
+
+			function showDropMenu(id) {
+				stopTimer(id);
+				document.all("dropMenu" + id).style.display = "block";
+			}
+
+			function hideDropMenu(id) {
+				document.all("dropMenu" + id).style.display = "none";	
+			}
+
+			function startTimer(id) {
+				timers[id] = setTimeout("hideDropMenu(" + id + ")", 300);
+			}
+
+			function stopTimer(id) {
+				clearTimeout(timers[id]);
+			}
+			function showMenu4(id){
+			document.all("newMenu" + id).style.display = "block";
+			}
+		</script>
+	</head>
+	<body>
+		<div class="MenuItem TopMenuItem" style="left: 0px" onmouseover="showDropMenu(1)" onmouseout="startTimer(1)" onClick="showMenu4(4)">Menu 1</div>
+		<div class="MenuItem TopMenuItem" style="left: 140px" onmouseover="showDropMenu(2)" onmouseout="startTimer(2)"onClick="showMenu4(4)">Menu 2</div>
+		<div class="MenuItem TopMenuItem" style="left: 280px" onmouseover="showDropMenu(3)" onmouseout="startTimer(3)"onClick="showMenu4(4)">Menu 3</div>
+		
+		<div class="MenuItem TopMenuItem44" id="newMenu4" style="left: 420px"  id="newMenu4">
+			Menu4
+		</div>
+
+		<div class="MenuItem DropMenu" style="left: 10px" id="dropMenu1" onmouseover="stopTimer(1)" onmouseout="startTimer(1)">
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 1</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 2</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 3</div>
+		</div>
+
+		<div class="MenuItem DropMenu" style="left: 150px" id="dropMenu2" onmouseover="stopTimer(2)" onmouseout="startTimer(2)">
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 1</div>
+			<div class="DropMenuItem" onClick="showDropMenu(22)" onmouseout="startTimer(22)">subMenu 2</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 3</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 4</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 5</div>
+		</div>
+
+		<div class="MenuItem DropMenu" style="left: 290px" id="dropMenu3" onmouseover="stopTimer(3)" onmouseout="startTimer(3)">
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 1</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 2</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 3</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 4</div>
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 5</div>
+		</div>
+
+		<div class="MenuItem DropMenu" style="left: 220px; top: 100px" id="dropMenu22" onmouseover="stopTimer(22); stopTimer(2)" onmouseout="startTimer(22)">
+			<div class="DropMenuItem" onClick="showMenu4(4)">subMenu 2.1</div>
+			<div class="DropMenuItem" onmouseover="showDropMenu(222)" onmouseout="startTimer(222)" onClick="showMenu4(4)">subMenu 2.2</div>
+		</div>
+
+		<div class="MenuItem DropMenu" style="left: 270px; top: 160px" id="dropMenu222" onmouseover="stopTimer(222); stopTimer(22); stopTimer(2)" onmouseout="startTimer(222)">
+			<div class="DropMenuItem">subMenu 2.2.1</div>
+			 <div class="DropMenuItem">subMenu 2.2.2</div> 
+		</div>		
+	</body>
+</html>

@@ -1,0 +1,70 @@
+first:-
+  %  ListA = [three,22,at,it], nl,
+     write("Enter elements."), nl,
+     readln(ListA),
+    first(ListA,T1),
+    write(T1).
+
+first([Hs|Ts],[Hs, Hs|L_Out]):-
+    first(Ts,L_Out).
+first([],[]).
+
+oal([Head|Tail],[H_Out|Tail2]):- bred(Head,H_Out), oal(Tail, Tail2).
+oal([ ], [ ]).
+
+pred:-
+    open('input.txt',read,FILE),     % open(+SrcDest, +Mode, --Stream) - Equivalent to open/4 with an empty option list.
+    set_input(FILE),
+    read_list(FILE, ListS),
+    write(ListS),
+    close(FILE),
+    oal(ListS, L_Out),
+    tell('output.txt'),
+    write_list(L_Out),
+    told.
+read_list(_,[ ]):- at_end_of_stream,!.% at_end_of_stream - Succeeds after the last character of the current input stream has been read. Also succeeds if there is no valid current input stream.
+read_list(F, [S|L_Out]):-             % ! - Cut. Discard all choice points created since entering the predicate in which the cut appears. In other words, commit to the clause in which the cut appears and discard choice points that have been created by goals to the left of the cut in the current clause. Meta calling is opaque to the cut. This implies that cuts that appear in a term that is subject to meta-calling (call/1) only affect choice points created by the meta-called term. The following control structures are transparent to the cut: ;/2, ->/2 and *->/2. Cuts appearing in the condition part of ->/2 and *->/2 are opaque to the cut. The table below explains the scope of the cut with examples. Prunes here means ``prunes X choice point created by X''.
+  read_line_to_codes(F,L),            % read_line_to_codes(+Stream, -Line:codes) - Read the next line of input from Stream. Unify content of the lines as a list of character codes with Line after the line has been read. A line is ended by a newline character or end-of-file.
+  string_codes(S,L),                  % string_codes(?String, ?Codes) - Bi-directional conversion between a string and a list of character codes. At least one of the two arguments must be instantiated.; string_to_list - Bi-directional conversion between a string and a list of character codes.
+  write(S),                           % write(+Term) - Write Term to the current output, using brackets and operators where appropriate.
+  read_list(F, L_Out).
+  
+write_list([S|List]):-
+    writeln(S),                       % writeln(+Term) - Equivalent to write(Term), nl.. The output stream is locked, which implies no output from other threads can appear between the term and newline.
+    write_list(List).
+
+write_list([ ]) :- !.
+
+bred(Str1, Str2):-
+    string_length(Str1, 40),           % string_length(+String, -Length) - Unify Length with the number of characters in String. This predicate is functionally equivalent to atom_length/2 and also accepts atoms, integers and floats as its first argument. ; atom_length(+Atom, -Length) - True if Atom is an atom of Length characters. The SWI-Prolog version accepts all atomic types, as well as code-lists and character-lists. New code should avoid this feature and use write_length/3 to get the number of characters that would be written if the argument was handed to write_term/3.
+    Str2 = Str1;
+    Space = ' ',
+    string_length(Str1,N),
+    MaxVal is 40,
+    MinVal is MaxVal - N,
+    string_chars(Str1,List),           % string_chars(?String, ?Chars) - Bi-directional conversion between a string and a list of characters (one-character atoms). At least one of the two arguments must be instantiated.
+%    write(List).
+    pred_3(List,L,Space,MinVal),
+%    atomic_list_concat(L,'',Str),
+    string_chars(Str,L),
+    writeln(Str),
+    bred(Str, Str2).
+
+
+pred_3([Head|Tail], [Head|Tail2], Space, MinVal) :-
+    MinVal \== 0,
+    Space \== Head,
+    pred_3(Tail, Tail2, Space,MinVal).
+
+pred_3([Head|Tail], [Head, Space|Tail2], Space, MinVal) :-
+    MinVal \==0,
+    !,
+    N_min is MinVal - 1,
+    pred_3(Tail, Tail2, Space,N_min).
+
+pred_3([Head|Tail],[Head|Tail2],_,MinVal):-
+    MinVal == 0,
+    !,
+    pred_3(Tail,Tail2,_,MinVal).
+
+pred_3([],[],_,_).

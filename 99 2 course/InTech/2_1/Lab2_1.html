@@ -1,0 +1,30 @@
+
+<HTML>
+	<HEAD> 
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<TITLE>Лабораторная работа 2.1</TITLE>
+	</HEAD>
+
+	<SCRIPT language="JavaScript">
+	var i = 0;
+		function SwapSmileys()
+		{
+		i++;
+
+		if(i%3==1 ){
+			var qq = document.face1.src;
+			document.face1.src = document.face2.src;
+			document.face2.src = qq;}
+		}
+	</SCRIPT>
+		
+	<BODY>
+		
+		<IMG src="face1.png" name="face1" alt="f1">
+		<IMG src="face2.png" name="face2" alt="f2">
+		<FORM name="form1">
+			<input type="button" value="Обменять" onClick="SwapSmileys()">
+		</FORM>
+	</BODY>
+</HTML> 
+<!-- сделать так, чтобы кнопка срабатывала только на каждое третье срабатывание -->
