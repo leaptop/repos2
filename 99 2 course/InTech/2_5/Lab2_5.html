@@ -1,0 +1,122 @@
+﻿<HTML>
+    <HEAD> 
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <TITLE>Лабораторная работа 2.5</TITLE>
+    </HEAD>
+    
+    <STYLE type="text/css">
+        IMG
+        { 
+            float: left;
+        }
+    </STYLE>
+    
+    <SCRIPT language="JavaScript">
+        function GetDigit(string)
+        {
+            return 'dg/dg'+string+'.gif';
+        }
+        
+        function SetDigit(where, which)
+        {
+            document.getElementById(where).src = GetDigit(which);
+        }
+		
+        var change = 0;
+				
+        function UpdateTime()
+        {            
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var milliseconds = time.getMilliseconds();
+			hours += change;
+			
+			var day = time.getDate();
+			var month = time.getMonth();
+			var year = time.getYear();
+			month++;
+			//year += 1900;
+            // сделать две кнопки для московского и для новосибирского времени
+            if (hours>=12)
+            {
+                hours -= 12;
+                am_or_pm = "pm"
+            }
+            else am_or_pm = "am";
+            
+            SetDigit("h1", Math.floor(hours/10));
+            SetDigit("h2", hours%10);
+            SetDigit("colon1", "c");
+            SetDigit("m1", Math.floor(minutes/10));
+            SetDigit("m2", minutes%10);
+            SetDigit("colon2", "c");
+            SetDigit("s1", Math.floor(seconds/10));
+            SetDigit("s2", seconds%10);
+            SetDigit("dot","p");
+			SetDigit("dot1","p");
+			SetDigit("dot2","p");
+            SetDigit("ms1",Math.floor(milliseconds/100));
+            //SetDigit("ms2",(Math.floor(milliseconds/10))%10);
+            SetDigit("ampm",am_or_pm);
+			
+			SetDigit("da1", Math.floor(day/10));
+			SetDigit("da2", day%10);
+			SetDigit("mont1", Math.floor(month/10));
+			SetDigit("mont2", month%10);
+			SetDigit("yea1", Math.floor(year/1000));
+			SetDigit("yea2", Math.floor(year/100));
+			SetDigit("yea3", Math.floor(month/10));
+			SetDigit("yea4", year%10);
+            
+            setTimeout("UpdateTime()",100);
+        }
+		
+		
+		function cch1(){
+		change = -4;
+		}
+		function cch2(){
+		change = 0;
+		}
+        
+        function Init()
+        {
+            UpdateTime();
+        }
+        
+    </SCRIPT>
+        
+    <BODY onload="Init()">
+	<table border=1 cellpadding=5><td>
+        <IMG id="h1" src="dg/dg0.gif">
+        <IMG id="h2" src="dg/dg0.gif">
+        <IMG id="colon1">
+        <IMG id="m1">
+        <IMG id="m2">
+        <IMG id="colon2">
+        <IMG id="s1">
+        <IMG id="s2">
+        <IMG id="dot">
+        <IMG id="ms1">
+        <!--<IMG id="ms2"-->
+        <IMG id="ampm">
+		</td>
+		<td>
+		<!--<IMG id="no">-->
+		<IMG id="da1">
+		<IMG id="da2">
+		<IMG id="dot1">
+		<IMG id="mont1">
+		<IMG id="mont2">
+		<IMG id="dot2">
+		<IMG id="yea1">
+		<IMG id="yea2">
+		<IMG id="yea3">
+		<IMG id="yea4">
+		</td></table>
+		<INPUT type="button" id=b2  value="московское" onClick="cch1();"   >
+		<INPUT type="button" id=b3  value="новосибирское" onClick="cch2();"   >
+    </BODY>
+</HTML> 

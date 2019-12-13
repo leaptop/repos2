@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript">
+			var xml;
+			var avMark; 
+			
+			function onLoad() {
+				xml = new ActiveXObject("Microsoft.XMLDOM");
+				xml.async = false;
+				xml.load("3.4.xml");
+
+				var groupSelHtml = "";
+				var groups = xml.documentElement.childNodes;
+				for(var i = 0; i < groups.length; i++) {
+					var group = groups.item(i);
+					var groupName = group.attributes.item(0).text;
+					groupSelHtml += "<option value=\"" + groupName + "\">" + groupName + "</option>";
+				}
+				document.all("group").innerHTML = groupSelHtml;
+				refreshGroup();
+			}
+
+			function refreshGroup() {
+				var groupName = document.all("group").value;
+				var groups = xml.documentElement.childNodes;
+				var group;
+				for(var i = 0; i < groups.length; i++) {
+					group = groups.item(i);
+					if(group.attributes.item(0).text == groupName)
+						break;
+				}
+				var studs = group.childNodes;
+				var studSelHtml = "";
+				for(var i = 0; i < studs.length; i++) {
+					var studName = studs.item(i).attributes.item(0).text;
+					studSelHtml += "<option value=\"" + studName + "\">" + studName + "</option>";
+				}
+				document.all("student").innerHTML = studSelHtml;
+				document.all("year").value = group.attributes.item(1).text;
+				document.all("fac").value = group.attributes.item(2).text;
+				refreshStudent();
+			}
+
+			function refreshStudent() {
+				var table = document.all("theTable");
+				table.innerHTML = "";
+				var row = table.insertRow();
+				row.setAttribute("align", "center");
+				var cell = row.insertCell();
+				cell.innerHTML = "Предмет";
+				cell.setAttribute("width", "80%");
+				row.insertCell().innerHTML = "0";
+				row.insertCell().innerHTML = "1";
+				row.insertCell().innerHTML = "2";
+				row.insertCell().innerHTML = "3";
+
+				var studName = document.all("student").value;
+				var studs = xml.getElementsByTagName("student");
+				var stud;
+				for(var i = 0; i < studs.length; i++) {
+					stud = studs.item(i);
+					if(stud.attributes.item(0).text == studName)
+						break;
+				}
+				var marks = stud.childNodes;
+				avMark = 0;
+				for(var i = 0; i < marks.length; i++) {
+					var mark = marks.item(i);
+					var course = mark.attributes.item(0).text;
+					var markValue = parseInt(mark.text);
+					row = table.insertRow();
+					row.insertCell().innerHTML = course;
+					for(var j = 0; j <= 3; j++)
+						row.insertCell().innerHTML = "<input name=\"mark" + i + "\" type=\"radio\" value=\"" + j + "\" " + (markValue == j ? "checked>" : ">");
+					avMark += markValue;
+				}
+				avMark /= marks.length;
+			}
+
+			function calcAvMark() {
+				document.all("avMark").value = avMark.toFixed(2);
+			}
+
+			function clearAvMark() {
+				document.all("avMark").value = "";
+			}
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<p>Факультет: <input type="text" name="fac" size="4">  Курс: <input type="text" name="year" size="2">
+		<p>Группа: <select name="group" onchange="refreshGroup()"></select>  ФИО: <select name="student" onchange="refreshStudent()"></select>
+		<br><br>
+		<p><table id="theTable" width="400px" border="1"></table>
+		<br>
+		<p>Средний балл: <input type="text" name="avMark">
+		<p>
+			<input type="button" value="Выполнить" onclick="calcAvMark()">
+			<input type="button" value="Отменить" onclick="clearAvMark()">
+		</p>
+	</body>
+</html>

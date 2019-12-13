@@ -1,0 +1,291 @@
+﻿
+<HTML>
+	<HEAD> 
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<TITLE>Лабораторная работа 2.3</TITLE>
+	</HEAD>
+	
+	<STYLE type="text/css">
+		P
+		{
+			font-size: 35pt;
+			padding-top:   30px;
+			padding-left:  80px;
+		}
+	</STYLE>
+
+	<SCRIPT language="JavaScript">
+	
+		var xpiece  = 4;
+		var ypiece  = 3;		
+		var pieces  = xpiece*ypiece;	
+		var arr     = new Array(pieces);		
+		var correct = new Array(pieces);
+		var total   = 0;
+		var win     = false;
+		
+		var xsize  = 170;
+		var ysize  = 177;
+		
+		var xshift =  50;
+		var yshift = 150;
+		var pad    =  15;
+		
+		//var table_xshift = xshift;
+		//var table_yshift = xshift + yshift + (ysize+pad)*ypiece;
+		var table_xshift  = xshift + xshift + (xsize+pad)*xpiece
+	    var table_yshift  = yshift;
+		var table_border  = 10;
+		var table_padding =  0;
+	
+		function CreateTable()
+		{
+			// Generate the table
+			var tablecontents =  '<TABLE cellpadding="'+table_padding+'" cellspacing="'+table_padding+'" border="'+table_border+'" RULES=NONE ';
+			tablecontents    +=  'STYLE="position:absolute; left: '+table_xshift+'px; top:'+table_yshift+'px;"> ';
+			
+			for (var y=0; y<ypiece; y++)			
+			{
+				tablecontents += '<tr>';
+				for (var x=0; x<xpiece; x++)
+				{
+					tablecontents += '<td><IMG src=puzzle/empty.png></td>';
+				}
+				tablecontents += '</tr>';
+			}
+			tablecontents += '</TABLE>';
+			//document.getElementById("tablespace").innerHTML = tablecontents;
+			
+			//var node = document.createElement("TABLE");
+			//var textnode = document.createTextNode(tablecontents);
+			//node.appendChild(textnode);
+			//document.body.appendChild(node);
+			
+			// Add it to the page
+			var table = document.createElement("p");
+			table.innerHTML = tablecontents;
+			document.body.appendChild(table);
+		}
+		
+		function CreatePuzzle()
+		{
+			var index = 0;
+			for (var x=0; x<xpiece; x++)
+			{
+				for (var y=0; y<ypiece; y++)
+				{		
+					// Generate the image tag
+					var xspot = xshift + (xsize+pad)*x;
+					var yspot = yshift + (ysize+pad)*y;
+					var object = '<IMG SRC=puzzle/piece'+arr[index]+'.png ';
+					object += 'class=piece dragEnabled name="'+index+'" ';
+					object += 'STYLE="position:absolute; cursor:hand; ';
+					object += ' left:'+xspot+'px; top:'+yspot+'px; ">';		
+					
+					// Add the image to the page
+					var newpiece = document.createElement("p");
+					newpiece.id = 'piece'+index;
+					newpiece.innerHTML = object;
+					document.body.appendChild(newpiece);
+			
+					index++;
+				}
+			}			
+		}
+		
+		function CalculateCorrect()
+		{
+			total = 0;
+			for (var i=0; i<pieces; i++)
+			{
+				total += correct[i];
+			}
+		}
+		
+		function Shuffle(arr1)
+		{
+			for (var i=arr1.length-1; i > 0; i--)
+			{
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = arr1[i];
+				arr1[i] = arr1[j];
+				arr1[j] = temp;
+			}
+			return arr1;
+		}
+					
+		var obj = null;
+		var pieceshiftX;
+		var pieceshiftY;
+		var piecestartX;
+		var piecestartY;
+		
+		function MouseMove(event)
+		{
+			if (obj)
+			{
+				obj.style.pixelLeft = event.pageX - pieceshiftX;
+				obj.style.pixelTop  = event.pageY - pieceshiftY;
+				
+				//var node = document.createElement("div");				
+				//var textnode = document.createTextNode("Mouse dragged");
+				//node.appendChild(textnode);
+				//document.body.appendChild(node);
+			}
+		}
+		
+		function MouseDown()
+		{
+			if (!obj)
+			{
+				var temp = window.event.target;
+				if (temp.className == "piece")
+				{
+					obj = temp;
+					piecestartX = temp.style.pixelLeft;
+					piecestartY = temp.style.pixelTop;
+					pieceshiftX = event.pageX - temp.style.pixelLeft;
+					pieceshiftY = event.pageY - temp.style.pixelTop;
+					
+					var k = +obj.name;
+					correct[arr[k]] = 0;
+					CalculateCorrect();
+					console.log('piece #'+(arr[k])+' picked up. ('+total+'/'+pieces+' done)');
+					
+					//t.style.marginRight = 10;
+					//t.style.pixelLeft += 10;
+					//console.log(t.style.pixelLeft);
+					
+					//var node = document.createElement("div");
+					//var textnode = document.createTextNode("Mouse +pressed");
+					//node.appendChild(textnode);
+					//document.body.appendChild(node);
+				}
+			}
+		}
+		
+		function MouseUp(event)
+		{
+			//if (obj)
+			//{
+			//	obj.style.pixelLeft = piecestartX;
+			//	obj.style.pixelTop = piecestartY;
+			//	obj = null;
+			//}
+			if (obj)
+			{
+				//console.log('piece #'+obj.name+' released');
+				var index = 0;
+				for (var y=0; y<ypiece; y++)
+				{
+					for (var x=0; x<xpiece; x++)
+					{
+						/*
+						if (  event.pageX >= table_xshift + table_border + xsize*(x+0) + table_padding*(x*2+1)
+						   && event.pageX <  table_xshift + table_border + xsize*(x+1) + table_padding*(x*2+1)
+						   && event.pageY >= table_yshift + table_border + ysize*(y+0) + table_padding*(y*2+1)
+						   && event.pageY <  table_yshift + table_border + ysize*(y+1) + table_padding*(y*2+1)
+						   )
+						   {
+								obj.style.pixelLeft = table_xshift + table_border + xsize*(x+0) + table_padding*(x*2+1)
+								obj.style.pixelTop  = table_yshift + table_border + ysize*(y+0) + table_padding*(y*2+1)
+						*/
+						if (  event.pageX >= table_xshift + table_border + (xsize)*(x)
+						   && event.pageX <  table_xshift + table_border + (xsize)*(x+1)
+						   && event.pageY >= table_yshift + table_border + (ysize)*(y)
+						   && event.pageY <  table_yshift + table_border + (ysize)*(y+1)
+						   )
+						   {
+								obj.style.pixelLeft = table_xshift + table_border + (xsize)*(x);
+								obj.style.pixelTop  = table_yshift + table_border + (ysize)*(y);
+								var k = +obj.name; // string to integer
+								if (arr[k]==index) correct[arr[k]] = 1;
+								CalculateCorrect();
+								console.log('piece #'+(arr[k])+' placed at '+(index)+' ('+total+'/'+pieces+' done)');
+								if (total==pieces)
+								{
+									var msg = document.getElementById("title");
+									msg.innerHTML = "You win!";
+									msg.style.fontWeight = 'bold';
+									msg.style.fontSize = 65;
+									document.onmousemove = null;
+									document.onmousedown = null;
+									document.onmouseup   = null;									
+								}
+								obj = null;
+								return;
+						   }
+						index++;
+					}
+				}
+				obj = null;
+			}
+			//var node = document.createElement("div");
+			//var textnode = document.createTextNode("Mouse -released");
+			//node.appendChild(textnode);
+			//document.body.appendChild(node);
+		}
+			
+		function Init()
+		{
+			for (var i=0; i<pieces; i++)
+			{
+				arr[i]     = i;
+				correct[i] = 0;
+			}
+			Shuffle(arr);			
+			CreateTable();
+			CreatePuzzle();
+			document.onmousemove = MouseMove;
+			document.onmousedown = MouseDown;
+			document.onmouseup   = MouseUp;
+		}		
+		
+			
+			/*
+			for (var i=0; i<pieces; i++)
+			{
+				var space = document.createElement("br");
+				if (i==4||i==8) document.body.appendChild(space);
+				
+				var oImg = document.createElement("img");
+				var srcpiece = 'puzzle/piece'+arr[i]+'.png';
+				oImg.setAttribute('dragEnabled','true');
+				oImg.setAttribute('class','piece');
+				oImg.setAttribute('src', srcpiece);
+				oImg.setAttribute('style', 'padding:5px; cursor:hand;');
+				document.body.appendChild(oImg);
+				console.log("arr[",i,"] = ",arr[i]," (",srcpiece,").");
+								
+				//var name = 'puzzle/piece'+arr[i]+'.png'
+				//var image = '<IMG src='+name+'>';
+				//document.getElementById("puzzle").innerHTML = image;
+			}
+			*/
+			
+			
+			/*
+			var obj = new Array(pieces);
+			var index = 0;
+			for (var x=0; x<xpiece; x++)
+			{
+				for (var y=0; y<ypiece; y++)
+				{		
+					var xspot = xshift + (xsize+pad)*x;
+					var yspot = yshift + (ysize+pad)*y;
+					var object = '<IMG SRC=puzzle/piece'+arr[index]+'.png ';
+					object += 'class=piece dragEnabled ';
+					object += 'STYLE="position:absolute; cursor:hand; ';
+					object += ' top:'+xspot+'px; left:'+yspot+'px; ">';						
+					document.getElementById("puzzle").innerHTML = object;
+			
+					index++;
+				}
+			}*/
+
+	</SCRIPT>
+		
+	<BODY onload="Init()">
+		<P id="title">Assemble the puzzle!</P>
+	</BODY>
+</HTML> 

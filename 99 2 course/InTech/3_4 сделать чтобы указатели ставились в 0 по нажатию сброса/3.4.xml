@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<groups>
+	<group name="А-22" year="1" faculty="ИВТ">
+		<student name="Егоров Василий">
+			<mark course="Программирование">2</mark>
+			<mark course="Математика">1</mark>
+			<mark course="Право">1</mark>
+			<mark course="Экономика">2</mark>
+		</student>
+		<student name="Грейнджер Гермиона">
+			<mark course="Программирование">0</mark>
+			<mark course="Математика">0</mark>
+			<mark course="Право">1</mark>
+			<mark course="Экономика">0</mark>
+		</student>
+		<student name="Песков Дмитрий">
+			<mark course="Программирование">1</mark>
+			<mark course="Математика">1</mark>
+			<mark course="Право">2</mark>
+			<mark course="Экономика">0</mark>
+		</student>
+	</group>
+	<group name="УПЧК-54" year="1" faculty="ИВТ">
+		<student name="Пелевен Вектор">
+			<mark course="Программирование">2</mark>
+			<mark course="Математика">2</mark>
+			<mark course="Право">2</mark>
+			<mark course="Экономика">2</mark>
+		</student>
+		<student name="Филимонова Екатерина">
+			<mark course="Программирование">2</mark>
+			<mark course="Математика">2</mark>
+			<mark course="Право">2</mark>
+			<mark course="Экономика">1</mark>
+		</student>
+		<student name="Логичный Пётр">
+			<mark course="Программирование">1</mark>
+			<mark course="Математика">2</mark>
+			<mark course="Право">0</mark>
+			<mark course="Экономика">1</mark>
+		</student>
+		<student name="Посадов Сергий">
+			<mark course="Программирование">0</mark>
+			<mark course="Математика">0</mark>
+			<mark course="Право">2</mark>
+			<mark course="Экономика">2</mark>
+		</student>
+	</group>
+	<group name="ЕЕ-221" year="1" faculty="ММФ">
+		<student name="Обоев Рулон">
+			<mark course="Программирование">2</mark>
+			<mark course="Математика">1</mark>
+			<mark course="Математическая логика">2</mark>
+		</student>
+		<student name="Спидов Вечяслав">
+			<mark course="Программирование">0</mark>
+			<mark course="Математика">1</mark>
+			<mark course="Математическая логика">2</mark>
+		</student>
+		<student name="Синенький Валерий">
+			<mark course="Программирование">2</mark>
+			<mark course="Математика">2</mark>
+			<mark course="Математическая логика">1</mark>
+		</student>
+		<student name="Круассанов Жерар">
+			<mark course="Программирование">1</mark>
+			<mark course="Математика">0</mark>
+			<mark course="Математическая логика">2</mark>
+		</student>
+	</group>
+	<group name="АЭС-51" year="2" faculty="ИВТ">
+		<student name="Александров Иммануил">
+			<mark course="Математика">2</mark>
+			<mark course="Структуры и алгоритмы обработки данных">1</mark>
+			<mark course="Электроника">1</mark>
+			<mark course="Теория множеств">1</mark>
+		</student>			
+		<student name="Синицких Валерия">
+			<mark course="Математика">1</mark>
+			<mark course="Структуры и алгоритмы обработки данных">1</mark>
+			<mark course="Электроника">2</mark>
+			<mark course="Теория множеств">0</mark>
+		</student>
+		<student name="Климова Карина">
+			<mark course="Математика">2</mark>
+			<mark course="Структуры и алгоритмы обработки данных">1</mark>
+			<mark course="Электроника">2</mark>
+			<mark course="Теория множеств">1</mark>
+		</student>
+	</group>
+	<group name="МТС-16" year="2" faculty="ММФ">
+		<student name="Стрельников Антон">
+			<mark course="Математика">2</mark>
+			<mark course="Дифференциальные уравнения">2</mark>
+			<mark course="Теория рядов">2</mark>
+		</student>			
+		<student name="Климова Валерия">
+			<mark course="Математика">1</mark>
+			<mark course="Дифференциальные уравнения">2</mark>
+			<mark course="Теория рядов">1</mark>
+		</student>
+		<student name="Слонов Александр">
+			<mark course="Математика">0</mark>
+			<mark course="Дифференциальные уравнения">0</mark>
+			<mark course="Теория рядов">0</mark>
+		</student>
+	</group>
+	<group name="ЭМР-16" year="3" faculty="ИВТ">
+		<student name="Щеглова Татьяна">
+			<mark course="Математика">2</mark>
+			<mark course="Экономика">1</mark>
+			<mark course="Базы данных">2</mark>
+			<mark course="Физ-ра">2</mark>
+		</student>		
+		<student name="Лавров Михаил">
+			<mark course="Математика">1</mark>
+			<mark course="Экономика">1</mark>
+			<mark course="Базы данных">0</mark>
+			<mark course="Физ-ра">2</mark>
+		</student>	
+		<student name="Телепатов Пиромаг">
+			<mark course="Математика">2</mark>
+			<mark course="Экономика">2</mark>
+			<mark course="Базы данных">2</mark>
+			<mark course="Физ-ра">0</mark>
+		</student>
+	</group>
+	<group name="ИП-612" year="2" faculty="ИВТ">
+		<student name="Тимур Алымбаев">
+			<mark course="Программирование">0</mark>
+			<mark course="Математика">0</mark>
+			<mark course="ООП">0</mark>
+			<mark course="СИАОД">0</mark>
+		</student>
+		<student name="Зазвонов Даниил">
+			<mark course="Программирование">3</mark>
+			<mark course="Математика">3</mark>
+			<mark course="ООП">3</mark>
+			<mark course="СИАОД">3</mark>
+		</student>
+                <student name="Быков Алексей">
+			<mark course="Программирование">3</mark>
+			<mark course="Математика">2</mark>
+			<mark course="ООП">1</mark>
+			<mark course="СИАОД">0</mark>
+		</student>
+	</group>
+</groups>

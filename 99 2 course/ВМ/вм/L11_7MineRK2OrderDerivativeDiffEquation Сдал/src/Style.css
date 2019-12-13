@@ -1,0 +1,142 @@
+/*.chart {
+    -fx-padding: 10px;
+    /*-fx-background-image: url("icon.png");*/
+/*}
+.chart-content {
+    -fx-padding: 30px;
+    
+}
+.chart-legend {
+   -fx-background-color:  transparent;
+   -fx-padding: 20px;
+}
+ 
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+ 
+.chart-legend-item{
+    -fx-text-fill: #191970;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 1.5px;
+    -fx-effect: null;
+}
+
+.default-color0.chart-series-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-line { -fx-stroke: #dda0dd; }*/
+.chart-series-line {
+    -fx-stroke-width: 1.5px;
+    -fx-effect: null;
+}
+
+.default-color0.chart-series-line { -fx-stroke: transparent; }/*установил... "распонял"... опять*/
+.default-color1.chart-series-line { -fx-stroke: red; }
+.default-color2.chart-series-line { -fx-stroke: blue; }
+.default-color3.chart-series-line { -fx-stroke: black; }
+.default-color4.chart-series-line { -fx-stroke: magenta; }
+.default-color5.chart-series-line { -fx-stroke: orange; }
+.default-color6.chart-series-line { -fx-stroke: brown; }
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: green, white;
+}
+.default-color1.chart-line-symbol {
+    -fx-background-color: transparent, transparent;/* вот оно, устанавливаем наружку и внутренность кружка
+    для chart-line-symbol в transparent*/
+}
+.default-color2.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+.default-color3.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+.default-color4.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+.default-color5.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+.default-color6.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.default-color0.chart-legend-item-symbol{/* а вот для symbols легенды(низ с подписями) делаем уже цвета*/
+    -fx-background-color: green, white;
+ }
+.default-color1.chart-legend-item-symbol{
+    -fx-background-color: red;
+ }
+ .default-color2.chart-legend-item-symbol { -fx-background-color: blue; }
+ .default-color3.chart-legend-item-symbol { -fx-background-color: black; }
+ .default-color4.chart-legend-item-symbol { -fx-background-color: magenta; }
+ .default-color5.chart-legend-item-symbol { -fx-background-color: orange; }
+ .default-color6.chart-legend-item-symbol { -fx-background-color: brown; }
+
+/*
+.chart-series-line{
+-fx-stroke-width: 2px;
+-fx-effect: null;
+}
+
+.default-color0.chart-series-line { -fx-stroke: transparent; }
+.default-color1.chart-series-line { -fx-stroke: violet; }
+.default-color2.chart-series-line { -fx-stroke: blue; }
+.default-color3.chart-series-line { -fx-stroke: red; }
+.default-color4.chart-series-line { -fx-stroke: green; }
+.default-color5.chart-series-line { -fx-stroke: orange; }
+.default-color6.chart-series-line { -fx-stroke: brown; }
+
+.default-color0.chart-line-symbol { -fx-background-color: black, white; }
+.default-color1.chart-line-symbol { -fx-background-color: violet, white; }
+.default-color2.chart-line-symbol { -fx-background-color: blue, white; }
+.default-color3.chart-line-symbol { -fx-background-color: red, white; }
+.default-color4.chart-line-symbol { -fx-background-color: green, white; }
+.default-color5.chart-line-symbol { -fx-background-color: orange, white; }
+.default-color6.chart-line-symbol { -fx-background-color: brown, white; }
+
+.default-color0.chart-legend-item-symbol { -fx-background-color: white; }
+*/
+
+
+/*
+.default-color0.chart-line-symbol {
+    -fx-background-color: white, green;
+}
+.default-color1.chart-line-symbol {
+    -fx-background-color: transparent, transparent;
+}
+
+.default-color0.chart-legend-item-symbol{
+    -fx-background-color: green;
+ }
+.default-color1.chart-legend-item-symbol{
+    -fx-background-color: red;
+ }
+*/
+/*
+ .default-color2.chart-series-line { -fx-stroke: transparent; }
+ .default-color3.chart-series-line { -fx-stroke: red; }
+ .default-color4.chart-series-line { -fx-stroke: blue}
+
+ .default-color2.chart-line-symbol {
+     -fx-background-color: white, green;
+ }
+
+ .default-color3.chart-line-symbol {
+     -fx-background-color: transparent, transparent;
+ }
+  .default-color4.chart-line-symbol{
+  -fx-background-color: transparent, transparent;
+  }
+
+ .default-color2.chart-legend-item-symbol{
+     -fx-background-color: green;
+  }
+ .default-color3.chart-legend-item-symbol{
+     -fx-background-color: red;
+  }
+  .default-color4.chart-legend-item-symbol{
+  -fx-background-color:blue;}*/

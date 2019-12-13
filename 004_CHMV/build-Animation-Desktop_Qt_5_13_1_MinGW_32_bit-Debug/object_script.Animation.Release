@@ -1,0 +1,11 @@
+release/mouse2.o
+release/mtsquare.o
+release/dot.o
+release/main.o
+release/dialog.o
+release/mouse.o
+release/mouse3.o
+release/myitem.o
+release/mysquare.o
+release/sofa.o
+release/moc_dialog.o

@@ -1,0 +1,3 @@
+0 READ  
+1 LOAD  
+2 STORE  

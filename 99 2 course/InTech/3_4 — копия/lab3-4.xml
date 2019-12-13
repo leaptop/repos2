@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+
+<university>
+   <faculty>
+      <caption>ИВТ</caption> 
+      <course>
+        <caption>1</caption> 
+        <group>
+          <caption>ИП-411</caption> 
+          <student>
+            <caption> Иванов Иван</caption> 
+            <matan>2</matan>
+            <linalg>2</linalg>
+            <grafik>1</grafik>
+            <pavu>2</pavu>
+            <infor>2</infor>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Петров Петр</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <pavu>2</pavu>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Сидоров Сидр</caption> 
+            <matan>1</matan>
+            <linalg>1</linalg>
+            <grafik>0</grafik>
+            <pavu>2</pavu>
+            <infor>0</infor>
+            <eng>2</eng>
+            <fra>2</fra>
+          </student>
+        </group>
+        <group>
+          <caption>ИП-412</caption> 
+          <student>
+            <caption>Шананин Дмитрий</caption> 
+            <matan>2</matan>
+            <linalg>2</linalg>
+            <grafik>1</grafik>
+            <pavu>2</pavu>
+            <infor>2</infor>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Козлов Петр</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <pavu>2</pavu>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Попов Андрей</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <pavu>2</pavu>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+        </group>
+      </course>
+      <course>
+        <caption>2</caption> 
+        <group>
+          <caption>ИП-312</caption> 
+          <student>
+            <caption>Николаева Анастасия</caption> 
+            <matan>1</matan>
+            <vchmat>2</vchmat>
+            <ibm>1</ibm>
+            <mlta>0</mlta>
+            <teravt>2</teravt>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Киселёв Алексей</caption> 
+            <matan>2</matan>
+            <vchmat>2</vchmat>
+            <ibm>1</ibm>
+            <mlta>2</mlta>
+            <teravt>2</teravt>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Гаврилов Никита</caption> 
+            <matan>2</matan>
+            <vchmat>2</vchmat>
+            <ibm>1</ibm>
+            <mlta>2</mlta>
+            <teravt>2</teravt>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+        </group>
+        <group>
+          <caption>ИП-311</caption> 
+          <student>
+            <caption>Гусевоз Иван</caption> 
+            <matan>2</matan>
+            <vchmat>2</vchmat>
+            <ibm>1</ibm>
+            <mlta>2</mlta>
+            <teravt>2</teravt>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Новиков Никита</caption> 
+            <matan>2</matan>
+            <vchmat>2</vchmat>
+            <ibm>1</ibm>
+            <mlta>2</mlta>
+            <teravt>2</teravt>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Суходоева Наталья</caption> 
+            <matan>0</matan>
+            <vchmat>0</vchmat>
+            <ibm>0</ibm>
+            <mlta>0</mlta>
+            <teravt>0</teravt>
+            <eng>0</eng>
+            <fra>0</fra>
+          </student>
+        </group>
+      </course>
+      <course>
+        <caption>3</caption> 
+        <group>
+          <caption>ИП-213</caption> 
+          <student>
+            <caption>Приблудов Иван</caption> 
+            <metro>1</metro>
+            <model>2</model>
+            <ABC>2</ABC>
+            <tmo>0</tmo>
+            <econ>2</econ>
+            <bd>2</bd>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Рагимов Валерий</caption> 
+            <metro>2</metro>
+            <model>2</model>
+            <ABC>1</ABC>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <bd>0</bd>
+            <fra>1</fra>
+          </student>
+        </group>
+        <group>
+          <caption>ИП-214</caption> 
+          <student>
+            <caption>Иванов Егор</caption> 
+            <metro>2</metro>
+            <model>2</model>
+            <ABC>1</ABC>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <bd>0</bd>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Кушнарев Анатолий</caption> 
+            <metro>2</metro>
+            <model>2</model>
+            <ABC>1</ABC>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <bd>0</bd>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Рагимов Никита</caption> 
+            <metro>2</metro>
+            <model>2</model>
+            <ABC>1</ABC>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <bd>0</bd>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Сидорова Татьяна</caption> 
+            <metro>2</metro>
+            <model>2</model>
+            <ABC>1</ABC>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <bd>0</bd>
+            <fra>1</fra>
+          </student>
+        </group>
+      </course>
+   </faculty>
+   <faculty>  
+      <caption>МРМ</caption> 
+      <course>
+        <caption>1</caption> 
+        <group>
+          <caption>С-07</caption> 
+          <student>
+            <caption>Иванова Наталья</caption> 
+            <matan>2</matan>
+            <linalg>1</linalg>
+            <grafik>1</grafik>
+            <fizik>2</fizik>
+            <infor>1</infor>
+            <eng>2</eng>
+            <fra>0</fra>
+          </student>
+          <student>
+            <caption>Петров Петр</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <fizik>2</fizik>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Уваров Саша</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <fizik>2</fizik>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+        </group>
+        <group>
+          <caption>РМ-09</caption> 
+          <student>
+            <caption>Потемкин Иван</caption> 
+            <matan>2</matan>
+            <linalg>2</linalg>
+            <hist>1</hist>
+            <pavu>2</pavu>
+            <infor>2</infor>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Куланов Петр</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <hist>1</hist>
+            <pavu>2</pavu>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+          <student>
+            <caption>Пушкина Софья</caption> 
+            <matan>1</matan>
+            <linalg>2</linalg>
+            <grafik>0</grafik>
+            <hist>1</hist>
+            <infor>1</infor>
+            <eng>1</eng>
+            <fra>2</fra>
+          </student>
+        </group>
+      </course>
+      <course>
+        <caption>2</caption> 
+        <group>
+          <caption>РМ-97</caption> 
+          <student>
+            <caption>Иванов Иван</caption> 
+            <matan>2</matan>
+            <saod>2</saod>
+            <fizik>1</fizik>
+            <otc>2</otc>
+            <dismat>2</dismat>
+            <eng>2</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Петров Петр</caption> 
+            <matan>2</matan>
+            <saod>2</saod>
+            <fizik>1</fizik>
+            <otc>2</otc>
+            <dismat>2</dismat>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Сидоров Сидр</caption> 
+            <matan>2</matan>
+            <saod>2</saod>
+            <fizik>1</fizik>
+            <otc>2</otc>
+            <dismat>2</dismat>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+        </group>
+        <group>
+          <caption>РМ-96</caption> 
+          <student>
+            <caption>Иванов Иван</caption> 
+            <matan>2</matan>
+            <fizik>2</fizik>
+            <ibm>1</ibm>
+            <upr_data>2</upr_data>
+            <elec>2</elec>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Машаров Николай</caption> 
+            <matan>2</matan>
+            <fizik>2</fizik>
+            <ibm>1</ibm>
+            <upr_data>2</upr_data>
+            <elec>2</elec>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Бочкарев Борис</caption> 
+            <matan>2</matan>
+            <fizik>2</fizik>
+            <ibm>1</ibm>
+            <upr_data>2</upr_data>
+            <elec>2</elec>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+        </group>
+      </course>
+      <course>
+        <caption>3</caption> 
+        <group>
+          <caption>РМ-88</caption> 
+          <student>
+            <caption>Дячин Илья</caption> 
+            <spo>1</spo>
+            <sxem>2</sxem>
+            <ibm>1</ibm>
+            <tmo>2</tmo>
+            <econ>1</econ>
+            <vich_tech>0</vich_tech>
+            <fra>0</fra>
+          </student>
+          <student>
+            <caption>Масунов Алексей</caption> 
+            <spo>2</spo>
+            <sxem>2</sxem>
+            <ibm>1</ibm>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <vich_tech>0</vich_tech>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Сидоров Дмитрий</caption> 
+            <spo>2</spo>
+            <sxem>2</sxem>
+            <ibm>1</ibm>
+            <tmo>2</tmo>
+            <econ>2</econ>
+            <vich_tech>0</vich_tech>
+            <fra>1</fra>
+          </student>
+        </group>
+        <group>
+          <caption>РМ-811</caption> 
+          <student>
+            <caption>Шишканов Илья</caption> 
+            <metro>2</metro>
+            <cult>2</cult>
+            <ecol>1</ecol>
+            <inf_tech>2</inf_tech>
+            <econ>2</econ>
+            <tdgraf>0</tdgraf>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Зарубанов Тимофей</caption> 
+            <metro>2</metro>
+            <cult>2</cult>
+            <ecol>1</ecol>
+            <inf_tech>2</inf_tech>
+            <econ>2</econ>
+            <tdgraf>0</tdgraf>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Настаченко Нина</caption> 
+            <metro>2</metro>
+            <cult>2</cult>
+            <ecol>1</ecol>
+            <inf_tech>2</inf_tech>
+            <econ>2</econ>
+            <tdgraf>0</tdgraf>
+            <fra>1</fra>
+          </student>
+        </group>
+      </course>
+   </faculty>
+   <matan>Математический анализ</matan>
+   <linalg>Линейная алгебра</linalg>
+   <grafik>Инженерная графика</grafik>
+   <pavu>ПЯВУ</pavu>
+   <infor>Информатика</infor>
+   <eng>Английский язык</eng>
+   <fra>Физическая культура</fra>
+   <metro>Метрология</metro>
+   <ecol>Экология</ecol>
+   <vchmat>Выч. мат.</vchmat>
+   <ibm>Орг ЭВМ</ibm>
+   <mlta>МЛТА</mlta>
+   <teravt>Теория автоматов</teravt>
+   <model>Моделирование</model>
+   <ABC>Архитектура ВС</ABC>
+   <tmo>ТМО</tmo>
+   <econ>Экономика</econ>
+   <bd>БД</bd>
+   <fizik>Физика</fizik>
+   <hist>История</hist>
+   <otc>ОТЦ</otc>
+   <dismat>Дискретная математика</dismat>
+   <saod>САОД</saod>
+   <upr_data>Управление данными</upr_data>
+   <elec>Электроника</elec>
+   <spo>СПО</spo>
+   <sxem>схемотехника</sxem>
+   <vich_tech>Вычислительная техника</vich_tech>
+   <cult>Культорология</cult>
+   <inf_tech>Информационная технология</inf_tech>
+   <tdgraf>3D графика</tdgraf>
+</university>

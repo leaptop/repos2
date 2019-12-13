@@ -1,0 +1,28 @@
+<script>
+
+function nextBtn(btn) {
+    var n = btn.id;
+    n = n=="b1" ? "b2" : (n=="b2" ? "b1" : "b2");
+    return document.getElementById(n);
+}
+function btnclick() {
+    activebtn.style.backgroundColor = disactiveclr;
+    activebtn.onclick = null;
+    activebtn = nextBtn(activebtn);
+    activebtn.style.backgroundColor = activeclr;
+    activebtn.onclick = btnclick;
+}
+var disactiveclr = "#F6F6f6";
+var activeclr = "#fc0707";
+var activebtn = null;
+function ld(){
+    (activebtn = document.getElementById("b1")).onclick=btnclick;
+}
+
+
+</script>
+<body onload="ld();">
+<input type="button"  id=b1 style="background: #fc0707;" value="Кнопка1">
+<input type="button"  id=b2 style="background: #F6F6f6;" value="Кнопка2">
+
+</body>

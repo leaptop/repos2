@@ -1,0 +1,109 @@
+﻿
+<HTML>
+    <HEAD> 
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <TITLE>Лабораторная работа 3.2</TITLE>
+    </HEAD>
+	
+	<SCRIPT language="JavaScript">
+	var ir = 0;
+		function setCookie(c_name,value,expiredays)
+		{
+			var exdate = new Date();
+			exdate.setDate(exdate.getDate()+expiredays);
+			document.cookie = c_name+ "=" +escape(value);
+			if (expiredays) document.cookie+=";expires="+exdate.toGMTString();
+		}
+
+		function getCookie(c_name)
+		{
+			if (document.cookie.length>0)
+			{
+				c_start=document.cookie.indexOf(c_name + "=");
+				if (c_start!=-1)
+				{
+					c_start=c_start + c_name.length+1;
+					c_end=document.cookie.indexOf(";",c_start);
+					if (c_end==-1) c_end=document.cookie.length;
+					return unescape(document.cookie.substring(c_start,c_end));
+				}
+			}
+			return "";
+		}
+	
+		function clearCookie (name)
+		{
+			document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		}
+		
+		function Write()
+		{
+		var nk = nick.name;
+			var getting = browser.cookies.get({
+			name: nk
+			});
+		    //getting.then(logCookie);
+		
+		
+			myname  = getCookie("name1");
+			mycount = getCookie("count1");
+			mytime  = getCookie("time1");
+			if (!myname)
+			{
+				document.write("Пожалуйста, зарегистрируйся!");
+			}
+			else
+			{
+				document.write("<p>Привет, "+myname+"!</p>");
+				
+				if (!mycount) mycount = 0;
+				else          mycount = parseInt(mycount,10) + 1;
+				setCookie('count1', mycount, 30);			
+				document.write("<p>Количество посещений этой страницы: " + mycount + "</p>");
+				
+				today = new Date;
+				if (!mytime)
+				{
+					setCookie("time1", today.getTime(), 30);
+					document.write ("<p>Вы впервые на этой странице.</p>");
+				}
+				else
+				{
+					timeleg = today.getTime() - getCookie("time1");
+					setCookie ("time1",today.getTime(),30);
+					
+					var days=0, hours=0, minutes=0, seconds=0, milli=0;
+					days    = Math.floor(timeleg / (1000 * 60 * 60 * 24)); timeleg %= 1000 * 60 * 60 * 24;
+					hours   = Math.floor(timeleg / (1000 * 60 * 60));      timeleg %= 1000 * 60 * 60;
+					minutes = Math.floor(timeleg / (1000 * 60));           timeleg %= 1000 * 60;
+					seconds = Math.floor(timeleg / (1000));                timeleg %= 1000;
+					milli   = timeleg;
+										
+					document.write ("<p>Вы посещали эту страницу");
+					if (days)    document.write (" " + days    + " дней");
+					if (hours)   document.write (" " + hours   + " часов");
+					if (minutes) document.write (" " + minutes + " минут");
+					if (seconds) document.write (" " + seconds + " секунд");
+					if (milli)   document.write (" " + milli   + " миллисекунд");
+					document.write(" назад.");
+				}
+			}
+		}
+	</SCRIPT>
+		
+	<BODY>	
+		<FORM name="form">
+			<h2>COOKIE</h2>
+			<SCRIPT>Write();</SCRIPT>			
+			<p>
+				Введите имя: <input type="text" id = "nick" name="nickname"></input>
+			</p>
+			<p>
+				<input type="button" value="Зарегистрироваться" onClick="setCookie('name'+ir,document.form.nickname.value,100);"></input>
+			</p>
+			<p>
+				<input type="button" value="Обнулить посещения" onClick="clearCookie('name1');clearCookie('count1');clearCookie('time1');"></input>
+			</p>
+		</FORM>			
+	</BODY>	
+</HTML>

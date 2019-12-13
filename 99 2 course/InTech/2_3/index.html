@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<TITLE>Лабораторная 2.3</TITLE>
+</HEAD> 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/overcast/jquery-ui.css" />
+
+<style type="text/css">
+        #draggable2 {
+		margin: -320px 0px 0px 90px;
+		//border:1px solid black;
+		width:90px;
+		}
+		 #draggable {
+		margin:10px 0px 0px 0px;
+		//border:1px solid white;
+		width:90px;
+		}
+		 #draggable1 {
+		margin:0px 0px 0px 0px;
+		//border:1px solid red;
+		width:90px;
+		}
+		 #draggable3 {
+		margin:0px 0px 0px 90px;
+		//border:1px solid pink;
+		width:90px;
+		}
+    </style>
+	
+<script type="text/javascript">
+
+
+	function allowDrop(event)
+		{
+			event.preventDefault();
+		}
+		
+	function dragStart(dragevent)
+		{
+			dragevent.dataTransfer.setData("img", event.target.src);
+		}
+		
+	function setFrame(grid, event)
+		{
+			event.preventDefault();
+			var data = event.dataTransfer.getData("img");
+			document.getElementById(grid).src = data;
+		}
+
+	$(function() {
+	$('#draggable').draggable();
+	});
+	
+	$(function() {
+	$('#draggable1').draggable();
+	});
+	
+	$(function() {
+	$('#draggable2').draggable();
+	});
+	
+	$(function() {
+	$('#draggable3').draggable();
+	});
+	var i = 0;
+	function cch1(){	
+	document.getElementById('send1').value = i;
+if((i/2)==1){
+hh.draggable="true";
+jj.draggable="true";
+kk.draggable="true";
+ll.draggable="true";}
+else{
+hh.draggable="false";
+jj.draggable="false";
+kk.draggable="false";
+ll.draggable="false";}
+i++;
+}
+function cch2(){
+
+	$('#hh').draggable();
+	
+
+}
+function empty(){}
+    </script> 
+<BODY BGCOLOR="lightblue">
+	<h1 style = "text-align: center;">Собери мозаику</h1>
+	<h4 style = "text-align: center;">Перемещая картинки мышкой, собери мозаику.</h4>
+	<table>
+		<tr>
+			<td><img src="r1.gif" id = "hh" draggable ="false" STYLE="cursor:hand; width:90px; height:160px;" ondragstart = "dragStart(event)" ></td>		
+			<td><img src="r2.gif" id = "jj" draggable ="true" STYLE="cursor:hand; width:90px; height:160px;" ondragstart = "dragStart(event)"></td>
+		</tr>
+		<tr>
+			<td><img src="r3.gif" id = "kk" draggable ="true" STYLE="cursor:hand; width:90px; height:160px;" ondragstart = "dragStart(event)"></td>
+			<td><img src="r4.gif" id = "ll" draggable ="true" STYLE="cursor:hand; width:90px; height:160px;" ondragstart = "dragStart(event)"></td>
+		</tr>
+	</table>
+
+<INPUT type="button" id=b1  value="play" onClick="cch2();"   >
+<INPUT type="button" id=b2  value="stop" onClick="cch2();"   >
+<input type="text" id="send1" value="" />
+	
+	<div id="draggable" >
+		<img src="r0.gif" id="grid1" ondrop="setFrame('grid1', event)" STYLE="cursor:arrow; width:90px; height:160px;" ondragover="allowDrop(event)"></td>
+	</div>	
+	
+	<div id="draggable1">
+		<img src="r0.gif" id="grid2" ondrop="setFrame('grid2', event)" style="cursor:hand; width:90px; height:160px;" ondragover="allowDrop(event)"></td>
+	</div>
+		
+	<div id="draggable2">
+		<img src="r0.gif" id="grid3" ondrop="setFrame('grid3', event)" style="cursor:hand; width:90px; height:160px;" ondragover="allowDrop(event)"></td>
+	</div>
+	
+	<div id="draggable3">
+		<img src="r0.gif" id="grid4" ondrop="setFrame('grid4', event)" style="cursor:hand; width:90px; height:160px;" ondragover="allowDrop(event)"></td>
+	</div>
+	
+</BODY>
+</HTML>
+
+
+
+
+

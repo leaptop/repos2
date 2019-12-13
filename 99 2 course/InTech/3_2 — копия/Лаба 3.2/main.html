@@ -1,0 +1,180 @@
+<html>
+
+<head>
+
+	<title>Лабараторная 3.2</title>
+
+
+<script type="text/javascript">
+    
+
+function getCookie(Name) 
+{   
+        
+	var search = Name + "="
+;        
+	if (document.cookie.length > 0) 
+	{
+            
+		offset = document.cookie.indexOf(search);
+            
+		if (offset != -1) 
+		{
+                
+			offset += search.length;
+                
+			end = document.cookie.indexOf(";", offset);
+                
+			if (end == -1)
+			{
+                    
+			end = document.cookie.length
+;                
+			return unescape(document.cookie.substring(offset, end));
+			}
+ 
+		}
+
+	}
+
+}
+    
+
+function setCookie1(name, value) 
+{ 
+        
+	var today = new Date()
+;        
+	var expires = new Date();
+        
+	expires.setTime(today.getTime() + 1000*60*60*24*365); 
+        
+	var b = document.cookie;
+        
+	document.cookie = b + name + "=" + escape(value) + "; 
+	expires=" + expires.toGMTString() + ";"
+        
+	console.log(document.cookie)
+;
+}
+
+
+
+function register() 
+{
+        
+	var name = document.getElementById("uname").value
+;        
+	setCookie1("uname", name);
+}
+    
+
+window.onload = function() 
+{
+        
+	document.getElementById("uname").innerHTML = " "
+;       
+	var now = new Date()
+;
+	setCookie1("n", getCookie("n"));
+        
+	if (getCookie("d") != undefined)
+	{
+            
+		var o = "Вы были на этой странице: ";
+            
+		var when = new Date(getCookie("d"))
+;          
+		var diff = Math.floor((now - when) / 1000);
+            
+		if (diff > 3600)
+		{
+                
+			var h = Math.floor(diff / 3600);
+                
+			o = o + h + " часов "
+;     
+			diff = diff - 3600 * h;
+            
+		}
+            
+		if (diff > 60) 
+		{
+                
+			var m = Math.floor(diff / 60);
+                
+			o = o + m + " минут "
+;       
+			diff = diff - 60 * m
+;          
+		}
+            
+		o = o + diff + " секунд назад";
+            
+		document.getElementById("d").innerHTML = o;
+        
+	}
+        
+	setCookie1("d", now.toGMTString())
+;        
+	document.getElementById("n").innerHTML = getCookie("n");
+        
+	document.getElementById("u").innerHTML = "Привет, " + getCookie("uname")
+
+;        
+	console.log(document.cookie)
+;
+}
+
+
+
+</script>
+
+
+<style type="text/css" title="styles">
+
+
+button 
+{
+    
+	margin: 10px 0 10px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+	<h1>Cookie</h1>
+    
+	<span id="u">Зарегистрируйтесь</span>
+	<br>
+    
+	<span>Количество посищений страницы: </span>
+	<span id="n">0</span>
+	<br>
+    
+	<span id="d">Вы раньше не были на этой странице</span>
+	<br><br>
+    
+	<span>Введите имя: </span>
+    
+	<input type="text" name="name" id="uname">
+	<br>
+    
+	<button onclick="register()">Зарегистрироваться</button>
+	<br>
+    
+	<button onclick="setCookie1('n', 0);
+	document.getElementById('n').innerHTML=0 ">Обнулить посещения</button>
+
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+debug/mouse2.o
+debug/mtsquare.o
+debug/dot.o
+debug/main.o
+debug/dialog.o
+debug/mouse.o
+debug/mouse3.o
+debug/myitem.o
+debug/mysquare.o
+debug/sofa.o
+debug/moc_dialog.o

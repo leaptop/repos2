@@ -1,0 +1,10 @@
+01_3a build a list using "cons": (1 (2 3))
+
+(cons '1 '((2 3)))
+
+01_3b build a list using "list": (1 (2 3))
+
+(list '1 '(2 3))
+
+01_4
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SaodLab6QuicSort", "SaodLab6QuicSort\SaodLab6QuicSort.vcxproj", "{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Debug|x64.ActiveCfg = Debug|x64
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Debug|x64.Build.0 = Debug|x64
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Debug|x86.ActiveCfg = Debug|Win32
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Debug|x86.Build.0 = Debug|Win32
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Release|x64.ActiveCfg = Release|x64
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Release|x64.Build.0 = Release|x64
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Release|x86.ActiveCfg = Release|Win32
+		{DFBCF825-E1EB-48BD-9EE2-A6771BEB4B47}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03867420-AD06-45EE-B676-9C6C2E13DAC3}
+	EndGlobalSection
+EndGlobal

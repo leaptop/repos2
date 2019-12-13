@@ -1,0 +1,26 @@
+
+
+<HTML>
+	<HEAD> 
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<TITLE>Вычисление площади</TITLE>
+	</HEAD>
+
+	<SCRIPT language="JavaScript">
+		function Square()
+		{
+			input  = document.getElementById("inputbox");
+			output = document.getElementById("outputbox");
+			output.value = input.value * input.value;	
+			inputbox.style.background='grey';
+		}
+	</SCRIPT>
+		
+	<BODY background="back.jpg">
+		<H3>Вычисление площади</H3>
+		<p>Автоматически</p>
+		<p>Сторона:<INPUT id="inputbox"  TYPE=TEXTBOX VALUE="0" onKeyUp="Square()"></p>
+		<p>Площадь:<INPUT id="outputbox" TYPE=TEXTBOX VALUE="0"></p>
+	</BODY>
+</HTML> 
+
