@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="svgSalamander">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JavaPlot-0.5.0/xtra/svgSalamander.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

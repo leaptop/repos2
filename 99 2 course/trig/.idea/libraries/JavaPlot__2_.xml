@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JavaPlot (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/JavaPlot-0.5.0/JavaPlot-0.5.0/dist/JavaPlot.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

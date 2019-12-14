@@ -304,17 +304,17 @@ namespace L0
             MyEdge[] result = new MyEdge[n - 1];//в результирующем списке рёбер всегда будет n-1
             int ee = 0; // индекс для масива result
             int ii = 0; // индекс для отсортированных рёбер                       
-            subset[] subsets = new subset[n]; // выделяю память для n подмассивов
-            for (ii = 0; ii < n; ++ii)
+            subset[] subsets = new subset[n];
+            for (ii = 0; ii < n; ++ii)// выделяю память для n подмассивов
+            {
                 subsets[ii] = new subset();
-
-
+            }
             for (int v = 0; v < n; ++v)//Создаю n подмассивов 
             {
                 subsets[v].parent = v;
                 subsets[v].rank = 0;
             }
-
+            ii = 0;
             while (ee < n - 1)//пока не набрали n-1 рёбер
             {
                 MyEdge next_edge = new MyEdge();
@@ -350,26 +350,26 @@ namespace L0
         {//класс для реализации сабсета для поиска/объединения
             public int parent, rank;
         };
-        void Union(subset[] subsets, int x, int y)//Функция, объединябщая 
-        {// two sets of x and y (uses union by rank) два значения икс и игрек
+        void Union(subset[] subsets, int x, int y)//Функция, объединяющая 
+        {// два значения икс и игрек. Исполльзует объединение по рангу
             int xroot = find(subsets, x);
             int yroot = find(subsets, y);
 
-            if (subsets[xroot].rank < subsets[yroot].rank)// Attach smaller rank tree under root of 
-                subsets[xroot].parent = yroot;// high rank tree (Union by Rank)
+            if (subsets[xroot].rank < subsets[yroot].rank)// Присоединить дерево меньшего ранга под корень 
+                subsets[xroot].parent = yroot;//дерева более высокого ранга(объединение по рангу)
             else if (subsets[xroot].rank > subsets[yroot].rank)
                 subsets[yroot].parent = xroot;
 
-            else// If ranks are same, then make one as root 
-            {// and increment its rank by one 
-                subsets[yroot].parent = xroot;
+            else// Если ранги одинаковые, то сделать один из них корнем
+            {//и увеличить его ранг на 1
+                subsets[yroot].parent = xroot;//т.о.
                 subsets[xroot].rank++;
             }
         }
-        int find(subset[] subsets, int i)// A utility function to find set of an element i 
-        {// (uses path compression technique)                     
-            if (subsets[i].parent != i)  // find root and make root as 
-                subsets[i].parent = find(subsets, subsets[i].parent);// parent of i (path compression) 
+        int find(subset[] subsets, int i)//вспомогательная функция для поиска элемента i
+        {//    (используется техника сокращения пути)                
+            if (subsets[i].parent != i)  // find root and make root as нашёл корень и сделал 
+                subsets[i].parent = find(subsets, subsets[i].parent);//корень родителем i(сжатие пути) 
             return subsets[i].parent;
         }
     }
@@ -379,141 +379,6 @@ namespace L0
 
 
 
-
-//class Graph
-//{
-
-//    // A class to represent a graph edge 
-//    class MyEdge : IComparable<MyEdge>
-//    {
-//        public int src, dest, weight;
-
-//        // Comparator function used for sorting edges 
-//        // based on their weight 
-//        public int CompareTo(MyEdge compareEdge)
-//        {
-//            return this.weight - compareEdge.weight;
-//        }
-//    }
-
-//    // A class to represent a subset for union-find 
-//    public class subset
-//    {
-//        public int parent, rank;
-//    };
-
-//    int n, E; // n-> no. of vertices & E->no.of edges 
-//    MyEdge[] edge; // collection of all edges 
-
-//    // Creates a graph with n vertices and E edges 
-//    Graph(int v, int e)
-//    {
-//        n = v;
-//        E = e;
-//        edge = new MyEdge[E];
-//        for (int i = 0; i < e; ++i)
-//            edge[i] = new MyEdge();
-//    }
-
-//    // A utility function to find set of an element i 
-//    // (uses path compression technique) 
-//    int find(subset[] subsets, int i)
-//    {
-//        // find root and make root as 
-//        // parent of i (path compression) 
-//        if (subsets[i].parent != i)
-//            subsets[i].parent = find(subsets,
-//                                    subsets[i].parent);
-
-//        return subsets[i].parent;
-//    }
-
-//    // A function that does union of 
-//    // two sets of x and y (uses union by rank) 
-//    void Union(subset[] subsets, int x, int y)
-//    {
-//        int xroot = find(subsets, x);
-//        int yroot = find(subsets, y);
-
-//        // Attach smaller rank tree under root of 
-//        // high rank tree (Union by Rank) 
-//        if (subsets[xroot].rank < subsets[yroot].rank)
-//            subsets[xroot].parent = yroot;
-//        else if (subsets[xroot].rank > subsets[yroot].rank)
-//            subsets[yroot].parent = xroot;
-
-//        // If ranks are same, then make one as root 
-//        // and increment its rank by one 
-//        else
-//        {
-//            subsets[yroot].parent = xroot;
-//            subsets[xroot].rank++;
-//        }
-//    }
-
-// The main function to construct MST 
-// using Kruskal's algorithm 
-//void KruskalMST()
-//{
-//    MyEdge[] result = new MyEdge[n]; // This will store the resultant MST 
-//    int e = 0; // An index variable, used for result[] 
-//    int i = 0; // An index variable, used for sorted edges 
-//    for (i = 0; i < n; ++i)
-//        result[i] = new MyEdge();
-
-//    // Step 1: Sort all the edges in non-decreasing 
-//    // order of their weight. If we are not allowed 
-//    // to change the given graph, we can create 
-//    // a copy of array of edges 
-//    Array.Sort(edge);
-
-//    // Allocate memory for creating n ssubsets 
-//    subset[] subsets = new subset[n];
-//    for (i = 0; i < n; ++i)
-//        subsets[i] = new subset();
-
-//    // Create n subsets with single elements 
-//    for (int v = 0; v < n; ++v)
-//    {
-//        subsets[v].parent = v;
-//        subsets[v].rank = 0;
-//    }
-
-//    i = 0; // Index used to pick next edge 
-
-//    // Number of edges to be taken is equal to n-1 
-//    while (e < n - 1)
-//    {
-//        // Step 2: Pick the smallest edge. And increment 
-//        // the index for next iteration 
-//        MyEdge next_edge = new MyEdge();
-//        next_edge = edge[i++];
-
-//        int x = find(subsets, next_edge.src);
-//        int y = find(subsets, next_edge.dest);
-
-//        // If including this edge does't cause cycle, 
-//        // include it in result and increment the index 
-//        // of result for next edge 
-//        if (x != y)
-//        {
-//            result[e++] = next_edge;
-//            Union(subsets, x, y);
-//        }
-//        // Else discard the next_edge 
-//    }
-
-//    // print the contents of result[] to display 
-//    // the built MST 
-//    Console.WriteLine("Following are the edges in " +
-//                            "the constructed MST");
-//    for (i = 0; i < e; ++i)
-//        Console.WriteLine(result[i].src + " -- " +
-//        result[i].dest + " == " + result[i].weight);
-//    Console.ReadLine();
-//}
-//}
-//}
 
 
 
