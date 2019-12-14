@@ -14,6 +14,7 @@ namespace L0
         {
             InitializeComponent();
         }
+        double cntKrusc = 0;
         public int n;
         public int m;
         double[,] mas;
@@ -41,28 +42,30 @@ namespace L0
                 dataGridView1.RowCount = n;
                 dataGridView1.ColumnCount = n;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
                 double[,] masBumaga = new double[n, n];
-                for (int ii = 0; ii < n; ++ii)
+                if (n >= 5)
                 {
-                    for (int jj = 0; jj < n; ++jj)
+                    for (int ii = 0; ii < n; ++ii)
                     {
-                        masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
+                        for (int jj = 0; jj < n; ++jj)
+                        {
+                            masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
+                        }
                     }
+
+                    masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
+                    masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
+                    masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
+                    masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
                 }
-                masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
-                masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 3; masBumaga[3, 4] = 3;
-                masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
-                masBumaga[1, 4] = 4; masBumaga[4, 1] = 4;
-                //Console.WriteLine("masBumaga[1, 4] = " + masBumaga[1, 4]);
-                //Console.WriteLine("masBumaga[1, 3] = " + masBumaga[1, 3]);
+
                 for (int i0 = 0; i0 < n; ++i0)
                 {
                     dataGridView1.Rows[i0].HeaderCell.Value = elems[i0].ToString();//называю хедеры рядов(строк) именами elems
                     for (int j0 = 0; j0 < n; ++j0)
                     {
                         mas[i0, j0] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
-                        mas[i0, j0] = masBumaga[i0, j0];
+                        if (n >= 5) mas[i0, j0] = masBumaga[i0, j0];//ЗАКОММЕНТИРОВАТЬ ЭТО, ЧТОБЫ ВКЛЮЧАТЬ ПУСТОЙ МАССИВ
                         dataGridView1.Columns[j0].HeaderCell.Value = elems[j0].ToString();//называю хедеры колонок(столбцов) именами elems
                                                                                           // mas[i, j] = rand.Next(20);
                         dataGridView1.Rows[i0].Cells[j0].Value = mas[i0, j0];
@@ -267,7 +270,7 @@ namespace L0
             public double weight;//длина ребра
         }
         protected List<MyEdge> arr;//Здесь соберу все рёбра
-        public void Button7_Click_1(object sender, EventArgs e)//Краскал
+        public void Button7_Click_1(object sender, EventArgs e)//                КРАСКАЛ
         {
             //double[] edges = new double[(n * (n - 1) / 2)];// формула максимального числа рёбер(полного графа)           
             arr = new List<MyEdge>();
@@ -300,7 +303,9 @@ namespace L0
             {//добавил ссылки в новый массив. srtd вроде как получился индексным             
                 srtd.Add(query.ElementAt(i));
             }
-            //________________----------------______________________--------------
+            int edgesNumber = srtd.Count;
+            double k = Convert.ToDouble(edgesNumber);
+            cntKrusc += k * Math.Log(k, 2);
             MyEdge[] result = new MyEdge[n - 1];//в результирующем списке рёбер всегда будет n-1
             int ee = 0; // индекс для масива result
             int ii = 0; // индекс для отсортированных рёбер                       
@@ -317,16 +322,26 @@ namespace L0
             ii = 0;
             while (ee < n - 1)//пока не набрали n-1 рёбер
             {
+                cntKrusc++;//подсчет одной попытки добавления ребра, результативной или нет, не важно
                 MyEdge next_edge = new MyEdge();
                 next_edge = srtd[ii++];//беру очередное ребро из списка отсортированных
-
+                //сабсет изначально содержит все вершины в виде объектов subset
+                //эти вершины представлены просто индексами каждого объекта сабсет.
+                //А вот принадлежность к дереву изначально сама на себя(индекс сабсета и номер родителя одинаковы).
+                //Т.е. вершина сама как бы является деревом, ссылаясь на себя. При добавлении новой вершины
+                //она направляется на сабсет с индексом-номером этой, добавляемой вершины и ищет там своего предка,
+                //гляда на родителя этого сабсета. Находит его и назначает себе. А при присоединении к вершине
+                // с меньшим рангом всё равно ворзвращаешься на того же родителя.
+                //Остановка происходит, когда добавлено n-1 рёбер. До этого может несколько рёбер пропустить, если
+                //у обеих их вершин будет одинаковый предок.
                 int x = find(subsets, next_edge.from);//ищем вершинки. Если они обе уже есть в сабсетах,
                 int y = find(subsets, next_edge.to);//то включение данного ребра бессмысленно
 
-                if (x != y)//Если включение данного ребра не создаёт цикл, то
+                if (x != y)//Если включение данного ребра не создаёт цикл(если общие предки вершин разные), то
                 {//добавить его в result и увеличить индекс для выбора следующего ребра
-                    result[ee++] = next_edge;
-                    Union(subsets, x, y);//добавить вершины в сабсеты
+                    result[ee++] = next_edge;//добавить ребро в список
+                    Union(subsets, x, y);//добавить вершины в сабсеты(по сути назначить им общего родителя)
+                    cntKrusc++;//подсчет одной результативной попытки
                 }//иначе игнорировать ребро                
             }
             for (int i = 0; i < n; i++)
@@ -345,13 +360,15 @@ namespace L0
                 mas[i, j] = w;
                 dataGridView1.Rows[i].Cells[j].Value = w;
             }
+            textBox1.Text = Convert.ToString(Convert.ToInt32(cntKrusc));
+            cntKrusc = 0;
         }
-        public class subset 
+        public class subset
         {//класс для реализации сабсета для поиска/объединения
             public int parent, rank;
         };
         void Union(subset[] subsets, int x, int y)//Функция, объединяющая 
-        {// два значения икс и игрек. Исполльзует объединение по рангу
+        {// два значения икс и игрек. Использует объединение по рангу
             int xroot = find(subsets, x);
             int yroot = find(subsets, y);
 
@@ -363,14 +380,18 @@ namespace L0
             else// Если ранги одинаковые, то сделать один из них корнем
             {//и увеличить его ранг на 1
                 subsets[yroot].parent = xroot;//т.о.
-                subsets[xroot].rank++;
-            }
-        }
+                subsets[xroot].rank++;//ранг увеличивается только если оба ранга были равны изначально 
+            }//т.о. в итоге у вершины с меньшим рангом назначенена родителем вторая вершина и её ранг выше 
+        }//т.е. потом новые вершины будут ставить своим родителем того, у которого больший ранг и таким образом
+        //задастся жесткая структура. У всех поддеревьев, ещё не добавленных в основное будут свои корневые вершины
+        //в единственном экземпляре для каждого поддерева. Потом по этим вершинам будет проверяться 
         int find(subset[] subsets, int i)//вспомогательная функция для поиска элемента i
-        {//    (используется техника сокращения пути)                
-            if (subsets[i].parent != i)  // find root and make root as нашёл корень и сделал 
+        {//    (используется техника сокращения пути)  
+            cntKrusc++;//переприсвоения оптимизированы, поэтому трудоёмкость n^2*(log2(n)) оказывается завышенной?
+            if (subsets[i].parent != i)  //нашёл корень и сделал 
                 subsets[i].parent = find(subsets, subsets[i].parent);//корень родителем i(сжатие пути) 
             return subsets[i].parent;
+            
         }
     }
 }
