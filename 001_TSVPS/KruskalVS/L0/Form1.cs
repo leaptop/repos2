@@ -37,7 +37,7 @@ namespace L0
             Random rand = new Random();
             if (n != 0)
             {
-                mas = new double[n, n];
+                mas = new double[n, n];//граф представлен матрицей смежности
                 dataGridView1.RowCount = n;
                 dataGridView1.ColumnCount = n;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -101,8 +101,6 @@ namespace L0
                 }
             }
             symmetryCheck();
-            antySymmetryCheck();
-            transitivityCheck();
         }
 
         public void symmetryCheck()
@@ -123,44 +121,10 @@ namespace L0
         }
         public void antySymmetryCheck()
         {
-            int i = 0, j = 0;
-            for (i = 0; i < n; i++)
-                for (j = 0; j < n; j++)
-                {
-                    if (i == j) continue;
-                    if ((mas[i, j] == mas[j, i]) && mas[i, j] != 0)
-                    {
-                        textBox4.Text = "Отношение не антисимметрично, т.к. (" + elems[i] + ", " + elems[j] +
-                            ") равно (" + elems[j] + ", " + elems[i] + ")";
-                        return;
-                    }
-                    else continue;
-                }
-            textBox4.Text = "Отношение антисимметрично, т.к. все единич. эл-ты преобразованиемием симметрии отн. главн. диаг. переходят в нули";
         }
         public void transitivityCheck()
         {
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (mas[i, j] == 1)//нахожу существующую связь между i & j
-                    {
-                        for (int k = 0; k < n; k++)
-                        {
-                            if (mas[j, k] == 1 && !(mas[i, k] == 1))//начинаю перебирать варианты k куда может привести j
-                            {//и есть ли путь из i в k. Если нет, то транзитивность отсутствует
-                                textBox5.Text = "Отношение не транзитивно, т.к. (" + elems[i] + ", " + elems[j] +
-                            ") равно 1, (" + elems[j] + ", " + elems[k] + ") равно 1, а ("
-                            + elems[i] + ", " + elems[k] + ")  не равно 1";
-                                return;
-                            }
-                        }
-                    }
-                }
-            }
-            textBox5.Text = "Отношение транзитивно, т.к. (a, b) & (b, c) => (a, c) выполняется для любых трёх элементов";
-            return;
+
         }
         private void sizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -263,13 +227,18 @@ namespace L0
             MessageBox.Show("Реализую алгоритм Дейкстры");
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {// Была пролблема: Не получется интерактивно менять значения datagridview и массива mas почему-то. 
+        {
+
+            Int32 i = e.RowIndex;
+            Int32 j = e.ColumnIndex;
+            if (i < 0 || j < 0) return;
+            mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
+
+            // Была пролблема: Не получется интерактивно менять значения datagridview и массива mas почему-то. 
             if (checkBox1.Checked)
-            {
-                Int32 i = e.RowIndex;
-                Int32 j = e.ColumnIndex;// получилось, просто забывал конвертнуть всё время
-                mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
+            {  // получилось, просто забывал конвертнуть всё время                
                 dataGridView1.Rows[j].Cells[i].Value = mas[i, j];
+                mas[j, i] = mas[i, j];
             }
         }
 
@@ -331,30 +300,35 @@ namespace L0
             {//добавил ссылки в новый массив. srtd вроде как получился индексным             
                 srtd.Add(query.ElementAt(i));
             }
-            List<MyEdge> resultEdges = new List<MyEdge>();//здесь начинается уже Краскал... надеюсь
-            List<string> vertices = new List<string>();
-            for (int i = 0; i < srtd.Count; i++)
-            {
-                bool v1 = false, v2 = false;
-                foreach (string str in vertices)//проходим по всем накопленным на данный момент вершинам
-                {
-                    if (str.Equals(srtd[i].vertice1)) v1 = true;//если очередная вершина равна одной из тех, 
-                    //что в добавляемом ребре ставим флаг v1 = true
-                    else if (str.Equals(srtd[i].vertice2)) v2 = true;// если и вторая вершина нового ребра уже 
-                    //присутствует в списке, то ставим флаг v2 = true
-                }//если хоть одна вершина оказалась новой для нас, то добавляем это ребро
-                if (!v1 || !v2)
-                {
-                    resultEdges.Add(srtd[i]);
-                    if (!v1) vertices.Add(srtd[i].vertice1);//также пополняем список вершин
-                    if (!v2) vertices.Add(srtd[i].vertice2);
-                }//теперь для каждой вершины прохожу путь from to и записываю посещенные вершины...нет...
-                //если в итоге .... это должно быть рекурсивным вызовом... который можно произвести из любой вершины
-                //если не все вершины окажутся включёнными, нужно продолжать добавлять рёбра и запускать рекурсию
-                //каждый раз
+            //________________----------------______________________--------------
+            MyEdge[] result = new MyEdge[n - 1];//в результирующем списке рёбер всегда будет n-1
+            int ee = 0; // индекс для масива result
+            int ii = 0; // индекс для отсортированных рёбер                       
+            subset[] subsets = new subset[n]; // выделяю память для n подмассивов
+            for (ii = 0; ii < n; ++ii)
+                subsets[ii] = new subset();
 
+
+            for (int v = 0; v < n; ++v)//Создаю n подмассивов 
+            {
+                subsets[v].parent = v;
+                subsets[v].rank = 0;
             }
 
+            while (ee < n - 1)//пока не набрали n-1 рёбер
+            {
+                MyEdge next_edge = new MyEdge();
+                next_edge = srtd[ii++];//беру очередное ребро из списка отсортированных
+
+                int x = find(subsets, next_edge.from);//ищем вершинки. Если они обе уже есть в сабсетах,
+                int y = find(subsets, next_edge.to);//то включение данного ребра бессмысленно
+
+                if (x != y)//Если включение данного ребра не создаёт цикл, то
+                {//добавить его в result и увеличить индекс для выбора следующего ребра
+                    result[ee++] = next_edge;
+                    Union(subsets, x, y);//добавить вершины в сабсеты
+                }//иначе игнорировать ребро                
+            }
             for (int i = 0; i < n; i++)
             {//Все вершины в бесконечность перед обновлением матрицы
                 for (int j = 0; j < n; j++)
@@ -363,16 +337,206 @@ namespace L0
                     dataGridView1.Rows[i].Cells[j].Value = mas[i, j];
                 }
             }
-            for (int a = 0; a < resultEdges.Count; a++)
+            for (int a = 0; a < result.Length; a++)
             {//засовываю в mas & datagridview пересчитанные Краскалом значения
-                int i = resultEdges[a].from;
-                int j = resultEdges[a].to;
-                double w = resultEdges[a].weight;
+                int i = result[a].from;
+                int j = result[a].to;
+                double w = result[a].weight;
                 mas[i, j] = w;
                 dataGridView1.Rows[i].Cells[j].Value = w;
             }
         }
+        public class subset 
+        {//класс для реализации сабсета для поиска/объединения
+            public int parent, rank;
+        };
+        void Union(subset[] subsets, int x, int y)//Функция, объединябщая 
+        {// two sets of x and y (uses union by rank) два значения икс и игрек
+            int xroot = find(subsets, x);
+            int yroot = find(subsets, y);
 
+            if (subsets[xroot].rank < subsets[yroot].rank)// Attach smaller rank tree under root of 
+                subsets[xroot].parent = yroot;// high rank tree (Union by Rank)
+            else if (subsets[xroot].rank > subsets[yroot].rank)
+                subsets[yroot].parent = xroot;
 
+            else// If ranks are same, then make one as root 
+            {// and increment its rank by one 
+                subsets[yroot].parent = xroot;
+                subsets[xroot].rank++;
+            }
+        }
+        int find(subset[] subsets, int i)// A utility function to find set of an element i 
+        {// (uses path compression technique)                     
+            if (subsets[i].parent != i)  // find root and make root as 
+                subsets[i].parent = find(subsets, subsets[i].parent);// parent of i (path compression) 
+            return subsets[i].parent;
+        }
     }
 }
+
+
+
+
+
+
+//class Graph
+//{
+
+//    // A class to represent a graph edge 
+//    class MyEdge : IComparable<MyEdge>
+//    {
+//        public int src, dest, weight;
+
+//        // Comparator function used for sorting edges 
+//        // based on their weight 
+//        public int CompareTo(MyEdge compareEdge)
+//        {
+//            return this.weight - compareEdge.weight;
+//        }
+//    }
+
+//    // A class to represent a subset for union-find 
+//    public class subset
+//    {
+//        public int parent, rank;
+//    };
+
+//    int n, E; // n-> no. of vertices & E->no.of edges 
+//    MyEdge[] edge; // collection of all edges 
+
+//    // Creates a graph with n vertices and E edges 
+//    Graph(int v, int e)
+//    {
+//        n = v;
+//        E = e;
+//        edge = new MyEdge[E];
+//        for (int i = 0; i < e; ++i)
+//            edge[i] = new MyEdge();
+//    }
+
+//    // A utility function to find set of an element i 
+//    // (uses path compression technique) 
+//    int find(subset[] subsets, int i)
+//    {
+//        // find root and make root as 
+//        // parent of i (path compression) 
+//        if (subsets[i].parent != i)
+//            subsets[i].parent = find(subsets,
+//                                    subsets[i].parent);
+
+//        return subsets[i].parent;
+//    }
+
+//    // A function that does union of 
+//    // two sets of x and y (uses union by rank) 
+//    void Union(subset[] subsets, int x, int y)
+//    {
+//        int xroot = find(subsets, x);
+//        int yroot = find(subsets, y);
+
+//        // Attach smaller rank tree under root of 
+//        // high rank tree (Union by Rank) 
+//        if (subsets[xroot].rank < subsets[yroot].rank)
+//            subsets[xroot].parent = yroot;
+//        else if (subsets[xroot].rank > subsets[yroot].rank)
+//            subsets[yroot].parent = xroot;
+
+//        // If ranks are same, then make one as root 
+//        // and increment its rank by one 
+//        else
+//        {
+//            subsets[yroot].parent = xroot;
+//            subsets[xroot].rank++;
+//        }
+//    }
+
+// The main function to construct MST 
+// using Kruskal's algorithm 
+//void KruskalMST()
+//{
+//    MyEdge[] result = new MyEdge[n]; // This will store the resultant MST 
+//    int e = 0; // An index variable, used for result[] 
+//    int i = 0; // An index variable, used for sorted edges 
+//    for (i = 0; i < n; ++i)
+//        result[i] = new MyEdge();
+
+//    // Step 1: Sort all the edges in non-decreasing 
+//    // order of their weight. If we are not allowed 
+//    // to change the given graph, we can create 
+//    // a copy of array of edges 
+//    Array.Sort(edge);
+
+//    // Allocate memory for creating n ssubsets 
+//    subset[] subsets = new subset[n];
+//    for (i = 0; i < n; ++i)
+//        subsets[i] = new subset();
+
+//    // Create n subsets with single elements 
+//    for (int v = 0; v < n; ++v)
+//    {
+//        subsets[v].parent = v;
+//        subsets[v].rank = 0;
+//    }
+
+//    i = 0; // Index used to pick next edge 
+
+//    // Number of edges to be taken is equal to n-1 
+//    while (e < n - 1)
+//    {
+//        // Step 2: Pick the smallest edge. And increment 
+//        // the index for next iteration 
+//        MyEdge next_edge = new MyEdge();
+//        next_edge = edge[i++];
+
+//        int x = find(subsets, next_edge.src);
+//        int y = find(subsets, next_edge.dest);
+
+//        // If including this edge does't cause cycle, 
+//        // include it in result and increment the index 
+//        // of result for next edge 
+//        if (x != y)
+//        {
+//            result[e++] = next_edge;
+//            Union(subsets, x, y);
+//        }
+//        // Else discard the next_edge 
+//    }
+
+//    // print the contents of result[] to display 
+//    // the built MST 
+//    Console.WriteLine("Following are the edges in " +
+//                            "the constructed MST");
+//    for (i = 0; i < e; ++i)
+//        Console.WriteLine(result[i].src + " -- " +
+//        result[i].dest + " == " + result[i].weight);
+//    Console.ReadLine();
+//}
+//}
+//}
+
+
+
+//for (int i = 0; i < srtd.Count; i++)
+//{
+//    bool v1 = false, v2 = false;
+//    foreach (string str in vertices)//проходим по всем накопленным на данный момент вершинам
+//    {
+//        if (str.Equals(srtd[i].vertice1)) v1 = true;//если очередная вершина равна одной из тех, 
+//        //что в добавляемом ребре ставим флаг v1 = true
+//        else if (str.Equals(srtd[i].vertice2)) v2 = true;// если и вторая вершина нового ребра уже 
+//        //присутствует в списке, то ставим флаг v2 = true
+//    }//если хоть одна вершина оказалась новой для нас, то добавляем это ребро
+//    if (!v1 || !v2)
+//    {
+//        resultEdges.Add(srtd[i]);
+//        if (!v1) vertices.Add(srtd[i].vertice1);//также пополняем список вершин
+//        if (!v2) vertices.Add(srtd[i].vertice2);
+//    }//теперь для каждой вершины прохожу путь from to и записываю посещенные вершины...нет...
+//     //если в итоге .... это должно быть рекурсивным вызовом... который можно произвести из любой вершины
+//     //если не все вершины окажутся включёнными, нужно продолжать добавлять рёбра и запускать рекурсию
+//     //каждый раз... круто конечно и полезно самому сделать, но изобретение велосипеда в моей ситуации - 
+//    //слишком дорогое удовольствие. 
+//     //resultEdges[0].from               
+
+//}
