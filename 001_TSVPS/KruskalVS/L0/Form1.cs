@@ -14,16 +14,15 @@ namespace L0
         {
             InitializeComponent();
         }
-        double cntKrusc = 0;
-        public int n;
+        double cntKrusc = 0;//для подсчета сложности Краскала
+        public int n;//число вершин графа
         public int m;
-        double[,] mas;
-        public string[] elems;
+        double[,] mas;//матрица смежности графа
+        public string[] elems;//список имён вершин
+      public  double[] dist;// расстояния для Беллмана-Форда
 
         private void button1_Click(object sender, EventArgs e)//the Start button
         {
-            // This will equal Infinity.
-            // Console.WriteLine("PositiveInfinity plus 10.0 = "+ (Double.PositiveInfinity + 10.0).ToString());
             n = Convert.ToInt32(numericUpDown1.Value);
             if (n > 1000 || n < 0)
             {
@@ -43,7 +42,7 @@ namespace L0
                 dataGridView1.ColumnCount = n;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                 double[,] masBumaga = new double[n, n];
-                if (n >= 5)
+                if (n>=5)//для краскала
                 {
                     for (int ii = 0; ii < n; ++ii)
                     {
@@ -52,12 +51,12 @@ namespace L0
                             masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
                         }
                     }
-
                     masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
                     masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
                     masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
                     masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
                 }
+
 
                 for (int i0 = 0; i0 < n; ++i0)
                 {
@@ -65,7 +64,7 @@ namespace L0
                     for (int j0 = 0; j0 < n; ++j0)
                     {
                         mas[i0, j0] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
-                        if (n >= 5) mas[i0, j0] = masBumaga[i0, j0];//ЗАКОММЕНТИРОВАТЬ ЭТО, ЧТОБЫ ВКЛЮЧАТЬ ПУСТОЙ МАССИВ
+                        if (n>=5) mas[i0, j0] = masBumaga[i0, j0];//это для Краскала
                         dataGridView1.Columns[j0].HeaderCell.Value = elems[j0].ToString();//называю хедеры колонок(столбцов) именами elems
                                                                                           // mas[i, j] = rand.Next(20);
                         dataGridView1.Rows[i0].Cells[j0].Value = mas[i0, j0];
@@ -296,7 +295,7 @@ namespace L0
                         arr.Add(me);
                     }
                 }
-            }
+            }if (arr.Count == 0) return;
             IEnumerable<MyEdge> query = arr.OrderBy(MyEdge => MyEdge.weight);//просто делает запрос, исходный массив не сортируется
             List<MyEdge> srtd = new List<MyEdge>();//список отсортированных рёбер
             for (int i = 0; i < arr.Count; i++)
@@ -391,10 +390,100 @@ namespace L0
             if (subsets[i].parent != i)  //нашёл корень и сделал 
                 subsets[i].parent = find(subsets, subsets[i].parent);//корень родителем i(сжатие пути) 
             return subsets[i].parent;
-            
+
+        }
+
+        private void Button5_Click_1(object sender, EventArgs e)//    BellmanFord
+        {
+            int iskm = 0;//ИСКОМАЯ ВЕРШИНА
+            List<MyEdge> arr = new List<MyEdge>();
+            int V;
+            //double[] edges = new double[(n * (n - 1) / 2)];// формула максимального числа рёбер(полного графа)           
+            arr = new List<MyEdge>();
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (!Double.IsInfinity(mas[i, j]))//если не бесконечность, значит есть вершина
+                    {
+                        MyEdge me = new MyEdge();
+                        me.from = i;//записал в ребро  всю инфу
+                        me.to = j;
+                        me.vertice1 = dataGridView1.Rows[i].HeaderCell.Value.ToString();
+                        me.vertice2 = dataGridView1.Columns[j].HeaderCell.Value.ToString();
+                        me.weight = mas[i, j];
+                        arr.Add(me);
+                    }
+                }
+            }
+            double[,] masBumaga = new double[n, n];
+            if (n >= 5)
+            {
+                for (int ii = 0; ii < n; ++ii)
+                {
+                    for (int jj = 0; jj < n; ++jj)
+                    {
+                        masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
+                    }
+                }
+
+                masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
+                masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
+                masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
+                masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
+            }
+            int edgesNumber = arr.Count;
+            V = n;
+            // The main function that finds shortest distances from src 
+            // to all other vertices using Bellman-Ford algorithm. The 
+            // function also detects negative weight cycle 
+            //void BellmanFord(Graph graph, int src)            
+            //int V n, E = e;
+            dist = new double[V];
+
+            // Step 1: Initialize distances from src to all other 
+            // vertices as INFINITE 
+            for (int i = 0; i < V; ++i)
+                dist[i] = double.PositiveInfinity;
+            dist[iskm] = 0;
+
+            // Step 2: Relax all edges |V| - 1 times. A simple 
+            // shortest path from src to any other vertex can 
+            // have at-most |V| - 1 edges 
+            for (int i = 1; i < V; ++i)
+            {
+                for (int j = 0; j < edgesNumber; ++j)
+                {
+                    int u = arr[j].from;
+                    int v = arr[j].to;
+                    double weight = arr[j].weight;
+                    if (dist[u] != double.PositiveInfinity && dist[u] + weight < dist[v])
+                        dist[v] = dist[u] + weight;
+                }
+            }
+            // Step 3: check for negative-weight cycles. The above 
+            // step guarantees shortest distances if graph doesn't 
+            // contain negative weight cycle. If we get a shorter 
+            // path, then there is a cycle. 
+            for (int j = 0; j < edgesNumber; ++j)
+            {
+                int u = arr[j].from;
+                int v = arr[j].to;
+                double weight = arr[j].weight;
+                if (dist[u] != double.PositiveInfinity && dist[u] + weight < dist[v])//с минимальными расстояниями что-то не то, если они негативные
+                {
+                    Console.WriteLine("Graph contains negative weight cycle");
+                    //return;
+                }
+            }
+            //textBox2.Text=
+            Form3 f1 = new Form3();
+            f1.Owner = this;
+            f1.ShowDialog();
         }
     }
 }
+
 
 
 
