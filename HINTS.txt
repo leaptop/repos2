@@ -787,3 +787,5 @@ And you see that adding angles means rotation
   gitignire надо было подчистить, чтобы перестал игнорить всё подряд...
   
   In github desktop требуется вводить информацию для гитигнора в специальное окошко repository- repository settings - ignored files. Файл .gitignore он игнорирует
+  
+  RowHeadersWidth of dataGridView задает ширину столбца хедеров

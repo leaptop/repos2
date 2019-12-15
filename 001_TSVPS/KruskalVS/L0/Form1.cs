@@ -4,8 +4,6 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 //using System.Collections.ObjectModel.ArrayList;
-
-
 namespace L0
 {
     public partial class Form1 : Form
@@ -13,20 +11,23 @@ namespace L0
         public Form1()
         {
             InitializeComponent();
-        }
-        double cntKrusc = 0;//для подсчета сложности Краскала
-        public int n;//число вершин графа
-        public int m;
-        double[,] mas;//матрица смежности графа
-        public string[] elems;//список имён вершин
-      public  double[] dist;// расстояния для Беллмана-Форда
 
-        private void button1_Click(object sender, EventArgs e)//the Start button
+        }
+        public double cntKrusc = 0, cntBellFord = 0, cntDeik = 0;//для подсчета сложности Краскала и остальных
+        public int n;//число вершин графа
+        //public int m;
+        public double[,] mas;//матрица смежности графа
+        public string[] elems;//список имён вершин для подписи в матрице
+        public double[] dist;// расстояния для Беллмана-Форда
+        public int iskm = 0;//вершина для подсчета расстояний от неё до остальных(Дейкстра, Форд-Беллман)
+        public double[,] masBumaga;//массив для хранения матрицы в коде
+        public double[,] masBumaga2;//массив для запоминания вводимых матриц
+        private void button1_Click(object sender, EventArgs e)//  Start 
         {
             n = Convert.ToInt32(numericUpDown1.Value);
-            if (n > 1000 || n < 0)
+            if (n > 10000 || n < 0)
             {
-                MessageBox.Show("Значение N в множестве по умолчанию не м.б. более 1000");
+                MessageBox.Show("Значение N в множестве по умолчанию не м.б. более 10000");
                 numericUpDown1.Value = n = 0;
                 return;
             }
@@ -41,8 +42,8 @@ namespace L0
                 dataGridView1.RowCount = n;
                 dataGridView1.ColumnCount = n;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-                double[,] masBumaga = new double[n, n];
-                if (n>=5)//для краскала
+                masBumaga = new double[n, n];
+                if ((checkBox2.Checked))//
                 {
                     for (int ii = 0; ii < n; ++ii)
                     {
@@ -64,7 +65,8 @@ namespace L0
                     for (int j0 = 0; j0 < n; ++j0)
                     {
                         mas[i0, j0] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
-                        if (n>=5) mas[i0, j0] = masBumaga[i0, j0];//это для Краскала
+                        if ((checkBox2.Checked) && !(checkBox3.Checked)) mas[i0, j0] = masBumaga[i0, j0];//считываем массив отсюда если поставлена галочка
+                        else if (!(checkBox2.Checked) && (checkBox3.Checked)) mas[i0, j0] = masBumaga2[i0, j0];
                         dataGridView1.Columns[j0].HeaderCell.Value = elems[j0].ToString();//называю хедеры колонок(столбцов) именами elems
                                                                                           // mas[i, j] = rand.Next(20);
                         dataGridView1.Rows[i0].Cells[j0].Value = mas[i0, j0];
@@ -113,13 +115,13 @@ namespace L0
                 {
                     if (mas[i, j] != mas[j, i])
                     {
-                        textBox3.Text = "Отношение не симметрично, т.к. (" + elems[i] + ", " + elems[j] +
+                        textBox3.Text = "Матрица не симметрична, т.к. (" + elems[i] + ", " + elems[j] +
                             ") не равно (" + elems[j] + ", " + elems[i] + ")";
                         return;
                     }
                     else continue;
                 }
-            textBox3.Text = "Отношение симметрично, т.к. все симметричные относительно главной диагонали элементы матрицы равны";
+            textBox3.Text = "Матрица симметрична, т.к. все симметричные относительно главной диагонали элементы матрицы равны";
         }
         public void antySymmetryCheck()
         {
@@ -156,60 +158,10 @@ namespace L0
                 }
             }
         }
-        private void button5_Click(object sender, EventArgs e)//TransExamp
-        {
-            button2_Click(sender, e);
-            mas[0, 1] = 1;
-            dataGridView1.Rows[0].Cells[1].Value = mas[0, 1];
-            mas[1, 2] = 1;
-            dataGridView1.Rows[1].Cells[2].Value = mas[1, 2];
-            mas[0, 2] = 1;
-            dataGridView1.Rows[0].Cells[2].Value = mas[0, 2];
-        }
-        private void button6_Click(object sender, EventArgs e)//задать новое множество
-        {
-            string s = textBox7.Text;
-            elems = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            elems = elems.Distinct().ToArray();
-            n = elems.Length;
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                {
-                    if (String.Compare(elems[j], elems[i]) > 0)
-                    {
-                        string tmp = elems[j];
-                        elems[j] = elems[i];
-                        elems[i] = tmp;
-                    }
-                }
-            Random rand = new Random();
-            if (n != 0)
-            {
-                dataGridView1.RowCount = n;
-                dataGridView1.ColumnCount = n;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+        private void button5_Click(object sender, EventArgs e) { }//TransExamp
 
-                mas = new double[n, n];
-                int i, j;
-                for (i = 0; i < n; ++i)
-                {
-                    dataGridView1.Rows[i].HeaderCell.Value = elems[i].ToString();//называю хедеры рядов(строк) именами elems
-                    for (j = 0; j < n; ++j)
-                    {
-                        dataGridView1.Columns[j].HeaderCell.Value = elems[j].ToString();//называю хедеры колонок(столбцов) именами elems
-                        mas[i, j] = rand.Next(2);
-                        dataGridView1.Rows[i].Cells[j].Value = mas[i, j];
+        private void button6_Click(object sender, EventArgs e) { }//задать новое множество
 
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("N не может быть нулевым");
-            }
-            //запрещает сортировать содержимое столбцов кликом по хедеру, а также минимизирует длину ячеек:
-            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
-        }
         private void Button7_Click(object sender, EventArgs e)//кнопка "сделать неориентированным"
         {
             for (int i = 0; i < n; i++)
@@ -230,12 +182,10 @@ namespace L0
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
             Int32 i = e.RowIndex;
             Int32 j = e.ColumnIndex;
             if (i < 0 || j < 0) return;
             mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
-
             // Была пролблема: Не получется интерактивно менять значения datagridview и массива mas почему-то. 
             if (checkBox1.Checked)
             {  // получилось, просто забывал конвертнуть всё время                
@@ -243,17 +193,8 @@ namespace L0
                 mas[j, i] = mas[i, j];
             }
         }
-
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CheckBox1_CheckStateChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e) { }
+        private void CheckBox1_CheckStateChanged(object sender, EventArgs e) { }
         protected struct MyEdge//вот эти рёбрышки надо добавлять/удалять в алгоритме Краскала
         {
             public string name;
@@ -269,7 +210,7 @@ namespace L0
             public double weight;//длина ребра
         }
         protected List<MyEdge> arr;//Здесь соберу все рёбра
-        public void Button7_Click_1(object sender, EventArgs e)//                КРАСКАЛ
+        public void Button7_Click_1(object sender, EventArgs e)//КРАСКАЛ
         {
             //double[] edges = new double[(n * (n - 1) / 2)];// формула максимального числа рёбер(полного графа)           
             arr = new List<MyEdge>();
@@ -295,7 +236,8 @@ namespace L0
                         arr.Add(me);
                     }
                 }
-            }if (arr.Count == 0) return;
+            }
+            if (arr.Count == 0) return;
             IEnumerable<MyEdge> query = arr.OrderBy(MyEdge => MyEdge.weight);//просто делает запрос, исходный массив не сортируется
             List<MyEdge> srtd = new List<MyEdge>();//список отсортированных рёбер
             for (int i = 0; i < arr.Count; i++)
@@ -312,11 +254,8 @@ namespace L0
             for (ii = 0; ii < n; ++ii)// выделяю память для n подмассивов
             {
                 subsets[ii] = new subset();
-            }
-            for (int v = 0; v < n; ++v)//Создаю n подмассивов 
-            {
-                subsets[v].parent = v;
-                subsets[v].rank = 0;
+                subsets[ii].parent = ii;
+                subsets[ii].rank = 0;
             }
             ii = 0;
             while (ee < n - 1)//пока не набрали n-1 рёбер
@@ -333,8 +272,8 @@ namespace L0
                 // с меньшим рангом всё равно ворзвращаешься на того же родителя.
                 //Остановка происходит, когда добавлено n-1 рёбер. До этого может несколько рёбер пропустить, если
                 //у обеих их вершин будет одинаковый предок.
-                int x = find(subsets, next_edge.from);//ищем вершинки. Если они обе уже есть в сабсетах,
-                int y = find(subsets, next_edge.to);//то включение данного ребра бессмысленно
+                int x = find(subsets, next_edge.from);//ищем вершинки. Если они обе(их общие предки) уже есть
+                int y = find(subsets, next_edge.to);//в сабсетах,то включение данного ребра бессмысленно
 
                 if (x != y)//Если включение данного ребра не создаёт цикл(если общие предки вершин разные), то
                 {//добавить его в result и увеличить индекс для выбора следующего ребра
@@ -372,114 +311,175 @@ namespace L0
             int yroot = find(subsets, y);
 
             if (subsets[xroot].rank < subsets[yroot].rank)// Присоединить дерево меньшего ранга под корень 
-                subsets[xroot].parent = yroot;//дерева более высокого ранга(объединение по рангу)
+                subsets[xroot].parent = yroot;//дерева более высокого ранга
             else if (subsets[xroot].rank > subsets[yroot].rank)
                 subsets[yroot].parent = xroot;
 
             else// Если ранги одинаковые, то сделать один из них корнем
-            {//и увеличить его ранг на 1
+            {//и увеличить его ранг на 1. В принципе эти ранги можно было бы назначать и по другому принципу                
                 subsets[yroot].parent = xroot;//т.о.
                 subsets[xroot].rank++;//ранг увеличивается только если оба ранга были равны изначально 
             }//т.о. в итоге у вершины с меньшим рангом назначенена родителем вторая вершина и её ранг выше 
         }//т.е. потом новые вершины будут ставить своим родителем того, у которого больший ранг и таким образом
-        //задастся жесткая структура. У всех поддеревьев, ещё не добавленных в основное будут свои корневые вершины
-        //в единственном экземпляре для каждого поддерева. Потом по этим вершинам будет проверяться 
+         //задастся жесткая структура. У всех поддеревьев, ещё не добавленных в основное будут свои корневые вершины
+         //в единственном экземпляре для каждого поддерева. Потом по этим вершинам будет проверяться 
         int find(subset[] subsets, int i)//вспомогательная функция для поиска элемента i
-        {//    (используется техника сокращения пути)  
+        {
             cntKrusc++;//переприсвоения оптимизированы, поэтому трудоёмкость n^2*(log2(n)) оказывается завышенной?
             if (subsets[i].parent != i)  //нашёл корень и сделал 
                 subsets[i].parent = find(subsets, subsets[i].parent);//корень родителем i(сжатие пути) 
             return subsets[i].parent;
-
         }
 
-        private void Button5_Click_1(object sender, EventArgs e)//    BellmanFord
+        private void Button8_Click(object sender, EventArgs e)//     DEIKSTRA
+        {//Дейкстра не работает с рёбрами, у которых отрицательные веса 
+            try
+            {
+                iskm = Convert.ToInt32(textBox6.Text);//ИСКОМАЯ ВЕРШИНА
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Введите вершину для поиска"); return;
+            }
+            dist = new double[n];
+
+            // sptSet[i] will true if vertex 
+            // i is included in shortest path 
+            // tree or shortest distance from 
+            // src to i is finalized 
+            bool[] sptSet = new bool[n];//sptSet будет истина, если вершина i включена в кратчайший путь 
+            for (int i = 0; i < n; i++)
+            {
+                dist[i] = double.PositiveInfinity;
+                sptSet[i] = false;
+            }
+            dist[iskm] = 0;
+
+            // Find shortest path for all vertices 
+            for (int count = 0; count < n - 1; count++)
+            {
+                // Pick the minimum distance vertex 
+                // from the set of vertices not yet 
+                // processed. u is always equal to 
+                // src in first iteration. 
+                int u = minDistance(dist, sptSet);
+                // Mark the picked vertex as processed 
+                sptSet[u] = true;
+                // Update dist value of the adjacent vertices of the picked vertex. 
+                for (int v = 0; v < n; v++)
+                    // Update dist[v] only if is not in 
+                    // sptSet, there is an edge from u 
+                    // to v, and total weight of path 
+                    // from src to v through u is smaller 
+                    // than current value of dist[v] 
+                    if (!sptSet[v] && mas[u, v] != double.PositiveInfinity &&
+                        dist[u] != double.PositiveInfinity && dist[u] + mas[u, v] < dist[v])
+                        dist[v] = dist[u] + mas[u, v];
+            }
+            textBox1.Text = Convert.ToString(cntDeik);
+            Form3 f1 = new Form3();
+            f1.Owner = this;
+            f1.ShowDialog();
+            dist = null;
+        }
+
+        private void Button9_Click(object sender, EventArgs e)//запоминаю матрицу в массив
         {
-            int iskm = 0;//ИСКОМАЯ ВЕРШИНА
-            List<MyEdge> arr = new List<MyEdge>();
-            int V;
-            //double[] edges = new double[(n * (n - 1) / 2)];// формула максимального числа рёбер(полного графа)           
-            arr = new List<MyEdge>();
+            masBumaga2 = new double[n, n];
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    if (!Double.IsInfinity(mas[i, j]))//если не бесконечность, значит есть вершина
+                    masBumaga2[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
+                }
+            }
+        }
+
+        int minDistance(double[] dist, bool[] sptSet)//возвращаю индекс минимального расстояния
+        {
+            // Initialize min value 
+            double min = int.MaxValue;
+            int min_index = -1;
+
+            for (int v = 0; v < n; v++)
+                if (sptSet[v] == false && dist[v] <= min)
+                {
+                    min = dist[v];
+                    min_index = v;
+                }
+            return min_index;
+        }
+
+
+        private void Button5_Click_1(object sender, EventArgs e)// BellmanFord
+        {
+            try
+            {
+                iskm = Convert.ToInt32(textBox6.Text);//ИСКОМАЯ ВЕРШИНА
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Введите вершину для поиска"); return;
+            }
+
+            List<MyEdge> arr = new List<MyEdge>();
+            arr = new List<MyEdge>();
+            for (int i = 0; i < this.n; i++)
+            {
+                for (int j = 0; j < this.n; j++)
+                {
+                    if (!double.IsInfinity(mas[i, j]))//если не бесконечность, значит есть вершина
                     {
                         MyEdge me = new MyEdge();
                         me.from = i;//записал в ребро  всю инфу
                         me.to = j;
-                        me.vertice1 = dataGridView1.Rows[i].HeaderCell.Value.ToString();
-                        me.vertice2 = dataGridView1.Columns[j].HeaderCell.Value.ToString();
                         me.weight = mas[i, j];
                         arr.Add(me);
                     }
                 }
             }
-            double[,] masBumaga = new double[n, n];
-            if (n >= 5)
-            {
-                for (int ii = 0; ii < n; ++ii)
-                {
-                    for (int jj = 0; jj < n; ++jj)
-                    {
-                        masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
-                    }
-                }
 
-                masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
-                masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
-                masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
-                masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
-            }
             int edgesNumber = arr.Count;
-            V = n;
-            // The main function that finds shortest distances from src 
-            // to all other vertices using Bellman-Ford algorithm. The 
-            // function also detects negative weight cycle 
-            //void BellmanFord(Graph graph, int src)            
-            //int V n, E = e;
-            dist = new double[V];
-
-            // Step 1: Initialize distances from src to all other 
-            // vertices as INFINITE 
-            for (int i = 0; i < V; ++i)
+            dist = new double[n];
+            for (int i = 0; i < n; ++i)//сначала расстояния считаем бесконечностями
                 dist[i] = double.PositiveInfinity;
-            dist[iskm] = 0;
+            dist[iskm] = 0;//расстояние до самой себя, очевидно равно нулю
 
-            // Step 2: Relax all edges |V| - 1 times. A simple 
-            // shortest path from src to any other vertex can 
-            // have at-most |V| - 1 edges 
-            for (int i = 1; i < V; ++i)
+            for (int i = 1; i < n; ++i)//для каждой вершины проходимся по всем рёбрам n-1 раз
+                                       //(максимальное число рёбер между двумя вершинами: n-1)
             {
                 for (int j = 0; j < edgesNumber; ++j)
                 {
                     int u = arr[j].from;
                     int v = arr[j].to;
                     double weight = arr[j].weight;
+                    //если уже известное расстояние до вершины u не равно бесконечности и добавление нового ребра 
+                    //с началом в u меньше известного расстояния до вершины v, то делаем расстояние до вершины v
+                    // равным расстоянию до u + длина данного ребра
                     if (dist[u] != double.PositiveInfinity && dist[u] + weight < dist[v])
-                        dist[v] = dist[u] + weight;
+                    { dist[v] = dist[u] + weight; cntBellFord++; }
+                    cntBellFord++;
                 }
             }
-            // Step 3: check for negative-weight cycles. The above 
-            // step guarantees shortest distances if graph doesn't 
-            // contain negative weight cycle. If we get a shorter 
-            // path, then there is a cycle. 
-            for (int j = 0; j < edgesNumber; ++j)
+            for (int j = 0; j < edgesNumber; ++j)//проверка на негативный цикл
             {
                 int u = arr[j].from;
                 int v = arr[j].to;
                 double weight = arr[j].weight;
-                if (dist[u] != double.PositiveInfinity && dist[u] + weight < dist[v])//с минимальными расстояниями что-то не то, если они негативные
+                if (dist[u] != double.PositiveInfinity && dist[u] + weight < dist[v])
+                //с минимальными расстояниями 
+                //что -то не то, если они негативные. Просто они накапливают мимнимальное значение 
+                //за счет негативных путей.
                 {
-                    Console.WriteLine("Graph contains negative weight cycle");
-                    //return;
+                    textBox2.Text = "Есть отрицательный цикл";
                 }
             }
-            //textBox2.Text=
+            textBox1.Text = Convert.ToString(cntBellFord);
             Form3 f1 = new Form3();
             f1.Owner = this;
             f1.ShowDialog();
+            dist = null;
         }
     }
 }
