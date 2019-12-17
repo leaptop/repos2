@@ -23,7 +23,7 @@ namespace L0
         public int iskm = 0;//вершина для подсчета расстояний от неё до остальных(Дейкстра, Форд-Беллман)
         public double[,] masBumaga;//массив для хранения матрицы в коде
         public double[,] masBumaga2;//массив для запоминания вводимых матриц
-        
+
         private void button1_Click(object sender, EventArgs e)//  Start 
         {
             Console.WriteLine("HIIIIII");
@@ -55,10 +55,38 @@ namespace L0
                             masBumaga[ii, jj] = Double.PositiveInfinity;// на старте длины рёбер бесконечны(связей нет)
                         }
                     }
-                    masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
-                    masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
-                    masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
-                    masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
+                    //masBumaga[0, 1] = 5; masBumaga[1, 0] = 5; masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;
+                    //masBumaga[0, 4] = 1; masBumaga[4, 0] = 1; masBumaga[4, 3] = 4; masBumaga[3, 4] = 4;
+                    //masBumaga[3, 2] = 2; masBumaga[2, 3] = 2; masBumaga[1, 2] = 6; masBumaga[2, 1] = 6;
+                    //masBumaga[1, 4] = 3; masBumaga[4, 1] = 3;
+
+                    //masBumaga[0, 1] = 10; masBumaga[0, 3] = 30; masBumaga[0, 4] = 100; masBumaga[1, 2] = 50;
+                    //masBumaga[2, 4] = 10; masBumaga[3, 2] = 20; masBumaga[2, 4] = 10;//из ютуба по Дейкстре
+
+                    masBumaga[0, 1] = 3; masBumaga[1, 0] = 3; //masBumaga[0, 2] = 7; masBumaga[2, 0] = 7;     
+                    masBumaga[0, 7] = 1; masBumaga[7, 0] = 1;
+                    masBumaga[4, 0] = 2; masBumaga[0, 4] = 2;
+                    masBumaga[4, 7] = 2; masBumaga[7, 4] = 3;
+                    masBumaga[4, 8] = 5; masBumaga[8, 4] = 5;
+                    masBumaga[7, 8] = 2; masBumaga[8, 7] = 2;
+                    masBumaga[4, 1] = 5; masBumaga[1, 4] = 5;
+                    masBumaga[1, 5] = 2; masBumaga[5, 1] = 2;
+                    masBumaga[5, 8] = 3; masBumaga[8, 5] = 3;
+                    masBumaga[1, 2] = 1; masBumaga[2, 1] = 1;
+                    masBumaga[3, 2] = 3; masBumaga[2, 3] = 3;
+                    masBumaga[4, 5] = 1; masBumaga[5, 4] = 1;
+                    masBumaga[2, 6] = 1; masBumaga[6, 2] = 1;
+                    masBumaga[2, 5] = 6; masBumaga[5, 2] = 6;
+                    masBumaga[5, 9] = 8; masBumaga[9, 5] = 8;
+                    masBumaga[8, 9] = 4; masBumaga[9, 8] = 4;
+                    masBumaga[6, 9] = 2; masBumaga[9, 6] = 2;
+                    masBumaga[9, 10] = 4; masBumaga[10, 9] = 4;
+                    masBumaga[2, 5] = 6; masBumaga[5, 2] = 6;
+                    masBumaga[6, 10] = 8; masBumaga[10, 6] = 8;
+                    masBumaga[3, 6] = 7; masBumaga[6, 3] = 7;
+                    masBumaga[3, 10] = 1; masBumaga[10, 3] = 1;
+
+                    //расписать пути как идти до конечных вершин
                 }
 
 
@@ -189,10 +217,10 @@ namespace L0
             Int32 i = e.RowIndex;//получаю координаты изменённой ячейки
             Int32 j = e.ColumnIndex;
             if (i < 0 || j < 0) return;
-           // mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);//и добавляю их в массив
+            mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);//и добавляю их в массив
             // Была пролблема: Не получется интерактивно менять значения datagridview и массива mas почему-то. 
-           // if (checkBox1.Checked)// checkBox1 это про неориентированный
-           if(false)
+            // if (checkBox1.Checked)// checkBox1 это про неориентированный
+            if (false)
             {  // получилось, просто забывал конвертнуть всё время                
                 dataGridView1.Rows[j].Cells[i].Value = mas[i, j];
                 mas[j, i] = mas[i, j];
@@ -332,13 +360,13 @@ namespace L0
         {
             cntKrusc++;//переприсвоения оптимизированы, поэтому трудоёмкость n^2*(log2(n)) оказывается завышенной?
             if (subsets[i].parent != i)  //нашёл корень и сделал 
-                subsets[i].parent = find(subsets, subsets[i].parent);//корень родителем i(сжатие пути) 
+                subsets[i].parent = find(subsets, subsets[i].parent);
             return subsets[i].parent;
         }
 
         private void Button8_Click(object sender, EventArgs e)//     DEIKSTRA
         {//Дейкстра не работает с рёбрами, у которых отрицательные веса 
-            try
+            try//расписать пути как идти до конечных вершин
             {
                 iskm = Convert.ToInt32(textBox6.Text);//ИСКОМАЯ ВЕРШИНА
             }
@@ -347,29 +375,27 @@ namespace L0
                 MessageBox.Show("Введите вершину для поиска"); return;
             }
             dist = new double[n];
-            // sptSet[i] will true if vertex 
-            // i is included in shortest path 
-            // tree or shortest distance from 
-            // src to i is finalized 
+
+            List<string> strn = new List<string>(n);
+            strn.Add("V" + iskm);
+
+
             bool[] sptSet = new bool[n];//sptSet будет истина, если вершина i включена в кратчайшее дерево или 
             for (int i = 0; i < n; i++)//кратчайшее расстояние от src до i финально
             {
                 dist[i] = double.PositiveInfinity;
                 sptSet[i] = false;
             }
+            
             dist[iskm] = 0;
             for (int count = 0; count < n - 1; count++)
-            {// u - начало, v - продолжение
-                // Pick the minimum distance vertex 
-                // from the set of vertices not yet 
-                // processed. u is always equal to 
-                // src in first iteration. 
+            {// u - начало, v - продолжение                
                 int u = minDistance(dist, sptSet);//где-то здесь на первой итерации находим ребро, 
                                                   //исходящее из первой вершины и имеющее минимальны вес. 
                                                   //Включаем эту вершину(на противоположном конце ребра) в список.               
-                sptSet[u] = true;//помечаю выбранное ребро как обработанное. Т.е. кратчайший путь до него найден... вроде
-                for (int v = 0; v < n; v++)//обновляю значения dist смежных вершин с выбранной
-                {
+                sptSet[u] = true;//помечаю выбранное ребро как обработанное. Т.е. кратчайший путь до него найден. По крайней мере он кратчайший по результатам предыдущих итераций
+                for (int v = 0; v < n; v++)//ищу длины путей из вершины с минимальным dist до смежных с ней. Обновляю значения dist смежных вершин с выбранной(до которой минимальное расстояние от исходной)
+                {//здесь перебираем все рёбра из u 
                     if//короче походу u - исходная вершинка, из которой по итерациям ищем ближайшую к ней
                     //у чувака в видео она даже заносится отдельно и начинает называться w временно до след. итерации
                         ((!sptSet[v]) && //обновляю dist[v] только если  она не в sptSet 
@@ -391,19 +417,18 @@ namespace L0
             cntDeik = 0;
         }
 
-        int minDistance(double[] dist, bool[] sptSet)//возвращаю индекс минимального расстояния
+        int minDistance(double[] dist, bool[] sptSet)//возвращаю индекс минимального dist
         {
-            // Initialize min value 
             double min = int.MaxValue;
             int min_index = -1;
 
             for (int v = 0; v < n; v++)
-                if (sptSet[v] == false && dist[v] <= min)
+                if (sptSet[v] == false && dist[v] <= min)//однако пропускаем уже добавленные вершины if(sptSet[v] == false...)
                 {
                     min = dist[v];
                     min_index = v;
                 }
-            return min_index;
+            return min_index;//возвращает индекс вершины dist с минимальным числом
         }
 
         private void Button10_Click(object sender, EventArgs e)//записываю матрицу в файл
@@ -446,16 +471,16 @@ namespace L0
                 // str.Split('\t');
                 list.Add(file.ReadLine());
 
-               // str.
+                // str.
                 for (int col = 0; col < dataGridView1.Rows[rows].Cells.Count; col++)
                 {
-                    dataGridView1.Rows[rows].Cells[col].Value= 
+                    dataGridView1.Rows[rows].Cells[col].Value =
                         list[col];
                     //list.Add(value);
                 }
-                
-            }           
-          
+
+            }
+
             file.Close();
         }
 
