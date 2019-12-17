@@ -129,7 +129,8 @@
 Перед формированием новой матрицы
 нужно нажать Start и только потом 
 вводить новые рёбра.
-Все рёбра должны быть задействованы для Краскала.
+Все вершины должны быть задействованы для Краскала
+и Дейкстры.
 </value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
