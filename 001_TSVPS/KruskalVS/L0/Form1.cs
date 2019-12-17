@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 //using System.Collections.ObjectModel.ArrayList;
@@ -11,7 +13,6 @@ namespace L0
         public Form1()
         {
             InitializeComponent();
-
         }
         public double cntKrusc = 0, cntBellFord = 0, cntDeik = 0;//для подсчета сложности Краскала и остальных
         public int n;//число вершин графа
@@ -22,8 +23,10 @@ namespace L0
         public int iskm = 0;//вершина для подсчета расстояний от неё до остальных(Дейкстра, Форд-Беллман)
         public double[,] masBumaga;//массив для хранения матрицы в коде
         public double[,] masBumaga2;//массив для запоминания вводимых матриц
+        
         private void button1_Click(object sender, EventArgs e)//  Start 
         {
+            Console.WriteLine("HIIIIII");
             n = Convert.ToInt32(numericUpDown1.Value);
             if (n > 10000 || n < 0)
             {
@@ -181,13 +184,15 @@ namespace L0
             MessageBox.Show("Реализую алгоритм Дейкстры");
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            Int32 i = e.RowIndex;
+        {//отслеживаю изменение DataGridViewCellEventArgs, 
+            Console.WriteLine("sender.ToString() = " + sender.ToString());
+            Int32 i = e.RowIndex;//получаю координаты изменённой ячейки
             Int32 j = e.ColumnIndex;
             if (i < 0 || j < 0) return;
-            mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
+           // mas[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);//и добавляю их в массив
             // Была пролблема: Не получется интерактивно менять значения datagridview и массива mas почему-то. 
-            if (checkBox1.Checked)
+           // if (checkBox1.Checked)// checkBox1 это про неориентированный
+           if(false)
             {  // получилось, просто забывал конвертнуть всё время                
                 dataGridView1.Rows[j].Cells[i].Value = mas[i, j];
                 mas[j, i] = mas[i, j];
@@ -309,7 +314,7 @@ namespace L0
         {// два значения икс и игрек. Использует объединение по рангу
             int xroot = find(subsets, x);
             int yroot = find(subsets, y);
-
+            cntKrusc++;
             if (subsets[xroot].rank < subsets[yroot].rank)// Присоединить дерево меньшего ранга под корень 
                 subsets[xroot].parent = yroot;//дерева более высокого ранга
             else if (subsets[xroot].rank > subsets[yroot].rank)
@@ -342,57 +347,48 @@ namespace L0
                 MessageBox.Show("Введите вершину для поиска"); return;
             }
             dist = new double[n];
-
             // sptSet[i] will true if vertex 
             // i is included in shortest path 
             // tree or shortest distance from 
             // src to i is finalized 
-            bool[] sptSet = new bool[n];//sptSet будет истина, если вершина i включена в кратчайший путь 
-            for (int i = 0; i < n; i++)
+            bool[] sptSet = new bool[n];//sptSet будет истина, если вершина i включена в кратчайшее дерево или 
+            for (int i = 0; i < n; i++)//кратчайшее расстояние от src до i финально
             {
                 dist[i] = double.PositiveInfinity;
                 sptSet[i] = false;
             }
             dist[iskm] = 0;
-
-            // Find shortest path for all vertices 
             for (int count = 0; count < n - 1; count++)
-            {
+            {// u - начало, v - продолжение
                 // Pick the minimum distance vertex 
                 // from the set of vertices not yet 
                 // processed. u is always equal to 
                 // src in first iteration. 
-                int u = minDistance(dist, sptSet);
-                // Mark the picked vertex as processed 
-                sptSet[u] = true;
-                // Update dist value of the adjacent vertices of the picked vertex. 
-                for (int v = 0; v < n; v++)
-                    // Update dist[v] only if is not in 
-                    // sptSet, there is an edge from u 
-                    // to v, and total weight of path 
-                    // from src to v through u is smaller 
-                    // than current value of dist[v] 
-                    if (!sptSet[v] && mas[u, v] != double.PositiveInfinity &&
-                        dist[u] != double.PositiveInfinity && dist[u] + mas[u, v] < dist[v])
+                int u = minDistance(dist, sptSet);//где-то здесь на первой итерации находим ребро, 
+                                                  //исходящее из первой вершины и имеющее минимальны вес. 
+                                                  //Включаем эту вершину(на противоположном конце ребра) в список.               
+                sptSet[u] = true;//помечаю выбранное ребро как обработанное. Т.е. кратчайший путь до него найден... вроде
+                for (int v = 0; v < n; v++)//обновляю значения dist смежных вершин с выбранной
+                {
+                    if//короче походу u - исходная вершинка, из которой по итерациям ищем ближайшую к ней
+                    //у чувака в видео она даже заносится отдельно и начинает называться w временно до след. итерации
+                        ((!sptSet[v]) && //обновляю dist[v] только если  она не в sptSet 
+                        (mas[u, v] != double.PositiveInfinity) &&//и есть ребро из u в v
+                        (dist[u] != double.PositiveInfinity) &&
+                        (dist[u] + mas[u, v]) < dist[v])//и если весь вес пути из src в v через u меньше,  
+                    {                                   //чем текущее значение dist[v] 
                         dist[v] = dist[u] + mas[u, v];
+                        cntDeik++;
+                    }
+                    cntDeik++;
+                }//с какого-то места(на какой-то итерации) проверка идёт только от наименее удалённого ребра
             }
             textBox1.Text = Convert.ToString(cntDeik);
             Form3 f1 = new Form3();
             f1.Owner = this;
             f1.ShowDialog();
             dist = null;
-        }
-
-        private void Button9_Click(object sender, EventArgs e)//запоминаю матрицу в массив
-        {
-            masBumaga2 = new double[n, n];
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    masBumaga2[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
-                }
-            }
+            cntDeik = 0;
         }
 
         int minDistance(double[] dist, bool[] sptSet)//возвращаю индекс минимального расстояния
@@ -408,6 +404,71 @@ namespace L0
                     min_index = v;
                 }
             return min_index;
+        }
+
+        private void Button10_Click(object sender, EventArgs e)//записываю матрицу в файл
+        {
+            List<string> list = new List<string>();
+            for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
+            {
+                for (int col = 0; col < dataGridView1.Rows[rows].Cells.Count; col++)
+                {
+                    string value = dataGridView1.Rows[rows].Cells[col].Value.ToString();
+                    list.Add(value);
+                }
+                list.Add("\n");
+            }
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"test.txt");
+            foreach (var item in list)
+            {
+                if (item != "\n")//если не конец строки
+                {
+                    file.Write(item + "\t");// - записываю просто в одну сроку
+                }
+                else
+                {
+                    file.WriteLine(item);//иначе заканчиваю строку последним символом
+                }
+
+            }
+            file.Close();
+        }
+
+        private void Button11_Click(object sender, EventArgs e)//вытаскиваю матрицу из файла
+        {
+            System.IO.StreamReader file = new System.IO.StreamReader(@"test.txt");
+
+            List<string> list = new List<string>();
+            for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
+            {
+                //string str = file.ReadLine();
+                //str.Trim();
+                // str.Split('\t');
+                list.Add(file.ReadLine());
+
+               // str.
+                for (int col = 0; col < dataGridView1.Rows[rows].Cells.Count; col++)
+                {
+                    dataGridView1.Rows[rows].Cells[col].Value= 
+                        list[col];
+                    //list.Add(value);
+                }
+                
+            }           
+          
+            file.Close();
+        }
+
+        private void Button9_Click(object sender, EventArgs e)//запоминаю матрицу в массив
+        {
+            masBumaga2 = new double[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    masBumaga2[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j].Value);
+                }
+            }
         }
 
 
@@ -480,6 +541,7 @@ namespace L0
             f1.Owner = this;
             f1.ShowDialog();
             dist = null;
+            cntBellFord = 0;
         }
     }
 }
