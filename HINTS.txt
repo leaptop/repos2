@@ -791,3 +791,14 @@ And you see that adding angles means rotation
   RowHeadersWidth of dataGridView задает ширину столбца хедеров
   
   Вид - Вывод или Ctrl+w, o для открытия консоли в виже vs
+  
+  Динамическое программирование — метод решения задачи путём её разбиения на несколько одинаковых подзадач, рекуррентно связанных между собой
+  
+  до 28 декабря(конец зачетной недели) до конца зач недели ргз, лабы - автомат. посещ. меньше 70% на 3 , на 4 80%, 90-100% +1 балл
+  
+  Вот так силион предлагает решать проблему "значение типа void нельзя использовать для инициализации сущности типа double":
+  double* matrix1 = static_cast<double*>(malloc(size * sizeof(double)));
+  //double* matrix1 = malloc(size * sizeof(double));//исправить надо было это
+  
+  double* resultMatrix = static_cast<double*>(calloc(size, sizeof(double))); 
+  //double* resultMatrix = calloc(size, sizeof(double));//исправить надо было это

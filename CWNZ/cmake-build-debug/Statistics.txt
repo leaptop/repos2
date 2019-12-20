@@ -1,0 +1,7 @@
+Left pressed: 2
+Right pressed: 1
+Up pressed: 3
+Down pressed: 2
+Letters were typed: 4
+LeftMouse Button pressed: 1
+Mouse was moved onto: 351 pixels
