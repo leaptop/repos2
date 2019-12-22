@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="CWNZ" targetName="CWNZ" />
+      <config projectName="RukzClion00" targetName="RukzClion00" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5a8077-1f28-465f-93f8-2e5e01f57240" name="Default Changelist" comment="" />
+    <list default="true" id="2e1b087c-bb12-4e93-b14a-a67a23ac4608" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +23,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1V9KbG0NRJDepwaXNcAxEGzMBlO" />
+  <component name="ProjectId" id="1V6z2tB3SeHjUV9NJi0z5ikv2lz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../001_TSVPS/000rukzakkSDAT/RukzClion00SDAT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +45,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="CWNZ" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CWNZ" TARGET_NAME="CWNZ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CWNZ" RUN_TARGET_NAME="CWNZ">
+    <configuration name="RukzClion00" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RukzClion00" TARGET_NAME="RukzClion00" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RukzClion00" RUN_TARGET_NAME="RukzClion00">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -55,13 +56,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1f5a8077-1f28-465f-93f8-2e5e01f57240" name="Default Changelist" comment="" />
-      <created>1576659939965</created>
+      <changelist id="2e1b087c-bb12-4e93-b14a-a67a23ac4608" name="Default Changelist" comment="" />
+      <created>1576588129015</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576659939965</updated>
-      <workItem from="1576659942276" duration="3499000" />
-      <workItem from="1576896489694" duration="3072000" />
+      <updated>1576588129015</updated>
+      <workItem from="1576588133123" duration="2703000" />
+      <workItem from="1576896485627" duration="7377000" />
+      <workItem from="1576921474363" duration="1243000" />
     </task>
     <servers />
   </component>
@@ -80,5 +82,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>31</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="f" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
