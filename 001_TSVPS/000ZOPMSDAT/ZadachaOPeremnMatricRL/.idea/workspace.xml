@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="CWNZ" targetName="CWNZ" />
+      <config projectName="ZadachaOPeremnMatric" targetName="ZadachaOPeremnMatric" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f5a8077-1f28-465f-93f8-2e5e01f57240" name="Default Changelist" comment="" />
+    <list default="true" id="c7a2640f-89a8-41d7-9c07-8397b97db25f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +23,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1V9KbG0NRJDepwaXNcAxEGzMBlO" />
+  <component name="ProjectId" id="1VHUw6Jrdomt3wVKZYLHIhW8oa0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../001_TSVPS/000rukzakkSDAT/RukzClion00SDAT" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Stepan\source\repos2\001_TSVPS\ZadachaOPeremnMatric\cmake-build-debug" />
+      <recent name="C:\Users\Stepan\source\repos2\001_TSVPS\ZadachaOPeremnMatric\cmake-build-debug\CMakeFiles" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +49,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="CWNZ" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CWNZ" TARGET_NAME="CWNZ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CWNZ" RUN_TARGET_NAME="CWNZ">
+    <configuration name="ZadachaOPeremnMatric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ZadachaOPeremnMatric" TARGET_NAME="ZadachaOPeremnMatric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ZadachaOPeremnMatric" RUN_TARGET_NAME="ZadachaOPeremnMatric">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -55,13 +60,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1f5a8077-1f28-465f-93f8-2e5e01f57240" name="Default Changelist" comment="" />
-      <created>1576659939965</created>
+      <changelist id="c7a2640f-89a8-41d7-9c07-8397b97db25f" name="Default Changelist" comment="" />
+      <created>1576909749948</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576659939965</updated>
-      <workItem from="1576659942276" duration="3499000" />
-      <workItem from="1576896489694" duration="3072000" />
+      <updated>1576909749948</updated>
+      <workItem from="1576909751842" duration="3832000" />
     </task>
     <servers />
   </component>
@@ -73,12 +77,21 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>80</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
