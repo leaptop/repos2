@@ -1,0 +1,2 @@
+LeftMouse Button pressed: 1
+Mouse was moved onto: 226 pixels

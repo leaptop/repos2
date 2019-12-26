@@ -2,7 +2,196 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c78d562a-41b2-4784-803e-7b32e812d5e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../2 course/trig" beforeDir="false" afterPath="$PROJECT_DIR$/../2 course/trig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/00task (1).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/cmake-build-debug/ClionPlusi.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/ClionPlusi/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/src/TheSameCodeWithoutComments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/Отчёт.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/JavaGitSDAT/рис.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/hpcs-fall2015-lec3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/n должна быть степенью числа 2! для алгоритма Штрассена.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/Сдать РГЗ JavaGit!.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000RGZ_SDAT/переименование.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/CSMult/CSMult.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/CSMult/CSMult.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/CSMult/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/java/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/java/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/00ZadOUmnMatr/java/src/MatrixChain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/JavaG/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/cmake-build-debug/ZadachaOPeremnMatric.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/cmake-build-debug/input" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/ZadachaOPeremnMatricRL/тысяча массивов.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000ZOPMSDAT/Сдать JAvaG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapSackRecPlusDynamicJava/src/site.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/KnapsackProblems.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RZClion/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RZClion/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RZClion/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukMetodichkaJava/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00 &amp; VSRukzak00Dlinn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/cmake-build-debug/RukzClion00.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzClion00SDAT/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzakTaskJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzakTaskJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzakTaskJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzakTaskJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/RukzakTaskJava/src/Knapsack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzak/program/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzak/program/program.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzak/program/program.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/BoundedKnapsackRecursiveSolver.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/VSrukzakk00Dlinn/здесь всё показывает, но длинно.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/src/com/company/UboundedKnapsack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/gfgJava/src/работает, но не показывает айтемы" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/cmake-build-debug/rukzak.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../000rukzakkSDAT/rukzakStarsh/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_BubbleSort/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_BubbleSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_BubbleSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_BubbleSort/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01_BubbleSort/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02_SelectSort/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02_SelectSort/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02_SelectSort/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02_SelectSort/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02_SelectSort/src/SelectSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DijkstrasAlgorithm/DijkstrasAlgorithm.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DijkstrasAlgorithm/DijkstrasAlgorithm.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DijkstrasAlgorithm/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphImplementationJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphImplementationJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphImplementationJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphImplementationJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphImplementationJava/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaGitJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaGitJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaGitJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaGitJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaGitJava/src/Karatsuba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaJavaSam/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaJavaSam/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaJavaSam/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaJavaSam/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KaratsubaJavaSam/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KrascalJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KrascalJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KrascalJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KrascalJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KrascalJava/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/DataGridViewExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form1.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form2.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form2.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form3.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Form3.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Practice 05.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Properties/Resources.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Properties/Resources.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Properties/Settings.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/Properties/Settings.settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/L0/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/Practice 05.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/deik.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/ford.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/Объяснение Дейкстры на ютубе.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KruskalDeikstraFordVS_Sdal/зарисовать ходы .txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortIterativeVSRecursive/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortIterativeVSRecursive/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortIterativeVSRecursive/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortIterativeVSRecursive/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortIterativeVSRecursive/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/src/CountersContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MergeSortRecursive/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MultiplicationKaratsubaJava/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MultiplicationKaratsubaJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MultiplicationKaratsubaJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MultiplicationKaratsubaJava/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MultiplicationKaratsubaJava/src/Karatsuba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UmnojStolbBistroeUmnojJavaSdal/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CWNZ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CWNZ/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CWNZ/cmake-build-debug/SimpleLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../CWNZ/cmake-build-debug/SimpleLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CWNZ/cmake-build-debug/Statistics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../CWNZ/cmake-build-debug/Statistics.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CWNZ/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../CWNZ/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HINTS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../HINTS.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,16 +202,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestDFT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="238">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <marker date="1577183547182" expanded="true" signature="323:451" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Fourier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -46,18 +238,18 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/TestDFT.java" />
         <option value="$PROJECT_DIR$/src/Fourier.java" />
+        <option value="$PROJECT_DIR$/src/TestDFT.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -85,8 +277,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,10 +332,9 @@
     <option name="totallyTimeSpent" value="26000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -153,7 +344,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23229462" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3927987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -178,21 +369,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TestDFT.java</url>
+          <line>6</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/04DiscrFurier.iml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestDFT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1577183547182" expanded="true" signature="323:451" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fourier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestDFT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>

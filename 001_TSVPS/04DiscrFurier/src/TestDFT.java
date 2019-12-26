@@ -1,13 +1,20 @@
 public class TestDFT {//https://pdfs.semanticscholar.org/73e4/ab8eaed9e9cba7e4f375e685f17f9ae0bbb5.pdf?_ga=2.246286660.172059643.1562748583-1182672405.1562748583
     public static void main(String args[]) {
-        int N = 64;
+        int N = 3;
         double T = 2.0;
         double tn, fk;
         double fdata[] = new double[2*N];
-        for(int i=0; i<N; ++i) {
-            fdata[2*i] = Math.cos(4.0*Math.PI*i*T/N);
-            fdata[2*i+1] = 0.0;
-        }
+//        for(int i=0; i<N; ++i) {
+//            fdata[2*i] = Math.cos(4.0*Math.PI*i*T/N);
+//            fdata[2*i+1] = 0.0;
+//        }
+        fdata[0] = 1;
+        fdata[1] = 0;
+        fdata[2] = 0;
+        fdata[3] = 0;
+        fdata[4] = 1;
+        fdata[5] = 0;
+
         double X[] = Fourier.discreteFT(fdata, N, true);
         for (int k=0; k<N; ++k) {
             fk = k/T;
