@@ -1,3 +1,15 @@
+ФОРМАТ
+Ctrl+Alt+L - выровнять в idea & CLion
+IntelliJ IDEA Default Keymap.pdf
+Ctrl+a Ctrl+i выровнять код в QT     //ПОМНИТЬ, ЧТО ДЛЯ ЭТИХ ШОРТКАТОВ ЯЗЫК ДОЛЖЕН БЫТЬ АНГЛИЙСКИМ. ПО КРАЙНЕЙ МЕРЕ В QT
+Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже
+
+ЗАКОММЕНТИРОВАТЬ выделенное:
+Ctrl+k Ctrl+c, VS Ctrl+k+u соответственно раскомментировать. In Visual Studio
+Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator & CLion
+Ctrl+Shift+/ комментирует весь выделенный блок в стиле /* */ in intellij idea
+
+
 Процедура - функция с типом возвр зн void.
 
 #include <iostream>//for cout(for C++ only)// char будет выведен именно буквами, а не численными значениями
@@ -374,10 +386,7 @@ There is a cool option - paste the CMakeLists.txt in Templates folder. After tha
 
 Рубану лабы сдавать чтобы подробно выводились все шаги.
 
-Ctrl+Alt+L - Reformat code выровнять текст? В чем? В идее походу
-IntelliJ IDEA Default Keymap.pdf
-Ctrl+a Ctrl+i выровнять код в QT
-Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже
+
 
 Чтобы комбинация class Smth extends Application, start @Override public void start(Stage stage){, psvm(...){launch(args); 
 работала class должен быть публичным. См пример ВМ L5Graphics
@@ -601,9 +610,7 @@ a large collection of GNU and Open Source tools which provide functionality simi
 
 Так сишарп компилируется из командной строки Developer Command Prompt VS2019: csc /t:exe TestApplication.cs
 
-Закомментировать выделенное в вижуал студио Ctrl+k Ctrl+c, Ctrl+k+u соответственно раскомментировать
-Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator
-Ctrl+Shift+/ комментирует весь выделенный блок в стиле /* */ in intellij idea
+
 
 чтобы в VS заработали возможности последней версии cpp 17, надо их позволить: проект - свойства - с/с++ - язык - стандарт языка
 

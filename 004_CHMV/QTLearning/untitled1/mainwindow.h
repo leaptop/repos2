@@ -6,7 +6,19 @@
 #include <QDir>
 #include <QDebug>
 #include <QFile>
-
+#include <QFileDialog>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QColorDialog>
+#include <QFontDialog>
+#include <QInputDialog>
+#include <QLineEdit>
+#include <QProgressDialog>
+#include <QMessageBox>
+#include <QErrorMessage>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
