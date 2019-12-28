@@ -51,32 +51,43 @@ int main() {
     }
 
     std::cout << "Свёртка дискретным преобразованием: \n";
-    double *c1 = conv(a1, n1, b1, n2, discreteFourierTransform, invDiscreteFourierTransform);
+    int cntdd = 0;
+    int *cntD = &cntdd;
+    double *c1 = conv(a1, n1, b1, n2, discreteFourierTransform, invDiscreteFourierTransform, cntD);
     printRealMas(c1, n1 + n2);
-
+    printf("Трудоёмкость свёртки дискретным преобразованием Фурье: %d\n\n", (n1*n1)*cntdd);
 
     std::cout << "Свёртка полубыстрым преобразованием Фурье: \n";
-    c1 = conv(a1, n1, b1, n2, semiFastFourierTransform, invSemiFastFourierTransform);
+    int cnth = 0;
+    int *cntH = &cnth;
+    c1 = conv(a1, n1, b1, n2, semiFastFourierTransform, invSemiFastFourierTransform, cntH);
     printRealMas(c1, n1+n2);
-    int trHalf = nn*2*2;
 
+    int ng = sqrt((double)nn);
+    int trHalf = ng*ng;
+    printf("Трудоёмкость свёртки полубыстрым Фурье: %d\n\n", (trHalf));
 
 
     int pm = 0, mm = 0;
     int *pl = &pm;
     int *ml = &mm;
    // std::cout << "\nБыстрое преобразование фурье:\n";
-   // Complex *fft = fastFourierTransform(a, nn, pl, ml);
+    Complex *fft = fastFourierTransform(a, nn, pl, ml);
    // printComplexMas(fft, nn);
-   // printf("\nТрудоёмкость быстрого = %d", (*pl + *ml));
+    //printf("\nТрудоёмкость быстрого = %d", (*pl + *ml));
 
     //std::cout << "\n\nОбратное быстрое преобразование:\n";
     //double *c = invFFT(fft, nn);
    // printRealMas(c, nn);
 
+    int cntf = 0;
+    int *cntF = &cntf;
     std::cout << "\nСвёртка быстрым преобразованием Фурье:\n";
-    c1 = conv(a1, n1, b1, n2, fastFourierTransform, invFFT);
+    c1 = conv(a1, n1, b1, n2, fastFourierTransform, invFFT, cntF);
     printRealMas(c1, nn * 2);
+
+    printf("Трудоёмкость свёртки быстрым Фурье: %d", (cntf));
+
 
 
 
