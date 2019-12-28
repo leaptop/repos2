@@ -602,7 +602,7 @@ a large collection of GNU and Open Source tools which provide functionality simi
 Так сишарп компилируется из командной строки Developer Command Prompt VS2019: csc /t:exe TestApplication.cs
 
 Закомментировать выделенное в вижуал студио Ctrl+k Ctrl+c, Ctrl+k+u соответственно раскомментировать
-Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea
+Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator
 Ctrl+Shift+/ комментирует весь выделенный блок в стиле /* */ in intellij idea
 
 чтобы в VS заработали возможности последней версии cpp 17, надо их позволить: проект - свойства - с/с++ - язык - стандарт языка
@@ -826,3 +826,5 @@ service1 setup
 Поэтому подгрузил эту библиотеку таким образом:
 #pragma comment(lib, "User32.lib")
 
+Файлы по умолчанию qt ищет в build-untitled1-Desktop_Qt_5_10_0_MinGW_32bit-Debug
+Путь к этой директории можно узнать так: QDir::current()

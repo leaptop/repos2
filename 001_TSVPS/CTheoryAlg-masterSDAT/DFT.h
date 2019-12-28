@@ -21,7 +21,7 @@ Complex* fastFourierTransform(double* mas, int N, int* Plus, int* Mult);
 
 double* invSemiFastFourierTransform(Complex* transformed, int N);
 
-double* conv(double* a, int Na, double* b, int Nb, Complex* (*F)(double*, int), double* (*invF)(Complex*, int));
+double* conv(double* a, int Na, double* b, int Nb, Complex* (*F)(double*, int), double* (*invF)(Complex*, int), int * cntD);
 
 void  printDiscrTrud();
 #endif

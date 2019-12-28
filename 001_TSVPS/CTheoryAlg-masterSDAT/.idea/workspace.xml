@@ -66,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577180259752</updated>
       <workItem from="1577180261173" duration="2356000" />
-      <workItem from="1577272326540" duration="20393000" />
+      <workItem from="1577272326540" duration="23551000" />
     </task>
     <servers />
   </component>
@@ -91,7 +91,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Furier.cpp</url>
-          <line>147</line>
+          <line>158</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -102,6 +102,11 @@
           <url>file://$PROJECT_DIR$/DFT.cpp</url>
           <line>20</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Furier.cpp</url>
+          <line>82</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
