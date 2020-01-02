@@ -78,12 +78,23 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Unable to execute query - exiting";
         //return 1;
     }
-    QSqlQueryModel * modal = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
+    QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
+    //modal.setEd
     QSqlQuery* qry = new QSqlQuery(db);
     qry->prepare("SELECT name FROM mainTable");
     qry->exec();
-    modal->setQuery(*qry);
-    ui->tableView->setModel(modal);
+    model->setQuery(*qry);
+    //model->setTable("mainTable");
+    //model->setFilter("name = 'My third planer 02.01.2019 '");
+    //model->select();
+    //model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    // ui->tableView->setColumnHidden (0,true);
+    // ui-tableView->set
+    ui->tableView->setColumnWidth(0, 600);
+    //ui->tableView->hideRow(0);
+   // ui->tableView->resizeRowsToContents();
+    ui->tableView->resizeColumnsToContents();
+    ui->tableView->setModel(model);
 
     //  Reading of the data
     QSqlRecord rec     = query.record();
@@ -103,4 +114,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_tableView_activated(const QModelIndex &index)
 {
     //QtableView qtbl = new QtableView(this);
+}
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{// this is how to get an index of the chosen field of tableView
+    qDebug()<< index.row() << " was the value of index.row";
 }

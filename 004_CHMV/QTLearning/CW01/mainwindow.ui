@@ -19,10 +19,22 @@
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>171</width>
+      <width>361</width>
       <height>301</height>
      </rect>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
    </widget>
    <widget class="QDateTimeEdit" name="dateTimeEdit">
     <property name="geometry">
@@ -37,7 +49,7 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>390</x>
       <y>130</y>
       <width>391</width>
       <height>301</height>
@@ -47,7 +59,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>400</x>
       <y>440</y>
       <width>191</width>
       <height>21</height>
