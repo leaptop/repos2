@@ -31,6 +31,7 @@ public:
     QDateTimeEdit *dateTimeEdit;
     QTextEdit *textEdit;
     QPushButton *pushButton;
+    QTableView *tableView_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -38,12 +39,20 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(928, 855);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(10, 130, 361, 301));
+        tableView->setGeometry(QRect(520, 700, 51, 71));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(2);
+        sizePolicy.setVerticalStretch(2);
+        sizePolicy.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
+        tableView->setSizePolicy(sizePolicy);
+        tableView->setAutoFillBackground(true);
+        tableView->setInputMethodHints(Qt::ImhNone);
+        tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
         tableView->setEditTriggers(QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
         tableView->setAlternatingRowColors(true);
         tableView->horizontalHeader()->setVisible(false);
@@ -57,10 +66,18 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(400, 440, 191, 21));
+        tableView_2 = new QTableView(centralwidget);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+        tableView_2->setGeometry(QRect(10, 130, 191, 301));
+        tableView_2->setBaseSize(QSize(0, 0));
+        tableView_2->setAlternatingRowColors(true);
+        tableView_2->horizontalHeader()->setVisible(false);
+        tableView_2->verticalHeader()->setVisible(false);
+        tableView_2->verticalHeader()->setDefaultSectionSize(30);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 928, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
