@@ -16,6 +16,14 @@
 #include <QProgressDialog>
 #include <QMessageBox>
 #include <QErrorMessage>
+#include <QPushButton>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
+#include <QFontDialog>
 #include <QFontDialog>
 #include <QFontDialog>
 #include <QFontDialog>

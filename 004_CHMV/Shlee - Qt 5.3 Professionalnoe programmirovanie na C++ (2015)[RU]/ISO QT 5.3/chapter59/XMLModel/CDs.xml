@@ -1,0 +1,79 @@
+<?xml version = "1.0"?>
+<!--
+** ======================================================================
+**  CDs.xml
+** ======================================================================
+**                   This file is a part of the book 
+**             "Qt 5.3 Professional programming with C++"
+** ======================================================================
+**  Copyright (c) 2014 by Max Schlee
+**
+**  Email : Max.Schlee@neonway.com
+**  Blog  : http://www.maxschlee.com
+**
+**  Social Networks
+**  ===============
+**  FaceBook : http://www.facebook.com/mschlee
+**  Twitter  : http://twitter.com/Max_Schlee
+**  2Look.me : http://2look.me/NW100003
+**  Xing     : http://www.xing.com/profile/Max_Schlee
+**  vk.com   : https://vk.com/max.schlee
+** ======================================================================
+-->
+
+<CDs>
+    <CD>
+        <artist>Amaranthe</artist>
+        <album>Amaranthe</album>
+        <year>2011</year>
+        <cover>qrc:///covers/Amaranthe.png</cover>
+    </CD>
+    <CD>
+        <artist>Dark Princess</artist>
+        <album>Without You</album>
+        <year>2005</year>
+        <cover>qrc:///covers/WithoutYou.png</cover>
+    </CD>
+    <CD>
+        <artist>Within Temptation</artist>
+        <album>The Unforgiving</album>
+        <year>2011</year>
+        <cover>qrc:///covers/TheUnforgiving.png</cover>
+    </CD>
+    <CD>
+        <artist>Evanescence</artist>
+        <album>Fallen</album>
+        <year>2003</year>
+        <cover>qrc:///covers/Fallen.png</cover>
+    </CD>
+    <CD>
+        <artist>Tristania</artist>
+        <album>Rubicon</album>
+        <year>2010</year>
+        <cover>qrc:///covers/Rubicon.png</cover>
+    </CD>
+    <CD>
+        <artist>Epica</artist>
+        <album>The Divine Conspiracy</album>
+        <year>2007</year>
+        <cover>qrc:///covers/TheDivineConspirancy.png</cover>
+    </CD>
+    <CD>
+        <artist>Delain</artist>
+        <album>April Rain</album>
+        <year>2010</year>
+        <cover>qrc:///covers/AprilRain.png</cover>
+    </CD>
+    <CD>
+        <artist>Sirenia</artist>
+        <album>The End of it All</album>
+        <year>2011</year>
+        <cover>qrc:///covers/NineDestiniesAndADownfall.png</cover>
+    </CD>
+    <CD>
+        <artist>Nightwish</artist>
+        <album>Dark Passion Play</album>
+        <year>2007</year>
+        <cover>qrc:///covers/DarkPassionPlay.png</cover>
+    </CD>
+</CDs>

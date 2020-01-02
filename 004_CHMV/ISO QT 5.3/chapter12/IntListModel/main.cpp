@@ -1,0 +1,38 @@
+// ======================================================================
+//  main.cpp
+// ======================================================================
+//                   This file is a part of the book 
+//             "Qt 5.3 Professional programming with C++"
+// ======================================================================
+//  Copyright (c) 2014 by Max Schlee
+//
+//  Email : Max.Schlee@neonway.com
+//  Blog  : http://www.maxschlee.com
+//
+//  Social Networks
+//  ---------------
+//  FaceBook : http://www.facebook.com/mschlee
+//  Twitter  : http://twitter.com/Max_Schlee
+//  2Look.me : http://2look.me/NW100003
+//  Xing     : http://www.xing.com/profile/Max_Schlee
+//  vk.com   : https://vk.com/max.schlee
+// ======================================================================
+
+#include <QtWidgets>
+#include "IntListModel.h"
+
+// ----------------------------------------------------------------------
+int main( int argc, char** argv ) {
+    QApplication app( argc, argv );
+    IntListModel model(QList<int>() << 123 << 2341 << 32 << 5342 << 723);
+
+    QListView list;
+    list.setModel(&model);
+    list.show();
+
+    QTableView table;
+    table.setModel(&model);
+    table.show();
+
+    return app.exec();
+}
