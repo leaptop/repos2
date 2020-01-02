@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
+#include <QtSql>
+#include<QTableView>
+#include<QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,7 +18,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QSqlDatabase db;
 
+
+private slots:
+    void on_tableView_activated(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

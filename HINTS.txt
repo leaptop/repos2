@@ -13,6 +13,19 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+Вот эти ошибки:
+Unable to create a table
+Unable to make insert opeation
+Unable to make insert operation
+1   "Piggy" ;	 "+49 631322187" ;	 "piggy@mega.de"
+2   "Kermit" ;	 "+49 631322181" ;	 "kermit@mega.de"
+Выдавались просто потому, что таблица уже была создана.
+
+system("PAUSE");//works in cpp qt
+
+Так в конструкторе mainwindow можно обратиться к объектам добавленным перетаскиванием:
+ui->tableView
+
 
 Файлы по умолчанию qt ищет в build-untitled1-Desktop_Qt_5_10_0_MinGW_32bit-Debug
 Путь к этой директории можно узнать так: QDir::current()
