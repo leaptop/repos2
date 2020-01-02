@@ -1,0 +1,5 @@
+SQL  вроде что-то создает, но там сплошные ошибки выводятся, типа "Unable to create a table", "Unable to make insert opeation"
+SQLQUeryModel просто типа видимо показывает как можно делать запросы.
+SQLRelationTableModel показывает видимо как обращаться к реляционной БД
+QSqlTableModel ну тоже стратегия какая-то описана, но не видно что происходит вообще
+
