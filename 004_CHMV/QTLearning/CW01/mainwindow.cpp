@@ -1,19 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-static bool createConnection()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("journal");
-
-    db.setUserName("elton");
-    db.setHostName("epica");
-    db.setPassword("password");
-    if (!db.open()) {
-        qDebug() << "Cannot open database:" << db.lastError();
-        return false;
-    }
-    return true;
-}
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -37,20 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
             // Saving the changes!
         }
     }
-
-    //  if (!createConnection()) {//(return -1; previously)
-
-    //  }
-    //    QTableView     view;
-    //  QSqlTableModel model;
-
-    //    model.setTable("mainTable");
-    //    model.select();
-    //    model.setEditStrategy(QSqlTableModel::OnFieldChange);
-
-    //    view.setModel(&model);
-    //    view.resize(450, 100);
-    //    view.show();
     //Creating of the data base
     QSqlQuery query;
     QString   str  = "CREATE TABLE IF NOT EXISTS mainTable ( "
@@ -68,11 +40,11 @@ MainWindow::MainWindow(QWidget *parent)
             "VALUES('%1', '%2');";
 
     str = strF.arg("My third planer 02.01.2019 ")
-            .arg("Something is happening");
+            .arg("Nothing is happening");
 
-    //  if (!query.exec(str)) {
-    //     qDebug() << "Unable to make insert opeation";
-    //  }
+//      if (!query.exec(str)) {
+//         qDebug() << "Unable to make insert opeation";
+//      }
 
     if (!query.exec("SELECT * FROM mainTable;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query - exiting";
@@ -84,17 +56,13 @@ MainWindow::MainWindow(QWidget *parent)
     qry->prepare("SELECT name FROM mainTable");
     qry->exec();
     model->setQuery(*qry);
-    //model->setTable("mainTable");
-    //model->setFilter("name = 'My third planer 02.01.2019 '");
-    //model->select();
-    //model->setEditStrategy(QSqlTableModel::OnFieldChange);
-    // ui->tableView->setColumnHidden (0,true);
-    // ui-tableView->set
-    ui->tableView->setColumnWidth(0, 600);
-    //ui->tableView->hideRow(0);
-   // ui->tableView->resizeRowsToContents();
-    ui->tableView->resizeColumnsToContents();
-    ui->tableView->setModel(model);
+    ui->tableView_2->setModel(model);
+    ui->tableView_2->setColumnWidth(0,191);
+    ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+
+
+
 
     //  Reading of the data
     QSqlRecord rec     = query.record();
