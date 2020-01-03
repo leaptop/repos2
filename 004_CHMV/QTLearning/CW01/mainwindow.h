@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "datedialog.h"
 #include <QMainWindow>
 #include <QApplication>
 #include <QtSql>
@@ -25,8 +25,9 @@ public:
     QString strF;
     QSqlQuery query ;
     QString   str;
-int num = 0;
+    int num = 0;//number of records
     QSqlTableModel model;
+    DateDialog dd;
     //private signals:
     void sig();
     bool createConnection();

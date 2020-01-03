@@ -11,14 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDateTimeEdit>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,13 +26,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTableView *tableView;
-    QDateTimeEdit *dateTimeEdit;
-    QTextEdit *textEdit;
     QPushButton *pushButton;
     QTableView *tableView_2;
     QTableView *tableView_3;
     QTableView *tableView_4;
+    QCalendarWidget *calendarWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -44,33 +41,12 @@ public:
         MainWindow->resize(928, 855);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        tableView = new QTableView(centralwidget);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(520, 700, 51, 71));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(2);
-        sizePolicy.setVerticalStretch(2);
-        sizePolicy.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
-        tableView->setSizePolicy(sizePolicy);
-        tableView->setAutoFillBackground(true);
-        tableView->setInputMethodHints(Qt::ImhNone);
-        tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContentsOnFirstShow);
-        tableView->setEditTriggers(QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
-        tableView->setAlternatingRowColors(true);
-        tableView->horizontalHeader()->setVisible(false);
-        tableView->verticalHeader()->setVisible(false);
-        dateTimeEdit = new QDateTimeEdit(centralwidget);
-        dateTimeEdit->setObjectName(QStringLiteral("dateTimeEdit"));
-        dateTimeEdit->setGeometry(QRect(10, 20, 151, 22));
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(160, 610, 281, 111));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(400, 440, 191, 21));
+        pushButton->setGeometry(QRect(20, 110, 191, 21));
         tableView_2 = new QTableView(centralwidget);
         tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setGeometry(QRect(10, 70, 191, 361));
+        tableView_2->setGeometry(QRect(20, 200, 201, 361));
         tableView_2->setBaseSize(QSize(0, 0));
         tableView_2->setAlternatingRowColors(true);
         tableView_2->setSortingEnabled(true);
@@ -79,14 +55,17 @@ public:
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
         tableView_3 = new QTableView(centralwidget);
         tableView_3->setObjectName(QStringLiteral("tableView_3"));
-        tableView_3->setGeometry(QRect(220, 10, 561, 101));
+        tableView_3->setGeometry(QRect(320, 120, 561, 31));
         tableView_3->horizontalHeader()->setVisible(false);
         tableView_3->verticalHeader()->setVisible(false);
         tableView_4 = new QTableView(centralwidget);
         tableView_4->setObjectName(QStringLiteral("tableView_4"));
-        tableView_4->setGeometry(QRect(220, 120, 561, 321));
+        tableView_4->setGeometry(QRect(330, 200, 561, 321));
         tableView_4->horizontalHeader()->setVisible(false);
         tableView_4->verticalHeader()->setVisible(false);
+        calendarWidget = new QCalendarWidget(centralwidget);
+        calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
+        calendarWidget->setGeometry(QRect(340, 540, 280, 156));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -103,8 +82,8 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \321\200\320\260\321\201\320\277\320\270\321\201\320\260\320\275\320\270\320\265", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "DailyPlaner", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
     } // retranslateUi
 
 };

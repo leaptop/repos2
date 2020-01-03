@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "datedialog.h"
+#include "ui_datedialog.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -43,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
             "VALUES('%2', '%3');";
     str = strF.arg("My fourth planer 02.01.2019 ")
             .arg("Too much)) is happening");
-       if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}
+       //if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}
 
     if (!query.exec("SELECT * FROM mainTable ORDER BY id DESC;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query - exiting";
@@ -89,7 +90,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     QSqlQuery * qryt = new QSqlQuery(db);
-    qryt->prepare("");
+    qryt->prepare("SELECT * FROM mainTable");
     qryt->exec();//it can't be applied to QSqlTableModel
 
     QSqlTableModel* modelt = new QSqlTableModel();
@@ -169,26 +170,10 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
         ui->tableView_4->hideColumn(0);
         ui->tableView_4->hideColumn(1);
         ui->tableView_4->setColumnWidth(2,561);
-    //   // index.
-    //    QSqlQuery query;
-    //    if (!query.exec("SELECT * FROM mainTable WHERE id = "+QString::number(idi+1))) {
-    //        qDebug() << "Unable to execute query - exiting";
-    //    }//pushed the query to the query class and executed it(took the fields of clicked(idi)
-    //    // records of tableView_2
-    //    QSqlRecord rec = query.record();//some magic with QSqlRecord
-    //    query.next();//in the beginning it was inside of a loop
-    //    //but now I know, that there will be just one record taken
-    //    ui->textEdit->setText(query.value(rec.indexOf("data")).toString());
-    //    ui->textEdit_2->setText(query.value(rec.indexOf("name")).toString());
-
-
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    //    QSqlTableModel model;
-    //    model.setTable("mainTable");
-    //    model.record(currentRecord).insert()
-    //    model.setEditStrategy(QSqlTableModel::OnFieldChange);
-    //    ui->textEdit_2->get
+    //DateDialog dd;
+    dd.show();
 }
