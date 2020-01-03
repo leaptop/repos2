@@ -20,8 +20,12 @@ public:
     ~MainWindow();
     QSqlDatabase db;//somehow it allows me to adress my db from a slot,
     //even though it was declared aninstantiated in a constructor
-
-//private signals:
+    QTableView     view;
+    QSqlTableModel model0;
+    QString strF;
+    QSqlQuery query ;
+    QString   str;
+    //private signals:
     void sig();
 
 private slots:
