@@ -13,6 +13,12 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+You should remove inclusion of mainwindow.h from sprite.h: you have introduced a circular dependency:
+The compiler reads mainwindow and encounters sprite.h include
+It proceeds to sprite.h, but finds mainwindow.h include there
+It goes back to mainwindow.h, as instructed
+And you have a loop ;-)
+
 Вот эти ошибки:
 Unable to create a table
 Unable to make insert opeation
