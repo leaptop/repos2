@@ -14,6 +14,9 @@ int main(int argc, char *argv[])
 
 
     MainWindow w;
+ //   DateDialog dd;
+   // dd.setParent(&w);//it adds the contents of dd
+    //straight into MainWindow w!!! Funny looking picture
 
     w.show();
     return a.exec();
