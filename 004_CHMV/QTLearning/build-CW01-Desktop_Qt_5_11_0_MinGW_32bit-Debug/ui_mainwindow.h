@@ -32,6 +32,7 @@ public:
     QTextEdit *textEdit;
     QPushButton *pushButton;
     QTableView *tableView_2;
+    QTextEdit *textEdit_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -59,7 +60,7 @@ public:
         tableView->verticalHeader()->setVisible(false);
         dateTimeEdit = new QDateTimeEdit(centralwidget);
         dateTimeEdit->setObjectName(QStringLiteral("dateTimeEdit"));
-        dateTimeEdit->setGeometry(QRect(10, 40, 151, 22));
+        dateTimeEdit->setGeometry(QRect(10, 20, 151, 22));
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(220, 130, 561, 301));
@@ -68,12 +69,15 @@ public:
         pushButton->setGeometry(QRect(400, 440, 191, 21));
         tableView_2 = new QTableView(centralwidget);
         tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setGeometry(QRect(10, 130, 191, 301));
+        tableView_2->setGeometry(QRect(10, 70, 191, 361));
         tableView_2->setBaseSize(QSize(0, 0));
         tableView_2->setAlternatingRowColors(true);
         tableView_2->horizontalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
+        textEdit_2 = new QTextEdit(centralwidget);
+        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
+        textEdit_2->setGeometry(QRect(220, 70, 561, 51));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
