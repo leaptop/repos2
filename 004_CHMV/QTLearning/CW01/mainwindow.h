@@ -18,13 +18,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QSqlDatabase db;
+    QSqlDatabase db;//somehow it allows me to adress my db from a slot,
+    //even though it was declared aninstantiated in a constructor
 
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);
 
     void on_tableView_clicked(const QModelIndex &index);
+
+    void on_tableView_2_doubleClicked(const QModelIndex &index);
+
+    void on_tableView_2_clicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;
