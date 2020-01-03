@@ -79,10 +79,14 @@ public:
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
         tableView_3 = new QTableView(centralwidget);
         tableView_3->setObjectName(QStringLiteral("tableView_3"));
-        tableView_3->setGeometry(QRect(220, 70, 561, 41));
+        tableView_3->setGeometry(QRect(220, 10, 561, 101));
+        tableView_3->horizontalHeader()->setVisible(false);
+        tableView_3->verticalHeader()->setVisible(false);
         tableView_4 = new QTableView(centralwidget);
         tableView_4->setObjectName(QStringLiteral("tableView_4"));
         tableView_4->setGeometry(QRect(220, 120, 561, 321));
+        tableView_4->horizontalHeader()->setVisible(false);
+        tableView_4->verticalHeader()->setVisible(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));

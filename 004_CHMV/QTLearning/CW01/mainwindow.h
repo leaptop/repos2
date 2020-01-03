@@ -25,7 +25,7 @@ public:
     QString strF;
     QSqlQuery query ;
     QString   str;
-
+int num = 0;
     QSqlTableModel model;
     //private signals:
     void sig();
