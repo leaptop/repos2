@@ -4,20 +4,7 @@
 #include <QtSql>
 #include<QTableView>
 
-static bool createConnection()
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("journal");
 
-    db.setUserName("elton");
-    db.setHostName("epica");
-    db.setPassword("password");
-    if (!db.open()) {
-        qDebug() << "Cannot open database:" << db.lastError();
-        return false;
-    }
-    return true;
-}
 
 int main(int argc, char *argv[])
 {

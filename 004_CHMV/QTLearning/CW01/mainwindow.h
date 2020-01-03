@@ -25,8 +25,11 @@ public:
     QString strF;
     QSqlQuery query ;
     QString   str;
+
+    QSqlTableModel model;
     //private signals:
     void sig();
+    bool createConnection();
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);
