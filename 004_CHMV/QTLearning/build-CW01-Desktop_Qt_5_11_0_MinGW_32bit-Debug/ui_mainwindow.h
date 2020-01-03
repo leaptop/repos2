@@ -62,7 +62,7 @@ public:
         dateTimeEdit->setGeometry(QRect(10, 40, 151, 22));
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(390, 130, 391, 301));
+        textEdit->setGeometry(QRect(220, 130, 561, 301));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(400, 440, 191, 21));
