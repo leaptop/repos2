@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>338</height>
+    <height>468</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,6 +36,16 @@
      <y>50</y>
      <width>280</width>
      <height>156</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>311</width>
+     <height>221</height>
     </rect>
    </property>
   </widget>

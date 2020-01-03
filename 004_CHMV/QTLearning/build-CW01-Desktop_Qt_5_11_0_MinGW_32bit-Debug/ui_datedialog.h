@@ -14,6 +14,7 @@
 #include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QPlainTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -22,12 +23,13 @@ class Ui_DateDialog
 public:
     QDialogButtonBox *buttonBox;
     QCalendarWidget *calendarWidget;
+    QPlainTextEdit *plainTextEdit;
 
     void setupUi(QDialog *DateDialog)
     {
         if (DateDialog->objectName().isEmpty())
             DateDialog->setObjectName(QStringLiteral("DateDialog"));
-        DateDialog->resize(512, 338);
+        DateDialog->resize(512, 468);
         buttonBox = new QDialogButtonBox(DateDialog);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(370, 50, 81, 241));
@@ -36,6 +38,9 @@ public:
         calendarWidget = new QCalendarWidget(DateDialog);
         calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
         calendarWidget->setGeometry(QRect(30, 50, 280, 156));
+        plainTextEdit = new QPlainTextEdit(DateDialog);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(30, 230, 311, 221));
 
         retranslateUi(DateDialog);
         QObject::connect(buttonBox, SIGNAL(accepted()), DateDialog, SLOT(accept()));

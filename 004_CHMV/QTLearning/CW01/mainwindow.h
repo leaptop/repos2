@@ -32,10 +32,12 @@ public:
     //private signals:
     void sig();
     bool createConnection();
-    void reloadTable();
+
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);
+
+     void reloadTable();
 
     void on_tableView_clicked(const QModelIndex &index);
 
@@ -44,6 +46,8 @@ private slots:
     void on_tableView_2_clicked(const QModelIndex &index);
 
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
