@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -30,7 +29,6 @@ public:
     QTableView *tableView_2;
     QTableView *tableView_3;
     QTableView *tableView_4;
-    QCalendarWidget *calendarWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,9 +61,6 @@ public:
         tableView_4->setGeometry(QRect(330, 200, 561, 321));
         tableView_4->horizontalHeader()->setVisible(false);
         tableView_4->verticalHeader()->setVisible(false);
-        calendarWidget = new QCalendarWidget(centralwidget);
-        calendarWidget->setObjectName(QStringLiteral("calendarWidget"));
-        calendarWidget->setGeometry(QRect(340, 540, 280, 156));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));

@@ -6,6 +6,7 @@
 #include <QtSql>
 #include<QTableView>
 #include<QMessageBox>
+//class DateDialog;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
