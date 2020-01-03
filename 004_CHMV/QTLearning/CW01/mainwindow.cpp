@@ -47,22 +47,31 @@ MainWindow::MainWindow(QWidget *parent)
 
     //if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}
 
-    if (!query.exec("SELECT * FROM mainTable;")) {//we select here, but its not all $55
+    if (!query.exec("SELECT * FROM mainTable ;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query - exiting";
         //return 1;
     }
     QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
     //modal.setEd
     QSqlQuery* qry = new QSqlQuery(db);
-    qry->prepare("SELECT name FROM mainTable");
+    qry->prepare("SELECT name FROM mainTable ORDER BY id DESC");
     qry->exec();
+
     model->setQuery(*qry);
-    ui->tableView_2->setModel(model);
+
+
+    //QSortFilterProxyModel proxyModel;
+   // proxyModel.setSourceModel( model );
+
+   // ui->tableView_2->setModel( &proxyModel );
+     ui->tableView_2->setModel(model);
+         ui->tableView_2->sortByColumn(0,Qt::AscendingOrder);
+       ui->tableView_2->setSortingEnabled(true);
     ui->tableView_2->setColumnWidth(0,191);
+
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-
-
+    //TestModel model;
 
 
     //  Reading of the data
@@ -93,25 +102,34 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 {
-   // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
-    int idi = index.row();
+
+}
+int currentRecord = 0;
+void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
+{
+    // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
+    int idi = index.row();//returns the number of the clicked record in tableView_2
+    currentRecord = idi+1;
+   // index.
     QSqlQuery query;
     if (!query.exec("SELECT * FROM mainTable WHERE id = "+QString::number(idi+1))) {
         qDebug() << "Unable to execute query - exiting";
-    }
-    QSqlRecord rec     = query.record();
-    QString    namestr;
-    QString    datastr;
-    query.next();
+    }//pushed the query to the query class and executed it(took the fields of clicked(idi)
+    // records of tableView_2
+    QSqlRecord rec = query.record();//some magic with QSqlRecord
+    query.next();//in the beginning it was inside of a loop
+    //but now I know, that there will be just one record taken
     ui->textEdit->setText(query.value(rec.indexOf("data")).toString());
     ui->textEdit_2->setText(query.value(rec.indexOf("name")).toString());
-}
-void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
-{
-    //qDebug()<< index.row() << " was clicked once";
+
+
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-
+//    QSqlTableModel model;
+//    model.setTable("mainTable");
+//    model.record(currentRecord).insert()
+//    model.setEditStrategy(QSqlTableModel::OnFieldChange);
+//    ui->textEdit_2->get
 }

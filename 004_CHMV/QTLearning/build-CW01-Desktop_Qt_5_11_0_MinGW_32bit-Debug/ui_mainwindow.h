@@ -72,6 +72,7 @@ public:
         tableView_2->setGeometry(QRect(10, 70, 191, 361));
         tableView_2->setBaseSize(QSize(0, 0));
         tableView_2->setAlternatingRowColors(true);
+        tableView_2->setSortingEnabled(true);
         tableView_2->horizontalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
@@ -88,6 +89,7 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
+        QObject::connect(tableView_2, SIGNAL(clicked(QModelIndex)), textEdit, SLOT(clear()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
