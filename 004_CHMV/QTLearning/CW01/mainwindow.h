@@ -32,6 +32,7 @@ public:
     //private signals:
     void sig();
     bool createConnection();
+    void reloadTable();
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);

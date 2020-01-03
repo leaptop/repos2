@@ -29,6 +29,7 @@ public:
     QTableView *tableView_2;
     QTableView *tableView_3;
     QTableView *tableView_4;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +62,9 @@ public:
         tableView_4->setGeometry(QRect(330, 200, 561, 321));
         tableView_4->horizontalHeader()->setVisible(false);
         tableView_4->verticalHeader()->setVisible(false);
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(40, 40, 80, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -79,6 +83,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "DailyPlaner", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
+        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };
