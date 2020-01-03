@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("journey");
 
     db.setUserName("elton");
@@ -24,11 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
     }
     //Creating of the data base
     QSqlQuery query;
-   QString str  = "CREATE TABLE IF NOT EXISTS mainTable ( "
-                     "id INTEGER primary key AUTOINCREMENT, "
-                     "name TEXT, "
-                     "data TEXT"
-                     ");";
+    QString str  = "CREATE TABLE IF NOT EXISTS mainTable ( "
+                   "id INTEGER primary key AUTOINCREMENT, "
+                   "name TEXT, "
+                   "data TEXT"
+                   ");";
 
     if (!query.exec(str)) {//couldn't find sql driver->returned false
         qDebug() << "Unable to create a table";
@@ -38,54 +38,18 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //Adding some information
-   QString  strF =
+    QString  strF =
             "INSERT INTO  mainTable (name, data) "
             "VALUES('%2', '%3');";
-    str = strF.arg("My second planer 02.01.2019 ")
-            .arg("Something is happening");
- //   if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}
+    str = strF.arg("My fourth planer 02.01.2019 ")
+            .arg("Too much)) is happening");
+       if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}
 
     if (!query.exec("SELECT * FROM mainTable ORDER BY id DESC;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query - exiting";
         //return 1;
     }
-//if (!MainWindow::createConnection()) { qDebug()<<"couldn't cReAtE connection";  }
-
-    //QTableView     view;//needed to comment it, because the memory stack  disappears when the constructor
-    //ends implementing its funtions and fields, including view. So view disappeared momentarily before commenting.
-//    QSqlTableModel model0;
-//    model0.setTable("mainTable");//seems like its impossible to choose certain fields,
-//    //using QSqlTableModel...
-//   // model0.setSort(0, Qt::DescendingOrder);//this is how to sort
-//    model0.select();
-//    model0.setEditStrategy(QSqlTableModel::OnFieldChange);
-
-//ui->tableView_2->setModel(&model0);
-////ui->tableView_2->hideColumn(0);
-////ui->tableView_2->hideColumn(2);
-//ui->tableView_2->setSortingEnabled(true);
-//ui->tableView_2->setColumnWidth(0,191);
-//ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-
-//    view.setModel(&model0);
-//    //view.hideColumn(0);//but its possible to hide them here
-//    //view.hideColumn(2);
-//    view.resize(450, 100);
-//    view.show();
-/*
-    QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
-    QSqlQuery* qry = new QSqlQuery(db);
-    qry->prepare("SELECT name FROM mainTable ORDER BY id DESC");
-    qry->exec();
-    model->setQuery(*qry);          //THIS ONE WORKS(AT LEAST PUSHES THE DATA TO THE TABLEVIEW)
-    ui->tableView_2->setModel(model);
-    //ui->tableView_2->sortByColumn(0,Qt::AscendingOrder);
-   // ui->tableView_2->setSortingEnabled(true);
-    ui->tableView_2->setColumnWidth(0,191);
-   // ui->tableView_2->hideColumn(0);
-    ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-//ui->tableView_2->setModel(model);
-*/
+    /*
     QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
     QSqlQuery* qry = new QSqlQuery(db);
     qry->prepare("SELECT * FROM mainTable ORDER BY id DESC");
@@ -99,29 +63,53 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView_2->hideColumn(2);
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-//ui->tableView_2->setModel(model);
+*/
+    QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
+    QSqlQuery* qry = new QSqlQuery(db);
+    qry->prepare("SELECT * FROM mainTable ORDER BY id DESC");
+    qry->exec();
+    model->setQuery(*qry);          //THIS ONE WORKS(AT LEAST PUSHES THE DATA TO THE TABLEVIEW)
+    ui->tableView_2->setModel(model);
+    ui->tableView_2->hideColumn(0);
+    ui->tableView_2->hideColumn(2);
+    ui->tableView_2->setColumnWidth(1,191);
+    ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    //ui->tableView_2->setModel(model);
 
-        //  Reading of the data
-        QSqlRecord rec     = query.record();
-        QString    namestr;
-        QString    datastr;
-        while (query.next()) {// $55 we have to also get it out from the query
-            namestr  = query.value(rec.indexOf("name")).toString();
-            datastr  = query.value(rec.indexOf("data")).toString();
-            qDebug() << namestr << " - " << datastr;
-            //ui->tableView->;
-        }
+     num = 0;
+    //  Reading of the data
+    QSqlRecord rec     = query.record();
+    QString    namestr;
+    QString    datastr;
+    while (query.next()) {// $55 we have to also get it out from the query
+        namestr  = query.value(rec.indexOf("name")).toString();
+        datastr  = query.value(rec.indexOf("data")).toString();
+        qDebug() << namestr << " - " << datastr;
+        num++;//counted all the records
+    }
 
-       // QTableView     view;
-//        QSqlTableModel model;
+    QSqlQuery * qryt = new QSqlQuery(db);
+    qryt->prepare("");
+    qryt->exec();//it can't be applied to QSqlTableModel
 
-//        model.setTable("mainTable");
-//        model.select();
-//        model.setEditStrategy(QSqlTableModel::OnFieldChange);
+    QSqlTableModel* modelt = new QSqlTableModel();
+    modelt->setTable("mainTable");
+    modelt->setFilter("id = "+QString::number(num));
+    modelt->select();
+    modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
 
-//        view.setModel(&model);
-//        view.resize(450, 100);
-//        view.show();
+    ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->tableView_3->setModel(modelt);
+    ui->tableView_3->hideColumn(0);
+    ui->tableView_3->hideColumn(2);
+    ui->tableView_3->setColumnWidth(1,561);
+
+    ui->tableView_4->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->tableView_4->setModel(modelt);
+    ui->tableView_4->hideColumn(0);
+    ui->tableView_4->hideColumn(1);
+    ui->tableView_4->setColumnWidth(2,561);
+
 }
 
 MainWindow::~MainWindow()
@@ -162,8 +150,25 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
 
 
     //    // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
-    //    int idi = index.row();//returns the number of the clicked record in tableView_2
-    //    currentRecord = idi+1;
+        int idi = index.row();//returns the number of the clicked record in tableView_2
+        currentRecord = (num - idi);
+        QSqlTableModel* modelt = new QSqlTableModel();
+        modelt->setTable("mainTable");
+        modelt->setFilter("id = "+QString::number(currentRecord));
+        modelt->select();
+        modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
+
+        ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+        ui->tableView_3->setModel(modelt);
+        ui->tableView_3->hideColumn(0);
+        ui->tableView_3->hideColumn(2);
+        ui->tableView_3->setColumnWidth(1,561);
+
+        ui->tableView_4->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+        ui->tableView_4->setModel(modelt);
+        ui->tableView_4->hideColumn(0);
+        ui->tableView_4->hideColumn(1);
+        ui->tableView_4->setColumnWidth(2,561);
     //   // index.
     //    QSqlQuery query;
     //    if (!query.exec("SELECT * FROM mainTable WHERE id = "+QString::number(idi+1))) {
