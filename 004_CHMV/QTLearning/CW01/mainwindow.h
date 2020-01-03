@@ -21,6 +21,8 @@ public:
     QSqlDatabase db;//somehow it allows me to adress my db from a slot,
     //even though it was declared aninstantiated in a constructor
 
+//private signals:
+    void sig();
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);
