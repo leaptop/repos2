@@ -32,7 +32,8 @@ public:
     QTextEdit *textEdit;
     QPushButton *pushButton;
     QTableView *tableView_2;
-    QTextEdit *textEdit_2;
+    QTableView *tableView_3;
+    QTableView *tableView_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,7 +64,7 @@ public:
         dateTimeEdit->setGeometry(QRect(10, 20, 151, 22));
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(220, 130, 561, 301));
+        textEdit->setGeometry(QRect(160, 610, 281, 111));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(400, 440, 191, 21));
@@ -76,9 +77,12 @@ public:
         tableView_2->horizontalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setVisible(false);
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
-        textEdit_2 = new QTextEdit(centralwidget);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-        textEdit_2->setGeometry(QRect(220, 70, 561, 51));
+        tableView_3 = new QTableView(centralwidget);
+        tableView_3->setObjectName(QStringLiteral("tableView_3"));
+        tableView_3->setGeometry(QRect(220, 70, 561, 41));
+        tableView_4 = new QTableView(centralwidget);
+        tableView_4->setObjectName(QStringLiteral("tableView_4"));
+        tableView_4->setGeometry(QRect(220, 120, 561, 321));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -89,7 +93,6 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
-        QObject::connect(tableView_2, SIGNAL(clicked(QModelIndex)), textEdit, SLOT(clear()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
