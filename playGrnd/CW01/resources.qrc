@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/htmFiles">
+        <file>Common/index.htm</file>
+    </qresource>
+    <qresource prefix="/darkStyleInBuild"/>
+</RCC>

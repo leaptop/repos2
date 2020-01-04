@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/htmFiles">
+        <file>Common/index.htm</file>
+    </qresource>
+</RCC>

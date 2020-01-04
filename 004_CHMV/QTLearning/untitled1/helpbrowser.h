@@ -1,6 +1,6 @@
 #ifndef HELPBROWSER_H//makes a window with help in a .htm file. mainwindow.cpp doesn't
 #define HELPBROWSER_H//necessarily has to have any code in itself
-#include <QTWidgets>
+#include <QtWidgets>
 
 class HelpBrowser : public QWidget{
     Q_OBJECT

@@ -13,6 +13,39 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+Нашёл интересную кнопку: "крестик и пересобрать всё" в QT надолго загружает зеЛеную полоску qt. После этого ошибка с распознаванием qss перестала вылазить.
+
+Could not parse application stylesheet значит, что css or qss написаны неправильно
+
+Походу проблема с webengine была в том, что версия 5.11 и 5.13 не являются LTS(long term service) и я его просто не установил в тех версиях. Ща установлю 5.12.6 из комплекта с lts, поставил галочку на webengine. Посмотрю что будет.
+
+
+Вот так получилось подключить qss(папка darkstyle должна лежать в папке build... это по-идиотски, ведь, например Common с index.htm должна лежать в папке с вайлом .pro):
+  QFile file("./darkstyle/darkstyle.qss");
+  qDebug()<<QFile::exists("./darkstyle/darkstyle.qss");
+  qDebug()<<QFile::exists("./qu.txt");
+    file.open(QFile::ReadOnly);
+    QString strCSS = QLatin1String(file.readAll());
+    qApp->setStyleSheet(strCSS);
+
+EDIT:
+To add a custom slot for a button:
+Switch to signal/slot edit mode (F4).
+Click and drag on the button to initiate the signal/slot editor.
+In the left pane, select your "clicked()"/"triggered()"/whatever signal.
+Below the right pane, click the "edit" button.
+Below the top pane, click the "Add" button, and enter the call for your custom slot.
+Click OK, and your custom slot should now be in the right pane.
+Select your custom slot, click OK, and build your project.
+After you do this, the slot will show up in the <slots> drop-down, but since a signal/slot connection is created for you at this point, you'll only need to utilize it from the drop-down if you use it with another signal.
+Ignore: Unfortunately, this doesn't work for menus, since the signals/slots edit mode wants to attach to the menu bar, rather than the menu items. If anyone has a workaround for this, I'd greatly appreciate it...
+
+EDIT:
+There is an easy trick to getting Creator to automatically connect signals to your custom slots, regardless of what they are: You have to name the slot function appropriately.
+You have to name them using the format "on_<sender object name>_<signal>". For example, if you have a button named "calculateButton", and you want to launch your calculate function via the "clicked()" signal, you must name your function: "on_calculateButton_clicked".
+Qt Code:Switch view
+void on_calculateButton_clicked();
+
 You should remove inclusion of mainwindow.h from sprite.h: you have introduced a circular dependency:
 The compiler reads mainwindow and encounters sprite.h include
 It proceeds to sprite.h, but finds mainwindow.h include there
