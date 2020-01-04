@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "datedialog.h"
 #include "ui_datedialog.h"
+//#include<HelpBrowser.h>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -9,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     reloadTable();
+    // hb(":/htmFiles/Common", "index.htm");
 }
 
 MainWindow::~MainWindow()
@@ -161,4 +164,15 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     reloadTable();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    //this->hb(":/htmFiles/Common", "index.htm").resize(450, 350);
+ //  this->hbresize(450, 350);
+   //this->hb();
+   // this->hb(":/htmFiles/Common", "index.htm").show();
+    //hb(":/htmFiles/Common", "index.htm").resize(450,350);
+    //MainWindow::hb(":/htmFiles/Common", "index.htm").show();
+
 }

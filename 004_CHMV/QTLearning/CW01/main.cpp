@@ -5,12 +5,13 @@
 #include<QTableView>
 
 
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
+      //   HelpBrowser helpBrowser(":/htmFiles/Common", "index.htm");//helping window activation
+//         helpBrowser.resize(450, 350);
+//         helpBrowser.show();
 
 
     MainWindow w;

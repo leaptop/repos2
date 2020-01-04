@@ -12,21 +12,21 @@ int main(int argc, char *argv[])
 //     helpBrowser.show();
 
 
-            QStringList lst;  //learned about the qrc file and how to configure it
-            QListWidget lwg;//-trying to turn pictures on... again page 176-
-            QListWidgetItem* pitem = nullptr;
-           // lwg.setIconSize(QSize(48,36));
-            lst<<"Linux"<<"Windows"<<"MacOSX"<<"Android";
+//            QStringList lst;  //learned about the qrc file and how to configure it
+//            QListWidget lwg;//-trying to turn pictures on... again page 176-
+//            QListWidgetItem* pitem = nullptr;
+//           // lwg.setIconSize(QSize(48,36));
+//            lst<<"Linux"<<"Windows"<<"MacOSX"<<"Android";
 
-            foreach(QString str, lst){
-                QIcon *ico = new QIcon(str + "logo.jpg");
-                pitem = new QListWidgetItem( str, &lwg);
-                //pitem->setIcon(*ico);
-                //pitem->setIcon(QPixmap(":/" + str + "logo.jpg"));//-doesn't work for some reason-
-                //pitem->setIcon(QIcon(QPixmap(":/" + str + "logo.jpg")));
-            }
-            lwg.resize(500, 500);
-            lwg.show();
+//            foreach(QString str, lst){
+//                QIcon *ico = new QIcon(str + "logo.jpg");
+//                pitem = new QListWidgetItem( str, &lwg);
+//                //pitem->setIcon(*ico);
+//                //pitem->setIcon(QPixmap(":/" + str + "logo.jpg"));//-doesn't work for some reason-
+//                //pitem->setIcon(QIcon(QPixmap(":/" + str + "logo.jpg")));
+//            }
+//            lwg.resize(500, 500);
+//            lwg.show();
 
 
         QStringList lst;        //-pictograms regime... doesn't work-
