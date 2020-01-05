@@ -15,6 +15,8 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,6 +26,8 @@ public:
     QDialogButtonBox *buttonBox;
     QCalendarWidget *calendarWidget;
     QPlainTextEdit *plainTextEdit;
+    QTextBrowser *textBrowser;
+    QTextEdit *textEdit;
 
     void setupUi(QDialog *DateDialog)
     {
@@ -40,7 +44,15 @@ public:
         calendarWidget->setGeometry(QRect(30, 50, 351, 291));
         plainTextEdit = new QPlainTextEdit(DateDialog);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        plainTextEdit->setGeometry(QRect(400, 50, 471, 661));
+        plainTextEdit->setGeometry(QRect(200, 380, 161, 111));
+        plainTextEdit->setOverwriteMode(false);
+        textBrowser = new QTextBrowser(DateDialog);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(380, 520, 261, 191));
+        textEdit = new QTextEdit(DateDialog);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(410, 50, 451, 451));
+        textEdit->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhSensitiveData);
 
         retranslateUi(DateDialog);
         QObject::connect(buttonBox, SIGNAL(accepted()), DateDialog, SLOT(accept()));
@@ -52,6 +64,12 @@ public:
     void retranslateUi(QDialog *DateDialog)
     {
         DateDialog->setWindowTitle(QApplication::translate("DateDialog", "Dialog", nullptr));
+        textEdit->setHtml(QApplication::translate("DateDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">tty</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2';\">rgre</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     reloadTable();
     // hb(":/htmFiles/Common", "index.htm");
-      QObject::connect(&dd, SIGNAL(needToReloadTable()),//doesn't work for some reason
+      QObject::connect(&dd, SIGNAL(needToReloadTable()),
                         SLOT(reloadTable()));
 }
 

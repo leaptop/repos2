@@ -13,11 +13,21 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+finally implemented slot signal relation with emitting signal needToReloadTable()(объявлен в DateDialog.h, реализован в ... нигде не реализован, это ведь просто сигнал) from the DateDialog::on_buttonBox_accepted() function and catching it with slot  reloadTable()(объявлен в MainWindow.h, реализован в MainWindow.cpp(тело функции прописано здесь)) of MainWindow. Метод connect вызван в конструкторе MainWindow:
+ QObject::connect(&dd, SIGNAL(needToReloadTable()),
+                        SLOT(reloadTable()));
+						
+Finally understood, that StyleLoader::attach(); wouldnt allow me to 
+fill text in TextFields of the application
+
+Стилизованный теекст не могу сохранить почему-то
+
 Это на самом деле просто много проектов было открыто и они все начали пересобираться:
 Нашёл интересную кнопку: "крестик и пересобрать всё" в QT надолго загружает зеЛеную полоску qt. После этого ошибка с распознаванием qss перестала вылазить.
 
 Could not parse application stylesheet значит, что css or qss написаны неправильно
 
+Нет. Проблема в том, что webengine не работает в виндовс:
 Походу проблема с webengine была в том, что версия 5.11 и 5.13 не являются LTS(long term support) и я его просто не установил в тех версиях. Ща установлю 5.12.6 из комплекта с lts, поставил галочку на webengine. Посмотрю что будет.
 
 
