@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
    // QObject::connect(&dd, SIGNAL(on_buttonBox_accepted()),//doesn't work for some reason
              //         SLOT(reloadTable()));
 
-StyleLoader::attach();
+//StyleLoader::attach();
 
     MainWindow w;
  //   DateDialog dd;

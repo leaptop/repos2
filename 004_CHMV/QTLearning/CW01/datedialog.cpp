@@ -21,8 +21,15 @@ void DateDialog::on_buttonBox_accepted()
     QSqlQuery query ;
     QString   str;
     str = qd.toString(Qt::ISODateWithMs);
-    qDebug()<<"\n"<<str;
+   /* qDebug()<<"\n"<<str;                  //this stopped working
     QString st = ui->plainTextEdit->toPlainText();
+    QString  strF =
+            "INSERT INTO  mainTable (name, data) "
+            "VALUES('%2', '%3');";
+    str = strF.arg(str)
+            .arg(st);
+    if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}*/
+    QString st = ui->textEdit->toPlainText();
     QString  strF =
             "INSERT INTO  mainTable (name, data) "
             "VALUES('%2', '%3');";
