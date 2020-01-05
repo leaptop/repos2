@@ -86,25 +86,6 @@
      <bool>false</bool>
     </attribute>
    </widget>
-   <widget class="QTableView" name="tableView_4">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>200</y>
-      <width>561</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="toolTipDuration">
-     <number>3</number>
-    </property>
-    <attribute name="horizontalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-    <attribute name="verticalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-   </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
@@ -138,6 +119,16 @@
     </property>
     <property name="text">
      <string>help</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>200</y>
+      <width>601</width>
+      <height>361</height>
+     </rect>
     </property>
    </widget>
   </widget>

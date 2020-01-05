@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://hatari.tuxfamily.org/docs.html -->
+<html lang="en" class="cye-disabled cye-nm"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+<title>Hatari documentation</title>
+<link rel="stylesheet" type="text/css" href="./Hatari documentation_files/hatari.css">
+<link rel="shortcut icon" href="https://hatari.tuxfamily.org/favicon.ico">
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<meta name="keywords" content="hatari, linux, atari, emulator, documentation, information, manual, help">
+<meta name="description" content="Hatari is an Atari ST/STE/TT/Falcon emulator. Here you can find its documentation.">
+<meta name="author" content="Hatari development team">
+<meta name="robots" content="index,follow">
+<style type="text/css">
+  .question { font-style:italic; font-size:120%; color:#FFFFC0; }
+</style>
+<style id="nightModeStyle">
+html.cye-enabled.cye-nm:not(*:-webkit-full-screen) body,
+ html.cye-enabled.cye-nm:not(*:-webkit-full-screen) #cye-workaround-body {-webkit-filter:contrast(91%) brightness(84%) invert(1);}</style><style id="cyebody">html.cye-enabled.cye-lm body{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyediv">html.cye-enabled.cye-lm div{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetable">html.cye-enabled.cye-lm th{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm td{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetextInput">html.cye-enabled.cye-lm input[type=text]{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm textarea{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeselect">html.cye-enabled.cye-lm select{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeul">html.cye-enabled.cye-lm ul{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeChangeByClick">html.cye-enabled.cye-lm .cye-lm-tag,html.cye-enabled.cye-lm.cye-lm-tag{background-color:#cce8cf !important;border-color:rgb(51, 58, 51) !important;background-image:none !important;color:#000000  !important}</style></head>
+
+<body style="">
+
+<!-- The main menu -->
+<div class="menu">
+ <div class="menutitle"><img src="./Hatari documentation_files/hatari-small.png" width="128" height="34" alt="Hatari"></div>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/index.html">About</a>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/news.html">News</a>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/scrshots.html">Screenshots</a>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/download.html">Download</a>
+ <div class="menuentry">Documentation</div>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/contact.html">Contact</a>
+ <a class="menuentry" href="https://hatari.tuxfamily.org/links.html">Links</a>
+</div>
+
+
+<h1>Documentation</h1>
+
+<h2>The documentation files of Hatari:</h2>
+
+<ul>
+ <li><a href="https://hatari.tuxfamily.org/doc/manual.html">The manual</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/debugger.html">The manual for the built-in debugger</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/compatibility.html">Compatibility list</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/release-notes.txt">The release notes</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/emutos.txt">Using EmuTOS with Hatari</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/m68k-linux-for-hatari.txt">How to run m68k Linux in Hatari</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/midi-linux.txt">Getting MIDI working on Linux</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/video-recording.txt">How to record videos with Hatari</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/todo.txt">The TODO list and remaining issues</a></li>
+ <li><a href="https://hatari.tuxfamily.org/doc/authors.txt">The authors</a></li>
+</ul>
+
+
+<h2>Frequently asked questions:</h2>
+
+<h3 class="question">Q: I can't compile Hatari!?</h3>
+<p>
+A: You should check if you have installed all the tools needed for
+compiling Hatari: The GNU C compiler (GCC), CMake (see
+<a href="http://www.cmake.org/">cmake.org</a>), development
+files for the SDL library and the ZLib compression library.  Download
+page lists few optional libraries which presence allows Hatari to be
+built with some extra features.
+</p>
+
+<h3 class="question">Q: Why is Hatari so slow? Are there any possibilities
+  to speed it up?</h3>
+<p>
+A: Have a look at the
+<a href="https://hatari.tuxfamily.org/doc/manual.html#Performance">“Performance”</a> section
+of the manual.
+</p>
+
+<h3 class="question">Q: Game XY does not work, what can I do?</h3>
+<p>
+A: There can be many reasons why a game does not work immediately. Changing one
+of the following configuration settings often helps:
+</p>
+<ul>
+<li>
+ Many ST games often need a certain TOS version to run right. Old games
+ often only work with TOS 1.00 or TOS 1.02, so you should try these TOS versions
+ first. If the game still does not work, you should also try TOS 1.04 and 2.06.
+ Some games also either need a NTSC (US American) or a PAL (European) TOS,
+ so it might be useful to test these different types, too.
+</li>
+<li>
+ There are also some games which do not work in STE mode - but there
+ are also some few games which only work in STE mode and not in ST mode.
+ So changing the machine type might be worth a try, too.
+</li>
+<li>
+ Some games also need certain RAM sizes, for example some games do not work
+ with 4 MB memory size!
+</li>
+<li>
+ And finally, try to enable the "Slower but more compatible CPU" and/or
+ disable the "Patch Timer-D" in the system options dialog. This slightly
+ increases compatibility with the real ST. In some few cases you also have to enable
+ the "Slow floppy access" option in the floppy options dialog to mimic
+ the speed of the original floppy disk drive.
+</li>
+</ul>
+
+<h3 class="question">Q: How can I use MIDI on Mac OS X or Windows?</h3>
+<p>
+ A: On MacOS and Windows, MIDI support requires building Hatari with
+ PortMidi library. Whatever that supports, should work also with
+ Hatari.
+</p>
+<p>
+ On Linux, if Hatari is built without PortMidi library, it uses raw
+ access to the MIDI devices.  This allows using MIDI ports also for
+ other things than MIDI events, such as debugging and network
+ connectivity.
+</p>
+
+<h3 class="question">Q: Why is the 68k CPU speed limited to so few MHz?</h3>
+<p>
+ A: The development goal of Hatari is to provide a good emulator for running
+ old games and demos, so we focus on a cycle accurate emulator.
+ If you rather want to run GEM applications as fast as possible, you should
+ better use another emulator that better suits this goal.
+</p>
+
+
+
+<script async="" src="./Hatari documentation_files/sovetnik.min.js.Без названия" charset="UTF-8"></script></body><div id="cyeBlackMaskLayer" style="background-color: rgb(19, 19, 19); position: fixed; width: 1980px; height: 1080px; z-index: -2147483648;"></div><div id="cye-workaround-body" style="position: absolute; left: 0px; top: 0px; z-index: -2147483646; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(0, 0, 0); height: 1030px; width: 1349px;"></div><div id="cye-workaround-body-image" style="position: absolute; left: 0px; top: 0px; z-index: -2147483645; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); height: 1030px; width: 1349px;"></div></html>

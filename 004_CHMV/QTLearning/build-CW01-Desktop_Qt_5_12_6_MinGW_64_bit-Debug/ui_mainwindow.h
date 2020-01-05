@@ -19,6 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,9 +32,9 @@ public:
     QPushButton *pushButton;
     QTableView *tableView_2;
     QTableView *tableView_3;
-    QTableView *tableView_4;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -68,12 +69,6 @@ public:
         tableView_3->setToolTipDuration(5);
         tableView_3->horizontalHeader()->setVisible(false);
         tableView_3->verticalHeader()->setVisible(false);
-        tableView_4 = new QTableView(centralwidget);
-        tableView_4->setObjectName(QString::fromUtf8("tableView_4"));
-        tableView_4->setGeometry(QRect(330, 200, 561, 321));
-        tableView_4->setToolTipDuration(3);
-        tableView_4->horizontalHeader()->setVisible(false);
-        tableView_4->verticalHeader()->setVisible(false);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(20, 60, 191, 21));
@@ -82,6 +77,9 @@ public:
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(440, 40, 80, 21));
         pushButton_3->setToolTipDuration(10);
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(300, 200, 601, 361));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

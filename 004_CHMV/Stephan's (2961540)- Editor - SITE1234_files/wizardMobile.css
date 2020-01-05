@@ -1,0 +1,379 @@
+/* Mobile
+----------------------------------*/
+html:not([data-device="computer"]) .wizard.main-content {
+	background-color: #222A2D!important;
+}
+/* Stretch the  main screen tabs on full width */
+html:not([data-device="computer"]) #wizardBox {
+	width: 100%;
+}
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs,
+html:not([data-device="computer"]) #wizardBox .tab-content > div.tab-pane {	
+	width: 100%;	
+	background-color: #2E383E!important;
+	margin-top: 50px;
+}
+
+/* Main screen buttons design*/
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs .main-screen-btn {
+	padding: 10px 0px;
+}
+
+/* Main screen design  */
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab,
+html:not([data-device="computer"]) #wizardBox .top-nav .top-nav-link {
+	font-size: 17px;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+	color: rgba(255,255,255,.5);
+	background: transparent;
+	border: 0;
+	margin: 0;
+	border-radius: 0;
+	letter-spacing: .08em;
+}
+
+html:not([data-device="computer"]) #wizardBox .top-nav .current-page {
+	text-align: center;
+}
+html:not([data-device="computer"]) #wizardBox .top-nav .current-page > a {
+	display: block;
+	font-size: 15px;
+	max-width: 70%;
+	/*text-align: left;*/
+	/*margin: 0 auto;*/
+}
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab {
+	display: block;
+	font-size: 15px;
+	padding: 12px 0;
+	text-align: center; 
+	border-style: solid;
+	border-width: 1px;
+}
+html:not([data-device="computer"]) #wizardBox .top-nav {
+	width: 100%;
+	height: 50px;
+	margin: 0 0;
+	position: fixed;
+	z-index: 999;
+	font-size: 0;
+	background-color: #141A1B!important;
+}
+html:not([data-device="computer"]) #wizardBox .bottom-nav {
+	width: 100%;
+	margin: 0 0;
+	bottom: 0px;
+	position: fixed;
+	z-index: 999;		
+	background-color: #141A1B!important;
+}
+html:not([data-device="computer"]) #wizardBox .top-nav a {
+	font-size: 15px;	
+}
+html:not([data-device="computer"]) #wizardBox #backToDashBoard a {
+	padding: 0px 15px;
+	font-size: 29px;	
+}
+html:not([data-device="computer"]) #wizardBox .top-nav .top-corner-btn {
+	padding-top: 15px;
+	/*max-width: 180px;*/
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+html:not([data-device="computer"]) #wizardBox .top-nav .logo-container .top-corner-btn {
+	overflow: visible;
+	padding-top: 0;
+}
+html:not([data-device="computer"]) #wizardBox .bottom-nav a {
+	color: #fff!important;
+	font-size: 15px;
+	max-width: 100%;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* Large mobiles */
+@media (min-height: 500px) {
+	/* publish and preview buttons */
+	html:not([data-device="computer"]) #wizardBox .bottom-nav a {
+		font-size: 16px;
+	}
+	/* main window tabs buttons */
+	html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab {
+		font-size: 18px;
+	}
+}
+
+/* Tablets */
+@media (min-height: 670px) {
+	/* publish and preview buttons */
+	html:not([data-device="computer"]) #wizardBox .bottom-nav a {
+		font-size: 20px;
+	}
+	/* main window tabs buttons */
+	html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab {
+		font-size: 20px;
+	}
+}
+
+/* Stretch the accordions on full width*/
+html:not([data-device="computer"]) #wizardBox .tab-content > div {		
+	width: calc( 100vw - 22px );
+}
+html:not([data-device="computer"]) #wizardBox .tab-content > div {
+	width: calc( 100vw - 38px );
+}
+
+/* In mobile the arrow tab will be always closed */ 
+html:not([data-device="computer"]) .wizard-accordion .panel-heading .accordion-toggle:after {
+	font-family: 'Glyphicons Halflings' !important;
+	content: "\e259" !important;
+	float: left !important;
+	padding-right: 7px !important;
+}
+html:not([data-device="computer"]) #wizardBox .tab-content > .tab-pane {
+	padding-bottom: 150px; 
+}
+
+/* Add new page button design */
+html:not([data-device="computer"]) #addNewPageModule {
+	width: auto;
+	padding: 11px 0;
+	top: 50px !important;
+	left: auto !important;
+	z-index: 100;
+	position: fixed;
+	text-align: center;
+}
+
+/* Stretch the menu on full width */
+html:not([data-device="computer"]) #moduleItemsIframe.module-side-menu {
+		width: 100% !important;
+}
+
+/* bottom padding for the modal iframe so the user will see the save / cancel buttons*/
+html:not([data-device="computer"]) .custom-padding {
+	padding: 0 0 35px 0 !important;
+}
+
+/* Homepage >> Layouts */
+html:not([data-device="computer"]) .chooseHomepageLayout {
+	height: 100%;
+}
+/* Hided the upgrade & discount button mobiles */
+html:not([data-device="computer"]) .upgrade-and-discount-button-box {
+	display:none;
+}
+/* Hided the discount button from tablet and mobiles */
+html:not([data-device="computer"]) #discountButton{
+	display:none;
+}
+
+/* Set style for the upgrade / dashboard button*/
+html:not([data-device="computer"]) #upgradeButton,
+html:not([data-device="computer"]) #backToDashBoard  {
+	position: relative !important;
+	display: block !important;
+	margin-top: 3px;
+	bottom: 0px !important;
+}
+
+/* Set color for the dashboard icon*/
+html:not([data-device="computer"]) #backToDashBoard a {
+	color: #ffffff;
+}
+
+html:not([data-device="computer"]) #upgradeButton .wizardMainButton {
+	max-width: 100%;
+    min-width: 100%;
+    padding: 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color:black !important;
+}
+
+html:not([data-device="computer"]) #upgradeButton button,
+html:not([data-device="computer"]) #backToDashBoard button {
+	height: 40px;
+}
+
+
+/* Modal design
+----------------------------------*/
+
+/* Some modals doesn't open on full screen so we center them */
+html:not([data-device="computer"]) .modal-dialog {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Set style for the modal */
+html:not([data-device="computer"]) #globalModal .modal-dialog,
+html:not([data-device="computer"]) #moduleWindow .modal-dialog,
+html:not([data-device="computer"]) #imageLibrary .modal-dialog {
+	margin: 0px !important;
+	width: 100% !important;
+	height: 100%;
+}
+/* stretch the modal header on full width */
+html:not([data-device="computer"]) #globalModal .modal-header,
+html:not([data-device="computer"]) #moduleWindow .modal-header,
+html:not([data-device="computer"]) #imageLibrary .modal-header {
+	width: 100%;
+}
+/* stretch the modal content on full width */
+html:not([data-device="computer"]) #globalModal .modal-content,
+html:not([data-device="computer"]) #moduleWindow .modal-content,
+html:not([data-device="computer"]) #imageLibrary .modal-content {
+   	height: 100% !important;
+}
+/* stretch the modal body on full window */
+html:not([data-device="computer"]) #globalModal .modal-body,
+html:not([data-device="computer"]) #moduleWindow .modal-body {
+   	width: 100%;
+   	height: calc(100% - 51px) !important;
+}
+/* stretch the modal iframe on full modal body height ( 5px is to remove the scroll on the page)*/
+html:not([data-device="computer"]) #globalModal .modal-body iframe,
+html:not([data-device="computer"]) #moduleWindow .modal-body iframe {
+	height: calc(100% - 5px) !important;
+}
+
+
+/* Fix for homepage background images modal
+----------------------------------*/
+/* stretch the modal body on full window */
+html:not([data-device="computer"]) #imageLibrary .modal-body {
+   	width: 100%;
+   	height: 100% !important;
+}
+/* stretch the modal iframe on full modal body height */
+html:not([data-device="computer"]) #imageLibrary .modal-body iframe {
+	height: 100% !important;
+}
+html:not([data-device="computer"]) .custom-active {
+	font-weight: bold;
+    color: #2196F3 !important;
+}
+
+
+/* Set style for the IOS devices */
+html[data-ios-device] #globalModal .modal-body,
+html[data-ios-device] #moduleWindow .modal-body, 
+html[data-ios-device] #AddModuleWin .modal-body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    max-height: 100% !important;
+}
+
+
+
+/* mobile accordion button style
+----------------------------------*/
+html:not([data-device="computer"]) .mobile-accordion-btn-style {
+	padding: 0px;
+	width: 100%;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .wizard-accordion {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default {
+    width: 50%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-width: 0px;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel-default.active-option {
+	width: 100%;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title {
+	padding: 10px 0px;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a {
+    background-color: #424242;
+    background-clip: border-box;
+    border: 1px solid rgba(24,28,33,0.06);
+    border-radius: .25rem;
+    color: #fff;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-size: 15px !important;
+    padding: 12px;
+    text-align: center;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a .premiumFeatureMessageItem {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+html[dir=rtl]:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a .premiumFeatureMessageItem {
+    position: absolute;
+    left: 1px;
+    right: auto;
+    top: 1px;
+}
+/* Tablets */
+@media (min-height: 670px) {
+	html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a {
+		font-size: 20px;
+	}
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a:before {
+	height: 20px;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .panel.panel-default .panel-heading .panel-title a:after {
+	display: none;
+}
+html:not([data-device="computer"]) .mobile-accordion-btn-style .accordion-style1.panel-group .panel + .panel {
+    margin-top: 0px;
+}
+
+
+
+/* Homepage - Mobile Buttons */
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab {
+    background-color: #424242;
+    background-clip: border-box;
+    border: 1px solid rgba(24,28,33,0.06);
+    border-radius: .25rem;
+    color: #fff;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-size: 15px !important;
+    padding: 12px 0;
+    text-align: center;
+}
+html:not([data-device="computer"]) #wizardBox .wizardSideTabs .mobile-tab > i {
+    margin: 5px;
+    font-size: 140%;
+}
+
+/* Homepage Changing Images - Always Show The Icons
+--------------*/
+html:not([data-device="computer"]) #homepage_style_option_3 .fileUploadBox .sortable-icon {
+	display: block;
+}
+html:not([data-device="computer"]) #homepage_style_option_3 .fileUploadBox #changingImagesAdd {
+	display: inline-flex;
+}

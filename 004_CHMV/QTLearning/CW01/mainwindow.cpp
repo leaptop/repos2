@@ -14,13 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
     //hb(":/htmFiles/Common", "index.htm");
     QObject::connect(&dd, SIGNAL(needToReloadTable()),
                      SLOT(reloadTable()));
-//    QObject::connect(this, SIGNAL(helpClicked()),
-//                     &hd, SLOT(help()));
-
-//    QObject::connect(on_pushButton_3_clicked(), SIGNAL(helpClicked()),
-//                     hb(":/htmFiles/Common", "index.htm"), SLOT(test()));
-    //    QObject::connect(SIGNAL(helpClicked(),
-    //                            &hb, SLOT()))
 }
 
 MainWindow::~MainWindow()
@@ -70,11 +63,11 @@ void MainWindow::reloadTable(){
     qry->exec();
     model->setQuery(*qry);          //THIS ONE WORKS(AT LEAST PUSHES THE DATA TO THE TABLEVIEW)
     ui->tableView_2->setModel(model);
+    //ui-->setModel(model);
     ui->tableView_2->hideColumn(0);
     ui->tableView_2->hideColumn(2);
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    //ui->tableView_2->setModel(model);
 
     numOfRecords = 0;
     //  Reading of the data
@@ -82,11 +75,13 @@ void MainWindow::reloadTable(){
     QString    namestr;
     QString    datastr;
     while (query.next()) {// $55 we have to also get it out from the query
-        //        namestr  = query.value(rec.indexOf("name")).toString();
-        //        datastr  = query.value(rec.indexOf("data")).toString();
-        //        qDebug() << namestr << " - " << datastr;
+        namestr  = query.value(rec.indexOf("name")).toString();
+        qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
+        qDebug() << namestr << " - " << datastr;
         numOfRecords++;//counted all the records
     }
+    QString lastData = qsl[0];
+    qDebug()<<"qsl[0] = "<<qsl[0];
     QSqlTableModel* modelt = new QSqlTableModel();
     modelt->setTable("mainTable");
     modelt->setFilter("id = "+QString::number(numOfRecords));
@@ -99,11 +94,7 @@ void MainWindow::reloadTable(){
     ui->tableView_3->hideColumn(2);
     ui->tableView_3->setColumnWidth(1,561);
 
-    ui->tableView_4->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    ui->tableView_4->setModel(modelt);
-    ui->tableView_4->hideColumn(0);     //these should be worked on
-    ui->tableView_4->hideColumn(1);
-    ui->tableView_4->setColumnWidth(2,561);
+    ui->textEdit->setText(qsl[0]);
 }
 
 static bool createConnection()
@@ -152,17 +143,11 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
     ui->tableView_3->hideColumn(2);
     ui->tableView_3->setColumnWidth(1,561);
 
-    ui->tableView_4->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    ui->tableView_4->setModel(modelt);
-    ui->tableView_4->hideColumn(0);
-    ui->tableView_4->hideColumn(1);
-    ui->tableView_4->setColumnWidth(2,561);
+    ui->textEdit->setText(qsl[idi]);
 }
 
 void MainWindow::on_pushButton_clicked()//new record clicked
 {
-    //DateDialog dd;
-    // dd.setParent(this);
     dd.show();
 }
 
@@ -173,12 +158,5 @@ void MainWindow::on_pushButton_2_clicked()//reload table clicked
 
 void MainWindow::on_pushButton_3_clicked()//help clicked
 {
-    //hb(":/htmFiles/Common", "index.htm").resize(450, 350);
-    //  this->hbresize(450, 350);
-    //  this->hb();
-    // hb(":/htmFiles/Common", "index.htm")->resize(450,350);
-     // hb(":/htmFiles/Common", "index.htm")->show();
-    emit helpClicked();
-    //hb->
     hd.show();
 }
