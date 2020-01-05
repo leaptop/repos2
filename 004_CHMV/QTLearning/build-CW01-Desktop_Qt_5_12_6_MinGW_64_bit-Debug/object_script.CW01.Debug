@@ -1,0 +1,10 @@
+debug/datedialog.o
+debug/helpdialog.o
+debug/main.o
+debug/mainwindow.o
+debug/testing.o
+debug/qrc_resources.o
+debug/moc_HelpBrowser.o
+debug/moc_datedialog.o
+debug/moc_helpdialog.o
+debug/moc_mainwindow.o

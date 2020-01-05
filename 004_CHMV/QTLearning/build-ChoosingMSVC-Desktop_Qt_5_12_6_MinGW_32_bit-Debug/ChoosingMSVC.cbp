@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ChoosingMSVC"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ChoosingMSVC">
+				<Option output="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/ChoosingMSVC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/ChoosingMSVC_autogen/include"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtWidgets"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtGui"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtANGLE"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtCore"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 ChoosingMSVC"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ChoosingMSVC/fast">
+				<Option output="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/ChoosingMSVC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC"/>
+					<Add directory="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/ChoosingMSVC_autogen/include"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtWidgets"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtGui"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtANGLE"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/include/QtCore"/>
+					<Add directory="C:/Qt_5_12_6/5.12.6/mingw73_32/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="C:/Qt_5_12_6/Tools/mingw730_32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 ChoosingMSVC/fast"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ChoosingMSVC_autogen">
+				<Option working_dir="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 ChoosingMSVC_autogen"/>
+					<CompileFile command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt_5_12_6/Tools/mingw730_32/bin/mingw32-make.exe -f &quot;C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/main.cpp">
+			<Option target="ChoosingMSVC"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/mainwindow.cpp">
+			<Option target="ChoosingMSVC"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/mainwindow.h">
+			<Option target="ChoosingMSVC"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/mainwindow.ui">
+			<Option target="ChoosingMSVC"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-ChoosingMSVC-Desktop_Qt_5_12_6_MinGW_32_bit-Debug/ChoosingMSVC_autogen/mocs_compilation.cpp">
+			<Option target="ChoosingMSVC"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/ChoosingMSVC/../../../../../../../Qt_5_12_6/5.12.6/mingw73_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt_5_12_6\5.12.6\mingw73_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

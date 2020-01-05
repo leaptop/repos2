@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include<QtWidgets>
-#include<QtWebEngineWidgets>
+//#include<QtWebEngineWidgets>
 
 namespace Ui {
 class HelpDialog;
