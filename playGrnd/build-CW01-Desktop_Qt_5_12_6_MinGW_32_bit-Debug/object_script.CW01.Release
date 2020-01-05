@@ -1,0 +1,12 @@
+release/datedialog.o
+release/helpdialog.o
+release/main.o
+release/mainwindow.o
+release/styleloader.o
+release/testing.o
+release/qrc_resources.o
+release/moc_HelpBrowser.o
+release/moc_datedialog.o
+release/moc_helpdialog.o
+release/moc_mainwindow.o
+release/moc_styleloader.o
