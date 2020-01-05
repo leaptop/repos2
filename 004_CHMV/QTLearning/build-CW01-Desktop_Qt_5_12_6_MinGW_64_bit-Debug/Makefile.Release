@@ -2205,33 +2205,22 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
 		ui_datedialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QVariant \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QDialogButtonBox \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPlainTextEdit \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qplaintextedit.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtextedit.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextdocument.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextoption.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextcursor.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qabstracttextdocumentlayout.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextlayout.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qglyphrun.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qrawfont.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qfontdatabase.h \
 		../CW01/mainwindow.h \
 		../CW01/HelpBrowser.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QTWidgets \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgetsDepends \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QtGui \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QtGuiDepends \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qabstracttextdocumentlayout.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextlayout.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qglyphrun.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qrawfont.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qfontdatabase.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextdocument.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessible.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessiblebridge.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessibleobject.h \
@@ -2250,6 +2239,8 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericmatrix.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericplugin.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericpluginfactory.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qiconengine.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qiconengineplugin.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qimageiohandler.h \
@@ -2326,6 +2317,8 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qaccessiblewidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qaction.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qactiongroup.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlayoutitem.h \
@@ -2342,6 +2335,7 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdatawidgetmapper.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdial.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdirmodel.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qfileiconprovider.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdockwidget.h \
@@ -2390,6 +2384,8 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmouseeventtransition.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qopenglwidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qplaintextedit.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtextedit.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qprogressbar.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qprogressdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qproxystyle.h \
@@ -2401,6 +2397,7 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QScrollerProperties \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qscrollerproperties.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QMetaType \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QVariant \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qshortcut.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qsizegrip.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qspinbox.h \
@@ -2431,6 +2428,7 @@ release/datedialog.o: ../CW01/datedialog.cpp ../CW01/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\datedialog.o ..\CW01\datedialog.cpp
 
@@ -2900,9 +2898,7 @@ release/helpdialog.o: ../CW01/helpdialog.cpp ../CW01/helpdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwidgetaction.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
-		ui_helpdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QDialogButtonBox
+		ui_helpdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\helpdialog.o ..\CW01\helpdialog.cpp
 
 release/main.o: ../CW01/main.cpp ../CW01/mainwindow.h \
@@ -3896,18 +3892,10 @@ release/mainwindow.o: ../CW01/mainwindow.cpp ../CW01/mainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets \
 		ui_mainwindow.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QAction \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QHeaderView \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMenu \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMenuBar \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QStatusBar \
-		ui_datedialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QDialogButtonBox \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPlainTextEdit
+		ui_datedialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\CW01\mainwindow.cpp
 
-release/styleloader.o: ../CW01/styleloader.cpp ../CW01/StyleLoader.h \
+release/styleloader.o: ../CW01/styleloader.cpp ../CW01/styleloader.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QObject \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/qobject.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/qobjectdefs.h \

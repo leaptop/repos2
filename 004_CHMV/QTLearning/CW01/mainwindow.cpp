@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     reloadTable();
     // hb(":/htmFiles/Common", "index.htm");
+      QObject::connect(&dd, SIGNAL(needToReloadTable()),//doesn't work for some reason
+                        SLOT(reloadTable()));
 }
 
 MainWindow::~MainWindow()
@@ -128,8 +130,6 @@ void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 int currentRecord = 0;
 void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
 {
-
-
     //    // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
         int idi = index.row();//returns the number of the clicked record in tableView_2
         currentRecord = (num - idi);
@@ -156,9 +156,7 @@ void MainWindow::on_pushButton_clicked()
 {
     //DateDialog dd;
    // dd.setParent(this);
-
     dd.show();
-
 }
 
 void MainWindow::on_pushButton_2_clicked()

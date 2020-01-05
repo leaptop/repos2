@@ -12,6 +12,9 @@ int main(int argc, char *argv[])
       //   HelpBrowser helpBrowser(":/htmFiles/Common", "index.htm");//helping window activation
 //         helpBrowser.resize(450, 350);
 //         helpBrowser.show();
+   // QObject::connect(&dd, SIGNAL(on_buttonBox_accepted()),//doesn't work for some reason
+             //         SLOT(reloadTable()));
+
 StyleLoader::attach();
 
     MainWindow w;

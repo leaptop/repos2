@@ -38,6 +38,9 @@ public:
     void helpNavigator();
     //void slot1Help();
 
+//private signals:
+  //  void
+
 private slots:
     void on_tableView_activated(const QModelIndex &index);
 

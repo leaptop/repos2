@@ -21,8 +21,11 @@ public:
     ~DateDialog();
     QCalendarWidget cw;
 
-private slots:
+public slots:
     void on_buttonBox_accepted();
+
+ signals:
+   void needToReloadTable();
 
 private:
     Ui::DateDialog *ui;
