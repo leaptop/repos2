@@ -13,6 +13,15 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+Вот так получилось подключить стиль:
+//Добавил в папку с исходниками папку Common, в неё засунул style.qss. Создал в ресурсном файле префикс /styles. Добавил через кнопку "добавить файлы" style.qss из папки Common.
+ Это в main():
+		QFile file(":/styles/Common/style.qss");
+		qDebug()<<QFile::exists("/../../CW01/style.qss");//выдало false но это другой файл
+        file.open(QFile::ReadOnly);
+        QString strCSS = QLatin1String(file.readAll());
+        qApp->setStyleSheet(strCSS);
+
 finally implemented slot signal relation with emitting signal needToReloadTable()(объявлен в DateDialog.h, реализован в ... нигде не реализован, это ведь просто сигнал) from the DateDialog::on_buttonBox_accepted() function and catching it with slot  reloadTable()(объявлен в MainWindow.h, реализован в MainWindow.cpp(тело функции прописано здесь)) of MainWindow. Метод connect вызван в конструкторе MainWindow:
  QObject::connect(&dd, SIGNAL(needToReloadTable()),
                         SLOT(reloadTable()));

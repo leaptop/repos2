@@ -75,9 +75,9 @@ void MainWindow::reloadTable(){
     QString    namestr;
     QString    datastr;
     while (query.next()) {// $55 we have to also get it out from the query
-        namestr  = query.value(rec.indexOf("name")).toString();
-        datastr  = query.value(rec.indexOf("data")).toString();
-        qDebug() << namestr << " - " << datastr;
+//        namestr  = query.value(rec.indexOf("name")).toString();
+//        datastr  = query.value(rec.indexOf("data")).toString();
+//        qDebug() << namestr << " - " << datastr;
         num++;//counted all the records
     }
     QSqlTableModel* modelt = new QSqlTableModel();
