@@ -1,0 +1,558 @@
+/*
+body {
+    my full smoothing solution: https://jsfiddle.net/4mn64n2q/
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    -webkit-text-stroke: 1px transparent;
+}
+*/
+
+html[lang="he"] body,html[lang="ar"] body,html[lang="ru"] body {
+    font-family: Arial;
+}
+
+/* Give option to smooth scrooling on mobile devices
+http://stackoverflow.com/questions/12845892/ios-overflow-x-or-position-absolute-makes-scrolling-choppy
+*/ 
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+.ace-nav > li.light-blue > a,.ace-nav > li.light-blue > a:hover,.ace-nav > li.light-blue > a:focus {
+	background-color: transparent;
+    font-size: 14px;
+}
+.ace-nav > li,.rtl .ace-nav > li {
+	border: 0;
+}
+.force-ltr {
+	direction: ltr !important;
+}
+.btn.btn-app.radius-4 {
+	margin: 9px;
+}
+
+
+#main-interface-header ~ .main-container {
+	padding-top: 50px;
+}
+#main-interface-header {
+	background-color: #141A1B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+#main-interface-header-admin-connect {
+	background-color:#d15b47;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+	color:white;
+	padding:7px;
+	cursor:pointer;
+    height: 35px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+#main-interface-header .hedaer-left {
+    width: 40%;
+}
+/* Mobile */
+@media (max-width: 767px) {
+    #main-interface-header .hedaer-left .light-blue a {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+#main-interface-header .hedaer-center {
+    width: 20%;
+}
+#main-interface-header .header-right {
+    width: 40% !important;
+}
+#main-interface-header .header-right .right-nav {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+#main-interface-header .header-item {
+
+}
+#main-interface-header .hedaer-center {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.76);
+}
+#main-interface-header .hedaer-center a {
+	color:white;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+#main-interface-header .hedaer-center a img:hover {
+    opacity: 1 !important;
+}
+
+/* prevent inherit from `.ace-nav > li` the `line-height: 45px;` */
+#user_profile_menu li {
+    line-height: normal;
+}
+
+.navbar .navbar-brand {
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+.navbar-container {
+	padding: 0;
+}
+
+.pagination {
+	margin:0;
+}
+/* Trick to remove the default select boxed rounded corners */
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+    border-radius: 0;
+}
+html:not([dir=rtl]) select:not([multiple]) {
+	padding-right: 1.5em;
+}
+html[dir=rtl] select:not([multiple]):not(.force-ltr) {
+	background-position: 0.5em 50%;
+    padding-left: 1.5em;
+}
+/* Internet Explorer - Hide IE drop down arrow because we handle it in a different way on `select:not([multiple])` */
+select::-ms-expand{
+	display: none;
+}
+select::-ms-expand{
+	display: none;
+}
+.chosen-single {
+    border-radius: 0 !important;
+}
+
+/* live support chat */
+html[dir=rtl] #intercom-container .intercom-launcher {
+	right:auto;
+	left:20px;
+}
+html[dir=rtl] #intercom-container .intercom-conversations, html[dir=rtl] #intercom-container .intercom-sheet {
+	right:auto !important;
+	left:0 !important;
+}
+html[dir=rtl] #intercom-container .intercom-launcher-button {
+	right:auto !important;
+	left:0 !important;
+}
+html[dir=rtl] #intercom-container .intercom-launcher-badge {
+	right: auto;
+	left: -7px;
+}
+html[dir=rtl] #intercom-container .intercom-launcher-preview {
+    left: 60px;
+}
+/**
+ * Responsive Table - Fix the hidden dropdown menus bug:
+ * https://github.com/twbs/bootstrap/issues/11037
+ */
+@media (max-width: 767px) {
+	.table-responsive .dropdown-menu,
+	.table-responsive .dropdown-toggle {
+		position: static !important;
+	}
+    /**
+     * Bootstrap add a backdrop div so we hide it because we change the drop-down
+     * functionality, otherwise the user can not click on the drop-down links
+     */
+    .table-responsive .dropdown-backdrop {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+	.table-responsive {
+		overflow: visible;
+	}
+}
+
+
+/* Sites List
+----------------------------------*/
+@media screen and ( max-width: 992px) {
+	.sites-user-info {
+		width: 100%;
+	}
+}
+.sites-user-info {
+	border: 1px solid #DCEBF7;
+}
+.sites-info-row:first-child .sites-info-value {
+    border-top: none;
+}
+.sites-user-info-striped .sites-info-value {
+    border-top: 1px dotted #DCEBF7;
+    padding-left: 12px;
+    display: table-cell;
+    padding: 6px 4px 6px 6px;
+}
+html[dir=rtl] .sites-user-info-striped .sites-info-value {
+	padding-right: 12px;
+}
+.sites-list .sites-info-row.managment-button .sites-info-value {
+    text-align: right;
+}
+html[dir=rtl] .sites-list .sites-info-row.managment-button .sites-info-value {
+    text-align: left;
+}
+.siteCard {
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: #EDF3F4;
+    border-radius: 0;
+    display: flex;
+}
+.siteCard .img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    cursor: pointer;
+}
+.siteCard .activity.badge {
+    font-size: 10px;
+    padding: 1px 5px;
+    line-height: 13px;
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    color:white;
+}
+.languageCard {
+    border-bottom: 1px dotted rgba(204, 204, 204, 0.49);
+    padding: 10px 0;
+}
+
+.siteScreenPreview {
+    height: 120px;
+    width: 340px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    background-color: #000;
+}
+.siteScreenPreviewBackImage.hideBack {
+	opacity: 0.3;
+}
+.dashboard {
+	margin-top:20px;
+}
+.dashboard .siteScreenPreview {
+	width:100%;
+	height: 300px;
+	margin-bottom: 0;
+	margin: 0;
+	margin-top: 9px;
+}
+/* Mobile */
+@media (max-width: 767px) {
+	.dashboard .siteScreenPreview {
+		height: 150px;
+	}
+}
+.dashboard .widget-box {
+    margin-bottom: 15px;
+}
+.siteScreenPreviewBackImage {
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+.siteScreenPreviewBackImageRadius {
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:120px;
+    height:120px;
+    border-radius:100%;
+    opacity: 1;
+    text-align: center;
+    margin: 0 auto;
+}
+.cardManageButtons {
+	display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+.notifications {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    background-color: red;
+    border-radius: 100%;
+    padding: 0px 6px;
+    font-size: 13px;
+    color: white;
+    border: 1px solid rgba(204, 204, 204, 0.56);
+}
+.notifications:hover {
+	color:white;
+	text-decoration: none;
+	background-color: rgb(220, 2, 2);
+}
+html[dir=rtl] .notifications {
+	right:auto;
+	left:-7px;
+}
+.websiteCardName {
+    position: absolute;
+	padding: 8px;
+	color:white;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgb(0, 0, 0);
+}
+.websiteCardName .websiteLink {
+	color:#ccc;
+	font-size: 12px;
+}
+.CardWebsiteName {
+	color:white;
+}
+.CardWebsiteName:hover {
+	color:white;
+}
+
+.websiteInfoTag {
+    margin-top: 5px;
+    display: block;
+}
+
+
+
+
+
+.activityButtons {
+	width: 100%;
+    margin-top: 44px;
+}
+.activityButtons .card-outside-link:hover {
+	text-decoration: none;
+}
+/* Mobile */
+@media (max-width: 767px) {
+	.activityButtons {
+		width: 100%;
+	}
+}
+
+
+#agencyInfo h2 {
+	margin-top: 0;
+}
+#teamsList > li > a {
+	display: block;
+	text-decoration: none;
+}
+.agencyManageButtons {
+	margin-top: 0px;
+	text-align: right;
+}
+html[dir=rtl] .agencyManageButtons {
+	text-align: left;
+}
+
+.saleLink:hover {
+	text-decoration: none !important;
+}
+.brad-arrow i {
+	color:white;
+	font-size: 10px;
+}
+
+.form-search-sites {
+	text-align: right;
+}
+html[dir=rtl] .form-search-sites {
+	text-align: left;
+}
+
+.outlineMe {
+	outline: solid 3px orange;
+}
+.cantDropHere {
+	background-color: red;
+	color:white;
+}
+
+.agencyDrag {
+	display: none;
+	position: absolute;
+    bottom: 3px;
+    right: 3px;
+	cursor: move;
+	color:white;
+	font-size: 14px;
+}
+html[dir=rtl] .agencyDrag {
+	right:auto;
+	left:3px;
+}
+.agencyDrag.nodrag {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.websiteDragHelper {
+	padding:15px;
+	background-color: #d8d8d8;
+	border: 2px solid orange;
+	z-index: 100;
+	color:black;
+	font-size: 16px;
+}
+
+.upgradeLink {
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+}
+.upgradeLink:hover {
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.ui-state-highlight {
+	background-color: #ffb734;
+}
+.droppableHover {
+	background-color: #ffe4b3;
+}
+
+
+#groupListBox {
+	position: fixed;
+	min-width: 220px;
+}
+/* Tablet */
+@media (max-width: 1199px) {
+	#groupListBox {
+		min-width: 170px;
+	}
+}
+/* Mobile */
+@media (max-width: 767px) {
+	#groupListBox {
+		position: relative;
+		min-width: auto;
+	}
+}
+#groupsList .count {
+	float: right;
+}
+html[dir=rtl] #groupsList .count {
+	float: left;
+}
+#groupsList .list-group-item {
+	padding: 0;
+}
+#groupsList .list-group-item a, #groupsList .list-group-item > span {
+	display: block;
+	padding:10px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+#groupsList .list-group-item span.label{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.disableButtons {
+    background-color: #ccc;
+    opacity: 0.3;
+    cursor: no-drop;
+}
+.access-blocked-message {
+    opacity: 0.5;
+}
+.disableDivs {
+    opacity: 0.3;
+}
+.disableDivs > a {
+    cursor: no-drop;
+}
+
+#sidebar-publish-button {
+    text-align: center;
+    margin-top: 15px;
+}
+/* Mobile */
+@media (max-width: 767px) {
+    #sidebar-publish-button {
+        display: none;
+    }
+}
+#sidebar-preview-button {
+    text-align: center;
+    border-top: 1px solid rgba(163, 175, 183, 0.18);
+    margin-top: 10px;
+}
+#sidebar-preview-button a {
+    display: block;
+    padding: 10px;
+    color:white;
+    text-decoration: none;
+}
+#sidebar-preview-button a:hover {
+    background-color: #3c464c;
+}
+/* Mobile */
+@media (max-width: 767px) {
+    #sidebar-preview-button {
+        display: none;
+    }
+}
+
+
+.wizardPatterns {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    background-size: cover;
+    cursor: pointer;
+}

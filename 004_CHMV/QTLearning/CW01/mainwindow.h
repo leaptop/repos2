@@ -7,7 +7,6 @@
 #include <QtSql>
 #include<QTableView>
 #include<QMessageBox>
-//class DateDialog;
 #include <QtWidgets>
 
 QT_BEGIN_NAMESPACE
@@ -32,11 +31,9 @@ public:
     QSqlTableModel model;
     DateDialog dd;
     HelpDialog hd;
-    //private signals:
-    void sig();
     bool createConnection();
     void helpNavigator();
-    //void slot1Help();
+    QStringList qsl;//a list of data column
 
 signals:
   void  helpClicked();
@@ -44,9 +41,8 @@ signals:
 private slots:
     void on_tableView_activated(const QModelIndex &index);
 
-     void reloadTable();
+    void reloadTable();
 
-//void slot1Help();
     void on_tableView_clicked(const QModelIndex &index);
 
     void on_tableView_2_doubleClicked(const QModelIndex &index);
