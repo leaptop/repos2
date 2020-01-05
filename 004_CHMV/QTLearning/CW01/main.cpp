@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QtSql>
 #include<QTableView>
-
+#include "styleloader.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
       //   HelpBrowser helpBrowser(":/htmFiles/Common", "index.htm");//helping window activation
 //         helpBrowser.resize(450, 350);
 //         helpBrowser.show();
-
+StyleLoader::attach();
 
     MainWindow w;
  //   DateDialog dd;
