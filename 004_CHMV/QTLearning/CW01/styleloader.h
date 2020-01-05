@@ -1,16 +1,3 @@
-//#ifndef STYLELOADER_H
-//#define STYLELOADER_H
-
-
-//class StyleLoader
-//{
-//public:
-//    StyleLoader();
-//};
-
-//#endif // STYLELOADER_H
-
-
 #ifndef STYLELOADER_H
 #define STYLELOADER_H
 
