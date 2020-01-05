@@ -32,7 +32,7 @@ public:
         DateDialog->resize(892, 725);
         buttonBox = new QDialogButtonBox(DateDialog);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(50, 380, 81, 241));
+        buttonBox->setGeometry(QRect(50, 380, 121, 241));
         buttonBox->setOrientation(Qt::Vertical);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         calendarWidget = new QCalendarWidget(DateDialog);

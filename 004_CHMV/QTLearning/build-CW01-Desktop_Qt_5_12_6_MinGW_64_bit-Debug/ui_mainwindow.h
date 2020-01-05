@@ -51,10 +51,12 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 110, 191, 21));
+        pushButton->setToolTipDuration(4);
         tableView_2 = new QTableView(centralwidget);
         tableView_2->setObjectName(QString::fromUtf8("tableView_2"));
         tableView_2->setGeometry(QRect(20, 200, 201, 361));
         tableView_2->setBaseSize(QSize(0, 0));
+        tableView_2->setToolTipDuration(10);
         tableView_2->setAlternatingRowColors(true);
         tableView_2->setSortingEnabled(true);
         tableView_2->horizontalHeader()->setVisible(false);
@@ -63,23 +65,27 @@ public:
         tableView_3 = new QTableView(centralwidget);
         tableView_3->setObjectName(QString::fromUtf8("tableView_3"));
         tableView_3->setGeometry(QRect(320, 120, 561, 31));
+        tableView_3->setToolTipDuration(5);
         tableView_3->horizontalHeader()->setVisible(false);
         tableView_3->verticalHeader()->setVisible(false);
         tableView_4 = new QTableView(centralwidget);
         tableView_4->setObjectName(QString::fromUtf8("tableView_4"));
         tableView_4->setGeometry(QRect(330, 200, 561, 321));
+        tableView_4->setToolTipDuration(3);
         tableView_4->horizontalHeader()->setVisible(false);
         tableView_4->verticalHeader()->setVisible(false);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(20, 60, 191, 21));
+        pushButton_2->setToolTipDuration(5);
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(440, 40, 80, 21));
+        pushButton_3->setToolTipDuration(10);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 928, 25));
+        menubar->setGeometry(QRect(0, 0, 928, 20));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menubar);
@@ -105,7 +111,13 @@ public:
 #ifndef QT_NO_SHORTCUT
         action->setShortcut(QApplication::translate("MainWindow", "F1", nullptr));
 #endif // QT_NO_SHORTCUT
+#ifndef QT_NO_TOOLTIP
+        pushButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-style:italic;\">\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214 \320\262 \320\261\320\260\320\267\321\203 \320\264\320\260\320\275\320\275\321\213\321\205</span></p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
         pushButton->setText(QApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
+#ifndef QT_NO_TOOLTIP
+        pushButton_2->setToolTip(QApplication::translate("MainWindow", "\320\265\321\201\320\273\320\270 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217 \320\275\320\265 \320\262\321\201\321\202\321\203\320\277\320\270\320\273\320\270 \320\262 \321\201\320\270\320\273\321\203 \321\201\321\200\320\260\320\267\321\203", nullptr));
+#endif // QT_NO_TOOLTIP
         pushButton_2->setText(QApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\267\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "help", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\321\204\320\260\320\271\320\273", nullptr));
