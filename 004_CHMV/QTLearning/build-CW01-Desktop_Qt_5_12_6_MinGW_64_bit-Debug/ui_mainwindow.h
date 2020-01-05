@@ -43,7 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(928, 855);
+        MainWindow->resize(928, 624);
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
         centralwidget = new QWidget(MainWindow);

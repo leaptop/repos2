@@ -26,7 +26,6 @@ SOURCES += \
     testing.cpp
 
 HEADERS += \
-    HelpBrowser.h \
     datedialog.h \
     helpdialog.h \
     mainwindow.h \

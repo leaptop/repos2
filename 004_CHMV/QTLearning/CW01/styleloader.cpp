@@ -1,10 +1,3 @@
-//#include "styleloader.h"
-
-//StyleLoader::StyleLoader()
-//{
-
-//}
-
 #include "styleloader.h"
 #include <QApplication>
 #include <QFile>

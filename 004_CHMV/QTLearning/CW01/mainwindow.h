@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "datedialog.h"
-#include<HelpBrowser.h>
+#include "helpdialog.h"
 #include <QMainWindow>
 #include <QApplication>
 #include <QtSql>
@@ -28,18 +28,18 @@ public:
     QString strF;
     QSqlQuery query ;
     QString   str;
-    int num = 0;//number of records
+    int numOfRecords = 0;//number of records
     QSqlTableModel model;
     DateDialog dd;
-    HelpBrowser hb(QString, QString);
+    HelpDialog hd;
     //private signals:
     void sig();
     bool createConnection();
     void helpNavigator();
     //void slot1Help();
 
-//private signals:
-  //  void
+signals:
+  void  helpClicked();
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);

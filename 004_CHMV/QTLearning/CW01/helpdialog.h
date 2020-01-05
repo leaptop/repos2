@@ -17,8 +17,13 @@ public:
     explicit HelpDialog(QWidget *parent = nullptr);
     ~HelpDialog();
 
+private slots:
+ //   void  help();
+
 private:
     Ui::HelpDialog *ui;
 };
 
 #endif // HELPDIALOG_H
+
+
