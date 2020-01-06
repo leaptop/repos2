@@ -124,7 +124,8 @@ compiler_rcc_clean:
 release/qrc_resources.cpp: ../CW01/resources.qrc \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/bin/rcc.exe \
 		../CW01/Common/style.qss \
-		../CW01/Common/index.htm
+		../CW01/Common/index.htm \
+		../CW01/Common/s.png
 	C:\Qt_5_12_6\5.12.6\mingw73_64\bin\rcc.exe -name resources ..\CW01\resources.qrc -o release\qrc_resources.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h

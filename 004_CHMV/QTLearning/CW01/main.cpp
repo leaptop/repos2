@@ -4,7 +4,23 @@
 #include <QtSql>
 #include <QTableView>
 #include "styleloader.h"
-
+void loadModules(QSplashScreen* psplash)
+{
+    QTime time;
+    time.start();
+    for(int i = 0; i <100; ){
+        if(time.elapsed()>40){
+            time.start();
+            ++i;
+        }
+        psplash->showMessage("Loading modules: "
+                             +QString::number(i)+"%",
+                             Qt::AlignCenter|Qt::AlignCenter,
+                             Qt::black
+                             );
+        qApp->processEvents();
+    }
+}
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -19,7 +35,13 @@ int main(int argc, char *argv[])
     QString strCSS = QLatin1String(file.readAll());
     qApp->setStyleSheet(strCSS);
 
+    QSplashScreen splash(QPixmap(":/pics/Common/s.png"));
+    splash.show();
+    loadModules(&splash);
+
     MainWindow w;
+    splash.finish(&w);
+
     w.show();
     return a.exec();
 }
