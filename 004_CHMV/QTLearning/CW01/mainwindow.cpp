@@ -14,16 +14,26 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(&dd, SIGNAL(needToReloadTable()),
                      SLOT(reloadTable()));
 
-    //QComboBox*    pcbo = new QComboBox;
     ui->comboBox->addItems(QStyleFactory::keys());
+    ui->comboBox->addItem("style.qss(mine)");
+    ui->comboBox->addItem("basic");
     connect(ui->comboBox,
             SIGNAL(activated(const QString&)),
             SLOT(slotChangeStyle(const QString&))
-           );
-    //Layout setup
-    QVBoxLayout* pvbxLayout = new QVBoxLayout;
-    pvbxLayout->addWidget(ui->comboBox);
-    setLayout(pvbxLayout);
+            );
+}
+void MainWindow::slotChangeStyle(const QString& str)
+{
+    QStyle* pstyle = QStyleFactory::create(str);
+    if(str=="style.qss(mine)"){
+        QFile file(":/styles/Common/style.qss");//this is how to use resource files
+        file.open(QFile::ReadOnly);
+        QString strCSS = QLatin1String(file.readAll());
+        qApp->setStyleSheet(strCSS);//uncomment to apply changes from a qss file
+    }else if(str=="basic"){
+        qApp->setStyleSheet("");
+    }else
+        QApplication::setStyle(pstyle);
 }
 
 MainWindow::~MainWindow()
@@ -84,9 +94,9 @@ void MainWindow::reloadTable(){
     QString    namestr;
     QString    datastr;
     while (query.next()) {// $55 we have to also get it out from the query
-      //  namestr  = query.value(rec.indexOf("name")).toString();
+        //  namestr  = query.value(rec.indexOf("name")).toString();
         qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
-       // qDebug() << namestr << " - " << datastr;
+        // qDebug() << namestr << " - " << datastr;
         numOfRecords++;//counted all the records
     }
     numOfRecordsByRowCount = model->rowCount();
@@ -205,8 +215,4 @@ void MainWindow::on_pushButton_5_clicked()//delete the chosen record
     }
     reloadTable();
 }
-void MainWindow::slotChangeStyle(const QString& str)
-{
-    QStyle* pstyle = QStyleFactory::create(str);
-    QApplication::setStyle(pstyle);
-}
+
