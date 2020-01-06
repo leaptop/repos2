@@ -11,9 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     reloadTable();
-    //hb(":/htmFiles/Common", "index.htm");
     QObject::connect(&dd, SIGNAL(needToReloadTable()),
                      SLOT(reloadTable()));
+//    QObject::connect(this, SIGNAL(),
+//                     SLOT(on_pushButton_3_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -55,7 +56,6 @@ void MainWindow::reloadTable(){
             .arg("Too much)) is happening");
     if (!query.exec("SELECT * FROM mainTable ORDER BY id DESC;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query - exiting";
-        //return 1;
     }
     QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
     QSqlQuery* qry = new QSqlQuery(db);
@@ -63,7 +63,6 @@ void MainWindow::reloadTable(){
     qry->exec();
     model->setQuery(*qry);          //THIS ONE WORKS(AT LEAST PUSHES THE DATA TO THE TABLEVIEW)
     ui->tableView_2->setModel(model);
-    //ui-->setModel(model);
     ui->tableView_2->hideColumn(0);
     ui->tableView_2->hideColumn(2);
     ui->tableView_2->setColumnWidth(1,191);
@@ -76,11 +75,13 @@ void MainWindow::reloadTable(){
     QString    namestr;
     QString    datastr;
     while (query.next()) {// $55 we have to also get it out from the query
-        namestr  = query.value(rec.indexOf("name")).toString();
+      //  namestr  = query.value(rec.indexOf("name")).toString();
         qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
-        qDebug() << namestr << " - " << datastr;
+       // qDebug() << namestr << " - " << datastr;
         numOfRecords++;//counted all the records
     }
+    numOfRecordsByRowCount = model->rowCount();
+    if(!(numOfRecords==numOfRecordsByRowCount))qDebug()<<"num of records counted wrong";
     QString lastData = qsl[0];
     qDebug()<<"qsl[0] = "<<qsl[0];
     QSqlTableModel* modelt = new QSqlTableModel();
@@ -96,6 +97,15 @@ void MainWindow::reloadTable(){
     ui->tableView_3->setColumnWidth(1,561);
 
     ui->textEdit->setText(qsl[0]);
+
+    QSqlTableModel* modelt2 = new QSqlTableModel();//doesn't delete anything...
+    modelt2->setTable("mainTable");
+    modelt2->select();
+    if(!modelt2->submitAll()){
+        qDebug()<<"couldn't submitAll";
+    }
+    view.setModel(modelt2);
+    view.show();
 }
 
 static bool createConnection()
@@ -126,20 +136,17 @@ void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 {
 
 }
-int currentRecord = 0;
-int indexg = 0;
+
 void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked tableView_2
 {
-    //    // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
     int idi = index.row();//returns the number of the clicked record in tableView_2(by order starting from top)
-    currentRecord = (numOfRecords - idi);//my records are given out in descending order
-    //so to find out the current record's id I need to substitute the index from the numberOfRecords
+    //finally understood how to retreive id's from tableView. It's done through it's sibling by coordinates:
+    currRecId = (ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 0, index))).toInt();
     QSqlTableModel* modelt = new QSqlTableModel();
     modelt->setTable("mainTable");
-    modelt->setFilter("id = "+QString::number(currentRecord));
+    modelt->setFilter("id = "+QString::number(currRecId));
     modelt->select();
     modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
-    indexg = idi;
 
     ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableView_3->setModel(modelt);
@@ -148,6 +155,7 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked table
     ui->tableView_3->setColumnWidth(1,561);
 
     ui->textEdit->setText(qsl[idi]);
+
 }
 
 void MainWindow::on_pushButton_clicked()//new record clicked
@@ -167,14 +175,24 @@ void MainWindow::on_pushButton_3_clicked()//help clicked
 
 void MainWindow::on_pushButton_4_clicked()//save changes
 {
-   // QDate qd = ui->calendarWidget->selectedDate();
     QSqlQuery query ;
     QString   str;
-   // str = qd.toString(Qt::ISODateWithMs);
     QString st = ui->textEdit->toPlainText();
-    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currentRecord);
-  //  str = strF.arg(str) .arg(st);
+    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currRecId);
     if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation in push button 4";}
     reloadTable();
+}
+void MainWindow::slot1Help(){
+    hd.show();
+}
 
+void MainWindow::on_pushButton_5_clicked()//delete the chosen record
+{
+    QSqlQuery query ;
+    QString   str;
+    str = "DELETE FROM mainTable WHERE id = '"+QString::number(currRecId)+"';";
+    if(!query.exec(str)){
+        qDebug()<<"couldn't delete from on_pushButton_5_clicked()";
+    }
+    reloadTable();
 }

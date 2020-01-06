@@ -34,16 +34,20 @@ public:
     bool createConnection();
     void helpNavigator();
     QStringList qsl;//a list of data column
-
+int currRecId = 0;
+int numOfRecordsByRowCount = 0;
 
 signals:
-  void  helpClicked();
+    void  helpClicked();
 
 private slots:
     void on_tableView_activated(const QModelIndex &index);
 
     void reloadTable();
 
+    void slot1Help();
+
+  //  void slotChangeStyle(const QString& str);
     void on_tableView_clicked(const QModelIndex &index);
 
     void on_tableView_2_doubleClicked(const QModelIndex &index);
@@ -57,6 +61,8 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::MainWindow *ui;
