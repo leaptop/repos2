@@ -8,9 +8,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // QObject::connect(&dd, SIGNAL(on_buttonBox_accepted()),//doesn't work for some reason
-    //         SLOT(reloadTable()));
-
     //StyleLoader::attach();//uncommenting it allows to change style momentarily by pressing F5
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug

@@ -35,6 +35,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QTextEdit *textEdit;
+    QPushButton *pushButton_4;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -65,7 +66,7 @@ public:
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
         tableView_3 = new QTableView(centralwidget);
         tableView_3->setObjectName(QString::fromUtf8("tableView_3"));
-        tableView_3->setGeometry(QRect(320, 120, 561, 31));
+        tableView_3->setGeometry(QRect(320, 120, 561, 26));
         tableView_3->setToolTipDuration(5);
         tableView_3->horizontalHeader()->setVisible(false);
         tableView_3->verticalHeader()->setVisible(false);
@@ -79,7 +80,10 @@ public:
         pushButton_3->setToolTipDuration(10);
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(300, 200, 601, 361));
+        textEdit->setGeometry(QRect(300, 200, 601, 321));
+        pushButton_4 = new QPushButton(centralwidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(359, 550, 201, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -118,6 +122,7 @@ public:
 #endif // QT_NO_TOOLTIP
         pushButton_2->setText(QApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\267\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "help", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\321\204\320\260\320\271\320\273", nullptr));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\277\320\276\320\274\320\276\321\211\321\214", nullptr));
     } // retranslateUi
