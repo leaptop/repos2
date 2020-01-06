@@ -8,13 +8,22 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 
-{
+{                                       //CONSTRUCTOR
     ui->setupUi(this);
     reloadTable();
     QObject::connect(&dd, SIGNAL(needToReloadTable()),
                      SLOT(reloadTable()));
-//    QObject::connect(this, SIGNAL(),
-//                     SLOT(on_pushButton_3_clicked()));
+
+    //QComboBox*    pcbo = new QComboBox;
+    ui->comboBox->addItems(QStyleFactory::keys());
+    connect(ui->comboBox,
+            SIGNAL(activated(const QString&)),
+            SLOT(slotChangeStyle(const QString&))
+           );
+    //Layout setup
+    QVBoxLayout* pvbxLayout = new QVBoxLayout;
+    pvbxLayout->addWidget(ui->comboBox);
+    setLayout(pvbxLayout);
 }
 
 MainWindow::~MainWindow()
@@ -195,4 +204,9 @@ void MainWindow::on_pushButton_5_clicked()//delete the chosen record
         qDebug()<<"couldn't delete from on_pushButton_5_clicked()";
     }
     reloadTable();
+}
+void MainWindow::slotChangeStyle(const QString& str)
+{
+    QStyle* pstyle = QStyleFactory::create(str);
+    QApplication::setStyle(pstyle);
 }

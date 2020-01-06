@@ -2,12 +2,10 @@ debug/datedialog.o
 debug/helpdialog.o
 debug/main.o
 debug/mainwindow.o
-debug/myapplication.o
 debug/styleloader.o
 debug/testing.o
 debug/qrc_resources.o
 debug/moc_datedialog.o
 debug/moc_helpdialog.o
 debug/moc_mainwindow.o
-debug/moc_myapplication.o
 debug/moc_styleloader.o

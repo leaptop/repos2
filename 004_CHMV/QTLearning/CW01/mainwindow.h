@@ -36,6 +36,7 @@ public:
     QStringList qsl;//a list of data column
 int currRecId = 0;
 int numOfRecordsByRowCount = 0;
+//QComboBox*    pcbo;
 
 signals:
     void  helpClicked();
@@ -46,6 +47,8 @@ private slots:
     void reloadTable();
 
     void slot1Help();
+
+    void slotChangeStyle(const QString& str);
 
   //  void slotChangeStyle(const QString& str);
     void on_tableView_clicked(const QModelIndex &index);
