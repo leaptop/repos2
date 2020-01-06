@@ -69,6 +69,7 @@ void MainWindow::reloadTable(){
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
+    qsl.clear();
     numOfRecords = 0;
     //  Reading of the data
     QSqlRecord rec     = query.record();
@@ -126,16 +127,19 @@ void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 
 }
 int currentRecord = 0;
-void MainWindow::on_tableView_2_clicked(const QModelIndex &index)
+int indexg = 0;
+void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked tableView_2
 {
     //    // qDebug()<< index.row() << " was doubleClicked";// was the value of index.row
-    int idi = index.row();//returns the number of the clicked record in tableView_2
-    currentRecord = (numOfRecords - idi);
+    int idi = index.row();//returns the number of the clicked record in tableView_2(by order starting from top)
+    currentRecord = (numOfRecords - idi);//my records are given out in descending order
+    //so to find out the current record's id I need to substitute the index from the numberOfRecords
     QSqlTableModel* modelt = new QSqlTableModel();
     modelt->setTable("mainTable");
     modelt->setFilter("id = "+QString::number(currentRecord));
     modelt->select();
     modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
+    indexg = idi;
 
     ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableView_3->setModel(modelt);
@@ -159,4 +163,18 @@ void MainWindow::on_pushButton_2_clicked()//reload table clicked
 void MainWindow::on_pushButton_3_clicked()//help clicked
 {
     hd.show();
+}
+
+void MainWindow::on_pushButton_4_clicked()//save changes
+{
+   // QDate qd = ui->calendarWidget->selectedDate();
+    QSqlQuery query ;
+    QString   str;
+   // str = qd.toString(Qt::ISODateWithMs);
+    QString st = ui->textEdit->toPlainText();
+    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currentRecord);
+  //  str = strF.arg(str) .arg(st);
+    if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation in push button 4";}
+    reloadTable();
+
 }
