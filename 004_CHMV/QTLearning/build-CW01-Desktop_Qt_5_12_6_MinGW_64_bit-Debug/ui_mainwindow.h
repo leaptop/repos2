@@ -28,6 +28,7 @@ class Ui_MainWindow
 {
 public:
     QAction *action;
+    QAction *action_2;
     QWidget *centralwidget;
     QPushButton *pushButton;
     QTableView *tableView_2;
@@ -36,6 +37,7 @@ public:
     QPushButton *pushButton_3;
     QTextEdit *textEdit;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -48,6 +50,8 @@ public:
         MainWindow->resize(928, 624);
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
+        action_2 = new QAction(MainWindow);
+        action_2->setObjectName(QString::fromUtf8("action_2"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -83,11 +87,14 @@ public:
         textEdit->setGeometry(QRect(300, 200, 601, 321));
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(359, 550, 201, 21));
+        pushButton_4->setGeometry(QRect(300, 540, 201, 21));
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(20, 160, 211, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 928, 20));
+        menubar->setGeometry(QRect(0, 0, 928, 25));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
         menu_2 = new QMenu(menubar);
@@ -99,9 +106,12 @@ public:
 
         menubar->addAction(menu->menuAction());
         menubar->addAction(menu_2->menuAction());
+        menu->addAction(action_2);
         menu_2->addAction(action);
 
         retranslateUi(MainWindow);
+        QObject::connect(action_2, SIGNAL(triggered()), MainWindow, SLOT(close()));
+        QObject::connect(action, SIGNAL(triggered()), MainWindow, SLOT(slot1Help()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -113,6 +123,7 @@ public:
 #ifndef QT_NO_SHORTCUT
         action->setShortcut(QApplication::translate("MainWindow", "F1", nullptr));
 #endif // QT_NO_SHORTCUT
+        action_2->setText(QApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", nullptr));
 #ifndef QT_NO_TOOLTIP
         pushButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-style:italic;\">\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214 \320\262 \320\261\320\260\320\267\321\203 \320\264\320\260\320\275\320\275\321\213\321\205</span></p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
@@ -123,7 +134,8 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\267\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "help", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217", nullptr));
-        menu->setTitle(QApplication::translate("MainWindow", "\321\204\320\260\320\271\320\273", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
+        menu->setTitle(QApplication::translate("MainWindow", "\320\274\320\265\320\275\321\216", nullptr));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\277\320\276\320\274\320\276\321\211\321\214", nullptr));
     } // retranslateUi
 

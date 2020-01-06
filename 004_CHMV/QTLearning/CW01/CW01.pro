@@ -22,6 +22,7 @@ SOURCES += \
     helpdialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    myapplication.cpp \
     styleloader.cpp \
     testing.cpp
 
@@ -29,6 +30,7 @@ HEADERS += \
     datedialog.h \
     helpdialog.h \
     mainwindow.h \
+    myapplication.h \
     styleloader.h \
     testing.h
 

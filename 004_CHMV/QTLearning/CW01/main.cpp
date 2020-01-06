@@ -4,6 +4,7 @@
 #include <QtSql>
 #include <QTableView>
 #include "styleloader.h"
+#include"myapplication.h"
 void loadModules(QSplashScreen* psplash)
 {
     QTime time;
@@ -28,19 +29,23 @@ int main(int argc, char *argv[])
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug
 
+    MyApplication myApplication;
+
+    myApplication.show();
+
     QFile file(":/styles/Common/style.qss");//this is how to use resource files
     qDebug()<<QFile::exists("./../../CW01/style.qss");//still learning how to search files
     // qDebug()<<QFile::exists("./qu.txt");//RETURNS TRUE IF THE FILE IS IN SOURCE DIRECTORY
     file.open(QFile::ReadOnly);
     QString strCSS = QLatin1String(file.readAll());
-    qApp->setStyleSheet(strCSS);
+    //qApp->setStyleSheet(strCSS);
 
-    QSplashScreen splash(QPixmap(":/pics/Common/s.png"));
-    splash.show();
-    loadModules(&splash);
+//    QSplashScreen splash(QPixmap(":/pics/Common/s.png"));
+//    splash.show();
+//    loadModules(&splash);
 
     MainWindow w;
-    splash.finish(&w);
+  //  splash.finish(&w);
 
     w.show();
     return a.exec();
