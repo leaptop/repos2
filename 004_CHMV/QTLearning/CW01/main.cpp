@@ -4,7 +4,6 @@
 #include <QtSql>
 #include <QTableView>
 #include "styleloader.h"
-#include"myapplication.h"
 void loadModules(QSplashScreen* psplash)
 {
     QTime time;
@@ -28,10 +27,6 @@ int main(int argc, char *argv[])
     //StyleLoader::attach();//uncommenting it allows to change style momentarily by pressing F5
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug
-
-    MyApplication myApplication;
-
-    myApplication.show();
 
     QFile file(":/styles/Common/style.qss");//this is how to use resource files
     qDebug()<<QFile::exists("./../../CW01/style.qss");//still learning how to search files
