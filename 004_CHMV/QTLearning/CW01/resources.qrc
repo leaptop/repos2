@@ -5,4 +5,7 @@
     <qresource prefix="/styles">
         <file>Common/style.qss</file>
     </qresource>
+    <qresource prefix="/pics">
+        <file>Common/s.png</file>
+    </qresource>
 </RCC>
