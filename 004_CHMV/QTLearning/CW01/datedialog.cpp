@@ -13,7 +13,7 @@ DateDialog::~DateDialog()
     delete ui;
 }
 void DateDialog::on_buttonBox_accepted()
-{
+{//WHAT INTERESTING IS THAT I CAN QUERY MY DATABASE FROM HERE, IT'S VISIBLE, BUT CAN'T CALL FUNCTIONS OF MainWindow. WHY IS THAT?
     QDate qd = ui->calendarWidget->selectedDate();
     QString str = qd.toString(Qt::ISODateWithMs);//declared a string with a date value
     QString st = ui->textEdit->toPlainText();//declared a string with a text from QtextEdit

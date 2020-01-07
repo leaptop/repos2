@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "datedialog.h"
 #include "helpdialog.h"
+#include "dayeditdialog.h"
 #include <QMainWindow>
 #include <QApplication>
 #include <QtSql>
@@ -34,9 +35,10 @@ public:
     bool createConnection();
     void helpNavigator();
     QStringList qsl;//a list of data column
-int currRecId = 0;
-int numOfRecordsByRowCount = 0;
-//QComboBox*    pcbo;
+    int currRecId = 0;
+    int numOfRecordsByRowCount = 0;
+    //QComboBox*    pcbo;
+    dayEditDialog ded;
 
 signals:
     void  helpClicked();
@@ -50,7 +52,6 @@ private slots:
 
     void slotChangeStyle(const QString& str);
 
-  //  void slotChangeStyle(const QString& str);
     void on_tableView_clicked(const QModelIndex &index);
 
     void on_tableView_2_doubleClicked(const QModelIndex &index);
