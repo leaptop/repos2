@@ -28,8 +28,8 @@ HelpDialog::HelpDialog(QWidget *parent) :
             pcmdForward, SLOT(setEnabled(bool))
             );
 
-    ptxtBrowser->setSearchPaths(QStringList()<<":/htmFiles/Common");
-    ptxtBrowser->setSource(QString("index.htm"));
+    ptxtBrowser->setSearchPaths(QStringList()<<":/site/Common/helpSite/");
+    ptxtBrowser->setSource(QString("index.html"));
 
     //Layout setup
     QVBoxLayout* pvbxLayout = new QVBoxLayout;

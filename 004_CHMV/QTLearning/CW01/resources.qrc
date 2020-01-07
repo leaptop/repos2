@@ -1,11 +1,12 @@
 <RCC>
-    <qresource prefix="/htmFiles">
-        <file>Common/index.htm</file>
-    </qresource>
+    <qresource prefix="/htmFiles"/>
     <qresource prefix="/styles">
         <file>Common/style.qss</file>
     </qresource>
     <qresource prefix="/pics">
         <file>Common/s.png</file>
+    </qresource>
+    <qresource prefix="/site">
+        <file>Common/helpSite/index.html</file>
     </qresource>
 </RCC>

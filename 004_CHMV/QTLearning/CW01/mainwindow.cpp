@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "datedialog.h"
 #include "ui_datedialog.h"
+#include "dayeditdialog.h"
+#include "ui_dayeditdialog.h"
 //#include<HelpBrowser.h>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -11,14 +13,16 @@ MainWindow::MainWindow(QWidget *parent)
 {                                       //CONSTRUCTOR
     ui->setupUi(this);
     reloadTable();
-    QObject::connect(&dd, SIGNAL(needToReloadTable()),
+    QObject::connect(&dd, SIGNAL(needToReloadTable()),//connecting signal from dateDialog
                      SLOT(reloadTable()));
+//    QObject::connect(&ded, SIGNAL(needToReloadTable()),//connecting signal from dayEditDialog
+//                     SLOT(reloadTable()));
 
     ui->comboBox->addItems(QStyleFactory::keys());
     ui->comboBox->addItem("style.qss(mine)");
     ui->comboBox->addItem("basic");
     connect(ui->comboBox,
-            SIGNAL(activated(const QString&)),
+            SIGNAL(activated(const QString&)),   //style changes
             SLOT(slotChangeStyle(const QString&))
             );
 }
@@ -117,7 +121,7 @@ void MainWindow::reloadTable(){
 
     ui->textEdit->setText(qsl[0]);
 
-    QSqlTableModel* modelt2 = new QSqlTableModel();//doesn't delete anything...
+    QSqlTableModel* modelt2 = new QSqlTableModel();//uncommenting it will show all the table in a separate view
     modelt2->setTable("mainTable");
     modelt2->select();
     if(!modelt2->submitAll()){
@@ -153,7 +157,9 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 {
-
+    ded.changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
+    ded.anOldText = ui->textEdit->toPlainText();//inserted current text to edit
+    ded.show();
 }
 
 void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked tableView_2

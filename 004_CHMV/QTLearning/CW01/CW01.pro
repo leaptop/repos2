@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     datedialog.cpp \
+    dayeditdialog.cpp \
     helpdialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 
 HEADERS += \
     datedialog.h \
+    dayeditdialog.h \
     helpdialog.h \
     mainwindow.h \
     styleloader.h \
@@ -34,6 +36,7 @@ HEADERS += \
 
 FORMS += \
     datedialog.ui \
+    dayeditdialog.ui \
     helpdialog.ui \
     mainwindow.ui
 

@@ -25,12 +25,6 @@ int main(int argc, char *argv[])
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug
 
-    // qDebug()<<QFile::exists("./qu.txt");//RETURNS TRUE IF THE FILE IS IN SOURCE DIRECTORY
-    QFile file(":/styles/Common/style.qss");//this is how to use resource files
-    file.open(QFile::ReadOnly);
-    QString strCSS = QLatin1String(file.readAll());
-    //qApp->setStyleSheet(strCSS);//uncomment to apply changes from a qss file
-
     //    QSplashScreen splash(QPixmap(":/pics/Common/s.png"));//uncomment to turn zastavka on
     //    splash.show();
     //    loadModules(&splash);
