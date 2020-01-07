@@ -19,12 +19,12 @@
      <rect>
       <x>20</x>
       <y>110</y>
-      <width>191</width>
+      <width>211</width>
       <height>21</height>
      </rect>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Добавить новую запись в базу данных&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавить новую запись в базу данных&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="toolTipDuration">
      <number>4</number>
@@ -37,7 +37,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>200</y>
+      <y>140</y>
       <width>201</width>
       <height>361</height>
      </rect>
@@ -70,14 +70,20 @@
    <widget class="QTableView" name="tableView_3">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>120</y>
-      <width>561</width>
+      <x>280</x>
+      <y>30</y>
+      <width>621</width>
       <height>26</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;здесь можно отредактировать заголовок записи двойным кликом&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="toolTipDuration">
      <number>5</number>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Здесь можно отредактировать заголовок записи двойным кликом&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <attribute name="horizontalHeaderVisible">
      <bool>false</bool>
@@ -90,13 +96,13 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
-      <width>191</width>
+      <y>70</y>
+      <width>211</width>
       <height>21</height>
      </rect>
     </property>
     <property name="toolTip">
-     <string>если изменения не вступили в силу сразу</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;нажать, если записи отображаются некорректно&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="toolTipDuration">
      <number>5</number>
@@ -105,40 +111,27 @@
      <string>Перезагрузить таблицу</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>40</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="toolTipDuration">
-     <number>10</number>
-    </property>
-    <property name="text">
-     <string>help</string>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>200</y>
-      <width>601</width>
-      <height>321</height>
+      <x>280</x>
+      <y>80</y>
+      <width>621</width>
+      <height>421</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>540</y>
+      <x>700</x>
+      <y>510</y>
       <width>201</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;сохранение изменений открытой записи&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Сохранить изменения</string>
@@ -148,10 +141,13 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>510</y>
       <width>211</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;удаление выбранной левым кликом мыши записи в таблице выше&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>Удалить выбранную запись</string>
@@ -160,11 +156,27 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>671</x>
-      <y>50</y>
+      <x>20</x>
+      <y>30</y>
       <width>131</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;выбор стиля&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>501</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>здесь можно отредактировать заголовок записи двойным кликом:</string>
     </property>
    </widget>
   </widget>

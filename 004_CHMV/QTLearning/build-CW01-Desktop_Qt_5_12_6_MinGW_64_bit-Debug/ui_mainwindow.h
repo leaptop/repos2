@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -35,11 +36,11 @@ public:
     QTableView *tableView_2;
     QTableView *tableView_3;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
     QTextEdit *textEdit;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QComboBox *comboBox;
+    QLabel *label_4;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -58,11 +59,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 110, 191, 21));
+        pushButton->setGeometry(QRect(20, 110, 211, 21));
         pushButton->setToolTipDuration(4);
         tableView_2 = new QTableView(centralwidget);
         tableView_2->setObjectName(QString::fromUtf8("tableView_2"));
-        tableView_2->setGeometry(QRect(20, 200, 201, 361));
+        tableView_2->setGeometry(QRect(20, 140, 201, 361));
         tableView_2->setBaseSize(QSize(0, 0));
         tableView_2->setToolTipDuration(10);
         tableView_2->setAlternatingRowColors(true);
@@ -72,30 +73,29 @@ public:
         tableView_2->verticalHeader()->setDefaultSectionSize(30);
         tableView_3 = new QTableView(centralwidget);
         tableView_3->setObjectName(QString::fromUtf8("tableView_3"));
-        tableView_3->setGeometry(QRect(320, 120, 561, 26));
+        tableView_3->setGeometry(QRect(280, 30, 621, 26));
         tableView_3->setToolTipDuration(5);
         tableView_3->horizontalHeader()->setVisible(false);
         tableView_3->verticalHeader()->setVisible(false);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(20, 60, 191, 21));
+        pushButton_2->setGeometry(QRect(20, 70, 211, 21));
         pushButton_2->setToolTipDuration(5);
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(440, 40, 80, 21));
-        pushButton_3->setToolTipDuration(10);
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(300, 200, 601, 321));
+        textEdit->setGeometry(QRect(280, 80, 621, 421));
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(300, 540, 201, 21));
+        pushButton_4->setGeometry(QRect(700, 510, 201, 21));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(20, 160, 211, 21));
+        pushButton_5->setGeometry(QRect(20, 510, 211, 21));
         comboBox = new QComboBox(centralwidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(671, 50, 131, 22));
+        comboBox->setGeometry(QRect(20, 30, 131, 22));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(280, 10, 501, 16));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -130,16 +130,31 @@ public:
 #endif // QT_NO_SHORTCUT
         action_2->setText(QApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", nullptr));
 #ifndef QT_NO_TOOLTIP
-        pushButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-style:italic;\">\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214 \320\262 \320\261\320\260\320\267\321\203 \320\264\320\260\320\275\320\275\321\213\321\205</span></p></body></html>", nullptr));
+        pushButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214 \320\262 \320\261\320\260\320\267\321\203 \320\264\320\260\320\275\320\275\321\213\321\205</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
         pushButton->setText(QApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
 #ifndef QT_NO_TOOLTIP
-        pushButton_2->setToolTip(QApplication::translate("MainWindow", "\320\265\321\201\320\273\320\270 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217 \320\275\320\265 \320\262\321\201\321\202\321\203\320\277\320\270\320\273\320\270 \320\262 \321\201\320\270\320\273\321\203 \321\201\321\200\320\260\320\267\321\203", nullptr));
+        tableView_3->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\267\320\264\320\265\321\201\321\214 \320\274\320\276\320\266\320\275\320\276 \320\276\321\202\321\200\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\267\320\260\320\263\320\276\320\273\320\276\320\262\320\276\320\272 \320\267\320\260\320\277\320\270\321\201\320\270 \320\264\320\262\320\276\320\271\320\275\321\213\320\274 \320\272\320\273\320\270\320\272\320\276\320\274</p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        tableView_3->setWhatsThis(QApplication::translate("MainWindow", "<html><head/><body><p>\320\227\320\264\320\265\321\201\321\214 \320\274\320\276\320\266\320\275\320\276 \320\276\321\202\321\200\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\267\320\260\320\263\320\276\320\273\320\276\320\262\320\276\320\272 \320\267\320\260\320\277\320\270\321\201\320\270 \320\264\320\262\320\276\320\271\320\275\321\213\320\274 \320\272\320\273\320\270\320\272\320\276\320\274</p></body></html>", nullptr));
+#endif // QT_NO_WHATSTHIS
+#ifndef QT_NO_TOOLTIP
+        pushButton_2->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\275\320\260\320\266\320\260\321\202\321\214, \320\265\321\201\320\273\320\270 \320\267\320\260\320\277\320\270\321\201\320\270 \320\276\321\202\320\276\320\261\321\200\320\260\320\266\320\260\321\216\321\202\321\201\321\217 \320\275\320\265\320\272\320\276\321\200\321\200\320\265\320\272\321\202\320\275\320\276</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
         pushButton_2->setText(QApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\267\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "help", nullptr));
+#ifndef QT_NO_TOOLTIP
+        pushButton_4->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\321\201\320\276\321\205\321\200\320\260\320\275\320\265\320\275\320\270\320\265 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\271 \320\276\321\202\320\272\321\200\321\213\321\202\320\276\320\271 \320\267\320\260\320\277\320\270\321\201\320\270</p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
         pushButton_4->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217", nullptr));
+#ifndef QT_NO_TOOLTIP
+        pushButton_5->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\321\203\320\264\320\260\320\273\320\265\320\275\320\270\320\265 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\320\276\320\271 \320\273\320\265\320\262\321\213\320\274 \320\272\320\273\320\270\320\272\320\276\320\274 \320\274\321\213\321\210\320\270 \320\267\320\260\320\277\320\270\321\201\320\270 \320\262 \321\202\320\260\320\261\320\273\320\270\321\206\320\265 \320\262\321\213\321\210\320\265</p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
         pushButton_5->setText(QApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
+#ifndef QT_NO_TOOLTIP
+        comboBox->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\262\321\213\320\261\320\276\321\200 \321\201\321\202\320\270\320\273\321\217</p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
+        label_4->setText(QApplication::translate("MainWindow", "\320\267\320\264\320\265\321\201\321\214 \320\274\320\276\320\266\320\275\320\276 \320\276\321\202\321\200\320\265\320\264\320\260\320\272\321\202\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \320\267\320\260\320\263\320\276\320\273\320\276\320\262\320\276\320\272 \320\267\320\260\320\277\320\270\321\201\320\270 \320\264\320\262\320\276\320\271\320\275\321\213\320\274 \320\272\320\273\320\270\320\272\320\276\320\274:", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\320\274\320\265\320\275\321\216", nullptr));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\277\320\276\320\274\320\276\321\211\321\214", nullptr));
     } // retranslateUi
