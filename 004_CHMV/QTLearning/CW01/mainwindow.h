@@ -37,8 +37,7 @@ public:
     QStringList qsl;//a list of data column
     int currRecId = 0;
     int numOfRecordsByRowCount = 0;
-    //QComboBox*    pcbo;
-    dayEditDialog ded;
+    dayEditDialog* ded;
 
 signals:
     void  helpClicked();

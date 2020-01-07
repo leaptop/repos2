@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
             SLOT(slotChangeStyle(const QString&))
             );
 }
-void MainWindow::slotChangeStyle(const QString& str)
+void MainWindow::slotChangeStyle(const QString& str)//it gets a string str from QComboBox and creates styles as I want down below
 {
     QStyle* pstyle = QStyleFactory::create(str);
     if(str=="style.qss(mine)"){
@@ -35,7 +35,7 @@ void MainWindow::slotChangeStyle(const QString& str)
         QString strCSS = QLatin1String(file.readAll());
         qApp->setStyleSheet(strCSS);//uncomment to apply changes from a qss file
     }else if(str=="basic"){
-        qApp->setStyleSheet("");
+        qApp->setStyleSheet("");//resetting the style to "basic"
     }else
         QApplication::setStyle(pstyle);
 }
@@ -157,9 +157,12 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 
 void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 {
-    ded.changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
-    ded.anOldText = ui->textEdit->toPlainText();//inserted current text to edit
-    ded.show();
+    QString str = ui->textEdit->toPlainText();
+    ded = new dayEditDialog(str);
+    ded->changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
+   // ded->anOldText = ui->textEdit->toPlainText();//inserted current text to edit//
+    //it works, but the constructor can't build the string IN TIME(вовремя) to pass it to it's textEdit
+    ded->show();
 }
 
 void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked tableView_2
@@ -179,8 +182,8 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked table
     ui->tableView_3->hideColumn(2);
     ui->tableView_3->setColumnWidth(1,561);
 
-    ui->textEdit->setText(qsl[idi]);
-
+    ui->textEdit->setText(qsl[idi]);// taking text by using a pointer from  the QModelIndex. No need to use the currRecId
+    //because there is no connection to the db anyways. it's just  a texEdit widget
 }
 
 void MainWindow::on_pushButton_clicked()//new record clicked
