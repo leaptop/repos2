@@ -17,6 +17,15 @@ To return to your desired branch and see everything as it was you always need to
 git checkout -f e1e6f72
 To forcefully move HEAD to that commit you need to do this:
 git reset --hard e1e6f72
+Then you have to commit your new changes(if you created them)
+Then you have to create a new temporary branch:
+git checkout -b masterTemp
+then you have to checkout to master and rename it to oldMaster
+then you have to checkout to masterTemp and rename it to master
+then you have to set a new branch remotely(for github):
+git push --set-upstream origin master
+Sounds like a big work... But I still don't know if there is a shorter way to do it.
+
 
 This is how to declare a QString str argument for a constructor:
 datedialog.h contents:
