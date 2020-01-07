@@ -2,7 +2,16 @@ QMainWindow {
 background-color: darkgrey
 }
 QDialog {
+background-color: darkgrey
+}
+QDialog {
 background-color: #ABEBC6
+}
+QTextEdit {
+background-color: lightgrey
+}
+QTableView {
+background-color: lightgrey
 }
 QPushButton {
     border: 2px solid #8f8f91;

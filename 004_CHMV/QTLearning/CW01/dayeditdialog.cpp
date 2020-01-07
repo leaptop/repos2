@@ -18,6 +18,7 @@ dayEditDialog::dayEditDialog(QString str,QWidget *parent) :
    // qDebug()<<anOldText;//anOldText is an empty string at this point
     ui->textEdit->setText(str);
 }
+//To return to your desired branch and see everything as it was you always need to use -f:
 
 dayEditDialog::~dayEditDialog()
 {

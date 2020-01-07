@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->comboBox->addItems(QStyleFactory::keys());
     ui->comboBox->addItem("style.qss(mine)");
-    ui->comboBox->addItem("basic");
+    ui->comboBox->addItem("delete style");
     connect(ui->comboBox,
             SIGNAL(activated(const QString&)),   //style changes
             SLOT(slotChangeStyle(const QString&))
@@ -34,7 +34,7 @@ void MainWindow::slotChangeStyle(const QString& str)//it gets a string str from 
         file.open(QFile::ReadOnly);
         QString strCSS = QLatin1String(file.readAll());
         qApp->setStyleSheet(strCSS);//uncomment to apply changes from a qss file
-    }else if(str=="basic"){
+    }else if(str=="delete style"){
         qApp->setStyleSheet("");//resetting the style to "basic"
     }else
         QApplication::setStyle(pstyle);
@@ -91,44 +91,44 @@ void MainWindow::reloadTable(){
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    qsl.clear();
-    numOfRecords = 0;
+   // qsl.clear();
+  //  numOfRecords = 0;
     //  Reading of the data
-    QSqlRecord rec     = query.record();
-    QString    namestr;
-    QString    datastr;
-    while (query.next()) {// $55 we have to also get it out from the query
-        //  namestr  = query.value(rec.indexOf("name")).toString();
-        qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
-        // qDebug() << namestr << " - " << datastr;
-        numOfRecords++;//counted all the records
-    }
-    numOfRecordsByRowCount = model->rowCount();
-    if(!(numOfRecords==numOfRecordsByRowCount))qDebug()<<"num of records counted wrong";
-    QString lastData = qsl[0];
-    qDebug()<<"qsl[0] = "<<qsl[0];
-    QSqlTableModel* modelt = new QSqlTableModel();
-    modelt->setTable("mainTable");
-    modelt->setFilter("id = "+QString::number(numOfRecords));
-    modelt->select();
-    modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
+  //  QSqlRecord rec     = query.record();
+//    QString    namestr;                   //HISTORY)))
+//    QString    datastr;
+//    while (query.next()) {// $55 we have to also get it out from the query
+//        //  namestr  = query.value(rec.indexOf("name")).toString();
+//       // qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
+//        // qDebug() << namestr << " - " << datastr;
+//        numOfRecords++;//counted all the records
+//    }
+//    numOfRecordsByRowCount = model->rowCount();
+//    if(!(numOfRecords==numOfRecordsByRowCount))qDebug()<<"num of records counted wrong";
+   // QString lastData = qsl[0];
+    //qDebug()<<"qsl[0] = "<<qsl[0];
+//    QSqlTableModel* modelt = new QSqlTableModel();
+//    modelt->setTable("mainTable");
+//    modelt->setFilter("id = "+QString::number(numOfRecords));
+//    modelt->select();
+//    modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
 
-    ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    ui->tableView_3->setModel(modelt);
-    ui->tableView_3->hideColumn(0);
-    ui->tableView_3->hideColumn(2);
-    ui->tableView_3->setColumnWidth(1,561);
+//    ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+//    ui->tableView_3->setModel(modelt);
+//    ui->tableView_3->hideColumn(0);
+//    ui->tableView_3->hideColumn(2);
+//    ui->tableView_3->setColumnWidth(1,561);
 
-    ui->textEdit->setText(qsl[0]);
+//    ui->textEdit->setText(qsl[0]);
 
-    QSqlTableModel* modelt2 = new QSqlTableModel();//uncommenting it will show all the table in a separate view
-    modelt2->setTable("mainTable");
-    modelt2->select();
-    if(!modelt2->submitAll()){
-        qDebug()<<"couldn't submitAll";
-    }
-    view.setModel(modelt2);
-    view.show();
+//    QSqlTableModel* modelt2 = new QSqlTableModel();//uncommenting it will show all the table in a separate view
+//    modelt2->setTable("mainTable");
+//    modelt2->select();
+//    if(!modelt2->submitAll()){
+//        qDebug()<<"couldn't submitAll";
+//    }
+//    view.setModel(modelt2);
+//    view.show();
 }
 
 static bool createConnection()
@@ -179,11 +179,15 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked table
     ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableView_3->setModel(modelt);
     ui->tableView_3->hideColumn(0);
+    ui->tableView_3->showColumn(1);
     ui->tableView_3->hideColumn(2);
     ui->tableView_3->setColumnWidth(1,561);
 
-    ui->textEdit->setText(qsl[idi]);// taking text by using a pointer from  the QModelIndex. No need to use the currRecId
+   // ui->textEdit->setText(qsl[idi]);// taking text by using a pointer from  the QModelIndex. No need to use the currRecId
     //because there is no connection to the db anyways. it's just  a texEdit widget
+
+    //Well, it's better to set the text via real id's:
+   ui->textEdit->setText((ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 2, index))).toString());
 }
 
 void MainWindow::on_pushButton_clicked()//new record clicked
@@ -194,6 +198,8 @@ void MainWindow::on_pushButton_clicked()//new record clicked
 void MainWindow::on_pushButton_2_clicked()//reload table clicked
 {
     reloadTable();
+    ui->textEdit->setText("");
+    ui->tableView_3->hideColumn(1);
 }
 
 void MainWindow::on_pushButton_3_clicked()//help clicked

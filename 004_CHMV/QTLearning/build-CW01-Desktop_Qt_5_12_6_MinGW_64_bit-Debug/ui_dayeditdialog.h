@@ -12,9 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
@@ -23,7 +21,6 @@ class Ui_dayEditDialog
 {
 public:
     QTextEdit *textEdit;
-    QTableView *tableView;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
 
@@ -34,10 +31,7 @@ public:
         dayEditDialog->resize(949, 553);
         textEdit = new QTextEdit(dayEditDialog);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(20, 110, 901, 421));
-        tableView = new QTableView(dayEditDialog);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(20, 60, 881, 31));
+        textEdit->setGeometry(QRect(20, 60, 901, 471));
         pushButton = new QPushButton(dayEditDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 20, 121, 21));
