@@ -13,12 +13,14 @@ class dayEditDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit dayEditDialog(QWidget *parent = nullptr);
+    explicit dayEditDialog(QString str, QWidget *parent = nullptr);
     ~dayEditDialog();
     int changedRecord = 0;
-    QString anOldText;
+    QString anOldText = nullptr;
 private slots:
     void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+
 signals:
     void needToReloadTable();
 

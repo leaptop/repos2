@@ -56,7 +56,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Шрифт</string>
+    <string>Test</string>
    </property>
   </widget>
  </widget>

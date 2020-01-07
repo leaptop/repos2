@@ -54,7 +54,7 @@ public:
     {
         dayEditDialog->setWindowTitle(QApplication::translate("dayEditDialog", "Dialog", nullptr));
         pushButton->setText(QApplication::translate("dayEditDialog", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
-        pushButton_2->setText(QApplication::translate("dayEditDialog", "\320\250\321\200\320\270\321\204\321\202", nullptr));
+        pushButton_2->setText(QApplication::translate("dayEditDialog", "Test", nullptr));
     } // retranslateUi
 
 };

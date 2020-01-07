@@ -13,9 +13,29 @@ DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
 
+To return to your desired branch and see everything as it was you always need to use -f:
+git checkout -f e1e6f72
+To forcefully move HEAD to that commit you need to do this:
+git reset --hard e1e6f72
+
+This is how to declare a QString str argument for a constructor:
+datedialog.h contents:
+class dayEditDialog : public QDialog
+{    Q_OBJECT
+public:
+    explicit dayEditDialog(QString str, QWidget *parent = nullptr);
+datedialog.cpp contents:
+dayEditDialog::dayEditDialog(QString str,QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::dayEditDialog)
+{
+	
+
+To use qDebug() you need to #include <QDebug>
+
 Решил проблему получения индекса из поля, соседнего с другим из QTableView(надо было достать id, и я тупо наугад решил попробовать sibling и сработало))))):
 QString val = (ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 0, index))).toString();
-Здесь idi = index.row();
+Здесь idi = index.row();//сиблинг - по-английски родной брат или сестра. Здесь все поля одной записи как бы сиблинги.
 Так я получаю сиблинга по его координатам в index (который QModelIndex &):
 ui->tableView_2->model()->sibling(idi, 0, index)
 Беру из него данные методом data и эти данные преобразую в строку... хотя нужен мне int.
