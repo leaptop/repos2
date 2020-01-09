@@ -1,0 +1,134 @@
+QMainWindow {
+background-color: darkgrey
+}
+QDialog {
+background-color: darkgrey
+}
+QDialog {
+background-color: #ABEBC6
+}
+QTextEdit {
+background-color: lightgrey
+}
+QTableView {
+background-color: lightgrey
+}
+QPushButton {
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+/*this one breaks my calendarWidget: (becomes black)*/
+/*
+QTableView{
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 #f6f7fa, stop: 1 #dadbde);
+min-width: 80px;
+
+}
+*/
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+QPushButton:hover {
+    background-color: #85C1E9
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #FF92BB, stop: 1 lightblue);
+}
+QTableView QTableCornerButton::section {
+    background: red;
+    border: 2px outset red;
+}
+QTableView::indicator:unchecked {
+    background-color: #d7d6d5
+}
+/*
+QMainWindow::separator {
+    background: yellow;
+    width: 10px; /* when vertical */
+    height: 10px; /* when horizontal */
+}
+
+QMainWindow::separator:hover {
+    background: red;
+}
+QToolTip{
+  color:#ffffff;
+  background-color:palette(base);
+  border:1px solid palette(highlight);
+  border-radius:4px;
+}
+
+QStatusBar{
+  background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(25,25,25,127),stop:1 rgba(53,53,53,75));
+  color:palette(mid);
+}
+QMenuBar{
+  background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(25,25,25,127),stop:1 rgba(53,53,53,75));
+  border-bottom:2px solid rgba(25,25,25,75);
+}
+QMenuBar::item{
+  spacing:2px;
+  padding:3px 4px;
+  background:transparent;
+}
+QMenuBar::item:selected{
+  background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(106,106,106,255),stop:1 rgba(106,106,106,75));
+  border-left:1px solid rgba(106,106,106,127);
+  border-right:1px solid rgba(106,106,106,127);
+}
+QMenuBar::item:pressed{
+  background-color:palette(highlight);
+  border-left:1px solid rgba(25,25,25,127);
+  border-right:1px solid rgba(25,25,25,127);
+}
+QMenu{
+  background-color:palette(window);
+  border:1px solid palette(shadow);
+}
+QMenu::item{
+  padding:3px 25px 3px 25px;
+  border:1px solid transparent;
+}
+QMenu::item:disabled{
+  background-color:rgba(35,35,35,127);
+  color:palette(disabled);
+}
+QMenu::item:selected{
+  border-color:rgba(147,191,236,127);
+  background:palette(highlight);
+}
+QMenu::icon:checked{
+  background-color:qlineargradient(x1:0,y1:1,x2:0,y2:0,stop:0 rgba(25,25,25,127),stop:1 rgba(53,53,53,75));
+  border:1px solid palette(highlight);
+  border-radius:2px;
+}
+QMenu::separator{
+  height:1px;
+  background:palette(alternate-base);
+  margin-left:5px;
+  margin-right:5px;
+}
+QMenu::indicator{
+  width:18px;
+  height:18px;
+}
+
+
+*/

@@ -22,7 +22,6 @@ class Ui_dayEditDialog
 public:
     QTextEdit *textEdit;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
 
     void setupUi(QDialog *dayEditDialog)
     {
@@ -35,9 +34,6 @@ public:
         pushButton = new QPushButton(dayEditDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(20, 20, 121, 21));
-        pushButton_2 = new QPushButton(dayEditDialog);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(170, 20, 131, 21));
 
         retranslateUi(dayEditDialog);
 
@@ -48,7 +44,6 @@ public:
     {
         dayEditDialog->setWindowTitle(QApplication::translate("dayEditDialog", "Dialog", nullptr));
         pushButton->setText(QApplication::translate("dayEditDialog", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
-        pushButton_2->setText(QApplication::translate("dayEditDialog", "Test", nullptr));
     } // retranslateUi
 
 };

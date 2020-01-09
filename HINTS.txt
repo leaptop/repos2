@@ -16,6 +16,7 @@ MS Word и другие - файл - учётная запись - Тема Offc
 To return to your desired branch and see everything as it was you always need to use -f:
 git checkout -f e1e6f72
 To forcefully move HEAD to that commit you need to do this:
+(What's much easier is to get back, take the needed texts, save them outside the sandbox, get back to HEAD master and copy/paste the texts)))))
 git reset --hard e1e6f72
 Then you have to commit your new changes(if you created them)
 Then you have to create a new temporary branch:
@@ -24,8 +25,14 @@ then you have to checkout to master and rename it to oldMaster
 then you have to checkout to masterTemp and rename it to master
 then you have to set a new branch remotely(for github):
 git push --set-upstream origin master
-Sounds like a big work... But I still don't know if there is a shorter way to do it.
+Sounds like a big work... But I still don't know if there is a shorter way to do it. No. Now I know. It's written up there. Dunno, why I haven't saved it previously.
 
+ПОМОГЛО УДАЛЕНИЕ И ДОБАВЛЕНИЕ ПРИНТЕРА Пуск - настройки - устройства - принтеры и сканеры - щелкнуть мышью - удалить устройство.
+
+Нет, это сводит принтер с ума и если нажать "печать пробной страницы" он начинает печатать их сотнями по одной строчке на листе:
+Kyocera KM-2035 Foomatic/foo2oak-z1 also works as a driver on lubuntu драйвер для лубунту
+
+Когда выбираешь добавить принтер, пользуясь средствами самой ОС, то можно выбрать Ryocera P-2002 Foomatic/Postscript. Вроде печатает. Но тут уже конечно опять либре офис "калечит" вордовские документы. Выбирать нужно принтер с дефисом, а не с нижним подчеркиванием. Тут мой принтер легко добавляется хоть 10 раз, как я понял.
 
 This is how to declare a QString str argument for a constructor:
 datedialog.h contents:
