@@ -4,6 +4,14 @@ QT  +=  widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+VERSION = 1.15
+QMAKE_TARGET_COMPANY = ALEXEEV&CO
+QMAKE_TARGET_PRODUCT = JOURNAL
+QMAKE_TARGET_DESCRIPTION = DESCRIPTION OF THE PROJECT
+QMAKE_TARGET_COPYRIGHT = STEPAN ALEXEEV
+
+RC_ICONS = iconsmall_zWo_icon.ico
+#RC_FILE = appIcon.rc
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use

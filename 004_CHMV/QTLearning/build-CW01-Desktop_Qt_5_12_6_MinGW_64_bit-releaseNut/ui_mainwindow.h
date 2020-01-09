@@ -57,7 +57,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(928, 624);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("Common/iconSmall.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/pics/Common/iconsmall_zWo_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
