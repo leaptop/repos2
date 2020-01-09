@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/htmFiles"/>
+    <qresource prefix="/styles">
+        <file>Common/style.qss</file>
+    </qresource>
+    <qresource prefix="/pics">
+        <file>Common/s.png</file>
+    </qresource>
+    <qresource prefix="/site">
+        <file>Common/helpSite/index.html</file>
+        <file>Common/helpSite/watch.html</file>
+        <file>Common/helpSite/delete.html</file>
+        <file>Common/helpSite/edit.html</file>
+        <file>Common/helpSite/editMany.html</file>
+        <file>Common/helpSite/newRec.html</file>
+    </qresource>
+</RCC>

@@ -29,7 +29,7 @@ public:
     {
         if (DateDialog->objectName().isEmpty())
             DateDialog->setObjectName(QString::fromUtf8("DateDialog"));
-        DateDialog->resize(892, 725);
+        DateDialog->resize(1036, 725);
         buttonBox = new QDialogButtonBox(DateDialog);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(50, 380, 121, 241));
@@ -37,10 +37,10 @@ public:
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         calendarWidget = new QCalendarWidget(DateDialog);
         calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
-        calendarWidget->setGeometry(QRect(30, 50, 351, 291));
+        calendarWidget->setGeometry(QRect(30, 50, 451, 291));
         textEdit = new QTextEdit(DateDialog);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(410, 50, 451, 451));
+        textEdit->setGeometry(QRect(510, 50, 451, 451));
         textEdit->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhSensitiveData);
 
         retranslateUi(DateDialog);

@@ -7,7 +7,7 @@ auth::auth(QWidget *parent) :
     ui(new Ui::auth)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/Users/Stepan/source/repos/chmv012/01.png");
+    QPixmap pix("C:/Users/Stepan/source/repos2/chmv012/01.png");
     ui->label_pic->setPixmap(pix.scaled(250,250,Qt::KeepAspectRatio));
 }
 
