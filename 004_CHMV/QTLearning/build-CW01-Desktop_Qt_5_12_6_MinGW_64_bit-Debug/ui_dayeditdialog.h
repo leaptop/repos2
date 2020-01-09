@@ -27,13 +27,13 @@ public:
     {
         if (dayEditDialog->objectName().isEmpty())
             dayEditDialog->setObjectName(QString::fromUtf8("dayEditDialog"));
-        dayEditDialog->resize(949, 553);
+        dayEditDialog->resize(706, 528);
         textEdit = new QTextEdit(dayEditDialog);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(20, 60, 901, 471));
+        textEdit->setGeometry(QRect(20, 30, 621, 421));
         pushButton = new QPushButton(dayEditDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 20, 121, 21));
+        pushButton->setGeometry(QRect(430, 470, 211, 21));
 
         retranslateUi(dayEditDialog);
 
@@ -43,7 +43,7 @@ public:
     void retranslateUi(QDialog *dayEditDialog)
     {
         dayEditDialog->setWindowTitle(QApplication::translate("dayEditDialog", "Dialog", nullptr));
-        pushButton->setText(QApplication::translate("dayEditDialog", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
+        pushButton->setText(QApplication::translate("dayEditDialog", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\270\320\267\320\274\320\265\320\275\320\265\320\275\320\270\321\217", nullptr));
     } // retranslateUi
 
 };

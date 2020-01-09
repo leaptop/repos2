@@ -1,5 +1,7 @@
 #include <windows.h>
 
+IDI_ICON1	ICON	DISCARDABLE	"C:\\Users\\Stepan\\source\\repos2\\004_CHMV\\QTLearning\\CourseWork02Improved\\iconsmall_zWo_icon.ico"
+
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 1,15,0,0
 	PRODUCTVERSION 1,15,0,0
