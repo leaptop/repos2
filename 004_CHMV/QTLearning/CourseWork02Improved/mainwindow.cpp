@@ -280,6 +280,8 @@ void MainWindow::on_pushButton_5_clicked()//delete the chosen record
         qDebug()<<"couldn't delete from on_pushButton_5_clicked()";
     }
     reloadTable();
+    ui->textEdit->setText("");
+    ui->tableView_3->hideColumn(1);
 }
 
 

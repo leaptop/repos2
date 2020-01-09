@@ -143,8 +143,7 @@ debug/qrc_resources.cpp: ../CourseWork02Improved/resources.qrc \
 		../CourseWork02Improved/Common/helpSite/edit.html \
 		../CourseWork02Improved/Common/helpSite/index.html \
 		../CourseWork02Improved/Common/helpSite/watch.html \
-		../CourseWork02Improved/Common/icon.jpg \
-		../CourseWork02Improved/Common/iconSmall.jpg \
+		../CourseWork02Improved/Common/iconsmall_zWo_icon.ico \
 		../CourseWork02Improved/Common/s.png
 	C:\Qt_5_12_6\5.12.6\mingw73_64\bin\rcc.exe -name resources ..\CourseWork02Improved\resources.qrc -o debug\qrc_resources.cpp
 
