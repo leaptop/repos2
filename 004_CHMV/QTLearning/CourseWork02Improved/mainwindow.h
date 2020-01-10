@@ -28,7 +28,7 @@ public:
     QString strF;
     QSqlQuery query ;
     QString   str;
-    QSqlTableModel model;
+    //QSqlTableModel model;//don't need it anymore
     DateDialog dd;
     HelpDialog hd;
 
@@ -36,6 +36,9 @@ public:
     int currRecId = 0;
     int numOfRecordsByRowCount = 0;
     dayEditDialog* ded;
+    int currTableViewId = 0;
+    QSqlQueryModel * model;
+    QMainWindow *qmw = this;
 
 signals:
     void  helpClicked();
@@ -45,6 +48,7 @@ private slots:
 
     void createConnection();
     void reloadTable();
+    void reloadTableAfterDateDialog();
 
     void slot1Help();
 
@@ -72,6 +76,10 @@ private slots:
     void on_textEdit_2_textChanged();
 
     void on_textEdit_textChanged();
+
+    void on_tableView_2_activated(const QModelIndex &index);
+
+    void on_pushButton_7_clicked();
 
 private:
     Ui::MainWindow *ui;
