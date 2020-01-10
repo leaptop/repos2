@@ -31,7 +31,7 @@ public:
     QSqlTableModel model;
     DateDialog dd;
     HelpDialog hd;
-    bool createConnection();
+
     void helpNavigator();
     int currRecId = 0;
     int numOfRecordsByRowCount = 0;
@@ -43,6 +43,7 @@ signals:
 private slots:
     void on_tableView_activated(const QModelIndex &index);
 
+    void createConnection();
     void reloadTable();
 
     void slot1Help();
@@ -67,6 +68,10 @@ private slots:
 
     void on_pushButton_6_clicked();
     QTextCursor textCursor();
+
+    void on_textEdit_2_textChanged();
+
+    void on_textEdit_textChanged();
 
 private:
     Ui::MainWindow *ui;
