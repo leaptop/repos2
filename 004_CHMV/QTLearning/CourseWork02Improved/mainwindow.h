@@ -38,7 +38,7 @@ public:
     dayEditDialog* ded;
     int currTableViewId = 0;
     QSqlQueryModel * model;
-    QMainWindow *qmw = this;
+    QMainWindow *qmw = this;//      HOW TO PASS IT TO THE OTHER DIALOGS?
 
 signals:
     void  helpClicked();
@@ -51,6 +51,8 @@ private slots:
     void reloadTableAfterDateDialog();
 
     void slot1Help();
+
+    void slot1DeleteARecord();
 
     void slotChangeStyle(const QString& str);
 
