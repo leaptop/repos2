@@ -25,12 +25,12 @@ int main(int argc, char *argv[])
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug
 
-//        QSplashScreen splash(QPixmap(":/pics/Common/splashScreen.png"));//uncomment to turn zastavka on
-//        splash.show();
-//        loadModules(&splash);
+        QSplashScreen splash(QPixmap(":/pics/Common/splashScreen.png"));//uncomment to turn zastavka on
+        splash.show();
+        loadModules(&splash);
 
     MainWindow w;
-//      splash.finish(&w);//uncomment to turn zastavka on
+      splash.finish(&w);//uncomment to turn zastavka on
 
     w.show();
     return a.exec();

@@ -31,25 +31,26 @@ public:
     {
         if (DateDialog->objectName().isEmpty())
             DateDialog->setObjectName(QString::fromUtf8("DateDialog"));
-        DateDialog->resize(1146, 505);
+        DateDialog->resize(1026, 505);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/pics/Common/iconSmall24.ico"), QSize(), QIcon::Normal, QIcon::Off);
         DateDialog->setWindowIcon(icon);
         calendarWidget = new QCalendarWidget(DateDialog);
         calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
-        calendarWidget->setGeometry(QRect(30, 50, 451, 291));
+        calendarWidget->setGeometry(QRect(10, 50, 371, 221));
         textEdit = new QTextEdit(DateDialog);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(500, 50, 621, 421));
+        textEdit->setGeometry(QRect(390, 50, 621, 421));
         textEdit->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhSensitiveData);
         pushButton = new QPushButton(DateDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(950, 480, 171, 21));
+        pushButton->setGeometry(QRect(840, 480, 171, 21));
         textEdit_2 = new QTextEdit(DateDialog);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setGeometry(QRect(500, 10, 621, 31));
+        textEdit_2->setGeometry(QRect(390, 10, 621, 31));
 
         retranslateUi(DateDialog);
+        QObject::connect(pushButton, SIGNAL(clicked()), DateDialog, SLOT(close()));
 
         QMetaObject::connectSlotsByName(DateDialog);
     } // setupUi
