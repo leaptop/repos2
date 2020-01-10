@@ -4,7 +4,7 @@
 #include<QSqlQuery>
 #include <QDebug>
 
-dayEditDialog::dayEditDialog(QString str,QWidget *parent) :
+dayEditDialog::dayEditDialog(QString str, QString str2, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::dayEditDialog)
 {//this constructor isn't called for some reason. No it was called. It just was called in time of MainWindow initiation.
@@ -17,6 +17,7 @@ dayEditDialog::dayEditDialog(QString str,QWidget *parent) :
     //qDebug()<<"pause";
    // qDebug()<<anOldText;//anOldText is an empty string at this point
     ui->textEdit->setText(str);
+    ui->textEdit_2->setText(str2);
 }
 
 dayEditDialog::~dayEditDialog()
@@ -37,4 +38,22 @@ void dayEditDialog::on_pushButton_clicked()
 void dayEditDialog::on_pushButton_2_clicked()
 {
     //ui->textEdit->setText(anOldText);
+}
+
+void dayEditDialog::on_textEdit_textChanged()
+{
+    QSqlQuery query ;
+    QString   str;
+    QString st = ui->textEdit->toPlainText();
+    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(changedRecord);
+    if (!query.exec(strF)){qDebug() << "Unable to make insert opeation in dayEditDialog::on_textEdit_textChanged() ";}
+}
+
+void dayEditDialog::on_textEdit_2_textChanged()
+{
+    QSqlQuery query ;
+    QString   str;
+    QString st = ui->textEdit_2->toPlainText();
+    QString  strF = "UPDATE  mainTable SET name = '"+st+"' WHERE id = "+QString::number(changedRecord);
+    if (!query.exec(strF)){qDebug() << "Unable to make insert opeation in dayEditDialog::on_textEdit_2_textChanged() ";}
 }

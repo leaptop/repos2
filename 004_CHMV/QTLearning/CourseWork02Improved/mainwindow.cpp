@@ -57,9 +57,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 void MainWindow::reloadTableAfterDateDialog(){
-    currTableViewId = 0;
+    // currTableViewId = 0;
     reloadTable();
-    ui->tableView_2->selectRow(currTableViewId);
+    // ui->tableView_2->selectRow(currTableViewId);//i should implement it only when I will be able to change textEdits also. Sounds easy, but I don't want to query my db for some reason. It seems too much code... but it's stupid...
 
 }
 void MainWindow::reloadTable(){
@@ -78,6 +78,7 @@ void MainWindow::reloadTable(){
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
+   // ui->textEdit_2->setText("");
     //ui->tableView_2->setse
     //    QSqlTableModel* modelt2 = new QSqlTableModel();//uncommenting it will show all the table in a separate view
     //    modelt2->setTable("mainTable");
@@ -100,8 +101,8 @@ void MainWindow::createConnection()
     if (!db.open()) {
         qDebug() << "Cannot open database(in createConnection()):" << db.lastError();
         int n =
-                QMessageBox::warning(0,"Warning" ,   "createConnection() = false",
-                                     "Ok", 0  );
+                QMessageBox::warning(nullptr,"Warning" ,   "createConnection() = false",
+                                     "Ok", nullptr  );
         if (!n) {            /*Saving the changes!*/     }
     }
     //Creating of the data base
@@ -126,8 +127,9 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 void MainWindow::on_tableView_2_doubleClicked(const QModelIndex &index)
 {
     QString str = ui->textEdit->toPlainText();
+    QString str2 = ui->textEdit_2->toPlainText();
     //ui->textEdit->to
-    ded = new dayEditDialog(str);
+    ded = new dayEditDialog(str, str2);
     ded->changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
     // ded->anOldText = ui->textEdit->toPlainText();//inserted current text to edit//
     //it works, but the constructor can't build the string IN TIME(вовремя) to pass it to it's textEdit
@@ -143,7 +145,7 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked table
     ui->textEdit->setText((ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 2, index))).toString());//THE WORKING CODE
     currTableViewId = index.row();
     ui->tableView_2->selectRow(currTableViewId);//SEARCHED THE INTERNET FOR 3 HOURS BEFORE FINDING THIS FUNCTION BY MYSELF ACCIDENTALLY AS USUAL...
-    }
+}
 
 void MainWindow::on_pushButton_clicked()//new record clicked
 {
@@ -153,8 +155,9 @@ void MainWindow::on_pushButton_clicked()//new record clicked
 void MainWindow::on_pushButton_2_clicked()//"reload table" clicked
 {
     reloadTable();
-    ui->textEdit->setText("");
-   // ui->tableView_3->hideColumn(1);
+    //ui->textEdit->setText("");//uncommenting it breaks something... the name and the data fields become empty in the db itself
+   // ui->textEdit_2->setText("");//uncommenting it breaks something... the name and the data fields become empty in the db itself
+    // ui->tableView_3->hideColumn(1);
 }
 
 void MainWindow::on_pushButton_3_clicked()//Font clicked
@@ -180,10 +183,9 @@ void MainWindow::on_textEdit_2_textChanged()//changes the db after the text was 
 }
 
 void MainWindow::on_textEdit_textChanged()//instead of pushing button "save changes" I will just
-{//update the table after each change
+{//update the table after each correction
     QSqlQuery query ;
     QString   str;
-    //ui->textEdit->
     QString st = ui->textEdit->toPlainText();
     QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currRecId);
     if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation on_textEdit_textChanged()";}
@@ -208,7 +210,10 @@ void MainWindow::on_pushButton_5_clicked()//delete the chosen record
     }
     reloadTable();
     ui->textEdit->setText("");
-   // ui->tableView_3->hideColumn(1);
+    // ui->tableView_3->hideColumn(1);
+}
+void MainWindow::slot1DeleteARecord(){
+    on_pushButton_5_clicked();
 }
 
 void MainWindow::on_tableView_2_activated(const QModelIndex &index)
@@ -216,26 +221,33 @@ void MainWindow::on_tableView_2_activated(const QModelIndex &index)
 
 }
 
-void MainWindow::on_pushButton_7_clicked()//search implementation
+void MainWindow::on_pushButton_7_clicked()
 {
-
-    QStandardItemModel*  model = new QStandardItemModel ();
-
-    ui->tableView_2->setModel(model);
-    for (int index = 0; index < model->columnCount(); index++)
-    {
-        QList<QStandardItem*> foundLst = model->findItems("12", Qt::MatchExactly, index);
-        int count = foundLst.count();
-        if(count>0)
-        {
-            for(int k=0; k<count; k++)
-            {
-                QModelIndex modelIndex = model->indexFromItem(foundLst[k]);
-                qDebug()<< "column= " << index << "row=" << modelIndex.row();
-                ((QStandardItemModel*)modelIndex.model())->item(modelIndex.row(),index)->setData(QBrush(Qt::green),Qt::BackgroundRole);
-            }
-        }
-    }
+    QString str = ui->textEdit->toPlainText();
+    QString str2 = ui->textEdit_2->toPlainText();
+    //ui->textEdit->to
+    ded = new dayEditDialog(str, str2);
+    ded->changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
+    // ded->anOldText = ui->textEdit->toPlainText();//inserted current text to edit//
+    //it works, but the constructor can't build the string IN TIME(вовремя) to pass it to it's textEdit
+    ded->show();
 }
 
+//search implementation
+//    QStandardItemModel*  model = new QStandardItemModel ();
 
+//    ui->tableView_2->setModel(model);
+//    for (int index = 0; index < model->columnCount(); index++)
+//    {
+//        QList<QStandardItem*> foundLst = model->findItems("12", Qt::MatchExactly, index);
+//        int count = foundLst.count();
+//        if(count>0)
+//        {
+//            for(int k=0; k<count; k++)
+//            {
+//                QModelIndex modelIndex = model->indexFromItem(foundLst[k]);
+//                qDebug()<< "column= " << index << "row=" << modelIndex.row();
+//                ((QStandardItemModel*)modelIndex.model())->item(modelIndex.row(),index)->setData(QBrush(Qt::green),Qt::BackgroundRole);
+//            }
+//        }
+//    }

@@ -32,6 +32,7 @@ class Ui_MainWindow
 public:
     QAction *action;
     QAction *action_2;
+    QAction *action_3;
     QWidget *centralwidget;
     QPushButton *pushButton;
     QTableView *tableView_2;
@@ -44,6 +45,7 @@ public:
     QFontComboBox *fontComboBox;
     QPushButton *pushButton_6;
     QTextEdit *textEdit_2;
+    QPushButton *pushButton_7;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -61,6 +63,8 @@ public:
         action->setObjectName(QString::fromUtf8("action"));
         action_2 = new QAction(MainWindow);
         action_2->setObjectName(QString::fromUtf8("action_2"));
+        action_3 = new QAction(MainWindow);
+        action_3->setObjectName(QString::fromUtf8("action_3"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -105,6 +109,9 @@ public:
         textEdit_2 = new QTextEdit(centralwidget);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
         textEdit_2->setGeometry(QRect(280, 40, 621, 31));
+        pushButton_7 = new QPushButton(centralwidget);
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        pushButton_7->setGeometry(QRect(20, 540, 211, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -121,11 +128,14 @@ public:
         menubar->addAction(menu->menuAction());
         menubar->addAction(menu_2->menuAction());
         menu->addAction(action_2);
+        menu->addAction(action_3);
         menu_2->addAction(action);
 
         retranslateUi(MainWindow);
         QObject::connect(action_2, SIGNAL(triggered()), MainWindow, SLOT(close()));
         QObject::connect(action, SIGNAL(triggered()), MainWindow, SLOT(slot1Help()));
+        QObject::connect(action_3, SIGNAL(triggered()), MainWindow, SLOT(slot1DeleteARecord()));
+        QObject::connect(pushButton_5, SIGNAL(clicked()), MainWindow, SLOT(slot1DeleteARecord()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -138,6 +148,10 @@ public:
         action->setShortcut(QApplication::translate("MainWindow", "F1", nullptr));
 #endif // QT_NO_SHORTCUT
         action_2->setText(QApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", nullptr));
+        action_3->setText(QApplication::translate("MainWindow", "\321\203\320\264\320\260\320\273\320\270\321\202\321\214 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214", nullptr));
+#ifndef QT_NO_SHORTCUT
+        action_3->setShortcut(QApplication::translate("MainWindow", "Del", nullptr));
+#endif // QT_NO_SHORTCUT
 #ifndef QT_NO_TOOLTIP
         pushButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\275\320\276\320\262\321\203\321\216 \320\267\320\260\320\277\320\270\321\201\321\214 \320\262 \320\261\320\260\320\267\321\203 \320\264\320\260\320\275\320\275\321\213\321\205</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
@@ -159,6 +173,7 @@ public:
 #endif // QT_NO_TOOLTIP
         pushButton_3->setText(QApplication::translate("MainWindow", "\320\250\321\200\320\270\321\204\321\202", nullptr));
         pushButton_6->setText(QApplication::translate("MainWindow", "\320\267\320\260\321\207\320\265\321\200\320\272\320\275\321\203\321\202\321\213\320\271", nullptr));
+        pushButton_7->setText(QApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\320\275\320\270\321\202\321\214 \320\262 \320\276\321\202\320\264\320\265\320\273\321\214\320\275\320\276\320\274 \320\276\320\272\320\275\320\265", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\320\274\320\265\320\275\321\216", nullptr));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\277\320\276\320\274\320\276\321\211\321\214", nullptr));
     } // retranslateUi
