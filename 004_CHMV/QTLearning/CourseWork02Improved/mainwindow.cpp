@@ -27,20 +27,12 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(activated(const QString&)),   //style changes
             SLOT(slotChangeStyle(const QString&))
             );
-    ui->textEdit->setHtml("<b>много важных дел</b>");//HTML WORKS!!!
+    //ui->textEdit->setHtml("<b>много важных дел</b>");//HTML WORKS!!!
 
 
 }
 QTextCursor MainWindow::textCursor()
 {
-//    auto plainTextEdit = editor<QPlainTextEdit>();
-//    if (plainTextEdit)
-//        return plainTextEdit->textCursor();
-
-//    auto textEdit = editor<QTextEdit>();
-//    if (textEdit)
-//        return
-
     return ui->textEdit->textCursor();
 }
 void MainWindow::on_pushButton_6_clicked()//strikethrough pushed

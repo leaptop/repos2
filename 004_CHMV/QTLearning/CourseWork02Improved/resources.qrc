@@ -4,7 +4,7 @@
         <file>Common/style.qss</file>
     </qresource>
     <qresource prefix="/pics">
-        <file>Common/s.png</file>
+        <file>Common/splashScreen.png</file>
         <file>Common/iconsmall_zWo_icon.ico</file>
     </qresource>
     <qresource prefix="/site">

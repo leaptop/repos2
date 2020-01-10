@@ -5,7 +5,7 @@
 #include <QTableView>
 #include "styleloader.h"
 void loadModules(QSplashScreen* psplash)
-{
+{//the possible answer is in usage of blob type in sqlite for my text...
     QTime time;
     time.start();
     for(int i = 0; i <100; ){
@@ -25,12 +25,12 @@ int main(int argc, char *argv[])
     //at the same time input in textEdit etc fileds becomes impossible
     //style.qss is in build/debug
 
-    //    QSplashScreen splash(QPixmap(":/pics/Common/s.png"));//uncomment to turn zastavka on
-    //    splash.show();
-    //    loadModules(&splash);
+//        QSplashScreen splash(QPixmap(":/pics/Common/splashScreen.png"));//uncomment to turn zastavka on
+//        splash.show();
+//        loadModules(&splash);
 
     MainWindow w;
-    //  splash.finish(&w);//uncomment to turn zastavka on
+//      splash.finish(&w);//uncomment to turn zastavka on
 
     w.show();
     return a.exec();
