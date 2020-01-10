@@ -29,14 +29,14 @@ MainWindow::MainWindow(QWidget *parent)
 }
 QTextCursor MainWindow::textCursor()
 {
-    return ui->textEdit->textCursor();
+    //return ui->textEdit->textCursor();
 }
 void MainWindow::on_pushButton_6_clicked()//strikethrough pushed
 {
-    QTextCursor tc = textCursor();
-    QTextCharFormat format = tc.charFormat();
-    format.setFontStrikeOut( !format.fontStrikeOut() );
-    tc.setCharFormat(format);
+//    QTextCursor tc = textCursor();
+//    QTextCharFormat format = tc.charFormat();
+//    format.setFontStrikeOut( !format.fontStrikeOut() );
+//    tc.setCharFormat(format);
 }
 void MainWindow::slotChangeStyle(const QString& str)//it gets a string str from QComboBox and creates styles as I want down below
 {
@@ -75,7 +75,7 @@ void MainWindow::reloadTable(){
     ui->tableView_2->setModel(model);
     ui->tableView_2->hideColumn(0);
     ui->tableView_2->hideColumn(2);
-    ui->tableView_2->setColumnWidth(1,191);
+    ui->tableView_2->setColumnWidth(1,211);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
    // ui->textEdit_2->setText("");
@@ -163,11 +163,11 @@ void MainWindow::on_pushButton_2_clicked()//"reload table" clicked
 void MainWindow::on_pushButton_3_clicked()//Font clicked
 {
 
-    bool bOK;                     //Font choice
-    QFont fnt = QFontDialog::getFont(&bOK, this);//assigning a font to the fnt variable
-    if(!bOK){/*the cancel button was pressed*/ } else return;
-    //ui->textEdit->//setFont(fnt);//sets the font to the entire textEdit
-    QTextCharFormat entityFormat;
+//    bool bOK;                     //Font choice
+//    QFont fnt = QFontDialog::getFont(&bOK, this);//assigning a font to the fnt variable
+//    if(!bOK){/*the cancel button was pressed*/ } else return;
+//    //ui->textEdit->//setFont(fnt);//sets the font to the entire textEdit
+//    QTextCharFormat entityFormat;
 
 }
 void MainWindow::on_textEdit_2_textChanged()//changes the db after the text was changed in the header
@@ -179,7 +179,6 @@ void MainWindow::on_textEdit_2_textChanged()//changes the db after the text was 
     if(!query.exec(strF)) {qDebug() << "Unable to make insert operation after changing text in textEdit_2";}
     reloadTable();
     ui->tableView_2->selectRow(currTableViewId);
-    //ui->tableView_2->
 }
 
 void MainWindow::on_textEdit_textChanged()//instead of pushing button "save changes" I will just
@@ -225,7 +224,6 @@ void MainWindow::on_pushButton_7_clicked()
 {
     QString str = ui->textEdit->toPlainText();
     QString str2 = ui->textEdit_2->toPlainText();
-    //ui->textEdit->to
     ded = new dayEditDialog(str, str2);
     ded->changedRecord = currRecId;//inserted the needed ID to change from a new ded dialog window
     // ded->anOldText = ui->textEdit->toPlainText();//inserted current text to edit//

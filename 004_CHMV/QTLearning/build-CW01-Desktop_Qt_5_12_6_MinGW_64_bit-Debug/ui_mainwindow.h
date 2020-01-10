@@ -14,7 +14,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QFontComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -41,14 +40,10 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QComboBox *comboBox;
-    QPushButton *pushButton_3;
-    QFontComboBox *fontComboBox;
-    QPushButton *pushButton_6;
     QTextEdit *textEdit_2;
     QPushButton *pushButton_7;
     QMenuBar *menubar;
     QMenu *menu;
-    QMenu *menu_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -56,6 +51,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(928, 624);
+        QFont font;
+        font.setPointSize(8);
+        MainWindow->setFont(font);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/pics/Common/iconsmall_zWo_icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -73,7 +71,7 @@ public:
         pushButton->setToolTipDuration(4);
         tableView_2 = new QTableView(centralwidget);
         tableView_2->setObjectName(QString::fromUtf8("tableView_2"));
-        tableView_2->setGeometry(QRect(20, 140, 201, 361));
+        tableView_2->setGeometry(QRect(20, 140, 211, 361));
         tableView_2->setBaseSize(QSize(0, 0));
         tableView_2->setToolTipDuration(10);
         tableView_2->setAlternatingRowColors(true);
@@ -88,6 +86,12 @@ public:
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         textEdit->setGeometry(QRect(280, 80, 621, 421));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(textEdit->sizePolicy().hasHeightForWidth());
+        textEdit->setSizePolicy(sizePolicy);
+        textEdit->setFont(font);
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(700, 510, 201, 21));
@@ -97,15 +101,6 @@ public:
         comboBox = new QComboBox(centralwidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
         comboBox->setGeometry(QRect(20, 30, 131, 22));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(280, 510, 80, 21));
-        fontComboBox = new QFontComboBox(centralwidget);
-        fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
-        fontComboBox->setGeometry(QRect(370, 510, 191, 22));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(569, 510, 101, 21));
         textEdit_2 = new QTextEdit(centralwidget);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
         textEdit_2->setGeometry(QRect(280, 40, 621, 31));
@@ -115,21 +110,18 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 928, 25));
+        menubar->setGeometry(QRect(0, 0, 928, 22));
         menu = new QMenu(menubar);
         menu->setObjectName(QString::fromUtf8("menu"));
-        menu_2 = new QMenu(menubar);
-        menu_2->setObjectName(QString::fromUtf8("menu_2"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menu->menuAction());
-        menubar->addAction(menu_2->menuAction());
-        menu->addAction(action_2);
+        menu->addAction(action);
         menu->addAction(action_3);
-        menu_2->addAction(action);
+        menu->addAction(action_2);
 
         retranslateUi(MainWindow);
         QObject::connect(action_2, SIGNAL(triggered()), MainWindow, SLOT(close()));
@@ -171,11 +163,8 @@ public:
 #ifndef QT_NO_TOOLTIP
         comboBox->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\320\262\321\213\320\261\320\276\321\200 \321\201\321\202\320\270\320\273\321\217</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
-        pushButton_3->setText(QApplication::translate("MainWindow", "\320\250\321\200\320\270\321\204\321\202", nullptr));
-        pushButton_6->setText(QApplication::translate("MainWindow", "\320\267\320\260\321\207\320\265\321\200\320\272\320\275\321\203\321\202\321\213\320\271", nullptr));
         pushButton_7->setText(QApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\320\275\320\270\321\202\321\214 \320\262 \320\276\321\202\320\264\320\265\320\273\321\214\320\275\320\276\320\274 \320\276\320\272\320\275\320\265", nullptr));
         menu->setTitle(QApplication::translate("MainWindow", "\320\274\320\265\320\275\321\216", nullptr));
-        menu_2->setTitle(QApplication::translate("MainWindow", "\320\277\320\276\320\274\320\276\321\211\321\214", nullptr));
     } // retranslateUi
 
 };
