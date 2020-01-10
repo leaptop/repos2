@@ -26,7 +26,8 @@ void DateDialog::on_pushButton_clicked()
             .arg(st);
     QSqlQuery  query ;//I wouldn't redefine str, but would have redefined strF and put it in the exec() call
     if (!query.exec(str)) {qDebug() << "Unable to make insert opeation";}//it would still work.
-    emit (needToReloadTable());
+    emit (needToReloadTableAfterDateDialog());
+     //qmw->ui->tableView_2->selectRow(0);
 }
 
 void DateDialog::on_calendarWidget_selectionChanged()

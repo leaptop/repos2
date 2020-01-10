@@ -424,6 +424,8 @@ debug/moc_datedialog.cpp: ../CourseWork02Improved/datedialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		debug/moc_predefs.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/bin/moc.exe
 	C:\Qt_5_12_6\5.12.6\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Stepan/source/repos2/004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt_5_12_6/5.12.6/mingw73_64/mkspecs/win32-g++ -IC:/Users/Stepan/source/repos2/004_CHMV/QTLearning/CourseWork02Improved -IC:/Qt_5_12_6/5.12.6/mingw73_64/include -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtANGLE -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtNetwork -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtSql -IC:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore -I. -IC:/Qt_5_12_6/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt_5_12_6/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt_5_12_6/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt_5_12_6/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt_5_12_6/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt_5_12_6/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CourseWork02Improved\datedialog.h -o debug\moc_datedialog.cpp
@@ -1276,6 +1278,8 @@ debug/moc_mainwindow.cpp: ../CourseWork02Improved/mainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		../CourseWork02Improved/helpdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgetsDepends \
@@ -1446,7 +1450,6 @@ debug/moc_mainwindow.cpp: ../CourseWork02Improved/mainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmenu.h \
@@ -1498,7 +1501,6 @@ debug/moc_mainwindow.cpp: ../CourseWork02Improved/mainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
 		../CourseWork02Improved/dayeditdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		debug/moc_predefs.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/bin/moc.exe
@@ -1869,6 +1871,8 @@ debug/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		ui_datedialog.h \
 		../CourseWork02Improved/mainwindow.h \
 		../CourseWork02Improved/helpdialog.h \
@@ -2041,7 +2045,6 @@ debug/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmenu.h \
@@ -2093,7 +2096,6 @@ debug/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
 		../CourseWork02Improved/dayeditdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\datedialog.o ..\CourseWork02Improved\datedialog.cpp
 
@@ -2949,6 +2951,8 @@ debug/main.o: ../CourseWork02Improved/main.cpp ../CourseWork02Improved/mainwindo
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		../CourseWork02Improved/helpdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgetsDepends \
@@ -3119,7 +3123,6 @@ debug/main.o: ../CourseWork02Improved/main.cpp ../CourseWork02Improved/mainwindo
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmenu.h \
@@ -3171,7 +3174,6 @@ debug/main.o: ../CourseWork02Improved/main.cpp ../CourseWork02Improved/mainwindo
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
 		../CourseWork02Improved/dayeditdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		../CourseWork02Improved/styleloader.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QKeySequence
@@ -3446,6 +3448,8 @@ debug/mainwindow.o: ../CourseWork02Improved/mainwindow.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		../CourseWork02Improved/helpdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgetsDepends \
@@ -3616,7 +3620,6 @@ debug/mainwindow.o: ../CourseWork02Improved/mainwindow.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdiarea.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmdisubwindow.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmenu.h \
@@ -3668,7 +3671,6 @@ debug/mainwindow.o: ../CourseWork02Improved/mainwindow.cpp ../CourseWork02Improv
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
 		../CourseWork02Improved/dayeditdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		ui_mainwindow.h \
 		ui_datedialog.h \

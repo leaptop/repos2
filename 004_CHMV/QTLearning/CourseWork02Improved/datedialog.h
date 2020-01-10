@@ -7,6 +7,7 @@
 #include <QtSql>
 #include<QTableView>
 #include<QMessageBox>
+#include<QMainWindow>
 
 namespace Ui {
 class DateDialog;
@@ -31,7 +32,7 @@ public slots:
     void on_buttonBox_accepted();
 
  signals:
-   void needToReloadTable();
+   void needToReloadTableAfterDateDialog();
 
 private slots:
    void on_pushButton_clicked();

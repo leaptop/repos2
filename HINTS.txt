@@ -27,6 +27,9 @@ then you have to set a new branch remotely(for github):
 git push --set-upstream origin master
 Sounds like a big work... But I still don't know if there is a shorter way to do it. No. Now I know. It's written up there. Dunno, why I haven't saved it previously.
 
+
+Здесь написано как реализовать поиск:https://stackoverflow.com/questions/45543721/finding-index-of-a-cell-containing-a-value-and-highlighting-all-those-cells-in-q
+
 Нет. imageMagick очень непонятно запускается. https://icoconvert.com/ можно здесь сделать.
 -Чтобы создать .ico файл нужна программа специальная imageMagick-
 Дальше кидаю этот .ico в папку src(не в ресурсы). Прописываю в .pro RC_ICONS = nameOfIcon.ico. Всё, у .exe теперь иконка и у всех окон программы такая иконка становится. Но это только для винды.
@@ -110,6 +113,8 @@ finally implemented slot signal relation with emitting signal needToReloadTable(
 						
 Finally understood, that StyleLoader::attach(); wouldnt allow me to 
 fill text in TextFields of the application
+
+
 
 Стилизованный теекст не могу сохранить почему-то
 

@@ -6,7 +6,6 @@
 #include "ui_dayeditdialog.h"
 //#include <HtmlHighlighter>
 #include <QTextCursor>
-//#include<HelpBrowser.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,10 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     createConnection();
     reloadTable();
-    QObject::connect(&dd, SIGNAL(needToReloadTable()),//connecting signal from dateDialog
-                     SLOT(reloadTable()));
-    //    QObject::connect(&ded, SIGNAL(needToReloadTable()),//connecting signal from dayEditDialog
-    //                     SLOT(reloadTable()));
+    QObject::connect(&dd, SIGNAL(needToReloadTableAfterDateDialog()),//connecting signal from dateDialog
+                     SLOT(reloadTableAfterDateDialog()));
 
     ui->comboBox->addItems(QStyleFactory::keys());
     ui->comboBox->addItem("style.qss(mine)");
@@ -59,82 +56,29 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::reloadTableAfterDateDialog(){
+    currTableViewId = 0;
+    reloadTable();
+    ui->tableView_2->selectRow(currTableViewId);
+
+}
 void MainWindow::reloadTable(){
-    //    db = QSqlDatabase::addDatabase("QSQLITE");
-    //    db.setDatabaseName("journey");
-
-    //    db.setUserName("elton");
-    //    db.setHostName("epica");
-    //    db.setPassword("password");
-    //    if (!db.open()) {
-    //        qDebug() << "Cannot open database:" << db.lastError();
-    //        int n =
-    //                QMessageBox::warning(0,"Warning" ,   "createConnection() = false",
-    //                                     "Ok", 0  );
-    //        if (!n) {
-    //            // Saving the changes!
-    //        }
-    //    }
-    //    //Creating of the data base
-    //    QSqlQuery query;
-    //    QString str  = "CREATE TABLE IF NOT EXISTS mainTable ( "
-    //                   "id INTEGER primary key AUTOINCREMENT, "
-    //                   "name TEXT, "
-    //                   "data TEXT"
-    //                   ");";
-
-    //    if (!query.exec(str)) {//couldn't find sql driver->returned false
-    //        qDebug() << "Unable to create a table";
-    //    }
-    //Adding some information
-    //    QString  strF =
-    //            "INSERT INTO  mainTable (name, data) "
-    //            "VALUES('%2', '%3');";
-    //    str = strF.arg("My fourth planer 02.01.2019 ")
-    //            .arg("Too much)) is happening");
     if (!query.exec("SELECT * FROM mainTable ORDER BY id DESC;")) {//we select here, but its not all $55
         qDebug() << "Unable to execute query(in reloadTable()) - exiting ";
     }
-    QSqlQueryModel * model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
+    model = new QSqlQueryModel();//here I implemented putting of ifrst column in the tableView. Do I need it?
     QSqlQuery* qry = new QSqlQuery(db);
     qry->prepare("SELECT * FROM mainTable ORDER BY id DESC");
     qry->exec();
     model->setQuery(*qry);          //THIS ONE WORKS(AT LEAST PUSHES THE DATA TO THE TABLEVIEW)
+
     ui->tableView_2->setModel(model);
     ui->tableView_2->hideColumn(0);
     ui->tableView_2->hideColumn(2);
     ui->tableView_2->setColumnWidth(1,191);
     ui->tableView_2->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    // qsl.clear();
-    //  numOfRecords = 0;
-    //  Reading of the data
-    //  QSqlRecord rec     = query.record();
-    //    QString    namestr;                   //HISTORY)))
-    //    QString    datastr;
-    //    while (query.next()) {// $55 we have to also get it out from the query
-    //        //  namestr  = query.value(rec.indexOf("name")).toString();
-    //       // qsl+=  datastr  = query.value(rec.indexOf("data")).toString();
-    //        // qDebug() << namestr << " - " << datastr;
-    //        numOfRecords++;//counted all the records
-    //    }
-    //    numOfRecordsByRowCount = model->rowCount();
-    //    if(!(numOfRecords==numOfRecordsByRowCount))qDebug()<<"num of records counted wrong";
-    // QString lastData = qsl[0];
-    //qDebug()<<"qsl[0] = "<<qsl[0];
-    //    QSqlTableModel* modelt = new QSqlTableModel();
-    //    modelt->setTable("mainTable");
-    //    modelt->setFilter("id = "+QString::number(numOfRecords));
-    //    modelt->select();
-    //    modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
 
-    //    ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    //    ui->tableView_3->setModel(modelt);
-    //    ui->tableView_3->hideColumn(0);
-    //    ui->tableView_3->hideColumn(2);
-    //    ui->tableView_3->setColumnWidth(1,561);
-
-    //    ui->textEdit->setText(qsl[0]);
-
+    //ui->tableView_2->setse
     //    QSqlTableModel* modelt2 = new QSqlTableModel();//uncommenting it will show all the table in a separate view
     //    modelt2->setTable("mainTable");
     //    modelt2->select();
@@ -158,9 +102,7 @@ void MainWindow::createConnection()
         int n =
                 QMessageBox::warning(0,"Warning" ,   "createConnection() = false",
                                      "Ok", 0  );
-        if (!n) {
-            // Saving the changes!
-        }
+        if (!n) {            /*Saving the changes!*/     }
     }
     //Creating of the data base
     QSqlQuery query;
@@ -197,41 +139,22 @@ void MainWindow::on_tableView_2_clicked(const QModelIndex &index)//clicked table
     int idi = index.row();//returns the number of the clicked record in tableView_2(by order starting from top)
     //finally understood how to retreive id's from tableView. It's done through it's sibling by coordinates:
     currRecId = (ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 0, index))).toInt();
-    //    QSqlTableModel* modelt = new QSqlTableModel();//DON'T NEED THIS CODE ANYMORE, BUT WANT TO REMEMBER IT
-    //    modelt->setTable("mainTable");//THIS MODEL ALLOWS TO CHANGE TEXT BY CLICKING ON IT IN THE VIEW
-    //    modelt->setFilter("id = "+QString::number(currRecId));
-    //    modelt->select();
-    //    modelt->setEditStrategy(QSqlTableModel::OnFieldChange);
-
-    //    ui->tableView_3->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    //    ui->tableView_3->setModel(modelt);//DON'T NEED THIS CODE ANYMORE, BUT WANT TO REMEMBER IT
-    //    ui->tableView_3->hideColumn(0);
-    //    ui->tableView_3->showColumn(1);
-    //    ui->tableView_3->hideColumn(2);
-    //    ui->tableView_3->setColumnWidth(1,561);
-
     ui->textEdit_2->setText((ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 1, index))).toString());
-
-    // ui->textEdit->setText(qsl[idi]);// taking text by using a pointer from  the QModelIndex. No need to use the currRecId
-    //because there is no connection to the db anyways. it's just  a texEdit widget
-
-    //Well, it's better to set the text via real id's:
     ui->textEdit->setText((ui->tableView_2->model()->data(ui->tableView_2->model()->sibling(idi, 2, index))).toString());//THE WORKING CODE
-    //ui->textEdit->setHtml((ui->tableView_2->model()->data
-    //                           (ui->tableView_2->model()->sibling(idi, 2, index))).toString());//THE EXPERIMENT
-    //AND IT WORKS(just replacing setText with setHtml)
-}
+    currTableViewId = index.row();
+    ui->tableView_2->selectRow(currTableViewId);//SEARCHED THE INTERNET FOR 3 HOURS BEFORE FINDING THIS FUNCTION BY MYSELF ACCIDENTALLY AS USUAL...
+    }
 
 void MainWindow::on_pushButton_clicked()//new record clicked
 {
     dd.show();
 }
 
-void MainWindow::on_pushButton_2_clicked()//reload table clicked
+void MainWindow::on_pushButton_2_clicked()//"reload table" clicked
 {
     reloadTable();
     ui->textEdit->setText("");
-    ui->tableView_3->hideColumn(1);
+   // ui->tableView_3->hideColumn(1);
 }
 
 void MainWindow::on_pushButton_3_clicked()//Font clicked
@@ -241,7 +164,6 @@ void MainWindow::on_pushButton_3_clicked()//Font clicked
     QFont fnt = QFontDialog::getFont(&bOK, this);//assigning a font to the fnt variable
     if(!bOK){/*the cancel button was pressed*/ } else return;
     //ui->textEdit->//setFont(fnt);//sets the font to the entire textEdit
-
     QTextCharFormat entityFormat;
 
 }
@@ -253,6 +175,8 @@ void MainWindow::on_textEdit_2_textChanged()//changes the db after the text was 
     QString strF = "UPDATE mainTable SET name = '"+st+"' WHERE id = "+QString::number(currRecId);
     if(!query.exec(strF)) {qDebug() << "Unable to make insert operation after changing text in textEdit_2";}
     reloadTable();
+    ui->tableView_2->selectRow(currTableViewId);
+    //ui->tableView_2->
 }
 
 void MainWindow::on_textEdit_textChanged()//instead of pushing button "save changes" I will just
@@ -262,33 +186,14 @@ void MainWindow::on_textEdit_textChanged()//instead of pushing button "save chan
     //ui->textEdit->
     QString st = ui->textEdit->toPlainText();
     QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currRecId);
-    if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation in push button 4";}
+    if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation on_textEdit_textChanged()";}
 }
 void MainWindow::on_pushButton_4_clicked()//save changes //THE WORKING FUNCTION//SHOULD DELETE IT SOON
 {//only one piece of text can be tagged with <i> or <b> tags... it's strange
     //no, it's not. It saves all the tags first time. But the second time
     //tags aren't there anymore... and it saves just the text, not recognizing
     //that it was italic or bold
-    QSqlQuery query ;
-    QString   str;
-    //ui->textEdit->
-    QString st = ui->textEdit->toPlainText();
-    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currRecId);
-    if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation in push button 4";}
-    reloadTable();
 }
-//void MainWindow::on_pushButton_4_clicked()//save changes    //THE EXPERIMENTING AREA
-//{
-//    QSqlQuery query ;
-//    QString   str;
-//    ui->textEdit->setHtml(ui->textEdit->toHtml());
-//    QString st = ui->textEdit->toHtml();
-//    //ui->textEdit->setHtml(st);
-
-//    QString  strF = "UPDATE  mainTable SET data = '"+st+"' WHERE id = "+QString::number(currRecId);
-//    if (!query.exec(strF)) {qDebug() << "Unable to make insert opeation in push button 4";}
-//    reloadTable();
-//}
 void MainWindow::slot1Help(){
     hd.show();
 }
@@ -303,6 +208,34 @@ void MainWindow::on_pushButton_5_clicked()//delete the chosen record
     }
     reloadTable();
     ui->textEdit->setText("");
-    ui->tableView_3->hideColumn(1);
+   // ui->tableView_3->hideColumn(1);
 }
+
+void MainWindow::on_tableView_2_activated(const QModelIndex &index)
+{
+
+}
+
+void MainWindow::on_pushButton_7_clicked()//search implementation
+{
+
+    QStandardItemModel*  model = new QStandardItemModel ();
+
+    ui->tableView_2->setModel(model);
+    for (int index = 0; index < model->columnCount(); index++)
+    {
+        QList<QStandardItem*> foundLst = model->findItems("12", Qt::MatchExactly, index);
+        int count = foundLst.count();
+        if(count>0)
+        {
+            for(int k=0; k<count; k++)
+            {
+                QModelIndex modelIndex = model->indexFromItem(foundLst[k]);
+                qDebug()<< "column= " << index << "row=" << modelIndex.row();
+                ((QStandardItemModel*)modelIndex.model())->item(modelIndex.row(),index)->setData(QBrush(Qt::green),Qt::BackgroundRole);
+            }
+        }
+    }
+}
+
 
