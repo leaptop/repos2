@@ -27,6 +27,16 @@ then you have to set a new branch remotely(for github):
 git push --set-upstream origin master
 Sounds like a big work... But I still don't know if there is a shorter way to do it. No. Now I know. It's written up there. Dunno, why I haven't saved it previously.
 
+Learning Spring Boot:
+downloaded 	apache-maven-3.6.3-bin.zip from https://maven.apache.org/download.cgi, unpacked to C:\program files, set path via adding a new line to Path: 	c:\program files\apache-maven-3.6.3\bin, checked if it works in cmd through mvn --version; mvn archetype:generate creates something, the it asks to Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains), https://www.youtube.com/watch?v=3ylBdTQ-2Z4 this video says to write spring-boot, did that, then it says to choose 69 because it's (Spring Boot Web Static Sample), but my 69 is different, so I choose 73, because it has that name, groupId boostbrain, artifactId boot, all the others are by default(just press enter), green phrase BUILD SUCCESS)); Then cd boot, there should be a folder src, build.gradle, pom.xml;
+cmd: mvn clean paclage; in the beginning I had an error: No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?; I reinstalled environment variables: checked, that the normal Path has the jdk folder in it, started digging the internet. The old(2009) manual told to set new variables: inserted new JAVA_HOME with jdk folder, MAVEN_HOME with apache-maven-3 folder, inserted %MAVEN_HOME%\bin to Path variable; now cmd: mvn clean package succeded)));  The application is built now. Now I have to find the war file. it is in boot/target it's name is: boot-1.0-SNAPSHOT.war; go to the folder; launch it via java -jar ./boot-1.0-SNAPSHOT.war; It had stayed hanging there:
+ 2020-01-13 13:04:09.599  INFO 3664 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080
+2020-01-13 13:04:10.033  INFO 3664 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2020-01-13 13:04:10.033  INFO 3664 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.52
+But I did something, trying to save these lines like Ctrl+C, then it continued doing something and adding a few dozens of lines; eventually my http://localhost:8080/ showed me my new site))) мы только что создали полноценный веб-сервер, который можно будет развивать до сколь угодно сложного приложения.   java -jar ./boot-1.0-SNAPSHOT.war
+
+String value - специальный параметр аннотации, который там встроен по умолчанию. Причём если в параметре задаю её, а потом в теле аннотации объявляю value, то в value автоматически прописано то, что я задал в параметре...
+
 
 Здесь написано как реализовать поиск:https://stackoverflow.com/questions/45543721/finding-index-of-a-cell-containing-a-value-and-highlighting-all-those-cells-in-q
 
@@ -34,7 +44,7 @@ Sounds like a big work... But I still don't know if there is a shorter way to do
 -Чтобы создать .ico файл нужна программа специальная imageMagick-
 Дальше кидаю этот .ico в папку src(не в ресурсы). Прописываю в .pro RC_ICONS = nameOfIcon.ico. Всё, у .exe теперь иконка и у всех окон программы такая иконка становится. Но это только для винды.
 
-
+При вставке в ворд можно нажать правой кнопокй мыши и выбрать - вставить только текст. В итоге список, если он уже был в вордовском документе не пересчитывается из-за новых абзацев и другое форматирование отменяется. "Объединить форматирование" сохраняет картинки.
 
 Assistant qt помощь по кьюти ассистент есть в списке среди всех подпрограмм (меню пуск)
 
