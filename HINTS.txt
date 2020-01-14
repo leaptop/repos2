@@ -37,6 +37,18 @@ But I did something, trying to save these lines like Ctrl+C, then it continued d
 
 String value - специальный параметр аннотации, который там встроен по умолчанию. Причём если в параметре задаю её, а потом в теле аннотации объявляю value, то в value автоматически прописано то, что я задал в параметре...
 
+JSON - простой текстовый формат.
+
+Pom.xml:
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+            <scope>compile</scope><!--/*I added this and it started working)))))*/-->
+        </dependency>
+    </dependencies>
+
 
 Здесь написано как реализовать поиск:https://stackoverflow.com/questions/45543721/finding-index-of-a-cell-containing-a-value-and-highlighting-all-those-cells-in-q
 
