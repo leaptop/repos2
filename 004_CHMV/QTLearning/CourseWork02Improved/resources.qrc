@@ -6,6 +6,7 @@
     <qresource prefix="/pics">
         <file>Common/splashScreen.png</file>
         <file>Common/iconsmall_zWo_icon.ico</file>
+        <file>Common/s.png</file>
     </qresource>
     <qresource prefix="/site">
         <file>Common/helpSite/index.html</file>

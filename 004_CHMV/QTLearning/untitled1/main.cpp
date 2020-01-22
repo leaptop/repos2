@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
             pitem = new QListWidgetItem(str, &lwg);
             pitem->setIcon(QPixmap(":/" + str + ".jpg"));//concatenates the thingies to get the
             pitem->setFlags(Qt::ItemIsEnabled |Qt::ItemIsSelectable |//pics from the "/" prefix
-                            Qt::ItemIsEditable | Qt::ItemIsDragEnabled);
+                            Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::Item);
         }
         lwg.resize(150, 150);
         lwg.show();

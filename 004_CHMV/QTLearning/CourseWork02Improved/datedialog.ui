@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Окно создания новой записи</string>
   </property>
   <property name="windowIcon">
    <iconset>

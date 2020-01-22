@@ -1874,6 +1874,23 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qmainwindow.h \
 		ui_datedialog.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QVariant \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QIcon \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QTextEdit \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qpen.h \
 		../CourseWork02Improved/mainwindow.h \
 		../CourseWork02Improved/helpdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QtWidgets \
@@ -1882,14 +1899,9 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QtGuiDepends \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qabstracttextdocumentlayout.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextlayout.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qglyphrun.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qrawfont.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qfontdatabase.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextcursor.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextdocument.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessible.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessiblebridge.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qaccessibleobject.h \
@@ -1908,8 +1920,6 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericmatrix.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericplugin.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qgenericpluginfactory.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qiconengine.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qiconengineplugin.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qimageiohandler.h \
@@ -1982,12 +1992,9 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextlist.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtexttable.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtguiversion.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qaccessiblewidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qaction.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qlayoutitem.h \
@@ -1998,7 +2005,6 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qcolormap.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qcolumnview.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qcommandlinkbutton.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qcommonstyle.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qcompleter.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdatawidgetmapper.h \
@@ -2053,7 +2059,6 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qopenglwidget.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qplaintextedit.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtextedit.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qprogressbar.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qprogressdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qproxystyle.h \
@@ -2065,7 +2070,6 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QScrollerProperties \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qscrollerproperties.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QMetaType \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QVariant \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qshortcut.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qsizegrip.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qspinbox.h \
@@ -2095,8 +2099,7 @@ release/datedialog.o: ../CourseWork02Improved/datedialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwidgetaction.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
-		../CourseWork02Improved/dayeditdialog.h \
-		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication
+		../CourseWork02Improved/dayeditdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\datedialog.o ..\CourseWork02Improved\datedialog.cpp
 
 release/dayeditdialog.o: ../CourseWork02Improved/dayeditdialog.cpp ../CourseWork02Improved/dayeditdialog.h \
@@ -2205,6 +2208,27 @@ release/dayeditdialog.o: ../CourseWork02Improved/dayeditdialog.cpp ../CourseWork
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtouchdevice.h \
 		ui_dayeditdialog.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/QVariant \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QTextEdit \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/qpen.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtSql/QSqlQuery \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtSql/qsqlquery.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtSql/qtsqlglobal.h \
@@ -2679,7 +2703,8 @@ release/helpdialog.o: ../CourseWork02Improved/helpdialog.cpp ../CourseWork02Impr
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwidgetaction.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qwizard.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/qtwidgetsversion.h \
-		ui_helpdialog.h
+		ui_helpdialog.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\helpdialog.o ..\CourseWork02Improved\helpdialog.cpp
 
 release/main.o: ../CourseWork02Improved/main.cpp ../CourseWork02Improved/mainwindow.h \
@@ -3673,6 +3698,15 @@ release/mainwindow.o: ../CourseWork02Improved/mainwindow.cpp ../CourseWork02Impr
 		../CourseWork02Improved/dayeditdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		ui_mainwindow.h \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QIcon \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QAction \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QComboBox \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMenu \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QMenuBar \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QStatusBar \
+		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtWidgets/QTextEdit \
 		ui_datedialog.h \
 		ui_dayeditdialog.h \
 		C:/Qt_5_12_6/5.12.6/mingw73_64/include/QtGui/QTextCursor

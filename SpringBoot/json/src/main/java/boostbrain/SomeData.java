@@ -19,7 +19,7 @@ private InnerObject innerObject;
 //        this.array = array;
 //    }
 
-    //    private int param;//first case scenario
+//    private int param;//first case scenario
 //    private boolean param2;
 //    private String param3;
 //
