@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2dd8a08b-6d58-4c4e-a98f-15f768c31eaf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WQWmjVHunQQZ6hSUsW3zaKfjsj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Stepan\source\repos2\SpringBoot\youtube\http_sessions\src\main\java\boost.brain.youtube.http" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HttpSessions" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_171\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="youtube" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2dd8a08b-6d58-4c4e-a98f-15f768c31eaf" name="Default Changelist" comment="" />
+      <created>1579082459943</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579082459943</updated>
+      <workItem from="1579082463327" duration="4980000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="122" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579086077234">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="122" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579086077234" />
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579086076097">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579086076097" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1579113229509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579113229509" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1579113229509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579113229509" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1579113229509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579113229509" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1579113229509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579113229509" />
+    <state x="131" y="57" key="new project wizard" timestamp="1579086137747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="131" y="57" key="new project wizard/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579086137747" />
+  </component>
+</project>

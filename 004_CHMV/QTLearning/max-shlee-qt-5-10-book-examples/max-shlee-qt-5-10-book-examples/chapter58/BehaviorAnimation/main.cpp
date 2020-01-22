@@ -13,7 +13,7 @@
 #include <QQmlFileSelector>
 #include <QQuickView> 
 #include <QDir>
-
+#include <QApplication>
 // ----------------------------------------------------------------------
 int main(int argc, char** argv) 
 {

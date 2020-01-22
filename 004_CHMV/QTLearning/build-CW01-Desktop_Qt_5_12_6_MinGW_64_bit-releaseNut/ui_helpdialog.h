@@ -32,7 +32,7 @@ public:
 
     void retranslateUi(QDialog *HelpDialog)
     {
-        HelpDialog->setWindowTitle(QApplication::translate("HelpDialog", "Dialog", nullptr));
+        HelpDialog->setWindowTitle(QApplication::translate("HelpDialog", "\320\236\320\272\320\275\320\276 \320\277\320\276\320\274\320\276\321\211\320\270", nullptr));
     } // retranslateUi
 
 };
