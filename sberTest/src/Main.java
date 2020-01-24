@@ -1,15 +1,20 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class Main extends Parent {
-    static int a = 2;
+public class Main {
+                                                    //stopped at 19:18
 
     public static void main(String[] args) {
-         int a = 3;
-        // System.out.println(super.a);//it's a bug. super.a can't be referenced from a static context
-        System.out.println("Parent.a = " + Parent.a);//the way to make it working is to declare a static and call it Super0.a
-        //yeah... a has to be either  declared static or the Super0 object has to be instantiated.
-        //---------------------------------------
+
+//-----------------------------------------------------
+//public class Main extends Parent {
+//    static int a = 2;
+//
+//    public static void main(String[] args) {
+//         int a = 3;
+//        // System.out.println(super.a);//it's a bug. super.a can't be referenced from a static context
+//        System.out.println("Parent.a = " + Parent.a);//the way to make it working is to declare a static and call it Parent.a
+        //----------------------------------------
 //int a = 3;
 //Super s = new Super();
 //        System.out.println(s.a);
@@ -99,13 +104,13 @@ public class Main extends Parent {
 //--------------------------------------------------------------
 
 class Parent {
-   static int a =1;
+    static int a = 1;
 
     //public static void main(String[] args) {
-        //int a = 3;
+    //int a = 3;
 
 
-    }
+}
 
 //-----------------------------------------------------------------------------------
 

@@ -2,702 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e7b10f-e24e-4b94-8af5-c0ea6fa59390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Stepan.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Developer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExtendingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UseDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/src/Fourier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04DiscrFurier/src/TestDFT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/src/ComplNum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_DFT_Java_Mine/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_VS_Furier/04_VS_Furier.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_VS_Furier/04_VS_Furier.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_VS_Furier/04_VS_Furier.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/04_VS_Furier/Main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/src/ComplNum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_Java_Mine/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_VS/05_VS.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_VS/05_VS.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_VS/05_VS.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/05_VS/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT/06FFT.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT/06FFT.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT/06FFT.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/cmake-build-debug/06FFT_CLion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/copy.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/copy.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06FFT_CLion/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/src/ComplNum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_Java_Mine/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_VS/06_VS.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_VS/06_VS.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_VS/06_VS.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_VS/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/src/Fourier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/06_java_FFT/src/TestFFT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07SvertkaObichniy/07SvertkaObichniy.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07SvertkaObichniy/07SvertkaObichniy.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07SvertkaObichniy/07SvertkaObichniy.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07SvertkaObichniy/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/cmake-build-debug/07svertki_Clion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/07svertki_ClionSdal/mainOrig.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/src/Complex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/src/FFT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/BPFjava/src/StdOut.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/Complex.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/Complex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/DFT.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/DFT.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/Furier.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/cmake-build-debug/CTheoryAlg_master.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT/conv.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/Complex.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/Complex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/DFT.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/DFT.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/Furier.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/cmake-build-debug/CTheoryAlg_masterSDAT_2.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CTheoryAlg-masterSDAT_2/conv.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/Complex.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/Complex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/DFT.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/DFT.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/Furier.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/cmake-build-debug/CtheoryAlgClion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/CtheoryAlgClion/conv.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/00task (1).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/cmake-build-debug/ClionPlusi.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/ClionPlusi/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/src/TheSameCodeWithoutComments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/Отчёт.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/пояснение по использованию.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/JavaGitSDAT/рис.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/VSplusi/RGZ_TSVPS/RGZ_TSVPS.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/hpcs-fall2015-lec3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/n должна быть степенью числа 2! для алгоритма Штрассена.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/Сдать РГЗ JavaGit!.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000RGZ_SDAT/переименование.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/CSMult/CSMult.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/CSMult/CSMult.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/CSMult/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/java/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/java/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/java/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/java/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/00ZadOUmnMatr/java/src/MatrixChain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/JavaG/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/cmake-build-debug/ZadachaOPeremnMatric.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/cmake-build-debug/input" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/ZadachaOPeremnMatricRL/тысяча массивов.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000ZOPMSDAT/Сдать JAvaG.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapSackRecPlusDynamicJava/src/site.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/KnapsackProblems.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RZClion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RZClion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RZClion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukMetodichkaJava/src/com/company/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00 &amp; VSRukzak00Dlinn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/cmake-build-debug/RukzClion00.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzClion00SDAT/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzakTaskJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzakTaskJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzakTaskJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzakTaskJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/RukzakTaskJava/src/Knapsack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzak/program/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzak/program/program.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzak/program/program.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/BoundedKnapsackRecursiveSolver.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzakk00Dlinn/Rukz/Rukz.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/VSrukzakk00Dlinn/здесь всё показывает, но длинно.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/src/com/company/UboundedKnapsack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/gfgJava/src/работает, но не показывает айтемы" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/cmake-build-debug/rukzak.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/000rukzakkSDAT/rukzakStarsh/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/01_BubbleSort/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/01_BubbleSort/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/01_BubbleSort/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/01_BubbleSort/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/01_BubbleSort/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/02_SelectSort/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/02_SelectSort/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/02_SelectSort/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/02_SelectSort/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/02_SelectSort/src/SelectSort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/DijkstrasAlgorithm/DijkstrasAlgorithm.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/DijkstrasAlgorithm/DijkstrasAlgorithm.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/DijkstrasAlgorithm/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/GraphImplementationJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/GraphImplementationJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/GraphImplementationJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/GraphImplementationJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/GraphImplementationJava/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaGitJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaGitJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaGitJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaGitJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaGitJava/src/Karatsuba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaJavaSam/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaJavaSam/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaJavaSam/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaJavaSam/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KaratsubaJavaSam/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KrascalJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KrascalJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KrascalJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KrascalJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KrascalJava/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/DataGridViewExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form1.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form1.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form2.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form2.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form3.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Form3.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Practice 05.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/Properties/Settings.settings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/L0/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/Practice 05.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/deik.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/ford.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/Объяснение Дейкстры на ютубе.url" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/KruskalDeikstraFordVS_Sdal/зарисовать ходы .txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortIterativeVSRecursive/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortIterativeVSRecursive/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortIterativeVSRecursive/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortIterativeVSRecursive/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortIterativeVSRecursive/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/src/CountersContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MergeSortRecursive/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MultiplicationKaratsubaJava/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MultiplicationKaratsubaJava/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MultiplicationKaratsubaJava/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MultiplicationKaratsubaJava/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/MultiplicationKaratsubaJava/src/Karatsuba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/UmnojStolbBistroeUmnojJavaSdal/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DONE/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DiscrCompareToHalfQuickFourier/DiscrCompareToHalfQuickFourier.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DiscrCompareToHalfQuickFourier/DiscrCompareToHalfQuickFourier.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DiscrCompareToHalfQuickFourier/DiscrCompareToHalfQuickFourier.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/DiscrCompareToHalfQuickFourier/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/Discr.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/Fast.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/FourierCompare3.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/FourierCompare3.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/FourierCompare3.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/FourierCompare3/HalfQuick.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/Svertki/Source.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/Svertki/Svertki.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/Svertki/Svertki.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/Svertki/Svertki.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/DijkstrasAlgorithm/DijkstrasAlgorithm.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/DijkstrasAlgorithm/DijkstrasAlgorithm.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/DijkstrasAlgorithm/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/GFG/GFG.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/GFG/GFG.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/TestDijkstra/GFG/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/furc/1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr6/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/cmake-build-debug/lr_Clion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_Clion/просто из массива быстрым туда-обратно.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertki/bpf.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertki/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/cmake-build-debug/lr_svertkiClion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiClion/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/cmake-build-debug/lr_svertkiDlaConsoli.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svertkiDlaConsoli/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/cmake-build-debug/lr_svrtkiBPFClion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../001_TSVPS/lr_svrtkiBPFClion/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/01" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/10/deadlock.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/10/ev2.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/10/mu2.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/10/new.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/10/se2.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/1/libd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/1/libd1.def" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/1/pd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/1/pd11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/2/libd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/2/libd2.def" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/2/pd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/2/pd22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/3action/1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/evd33.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4/libevd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/evd33.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4ориг02/libevd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал.zipp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/evd33.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригинал/libevd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd22.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/evd33.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/11/4оригиналРабоч/libevd1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/1_1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/1_2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/4_1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/4_2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/test.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/testmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11/12/tests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/cmake-build-debug/11Test.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/11Test/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL.zipp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/Course Work.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/WindowProc callback function.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/cmake-build-debug/CWNZ.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/cmake-build-debug/SimpleLog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/cmake-build-debug/Statistics.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CWNZ_COURSE_WORK_SDAL/КУРСАЧ ПО ОС.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/Course Work.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/CourseWorkSnifferNZ.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/Lab5.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/cmake-build-debug/OS_04.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_04/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/cmake-build-debug/OS_040_newFolder.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_040_newFolder/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/cmake-build-debug/OS_041.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_041/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_042_VS/OS_042_VS.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_042_VS/OS_042_VS.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_042_VS/OS_042_VS.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_042_VS/Source.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/cmake-build-debug/OS_5.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_5/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/cmake-build-debug/OS_lab9_Clion.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/cmake-build-debug/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/OS_lab9_Clion/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab4.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab5/Lab5/Lab5.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab5/Lab5/Lab5/Lab5.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab5/Lab5/Lab5/Lab5.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab5/Lab5/Lab5/Lab5.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab6/Client.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab6/Sender.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab7 a for real/mon.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab7 a for real/t1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab7 a for real/td1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab7a/lab8.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab7a/lab8_1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9/b.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9/lab9.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9/lab9b.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/cmake-build-debug/lab9_OS.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/lab9_OS/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab1/Lab1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab10/Lab10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab11/Lab11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab12/Lab12.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab13/Lab13.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab14/Lab14.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab15/Lab15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab16/Lab16.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab17/Lab17.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab2/Lab2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab3/Lab3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab4/Lab4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab5-6/Lab5-6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab7/Lab7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab8/Lab8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lab9/Lab9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture1/Lecture1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture10/Lecture10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture11/Лекция11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture12/Лекция12.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture13/Лекция13.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture14/Лекция14.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture14/Лекция14m.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture15/Lecture15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture15/service1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture16/Lecture16.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture17/Лекция17-2017.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture2/Lecture2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture3/Lecture3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture4/Лекция4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture5/Лекция5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture6/Лекция6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture7/Лекция7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture8/Лекция8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Lecture9/Лекция9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Вопросы.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master OLD/Курсовые.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab1/Lab1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab10/Lab10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab11/Lab11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab12/Lab12.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab13/Lab13.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab14/Lab14.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab15/Lab15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab16/Lab16.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab17/Lab17.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab2/Lab2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab3/Lab3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab4/Lab4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab5-6/Lab5-6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab7/Lab7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab7/Lab7a.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab7/tools/psapi1/Psapi.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab7/tools/psapi2w7/Psapi.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab8/Lab8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lab9/Lab9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture1/Lecture1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture10/Lecture10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture11/Лекция11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture12/Лекция12.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture13/Лекция13.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture14/Лекция14.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture14/Лекция14m.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture15/Lecture15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture15/service1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture16/Lecture16.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture17/Лекция17-2017.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture2/Lecture2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture3/Lecture3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture4/Lecture4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture5/Lecture5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture6/Lecture6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture6/Лекция5-cnt.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture7/Лекция7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture8/Лекция8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Lecture9/Лекция9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Вопросы.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/sibsutis_os-master/sibsutis_os-master/Курсовые.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/test.с" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/cmake-build-debug/testServ.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../002_OS/testServ/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/01_8C_proc.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/02_8C_proc.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/03_8C_proc.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/04_8C_proc.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/cmake-build-debug/AVS_30.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_30/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_RGZ_18_ALEXEEV — копия (2).docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/AVS_RGZ_18_ALEXEEVнедодел.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/AVS_RGZ_18_ALEXEEV это отправил.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/AVS_RGZ_18_ALEXEEV — копия.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/AVS_RGZ_18_ALEXEEV.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/alfonsodemenkokozhin_i_dr-mikroarhitektura_vosmiyadernogo_mikroprotsessora — копия.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/alfonsodemenkokozhin_i_dr-mikroarhitektura_vosmiyadernogo_mikroprotsessora — копия.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/alfonsodemenkokozhin_i_dr-mikroarhitektura_vosmiyadernogo_mikroprotsessora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/charts.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/graphs эталон с графиком — копия.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/graphs эталон с графиком.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/graphs эталон.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/graphs.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Kurs work/С 31.10 ПО14.11 не посещал занятия(3 пропуска), т.к. болел. Справка в деканате. Надеюсь это будет учтено при выставлении оценки.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/RGZ_zadania_2019.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Trebovania_k_oformleniyu.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/Varianty_2019.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/cmake-build-debug/lab6.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/lab6/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../003_AVS/начало ргз.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/00Вопросы к экзамену заполняю из вордаВосст.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/00Вопросы к экзамену заполняю из вордаВосст.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/datedialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/datedialog.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/dayeditdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/dayeditdialog.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/helpdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/helpdialog.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/mainwindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/resources.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/CourseWork02Improved/resources.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/Makefile.Debug" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/Makefile.Debug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/Makefile.Release" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/Makefile.Release" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/journey" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-Debug/journey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/journey" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/journey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_datedialog.h" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_datedialog.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_dayeditdialog.h" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_dayeditdialog.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_helpdialog.h" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_helpdialog.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../004_CHMV/QTLearning/build-CW01-Desktop_Qt_5_12_6_MinGW_64_bit-releaseNut/ui_mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/CoursWork/CoursWork.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/CoursWork/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/CoursWork/mainwindow.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/CoursWork/mainwindow.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/CoursWork/mainwindow.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/build-CoursWork-Desktop_Qt_5_13_1_MinGW_32_bit-Debug/.qmake.stash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/build-CoursWork-Desktop_Qt_5_13_1_MinGW_32_bit-Debug/Makefile.Debug" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/build-CoursWork-Desktop_Qt_5_13_1_MinGW_32_bit-Debug/Makefile.Release" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../004_CHMV/kr00/build-CoursWork-Desktop_Qt_5_13_1_MinGW_32_bit-Debug/ui_mainwindow.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01_1mine.lsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01_2mine.lsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01_3a_mine.lsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01_3b_mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01_4mine.lsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01callingMethod.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/01mine.lsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/02_1mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/02_2mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/02_3mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/03_1mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/1.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/2.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/3_mine.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/Dimon.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/condExample.lisp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/RGR (2).BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/RGR (2).pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/RGR with comments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/RGR__kopia.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/copy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/noComments.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/ОтчетАлексеев.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Kost/результат первого.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Lab3.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/RGR.BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/RGR.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/X.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/f1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/f2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/1.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/1_AK.BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/1_AK_sdal.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/2 —save.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/2.BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/2.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/2_sdat.BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/2_sdat.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/repeatLearning.BAK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/repeatLearning.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/test.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/labs/test2.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Оценочная система (ФЛП).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/РГЗ_ФЛП_19-20.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/Титульный лист РГЗ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/prol/считыв.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/Лаб1 (Лисп).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/Лаб2 (Лисп).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/Лаб3 (Лисп).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../005_Functional and logical programming/всё вместе с комментариями.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05/SimpleLog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05/Statistics.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05/service1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../05/service1_рабочая  копия не менять.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HINTS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HINTS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringBoot/json/src/main/java/boostbrain/SomeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/json/src/main/java/boostbrain/SomeData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LambdaApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProgramThreadExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UserBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../людям/matrix mul/Main(matrix mul task).java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../людям/rukzak/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../людям/rukzak/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UseDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UseDeveloper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -743,7 +55,7 @@
       <recent name="C:\Users\Stepan\source\repos\sberTest\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UseDeveloper">
+  <component name="RunManager" selected="Application.ProgramThreadExample">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="sberTest" />
@@ -751,16 +63,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UseDeveloper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UseDeveloper" />
+    <configuration name="ProgramThreadExample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ProgramThreadExample" />
       <module name="sberTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="LambdaApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ProgramThreadExample" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UseDeveloper" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -787,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569379563455</updated>
-      <workItem from="1579497094512" duration="8389000" />
+      <workItem from="1579497094512" duration="13099000" />
     </task>
     <servers />
   </component>
@@ -795,22 +116,36 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="801" height="210" key="GridCell.Tab.0.bottom" timestamp="1579681150906">
+    <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579715706524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="801" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579681150906" />
-    <state width="801" height="210" key="GridCell.Tab.0.center" timestamp="1579681150905">
+    <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691366784" />
+    <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579715706524" />
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579715652779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="801" height="210" key="GridCell.Tab.0.center/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579681150905" />
-    <state width="801" height="210" key="GridCell.Tab.0.left" timestamp="1579681150905">
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691354590" />
+    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579715652779" />
+    <state width="801" height="131" key="GridCell.Tab.0.bottom" timestamp="1579715720580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="801" height="210" key="GridCell.Tab.0.left/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579681150905" />
-    <state width="801" height="210" key="GridCell.Tab.0.right" timestamp="1579681150905">
+    <state width="801" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691370779" />
+    <state width="801" height="131" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579715720580" />
+    <state width="801" height="131" key="GridCell.Tab.0.center" timestamp="1579715720580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="801" height="210" key="GridCell.Tab.0.right/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579681150905" />
+    <state width="801" height="210" key="GridCell.Tab.0.center/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691370778" />
+    <state width="801" height="131" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579715720580" />
+    <state width="801" height="131" key="GridCell.Tab.0.left" timestamp="1579715720579">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="801" height="210" key="GridCell.Tab.0.left/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691370778" />
+    <state width="801" height="131" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579715720579" />
+    <state width="801" height="131" key="GridCell.Tab.0.right" timestamp="1579715720580">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="801" height="210" key="GridCell.Tab.0.right/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691370779" />
+    <state width="801" height="131" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579715720580" />
     <state width="661" height="223" key="GridCell.Tab.1.bottom" timestamp="1579502636259">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
