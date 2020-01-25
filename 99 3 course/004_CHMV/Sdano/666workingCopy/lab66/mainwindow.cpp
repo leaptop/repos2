@@ -17,9 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::on_pushButton_load_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(nullptr, "Выберите изображение", QDir::currentPath(), "*.png *.jpg *.gif *.jpeg");
-    ui->lineEdit_path->setText(filename);
+    //ui->lineEdit_path->setText(filename);
     QImage image1(filename);
-    ui->label_photo->setPixmap(QPixmap::fromImage(image1));
+    //ui->label_photo->setPixmap(QPixmap::fromImage(image1));
 }
 
 MainWindow::~MainWindow()
@@ -29,20 +29,50 @@ MainWindow::~MainWindow()
 
 void MainWindow::onButtonSend()
 {
-    if (ui->lineEdit_fio->text() == "" or ui->lineEdit_path->text() == "" or ui->lineEdit_phone->text() == "" or ui->lineEdit_dolzhnost->text() == "") {
+    if (ui->lineEdit_fio->text() ==  ""  or ui->lineEdit_dolzhnost->text() == "") {
         QMessageBox::information(this, "Заполните все поля", "Заполните все поля, прежде чем продолжить");
         return;
     } else {
         this->myform->show();
     }
-    QString st = ui->lineEdit_path->text() + "*" + ui->lineEdit_fio->text() +
-            "\n" + ui->lineEdit_dolzhnost->text() + "\n" + ui->lineEdit_phone->text() +
+    QString st =  + "*" + ui->lineEdit_fio->text() +
+            "\n" + ui->lineEdit_dolzhnost->text() + "\n"  +
             "\n" + ui->dateEdit->text();
-    if (ui->radioButton_m->isChecked() == true) {
-        st += "\nпол мужской";
-    } else {
-        st += "\nпол женский";
-    }
+//    if (ui->radioButton_m->isChecked() == true) {
+//        st += "\nпол мужской";
+//    } else {
+//        st += "\nпол женский";
+//    }
     emit sendData(st);
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_clicked(bool checked)
+{
+
+}
+
+void MainWindow::on_pushButton_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_pushButton_pressed()
+{
+
+}
+
+void MainWindow::on_pushButton_released()
+{
+
+}
+
+void MainWindow::on_pushButton_destroyed()
+{
+
+}

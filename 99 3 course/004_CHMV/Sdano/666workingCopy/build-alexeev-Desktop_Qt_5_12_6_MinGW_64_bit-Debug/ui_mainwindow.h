@@ -19,7 +19,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -33,16 +32,10 @@ public:
     QWidget *layoutWidget;
     QGridLayout *gridLayout_3;
     QVBoxLayout *verticalLayout;
-    QLabel *label_photo;
-    QLineEdit *lineEdit_path;
-    QPushButton *pushButton_load;
     QGridLayout *gridLayout_2;
     QLabel *label_birthday;
     QHBoxLayout *horizontalLayout;
-    QRadioButton *radioButton_m;
-    QRadioButton *radioButton_f;
     QDateEdit *dateEdit;
-    QLineEdit *lineEdit_phone;
     QLabel *label_phone;
     QGridLayout *gridLayout;
     QLineEdit *lineEdit_dolzhnost;
@@ -68,34 +61,6 @@ public:
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label_photo = new QLabel(layoutWidget);
-        label_photo->setObjectName(QString::fromUtf8("label_photo"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_photo->sizePolicy().hasHeightForWidth());
-        label_photo->setSizePolicy(sizePolicy);
-        label_photo->setMinimumSize(QSize(200, 200));
-        label_photo->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";\n"
-"color:rgb(104, 0, 130)"));
-        label_photo->setFrameShape(QFrame::Box);
-        label_photo->setFrameShadow(QFrame::Sunken);
-        label_photo->setLineWidth(4);
-        label_photo->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(label_photo);
-
-        lineEdit_path = new QLineEdit(layoutWidget);
-        lineEdit_path->setObjectName(QString::fromUtf8("lineEdit_path"));
-
-        verticalLayout->addWidget(lineEdit_path);
-
-        pushButton_load = new QPushButton(layoutWidget);
-        pushButton_load->setObjectName(QString::fromUtf8("pushButton_load"));
-        pushButton_load->setStyleSheet(QString::fromUtf8("background:rgb(133, 192, 255)"));
-
-        verticalLayout->addWidget(pushButton_load);
-
 
         gridLayout_3->addLayout(verticalLayout, 0, 0, 2, 1);
 
@@ -103,25 +68,12 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         label_birthday = new QLabel(layoutWidget);
         label_birthday->setObjectName(QString::fromUtf8("label_birthday"));
-        label_birthday->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";\n"
-"color:rgb(104, 0, 130)"));
+        label_birthday->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_2->addWidget(label_birthday, 0, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        radioButton_m = new QRadioButton(layoutWidget);
-        radioButton_m->setObjectName(QString::fromUtf8("radioButton_m"));
-        radioButton_m->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";"));
-
-        horizontalLayout->addWidget(radioButton_m);
-
-        radioButton_f = new QRadioButton(layoutWidget);
-        radioButton_f->setObjectName(QString::fromUtf8("radioButton_f"));
-        radioButton_f->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";"));
-
-        horizontalLayout->addWidget(radioButton_f);
-
 
         gridLayout_2->addLayout(horizontalLayout, 2, 0, 1, 2);
 
@@ -130,12 +82,6 @@ public:
         dateEdit->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_2->addWidget(dateEdit, 0, 1, 1, 1);
-
-        lineEdit_phone = new QLineEdit(layoutWidget);
-        lineEdit_phone->setObjectName(QString::fromUtf8("lineEdit_phone"));
-        lineEdit_phone->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout_2->addWidget(lineEdit_phone, 1, 1, 1, 1);
 
         label_phone = new QLabel(layoutWidget);
         label_phone->setObjectName(QString::fromUtf8("label_phone"));
@@ -162,15 +108,13 @@ public:
 
         label_dolzhnost = new QLabel(layoutWidget);
         label_dolzhnost->setObjectName(QString::fromUtf8("label_dolzhnost"));
-        label_dolzhnost->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";\n"
-"color:rgb(104, 0, 130)"));
+        label_dolzhnost->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(label_dolzhnost, 1, 0, 1, 1);
 
         label_fio = new QLabel(layoutWidget);
         label_fio->setObjectName(QString::fromUtf8("label_fio"));
-        label_fio->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";\n"
-"color:rgb(104, 0, 130)"));
+        label_fio->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(label_fio, 0, 0, 1, 1);
 
@@ -184,7 +128,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 614, 21));
+        menubar->setGeometry(QRect(0, 0, 614, 20));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -198,12 +142,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        label_photo->setText(QApplication::translate("MainWindow", "\320\244\320\276\321\202\320\276", nullptr));
-        pushButton_load->setText(QApplication::translate("MainWindow", "\320\227\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214", nullptr));
         label_birthday->setText(QApplication::translate("MainWindow", "\320\224\320\260\321\202\320\260 \321\200\320\276\320\266\320\264\320\265\320\275\320\270\321\217", nullptr));
-        radioButton_m->setText(QApplication::translate("MainWindow", "\320\234", nullptr));
-        radioButton_f->setText(QApplication::translate("MainWindow", "\320\226", nullptr));
-        label_phone->setText(QApplication::translate("MainWindow", "\320\237\320\260\321\201\320\277\320\276\321\200\321\202\320\275\321\213\320\265 \320\264\320\260\320\275\320\275\321\213\320\265", nullptr));
+        label_phone->setText(QString());
         lineEdit_fio->setText(QString());
         label_dolzhnost->setText(QApplication::translate("MainWindow", "\320\224\320\276\320\273\320\266\320\275\320\276\321\201\321\202\321\214", nullptr));
         label_fio->setText(QApplication::translate("MainWindow", "\320\244\320\230\320\236", nullptr));

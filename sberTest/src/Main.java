@@ -2,9 +2,18 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
-                                                    //stopped at 19:18
+    //stopped at 19:18
 
     public static void main(String[] args) {
+        int[] a = {34, 89, -3};
+        List ls = Collections.emptyList();
+//Collections.asList()//this function doesn't exist
+        int i = 0;
+        for (int aa : a) {
+            List<Integer> arr = Arrays.asList(a[i]);
+            System.out.println("arr[] = " + arr.get(i));
+            i++;
+        } ;
 
 //-----------------------------------------------------
 //public class Main extends Parent {

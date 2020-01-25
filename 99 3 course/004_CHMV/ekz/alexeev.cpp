@@ -18,7 +18,7 @@ void alexeev::recieveData(QString str)
     ui->textEdit->setText(lst.at(1) + "\n" + lst.at(0));
     if (lst.size() > 1) {
         QImage image1(lst.at(0));
-        ui->label->setPixmap(QPixmap::fromImage(image1));
+        //ui->label->setPixmap(QPixmap::fromImage(image1));
     }
 }
 
@@ -31,7 +31,7 @@ void alexeev::on_buttonBox_clicked(QAbstractButton *button)
 {
     if (button->text() == "Reset") {
         ui->textEdit->clear();
-        ui->label->clear();
+        //ui->label->clear();
     } else if (button->text() == "Save") {
         QString filename = QFileDialog::getSaveFileName(nullptr, "Сохранить как", QDir::currentPath());
         QFile file(filename);
@@ -51,6 +51,11 @@ void alexeev::on_buttonBox_clicked(QAbstractButton *button)
         }
         QStringList inf = ui->textEdit->toPlainText().split("\n");
         QImage image2(inf.at(5));
-        ui->label->setPixmap(QPixmap::fromImage(image2));
+        //ui->label->setPixmap(QPixmap::fromImage(image2));
     }
+}
+
+void alexeev::on_buttonBox_accepted()
+{
+
 }
