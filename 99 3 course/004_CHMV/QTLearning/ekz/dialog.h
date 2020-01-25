@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QAbstractButton>
 
 namespace Ui {
 class Dialog;
@@ -17,6 +18,8 @@ public:
 
 private slots:
     void on_buttonBox_accepted();
+
+    void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
     Ui::Dialog *ui;

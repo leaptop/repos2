@@ -25,64 +25,14 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="0" column="0" rowspan="2">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label_photo">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;
-color:rgb(104, 0, 130)</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
-         </property>
-         <property name="lineWidth">
-          <number>4</number>
-         </property>
-         <property name="text">
-          <string>Фото</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_path"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_load">
-         <property name="styleSheet">
-          <string notr="true">background:rgb(133, 192, 255)</string>
-         </property>
-         <property name="text">
-          <string>Загрузить</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="verticalLayout"/>
      </item>
      <item row="1" column="1">
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <widget class="QLabel" name="label_birthday">
          <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;
-color:rgb(104, 0, 130)</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>Дата рождения</string>
@@ -90,38 +40,10 @@ color:rgb(104, 0, 130)</string>
         </widget>
        </item>
        <item row="2" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QRadioButton" name="radioButton_m">
-           <property name="styleSheet">
-            <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;</string>
-           </property>
-           <property name="text">
-            <string>М</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radioButton_f">
-           <property name="styleSheet">
-            <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;</string>
-           </property>
-           <property name="text">
-            <string>Ж</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout"/>
        </item>
        <item row="0" column="1">
         <widget class="QDateEdit" name="dateEdit">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_phone">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -134,7 +56,7 @@ color:rgb(104, 0, 130)</string>
 color:rgb(104, 0, 130)</string>
          </property>
          <property name="text">
-          <string>Паспортные данные</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -158,8 +80,7 @@ color:rgb(104, 0, 130)</string>
        <item row="1" column="0">
         <widget class="QLabel" name="label_dolzhnost">
          <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;
-color:rgb(104, 0, 130)</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>Должность</string>
@@ -169,8 +90,7 @@ color:rgb(104, 0, 130)</string>
        <item row="0" column="0">
         <widget class="QLabel" name="label_fio">
          <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;xos4 Terminus&quot;;
-color:rgb(104, 0, 130)</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>ФИО</string>
@@ -191,7 +111,7 @@ color:rgb(104, 0, 130)</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:rgb(176, 255, 185)</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Готово</string>
@@ -204,7 +124,7 @@ color:rgb(104, 0, 130)</string>
      <x>0</x>
      <y>0</y>
      <width>614</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

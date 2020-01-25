@@ -17,3 +17,8 @@ void Dialog::on_buttonBox_accepted()
 {
 
 }
+
+void Dialog::on_buttonBox_clicked(QAbstractButton *button)
+{
+
+}

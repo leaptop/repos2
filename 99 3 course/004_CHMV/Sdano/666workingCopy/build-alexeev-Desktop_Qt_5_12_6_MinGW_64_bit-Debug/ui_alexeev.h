@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -23,7 +22,6 @@ class Ui_alexeev
 public:
     QDialogButtonBox *buttonBox;
     QTextEdit *textEdit;
-    QLabel *label;
 
     void setupUi(QWidget *alexeev)
     {
@@ -32,20 +30,13 @@ public:
         alexeev->resize(575, 409);
         buttonBox = new QDialogButtonBox(alexeev);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(30, 324, 524, 23));
+        buttonBox->setGeometry(QRect(243, 324, 311, 23));
         buttonBox->setStyleSheet(QString::fromUtf8("background:rgb(224, 226, 255)"));
         buttonBox->setStandardButtons(QDialogButtonBox::Open|QDialogButtonBox::Reset|QDialogButtonBox::Save);
         textEdit = new QTextEdit(alexeev);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         textEdit->setGeometry(QRect(236, 43, 318, 275));
         textEdit->setStyleSheet(QString::fromUtf8("font: 10pt \"xos4 Terminus\";"));
-        label = new QLabel(alexeev);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 80, 200, 200));
-        label->setMinimumSize(QSize(200, 0));
-        label->setMaximumSize(QSize(200, 200));
-        label->setFrameShape(QFrame::Box);
-        label->setFrameShadow(QFrame::Sunken);
 
         retranslateUi(alexeev);
 
@@ -55,7 +46,6 @@ public:
     void retranslateUi(QWidget *alexeev)
     {
         alexeev->setWindowTitle(QApplication::translate("alexeev", "Form", nullptr));
-        label->setText(QApplication::translate("alexeev", "TextLabel", nullptr));
     } // retranslateUi
 
 };

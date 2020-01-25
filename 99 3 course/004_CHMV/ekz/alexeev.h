@@ -22,6 +22,7 @@ public slots:
     void recieveData(QString str);
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
+    void on_buttonBox_accepted();
 };
 
 #endif // alexeev_H
