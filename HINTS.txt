@@ -4,6 +4,17 @@ IntelliJ IDEA Default Keymap.pdf
 Ctrl+a Ctrl+i выровнять код в QT     //ПОМНИТЬ, ЧТО ДЛЯ ЭТИХ ШОРТКАТОВ ЯЗЫК ДОЛЖЕН БЫТЬ АНГЛИЙСКИМ. ПО КРАЙНЕЙ МЕРЕ В QT
 Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже
 
+Кодировка:
+	IntelliJIdea File -> Settings -> Editor -> File Encoding
+	Notepad++ Кодировки
+Размер шрифта винды windows: параметры - специальные возможности - дисплей - бегунок
+В idea To activate basic Completion, press Ctrl + Space
+Ctrl + Shift + Enter completes a statement
+Sometimes you need to see suggestions for static constants or methods: Ctrl + Space(twice)
+Ctrl + Shift + Space - smart type completion
+Ctrl + Shift + Space(twice) - lookup menu for a return
+File - learn -browse courses - shows courses.
+
 ЗАКОММЕНТИРОВАТЬ выделенное:
 Ctrl+k Ctrl+c, VS Ctrl+k+u соответственно раскомментировать. In Visual Studio
 Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator & CLion
@@ -12,12 +23,28 @@ Ctrl+Shift+/ комментирует весь выделенный блок в 
 DARK THEMES:
 QT Инструменты, Параметры, Среда, Тема Dark
 MS Word и другие - файл - учётная запись - Тема Offce 
+IntelliJIdea color scheme dracula тёмная тема темная тема тёмный цвет Ctrl Alt s (File-settings)- appearance - dracula
+Notepad++ Опции-определение стиля-можно поменять цвет фона, текста Twilight
+Settings -> Preferences dialog control the way Notepad++ prints a document: Print - Colour and Margin and Print - Header and Footer.
+The former lets you choose the four margins, in centimeters. There are also four colour schemes to choose from.
+
+свою kubuntu я могу запустить даже без grub or uefi: параметры - обновление и безопасность - восстановление - Особые варианты загрузки - перезагрузить сейчас - выдаёт окно загрузки либо с флешки, либо с загрузочных областей! моего склонированного диска - выдаёт окно grub ещё сос тарого компа, там можно выбрать Kubuntu и она загрузится.
+
+Чтобы cuda проект создать в виже, надо прописать cuda, тогда найдёт при создании нового проекта.
+Чтобы создать cuda проект из пустого в виже: 1)правой кнопкой в солюшен эксплорере, зависимости сборки - настройки сборки - галочку на cuda10.1
+2) свойства проекта, CUDA C/C++ Target Machine Platform to 64 (для всех конфигураций)
+3) Компоновщик - ввод - дополнительные зависимости - стрелка вниз - изменить пишем: cudart.lib
+4) Добавить файл, выбрать из списка NVIDIA Code(добавляет файл .cu) #include <cuda_runtime.h>
+при сборке не забыть поменять на 64
 
 Вроде как любую андроид e-ink читалку можно сделать дополнительным монитором. Сначала скачать TightVNC https://www.youtube.com/redirect?event=video_description&v=lWAsfZTUrJs&redir_token=-w1DUmd_eCxeElLpbM6uzh0A3RN8MTU4MDEyMDM2MEAxNTgwMDMzOTYw&q=http%3A%2F%2Fwww.tightvnc.com%2Fdownload%2F2.8.8%2Ftightvnc-2.8.8-gpl-setup-64bit.msi
 потом подключить ноут и читалку к одной вайфай сети, записать айпишник компа, установить VNC viewer for android из playmarket. прописать пароли, которые ранее задал в VNC. Скорость отклика будет маленькая. Клавиши откликаются через полсекунды. Мышь наерное тоже тупит страшно.
 
 В идее кнопочка типа пауза/плей - идти к следующему брейкпоинту
 В идее удобно выбирать файлы для запуска через edit configuration. Даже если рядом будут другие файлы, с объявленной функцией main, они не запустятся.
+
+Учётные записи - Ваши данные - использовать учетную запись виндовс вместо учетной записи майкрософт. После этого ввёл пароль для учетной записи майкрософт и с 
+предложением ввода пароля для учетной записи виндовс просто не стал вводить пароль. всё. даже Ok нажимать не надо)
 
 To return to your desired branch and see everything as it was you always need to use -f:
 git checkout -f e1e6f72
@@ -420,14 +447,7 @@ void boardGeneration(char **a)
  note: expected 'char (*)[9]' but argument is of type 'char **'
  или warning: passing argument 1 of 'boardRenew' from incompatible pointer type [-Wincompatible-pointer-types]
  
- Notepad++ Опции-определение стиля-можно поменять цвет фона, текста
- 
- Settings -> Preferences dialog control the way Notepad++ prints a document: Print - Colour and Margin and Print - Header and Footer.
-The former lets you choose the four margins, in centimeters. There are also four colour schemes to choose from:
-actual colours
-inverted actual colours
-black on white
-actual foreground on white.
+
 
 Нулевой символ(asci = 0?) автоматически добавляется в строку str после прочитанных символов, чтобы сигнализировать о конце строки.
 
@@ -704,7 +724,7 @@ Ctrl ]  увеличивает кегль(шрифт) в либре офисе..
 
 В ридере иногда можно просто увеличить шрифт в настройках для удобочитаемости. Идеальное число знаков  в строке: 52
 
-IntelliJIdea color scheme dracula тёмная тема темная тема тёмный цвет Ctrl Alt s - appearance - dracula
+
 
 Report in c# - создаётся сначала форма, потом подгружается бд, потом на форму кидаем reoprtViewer, добавляем новый айтем в проект - Report, в менюшке слева будет Datasets вроде правой кнопкой по ней, нажать на единственную всплывшую кнопку, это создаст окно, где выьирается БД и таблица(выбираем, ОК), в тулбоксе выбираем Report Items, Table, перетаскиваем на Report1.rdlc, дальше ключевой момент, перетаскивания полей из Datasets - DataSet1 - ID, Name, Address и т.п. на Report1.rdlc внутрь Table. Переходим на форму, выбираем стрелочку справа сврху, выбираем Report1, Можно запускать. Взято отсюда:
 https://www.youtube.com/watch?v=0nDldY61whQ
@@ -867,9 +887,7 @@ java -jar 'C:\Program Files\Java\jdk1.8.0_171\bin\bfg-1.13.0.jar' --delete-files
 
 C and C++ behave completely differently with * and &
 
-Кодировка:
-	IntelliJIdea File -> Settings -> Editor -> File Encoding
-	Notepad++ Кодировки
+
 	
 	
 В cpp на VS для обращения к глобальной переменной нужно указывать ::  так:  ::count++;
