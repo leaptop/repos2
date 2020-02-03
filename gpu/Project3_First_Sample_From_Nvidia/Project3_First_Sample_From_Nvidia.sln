@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project3_First_Sample_From_Nvidia", "Project3_First_Sample_From_Nvidia\Project3_First_Sample_From_Nvidia.vcxproj", "{DFA7C766-C893-444F-8C9D-3B06228CCC75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFA7C766-C893-444F-8C9D-3B06228CCC75}.Debug|x64.ActiveCfg = Debug|x64
+		{DFA7C766-C893-444F-8C9D-3B06228CCC75}.Debug|x64.Build.0 = Debug|x64
+		{DFA7C766-C893-444F-8C9D-3B06228CCC75}.Release|x64.ActiveCfg = Release|x64
+		{DFA7C766-C893-444F-8C9D-3B06228CCC75}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15D4595E-B717-4584-B5C8-713736187BFF}
+	EndGlobalSection
+EndGlobal
