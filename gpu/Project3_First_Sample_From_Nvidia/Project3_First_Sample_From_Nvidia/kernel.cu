@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <iostream>
 
-#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))//это пришлось загуглить и вставить, чтобы max работало
 
 #define max(a,b) \
    ({ __typeof__ (a) _a = (a); \
