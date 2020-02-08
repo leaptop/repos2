@@ -46,7 +46,7 @@ void testFunction() {
 	std::ofstream out;          // поток для записи
 	out.open("C:\\Users\\stepa\\repos2\\gpu\\lab1_01\\lab1_01\\results.txt"); // окрываем файл для записи
 
-	for (int i_thr = threadsPerblock_local; i_thr < 1024; i_thr *= 2)
+	for (int i_thr = threadsPerblock_local; i_thr < 1024; i_thr *= 2)//графиков д.б. столько, сколько у меня конфигураций нитей - 10
 	{
 		if (out.is_open())
 		{
