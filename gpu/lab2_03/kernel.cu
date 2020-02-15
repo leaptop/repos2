@@ -8,46 +8,42 @@
 #include <time.h> 
 #include <iostream>
 #include <fstream>///что с этим делать? ( од из лекции 2)
-	//const char* cudaGetErrorString(cudaError_t error)- возвращает сообщение с кодом ошибки error. 
-//#define CUDA_CHECK_RETURN(value) {\
-//cudaError_t    _m_cudaStat=value;\ 
-//if (_m_cudaStat != cudaSuccess) {\
-//fprintf(stderr, "Error %s at line %d in file %s\n",\
-//	cudaGetErrorString(_m_cudaStat), __LINE__, __FILE__);\
-//	exit(1);\
-//} }
-
-//определил kernel дл€ device
 __global__ void sum(int* a, int* b, int N) {
 	int i = threadIdx.x + blockIdx.x * blockDim.x;//если координаты потока в блоке потоков в сумме с координатами блока потоков в сетке,
 	//умноженными на размер блока потоков меньше N, то return
 	if (i >= N) return;
 	a[i] += b[i];
 }
+	//const char* cudaGetErrorString(cudaError_t error)- возвращает сообщение с кодом ошибки error. 
+//может библиотеки какие-то надо догрузить...
+#define CUDA_CHECK_RETURN(value) {\
+cudaError_t _m_cudaStat=value;\ 
+if(_m_cudaStat != cudaSuccess) {\
+fprintf(stderr, "Error %s at line %d in file %s\n",\
+cudaGetErrorString(_m_cudaStat), __LINE__, __FILE__);\
+exit(1);\
+}}
+
+//определил kernel дл€ device
+
 int N = 0;//размер векторов
 int* src_a, * src_b; int* dev_a, * dev_b;
 LARGE_INTEGER t1, t2, f, t3, t4, t5, t6, t7, t8;
 int* blocksPerGrid_gl, * threadsPerBlock_gl, * N_gl;
-float * time_gl;
+float* time_gl;
 int i_gl = 1;
 int num = 15;
 void allocateMemory(int N) {
-
-	/*CUDA_CHECK_RETURN(cudaMalloc(&dev_a, sizeof(int) * N));
-	CUDA_CHECK_RETURN(cudaMalloc(&dev_b, sizeof(int) * N));*/
-	cudaMalloc(&dev_a, sizeof(int) * N);
+	CUDA_CHECK_RETURN(cudaMalloc(&dev_a, sizeof(int) * N));
+	//cudaMalloc(&dev_a, sizeof(int) * N);
 	cudaMalloc(&dev_b, sizeof(int) * N);
 	src_a = (int*)malloc(sizeof(int) * N); src_b = (int*)malloc(sizeof(int) * N);
 	for (int i = 0; i < N; i++) { src_a[i] = rand(); src_b[i] = rand(); }
-	/*CUDA_CHECK_RETURN(cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice));
-	CUDA_CHECK_RETURN(cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice));*/
-	cudaMemcpy(dev_a, src_a, sizeof(int)* N, cudaMemcpyHostToDevice);
+	cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice);
 	cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice);
 }
 void launchKernel(int N, int threadsPerBlock, float* time_gl, int* N_gl) {
-	int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;//здесь сама функци€ с защитой от дурака получаетс€
-	//и чтобы сделать переполнение нитей(задать больше 1024), надо увеличить и threadsPerBlock и N... ’от€
-	//нет... blocksPerGrid просто говорит сколько блоков создать... но почему-то число тредов его не вырубает даже 8000
+	int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
 	printf("\nCUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
 	//QueryPerformanceCounter(&t3);//максимальное число тредов(второй параметр) - 1024
 	float elapsedTime;  cudaEvent_t    start, stop; // встроенный тип данных Ц структура, дл€     // фиксации контрольных точек    
@@ -55,13 +51,12 @@ void launchKernel(int N, int threadsPerBlock, float* time_gl, int* N_gl) {
 	cudaEventCreate(&stop); // событий
 	cudaEventRecord(start, 0); // прив€зка (регистраци€) событи€ start  
 	sum << <blocksPerGrid, threadsPerBlock >> > (dev_a, dev_b, N);
-	//sum << <(1<<22), 4000 >> > (dev_a, dev_b, N);//пытаюсь сломать функцию, чтобы вызвало ошибку(типа слишком много тредов)
-	cudaEventRecord(stop,0); // прив€зка событи€ stop  
+	cudaEventRecord(stop, 0); // прив€зка событи€ stop  
 	cudaEventSynchronize(stop); // синхронизаци€ по событию  
 								//CUDA_CHECK_RETURN(cudaDeviceSynchronize());  
 	//CUDA_CHECK_RETURN(cudaGetLastError());  
-	cudaEventElapsedTime(&elapsedTime,start,stop); // ¬ќ«¬–јўј≈“ ћ»ЋЋ»—≈ ”Ќƒџ 
-	//fprintf(stderr,"gTest took %g\n", elapsedTime);    
+	cudaEventElapsedTime(&elapsedTime, start, stop); // ¬ќ«¬–јўј≈“ ћ»ЋЋ»—≈ ”Ќƒџ 
+	fprintf(stderr, "gTest took %g\n", elapsedTime);
 	cudaEventDestroy(start); // освобождение  cudaEventDestroy(stop); // пам€ти
 	//sum << <blocksPerGrid, threadsPerBlock >> > (dev_a, dev_b, N);
 	cudaDeviceSynchronize();
@@ -76,7 +71,7 @@ void testFunction() {
 	int threadsPerblock_local = 1;
 	std::ofstream out;          // поток дл€ записи
 	out.open("..\\results.txt"); // окрываем файл дл€ записи
-	for (int i_thr = threadsPerblock_local; i_thr <= 2049; i_thr *= 2)//графиков д.б. столько, сколько у мен€ конфигураций нитей - 10
+	for (int i_thr = threadsPerblock_local; i_thr <= 1024; i_thr *= 2)//графиков д.б. столько, сколько у мен€ конфигураций нитей - 10
 	{
 		if (out.is_open())
 		{
@@ -110,21 +105,21 @@ int main() {
 	int size0 = 1024;//макс число нитей?
 	//launchKernel(100000, 1025, time_gl, N_gl);
 	testFunction();
-	
+	//launchKernel(1024, 10000, time_gl, N_gl);
 
 
 	//out.open("..\\results.txt"); // окрываем файл дл€ записи
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 	/*std::ofstream out;          // поток дл€ записи
 	out.open("C:\\Users\\stepa\\repos2\\gpu\\lab1_01\\lab1_01\\results.txt"); // окрываем файл дл€ записи
 	if (out.is_open())
