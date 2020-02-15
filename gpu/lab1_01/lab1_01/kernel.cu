@@ -14,13 +14,24 @@ __global__ void sum(int* a, int* b, int N) {
 	//умноженными на размер блока потоков меньше N, то return
 	if (i >= N) return;
 	a[i] += b[i];
-}
+};
+
+//#define CUDA_CHECK_RETURN(value) {\
+//cudaError_t _m_cudaStat=value;\ 
+//if (_m_cudaStat != cudaSuccess) {
+//	\
+//		\
+//		fprintf(stderr, "Error %s at line %d in file %s\n", \
+//			cudaGetErrorString(_m_cudaStat), __LINE__, __FILE__); \
+//		exit(1); \
+//} }
+
 int N = 0;//размер векторов
 int* src_a, * src_b; int* dev_a, * dev_b;
 LARGE_INTEGER t1, t2, f, t3, t4, t5, t6, t7, t8;
 int* blocksPerGrid_gl, * threadsPerBlock_gl, * N_gl;
 double* time_gl;
-int i_gl =1;
+int i_gl = 1;
 int num = 15;
 void allocateMemory(int N) {
 	cudaMalloc(&dev_a, sizeof(int) * N);
@@ -30,7 +41,7 @@ void allocateMemory(int N) {
 	cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice);
 	cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice);
 }
-void launchKernel(int N, int threadsPerBlock, double * time_gl, int * N_gl ) {
+void launchKernel(int N, int threadsPerBlock, double* time_gl, int* N_gl) {
 	int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
 	printf("\nCUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
 	QueryPerformanceCounter(&t3);//максимальное число тредов(второй параметр) - 1024
@@ -45,7 +56,7 @@ void launchKernel(int N, int threadsPerBlock, double * time_gl, int * N_gl ) {
 void testFunction() {
 	int threadsPerblock_local = 1;
 	std::ofstream out;          // поток для записи
-	
+
 	//out.open("C:\\Users\\stepa\\repos2\\gpu\\lab1_01\\lab1_01\\results.txt"); // окрываем файл для записи
 	out.open("..\\results.txt"); // окрываем файл для записи
 
@@ -73,7 +84,7 @@ void testFunction() {
 		free(N_gl);
 		free(time_gl);
 		i_gl = 1;
-		
+
 	}
 }
 int main() {
