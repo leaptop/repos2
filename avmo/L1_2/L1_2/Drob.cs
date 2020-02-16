@@ -67,25 +67,52 @@ namespace L1_2
         }
         public Drob add(Drob a, Drob b)
         {
-            if (a.denominator != b.denominator)//if denominators aren't equal, we need to find Least(lowest) common multiple (наимееьшее общее кратное)
+            int multiplierA = 1;
+            int multiplierB = 1;
+            int newDenominator = 1;
+            if ((a.denominator != b.denominator))//if denominators aren't equal, we need to find Least(lowest) common multiple (наимееьшее общее кратное)
             {
-                int newDenominator = LCM(a.denominator, b.denominator);
-                int multiplierA = newDenominator / a.denominator;//нашёл во сколько раз надо увеличить числитель a
-                int multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b
-                return new Drob(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);
+                if (a.denominator != 0 && b.denominator != 0)
+                {
+                    newDenominator = LCM(a.denominator, b.denominator);
+                    multiplierA = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель a
+                    multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b
+                    //return new Drob(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);
+                }
+                else
+                if (a.denominator == 0) newDenominator = b.denominator;//нашёл во сколько раз надо увеличить числитель a
+                else
+                    newDenominator = a.denominator;//нашёл во сколько раз надо увеличить числитель b
+
             }
-            else return new Drob(a.numerator + b.numerator, a.denominator);
+            return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
         }
         public Drob sub(Drob a, Drob b)
         {
-            if (a.denominator != b.denominator)//if denominators aren't equal, we need to find Least(lowest) common multiple (наимееьшее общее кратное)
+            if (a.denominator == 0 || b.denominator == 0)
             {
-                int newDenominator = LCM(a.denominator, b.denominator);
-                int multiplierA = newDenominator / a.denominator;//нашёл во сколько раз надо увеличить числитель a
-                int multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b
-                return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
+                if (a.denominator != 0)
+                {
+                    return new Drob(a.numerator, a.denominator);
+                }
+                else
+                    return new Drob(-b.numerator, b.denominator);
             }
-            else return new Drob(a.numerator - b.numerator, a.denominator);
+            int multiplierA = 1;
+            int multiplierB = 1;
+            int newDenominator = 1;
+            if ((a.denominator != b.denominator))//if denominators aren't equal, we need to find Least(lowest) common multiple (наимееьшее общее кратное)
+            {
+                if (a.denominator != 0 && b.denominator != 0)
+                {
+                    newDenominator = LCM(a.denominator, b.denominator);
+                    multiplierA = newDenominator / a.denominator;//нашёл во сколько раз надо увеличить числитель a
+                    multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b
+                    //return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
+                }
+            }
+            return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
+
         }
 
         // Use Euclid's algorithm to calculate the greatest common divisor (GCD) of two numbers
@@ -110,8 +137,8 @@ namespace L1_2
         }
         public object Clone()
         {
-           // return new Drob(numerator, denominator) { numerator = this.numerator, denominator = this.denominator };
-           return this.MemberwiseClone();
+            // return new Drob(numerator, denominator) { numerator = this.numerator, denominator = this.denominator };
+            return this.MemberwiseClone();
         }
 
     }
