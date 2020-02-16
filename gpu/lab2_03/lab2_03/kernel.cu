@@ -14,7 +14,7 @@ __global__ void sum(int* a, int* b, int N) {
 	if (i >= N) return;
 	a[i] += b[i];
 }
-	//const char* cudaGetErrorString(cudaError_t error)- возвращает сообщение с кодом ошибки error. 
+//const char* cudaGetErrorString(cudaError_t error)- возвращает сообщение с кодом ошибки error. 
 //может библиотеки какие-то надо догрузить...
 #define CUDA_CHECK_RETURN(value) {\
 cudaError_t _m_cudaStat=value;\
@@ -35,12 +35,15 @@ int i_gl = 1;
 int num = 15;
 void allocateMemory(int N) {
 	CUDA_CHECK_RETURN(cudaMalloc(&dev_a, sizeof(int) * N));
+	CUDA_CHECK_RETURN(cudaMalloc(&dev_b, sizeof(int) * N));
 	//cudaMalloc(&dev_a, sizeof(int) * N);
-	cudaMalloc(&dev_b, sizeof(int) * N);
+	//cudaMalloc(&dev_b, sizeof(int) * N);
 	src_a = (int*)malloc(sizeof(int) * N); src_b = (int*)malloc(sizeof(int) * N);
 	for (int i = 0; i < N; i++) { src_a[i] = rand(); src_b[i] = rand(); }
-	cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice);
-	cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice);
+	//cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice);
+	//cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice);
+	CUDA_CHECK_RETURN(cudaMemcpy(dev_a, src_a, sizeof(int) * N, cudaMemcpyHostToDevice));
+	CUDA_CHECK_RETURN(cudaMemcpy(dev_b, src_b, sizeof(int) * N, cudaMemcpyHostToDevice));
 }
 void launchKernel(int N, int threadsPerBlock, float* time_gl, int* N_gl) {
 	int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
@@ -50,28 +53,28 @@ void launchKernel(int N, int threadsPerBlock, float* time_gl, int* N_gl) {
 	cudaEventCreate(&start); // инициализация  
 	cudaEventCreate(&stop); // событий
 	cudaEventRecord(start, 0); // привязка (регистрация) события start  
-	sum << <blocksPerGrid, threadsPerBlock >> > (dev_a, dev_b, N);
+	sum <<<blocksPerGrid, threadsPerBlock >>> (dev_a, dev_b, N);//
 	cudaEventRecord(stop, 0); // привязка события stop  
 	cudaEventSynchronize(stop); // синхронизация по событию  
 								//CUDA_CHECK_RETURN(cudaDeviceSynchronize());  
 	//CUDA_CHECK_RETURN(cudaGetLastError());  
 	cudaEventElapsedTime(&elapsedTime, start, stop); // ВОЗВРАЩАЕТ МИЛЛИСЕКУНДЫ 
-	fprintf(stderr, "gTest took %g\n", elapsedTime);
+	//fprintf(stderr, "gTest took %g\n", elapsedTime);
 	cudaEventDestroy(start); // освобождение  cudaEventDestroy(stop); // памяти
 	//sum << <blocksPerGrid, threadsPerBlock >> > (dev_a, dev_b, N);
 	cudaDeviceSynchronize();
 	//QueryPerformanceCounter(&t4);
 	//double tm = double(t4.QuadPart - t3.QuadPart);// / f.QuadPart;
 	float tm = elapsedTime;
-	std::cout << "threadsPerBlock: " << threadsPerBlock << ", time: " << tm << "\n";
+	std::cout << " time: " << tm << "\n";
 	time_gl[i_gl] = tm;
 	N_gl[i_gl] = N; i_gl++;
 }
 void testFunction() {
-	int threadsPerblock_local = 1;
+	int threadsPerblock_local = 512;
 	std::ofstream out;          // поток для записи
 	out.open("..\\results.txt"); // окрываем файл для записи
-	for (int i_thr = threadsPerblock_local; i_thr <= 1024; i_thr *= 2)//графиков д.б. столько, сколько у меня конфигураций нитей - 10
+	for (int i_thr = threadsPerblock_local; i_thr <= 70000000; i_thr *= 2)//графиков д.б. столько, сколько у меня конфигураций нитей - 10
 	{
 		if (out.is_open())
 		{
