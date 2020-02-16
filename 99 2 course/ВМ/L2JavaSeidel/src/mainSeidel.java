@@ -76,7 +76,7 @@ public class mainSeidel {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main2(String[] args) throws IOException {
         int n;
         double[][] M;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
