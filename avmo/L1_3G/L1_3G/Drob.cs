@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace L1_2
+namespace L1_3G
 {
     public class Drob : ICloneable
     {
-        
         public int numerator;//chislitel
         public int denominator;//znamenatel
 
@@ -19,12 +18,7 @@ namespace L1_2
         //}
         public Drob(int numerator, int denominator)
         {
-            if (numerator < 0 && denominator < 0)
-            {
-                numerator *= -1;
-                denominator *= -1;
-            }
-                if (denominator != 0)
+            if (denominator != 0)
             {
                 int t = GCD(numerator, denominator);
                 this.numerator = numerator / t;
@@ -35,8 +29,6 @@ namespace L1_2
                 this.numerator = numerator;
                 this.denominator = denominator;
             }
-            if (numerator == 0) denominator = 0;
-            if (denominator == 0) numerator = 0;
 
         }
         public Drob mul(Drob a, Drob b)//this function returns a result of multiplication of сommon fractions a & b
