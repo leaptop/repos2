@@ -17,7 +17,7 @@ namespace L1_2
             InitializeComponent();
 
         }
-
+        public int currentRow = 0;//для прорисовки промежуточных решений
         public int n1;//число строк
         public int n2;//число столбцов
         public Drob[,] mas;//матрица
@@ -26,6 +26,7 @@ namespace L1_2
         public Drob[,] masBumaga;//массив для хранения матрицы в коде
         public double[,] masBumaga2;//массив для запоминания вводимых матриц
         public bool load;
+        public bool flagSolved = false;
 
         private void button1_Click(object sender, EventArgs e)//                    "Build a table"
         {
@@ -38,7 +39,7 @@ namespace L1_2
             if (n1 != 0 && n2 != 0)
             {
                 mas = new Drob[n1, n2];//the matrix to solve 
-                dataGridView1.RowCount = n1;
+                dataGridView1.RowCount = n1 * 100;
                 dataGridView1.ColumnCount = n2;
                 dataGridView1.AutoSizeColumnsMode =
                     DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -57,7 +58,7 @@ namespace L1_2
             n1 = 3; n2 = 4;
             mas = new Drob[n1, n2];//the matrix to solve 
             masBumaga = new Drob[n1, n2];//the matrix to solve 
-            dataGridView1.RowCount = n1;
+            dataGridView1.RowCount = n1 * 100;
             dataGridView1.ColumnCount = n2;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             masBumaga[0, 0] = new Drob(1, 1); masBumaga[0, 1] = new Drob(2, 1); masBumaga[0, 2] = new Drob(3, 1); masBumaga[0, 3] = new Drob(5, 1);
@@ -82,15 +83,17 @@ namespace L1_2
         }
         private void fillTable()//fills dataGridView with the contents of mas
         {
+           
             for (int i = 0; i < n1; i++)
             {
                 for (int j = 0; j < n2; j++)
                 {
-                    dataGridView1.Rows[i].Cells[j].Value = mas[i, j].toStr();
+                    dataGridView1.Rows[currentRow+ i].Cells[j].Value = mas[i, j].toStr();
                 }
             }
             //запрещает сортировать содержимое столбцов кликом по хедеру, а также минимизирует длину ячеек:
             dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
+            currentRow += (n1 + 1);//для прорисовки матрицы
         }
 
         private void button3_Click(object sender, EventArgs e) //                 "test"
@@ -101,26 +104,28 @@ namespace L1_2
 
         private void button4_Click(object sender, EventArgs e)//                  "Solve"
         {
-            int untoucheableColumn = -1;
-            int untoucheableRow = 0;//the solving row stays untoucheable
+            if (flagSolved) return;
+            //int untoucheableColumn = -1;
+          //  int untoucheableRow = 0;//the solving rslvRow stays untoucheable
             Drob d = new Drob(0, 0);//just an object for functions invocation
-            for (int row = 0; row < 1; row++)
+            for (int rslvRow = 0; rslvRow < 3; rslvRow++)
             {
-                for (int column = row; column < n2; column++)//moving diagonally down &/or right
-                {
-                    if (mas[row, column].numerator == 0)//if the solving element is not 0
+                bool flag = true;
+                for (int column = rslvRow; flag; column++)//moving diagonally down &/or right
+                {                    
+                    if (mas[rslvRow, column].numerator == 0)//if the solving element is not 0
                         continue;
                     else// else start solving
                     {
-                        Drob temp1 = (Drob)mas[row, column].Clone();//created a clone of the solving element
+                        Drob temp1 = (Drob)mas[rslvRow, column].Clone();//created a clone of the solving element
                         for (int i = column; i < n2; i++)
                         {
-                            mas[row, i] = d.div(mas[row, i], temp1);//turning the solving element to 1
+                            mas[rslvRow, i] = d.div(mas[rslvRow, i], temp1);//turning the solving element to 1
                         }
-                        //first case: first row is resolving and first element is not zero... just don't insert the first element as zero:
-                        if(row == 0)
+                        //FIRST CASE: first rslvRow is resolving and first element is not zero... just don't insert the first element as zero:
+                        if (rslvRow == 0)
                         {
-                            int x0 = 0, y0 = 0, x1 = 0, y1 = 1;
+                            int x0 = 0, y0 = 0, x1 = 0, y1 = 1;// works for the first case for all columns!
                             int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
                             for (int i = 1; i < n2; i++)//walk through the columns
                             {
@@ -130,69 +135,124 @@ namespace L1_2
                                             d.sub(
                                                 d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
                                                 d.mul(mas[x1, y1], mas[x3, y3]));
+
                                     x2++; x3++;//going through orange and blue squares
                                 }
-                                x2 = 1; x3 = 1;
-                                y1++; y2++;
+                                x2 = rslvRow + 1; x3 = rslvRow + 1;
+                                y1++; y2++;//координаты столбцов(одного столбца по сути) сместились вправо(розовый прямоугольник)
                             }
-
-                            ////go through the first column:
-                            //for (; x2 < n1 || x3 < n1;)//the working stuff but only for the first column
-                            //{
-                            //    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-                            //            d.sub(
-                            //                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                            //                d.mul(mas[x1, y1], mas[x3, y3]));
-                            //    x2++; x3++;
-                            //}
-
                         }
-                        ////second case: one of the middle rows is resolving
-                        //if(row > 0 && row < n1 - 1)
-                        //{
-                        //    int x0 = 0, y0 = 0, x1 = 0, y1 = 1;
-                        //    int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
-                        //    for (; x2 < n1 || x3 < n1;)
-                        //    {
-                        //        mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-                        //                d.sub(
-                        //                    d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                        //                    d.mul(mas[x1, y1], mas[x3, y3]));
-                        //        x2++; x3++;
-                        //    }
-                        //}
-
-
-                        //untoucheableRow = row;//this row is needed to skip during the solving
-
-                        //temp1 = mas[row, column];//the reneved solving element(1/1)// these row & column will stay... 
-                        ////I can rely on these coordinates
-                        //for (int rowS = 0, columnS = column; rowS < n1-1; rowS++)
-                        //{
-                        //    //int rowT = rowS + 1;
-                        //    int columnT = column + 1;
-                        //    int x0 = rowS, y0 = column, x1 = rowS, y1 = columnS;
-                        //    int x2 = rowS + 1, y2 = columnS + 1, x3 = rowS + 1, y3 = column + 1;
-                        //    if (rowS == untoucheableRow) continue;//пытаюсь проскочить через разрешающий ряд
-                        //    //if()
-                        //    else mas[rowS, columnS] = //колонка всегда начинается с колонки разрешающего элемента
-                        //            d.sub(
-                        //                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                        //                d.mul(mas[x1, y1], mas[x3, y3]));
-                        //}
-
-                        for (int i = row + 1; i < n1; i++)//it has to be done at the end of the iteration
+                        //SECOND CASE: MIDDLE ROW
+                        else if (rslvRow > 0 && rslvRow < n1 - 1)
                         {
+                            // int x0 = rslvRow, y0 = column, x1 = rslvRow-1, y1 = column;
+                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
+                            //int x2 = rslvRow-1, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
+                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
+                            for (int i = 1; i < n2; i++)//walk through the columns
+                            {
+                                for (; x1 < n1 || x2 < n1 || y2 < n2;)
+                                {
+                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow
+                                    if (x1 == n1 || x2 == n1 || y2 == n2) break;
+                                    
+                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
+                                            d.sub(
+                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
+                                                d.mul(mas[x1, y1], mas[x3, y3]));
+                                    x1++; x2++;//going through orange and blue squares
+                                    //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow
+                                    //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ
+                                }
+                                x1 = 0; x2 = 0;//HERE
+                               // y1++; 
+                                y2++;
+                                y3++;
+                            }
+                        }
+                        //THIRD CASE: THE LOWESY ROW IS RESOLVING
+                        else if (rslvRow == (n1 - 1))
+                        {
+                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
+                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
+                            for (int i = 1; i < n2; i++)//walk through the columns
+                            {
+                                for (; x1 < n1 || x2 < n1 || y2 < n2;)
+                                {
+                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow
+                                    if (x1 == n1 || x2 == n1 || y2 == n2 || y3 == n2) break;
+
+                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
+                                            d.sub(
+                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
+                                                d.mul(mas[x1, y1], mas[x3, y3]));
+                                    x1++; x2++;//going through orange and blue squares
+                                    //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow
+                                    //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ
+                                }
+                                x1 = 0; x2 = 0;//HERE
+                                               // y1++; 
+                                y2++;
+                                y3++;
+                                if(y2 >= n2 || y3 >= n2)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        for (int i = 0; i < n1; i++)//it has to be done at the end of the iteration
+                        {
+                            if (i == rslvRow) continue;
                             mas[i, column].numerator = 0;//turning all the other elements of the column to 0
                             mas[i, column].denominator = 0;//(as a part of the rectangle method)
                         }
-                        column = n2;//next motion throgh the columns is unnecessary. Should go to the next row.
+                        //for (int i = rslvRow + 1; i < n1; i++)//it has to be done at the end of the iteration
+                        //{
+                        //    mas[i, column].numerator = 0;//turning all the other elements of the column to 0
+                        //    mas[i, column].denominator = 0;//(as a part of the rectangle method)
+                        //}
+                        // column = n2;//next motion throgh the columns is unnecessary. Should go to the next rslvRow.
+                        flag = false;
                     }
                     //else continue;
                     fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the column to 0
                 }
             }
+            flagSolved = true;//защита от повторного нажатия кнопки solve
 
         }
     }
 }
+////second case: one of the middle rows is resolving
+//if(rslvRow > 0 && rslvRow < n1 - 1)
+//{
+//    int x0 = 0, y0 = 0, x1 = 0, y1 = 1;
+//    int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
+//    for (; x2 < n1 || x3 < n1;)
+//    {
+//        mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
+//                d.sub(
+//                    d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
+//                    d.mul(mas[x1, y1], mas[x3, y3]));
+//        x2++; x3++;
+//    }
+//}
+
+
+//untoucheableRow = rslvRow;//this rslvRow is needed to skip during the solving
+
+//temp1 = mas[rslvRow, column];//the reneved solving element(1/1)// these rslvRow & column will stay... 
+////I can rely on these coordinates
+//for (int rowS = 0, columnS = column; rowS < n1-1; rowS++)
+//{
+//    //int rowT = rowS + 1;
+//    int columnT = column + 1;
+//    int x0 = rowS, y0 = column, x1 = rowS, y1 = columnS;
+//    int x2 = rowS + 1, y2 = columnS + 1, x3 = rowS + 1, y3 = column + 1;
+//    if (rowS == untoucheableRow) continue;//пытаюсь проскочить через разрешающий ряд
+//    //if()
+//    else mas[rowS, columnS] = //колонка всегда начинается с колонки разрешающего элемента
+//            d.sub(
+//                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
+//                d.mul(mas[x1, y1], mas[x3, y3]));
+//}

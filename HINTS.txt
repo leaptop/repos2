@@ -2,7 +2,7 @@
 Ctrl+Alt+L - выровнять в idea & CLion
 IntelliJ IDEA Default Keymap.pdf
 Ctrl+a Ctrl+i выровнять код в QT     //ПОМНИТЬ, ЧТО ДЛЯ ЭТИХ ШОРТКАТОВ ЯЗЫК ДОЛЖЕН БЫТЬ АНГЛИЙСКИМ. ПО КРАЙНЕЙ МЕРЕ В QT
-Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже
+Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже. Необязаельно этот текст выделять.
 
 Кодировка:
 	IntelliJIdea File -> Settings -> Editor -> File Encoding
