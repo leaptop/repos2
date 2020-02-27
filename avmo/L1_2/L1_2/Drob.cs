@@ -19,7 +19,12 @@ namespace L1_2
         //}
         public Drob(int numerator, int denominator)
         {
-            if (numerator < 0 && denominator < 0)
+            if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
+            {
+                numerator *= -1;
+                denominator *= -1;
+            }
+            if(denominator < 0)//переношу минус из знаменателя в числитель
             {
                 numerator *= -1;
                 denominator *= -1;
