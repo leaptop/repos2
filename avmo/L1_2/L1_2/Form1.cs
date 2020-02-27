@@ -50,20 +50,30 @@ namespace L1_2
         }
         private void button2_Click(object sender, EventArgs e) //                   "Load"
         {
-            /* 1 2 3 | 5
-             * 4 5 6 | 8
-             * 7 8 0 | 2
-             */
+       
             load = true;
-            n1 = 3; n2 = 4;
+            n1 = 3; n2 = 5;
             mas = new Drob[n1, n2];//the matrix to solve 
             masBumaga = new Drob[n1, n2];//the matrix to solve 
             dataGridView1.RowCount = n1 * 100;
             dataGridView1.ColumnCount = n2;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            masBumaga[0, 0] = new Drob(1, 1); masBumaga[0, 1] = new Drob(2, 1); masBumaga[0, 2] = new Drob(3, 1); masBumaga[0, 3] = new Drob(5, 1);
-            masBumaga[1, 0] = new Drob(4, 1); masBumaga[1, 1] = new Drob(5, 1); masBumaga[1, 2] = new Drob(6, 1); masBumaga[1, 3] = new Drob(8, 1);
-            masBumaga[2, 0] = new Drob(7, 1); masBumaga[2, 1] = new Drob(8, 1); masBumaga[2, 2] = new Drob(0, 0); masBumaga[2, 3] = new Drob(2, 1);
+            /* 1 2 3 | 5
+             * 4 5 6 | 8
+             * 7 8 0 | 2
+             */
+            /* masBumaga[0, 0] = new Drob(1, 1); masBumaga[0, 1] = new Drob(2, 1); masBumaga[0, 2] = new Drob(3, 1); masBumaga[0, 3] = new Drob(5, 1);
+             masBumaga[1, 0] = new Drob(4, 1); masBumaga[1, 1] = new Drob(5, 1); masBumaga[1, 2] = new Drob(6, 1); masBumaga[1, 3] = new Drob(8, 1);
+             masBumaga[2, 0] = new Drob(7, 1); masBumaga[2, 1] = new Drob(8, 1); masBumaga[2, 2] = new Drob(0, 0); masBumaga[2, 3] = new Drob(2, 1);
+             */
+            /* 2 -3 5 7     | 1
+             * 4 -6 2 3     | 2
+             * 2 -3 -11 -15 | 1
+             */
+             masBumaga[0, 0] = new Drob(2, 1); masBumaga[0, 1] = new Drob(-3, 1); masBumaga[0, 2] = new Drob(5, 1); masBumaga[0, 3] = new Drob(7, 1); masBumaga[0, 4] = new Drob(1, 1);
+             masBumaga[1, 0] = new Drob(4, 1); masBumaga[1, 1] = new Drob(-6, 1); masBumaga[1, 2] = new Drob(2, 1); masBumaga[1, 3] = new Drob(3, 1); masBumaga[1, 4] = new Drob(2, 1);
+             masBumaga[2, 0] = new Drob(2,  1); masBumaga[2, 1] = new Drob(-3, 1); masBumaga[2, 2] = new Drob(-11, 1); masBumaga[2, 3] = new Drob(-15, 1); masBumaga[2, 4] = new Drob(1, 1);
+             
             mas = masBumaga;
             initilaizeHeaders();
             fillTable();
@@ -112,7 +122,7 @@ namespace L1_2
             {
                 bool flag = true;
                 for (int column = rslvRow; flag; column++)//moving diagonally down &/or right
-                {                    
+                {          if (column == n2) break;         
                     if (mas[rslvRow, column].numerator == 0)//if the solving element is not 0
                         continue;
                     else// else start solving
@@ -123,7 +133,7 @@ namespace L1_2
                             mas[rslvRow, i] = d.div(mas[rslvRow, i], temp1);//turning the solving element to 1
                         }
                         //FIRST CASE: first rslvRow is resolving and first element is not zero... just don't insert the first element as zero:
-                        if (rslvRow == 0)
+                        if (rslvRow == 0)//ALL THESE THREE CASES CAN BE WRITTEN IN ONE... BUT I'M TOO TIRED AND I NEED TO DO A LOT OF OTHER WORK
                         {
                             int x0 = 0, y0 = 0, x1 = 0, y1 = 1;// works for the first case for all columns!
                             int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
@@ -145,9 +155,7 @@ namespace L1_2
                         //SECOND CASE: MIDDLE ROW
                         else if (rslvRow > 0 && rslvRow < n1 - 1)
                         {
-                            // int x0 = rslvRow, y0 = column, x1 = rslvRow-1, y1 = column;
                             int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
-                            //int x2 = rslvRow-1, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
                             int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
                             for (int i = 1; i < n2; i++)//walk through the columns
                             {
@@ -160,17 +168,19 @@ namespace L1_2
                                             d.sub(
                                                 d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
                                                 d.mul(mas[x1, y1], mas[x3, y3]));
-                                    x1++; x2++;//going through orange and blue squares
-                                    //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow
-                                    //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ
+                                    x1++; x2++;//going through orange and blue squares                           
                                 }
                                 x1 = 0; x2 = 0;//HERE
                                // y1++; 
                                 y2++;
                                 y3++;
+                                if (y2 >= n2 || y3 >= n2)
+                                {
+                                    break;
+                                }
                             }
                         }
-                        //THIRD CASE: THE LOWESY ROW IS RESOLVING
+                        //THIRD CASE: THE LOWEST ROW IS RESOLVING
                         else if (rslvRow == (n1 - 1))
                         {
                             int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
@@ -190,8 +200,7 @@ namespace L1_2
                                     //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow
                                     //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ
                                 }
-                                x1 = 0; x2 = 0;//HERE
-                                               // y1++; 
+                                x1 = 0; x2 = 0;//HERE                                               
                                 y2++;
                                 y3++;
                                 if(y2 >= n2 || y3 >= n2)
@@ -206,20 +215,45 @@ namespace L1_2
                             mas[i, column].numerator = 0;//turning all the other elements of the column to 0
                             mas[i, column].denominator = 0;//(as a part of the rectangle method)
                         }
-                        //for (int i = rslvRow + 1; i < n1; i++)//it has to be done at the end of the iteration
-                        //{
-                        //    mas[i, column].numerator = 0;//turning all the other elements of the column to 0
-                        //    mas[i, column].denominator = 0;//(as a part of the rectangle method)
-                        //}
-                        // column = n2;//next motion throgh the columns is unnecessary. Should go to the next rslvRow.
-                        flag = false;
+                        flag = false;//next motion through the columns is unnecessary. Should go to the next rslvRow.
                     }
                     //else continue;
                     fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the column to 0
                 }
             }
+            String answer = "";
+            for (int i = 0; i < n1; i++)
+            {
+                for (int j = 0; j < n2-1; j++)
+                {
+                   if( mas[i,j].numerator != 0)
+                    {
+                        if (mas[i, j].numerator == 1 && mas[i, j].denominator == 1)
+                        {
+                            if(mas[i, j].numerator > 0)
+                            answer += (" + " + elems[j] + " ");
+                            else
+                                if(mas[i, j].numerator<0)
+                                answer += (" - " + elems[j] + " ");
+                        }
+                        else
+                        {
+                            if (mas[i, j].numerator > 0)
+                                answer += ("  +  " + mas[i, j].toStr() + "*" + elems[j] + " ");
+                            else
+                                if (mas[i, j].numerator < 0)
+                                answer += (mas[i, j].toStr() + "*" + elems[j] + " ");
+                        }                            
+                    }
+                }
+                if (answer.Length > 0)
+                {
+                    answer += ("  =  " + mas[i, n2 - 1].toStr() + "; \n\n");
+                    textBox1.Text += answer;
+                    answer = "";
+                }
+            }
             flagSolved = true;//защита от повторного нажатия кнопки solve
-
         }
     }
 }
