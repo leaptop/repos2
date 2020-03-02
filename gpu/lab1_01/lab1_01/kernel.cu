@@ -26,7 +26,7 @@ __global__ void sum(int* a, int* b, int N) {
 //		exit(1); \
 //} }
 
-int N = 0;//размер векторов
+int N = 1000;//размер векторов
 int* src_a, * src_b; int* dev_a, * dev_b;
 LARGE_INTEGER t1, t2, f, t3, t4, t5, t6, t7, t8;
 int* blocksPerGrid_gl, * threadsPerBlock_gl, * N_gl;
@@ -89,7 +89,7 @@ void testFunction() {
 }
 int main() {
 	cudaSetDevice(0);//установил девайс для исполнения ГПУ команд
-	int size0 = 1024;//макс число нитей?
+
 	testFunction();
 	/*std::ofstream out;          // поток для записи
 	out.open("C:\\Users\\stepa\\repos2\\gpu\\lab1_01\\lab1_01\\results.txt"); // окрываем файл для записи

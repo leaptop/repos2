@@ -44,6 +44,8 @@ The former lets you choose the four margins, in centimeters. There are also four
 Чтобы щапускать профилировщик cuda может потребоваться перетащить библиотеку cupti64_102.dll из C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\extras\CUPTI\lib64  в C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\bin
 чтобы запустить прогу с профилировщиком, просто вытащил экзешник из папки release и в командной строке запустил его: nvprof lab2_01
 
+ВКЛЮЧАЙ google dark theme, youtube dark theme
+
 Cisco: чтобы красной молнией соединить роутеры, нужно в них установить wic-1t
 Custom devices кастомные устройства потом могут быть выбраны внизу щелчком по соответствующему всем кастомным устройствам значку
 
