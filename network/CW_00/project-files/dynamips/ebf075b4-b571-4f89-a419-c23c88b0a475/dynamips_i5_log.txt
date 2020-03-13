@@ -1,0 +1,34 @@
+Mar 01 14:11:01.966 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Mar 01 14:11:01.967 HYPERVISOR: Started on IP = localhost, TCP port = 54089.
+Mar 01 14:11:02.453 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 01 14:11:02.454 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\CW_00\project-files\dynamips 
+Mar 01 14:11:02.454 GENERAL: working_dir=C:\Users\stepa\repos2\network\CW_00\project-files\dynamips
+Mar 01 14:11:02.454 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\CW_00\project-files\dynamips\f7cca88c-c11f-49b0-9895-c93d70fdeeed 
+Mar 01 14:11:02.454 GENERAL: working_dir=C:\Users\stepa\repos2\network\CW_00\project-files\dynamips\f7cca88c-c11f-49b0-9895-c93d70fdeeed
+Mar 01 14:11:02.454 HYPERVISOR: exec_cmd: vm create R2 2 c3725 
+Mar 01 14:11:02.456 VM: VM R2 created.
+Mar 01 14:11:02.456 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Mar 01 14:11:02.456 HYPERVISOR: exec_cmd: c3725 get_mac_addr R2 
+Mar 01 14:11:02.457 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 01 14:11:02.457 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 14:11:02.457 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60c09aa0 
+Mar 01 14:11:02.458 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Mar 01 14:11:02.458 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Mar 01 14:11:02.458 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Mar 01 14:11:02.509 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 01 14:13:05.223 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 01 14:21:08.909 HYPERVISOR: exec_cmd: nio create_udp udp-89192801-1f42-4300-bb45-1f7ac1656db8 10012 127.0.0.1 10013 
+Mar 01 14:21:09.149 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-89192801-1f42-4300-bb45-1f7ac1656db8 
+Mar 01 14:21:09.149 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 14:21:15.541 HYPERVISOR: exec_cmd: nio create_udp udp-e043bf56-b85d-499b-9b0b-5f32a8f4810e 10016 127.0.0.1 10017 
+Mar 01 14:21:15.543 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-e043bf56-b85d-499b-9b0b-5f32a8f4810e 
+Mar 01 14:21:15.543 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 14:22:10.575 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 14:22:10.575 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Mar 01 14:22:33.400 HYPERVISOR: exec_cmd: nio create_udp udp-bf48cf38-8b9f-4eee-aedb-92952dc30f25 10043 127.0.0.1 10044 
+Mar 01 14:22:33.403 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-bf48cf38-8b9f-4eee-aedb-92952dc30f25 
+Mar 01 14:22:33.403 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 14:39:19.082 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Mar 02 10:46:04.254 HYPERVISOR: Stopped.
+Mar 02 10:46:04.255 VM: VM R2 destroyed.
+Mar 02 10:46:04.258 GENERAL: reset done.
