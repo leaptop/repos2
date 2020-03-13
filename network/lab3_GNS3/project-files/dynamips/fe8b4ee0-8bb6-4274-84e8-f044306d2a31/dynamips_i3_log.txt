@@ -1,0 +1,56 @@
+Feb 29 23:07:34.732 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 29 23:07:34.733 HYPERVISOR: Started on IP = localhost, TCP port = 56096.
+Feb 29 23:07:35.207 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 29 23:07:35.208 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips 
+Feb 29 23:07:35.208 GENERAL: working_dir=C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips
+Feb 29 23:07:35.208 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\2abdb787-67d0-4921-84c1-7d19fd064955 
+Feb 29 23:07:35.208 GENERAL: working_dir=C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\2abdb787-67d0-4921-84c1-7d19fd064955
+Feb 29 23:07:35.208 HYPERVISOR: exec_cmd: vm create R2 2 c3725 
+Feb 29 23:07:35.211 VM: VM R2 created.
+Feb 29 23:07:35.211 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5002 
+Feb 29 23:07:35.211 HYPERVISOR: exec_cmd: c3725 get_mac_addr R2 
+Feb 29 23:07:35.212 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Feb 29 23:07:35.212 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Feb 29 23:07:35.213 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:35.213 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60c09aa0 
+Feb 29 23:07:35.214 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Feb 29 23:07:35.214 HYPERVISOR: exec_cmd: c3725 set_mac_addr R2 c202.6ee4.0000 
+Feb 29 23:07:35.215 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Feb 29 23:07:35.215 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:35.215 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Feb 29 23:07:39.087 HYPERVISOR: exec_cmd: nio create_udp udp-1838ea98-622c-4ce0-bf51-c2eb4204cf28 10012 127.0.0.1 10013 
+Feb 29 23:07:39.325 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-1838ea98-622c-4ce0-bf51-c2eb4204cf28 
+Feb 29 23:07:39.325 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:39.900 HYPERVISOR: exec_cmd: nio create_udp udp-39632e6d-e4b2-4d99-a26f-ea49582276a0 10028 127.0.0.1 10029 
+Feb 29 23:07:39.902 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-39632e6d-e4b2-4d99-a26f-ea49582276a0 
+Feb 29 23:07:39.902 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:39.954 HYPERVISOR: exec_cmd: nio create_udp udp-bbddfc9e-4a7a-44a6-9330-953688d9ec6c 10036 127.0.0.1 10037 
+Feb 29 23:07:39.956 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-bbddfc9e-4a7a-44a6-9330-953688d9ec6c 
+Feb 29 23:07:39.956 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:43.687 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Feb 29 23:07:43.688 VM: VM Ghost created.
+Feb 29 23:07:43.690 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Feb 29 23:07:43.691 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Feb 29 23:07:43.691 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\c3725-adventerprisek9-mz.124-15.T14.image-128.ghost' 
+Feb 29 23:07:43.691 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Feb 29 23:07:43.692 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Feb 29 23:07:43.692 HYPERVISOR: exec_cmd: vm start Ghost 
+Feb 29 23:07:43.944 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Feb 29 23:07:44.098 VM: VM Ghost shutdown.
+Feb 29 23:07:44.098 VM: VM Ghost destroyed.
+Feb 29 23:07:44.103 HYPERVISOR: exec_cmd: vm get_status R2 
+Feb 29 23:07:44.103 HYPERVISOR: exec_cmd: vm set_config R2 configs\i2_startup-config.cfg 
+Feb 29 23:07:44.103 HYPERVISOR: exec_cmd: vm start R2 
+Feb 29 23:08:14.496 HYPERVISOR: exec_cmd: vm extract_config R2 
+Feb 29 23:08:14.498 HYPERVISOR: exec_cmd: vm extract_config R2 
+Mar 01 08:53:41.145 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 08:53:41.145 HYPERVISOR: exec_cmd: vm stop R2 
+Mar 01 08:53:41.322 VM: VM R2 shutdown.
+Mar 01 08:53:41.323 HYPERVISOR: exec_cmd: vm extract_config R2 
+Mar 01 08:53:41.914 HYPERVISOR: exec_cmd: vm get_status R2 
+Mar 01 08:53:41.914 HYPERVISOR: exec_cmd: vm extract_config R2 
+Mar 01 08:53:41.915 HYPERVISOR: exec_cmd: vm delete R2 
+Mar 01 08:53:41.915 VM: VM R2 destroyed.
+Mar 01 08:53:41.916 HYPERVISOR: exec_cmd: hypervisor stop 
+Mar 01 08:53:42.412 HYPERVISOR: Stopped.
+Mar 01 08:53:42.412 GENERAL: reset done.

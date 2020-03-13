@@ -1,0 +1,51 @@
+Feb 29 23:07:35.376 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Feb 29 23:07:35.377 HYPERVISOR: Started on IP = localhost, TCP port = 56099.
+Feb 29 23:07:35.747 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 29 23:07:35.747 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips 
+Feb 29 23:07:35.748 GENERAL: working_dir=C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips
+Feb 29 23:07:35.748 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\fe8b4ee0-8bb6-4274-84e8-f044306d2a31 
+Feb 29 23:07:35.748 GENERAL: working_dir=C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\fe8b4ee0-8bb6-4274-84e8-f044306d2a31
+Feb 29 23:07:35.748 HYPERVISOR: exec_cmd: vm create R3 3 c3725 
+Feb 29 23:07:35.749 VM: VM R3 created.
+Feb 29 23:07:35.750 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5003 
+Feb 29 23:07:35.750 HYPERVISOR: exec_cmd: c3725 get_mac_addr R3 
+Feb 29 23:07:35.750 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Feb 29 23:07:35.751 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+Feb 29 23:07:35.751 HYPERVISOR: exec_cmd: vm get_status R3 
+Feb 29 23:07:35.751 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x60c09aa0 
+Feb 29 23:07:35.752 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Feb 29 23:07:35.753 HYPERVISOR: exec_cmd: c3725 set_mac_addr R3 c203.4f3c.0000 
+Feb 29 23:07:35.753 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+Feb 29 23:07:39.368 HYPERVISOR: exec_cmd: nio create_udp udp-fc4d1d7c-68ce-4322-b900-8b27f2831e27 10018 127.0.0.1 10019 
+Feb 29 23:07:39.589 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 1 udp-fc4d1d7c-68ce-4322-b900-8b27f2831e27 
+Feb 29 23:07:39.589 HYPERVISOR: exec_cmd: vm get_status R3 
+Feb 29 23:07:39.641 HYPERVISOR: exec_cmd: nio create_udp udp-22d0d5c4-104c-4a60-a0a7-7e861f4164df 10022 127.0.0.1 10023 
+Feb 29 23:07:39.644 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-22d0d5c4-104c-4a60-a0a7-7e861f4164df 
+Feb 29 23:07:39.644 HYPERVISOR: exec_cmd: vm get_status R3 
+Feb 29 23:07:44.489 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Feb 29 23:07:44.491 VM: VM Ghost created.
+Feb 29 23:07:44.492 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/stepa/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Feb 29 23:07:44.492 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Feb 29 23:07:44.493 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\stepa\repos2\network\lab3_GNS3\project-files\dynamips\c3725-adventerprisek9-mz.124-15.T14.image-128.ghost' 
+Feb 29 23:07:44.493 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Feb 29 23:07:44.494 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+Feb 29 23:07:44.494 HYPERVISOR: exec_cmd: vm start Ghost 
+Feb 29 23:07:44.753 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Feb 29 23:07:44.907 VM: VM Ghost shutdown.
+Feb 29 23:07:44.907 VM: VM Ghost destroyed.
+Feb 29 23:07:44.911 HYPERVISOR: exec_cmd: vm get_status R3 
+Feb 29 23:07:44.912 HYPERVISOR: exec_cmd: vm set_config R3 configs\i3_startup-config.cfg 
+Feb 29 23:07:44.912 HYPERVISOR: exec_cmd: vm start R3 
+Feb 29 23:08:15.304 HYPERVISOR: exec_cmd: vm extract_config R3 
+Feb 29 23:08:15.306 HYPERVISOR: exec_cmd: vm extract_config R3 
+Mar 01 08:53:41.338 HYPERVISOR: exec_cmd: vm get_status R3 
+Mar 01 08:53:41.338 HYPERVISOR: exec_cmd: vm stop R3 
+Mar 01 08:53:41.446 VM: VM R3 shutdown.
+Mar 01 08:53:41.447 HYPERVISOR: exec_cmd: vm extract_config R3 
+Mar 01 08:53:42.076 HYPERVISOR: exec_cmd: vm get_status R3 
+Mar 01 08:53:42.076 HYPERVISOR: exec_cmd: vm extract_config R3 
+Mar 01 08:53:42.077 HYPERVISOR: exec_cmd: vm delete R3 
+Mar 01 08:53:42.078 VM: VM R3 destroyed.
+Mar 01 08:53:42.078 HYPERVISOR: exec_cmd: hypervisor stop 
+Mar 01 08:53:42.412 HYPERVISOR: Stopped.
+Mar 01 08:53:42.412 GENERAL: reset done.
