@@ -48,7 +48,7 @@ namespace L1_2
         {
             return new Drob(a.numerator * b.numerator, a.denominator * b.denominator);
         }
-        public void printDrob()
+        public void printDrob()//in console
         {
             Console.WriteLine(numerator + "/" + denominator);
         }
@@ -101,6 +101,7 @@ namespace L1_2
                     multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b                    
                 }
             }
+            else newDenominator = a.denominator;
             return new Drob(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);
         }
         public Drob sub(Drob a, Drob b)
@@ -126,6 +127,7 @@ namespace L1_2
                     multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b                   
                 }
             }
+            else newDenominator = a.denominator;
             return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
         }
 
