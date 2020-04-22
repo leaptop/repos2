@@ -26,10 +26,10 @@ String st;
 //        System.out.println(s.a);
 //    }
         //--------------------------------
-//    int c = 7;
-//    int result = 4;
-//    result += ++c;//if outside a method, then it's a bug
-//    System.out.print(result);
+    int c = 7;
+    int result = 4;
+    result += ++c;//if outside a method, then it's a bug
+    System.out.print(result);
         //----------------------------------------
 //    int x = 5 * 4 % 3;//the rule "from right to left" works only during multiple variable assignment e.g.: int a = b = 2*2;
 //    System.out.print(x);//but operations with numbers still go from left to right(in accordance to priority ofcourse)
@@ -64,7 +64,7 @@ String st;
         //---------------------------------------------------------------
 //        Main a = new Main();
 //        a = null;
-        //and there is also a tricky question: Какой из двух фрагментов кода предотвратит возникновение NullPointerWxception?
+        //and there is also a tricky question: Какой из двух фрагментов кода предотвратит возникновение NullPointerException?
         //Можно подумать, что код прямо создан для предотвращения чего-то. Но там просто один фрагмент может вызвать нулпоинтер, а второй нет.
 //        if (a != null && a.size > 0) {/*fragment 1*/}//this code will work everytime. The idea is that even here syntax is wrong. But the compiler doesn't go the part with a bug(a.size), because the first condition is false.
 //        if (a != null & a.size > 0) {/*fragment 2*/}//this code calls a nullpointer exception when a equals null. Because the & operator is called nevertheless a is null or not.
@@ -77,19 +77,19 @@ String st;
         // Integer a;
         //System.out.println(a);//ошибка компиляции, т.к. а не инициализирована
 //-----------------------------------------------------------
-//        A cl = new A();
-//        Super sr = new Super();//здесь класс может быть и не статсическим, т.к. лежит вне Main
-//        cl.f();
-//    }
-//    static class A {//класс вложенный внутрь объекта Main д.б. статсическим
-//        private int i = 1;
-//
-//        public void f() {
-//            int i;
-//            System.out.println("i = " + i);//ошибка компиляции(i не инициализирована)
-//            //1
-//        }
-//    }
+        A cl = new A();
+        Super sr = new Super();//здесь класс может быть и не статсическим, т.к. лежит вне Main
+        cl.f();
+    }
+    static class A {//класс вложенный внутрь объекта Main д.б. статическим
+        private int i = 1;
+
+        public void f() {
+            int i;
+            System.out.println("i = " + i);//ошибка компиляции(i не инициализирована)
+            //1
+        }
+    }
 //----------------------------------------------------------------------
 //        Test tst = new Test();//fisrt answer is true, it's visible from inside Test and package
 //        tst.a = 8;

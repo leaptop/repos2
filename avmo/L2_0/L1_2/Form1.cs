@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//implementing нахождение базисных и опорных решений систем линейных уравнений методом Жордана-Гаусса
-namespace L2_0
+//implementing the Jordan-Gauss method + rectangle method (метод Жордана-Гауса и метод прямоугольников)
+namespace L2_0CS
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+
         }
         public int currentRow = 0;//для прорисовки промежуточных решений
         public int n1;//число строк
@@ -49,9 +50,10 @@ namespace L2_0
         }
         private void button2_Click(object sender, EventArgs e) //                   "Load"
         {
-       
+
             load = true;
-            n1 = 3; n2 = 5;
+            n1 = 5; //number of rows
+            n2 = 6; //number of columns
             mas = new Drob[n1, n2];//the matrix to solve 
             masBumaga = new Drob[n1, n2];//the matrix to solve 
             dataGridView1.RowCount = n1 * 100;
@@ -69,10 +71,12 @@ namespace L2_0
              * 4 -6 2 3     | 2
              * 2 -3 -11 -15 | 1
              */
-             masBumaga[0, 0] = new Drob(2, 1); masBumaga[0, 1] = new Drob(-3, 1); masBumaga[0, 2] = new Drob(5, 1); masBumaga[0, 3] = new Drob(7, 1); masBumaga[0, 4] = new Drob(1, 1);
-             masBumaga[1, 0] = new Drob(4, 1); masBumaga[1, 1] = new Drob(-6, 1); masBumaga[1, 2] = new Drob(2, 1); masBumaga[1, 3] = new Drob(3, 1); masBumaga[1, 4] = new Drob(2, 1);
-             masBumaga[2, 0] = new Drob(2,  1); masBumaga[2, 1] = new Drob(-3, 1); masBumaga[2, 2] = new Drob(-11, 1); masBumaga[2, 3] = new Drob(-15, 1); masBumaga[2, 4] = new Drob(1, 1);
-             
+            masBumaga[0, 0] = new Drob(15, 1); masBumaga[0, 1] = new Drob(-5, 1); masBumaga[0, 2] = new Drob(8, 1); masBumaga[0, 3] = new Drob(11, 1); masBumaga[0, 4] = new Drob(-6, 1); masBumaga[0, 5] = new Drob(-76, 1);
+            masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 3] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);
+            masBumaga[2, 0] = new Drob(-5, 1); masBumaga[2, 1] = new Drob(11, 1); masBumaga[2, 2] = new Drob(5, 1); masBumaga[2, 3] = new Drob(-9, 1); masBumaga[2, 4] = new Drob(10, 1); masBumaga[2, 5] = new Drob(-6, 1);
+            masBumaga[3, 0] = new Drob(13, 1); masBumaga[3, 1] = new Drob(-5, 1); masBumaga[3, 2] = new Drob(-1, 1); masBumaga[3, 3] = new Drob(11, 1); masBumaga[3, 4] = new Drob(3, 1); masBumaga[3, 5] = new Drob(-27, 1);
+            masBumaga[4, 0] = new Drob(15, 1); masBumaga[4, 1] = new Drob(4, 1); masBumaga[4, 2] = new Drob(-3, 1); masBumaga[4, 3] = new Drob(-1, 1); masBumaga[4, 4] = new Drob(3, 1); masBumaga[4, 5] = new Drob(-4, 1);
+
             mas = masBumaga;
             initilaizeHeaders();
             fillTable();
@@ -92,12 +96,12 @@ namespace L2_0
         }
         private void fillTable()//fills dataGridView with the contents of mas
         {
-           
+
             for (int i = 0; i < n1; i++)
             {
                 for (int j = 0; j < n2; j++)
                 {
-                    dataGridView1.Rows[currentRow+ i].Cells[j].Value = mas[i, j].toStr();
+                    dataGridView1.Rows[currentRow + i].Cells[j].Value = mas[i, j].toStr();
                 }
             }
             //запрещает сортировать содержимое столбцов кликом по хедеру, а также минимизирует длину ячеек:
@@ -108,131 +112,107 @@ namespace L2_0
         private void button3_Click(object sender, EventArgs e) //                 "test"
         {
             Drob db = new Drob(0, 0);
-            db.test();
+
+            Drob d1 = new Drob(-94, 3);
+            Drob d2 = new Drob(1, 1);
+            Drob d3 = new Drob(28, 3);
+            Drob d4 = new Drob(-1, 2);
+            Drob dRes = new Drob(0, 0);
+            d1 = db.mul(d1, d2);
+            textBox1.AppendText(d1.toStr() + "\n");
+            d3 = db.mul(d3, d4);
+            textBox2.AppendText(d3.toStr() + "\n");
+            d1 = db.sub(d1, d3);
+            textBox3.AppendText(d1.toStr() + "\n");
+            //textBox1.Text = dRes.toStr();
+            // db.test();
         }
 
         private void button4_Click(object sender, EventArgs e)//                  "Solve"
         {
             if (flagSolved) return;
-            //int untoucheableColumn = -1;
-          //  int untoucheableRow = 0;//the solving rslvRow stays untoucheable
             Drob d = new Drob(0, 0);//just an object for functions invocation
-            for (int rslvRow = 0; rslvRow < 3; rslvRow++)
+            int x0 = 0, y0 = 0, x1 = 0, y1 = 0;// works for the first case for all columns!
+            int x2 = 0, y2 = 0, x3 = 0, y3 = 0;
+            int rColumn = 0;
+            for (int rRow = 0; rRow < n1; rRow++)//rRow & rColumn are my untouchable row and coulumn
             {
-                bool flag = true;
-                for (int column = rslvRow; flag; column++)//moving diagonally down &/or right
-                {          if (column == n2) break;         
-                    if (mas[rslvRow, column].numerator == 0)//if the solving element is not 0
+                for (rColumn = rRow; rColumn < n2 - 1; rColumn++)//moving diagonally down &/or right // NO. Moving lr=eft horizontally in a search for a non-zerp el-t 
+                {
+                    //my mistake is apparently going lots of times after finding a non-zero value in a row... I need only use the value once...
+                    // if (rColumn == n2) break;//if it's the end of the row and there are no non-zero elements, then break searching in this row(inner for loop)
+                    if (mas[rRow, rColumn].numerator == 0)//if the solving element is not 0, then continue searchin the row
                         continue;
-                    else// else start solving
-                    {
-                        Drob temp1 = (Drob)mas[rslvRow, column].Clone();//created a clone of the solving element
-                        for (int i = column; i < n2; i++)
-                        {
-                            mas[rslvRow, i] = d.div(mas[rslvRow, i], temp1);//turning the solving element to 1
-                        }
-                        //FIRST CASE: first rslvRow is resolving and first element is not zero... just don't insert the first element as zero:
-                        if (rslvRow == 0)//ALL THESE THREE CASES CAN BE WRITTEN IN ONE... BUT I'M TOO TIRED AND I NEED TO DO A LOT OF OTHER WORK
-                        {
-                            int x0 = 0, y0 = 0, x1 = 0, y1 = 1;// works for the first case for all columns!
-                            int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
-                            for (int i = 1; i < n2; i++)//walk through the columns
-                            {
-                                for (; x2 < n1 || x3 < n1;)
-                                {
-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-                                            d.sub(
-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                                                d.mul(mas[x1, y1], mas[x3, y3]));
-
-                                    x2++; x3++;//going through orange and blue squares
-                                }
-                                x2 = rslvRow + 1; x3 = rslvRow + 1;
-                                y1++; y2++;//координаты столбцов(одного столбца по сути) сместились вправо(розовый прямоугольник)
-                            }
-                        }
-                        //SECOND CASE: MIDDLE ROW
-                        else if (rslvRow > 0 && rslvRow < n1 - 1)
-                        {
-                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
-                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
-                            for (int i = 1; i < n2; i++)//walk through the columns
-                            {
-                                for (; x1 < n1 || x2 < n1 || y2 < n2;)
-                                {
-                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow
-                                    if (x1 == n1 || x2 == n1 || y2 == n2) break;
-                                    
-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-                                            d.sub(
-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                                                d.mul(mas[x1, y1], mas[x3, y3]));
-                                    x1++; x2++;//going through orange and blue squares                           
-                                }
-                                x1 = 0; x2 = 0;//HERE
-                               // y1++; 
-                                y2++;
-                                y3++;
-                                if (y2 >= n2 || y3 >= n2)
-                                {
-                                    break;
-                                }
-                            }
-                        }
-                        //THIRD CASE: THE LOWEST ROW IS RESOLVING
-                        else if (rslvRow == (n1 - 1))
-                        {
-                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;
-                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;
-                            for (int i = 1; i < n2; i++)//walk through the columns
-                            {
-                                for (; x1 < n1 || x2 < n1 || y2 < n2;)
-                                {
-                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow
-                                    if (x1 == n1 || x2 == n1 || y2 == n2 || y3 == n2) break;
-
-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-                                            d.sub(
-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-                                                d.mul(mas[x1, y1], mas[x3, y3]));
-                                    x1++; x2++;//going through orange and blue squares
-                                    //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow
-                                    //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ
-                                }
-                                x1 = 0; x2 = 0;//HERE                                               
-                                y2++;
-                                y3++;
-                                if(y2 >= n2 || y3 >= n2)
-                                {
-                                    break;
-                                }
-                            }
-                        }
-                        for (int i = 0; i < n1; i++)//it has to be done at the end of the iteration
-                        {
-                            if (i == rslvRow) continue;
-                            mas[i, column].numerator = 0;//turning all the other elements of the column to 0
-                            mas[i, column].denominator = 0;//(as a part of the rectangle method)
-                        }
-                        flag = false;//next motion through the columns is unnecessary. Should go to the next rslvRow.
-                    }
-                    //else continue;
-                    fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the column to 0
+                    else// else we have found a non-zero element of our row and start solving
+                        break;
                 }
+
+
+                {
+                    Drob temp1 = (Drob)mas[rRow, rColumn].Clone();//created a clone of the solving element
+                    for (int i = rColumn; i < n2; i++)
+                    {
+                        mas[rRow, i] = d.div(mas[rRow, i], temp1);//turning the solving element to 1 by divividing all the elements of the row by the first element
+                    }
+                    {
+                        x0 = 0; y0 = rColumn; //assigned the 0 element
+                        x1 = 0; y1 = rColumn + 1;   //assigned the second element - to the right horizontally
+                        x2 = rRow; y2 = rColumn + 1;   //assigned the third element (RESOLVING) - down vertically
+                        x3 = rRow; y3 = rColumn; // assigned the fourth element - to the left horizontally
+                        //the elements are always multiplied correctly. The only exceptional case is when the first row is resolving. It is solved down below.
+
+                        if (rRow == 0)//if the rRow is the first one, then
+                        {
+                            x0 = rRow + 1; x1 = rRow + 1;
+                        }
+                        else if (rRow == (n1 - 1))//else if the rRow is the last one, it doen't matter
+                        {
+                            //nothing to do here. It must be worked in iteration by rows.
+                        }
+                        while (y1 < n2)//walk through the columns
+                        {
+                            while (x0 < n1)//walk down through rows, assigning mas[x1, y1] new values
+                            {//по идее начианть красивее с  х1,у1.
+                                if (x0 == rRow)
+                                {//if encountered with the resolving row, just skip it.
+                                    x0++; x1++;
+                                    continue;
+                                }
+                                mas[x1, y1] = //not sure if it (-->колонка всегда начинается с колонки разрешающего элемента )is still needed to be written here
+                                        d.sub(
+                                            d.mul(mas[x1, y1], mas[x3, y3]), //first diagonal multiplied
+                                            d.mul(mas[x0, y0], mas[x2, y2]));
+                                x0++; x1++;//going through orange and blue squares(just down)
+
+                            }
+                            x0 = 0; x1 = 0;//got back up to resolve a new column
+                            y1++; y2++;//координаты столбцов(одного столбца по сути) сместились вправо(розовый прямоугольник)
+                        }
+                    }
+
+                    for (int i = 0; i < n1; i++)//it has to be done at the end of the iteration
+                    {
+                        if (i == rRow) continue;
+                        mas[i, rColumn].numerator = 0;//turning all the other elements of the rColumn to 0
+                        mas[i, rColumn].denominator = 0;//(as a part of the rectangle method)
+                    }
+                }
+                fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the rColumn to 0
+
             }
             String answer = "";
             for (int i = 0; i < n1; i++)
             {
-                for (int j = 0; j < n2-1; j++)
+                for (int j = 0; j < n2 - 1; j++)
                 {
-                   if( mas[i,j].numerator != 0)
+                    if (mas[i, j].numerator != 0)
                     {
                         if (mas[i, j].numerator == 1 && mas[i, j].denominator == 1)
                         {
-                            if(mas[i, j].numerator > 0)
-                            answer += (" + " + elems[j] + " ");
+                            if (mas[i, j].numerator > 0)
+                                answer += (" + " + elems[j] + " ");
                             else
-                                if(mas[i, j].numerator<0)
+                                if (mas[i, j].numerator < 0)
                                 answer += (" - " + elems[j] + " ");
                         }
                         else
@@ -242,7 +222,7 @@ namespace L2_0
                             else
                                 if (mas[i, j].numerator < 0)
                                 answer += (mas[i, j].toStr() + "*" + elems[j] + " ");
-                        }                            
+                        }
                     }
                 }
                 if (answer.Length > 0)
@@ -256,36 +236,3 @@ namespace L2_0
         }
     }
 }
-////second case: one of the middle rows is resolving
-//if(rslvRow > 0 && rslvRow < n1 - 1)
-//{
-//    int x0 = 0, y0 = 0, x1 = 0, y1 = 1;
-//    int x2 = 1, y2 = 1, x3 = 1, y3 = 0;
-//    for (; x2 < n1 || x3 < n1;)
-//    {
-//        mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента
-//                d.sub(
-//                    d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-//                    d.mul(mas[x1, y1], mas[x3, y3]));
-//        x2++; x3++;
-//    }
-//}
-
-
-//untoucheableRow = rslvRow;//this rslvRow is needed to skip during the solving
-
-//temp1 = mas[rslvRow, column];//the reneved solving element(1/1)// these rslvRow & column will stay... 
-////I can rely on these coordinates
-//for (int rowS = 0, columnS = column; rowS < n1-1; rowS++)
-//{
-//    //int rowT = rowS + 1;
-//    int columnT = column + 1;
-//    int x0 = rowS, y0 = column, x1 = rowS, y1 = columnS;
-//    int x2 = rowS + 1, y2 = columnS + 1, x3 = rowS + 1, y3 = column + 1;
-//    if (rowS == untoucheableRow) continue;//пытаюсь проскочить через разрешающий ряд
-//    //if()
-//    else mas[rowS, columnS] = //колонка всегда начинается с колонки разрешающего элемента
-//            d.sub(
-//                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied
-//                d.mul(mas[x1, y1], mas[x3, y3]));
-//}
