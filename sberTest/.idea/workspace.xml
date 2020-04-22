@@ -2,11 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e7b10f-e24e-4b94-8af5-c0ea6fa59390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Program01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Program02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../McombinationsOfN/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Developer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/ExtendingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/LambdaApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/MyThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Program01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Program02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/ProgramThreadExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Super.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/UseDeveloper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest02/src/UserBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/AA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/MiniCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/TesterAA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sberTest03concepts/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../99 1 course/чистка 1 курс/LearninCPP labi/LearninCPP labi/LearninCPP labi.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../99 1 course/чистка 1 курс/LearninCPP labi/LearninCPP labi/LearninCPP labi.vcxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HINTS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HINTS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringBoot/youtubeCantLaunch" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/youtubeCantLaunch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avmo/L1_2_Sdat/L1_2/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../avmo/L1_2_Sdat/L1_2/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avmo/L2_0/L1_2/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../avmo/L2_0/L1_2/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gpu/lab1_01/отчёт.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../gpu/lab1_01/отчёт.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/lab012/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/lab012/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/lab012/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/lab012/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -14,6 +45,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="sberTest" />
@@ -29,6 +63,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1We5CZWEPEUriAmeSUfnDbvchUe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,11 +76,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578923984273" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -111,6 +155,8 @@
       <workItem from="1579848077855" duration="3004000" />
       <workItem from="1579941067834" duration="3375000" />
       <workItem from="1580386288643" duration="2651000" />
+      <workItem from="1585586694315" duration="1255000" />
+      <workItem from="1585724579616" duration="654000" />
     </task>
     <servers />
   </component>
@@ -118,16 +164,27 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580010709234">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="187" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585587738605">
+      <screen x="0" y="0" width="1603" height="821" />
     </state>
     <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691366784" />
     <state x="159" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580010709234" />
-    <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580010708441">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="187" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1603.821/1920.0.1603.862@0.0.1603.821" timestamp="1585587738605" />
+    <state x="483" y="168" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585587723515">
+      <screen x="0" y="0" width="1603" height="821" />
     </state>
     <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579691354590" />
     <state x="412" y="149" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1580010708441" />
+    <state x="483" y="168" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1603.821/1920.0.1603.862@0.0.1603.821" timestamp="1585587723515" />
+    <state x="454" y="4" key="CommitChangelistDialog2" timestamp="1585661117480">
+      <screen x="0" y="0" width="1603" height="821" />
+    </state>
+    <state x="454" y="4" key="CommitChangelistDialog2/0.0.1603.821/1920.0.902.1563@0.0.1603.821" timestamp="1585661117480" />
+    <state x="581" y="166" key="FileChooserDialogImpl" timestamp="1585724629850">
+      <screen x="0" y="0" width="1603" height="821" />
+    </state>
+    <state x="581" y="166" key="FileChooserDialogImpl/0.0.1603.821/1920.0.1603.862@0.0.1603.821" timestamp="1585587786087" />
+    <state x="581" y="166" key="FileChooserDialogImpl/0.0.1603.821/1920.0.902.1563@0.0.1603.821" timestamp="1585724629850" />
     <state width="551" height="335" key="GridCell.Tab.0.bottom" timestamp="1580573082898">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -168,15 +225,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="7" key="SettingsEditor/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579497611611" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1580386288038">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="445" y="213" key="com.intellij.ide.util.TipDialog" timestamp="1585724579415">
+      <screen x="0" y="0" width="1603" height="821" />
     </state>
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.-314.1536.824@0.0.1366.728" timestamp="1579848098140" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1080.1880@0.0.1366.728" timestamp="1580386288038" />
+    <state x="445" y="213" key="com.intellij.ide.util.TipDialog/0.0.1603.821/1920.0.1603.862@0.0.1603.821" timestamp="1585586811521" />
+    <state x="445" y="213" key="com.intellij.ide.util.TipDialog/0.0.1603.821/1920.0.902.1563@0.0.1603.821" timestamp="1585724579415" />
     <state x="2319" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580405264934">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="2319" y="0" width="974" height="1047" key="dock-window-1/0.0.1366.728/1366.0.1920.1040/3286.0.1536.824@1366.0.1920.1040" timestamp="1580405264934" />
+    <state x="218" y="32" key="new project wizard" timestamp="1585724631700">
+      <screen x="0" y="0" width="1603" height="821" />
+    </state>
+    <state x="218" y="32" key="new project wizard/0.0.1603.821/1920.0.1603.862@0.0.1603.821" timestamp="1585587787710" />
+    <state x="218" y="32" key="new project wizard/0.0.1603.821/1920.0.902.1563@0.0.1603.821" timestamp="1585724631700" />
   </component>
   <component name="masterDetails">
     <states>

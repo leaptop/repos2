@@ -1,0 +1,1260 @@
+[33mcommit 3b6d5c42fd6d349a1aab0960fc90e3b6c3562ef7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: stepan <stepan-alekseev-87@mail.ru>
+Date:   Mon Mar 16 18:55:58 2020 +0700
+
+    repaired avmo 1
+
+[1mdiff --git a/HINTS.txt b/HINTS.txt[m
+[1mindex f8713c9..bd42b39 100644[m
+[1m--- a/HINTS.txt[m
+[1m+++ b/HINTS.txt[m
+[36m@@ -33,6 +33,8 @@[m [mNotepad++ Опции-определение стиля-можно поменят[m
+ Settings -> Preferences dialog control the way Notepad++ prints a document: Print - Colour and Margin and Print - Header and Footer.[m
+ The former lets you choose the four margins, in centimeters. There are also four colour schemes to choose from.[m
+ [m
+[32m+[m[32mЧтобы в CLion что-о запускалось, надо сначала создать проект.[m
+[32m+[m
+ Шрифты в винде лучше увеличивать без размытости так: Параметры - система - дисплей - дополнительные параметры масштабирования. На 17 мониторе full hd с рекомендуемыми 1920-1080 поставил увеличение 120%.[m
+ [m
+ Кластер — группа компьютеров, объединённых высокоскоростными каналами связи, представляющая с точки зрения пользователя единый аппаратный ресурс. Кластер - слабо связанная совокупность нескольких вычислительных систем, работающих совместно для выполнения общих приложений, и представляющихся пользователю единой системой.[m
+[1mdiff --git a/avmo/2_0Clion/.idea/.gitignore b/avmo/2_0Clion/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5c98b42[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/.idea/.gitignore[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/workspace.xml[m
+\ No newline at end of file[m
+[1mdiff --git a/avmo/2_0Clion/.idea/misc.xml b/avmo/2_0Clion/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8822db8[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/.idea/misc.xml[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />[m
+[32m+[m[32m  <component name="JavaScriptSettings">[m
+[32m+[m[32m    <option name="languageLevel" value="ES6" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/avmo/2_0Clion/.idea/modules.xml b/avmo/2_0Clion/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d425db6[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/2_0Clion.iml" filepath="$PROJECT_DIR$/.idea/2_0Clion.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/avmo/2_0Clion/CMakeLists.txt b/avmo/2_0Clion/CMakeLists.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..370ee42[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/CMakeLists.txt[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mcmake_minimum_required(VERSION 3.15)[m
+[32m+[m[32mproject(2_0Clion)[m
+[32m+[m
+[32m+[m[32mset(CMAKE_CXX_STANDARD 20)[m
+[32m+[m
+[32m+[m[32madd_executable(2_0Clion main.cpp)[m
+\ No newline at end of file[m
+[1mdiff --git a/avmo/2_0Clion/cmake-build-debug/2_0Clion.cbp b/avmo/2_0Clion/cmake-build-debug/2_0Clion.cbp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dee2ec5[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/cmake-build-debug/2_0Clion.cbp[m
+[36m@@ -0,0 +1,94 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<CodeBlocks_project_file>[m
+[32m+[m	[32m<FileVersion major="1" minor="6"/>[m
+[32m+[m	[32m<Project>[m
+[32m+[m		[32m<Option title="2_0Clion"/>[m
+[32m+[m		[32m<Option makefile_is_custom="1"/>[m
+[32m+[m		[32m<Option compiler="msvc8"/>[m
+[32m+[m		[32m<Option virtualFolders="CMake Files\;"/>[m
+[32m+[m		[32m<Build>[m
+[32m+[m			[32m<Target title="all">[m
+[32m+[m				[32m<Option working_dir="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug"/>[m
+[32m+[m				[32m<Option type="4"/>[m
+[32m+[m				[32m<MakeCommands>[m
+[32m+[m					[32m<Build command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 all"/>[m
+[32m+[m					[32m<CompileFile command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>[m
+[32m+[m					[32m<Clean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m					[32m<DistClean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m				[32m</MakeCommands>[m
+[32m+[m			[32m</Target>[m
+[32m+[m			[32m<Target title="rebuild_cache">[m
+[32m+[m				[32m<Option working_dir="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug"/>[m
+[32m+[m				[32m<Option type="4"/>[m
+[32m+[m				[32m<MakeCommands>[m
+[32m+[m					[32m<Build command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>[m
+[32m+[m					[32m<CompileFile command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>[m
+[32m+[m					[32m<Clean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m					[32m<DistClean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m				[32m</MakeCommands>[m
+[32m+[m			[32m</Target>[m
+[32m+[m			[32m<Target title="2_0Clion">[m
+[32m+[m				[32m<Option output="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug/2_0Clion.exe" prefix_auto="0" extension_auto="0"/>[m
+[32m+[m				[32m<Option working_dir="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug"/>[m
+[32m+[m				[32m<Option object_output="./"/>[m
+[32m+[m				[32m<Option type="1"/>[m
+[32m+[m				[32m<Option compiler="msvc8"/>[m
+[32m+[m				[32m<Compiler>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>[m
+[32m+[m				[32m</Compiler>[m
+[32m+[m				[32m<MakeCommands>[m
+[32m+[m					[32m<Build command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 2_0Clion"/>[m
+[32m+[m					[32m<CompileFile command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>[m
+[32m+[m					[32m<Clean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m					[32m<DistClean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m				[32m</MakeCommands>[m
+[32m+[m			[32m</Target>[m
+[32m+[m			[32m<Target title="2_0Clion/fast">[m
+[32m+[m				[32m<Option output="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug/2_0Clion.exe" prefix_auto="0" extension_auto="0"/>[m
+[32m+[m				[32m<Option working_dir="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug"/>[m
+[32m+[m				[32m<Option object_output="./"/>[m
+[32m+[m				[32m<Option type="1"/>[m
+[32m+[m				[32m<Option compiler="msvc8"/>[m
+[32m+[m				[32m<Compiler>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>[m
+[32m+[m					[32m<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>[m
+[32m+[m				[32m</Compiler>[m
+[32m+[m				[32m<MakeCommands>[m
+[32m+[m					[32m<Build command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 2_0Clion/fast"/>[m
+[32m+[m					[32m<CompileFile command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>[m
+[32m+[m					[32m<Clean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m					[32m<DistClean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m				[32m</MakeCommands>[m
+[32m+[m			[32m</Target>[m
+[32m+[m			[32m<Target title="edit_cache">[m
+[32m+[m				[32m<Option working_dir="C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug"/>[m
+[32m+[m				[32m<Option type="4"/>[m
+[32m+[m				[32m<MakeCommands>[m
+[32m+[m					[32m<Build command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>[m
+[32m+[m					[32m<CompileFile command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>[m
+[32m+[m					[32m<Clean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m					[32m<DistClean command="nmake /NOLOGO /f C:\Users\stepa\repos2\avmo\2_0Clion\cmake-build-debug\Makefile VERBOSE=1 clean"/>[m
+[32m+[m				[32m</MakeCommands>[m
+[32m+[m			[32m</Target>[m
+[32m+[m		[32m</Build>[m
+[32m+[m		[32m<Unit filename="C:/Users/stepa/repos2/avmo/2_0Clion/main.cpp">[m
+[32m+[m			[32m<Option target="2_0Clion"/>[m
+[32m+[m		[32m</Unit>[m
+[32m+[m		[32m<Unit filename="C:/Users/stepa/repos2/avmo/2_0Clion/CMakeLists.txt">[m
+[32m+[m			[32m<Option virtualFolder="CMake Files\"/>[m
+[32m+[m		[32m</Unit>[m
+[32m+[m	[32m</Project>[m
+[32m+[m[32m</CodeBlocks_project_file>[m
+[1mdiff --git a/avmo/2_0Clion/main.cpp b/avmo/2_0Clion/main.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1593352[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/2_0Clion/main.cpp[m
+[36m@@ -0,0 +1,365 @@[m
+[32m+[m[32m#include <bits/stdc++.h>[m
+[32m+[m[32m#include "../lib/fractions.h"[m
+[32m+[m
+[32m+[m[32musing namespace std;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mlong long fact(long long n)[m
+[32m+[m[32m{[m
+[32m+[m[32m    if (n<=1)[m
+[32m+[m[32m        return 1;[m
+[32m+[m
+[32m+[m[32m    return n*fact(n-1);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mlong long combinationNum(long long a,long long b)[m
+[32m+[m[32m{[m
+[32m+[m[32m    if (a==b)[m
+[32m+[m[32m        return 1;[m
+[32m+[m
+[32m+[m[32m    return fact(b)/(fact(b-a)*fact(a));[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mbool NextSet(int *a, int n, int m)[m
+[32m+[m[32m{[m
+[32m+[m[32m    int k = m;[m
+[32m+[m[32m    for (int i = k - 1; i >= 0; --i)[m
+[32m+[m[32m        if (a[i] < n - k + i + 1)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            ++a[i];[m
+[32m+[m[32m            for (int j = i + 1; j < k; ++j)[m
+[32m+[m[32m                a[j] = a[j - 1] + 1;[m
+[32m+[m[32m            return true;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mvoid read(Fraction **arr,int n,int m)[m
+[32m+[m[32m{[m
+[32m+[m[32m    for (int i=0;i<m;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        for (int j=0;j<n;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            cin>>arr[i][j];[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mvoid print(Fraction **arr,int n,int m)[m
+[32m+[m[32m{[m
+[32m+[m[32m    for (int i=0;i<m;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        for (int j=0;j<n-1;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            cout<< setw(7) << arr[i][j]<<" ";[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        cout<<"| "<<arr[i][n-1]<<endl;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    cout<<endl;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mvoid swap(Fraction **arr,int n,int from,int to)[m
+[32m+[m[32m{[m
+[32m+[m[32m    Fraction c;[m
+[32m+[m[32m    for (int i=0;i<n;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        c=arr[from][i];[m
+[32m+[m[32m        arr[from][i]=arr[to][i];[m
+[32m+[m[32m        arr[to][i]=c;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mvoid copy(Fraction **from,Fraction **to,int n,int m)[m
+[32m+[m[32m{[m
+[32m+[m[32m    for (int i=0;i<m;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        for (int j=0;j<n;j++)[m
+[32m+[m[32m            to[i][j]=from[i][j];[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mvoid JordanGauss(Fraction **arr,int n,int m)[m
+[32m+[m[32m{[m
+[32m+[m[32m    int i,j,y=0,mx_ind=0,zz=0;[m
+[32m+[m[32m    bool check;[m
+[32m+[m[32m    Fraction mx;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    for (i=0;i<n;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        if (y>m-1 || i==n-1)[m
+[32m+[m[32m            break;[m
+[32m+[m
+[32m+[m[32m        check=false;[m
+[32m+[m[32m        mx_ind=y;[m
+[32m+[m[32m        mx=Fraction(0,1);[m
+[32m+[m
+[32m+[m[32m        for (j=y;j<m;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (Fraction::Abs(arr[j][i])>mx)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                mx=Fraction::Abs(arr[j][i]);[m
+[32m+[m[32m                mx_ind=j;[m
+[32m+[m[32m                check=true;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        swap(arr,n,y,mx_ind);[m
+[32m+[m
+[32m+[m[32m        if (!check)[m
+[32m+[m[32m            continue;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        for (j=i+1;j<n;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            for (int l=0;l<m;l++)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                if (l!=y)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    arr[l][j]=arr[l][j]-(arr[y][j]*arr[l][i])/arr[y][i];[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        for (j=i+1;j<n;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            arr[y][j]=arr[y][j]/arr[y][i];[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        arr[y][i]=arr[y][i]/arr[y][i];[m
+[32m+[m
+[32m+[m[32m        for (j=0;j<m;j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (j!=y)[m
+[32m+[m[32m                arr[j][i]=Fraction(0,1);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        y++;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    int rang=0;[m
+[32m+[m[32m    int cnt=0;[m
+[32m+[m
+[32m+[m[32m    for (i=0; i<m; i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        cnt=0;[m
+[32m+[m[32m        for (j=0; j<n-1; j++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (arr[i][j]==Fraction(1,1))[m
+[32m+[m[32m                cnt++;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        if (cnt==1)[m
+[32m+[m[32m            rang++;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    m=rang;[m
+[32m+[m
+[32m+[m[32m    print(arr,n,m);[m
+[32m+[m
+[32m+[m[32m    int combNum=combinationNum(rang,n-1);[m
+[32m+[m[32m    int comb_ind=rang;[m
+[32m+[m[32m    int *tmp_comb=new int[rang];[m
+[32m+[m[32m    int *comb=new int[rang*combNum];[m
+[32m+[m
+[32m+[m[32m    for (i=0;i<rang;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        tmp_comb[i]=i+1;[m
+[32m+[m[32m        comb[i]=i+1;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    while(NextSet(tmp_comb,n-1,rang))[m
+[32m+[m[32m    {[m
+[32m+[m
+[32m+[m[32m        for (i=0;i<rang;i++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            comb[comb_ind]=tmp_comb[i];[m
+[32m+[m[32m            comb_ind++;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    /*[m
+[32m+[m[32mfor (i=0;i<rang*combNum;i++)[m
+[32m+[m[32mcout<<comb[i]<<" ";[m
+[32m+[m
+[32m+[m[32mcout<<endl; */[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    cout<<"Rang :"<<rang<<endl<<"N: "<<n-1<<endl<<"Number of combinations: "<<combNum<<endl;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    Fraction **temp=new Fraction*[m];[m
+[32m+[m[32m    int ed[rang][n]={};[m
+[32m+[m[32m    int ch0[rang]={};[m
+[32m+[m[32m    Fraction result;[m
+[32m+[m[32m    bool flag1,flag2,flagO;[m
+[32m+[m[32m    int counter=0;[m
+[32m+[m
+[32m+[m[32m//	int *ch0 = new int[rang];[m
+[32m+[m
+[32m+[m[32m    for (i=0;i<m;i++)[m
+[32m+[m[32m        temp[i]=new Fraction[n];[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    copy(arr,temp,n,m);[m
+[32m+[m
+[32m+[m[32m    print(temp,n,m);[m
+[32m+[m
+[32m+[m[32m    cout << endl;[m
+[32m+[m[32m    for (i=0; i<rang*combNum; i++) cout << comb[i] << " ";[m
+[32m+[m[32m    cout << endl;[m
+[32m+[m
+[32m+[m[32m    for(i=0; i<rang;i++) ch0[i]=0;[m
+[32m+[m
+[32m+[m[32m    for (int k=0;k<rang*combNum;k++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        int index = comb[k];[m
+[32m+[m[32m        flag1=0;[m
+[32m+[m[32m        flag2=0;[m
+[32m+[m[32m        flagO=1;[m
+[32m+[m[32m        counter=0;[m
+[32m+[m[32m        for (i=0;i<rang;i++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            //cout << temp[i][index-1] <<"+++"<<  ch0[i] << endl;[m
+[32m+[m[32m            if (!(temp[i][index-1]==Fraction(0,1)) && ch0[i]==0)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                //	cout << "__" << i << "-" << index-1 << " " << endl;[m
+[32m+[m[32m                ch0[i]=1;[m
+[32m+[m[32m                flag1=1;[m
+[32m+[m[32m                for (j=0;j<rang;j++)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    for (int l=0;l<n;l++)[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        if (i==j || index-1==l)[m
+[32m+[m[32m                            continue;[m
+[32m+[m[32m                        temp[j][l]=temp[j][l]-(temp[j][index-1]*temp[i][l])/temp[i][index-1];[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                }[m
+[32m+[m[32m                for (j=0;j<rang;j++)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    if (j!=i)[m
+[32m+[m[32m                        temp[j][index-1]=Fraction(0,1);[m
+[32m+[m[32m                }[m
+[32m+[m[32m                for (j=0;j<n;j++)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    if (j!=index-1)[m
+[32m+[m[32m                        temp[i][j]=temp[i][j]/temp[i][index-1];[m
+[32m+[m[32m                }[m
+[32m+[m[32m                temp[i][index-1]=Fraction(1,1);[m
+[32m+[m[32m                ed[i][index-1]=1;[m
+[32m+[m[32m                counter++;[m
+[32m+[m
+[32m+[m[32m                cout << endl;[m
+[32m+[m[32m                print(temp,n,m);[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            if (flag1) break;[m
+[32m+[m[32m            if (i==rang-1 && counter!=rang) flag2=1;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        if ((k+1)%rang==0)[m
+[32m+[m[32m        {[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            for(i=0; i<rang;i++) ch0[i]=0;[m
+[32m+[m
+[32m+[m[32m            cout<<endl<<endl << "Basic Resolving #" << ((k-1)/rang)+1 << " ";[m
+[32m+[m[32m            cout << "[ ";[m
+[32m+[m[32m            for (i=0; i<rang; i++) cout << comb[k-rang+i+1] << ", ";[m
+[32m+[m[32m            cout << "]";[m
+[32m+[m[32m            cout << endl;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            if (flag2==1) {[m
+[32m+[m[32m                cout << "No basic resolve";[m
+[32m+[m[32m                copy(arr,temp,n,m);[m
+[32m+[m[32m                cout << endl << "_______________________________________________"<< endl;[m
+[32m+[m[32m                continue;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            //print(temp,n,m);[m
+[32m+[m
+[32m+[m
+[32m+[m[32m//			for(j=0; j<n-1; j++) {[m
+[32m+[m[32m//				result=Fraction(0,1);[m
+[32m+[m[32m//				for (i=0; i<rang; i++)  {[m
+[32m+[m[32m//					if (temp[i][j]==Fraction(1,1)) result=temp[i][n-1];[m
+[32m+[m[32m//				}[m
+[32m+[m[32m//					if (!(result==Fraction(0,1))) cout << result << " ";[m
+[32m+[m[32m//					else cout << 0 << " ";[m
+[32m+[m[32m//			}[m
+[32m+[m[32m//			cout << endl;[m
+[32m+[m[32m//[m
+[32m+[m
+[32m+[m[32m            for(j=0; j<n-1; j++) {[m
+[32m+[m[32m                result=Fraction(0,1);[m
+[32m+[m[32m                for (i=0; i<rang; i++) {[m
+[32m+[m[32m                    if (ed[i][j]==1) result=temp[i][n-1];[m
+[32m+[m[32m                    if (Fraction(0,1)>result) flagO=0;[m
+[32m+[m[32m                }[m
+[32m+[m[32m                if (!(result==Fraction(1,1))) cout << setw(3) << result << "; ";[m
+[32m+[m[32m                else cout << 0 << " ";[m
+[32m+[m[32m            }[m
+[32m+[m[32m            if (!flagO) cout << "NE ";[m
+[32m+[m[32m            cout << "opornoe!";[m
+[32m+[m[32m            cout << endl << "_______________________________________________"<< endl;[m
+[32m+[m
+[32m+[m[32m//			for (i=0; i<rang; i++) {[m
+[32m+[m[32m//				for (j=0; j<n; j++) {[m
+[32m+[m[32m//					cout << ed[i][j] << " ";[m
+[32m+[m[32m//				}[m
+[32m+[m[32m//				cout << endl;[m
+[32m+[m[32m//			}[m
+[32m+[m
+[32m+[m[32m            for (i=0; i<rang; i++) {[m
+[32m+[m[32m                for (j=0; j<n; j++) {[m
+[32m+[m[32m                    ed[i][j] = 0;[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            copy(arr,temp,n,m);[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mint main()[m
+[32m+[m[32m{[m
+[32m+[m[32m    int n,m;[m
+[32m+[m[32m    cin>>n>>m;[m
+[32m+[m
+[32m+[m[32m    Fraction **arr=new Fraction*[m];[m
+[32m+[m
+[32m+[m[32m    for (int i=0;i<m;i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        arr[i]=new Fraction[n];[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    read(arr,n,m);[m
+[32m+[m[32m    print(arr,n,m);[m
+[32m+[m[32m    JordanGauss(arr,n,m);[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    return 0;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/avmo/L1_2_Sdat/L1_2/Drob.cs b/avmo/L1_2_Sdat/L1_2/Drob.cs[m
+[1mindex 384e924..774e4c4 100644[m
+[1m--- a/avmo/L1_2_Sdat/L1_2/Drob.cs[m
+[1m+++ b/avmo/L1_2_Sdat/L1_2/Drob.cs[m
+[36m@@ -48,7 +48,7 @@[m [mnamespace L1_2[m
+         {[m
+             return new Drob(a.numerator * b.numerator, a.denominator * b.denominator);[m
+         }[m
+[31m-        public void printDrob()[m
+[32m+[m[32m        public void printDrob()//in console[m
+         {[m
+             Console.WriteLine(numerator + "/" + denominator);[m
+         }[m
+[36m@@ -101,6 +101,7 @@[m [mnamespace L1_2[m
+                     multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b                    [m
+                 }[m
+             }[m
+[32m+[m[32m            else newDenominator = a.denominator;[m
+             return new Drob(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);[m
+         }[m
+         public Drob sub(Drob a, Drob b)[m
+[36m@@ -126,6 +127,7 @@[m [mnamespace L1_2[m
+                     multiplierB = newDenominator / b.denominator;//нашёл во сколько раз надо увеличить числитель b                   [m
+                 }[m
+             }[m
+[32m+[m[32m            else newDenominator = a.denominator;[m
+             return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);[m
+         }[m
+ [m
+[1mdiff --git a/avmo/L1_2_Sdat/L1_2/Form1.Designer.cs b/avmo/L1_2_Sdat/L1_2/Form1.Designer.cs[m
+[1mindex e10cb7b..4b182c6 100644[m
+[1m--- a/avmo/L1_2_Sdat/L1_2/Form1.Designer.cs[m
+[1m+++ b/avmo/L1_2_Sdat/L1_2/Form1.Designer.cs[m
+[36m@@ -40,6 +40,9 @@[m
+             this.button3 = new System.Windows.Forms.Button();[m
+             this.button4 = new System.Windows.Forms.Button();[m
+             this.textBox1 = new System.Windows.Forms.TextBox();[m
+[32m+[m[32m            this.textBox2 = new System.Windows.Forms.TextBox();[m
+[32m+[m[32m            this.textBox3 = new System.Windows.Forms.TextBox();[m
+[32m+[m[32m            this.textBox4 = new System.Windows.Forms.TextBox();[m
+             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();[m
+             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();[m
+             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();[m
+[36m@@ -52,48 +55,55 @@[m
+             this.dataGridView1.AllowUserToResizeColumns = false;[m
+             this.dataGridView1.AllowUserToResizeRows = false;[m
+             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;[m
+[31m-            this.dataGridView1.Location = new System.Drawing.Point(15, 42);[m
+[32m+[m[32m            this.dataGridView1.Location = new System.Drawing.Point(20, 52);[m
+[32m+[m[32m            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);[m
+             this.dataGridView1.Name = "dataGridView1";[m
+[31m-            this.dataGridView1.Size = new System.Drawing.Size(447, 396);[m
+[32m+[m[32m            this.dataGridView1.RowHeadersWidth = 49;[m
+[32m+[m[32m            this.dataGridView1.Size = new System.Drawing.Size(596, 487);[m
+             this.dataGridView1.TabIndex = 0;[m
+             // [m
+             // numericUpDown1[m
+             // [m
+[31m-            this.numericUpDown1.Location = new System.Drawing.Point(96, 16);[m
+[32m+[m[32m            this.numericUpDown1.Location = new System.Drawing.Point(128, 20);[m
+[32m+[m[32m            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);[m
+             this.numericUpDown1.Name = "numericUpDown1";[m
+[31m-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);[m
+[32m+[m[32m            this.numericUpDown1.Size = new System.Drawing.Size(160, 22);[m
+             this.numericUpDown1.TabIndex = 1;[m
+             // [m
+             // numericUpDown2[m
+             // [m
+[31m-            this.numericUpDown2.Location = new System.Drawing.Point(353, 18);[m
+[32m+[m[32m            this.numericUpDown2.Location = new System.Drawing.Point(471, 22);[m
+[32m+[m[32m            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);[m
+             this.numericUpDown2.Name = "numericUpDown2";[m
+[31m-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);[m
+[32m+[m[32m            this.numericUpDown2.Size = new System.Drawing.Size(160, 22);[m
+             this.numericUpDown2.TabIndex = 2;[m
+             // [m
+             // label1[m
+             // [m
+             this.label1.AutoSize = true;[m
+[31m-            this.label1.Location = new System.Drawing.Point(12, 16);[m
+[32m+[m[32m            this.label1.Location = new System.Drawing.Point(16, 20);[m
+[32m+[m[32m            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);[m
+             this.label1.Name = "label1";[m
+[31m-            this.label1.Size = new System.Drawing.Size(78, 13);[m
+[32m+[m[32m            this.label1.Size = new System.Drawing.Size(105, 17);[m
+             this.label1.TabIndex = 3;[m
+             this.label1.Text = "number of lines";[m
+             // [m
+             // label2[m
+             // [m
+             this.label2.AutoSize = true;[m
+[31m-            this.label2.Location = new System.Drawing.Point(238, 18);[m
+[32m+[m[32m            this.label2.Location = new System.Drawing.Point(317, 22);[m
+[32m+[m[32m            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);[m
+             this.label2.Name = "label2";[m
+[31m-            this.label2.Size = new System.Drawing.Size(96, 13);[m
+[32m+[m[32m            this.label2.Size = new System.Drawing.Size(128, 17);[m
+             this.label2.TabIndex = 4;[m
+             this.label2.Text = "number of columns";[m
+             // [m
+             // button1[m
+             // [m
+[31m-            this.button1.Location = new System.Drawing.Point(493, 16);[m
+[32m+[m[32m            this.button1.Location = new System.Drawing.Point(657, 20);[m
+[32m+[m[32m            this.button1.Margin = new System.Windows.Forms.Padding(4);[m
+             this.button1.Name = "button1";[m
+[31m-            this.button1.Size = new System.Drawing.Size(75, 23);[m
+[32m+[m[32m            this.button1.Size = new System.Drawing.Size(100, 28);[m
+             this.button1.TabIndex = 5;[m
+             this.button1.Text = "Build a table";[m
+             this.button1.UseVisualStyleBackColor = true;[m
+[36m@@ -102,25 +112,28 @@[m
+             // label3[m
+             // [m
+             this.label3.AutoSize = true;[m
+[31m-            this.label3.Location = new System.Drawing.Point(523, 13);[m
+[32m+[m[32m            this.label3.Location = new System.Drawing.Point(697, 16);[m
+[32m+[m[32m            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);[m
+             this.label3.Name = "label3";[m
+[31m-            this.label3.Size = new System.Drawing.Size(0, 13);[m
+[32m+[m[32m            this.label3.Size = new System.Drawing.Size(0, 17);[m
+             this.label3.TabIndex = 6;[m
+             // [m
+             // label4[m
+             // [m
+             this.label4.AutoSize = true;[m
+[31m-            this.label4.Location = new System.Drawing.Point(594, 21);[m
+[32m+[m[32m            this.label4.Location = new System.Drawing.Point(792, 26);[m
+[32m+[m[32m            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);[m
+             this.label4.Name = "label4";[m
+[31m-            this.label4.Size = new System.Drawing.Size(107, 13);[m
+[32m+[m[32m            this.label4.Size = new System.Drawing.Size(143, 17);[m
+             this.label4.TabIndex = 7;[m
+             this.label4.Text = "or load from the code";[m
+             // [m
+             // button2[m
+             // [m
+[31m-            this.button2.Location = new System.Drawing.Point(707, 13);[m
+[32m+[m[32m            this.button2.Location = new System.Drawing.Point(943, 16);[m
+[32m+[m[32m            this.button2.Margin = new System.Windows.Forms.Padding(4);[m
+             this.button2.Name = "button2";[m
+[31m-            this.button2.Size = new System.Drawing.Size(75, 23);[m
+[32m+[m[32m            this.button2.Size = new System.Drawing.Size(100, 28);[m
+             this.button2.TabIndex = 8;[m
+             this.button2.Text = "Load";[m
+             this.button2.UseVisualStyleBackColor = true;[m
+[36m@@ -128,9 +141,10 @@[m
+             // [m
+             // button3[m
+             // [m
+[31m-            this.button3.Location = new System.Drawing.Point(493, 60);[m
+[32m+[m[32m            this.button3.Location = new System.Drawing.Point(657, 74);[m
+[32m+[m[32m            this.button3.Margin = new System.Windows.Forms.Padding(4);[m
+             this.button3.Name = "button3";[m
+[31m-            this.button3.Size = new System.Drawing.Size(75, 23);[m
+[32m+[m[32m            this.button3.Size = new System.Drawing.Size(100, 28);[m
+             this.button3.TabIndex = 9;[m
+             this.button3.Text = "test";[m
+             this.button3.UseVisualStyleBackColor = true;[m
+[36m@@ -138,9 +152,10 @@[m
+             // [m
+             // button4[m
+             // [m
+[31m-            this.button4.Location = new System.Drawing.Point(493, 111);[m
+[32m+[m[32m            this.button4.Location = new System.Drawing.Point(657, 137);[m
+[32m+[m[32m            this.button4.Margin = new System.Windows.Forms.Padding(4);[m
+             this.button4.Name = "button4";[m
+[31m-            this.button4.Size = new System.Drawing.Size(75, 23);[m
+[32m+[m[32m            this.button4.Size = new System.Drawing.Size(100, 28);[m
+             this.button4.TabIndex = 10;[m
+             this.button4.Text = "Solve";[m
+             this.button4.UseVisualStyleBackColor = true;[m
+[36m@@ -148,17 +163,52 @@[m
+             // [m
+             // textBox1[m
+             // [m
+[31m-            this.textBox1.Location = new System.Drawing.Point(468, 185);[m
+[32m+[m[32m            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));[m
+[32m+[m[32m            this.textBox1.Location = new System.Drawing.Point(624, 228);[m
+[32m+[m[32m            this.textBox1.Margin = new System.Windows.Forms.Padding(4);[m
+             this.textBox1.Multiline = true;[m
+             this.textBox1.Name = "textBox1";[m
+[31m-            this.textBox1.Size = new System.Drawing.Size(520, 175);[m
+[32m+[m[32m            this.textBox1.Size = new System.Drawing.Size(692, 93);[m
+             this.textBox1.TabIndex = 11;[m
+             // [m
+[32m+[m[32m            // textBox2[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));[m
+[32m+[m[32m            this.textBox2.Location = new System.Drawing.Point(624, 329);[m
+[32m+[m[32m            this.textBox2.Margin = new System.Windows.Forms.Padding(4);[m
+[32m+[m[32m            this.textBox2.Multiline = true;[m
+[32m+[m[32m            this.textBox2.Name = "textBox2";[m
+[32m+[m[32m            this.textBox2.Size = new System.Drawing.Size(692, 41);[m
+[32m+[m[32m            this.textBox2.TabIndex = 12;[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox3[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));[m
+[32m+[m[32m            this.textBox3.Location = new System.Drawing.Point(624, 387);[m
+[32m+[m[32m            this.textBox3.Margin = new System.Windows.Forms.Padding(4);[m
+[32m+[m[32m            this.textBox3.Multiline = true;[m
+[32m+[m[32m            this.textBox3.Name = "textBox3";[m
+[32m+[m[32m            this.textBox3.Size = new System.Drawing.Size(692, 43);[m
+[32m+[m[32m            this.textBox3.TabIndex = 13;[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            // textBox4[m
+[32m+[m[32m            //[m[41m [m
+[32m+[m[32m            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));[m
+[32m+[m[32m            this.textBox4.Location = new System.Drawing.Point(624, 438);[m
+[32m+[m[32m            this.textBox4.Margin = new System.Windows.Forms.Padding(4);[m
+[32m+[m[32m            this.textBox4.Multiline = true;[m
+[32m+[m[32m            this.textBox4.Name = "textBox4";[m
+[32m+[m[32m            this.textBox4.Size = new System.Drawing.Size(692, 56);[m
+[32m+[m[32m            this.textBox4.TabIndex = 14;[m
+[32m+[m[32m            //[m[41m [m
+             // Form1[m
+             // [m
+[31m-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);[m
+[32m+[m[32m            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);[m
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;[m
+[31m-            this.ClientSize = new System.Drawing.Size(1085, 450);[m
+[32m+[m[32m            this.ClientSize = new System.Drawing.Size(1447, 554);[m
+[32m+[m[32m            this.Controls.Add(this.textBox4);[m
+[32m+[m[32m            this.Controls.Add(this.textBox3);[m
+[32m+[m[32m            this.Controls.Add(this.textBox2);[m
+             this.Controls.Add(this.textBox1);[m
+             this.Controls.Add(this.button4);[m
+             this.Controls.Add(this.button3);[m
+[36m@@ -171,6 +221,7 @@[m
+             this.Controls.Add(this.numericUpDown2);[m
+             this.Controls.Add(this.numericUpDown1);[m
+             this.Controls.Add(this.dataGridView1);[m
+[32m+[m[32m            this.Margin = new System.Windows.Forms.Padding(4);[m
+             this.Name = "Form1";[m
+             this.Text = "Form1";[m
+             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();[m
+[36m@@ -195,6 +246,9 @@[m
+         private System.Windows.Forms.Button button3;[m
+         private System.Windows.Forms.Button button4;[m
+         private System.Windows.Forms.TextBox textBox1;[m
+[32m+[m[32m        private System.Windows.Forms.TextBox textBox2;[m
+[32m+[m[32m        private System.Windows.Forms.TextBox textBox3;[m
+[32m+[m[32m        private System.Windows.Forms.TextBox textBox4;[m
+     }[m
+ }[m
+ [m
+[1mdiff --git a/avmo/L1_2_Sdat/L1_2/Form1.cs b/avmo/L1_2_Sdat/L1_2/Form1.cs[m
+[1mindex d5c5b5b..20b8438 100644[m
+[1m--- a/avmo/L1_2_Sdat/L1_2/Form1.cs[m
+[1m+++ b/avmo/L1_2_Sdat/L1_2/Form1.cs[m
+[36m@@ -7,7 +7,7 @@[m [musing System.Linq;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+ using System.Windows.Forms;[m
+[31m-//implementing the Jordan-Gauss method + rectangle method[m
+[32m+[m[32m//implementing the Jordan-Gauss method + rectangle method (метод Жордана-Гауса и метод прямоугольников)[m
+ namespace L1_2[m
+ {[m
+     public partial class Form1 : Form[m
+[36m@@ -52,7 +52,8 @@[m [mnamespace L1_2[m
+         {[m
+ [m
+             load = true;[m
+[31m-            n1 = 5; n2 = 6;[m
+[32m+[m[32m            n1 = 5; //number of rows[m
+[32m+[m[32m            n2 = 6; //number of columns[m
+             mas = new Drob[n1, n2];//the matrix to solve [m
+             masBumaga = new Drob[n1, n2];//the matrix to solve [m
+             dataGridView1.RowCount = n1 * 100;[m
+[36m@@ -71,7 +72,7 @@[m [mnamespace L1_2[m
+              * 2 -3 -11 -15 | 1[m
+              */[m
+             masBumaga[0, 0] = new Drob(15, 1); masBumaga[0, 1] = new Drob(-5, 1); masBumaga[0, 2] = new Drob(8, 1); masBumaga[0, 3] = new Drob(11, 1); masBumaga[0, 4] = new Drob(-6, 1); masBumaga[0, 5] = new Drob(-76, 1);[m
+[31m-            masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);[m
+[32m+[m[32m            masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 3] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);[m
+             masBumaga[2, 0] = new Drob(-5, 1); masBumaga[2, 1] = new Drob(11, 1); masBumaga[2, 2] = new Drob(5, 1); masBumaga[2, 3] = new Drob(-9, 1); masBumaga[2, 4] = new Drob(10, 1); masBumaga[2, 5] = new Drob(-6, 1);[m
+             masBumaga[3, 0] = new Drob(13, 1); masBumaga[3, 1] = new Drob(-5, 1); masBumaga[3, 2] = new Drob(-1, 1); masBumaga[3, 3] = new Drob(11, 1); masBumaga[3, 4] = new Drob(3, 1); masBumaga[3, 5] = new Drob(-27, 1);[m
+             masBumaga[4, 0] = new Drob(15, 1); masBumaga[4, 1] = new Drob(4, 1); masBumaga[4, 2] = new Drob(-3, 1); masBumaga[4, 3] = new Drob(-1, 1); masBumaga[4, 4] = new Drob(3, 1); masBumaga[4, 5] = new Drob(-4, 1);[m
+[36m@@ -111,118 +112,93 @@[m [mnamespace L1_2[m
+         private void button3_Click(object sender, EventArgs e) //                 "test"[m
+         {[m
+             Drob db = new Drob(0, 0);[m
+[31m-            db.test();[m
+[32m+[m
+[32m+[m[32m            Drob d1 = new Drob(-94, 3);[m
+[32m+[m[32m            Drob d2 = new Drob(1, 1);[m
+[32m+[m[32m            Drob d3 = new Drob(28, 3);[m
+[32m+[m[32m            Drob d4 = new Drob(-1, 2);[m
+[32m+[m[32m            Drob dRes = new Drob(0, 0);[m
+[32m+[m[32m            d1 = db.mul(d1, d2);[m
+[32m+[m[32m            textBox1.AppendText(d1.toStr() + "\n");[m
+[32m+[m[32m            d3 = db.mul(d3, d4);[m
+[32m+[m[32m            textBox2.AppendText(d3.toStr() + "\n");[m
+[32m+[m[32m            d1 = db.sub(d1, d3);[m
+[32m+[m[32m            textBox3.AppendText(d1.toStr() + "\n");[m
+[32m+[m[32m            //textBox1.Text = dRes.toStr();[m
+[32m+[m[32m            // db.test();[m
+         }[m
+ [m
+         private void button4_Click(object sender, EventArgs e)//                  "Solve"[m
+         {[m
+             if (flagSolved) return;[m
+[31m-            //int untoucheableColumn = -1;[m
+[31m-            //  int untoucheableRow = 0;//the solving rslvRow stays untoucheable[m
+             Drob d = new Drob(0, 0);//just an object for functions invocation[m
+[31m-            for (int rslvRow = 0; rslvRow < 3; rslvRow++)[m
+[32m+[m[32m            int x0 = 0, y0 = 0, x1 = 0, y1 = 0;// works for the first case for all columns![m
+[32m+[m[32m            int x2 = 0, y2 = 0, x3 = 0, y3 = 0;[m
+[32m+[m[32m            int rColumn = 0;[m
+[32m+[m[32m            for (int rRow = 0; rRow < n1; rRow++)//rRow & rColumn are my untouchable row and coulumn[m
+             {[m
+[31m-                bool flag = true;[m
+[31m-                for (int column = rslvRow; flag; column++)//moving diagonally down &/or right[m
+[32m+[m[32m                for (rColumn = rRow; rColumn < n2 - 1; rColumn++)//moving diagonally down &/or right // NO. Moving lr=eft horizontally in a search for a non-zerp el-t[m[41m [m
+                 {[m
+[31m-                    if (column == n2) break;[m
+[31m-                    if (mas[rslvRow, column].numerator == 0)//if the solving element is not 0[m
+[32m+[m[32m                    //my mistake is apparently going lots of times after finding a non-zero value in a row... I need only use the value once...[m
+[32m+[m[32m                    // if (rColumn == n2) break;//if it's the end of the row and there are no non-zero elements, then break searching in this row(inner for loop)[m
+[32m+[m[32m                    if (mas[rRow, rColumn].numerator == 0)//if the solving element is not 0, then continue searchin the row[m
+                         continue;[m
+[31m-                    else// else start solving[m
+[32m+[m[32m                    else// else we have found a non-zero element of our row and start solving[m
+[32m+[m[32m                        break;[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    Drob temp1 = (Drob)mas[rRow, rColumn].Clone();//created a clone of the solving element[m
+[32m+[m[32m                    for (int i = rColumn; i < n2; i++)[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        mas[rRow, i] = d.div(mas[rRow, i], temp1);//turning the solving element to 1 by divividing all the elements of the row by the first element[m
+[32m+[m[32m                    }[m
+                     {[m
+[31m-                        Drob temp1 = (Drob)mas[rslvRow, column].Clone();//created a clone of the solving element[m
+[31m-                        for (int i = column; i < n2; i++)[m
+[32m+[m[32m                        x0 = 0; y0 = rColumn; //assigned the 0 element[m
+[32m+[m[32m                        x1 = 0; y1 = rColumn + 1;   //assigned the second element - to the right horizontally[m
+[32m+[m[32m                        x2 = rRow; y2 = rColumn + 1;   //assigned the third element (RESOLVING) - down vertically[m
+[32m+[m[32m                        x3 = rRow; y3 = rColumn; // assigned the fourth element - to the left horizontally[m
+[32m+[m[32m                        //the elements are always multiplied correctly. The only exceptional case is when the first row is resolving. It is solved down below.[m
+[32m+[m
+[32m+[m[32m                        if (rRow == 0)//if the rRow is the first one, then[m
+                         {[m
+[31m-                            mas[rslvRow, i] = d.div(mas[rslvRow, i], temp1);//turning the solving element to 1[m
+[32m+[m[32m                            x0 = rRow + 1; x1 = rRow + 1;[m
+                         }[m
+[31m-                        //FIRST CASE: first rslvRow is resolving and first element is not zero... just don't insert the first element as zero:[m
+[31m-                        if (rslvRow == 0)//ALL THESE THREE CASES CAN BE WRITTEN IN ONE... BUT I'M TOO TIRED AND I NEED TO DO A LOT OF OTHER WORK[m
+[32m+[m[32m                        else if (rRow == (n1 - 1))//else if the rRow is the last one, it doen't matter[m
+                         {[m
+[31m-                            int x0 = 0, y0 = 0, x1 = 0, y1 = 1;// works for the first case for all columns![m
+[31m-                            int x2 = 1, y2 = 1, x3 = 1, y3 = 0;[m
+[31m-                            for (int i = 1; i < n2; i++)//walk through the columns[m
+[31m-                            {[m
+[31m-                                for (; x2 < n1 || x3 < n1;)[m
+[31m-                                {[m
+[31m-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента[m
+[31m-                                            d.sub([m
+[31m-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied[m
+[31m-                                                d.mul(mas[x1, y1], mas[x3, y3]));[m
+[31m-[m
+[31m-                                    x2++; x3++;//going through orange and blue squares[m
+[31m-                                }[m
+[31m-                                x2 = rslvRow + 1; x3 = rslvRow + 1;[m
+[31m-                                y1++; y2++;//координаты столбцов(одного столбца по сути) сместились вправо(розовый прямоугольник)[m
+[31m-                            }[m
+[32m+[m[32m                            //nothing to do here. It must be worked in iteration by rows.[m
+                         }[m
+[31m-                        //SECOND CASE: MIDDLE ROW[m
+[31m-                        else if (rslvRow > 0 && rslvRow < n1 - 1)[m
+[32m+[m[32m                        while (y1 < n2)//walk through the columns[m
+                         {[m
+[31m-                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;[m
+[31m-                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;[m
+[31m-                            for (int i = 1; i < n2; i++)//walk through the columns[m
+[31m-                            {[m
+[31m-                                for (; x1 < n1 || x2 < n1 || y2 < n2;)[m
+[31m-                                {[m
+[31m-                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow[m
+[31m-                                    if (x1 == n1 || x2 == n1 || y2 == n2) break;[m
+[31m-[m
+[31m-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента[m
+[31m-                                            d.sub([m
+[31m-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied[m
+[31m-                                                d.mul(mas[x1, y1], mas[x3, y3]));[m
+[31m-                                    x1++; x2++;//going through orange and blue squares                           [m
+[32m+[m[32m                            while (x0 < n1)//walk down through rows, assigning mas[x1, y1] new values[m
+[32m+[m[32m                            {//по идее начианть красивее с  х1,у1.[m
+[32m+[m[32m                                if (x0 == rRow)[m
+[32m+[m[32m                                {//if encountered with the resolving row, just skip it.[m
+[32m+[m[32m                                    x0++; x1++;[m
+[32m+[m[32m                                    continue;[m
+                                 }[m
+[31m-                                x1 = 0; x2 = 0;//HERE[m
+[31m-                                               // y1++; [m
+[31m-                                y2++;[m
+[31m-                                y3++;[m
+[31m-                                if (y2 >= n2 || y3 >= n2)[m
+[31m-                                {[m
+[31m-                                    break;[m
+[31m-                                }[m
+[31m-                            }[m
+[31m-                        }[m
+[31m-                        //THIRD CASE: THE LOWEST ROW IS RESOLVING[m
+[31m-                        else if (rslvRow == (n1 - 1))[m
+[31m-                        {[m
+[31m-                            int x0 = rslvRow, y0 = column, x1 = 0, y1 = column;[m
+[31m-                            int x2 = 0, y2 = column + 1, x3 = rslvRow, y3 = column + 1;[m
+[31m-                            for (int i = 1; i < n2; i++)//walk through the columns[m
+[31m-                            {[m
+[31m-                                for (; x1 < n1 || x2 < n1 || y2 < n2;)[m
+[31m-                                {[m
+[31m-                                    if (x2 == rslvRow) { x1++; x2++; } //avoiding the resolving rslvRow[m
+[31m-                                    if (x1 == n1 || x2 == n1 || y2 == n2 || y3 == n2) break;[m
+[32m+[m[32m                                mas[x1, y1] = //not sure if it (-->колонка всегда начинается с колонки разрешающего элемента )is still needed to be written here[m
+[32m+[m[32m                                        d.sub([m
+[32m+[m[32m                                            d.mul(mas[x1, y1], mas[x3, y3]), //first diagonal multiplied[m
+[32m+[m[32m                                            d.mul(mas[x0, y0], mas[x2, y2]));[m
+[32m+[m[32m                                x0++; x1++;//going through orange and blue squares(just down)[m
+ [m
+[31m-                                    mas[x2, y2] = //колонка всегда начинается с колонки разрешающего элемента[m
+[31m-                                            d.sub([m
+[31m-                                                d.mul(mas[x0, y0], mas[x2, y2]), //first diagonal multiplied[m
+[31m-                                                d.mul(mas[x1, y1], mas[x3, y3]));[m
+[31m-                                    x1++; x2++;//going through orange and blue squares[m
+[31m-                                    //if (x1 == rslvRow || x2 == rslvRow) continue;//avoiding the resolving rslvRow[m
+[31m-                                    //ПРОБЛЕМА С ТРЕТЬЕЙ СТРОКОЙ[m
+[31m-                                }[m
+[31m-                                x1 = 0; x2 = 0;//HERE                                               [m
+[31m-                                y2++;[m
+[31m-                                y3++;[m
+[31m-                                if (y2 >= n2 || y3 >= n2)[m
+[31m-                                {[m
+[31m-                                    break;[m
+[31m-                                }[m
+                             }[m
+[32m+[m[32m                            x0 = 0; x1 = 0;//got back up to resolve a new column[m
+[32m+[m[32m                            y1++; y2++;//координаты столбцов(одного столбца по сути) сместились вправо(розовый прямоугольник)[m
+                         }[m
+[31m-                        for (int i = 0; i < n1; i++)//it has to be done at the end of the iteration[m
+[31m-                        {[m
+[31m-                            if (i == rslvRow) continue;[m
+[31m-                            mas[i, column].numerator = 0;//turning all the other elements of the column to 0[m
+[31m-                            mas[i, column].denominator = 0;//(as a part of the rectangle method)[m
+[31m-                        }[m
+[31m-                        flag = false;//next motion through the columns is unnecessary. Should go to the next rslvRow.[m
+                     }[m
+[31m-                    //else continue;[m
+[31m-                    fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the column to 0[m
+[32m+[m
+[32m+[m[32m                    for (int i = 0; i < n1; i++)//it has to be done at the end of the iteration[m
+[32m+[m[32m                    {[m
+[32m+[m[32m                        if (i == rRow) continue;[m
+[32m+[m[32m                        mas[i, rColumn].numerator = 0;//turning all the other elements of the rColumn to 0[m
+[32m+[m[32m                        mas[i, rColumn].denominator = 0;//(as a part of the rectangle method)[m
+[32m+[m[32m                    }[m
+                 }[m
+[32m+[m[32m                fillTable();//first step: have turned the first(solving) element to 1 and all the other elements of the rColumn to 0[m
+[32m+[m
+             }[m
+             String answer = "";[m
+             for (int i = 0; i < n1; i++)[m
+[36m@@ -261,7 +237,7 @@[m [mnamespace L1_2[m
+     }[m
+ }[m
+ ////second case: one of the middle rows is resolving[m
+[31m-//if(rslvRow > 0 && rslvRow < n1 - 1)[m
+[32m+[m[32m//if(rRow > 0 && rRow < n1 - 1)[m
+ //{[m
+ //    int x0 = 0, y0 = 0, x1 = 0, y1 = 1;[m
+ //    int x2 = 1, y2 = 1, x3 = 1, y3 = 0;[m
+[36m@@ -276,16 +252,16 @@[m [mnamespace L1_2[m
+ //}[m
+ [m
+ [m
+[31m-//untoucheableRow = rslvRow;//this rslvRow is needed to skip during the solving[m
+[32m+[m[32m//untoucheableRow = rRow;//this rRow is needed to skip during the solving[m
+ [m
+[31m-//temp1 = mas[rslvRow, column];//the reneved solving element(1/1)// these rslvRow & column will stay... [m
+[32m+[m[32m//temp1 = mas[rRow, rColumn];//the reneved solving element(1/1)// these rRow & rColumn will stay...[m[41m [m
+ ////I can rely on these coordinates[m
+[31m-//for (int rowS = 0, columnS = column; rowS < n1-1; rowS++)[m
+[32m+[m[32m//for (int rowS = 0, columnS = rColumn; rowS < n1-1; rowS++)[m
+ //{[m
+ //    //int rowT = rowS + 1;[m
+[31m-//    int columnT = column + 1;[m
+[31m-//    int x0 = rowS, y0 = column, x1 = rowS, y1 = columnS;[m
+[31m-//    int x2 = rowS + 1, y2 = columnS + 1, x3 = rowS + 1, y3 = column + 1;[m
+[32m+[m[32m//    int columnT = rColumn + 1;[m
+[32m+[m[32m//    int x0 = rowS, y0 = rColumn, x1 = rowS, y1 = columnS;[m
+[32m+[m[32m//    int x2 = rowS + 1, y2 = columnS + 1, x3 = rowS + 1, y3 = rColumn + 1;[m
+ //    if (rowS == untoucheableRow) continue;//пытаюсь проскочить через разрешающий ряд[m
+ //    //if()[m
+ //    else mas[rowS, columnS] = //колонка всегда начинается с колонки разрешающего элемента[m
+[1mdiff --git a/avmo/lib/fractions.cpp b/avmo/lib/fractions.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8629632[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/lib/fractions.cpp[m
+[36m@@ -0,0 +1,171 @@[m
+[32m+[m[32m#include "fractions.h"[m
+[32m+[m
+[32m+[m[32mlong long Fraction::gcd(long long a,long long b)[m
+[32m+[m[32m{[m
+[32m+[m	[32mreturn b ? gcd(b, a%b) : a;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mlong long Fraction::lcm(long long a,long long b)[m
+[32m+[m[32m{[m
+[32m+[m	[32mreturn std::abs(a*b)/gcd(a,b);[m[41m [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mstd::istream& operator>>(std::istream& input,Fraction& data)[m
+[32m+[m[32m{[m
+[32m+[m	[32mstd::string str,str1;[m
+[32m+[m	[32mbool check=false;[m
+[32m+[m	[32mlong long num=0,denom=1;[m
+[32m+[m
+[32m+[m	[32minput>>str;[m
+[32m+[m[41m	[m
+[32m+[m	[32mfor (unsigned long long i=0;i<str.length();i++)[m
+[32m+[m	[32m{[m
+[32m+[m		[32mif (str[i]=='/')[m
+[32m+[m		[32m{[m
+[32m+[m			[32mstr1=str.substr(0,i);[m
+[32m+[m			[32mnum=std::stoi(str1);[m
+[32m+[m			[32mstr1=str.substr(i+1,str.length()-1-i);[m
+[32m+[m			[32mdenom=std::stoi(str1);[m[41m						[m
+[32m+[m[41m			[m
+[32m+[m			[32mcheck=true;[m
+[32m+[m			[32mbreak;[m
+[32m+[m		[32m}[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m	[32mdata.setNumerator(num);[m
+[32m+[m	[32mdata.setDenominator(denom);[m
+[32m+[m
+[32m+[m	[32mif (!check)[m
+[32m+[m		[32mdata.setNumerator(std::stoi(str));[m
+[32m+[m[41m	[m
+[32m+[m	[32mreturn input;[m
+[32m+[m[32m}[m
+[32m+[m[32mstd::ostream& operator<<(std::ostream& output,Fraction& data)[m
+[32m+[m[32m{[m
+[32m+[m	[32mif (data.getDenominator()==1)[m
+[32m+[m		[32moutput<<data.getNumerator();[m
+[32m+[m	[32melse[m
+[32m+[m		[32moutput<<data.getNumerator()<<"/"<<data.getDenominator();[m
+[32m+[m
+[32m+[m	[32mreturn output;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mlong long Fraction::getNumerator()[m
+[32m+[m[32m{[m
+[32m+[m	[32mreturn numerator;[m[41m	[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mlong long Fraction::getDenominator()[m
+[32m+[m[32m{[m
+[32m+[m	[32mreturn denominator;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mvoid Fraction::setNumerator(long long num)[m
+[32m+[m[32m{[m
+[32m+[m	[32mnumerator = num;[m[41m [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mvoid Fraction::setDenominator(long long denom)[m
+[32m+[m[32m{[m
+[32m+[m	[32mdenominator = denom;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mFraction Fraction::operator+(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mlong long g = Fraction::lcm(this->getDenominator(),other.getDenominator());[m
+[32m+[m
+[32m+[m	[32mFraction result((g/this->getDenominator())*this->getNumerator()+(g/other.getDenominator())*other.getNumerator(),g);[m
+[32m+[m[41m	[m
+[32m+[m	[32mlong long gc = Fraction::gcd(result.getNumerator(),result.getDenominator());[m
+[32m+[m
+[32m+[m	[32mif (gc<0)[m
+[32m+[m		[32mgc*=-1;[m
+[32m+[m
+[32m+[m	[32mresult.setNumerator(result.getNumerator()/gc);[m
+[32m+[m	[32mresult.setDenominator(result.getDenominator()/gc);[m
+[32m+[m
+[32m+[m	[32mreturn result;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mFraction Fraction::operator-(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mlong long g = Fraction::lcm(this->getDenominator(),other.getDenominator());[m
+[32m+[m
+[32m+[m	[32mFraction result((g/this->getDenominator())*this->getNumerator()-(g/other.getDenominator())*other.getNumerator(),g);[m
+[32m+[m[41m	[m
+[32m+[m	[32mlong long gc = Fraction::gcd(result.getNumerator(),result.getDenominator());[m
+[32m+[m
+[32m+[m	[32mif (gc<0)[m
+[32m+[m		[32mgc*=-1;[m
+[32m+[m
+[32m+[m	[32mresult.setNumerator(result.getNumerator()/gc);[m
+[32m+[m	[32mresult.setDenominator(result.getDenominator()/gc);[m
+[32m+[m
+[32m+[m	[32mreturn result;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mFraction Fraction::operator*(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mlong long num = this->getNumerator()*other.getNumerator();[m
+[32m+[m	[32mlong long denom = this->getDenominator()*other.getDenominator();[m
+[32m+[m
+[32m+[m	[32mlong long g = Fraction::gcd(num,denom);[m
+[32m+[m
+[32m+[m	[32mFraction result(num/g,denom/g);[m
+[32m+[m
+[32m+[m	[32mif (result.getDenominator()<0)[m
+[32m+[m	[32m{[m
+[32m+[m		[32mresult.setNumerator(result.getNumerator()*-1);[m
+[32m+[m		[32mresult.setDenominator(result.getDenominator()*-1);[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mreturn result;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mFraction Fraction::operator/(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mlong long num = this->getNumerator()*other.getDenominator();[m
+[32m+[m	[32mlong long denom = this->getDenominator()*other.getNumerator();[m
+[32m+[m
+[32m+[m	[32mlong long g = Fraction::gcd(num,denom);[m
+[32m+[m[41m	[m
+[32m+[m	[32mFraction result(num/g,denom/g);[m
+[32m+[m
+[32m+[m	[32mif (result.getDenominator()<0)[m
+[32m+[m	[32m{[m
+[32m+[m		[32mresult.setNumerator(result.getNumerator()*-1);[m
+[32m+[m		[32mresult.setDenominator(result.getDenominator()*-1);[m
+[32m+[m	[32m}[m
+[32m+[m[41m		[m
+[32m+[m	[32mreturn result;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbool Fraction::operator==(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mif (this->getNumerator()*other.getDenominator()==this->getDenominator()*other.getNumerator())[m
+[32m+[m		[32mreturn true;[m
+[32m+[m
+[32m+[m	[32mreturn false;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbool Fraction::operator>(Fraction other)[m
+[32m+[m[32m{[m
+[32m+[m	[32mif (this->getNumerator()*other.getDenominator()>this->getDenominator()*other.getNumerator())[m
+[32m+[m		[32mreturn true;[m
+[32m+[m
+[32m+[m	[32mreturn false;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mFraction Fraction::Abs(Fraction fr)[m
+[32m+[m[32m{[m
+[32m+[m	[32mFraction c =fr;[m
+[32m+[m
+[32m+[m	[32mif (c.getNumerator()<0)[m
+[32m+[m		[32mc.setNumerator(c.getNumerator()*-1);[m
+[32m+[m
+[32m+[m	[32mreturn c;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/avmo/lib/fractions.h b/avmo/lib/fractions.h[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c25997a[m
+[1m--- /dev/null[m
+[1m+++ b/avmo/lib/fractions.h[m
+[36m@@ -0,0 +1,39 @@[m
+[32m+[m[32m#ifndef FRACTIONS_H[m[41m    [m
+[32m+[m[32m#define FRACTIONS_H[m[41m   [m
+[32m+[m
+[32m+[m[32m#include <iostream>[m
+[32m+[m
+[32m+[m[32mclass Fraction[m
+[32m+[m[32m{[m
+[32m+[m[32mprivate:[m
+[32m+[m	[32mlong long numerator;[m
+[32m+[m	[32mlong long denominator;[m
+[32m+[m[32mpublic:[m[41m	[m
+[32m+[m[32m    Fraction():numerator(0),denominator(1){};[m[41m	[m
+[32m+[m	[32mFraction(long long num,long long denom):numerator(num),denominator(denom){};[m
+[32m+[m	[32mFraction(long long num):numerator(num),denominator(1){};[m
+[32m+[m	[32mstatic long long gcd(long long a,long long b);[m
+[32m+[m	[32mstatic long long lcm(long long a,long long b);[m
+[32m+[m
+[32m+[m	[32mlong long getNumerator();[m
+[32m+[m	[32mlong long getDenominator();[m
+[32m+[m	[32mvoid setNumerator(long long num);[m
+[32m+[m	[32mvoid setDenominator(long long denom);[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m	[32mfriend std::istream& operator>>(std::istream& input,Fraction& data);[m
+[32m+[m	[32mfriend std::ostream& operator<<(std::ostream& output,Fraction& data);[m[41m    [m
+[32m+[m[41m	[m
+[32m+[m	[32mFraction operator+(Fraction other);[m
+[32m+[m	[32mFraction operator-(Fraction other);[m
+[32m+[m	[32mFraction operator*(Fraction other);[m
+[32m+[m	[32mFraction operator/(Fraction other);[m
+[32m+[m	[32mbool operator==(Fraction other);[m[41m		[m
+[32m+[m	[32mbool operator>(Fraction other);[m
+[32m+[m	[32moperator double(){return ((double)numerator/denominator);};[m
+[32m+[m
+[32m+[m	[32mstatic Fraction Abs(Fraction fr);[m[41m [m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32m#endif[m

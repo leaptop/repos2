@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //implementing the Jordan-Gauss method + rectangle method (метод Жордана-Гауса и метод прямоугольников)
-namespace L1_2
+namespace L2_0new
 {
     public partial class Form1 : Form
     {
@@ -52,13 +52,19 @@ namespace L1_2
         {
 
             load = true;
-            n1 = 5; //number of rows
+            n1 = 4; //number of rows
             n2 = 6; //number of columns
             mas = new Drob[n1, n2];//the matrix to solve 
             masBumaga = new Drob[n1, n2];//the matrix to solve 
             dataGridView1.RowCount = n1 * 100;
             dataGridView1.ColumnCount = n2;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+            masBumaga[0, 0] = new Drob(4, 1); masBumaga[0, 1] = new Drob(-11, 1); masBumaga[0, 2] = new Drob(13, 1); masBumaga[0, 3] = new Drob(-6, 1); masBumaga[0, 4] = new Drob(8, 1); masBumaga[0, 5] = new Drob(8, 1);
+            masBumaga[1, 0] = new Drob(7, 1); masBumaga[1, 1] = new Drob(12, 1); masBumaga[1, 2] = new Drob(5, 1); masBumaga[1, 3] = new Drob(-3, 1); masBumaga[1, 4] = new Drob(9, 1); masBumaga[1, 5] = new Drob(54, 1);
+            masBumaga[2, 0] = new Drob(-6, 1); masBumaga[2, 1] = new Drob(9, 1); masBumaga[2, 2] = new Drob(-17, 1); masBumaga[2, 3] = new Drob(13, 1); masBumaga[2, 4] = new Drob(-7, 1); masBumaga[2, 5] = new Drob(-16, 1);
+            masBumaga[3, 0] = new Drob(-17, 1); masBumaga[3, 1] = new Drob(-7, 1); masBumaga[3, 2] = new Drob(-30, 1); masBumaga[3, 3] = new Drob(30, 1); masBumaga[3, 4] = new Drob(-14, 1); masBumaga[3, 5] = new Drob(-86, 1);
+
             /* 1 2 3 | 5
              * 4 5 6 | 8
              * 7 8 0 | 2
@@ -71,12 +77,12 @@ namespace L1_2
              * 4 -6 2 3     | 2
              * 2 -3 -11 -15 | 1
              */
-            masBumaga[0, 0] = new Drob(15, 1); masBumaga[0, 1] = new Drob(-5, 1); masBumaga[0, 2] = new Drob(8, 1); masBumaga[0, 3] = new Drob(11, 1); masBumaga[0, 4] = new Drob(-6, 1); masBumaga[0, 5] = new Drob(-76, 1);
-            masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 3] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);
-            masBumaga[2, 0] = new Drob(-5, 1); masBumaga[2, 1] = new Drob(11, 1); masBumaga[2, 2] = new Drob(5, 1); masBumaga[2, 3] = new Drob(-9, 1); masBumaga[2, 4] = new Drob(10, 1); masBumaga[2, 5] = new Drob(-6, 1);
-            masBumaga[3, 0] = new Drob(13, 1); masBumaga[3, 1] = new Drob(-5, 1); masBumaga[3, 2] = new Drob(-1, 1); masBumaga[3, 3] = new Drob(11, 1); masBumaga[3, 4] = new Drob(3, 1); masBumaga[3, 5] = new Drob(-27, 1);
-            masBumaga[4, 0] = new Drob(15, 1); masBumaga[4, 1] = new Drob(4, 1); masBumaga[4, 2] = new Drob(-3, 1); masBumaga[4, 3] = new Drob(-1, 1); masBumaga[4, 4] = new Drob(3, 1); masBumaga[4, 5] = new Drob(-4, 1);
-
+            /* masBumaga[0, 0] = new Drob(15, 1); masBumaga[0, 1] = new Drob(-5, 1); masBumaga[0, 2] = new Drob(8, 1); masBumaga[0, 3] = new Drob(11, 1); masBumaga[0, 4] = new Drob(-6, 1); masBumaga[0, 5] = new Drob(-76, 1);
+             masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 3] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);
+             masBumaga[2, 0] = new Drob(-5, 1); masBumaga[2, 1] = new Drob(11, 1); masBumaga[2, 2] = new Drob(5, 1); masBumaga[2, 3] = new Drob(-9, 1); masBumaga[2, 4] = new Drob(10, 1); masBumaga[2, 5] = new Drob(-6, 1);
+             masBumaga[3, 0] = new Drob(13, 1); masBumaga[3, 1] = new Drob(-5, 1); masBumaga[3, 2] = new Drob(-1, 1); masBumaga[3, 3] = new Drob(11, 1); masBumaga[3, 4] = new Drob(3, 1); masBumaga[3, 5] = new Drob(-27, 1);
+             masBumaga[4, 0] = new Drob(15, 1); masBumaga[4, 1] = new Drob(4, 1); masBumaga[4, 2] = new Drob(-3, 1); masBumaga[4, 3] = new Drob(-1, 1); masBumaga[4, 4] = new Drob(3, 1); masBumaga[4, 5] = new Drob(-4, 1);
+             */
             mas = masBumaga;
             initilaizeHeaders();
             fillTable();
