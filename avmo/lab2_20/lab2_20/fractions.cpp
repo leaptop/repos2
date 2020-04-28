@@ -115,7 +115,7 @@ Fraction Fraction::operator*(Fraction other)
 
 	Fraction result(num / g, denom / g);
 
-	if (result.getDenominator() < 0)
+	if (result.getDenominator() < 0)//знаменатель всегда делаем больше нуля. Т.е. носитель знака всегда - числитель
 	{
 		result.setNumerator(result.getNumerator() * -1);
 		result.setDenominator(result.getDenominator() * -1);
@@ -133,7 +133,7 @@ Fraction Fraction::operator/(Fraction other)
 
 	Fraction result(num / g, denom / g);
 
-	if (result.getDenominator() < 0)
+	if (result.getDenominator() < 0)//знаменатель всегда делаем больше нуля
 	{
 		result.setNumerator(result.getNumerator() * -1);
 		result.setDenominator(result.getDenominator() * -1);
@@ -150,22 +150,22 @@ bool Fraction::operator==(Fraction other)
 	return false;
 }
 
-bool Fraction::operator>(Fraction other)
-{
+bool Fraction::operator>(Fraction other)//сравниваем больше ли произведение этого числителя с другим знаменателем, чем
+{//произведение этого знаменателя с тем числителем. В первом вызове JordanGauss все числа больше, либо равны нулю.
 	if (this->getNumerator() * other.getDenominator() > this->getDenominator()* other.getNumerator())
-		return true;
-
-	return false;
-}
+		return true;//это сокращение, при котором, как и описано выше, обе части одной дроби(умножение знаменателя опускается)
+	//домножаются на знаменатель другой. Так же со второй дробью. В итоге имеем две дроби с одинаковыми знаменаиелями.
+	return false;//Остаётся сравнить только числители, на знаменатели можно и не смотреть, они, очевидно, и так будут равны.
+}//Знаменатели вроде всегда положительные, так что числители сохраняют знак и сравнение срабатывает.
 
 Fraction Fraction::Abs(Fraction fr)
 {
 	Fraction c = fr;
 
-	if (c.getNumerator() < 0)
+	if (c.getNumerator() < 0)//если числитель меньше нуля, то домножаем его на -1
 		c.setNumerator(c.getNumerator() * -1);
 
-	return c;
+	return c;//возвращаем всегда дробь с положительным числителем
 }
 
 

@@ -1,4 +1,3 @@
-//#include <bits/stdc++.h>
 #include "fractions.h"
 #include "stdc++.h"
 using namespace std;
@@ -64,7 +63,7 @@ void print(Fraction** arr, int n, int m)
 }
 
 
-void swap(Fraction** arr, int n, int from, int to)
+void swap(Fraction** arr, int n, int from, int to)// меняем две строки местами
 {
 	Fraction c;
 	for (int i = 0; i < n; i++)
@@ -92,7 +91,7 @@ void JordanGauss(Fraction** arr, int n, int m)
 	Fraction mx;
 
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)//n - столбцы
 	{
 		if (y > m - 1 || i == n - 1)
 			break;
@@ -103,21 +102,21 @@ void JordanGauss(Fraction** arr, int n, int m)
 
 		for (j = y; j < m; j++)
 		{
-			if (Fraction::Abs(arr[j][i]) > mx)
-			{
-				mx = Fraction::Abs(arr[j][i]);
+			if (Fraction::Abs(arr[j][i]) > mx)//идём вниз по столбцу. Если модуль числа в столбце 
+			{//больше нуля(в начале mx равна нулю),то в mx прописываем это число. В mx_ind прописываем номер строки с бОльшим 
+				mx = Fraction::Abs(arr[j][i]);//числом. Т.о. находим максимальное по модулю число в столбце.
 				mx_ind = j;
 				check = true;
 			}
 		}
 
-		swap(arr, n, y, mx_ind);
+		swap(arr, n, y, mx_ind);//меняем местами строки у & mx_ind
 
-		if (!check)
-			continue;
+		if (!check)//если максимальное по модулю в предыдущем поиске было больше чем ноль(в первой итерации mx равно нулю),
+			continue;//то переходим на следующий столбец.
 
 
-		for (j = i + 1; j < n; j++)
+		for (j = i + 1; j < n; j++)//метод прямоугольника
 		{
 			for (int l = 0; l < m; l++)
 			{
@@ -129,14 +128,14 @@ void JordanGauss(Fraction** arr, int n, int m)
 		}
 
 
-		for (j = i + 1; j < n; j++)
+		for (j = i + 1; j < n; j++)//разрешающую строку делим на саму себя
 		{
 			arr[y][j] = arr[y][j] / arr[y][i];
 		}
 
-		arr[y][i] = arr[y][i] / arr[y][i];
+		arr[y][i] = arr[y][i] / arr[y][i];//разрешающий элемент делим на самого себя
 
-		for (j = 0; j < m; j++)
+		for (j = 0; j < m; j++)//зануляем разрешающий столбец
 		{
 			if (j != y)
 				arr[j][i] = Fraction(0, 1);
@@ -152,7 +151,7 @@ void JordanGauss(Fraction** arr, int n, int m)
 	for (i = 0; i < m; i++)
 	{
 		cnt = 0;
-		for (j = 0; j < n - 1; j++)
+		for (j = 0; j < n - 1; j++)//считаем число единичных дробей
 		{
 			if (arr[i][j] == Fraction(1, 1))
 				cnt++;
@@ -167,10 +166,10 @@ void JordanGauss(Fraction** arr, int n, int m)
 
 	print(arr, n, m);
 
-	int combNum = combinationNum(rang, n - 1);
+	int combNum = combinationNum(rang, n - 1);//считаем число комбинаций из переменных
 	int comb_ind = rang;
-	int* tmp_comb = new int[rang];
-	int* comb = new int[rang * combNum];
+	int* tmp_comb = new int[rang];//единственная текущая комбинация
+	int* comb = new int[rang * combNum];//для вывода списка всех комбинаций
 
 	for (i = 0; i < rang; i++)
 	{
@@ -200,7 +199,9 @@ cout<<endl; */
 	cout << "Rang :" << rang << endl << "N: " << n - 1 << endl << "Number of combinations: " << combNum << endl;
 
 
-	Fraction** temp = new Fraction * [m];
+	Fraction** temp = new Fraction * [m];//создал новую матрицу дробей
+	for (i = 0; i < m; i++)
+		temp[i] = new Fraction[n];
 	//int ed[rang][n] = {};
 	//int ch0[rang] = {};
 	Fraction result;
@@ -215,11 +216,10 @@ cout<<endl; */
 	//int **ed = new int[rang][n];
 	int* ch0 = new int[rang];
 
-	for (i = 0; i < m; i++)
-		temp[i] = new Fraction[n];
 
 
-	copy(arr, temp, n, m);
+
+	copy(arr, temp, n, m);//скопировал из старой(отпрямоуголенной) в новую
 
 	print(temp, n, m);
 
@@ -229,7 +229,7 @@ cout<<endl; */
 
 	for (i = 0; i < rang; i++) ch0[i] = 0;
 
-	for (int k = 0; k < rang * combNum; k++)
+	for (int k = 0; k < rang * combNum; k++)//перебираем комбинации...
 	{
 		int index = comb[k];
 		flag1 = 0;
@@ -248,8 +248,8 @@ cout<<endl; */
 				{
 					for (int l = 0; l < n; l++)
 					{
-						if (i == j || index - 1 == l)
-							continue;
+						if (i == j || index - 1 == l)//здесь ... смотрю, чтобы только нужная комбинация переменных 
+							continue;//прогонялась через прямоугольник 
 						temp[j][l] = temp[j][l] - (temp[j][index - 1] * temp[i][l]) / temp[i][index - 1];
 					}
 				}
@@ -262,7 +262,7 @@ cout<<endl; */
 				{
 					if (j != index - 1)
 						temp[i][j] = temp[i][j] / temp[i][index - 1];
-				}
+				}//конец прямоугольника...
 				temp[i][index - 1] = Fraction(1, 1);
 				ed[i][index - 1] = 1;
 				counter++;
@@ -352,19 +352,29 @@ cout<<endl; */
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	int n = 6, m = 4;
+	//cin >> n >> m;
 
-	Fraction** arr = new Fraction * [m];
+	//Fraction** arr = new Fraction * [m];
 
+	//for (int i = 0; i < m; i++)
+	//{
+	//	arr[i] = new Fraction[n];
+	//}
+	Fraction** masBumaga = new Fraction * [m];//m - число строк
 	for (int i = 0; i < m; i++)
 	{
-		arr[i] = new Fraction[n];
+		masBumaga[i] = new Fraction[n];//число столбцов
 	}
+	masBumaga[0][0] = 4;/*Fraction(4,1);*/ masBumaga[0][1] = -11; masBumaga[0][2] = 13; masBumaga[0][3] = -6; masBumaga[0][4] = 8; masBumaga[0][5] = 8;
+	masBumaga[1][0] = 7; masBumaga[1][1] =  12; masBumaga[1][2] =  5; masBumaga[1][3] =  -3; masBumaga[1][4] =  9; masBumaga[1][ 5] =  54;
+	masBumaga[2][0] = -6; masBumaga[2][ 1] =  9; masBumaga[2][ 2] =  -17; masBumaga[2][ 3] =  13; masBumaga[2][ 4] =  -7; masBumaga[2][5] =  -16;
+	masBumaga[3][0] = -17; masBumaga[3][ 1] =  -7; masBumaga[3][ 2] =  -30; masBumaga[3][ 3] =  30; masBumaga[3][ 4] =  -14; masBumaga[3][5] =  -86;
 
-	read(arr, n, m);
-	print(arr, n, m);
-	JordanGauss(arr, n, m);
+
+	//read(arr, n, m);
+	print(masBumaga, n, m);
+	JordanGauss(masBumaga, n, m);
 
 
 	return 0;
