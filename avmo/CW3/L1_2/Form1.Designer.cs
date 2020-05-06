@@ -65,12 +65,12 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 49;
-            this.dataGridView1.Size = new System.Drawing.Size(737, 487);
+            this.dataGridView1.Size = new System.Drawing.Size(1099, 880);
             this.dataGridView1.TabIndex = 0;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1169, 41);
+            this.numericUpDown1.Location = new System.Drawing.Point(1169, 34);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(160, 22);
@@ -78,7 +78,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1169, 11);
+            this.numericUpDown2.Location = new System.Drawing.Point(1169, 4);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(160, 22);
@@ -88,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(1022, 41);
+            this.label1.Location = new System.Drawing.Point(1021, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 17);
@@ -99,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(1021, 13);
+            this.label2.Location = new System.Drawing.Point(1025, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 17);
@@ -129,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(748, 20);
+            this.label4.Location = new System.Drawing.Point(743, 11);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(143, 17);
@@ -138,7 +138,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(899, 14);
+            this.button2.Location = new System.Drawing.Point(625, 7);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -149,7 +149,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1313, 83);
+            this.button3.Location = new System.Drawing.Point(929, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
@@ -160,7 +160,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1324, 130);
+            this.button4.Location = new System.Drawing.Point(1334, 10);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
@@ -172,42 +172,42 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(795, 253);
+            this.textBox1.Location = new System.Drawing.Point(1127, 253);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(521, 93);
+            this.textBox1.Size = new System.Drawing.Size(189, 93);
             this.textBox1.TabIndex = 11;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(795, 354);
+            this.textBox2.Location = new System.Drawing.Point(1127, 153);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(521, 41);
+            this.textBox2.Size = new System.Drawing.Size(189, 41);
             this.textBox2.TabIndex = 12;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(795, 403);
+            this.textBox3.Location = new System.Drawing.Point(1127, 403);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(521, 43);
+            this.textBox3.Size = new System.Drawing.Size(189, 43);
             this.textBox3.TabIndex = 13;
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.13913F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(795, 267);
+            this.textBox4.Location = new System.Drawing.Point(1138, 267);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox4.Size = new System.Drawing.Size(639, 327);
+            this.textBox4.Size = new System.Drawing.Size(296, 327);
             this.textBox4.TabIndex = 14;
             // 
             // dataGridView2
@@ -217,20 +217,20 @@
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(908, 74);
+            this.dataGridView2.Location = new System.Drawing.Point(1218, 74);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 49;
-            this.dataGridView2.Size = new System.Drawing.Size(408, 171);
+            this.dataGridView2.Size = new System.Drawing.Size(98, 54);
             this.dataGridView2.TabIndex = 15;
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(765, 74);
+            this.button5.Location = new System.Drawing.Point(584, 6);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 65);
+            this.button5.Size = new System.Drawing.Size(33, 37);
             this.button5.TabIndex = 16;
             this.button5.Text = "Задать коэффициенты\r\nпри икс функции";
             this.button5.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(795, 147);
+            this.button6.Location = new System.Drawing.Point(465, 6);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 28);
@@ -249,7 +249,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(795, 183);
+            this.button7.Location = new System.Drawing.Point(357, 7);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 28);
@@ -272,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 607);
+            this.ClientSize = new System.Drawing.Size(1447, 938);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -296,6 +296,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
