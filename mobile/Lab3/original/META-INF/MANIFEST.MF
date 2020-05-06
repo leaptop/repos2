@@ -1,0 +1,69 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: UCzYT6RE8m1+z99KNVBkhnl38jY=
+
+Name: res/drawable-hdpi/snow.png
+SHA1-Digest: m4CEZ0HhpyESCbAgy0HR/SYD8RQ=
+
+Name: res/drawable-hdpi/cloud.png
+SHA1-Digest: AjiSGbGVpoPr+NCrX2y6t5t1QZY=
+
+Name: res/drawable-hdpi/ktl.jpg
+SHA1-Digest: d2S+8PxHa0L9YUUMexjby+rfXc0=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: RQ09RDJf3yWYEKYOavo2ED4Yaz0=
+
+Name: res/drawable-hdpi/c.jpg
+SHA1-Digest: ghS/VGeuAt8Fn+KngpKmQjKD0cY=
+
+Name: res/layout/two.xml
+SHA1-Digest: 2weVKbhrJattbxpKjDJAKhlwe1U=
+
+Name: res/drawable-hdpi/a.jpg
+SHA1-Digest: JNJThlIvcy6+DcXDl+A1fqlQ6Lk=
+
+Name: resources.arsc
+SHA1-Digest: BFjGbGqQY2k1+NHFViMxNnWl5mE=
+
+Name: classes.dex
+SHA1-Digest: iNFircAp1x+I9TkyHZWMXGhkhx4=
+
+Name: res/layout/three.xml
+SHA1-Digest: zvNmXJc8biVA6bYDvPQ0htvv/2I=
+
+Name: res/drawable-ldpi/ic_launcher.png
+SHA1-Digest: CepliFtAgOUV73Bk6BbHeZHAdXs=
+
+Name: res/layout/main.xml
+SHA1-Digest: B3mr7N7h3/0qHEQDYUgr//G2XAo=
+
+Name: res/drawable-hdpi/hot.png
+SHA1-Digest: llX3by7fYiBQ+7VLKX4wFHNNswc=
+
+Name: res/drawable-hdpi/warm.png
+SHA1-Digest: /p1ePx/h0kmNpbQlNvvnVzV0Oeg=
+
+Name: AndroidManifest.xml
+SHA1-Digest: lbIcwhrC5YJWUGLeU00Gf+Swfq0=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: I3MP0NXnINH3Gb4a/IxI+nMF2mw=
+
+Name: res/drawable-hdpi/no.JPG
+SHA1-Digest: 6i0t7iTWTh6Bs4S3SUolgZwEZ0Q=
+
+Name: res/layout/one.xml
+SHA1-Digest: r2US0GLC7Qc2+SO/tKNaqX8Pkpc=
+
+Name: res/drawable-hdpi/ok.JPG
+SHA1-Digest: 4ZfTg1c7WnIS2I7TA3DtWU77HsQ=
+
+Name: res/layout/row.xml
+SHA1-Digest: wNJLSHFVp4ED2IOjvth1kXK9ivE=
+
+Name: res/drawable-hdpi/b.jpg
+SHA1-Digest: OxrlOL1AnxP2Fbe9eGKHVF17vzw=
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="ic_launcher" id="0x7f020005" />
+    <public type="drawable" name="a" id="0x7f020000" />
+    <public type="drawable" name="b" id="0x7f020001" />
+    <public type="drawable" name="c" id="0x7f020002" />
+    <public type="drawable" name="cloud" id="0x7f020003" />
+    <public type="drawable" name="hot" id="0x7f020004" />
+    <public type="drawable" name="ktl" id="0x7f020006" />
+    <public type="drawable" name="no" id="0x7f020007" />
+    <public type="drawable" name="ok" id="0x7f020008" />
+    <public type="drawable" name="snow" id="0x7f020009" />
+    <public type="drawable" name="warm" id="0x7f02000a" />
+    <public type="layout" name="main" id="0x7f030000" />
+    <public type="layout" name="one" id="0x7f030001" />
+    <public type="layout" name="row" id="0x7f030002" />
+    <public type="layout" name="three" id="0x7f030003" />
+    <public type="layout" name="two" id="0x7f030004" />
+    <public type="string" name="app_name" id="0x7f040000" />
+    <public type="id" name="textView" id="0x7f050000" />
+    <public type="id" name="imageView" id="0x7f050001" />
+    <public type="id" name="button" id="0x7f050002" />
+    <public type="id" name="listView" id="0x7f050003" />
+</resources>
