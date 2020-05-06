@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lab2</string>
+    <string name="first_frag_str">Some words</string>
+    <string-array name="sec_frag_arr">
+        <item>First line</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth line</item>
+    </string-array>
+    <string name="left_tab">Left tab</string>
+    <string name="middle_tab">Middle tab</string>
+    <string name="right_tab">Right tab</string>
+    <string name="mouse_description">Kitty</string>
+</resources>
+
