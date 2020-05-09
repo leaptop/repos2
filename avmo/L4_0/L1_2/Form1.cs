@@ -45,7 +45,7 @@ namespace CW3//в общем мой вариант м.б. не очень хор
             gridCols = nBv + 3;// 1 для "Запасы", 1 для "Потребности", 1 для случая, когда число столбцов 
             //увеличится из-за добавления нового(фиктивного) потребителя... насчёт последнего не уверен, ведь nBv должна увеличиться
         }                                                           //КОНЕЦ КОНСТРУКТОРА
-        
+
         int mAh = 0;//число пунктов отправления(поставщиков Ah)(строки)
         int nBv = 0;//число пунктов назначения(потребителей Bv)(столбцы)
         int[,] mas;//матрица тарифов(стоимостей перевозок)
@@ -77,12 +77,13 @@ namespace CW3//в общем мой вариант м.б. не очень хор
             {//Если предложение больше спроса, то вводим фикивного потребителя(В)(увеличиваем число столбцов). При этом в сишарпе нет 
              //хороших функций для ресайза массивов типа List. Если бы я создал такой массив, его всё равно пришлось бы переделывать
              //вручную. Поэтому просто сделаю копию примитивов вручную.
-                tempB = new int[++nBv];//создал временный массив, в который скопирую В с увеличенным на 1 размером
+                textBox2.Text = "предложение больше спроса, вводим фикивного потребителя, чтобы сделать задачу закрытой";
+                tempB = new int[++nBv];//создал временный массив, в который скопирую В с увеличенным на 1 размером. nBv теперь на 1 больше.
                 for (int i = 0; i < Bv.Length; i++)
                 {
                     tempB[i] = Bv[i];
                 }
-                tempB[nBv - 1] = (sumA - sumB);
+                tempB[nBv - 1] = (sumA - sumB);//в последний элемент добавляю недостающее число
                 this.Bv = tempB;
                 {//test
                     for (int i = 0; i < Bv.Length; i++)
@@ -92,23 +93,25 @@ namespace CW3//в общем мой вариант м.б. не очень хор
                 }
                 // матрицу тарифов тоже надо переделать: увеличилось число столбцов
 
-                tempMas = new int[mAh , nBv + 1];// дальше пока просто скопировал из третьего случая
-                for (int i = 0; i < mAh ; i++)
+                tempMas = new int[mAh, nBv + 1];// дальше пока просто скопировал из третьего случая
+                for (int i = 0; i < mAh; i++)
                 {
-                    for (int j = 0; j < nBv; j++)
+                    for (int j = 0; j < nBv - 1; j++)
                     {
                         tempMas[i, j] = mas[i, j];//просто скопировал 
                     }
+                    tempMas[i, nBv] = 0;
                 }
-                mas = tempMas;
-                for (int i = 0; i < nBv; i++)
-                {
-                    mas[mAh, i] = 0;
-                }
+                this.mas = tempMas;
+                //for (int i = 0; i < nBv; i++)
+                //{
+                //    mas[mAh, i] = 0;
+                //}
             }
             else if ((sumA - sumB) < 0)
             {//Если спрос больше предложения, то вводим фиктивного поставщика(А)
-                tempA = new int[++mAh];//создал временный массив, в который скопирую А с увеличенным на 1 размером
+                textBox2.Text = "спрос больше предложения, вводим фиктивного поставщика, чтобы задача стала закрытой";
+                tempA = new int[++mAh];//создал временный массив, в который скопирую А с увеличенным на 1 размером. mAh теперь на 1 больше.
                 for (int i = 0; i < Ah.Length; i++)
                 {
                     tempA[i] = Ah[i];
@@ -127,7 +130,7 @@ namespace CW3//в общем мой вариант м.б. не очень хор
                     Console.WriteLine("mAh = " + mAh);
                 }
                 // матрицу тарифов тоже надо переделать: появилась новая строка с нулевыми стоимостями для всех путей.
-                tempMas = new int[mAh , nBv];//попробовать  +1 убрать
+                tempMas = new int[mAh + 1, nBv];//попробовать  +1 убрать
                 for (int i = 0; i < mAh - 1; i++)// -1 т.к. в mas ещё нет этой строки
                 {
                     for (int j = 0; j < nBv; j++)
@@ -143,14 +146,15 @@ namespace CW3//в общем мой вариант м.б. не очень хор
             }
         }
         // public const int nBv = 11;//число всех названий столбцов           
-   
+
 
         private void printMatrixMasBumaga(object sender, EventArgs e) // <--- КНОПКА  "Вывести матрицу"
         {
             dataGridView1.RowCount = mAh * 300;//просто делаю всю полосу подлиннее с запасом
             dataGridView1.ColumnCount = gridCols;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            initilaizeHeaders();
+            // initilaizeHeaders();
+            initializeUpperPart();
             fillTableOriginal();// в первый раз нарисовал матричку   
             checkOpenOrClosed(Ah, Bv);
             fillTableOriginal();
@@ -158,7 +162,9 @@ namespace CW3//в общем мой вариант м.б. не очень хор
 
         }
 
-        private void initilaizeHeaders()//------------------------------------расписал заголовки вверху таблицы
+        private void initilaizeHeaders()//------------------------------------расписал заголовки вверху таблицы. Число переменных может возрасти,
+                                        //поэтому данная функция более неактуальна, и должна быть переработана под новые условия. 
+                                        //Вызов этой функции переезжает в fillTableOriginal();
         {
             elems = new string[gridCols];
             for (int i = 0; i < nBv; i++)
@@ -169,11 +175,13 @@ namespace CW3//в общем мой вариант м.б. не очень хор
             //elems[nBv + 1] = "Потребности";
             for (int i = 0; i < elems.Length; i++)
             {
-                dataGridView1.Columns[i].HeaderCell.Value = elems[i];//расписал все заголовки в dataGridView1
+                dataGridView1.Rows[rowsIncrement ].Cells[i].Value = elems[i];//расписал все заголовки в dataGridView1
             }
         }
         private void fillTableOriginal()//в принципе одинаково правильно работает как с оригиналом, так и с изменённой матрицей
         {
+            initilaizeHeaders();//прописываю B0, B1 и т.д., в конце "Запасы"
+            rowsIncrement++;
             for (int i = 0; i < mAh; i++)
             {
                 for (int j = 0; j < nBv; j++)
@@ -181,6 +189,7 @@ namespace CW3//в общем мой вариант м.б. не очень хор
                     dataGridView1.Rows[rowsIncrement + i].Cells[j].Value = mas[i, j];//вывел значения матрицы тарифов
                 }
                 dataGridView1.Rows[rowsIncrement + i].Cells[nBv].Value = Ah[i];// вывел запасы
+                dataGridView1.Rows[rowsIncrement + i].Cells[nBv+1].Value = "A"+i;
             }
             dataGridView1.Rows[rowsIncrement + mAh].Cells[nBv + 1].Value = "Потребности";
             for (int j = 0; j < nBv; j++)
@@ -189,7 +198,13 @@ namespace CW3//в общем мой вариант м.б. не очень хор
             }
             rowsIncrement += (mAh + 2);//для прорисовки матрицы
         }
-
+        public void initializeUpperPart()
+        {
+            for (int i = 0; i <gridCols; i++)
+            {
+                dataGridView1.Columns[i].HeaderCell.Value = "----";
+            }
+        }
 
 
         private void button4_Click(object sender, EventArgs e)//                  "Solve"
