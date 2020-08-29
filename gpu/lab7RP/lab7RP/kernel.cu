@@ -21,7 +21,8 @@ that can be resized dynamically.*/
 struct range_functor {
     float h;
     range_functor(float _h) :h(_h) {}
-    __host__ __device__//In CUDA function type qualifiers __device__ and __host__ can be used together in which case the function is compiled for both the host and the device. This allows to eliminate copy-paste.
+    __host__ __device__//In CUDA function type qualifiers __device__ and __host__ can be used together in which case the 
+        //function is compiled for both the host and the device. This allows to eliminate copy-paste.
         float operator()(float x) {
         return h * x;
     }
