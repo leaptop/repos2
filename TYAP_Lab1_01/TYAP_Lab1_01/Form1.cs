@@ -1,0 +1,359 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TYAP_Lab1_01
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            dataGridView1.RowCount = rowCount;
+            dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].HeaderCell.Value = "left part";
+            dataGridView1.Columns[1].HeaderCell.Value = "right part";
+            nonterminalCombs = new ArrayList();
+            terminalCombs = new ArrayList();
+            tempNonterminalCombs = new ArrayList();
+            tempTerminalCombs = new ArrayList();
+            numericUpDownMax.Value = 6;
+            numericUpDownMin.Value = 1;
+/*            textBoxForStartingSymbol.Text = "s";
+            dataGridView1.Rows[0].Cells[0].Value = "s";
+            dataGridView1.Rows[0].Cells[1].Value = "(s)s";
+            dataGridView1.Rows[1].Cells[0].Value = "s";
+            dataGridView1.Rows[1].Cells[1].Value = "";*/
+            /*            dataGridView1.Rows[0].Cells[0].Value = "a";
+                        dataGridView1.Rows[0].Cells[1].Value = "b01";
+                        dataGridView1.Rows[1].Cells[0].Value = "a";
+                        dataGridView1.Rows[1].Cells[1].Value = "0b";
+                        dataGridView1.Rows[2].Cells[0].Value = "a";
+                        dataGridView1.Rows[2].Cells[1].Value = "";
+                        dataGridView1.Rows[3].Cells[0].Value = "b";
+                        dataGridView1.Rows[3].Cells[1].Value = "2";
+                        dataGridView1.Rows[4].Cells[0].Value = "b";
+                        dataGridView1.Rows[4].Cells[1].Value = "3";*/
+            /*textBoxForStartingSymbol.Text = "b";
+            dataGridView1.Rows[0].Cells[0].Value = "a";
+            dataGridView1.Rows[0].Cells[1].Value = "ab01";
+            dataGridView1.Rows[1].Cells[0].Value = "a";
+            dataGridView1.Rows[1].Cells[1].Value = "0b";
+            dataGridView1.Rows[2].Cells[0].Value = "a";
+            dataGridView1.Rows[2].Cells[1].Value = "";
+            dataGridView1.Rows[3].Cells[0].Value = "b";
+            dataGridView1.Rows[3].Cells[1].Value = "2b";
+            dataGridView1.Rows[4].Cells[0].Value = "b";
+            dataGridView1.Rows[4].Cells[1].Value = "3";*/
+        }
+        public string[] nonTerminals;
+        public int rowCount = 100;
+        public string[] rulesIE_rightParts;//правые части правил
+        public int minLetters, maxLetters;
+        public string startingSymbol;
+        int sizeOfRules;
+        ArrayList nonterminalCombs;
+        char[] nontermsInChars;
+        ArrayList terminalCombs;
+        ArrayList tempNonterminalCombs;
+        ArrayList tempTerminalCombs;
+        private void buttonLaunchGenerationAndPrintingOfAllCombinations(object sender, EventArgs e)
+        {
+            initMinMax_StartingSymbol();
+            checkKSGrammarAndFillTerminalsNonterminalsArrays();
+            //replaceTheLeftmostNonterminalWithAllItsRulesAndAddTheCombinedStringsToallCombinationsArrayList(startingSymbol);
+            correctLaunchOfTheReplacingMethod();
+
+            //  buildAllStringsCombinationsByLeftRule(startingSymbol);
+        }//не нужна рекурсия... Тупо строить цепочки можно и автоматическим вызовом функций
+        public void correctLaunchOfTheReplacingMethod()
+        {//Метод с самым длинным названием можно запустить ещё раз и он заменит во всех строках первый слева 
+            //нетерминал на строку из правой части его правила, а также добавит получившиеся строки в 
+            //nonterminalCombs и в terminalCombs. В первый запуск гарантированно будет подан нетерминал,
+            //и в terminalCombs
+            //ничего добавлено не будет. При последующих запусках могут появиться нетерминальные цепочки.
+            nonterminalCombs.Add(startingSymbol);
+            //Строки минимальной длины будут добавляться по умолчанию. Пока не понятно, как зафиксировать момент,
+            //когда все строки максимальной длины будут добавлены. Видимо, когда после очередного цикла
+            //все добавленные терминальные строки будут длины большей, чем максимально допустимая пользователем.
+            //Что это за очередной цикл? Не понятно. У меня есть известное число правил. Когда все эти правила 
+            //пройдутся по строкам, и не появится терминальной строки, короче максимально допустимой, можно 
+            //заканчивать. Но сколько это раз? Это число нетерминальных строк в nonterminalCombs умноженное на 
+            //число правил? Похоже на то.
+            //Начал со стартового символа и вывел результат:
+            /*replaceTheLeftmostNontermWithAllItsRulesAndAddToArrayLists(startingSymbol);
+            addANonTerminalStringOrACollectionToArrayListWithNoDuplicates(tempNonterminalCombs, nonterminalCombs);       
+            addATerminalStringOrACollectionToArrayListWithNoDuplicates(tempTerminalCombs, terminalCombs);
+            //terminalCombs.AddRange(tempTerminalCombs);
+            tempTerminalCombs.Clear();
+            tempNonterminalCombs.Clear();
+            printAllCombinationsAndAllTerminalStringsToRichTextBox();*/
+            //Конец первого прохода со стартовым символом.
+
+            for (int i = 0; i < 10; i++)
+            {
+                int cnt = 0;
+                //Можно попробовать склонировать nonterminalCombs и работать с клоном, потом в конце цикла
+                //добавить ... Нет. Лучше просто при работе метода добавлять результаты во временные ArrayList-ы.
+                foreach (var item in nonterminalCombs)
+                {
+                    replaceTheLeftmostNontermWithAllItsRulesAndAddToArrayLists(item.ToString());
+                }
+                addANonTerminalStringOrACollectionToArrayListWithNoDuplicates(tempNonterminalCombs, nonterminalCombs);
+                addATerminalStringOrACollectionToArrayListWithNoDuplicates(tempTerminalCombs, terminalCombs);
+                tempTerminalCombs.Clear();
+                tempNonterminalCombs.Clear();
+            }
+
+            printAllCombinationsAndAllTerminalStringsToRichTextBox();
+            /*           IEnumerator e = nonterminalCombs.GetEnumerator();
+              while (e.MoveNext())
+               {
+                   cnt++;
+                   string s = e.Current.ToString();
+                   replaceTheLeftmostNontermWithAllItsRulesAndAddToArrayLists(s);
+                   tempNonterminalCombs.Clear();
+                   tempTerminalCombs.Clear();
+                   if (cnt == 3)
+                   {
+                       break;
+                   }
+               }*/
+        }
+        public void addATerminalStringOrACollectionToArrayListWithNoDuplicates(ArrayList arrFrom, ArrayList arrTo)
+        {
+            foreach (string aString in arrFrom)
+            {
+                if (!arrTo.Contains(aString) && aString.Length >= minLetters && aString.Length <= maxLetters)
+                {
+                    arrTo.Add(aString);
+                }
+            }
+        }
+        public void addATerminalStringOrACollectionToArrayListWithNoDuplicates(string strFrom, ArrayList arrTo)
+        {
+            if (!arrTo.Contains(strFrom) && strFrom.Length >= minLetters && strFrom.Length <= maxLetters)
+            {
+                arrTo.Add(strFrom);
+            }
+        }
+        public void addANonTerminalStringOrACollectionToArrayListWithNoDuplicates(ArrayList arrFrom, ArrayList arrTo)
+        {
+            foreach (string aString in arrFrom)
+            {
+                if (!arrTo.Contains(aString))
+                {
+                    arrTo.Add(aString);
+                }
+            }
+        }
+        public void addANonTerminalStringOrACollectionToArrayListWithNoDuplicates(string strFrom, ArrayList arrTo)
+        {
+            if (!arrTo.Contains(strFrom))
+            {
+                arrTo.Add(strFrom);
+            }
+        }
+        public void replaceTheLeftmostNontermWithAllItsRulesAndAddToArrayLists(string str)
+        {
+            string res = "";
+            char[] strInChars = str.ToCharArray();
+            int index = getTheLeftMostStringsNonTerminalIndex(str);
+            if (index > -1)
+            {
+                for (int i = 0; i < index; i++)//если index равен нулю, то цикл не сработает ни разу
+                {//сначала запишу в результат то, что было до индекса нетерминала
+                    res += strInChars[i].ToString();
+                }//теперь надо вставить правую часть правила для найденного нетерминала... 
+                //таких правых частей м.б. несколько...
+                for (int i = 0; i < sizeOfRules; i++)//Т.о. для каждого правила:
+                {
+                    if (nontermsInChars[i] == strInChars[index])
+                    //нахожу в правилах правые части правил для
+                    //нетерминала, представленного символом strInChars[index]. Индекс этих нетерминалов: i.
+                    //теперь надо по очереди подставить в res все найденные значения вместо нетерминала
+                    //при этом каждая из этих получившихся строк может оказаться подходящей для сохранения
+                    //попробую просто сохранять эти строки в nonterminalCombs
+                    {
+                        string tempRes = res;//копируется значение, а не ссылка
+                        tempRes += rulesIE_rightParts[i];//прописываю правую часть правила. Теперь 
+                        //надо дописать оставшиеся символы строки str:
+                        for (int j = index + 1; j < strInChars.Length; j++)
+                        //добавляю начиная с index + 1, т.к. index - индекс нетерминала в строке, 
+                        //который я заменил
+                        {
+                            tempRes += strInChars[j].ToString();//дописал оставшиеся симвлы строки str
+                            //теперь это всё можно добавить в nonterminalCombs                            
+                        }//Хотя, если полученная цепочка терминальная, то её лучше сразу добавить в 
+                        //terminalCombs, а в nonterminalCombs добавлять только нетерминальные.
+                        //Если к нетерминалу было применено последнее правило и получилась терминальная цепочка,
+                        //то, видимо, строку надо удалить из nonterminalCombs... Но, видимо, отсюда это сделать
+                        //не получится.
+                        if (getTheLeftMostStringsNonTerminalIndex(tempRes) == -1)
+                        {
+                            //почему-то досюда не доходит...
+                            //tempTerminalCombs.Add(tempRes);
+                            addATerminalStringOrACollectionToArrayListWithNoDuplicates(tempRes, tempTerminalCombs);
+                        }
+                        else
+                        {
+                            //tempNonterminalCombs.Add(tempRes);
+                            addANonTerminalStringOrACollectionToArrayListWithNoDuplicates(tempRes, tempNonterminalCombs);
+                            //В итоге добавлены все комбинации с заменённым первым слева нетерминалом
+                        }
+                    }
+                }
+            }
+            else
+            {//в цепочке поданной в метод не обнаружено нетерминалов и её можно добавить в terminalCombs:
+                //terminalCombs.Add(str);
+                addATerminalStringOrACollectionToArrayListWithNoDuplicates(str, tempTerminalCombs);
+            }
+            //Теперь у меня есть все цепочки с заменённым первым слева нетерминалом в nonterminalCombs
+            //Начинал я со стартового нетереминала при вызове applyRulesStartingFromLeftAndReturnTheString(string str)
+            //в buttonLaunchGenerationAndPrintingOfAllCombinations();
+            //Теперь, кажется, надо продолжить делать то же самое, но уже с содержимым nonterminalCombs.
+            //Это содержимое при этом иногда будет содержать терминальные цепочки, а иногда не будет.
+            //Надеюсь, что мой метод getTheLeftMostStringsNonTerminalIndex будет помогать находить
+            //нетерминальные символы, заменять их, и, т.о. получать в итоге все комбинации цепочек,
+            //содержащих только терминальные символы. 
+            //Проблема в том, что я не знаю, как остановить эту работу с nonterminalCombs...
+            //Может просто после работы со строкой заменять её на произведённую в текущем методе? Видимо, так
+            //и надо делать. Осталось понять как это реализовать.
+            //Хотя, не факт, что текущую... Может 
+        }
+        public void printAllCombinationsAndAllTerminalStringsToRichTextBox()
+        {
+           // richTextBox1.AppendText("\nОставшиеся нетерминальные комбинации:\n");
+            for (int i = 0; i < nonterminalCombs.Count; i++)
+            {
+             //   richTextBox1.AppendText(nonterminalCombs[i].ToString() + "\n");
+            }
+            richTextBox1.AppendText("\nТерминальные цепочки:\n");
+            for (int i = 0; i < terminalCombs.Count; i++)
+            {
+                richTextBox1.AppendText(terminalCombs[i].ToString() + "\n");
+            }
+        }
+        public void BuildAllStringsCombinationsByLeftRule_WRONGMETHOD(string str)
+        {
+            nonterminalCombs.Add(startingSymbol);//проблема в том, что я не знаю сколько будет нетерминалов
+            //и, соответственно, сколько циклов заложить в программе. Но я знаю сколько у меня правил...
+            string st0 = "";
+            foreach (var item in nonTerminals)
+            {
+                if (item == startingSymbol)
+                {
+                    //richTextBox1.Text = item;
+                }
+                else continue;
+            }
+
+            if (getTheLeftMostStringsNonTerminalIndex(str) == -1)
+            {//в строке больше нет нетерминалов
+                //return "";
+            }//иначе ищем нетерминалы и заменяем их дальше
+             // else return (buildAllStringsCombinationsByLeftRule(str));
+        }
+        public int getTheLeftMostStringsNonTerminalIndex(string str)
+        {
+            char[] charStr = str.ToCharArray();
+            for (int i = 0; i < charStr.Length; i++)
+            {//сначала выбираем чар из проверяемой строки
+                for (int j = 0; j < sizeOfRules; j++)
+                {//потом сравниваем этот чар со всеми нетерминалами
+                    if (charStr[i].ToString().CompareTo(nonTerminals[j]) == 0)
+                    {//если нашёлся хотя бы один нетерминал равный чару в строке, в строке есть нетерминал
+                        //возвращаем его индекс в строке
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+        public void initMinMax_StartingSymbol()
+        {
+            minLetters = Convert.ToInt32(numericUpDownMin.Value);
+            maxLetters = Convert.ToInt32(numericUpDownMax.Value);
+            if (textBoxForStartingSymbol.Text.Length == 1)
+            {
+                startingSymbol = textBoxForStartingSymbol.Text.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Стартовый символ м.б. только длины 1");
+                textBoxForStartingSymbol.Text = "";
+            }
+        }
+
+        private void buttonCleanRichTextBox(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            nonterminalCombs.Clear();
+            terminalCombs.Clear();
+        }
+
+        private bool checkKSGrammarAndFillTerminalsNonterminalsArrays()
+        {//метод проверяет ячейки первого столбца. Если они не пустые и их длина равна 1, то 
+         //добавляем их в массив нетерминалов
+
+            string[] nonTerminalsTemp = new string[rowCount];
+            sizeOfRules = 0;
+            string[] terminalsTemp = new string[rowCount];
+            for (int i = 0; i < rowCount; i++)
+            {
+                try
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != DBNull.Value &&
+                        dataGridView1.Rows[i].Cells[0].Value != null)
+                    {
+                        nonTerminalsTemp[i] = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                        sizeOfRules++;
+                        //проверяю терминалы на наличие пустой строки(Укорачивающая КС грамматика)
+                        if (dataGridView1.Rows[i].Cells[1].Value == DBNull.Value ||
+                        dataGridView1.Rows[i].Cells[1].Value == null)
+                        {
+                            terminalsTemp[i] = "";
+                        }
+                        else
+                        {
+                            terminalsTemp[i] = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                        }
+
+                        //если поле не пустое, но таки имеет длину больше 1, это не соответствует 
+                        //Контекстно Свободной грамматике, поэтому прерываем выполнение
+                        if (dataGridView1.Rows[i].Cells[0].Value.ToString().Length > 1)
+                        {
+                            dataGridView1.Rows[i].Cells[0].Value = "";
+                            throw new Exception();
+                        }
+
+                    }
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("Значениями ячеек первого столбца м.б. только строки длины 1");
+                }
+            }
+            nonTerminals = new string[sizeOfRules];
+            rulesIE_rightParts = new string[sizeOfRules];
+            nontermsInChars = new char[sizeOfRules];
+            for (int i = 0; i < sizeOfRules; i++)
+            {
+                nontermsInChars[i] = nonTerminalsTemp[i].ToCharArray()[0];
+                nonTerminals[i] = nonTerminalsTemp[i];
+                rulesIE_rightParts[i] = terminalsTemp[i];
+                // richTextBox1.AppendText("\n" + "nonTerminals[i] = " + nonTerminals[i]);
+                // richTextBox1.AppendText(", terminals[i] = " + rulesIE_rightParts[i]);
+            }
+            return true;
+        }
+    }
+}
