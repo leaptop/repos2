@@ -1,13 +1,18 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace STP_00
+namespace STP_01_changingTheTypeToDotNetFramework
 {
-    class Program
-    {//tests lab 1
+    public class MyClass
+    {
+        //tests lab 1
         static void Main(string[] args)
         {
             launchFirstLab();
+            Console.ReadKey();
         }
         static public void launchFirstLab()
         {
@@ -39,10 +44,11 @@ namespace STP_00
                 {
                     result *= arr[i];
                 }
+                Console.WriteLine("result = " + result);
             }
             return result;
         }
-        static void moveCyclicRight(ref double[] arr, int n)
+        static public void moveCyclicRight(ref double[] arr, int n)
         {//cyclic shift of the elements to the right
             double[] arrNthPart = new double[n];
             for (int i = 0, j = arr.Length - n; i < n; i++, j++)
@@ -58,7 +64,7 @@ namespace STP_00
                 arr[i] = arrNthPart[i];
             }
         }
-        static int sToInt_bBase(string s, int b)
+        static public int sToInt_bBase(string s, int b)
         {//Функция получает целое число b – основание системы счисления и строку
          //s, содержащую представление дробной части числа в системе счисления с
          //основанием b. Функция формирует и возвращает из строки s целое число. Буду считать, что возвращает тип int, b = [2...16]
@@ -86,12 +92,12 @@ namespace STP_00
             double sum = 0;
             for (int i = 1; i < numOfchars + 1; i++)
             {
-                sum += Math.Pow(b, -i) * sToCharArrToInt[i-1];
+                sum += Math.Pow(b, -i) * sToCharArrToInt[i - 1];
             }
-            Console.WriteLine("\nthe decimal part is " + sum);
+            Console.WriteLine("\n\nthe decimal part is " + sum);
             sum *= Math.Pow(10, sum.ToString().Length - 2);
             int result = Convert.ToInt32(sum);
-            Console.WriteLine("\nresult = " + result);
+            Console.WriteLine("result = " + result);
             return result;
         }
         static void moveCyclicLeft(ref double[] arr, int n)
