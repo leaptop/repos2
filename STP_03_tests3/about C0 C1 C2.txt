@@ -1,0 +1,5 @@
+C0/C1/C2 is a coverage standards which is correspondence to coverage degree of routes of testing program.
+
+C0 Statement coverage-Has each line of the source code been executed?
+C1 Branch coverage-Has each control structure (such as an if statement) evaluated both to true and false?
+C2 Condition coverage-Has each boolean sub-expression evaluated both to true and false (this does not necessarily imply decision coverage)?

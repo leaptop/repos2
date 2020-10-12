@@ -15,9 +15,12 @@ namespace STP_02_tests2
                                             { 13,     564,   100,  767,  23 },
                                             { 20000,   10,    374,  56,   5 },
                                             { 38.5,   5,     89,   190,  343},
-                                            { 1300,   564,   100,  767,  23 }
+                                            { 1300,   564,   100,  767,  23000 }
             };
-            maximumOf2DArrayOnAndAboveSecondaryDiagonal(arr);
+            
+            Console.WriteLine("maximumOf2DArrayOnAndAboveSecondaryDiagonal(arr); = " + maximumOf2DArrayOnAndAboveSecondaryDiagonal(arr));
+            Console.WriteLine("minimumOfAAndB(34, 12) = " + minimumOfAAndB(34, 12));
+            Console.WriteLine("maximumOf2DArray(double[,] arr) = " + maximumOf2DArray(arr));
             Console.ReadKey();
         }
 
@@ -42,19 +45,16 @@ namespace STP_02_tests2
         public static double maximumOf2DArrayOnAndAboveSecondaryDiagonal(double[,] arr)
         {
             int dimension0 = arr.GetLength(0);//height 
-            int dimension1 = arr.GetLength(1);//width 
-            int minDim = minimumOfAAndB(dimension1, dimension0);
+            int dimension1 = arr.GetLength(1);//width
             double max = arr[0, 0];
             for (int i = 0; i < dimension0; i++)
             {
                 for (int j = dimension1 - 1 - i; j >= 0; j--)//сначала для всей ширины. Потом на 1 меньше(на следующем ряду).
-                {
+                {//Т.о. хоть матрица толстая, хоть высокая смотреть буду только на побочную диагональ и выше
                     if (j < 0) break;
                     if (max < arr[i, j]) max = arr[i, j];
                 }
             }
-            Console.WriteLine(dimension0);
-            Console.WriteLine(dimension1);
             return max;
         }
     }

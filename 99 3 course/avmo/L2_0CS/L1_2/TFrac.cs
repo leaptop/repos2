@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace L1_2
 {
-    public class Drob : ICloneable
+    public class TFrac : ICloneable
     {
         
         public int numerator;//chislitel
         public int denominator;//znamenatel
 
-        //public Drob()
+        //public TFrac()
         //{// it would be difficult to implement some actions like addition for example. So such default constructor is undesirable.
         //    this.numerator = 0;
         //    this.denominator = 1;
         //}
-        public Drob(int numerator, int denominator)
+        public TFrac(int numerator, int denominator)
         {
             if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
             {
@@ -44,9 +44,9 @@ namespace L1_2
             if (denominator == 0) numerator = 0;
 
         }
-        public Drob mul(Drob a, Drob b)//this function returns a result of multiplication of сommon fractions a & b
+        public TFrac mul(TFrac a, TFrac b)//this function returns a result of multiplication of сommon fractions a & b
         {
-            return new Drob(a.numerator * b.numerator, a.denominator * b.denominator);
+            return new TFrac(a.numerator * b.numerator, a.denominator * b.denominator);
         }
         public void printDrob()//in console
         {
@@ -54,10 +54,10 @@ namespace L1_2
         }
         public void test()
         {
-            Drob d1 = new Drob(1, 2);
-            Drob d2 = new Drob(1, 3);
-            Drob d3;
-            Drob d4;
+            TFrac d1 = new TFrac(1, 2);
+            TFrac d2 = new TFrac(1, 3);
+            TFrac d3;
+            TFrac d4;
             d3 = mul(d1, d2);
             d3.printDrob();
             d4 = add(d1, d2);
@@ -73,21 +73,21 @@ namespace L1_2
             else
                 return (numerator.ToString() + "/" + denominator.ToString());
         }
-        public Drob div(Drob a, Drob b)//divides a by b
+        public TFrac div(TFrac a, TFrac b)//divides a by b
         {
-            //return new Drob(a.numerator * b.denominator, a.denominator * b.numerator);
-            return mul(a, new Drob(b.denominator, b.numerator));
+            //return new TFrac(a.numerator * b.denominator, a.denominator * b.numerator);
+            return mul(a, new TFrac(b.denominator, b.numerator));
         }
-        public Drob add(Drob a, Drob b)
+        public TFrac add(TFrac a, TFrac b)
         {
             if (a.denominator == 0 || b.denominator == 0)
             {
                 if (a.denominator != 0)
                 {
-                    return new Drob(a.numerator, a.denominator);
+                    return new TFrac(a.numerator, a.denominator);
                 }
                 else
-                    return new Drob(b.numerator, b.denominator);
+                    return new TFrac(b.numerator, b.denominator);
             }
             int multiplierA = 1;
             int multiplierB = 1;
@@ -102,18 +102,18 @@ namespace L1_2
                 }
             }
             else newDenominator = a.denominator;
-            return new Drob(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);
+            return new TFrac(a.numerator * multiplierA + b.numerator * multiplierB, newDenominator);
         }
-        public Drob sub(Drob a, Drob b)
+        public TFrac sub(TFrac a, TFrac b)
         {
             if (a.denominator == 0 || b.denominator == 0)
             {
                 if (a.denominator != 0)
                 {
-                    return new Drob(a.numerator, a.denominator);
+                    return new TFrac(a.numerator, a.denominator);
                 }
                 else
-                    return new Drob(-b.numerator, b.denominator);
+                    return new TFrac(-b.numerator, b.denominator);
             }
             int multiplierA = 1;
             int multiplierB = 1;
@@ -128,7 +128,7 @@ namespace L1_2
                 }
             }
             else newDenominator = a.denominator;
-            return new Drob(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
+            return new TFrac(a.numerator * multiplierA - b.numerator * multiplierB, newDenominator);
         }
 
         // Use Euclid's algorithm to calculate the greatest common divisor (GCD) of two numbers
@@ -153,7 +153,7 @@ namespace L1_2
         }
         public object Clone()
         {
-            // return new Drob(numerator, denominator) { numerator = this.numerator, denominator = this.denominator };
+            // return new TFrac(numerator, denominator) { numerator = this.numerator, denominator = this.denominator };
             return this.MemberwiseClone();
         }
 
