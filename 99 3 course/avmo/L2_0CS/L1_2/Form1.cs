@@ -20,10 +20,10 @@ namespace L1_2
         public int currentRow = 0;//для прорисовки промежуточных решений
         public int n1;//число строк
         public int n2;//число столбцов
-        public Drob[,] mas;//матрица
+        public TFrac[,] mas;//матрица
 
         public string[] elems;//список имён вершин для подписи в матрице       
-        public Drob[,] masBumaga;//массив для хранения матрицы в коде
+        public TFrac[,] masBumaga;//массив для хранения матрицы в коде
         public double[,] masBumaga2;//массив для запоминания вводимых матриц
         public bool load;
         public bool flagSolved = false;
@@ -38,7 +38,7 @@ namespace L1_2
             Random rand = new Random();
             if (n1 != 0 && n2 != 0)
             {
-                mas = new Drob[n1, n2];//the matrix to solve 
+                mas = new TFrac[n1, n2];//the matrix to solve 
                 dataGridView1.RowCount = n1 * 100;
                 dataGridView1.ColumnCount = n2;
                 dataGridView1.AutoSizeColumnsMode =
@@ -54,8 +54,8 @@ namespace L1_2
             load = true;
             n1 = 5; //number of rows
             n2 = 6; //number of columns
-            mas = new Drob[n1, n2];//the matrix to solve 
-            masBumaga = new Drob[n1, n2];//the matrix to solve 
+            mas = new TFrac[n1, n2];//the matrix to solve 
+            masBumaga = new TFrac[n1, n2];//the matrix to solve 
             dataGridView1.RowCount = n1 * 100;
             dataGridView1.ColumnCount = n2;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -63,19 +63,19 @@ namespace L1_2
              * 4 5 6 | 8
              * 7 8 0 | 2
              */
-            /* masBumaga[0, 0] = new Drob(1, 1); masBumaga[0, 1] = new Drob(2, 1); masBumaga[0, 2] = new Drob(3, 1); masBumaga[0, 3] = new Drob(5, 1);
-             masBumaga[1, 0] = new Drob(4, 1); masBumaga[1, 1] = new Drob(5, 1); masBumaga[1, 2] = new Drob(6, 1); masBumaga[1, 3] = new Drob(8, 1);
-             masBumaga[2, 0] = new Drob(7, 1); masBumaga[2, 1] = new Drob(8, 1); masBumaga[2, 2] = new Drob(0, 0); masBumaga[2, 3] = new Drob(2, 1);
+            /* masBumaga[0, 0] = new TFrac(1, 1); masBumaga[0, 1] = new TFrac(2, 1); masBumaga[0, 2] = new TFrac(3, 1); masBumaga[0, 3] = new TFrac(5, 1);
+             masBumaga[1, 0] = new TFrac(4, 1); masBumaga[1, 1] = new TFrac(5, 1); masBumaga[1, 2] = new TFrac(6, 1); masBumaga[1, 3] = new TFrac(8, 1);
+             masBumaga[2, 0] = new TFrac(7, 1); masBumaga[2, 1] = new TFrac(8, 1); masBumaga[2, 2] = new TFrac(0, 0); masBumaga[2, 3] = new TFrac(2, 1);
              */
             /* 2 -3 5 7     | 1
              * 4 -6 2 3     | 2
              * 2 -3 -11 -15 | 1
              */
-            masBumaga[0, 0] = new Drob(15, 1); masBumaga[0, 1] = new Drob(-5, 1); masBumaga[0, 2] = new Drob(8, 1); masBumaga[0, 3] = new Drob(11, 1); masBumaga[0, 4] = new Drob(-6, 1); masBumaga[0, 5] = new Drob(-76, 1);
-            masBumaga[1, 0] = new Drob(15, 1); masBumaga[1, 1] = new Drob(1, 1); masBumaga[1, 2] = new Drob(7, 1); masBumaga[1, 3] = new Drob(1, 1); masBumaga[1, 4] = new Drob(11, 1); masBumaga[1, 5] = new Drob(-79, 1);
-            masBumaga[2, 0] = new Drob(-5, 1); masBumaga[2, 1] = new Drob(11, 1); masBumaga[2, 2] = new Drob(5, 1); masBumaga[2, 3] = new Drob(-9, 1); masBumaga[2, 4] = new Drob(10, 1); masBumaga[2, 5] = new Drob(-6, 1);
-            masBumaga[3, 0] = new Drob(13, 1); masBumaga[3, 1] = new Drob(-5, 1); masBumaga[3, 2] = new Drob(-1, 1); masBumaga[3, 3] = new Drob(11, 1); masBumaga[3, 4] = new Drob(3, 1); masBumaga[3, 5] = new Drob(-27, 1);
-            masBumaga[4, 0] = new Drob(15, 1); masBumaga[4, 1] = new Drob(4, 1); masBumaga[4, 2] = new Drob(-3, 1); masBumaga[4, 3] = new Drob(-1, 1); masBumaga[4, 4] = new Drob(3, 1); masBumaga[4, 5] = new Drob(-4, 1);
+            masBumaga[0, 0] = new TFrac(15, 1); masBumaga[0, 1] = new TFrac(-5, 1); masBumaga[0, 2] = new TFrac(8, 1); masBumaga[0, 3] = new TFrac(11, 1); masBumaga[0, 4] = new TFrac(-6, 1); masBumaga[0, 5] = new TFrac(-76, 1);
+            masBumaga[1, 0] = new TFrac(15, 1); masBumaga[1, 1] = new TFrac(1, 1); masBumaga[1, 2] = new TFrac(7, 1); masBumaga[1, 3] = new TFrac(1, 1); masBumaga[1, 4] = new TFrac(11, 1); masBumaga[1, 5] = new TFrac(-79, 1);
+            masBumaga[2, 0] = new TFrac(-5, 1); masBumaga[2, 1] = new TFrac(11, 1); masBumaga[2, 2] = new TFrac(5, 1); masBumaga[2, 3] = new TFrac(-9, 1); masBumaga[2, 4] = new TFrac(10, 1); masBumaga[2, 5] = new TFrac(-6, 1);
+            masBumaga[3, 0] = new TFrac(13, 1); masBumaga[3, 1] = new TFrac(-5, 1); masBumaga[3, 2] = new TFrac(-1, 1); masBumaga[3, 3] = new TFrac(11, 1); masBumaga[3, 4] = new TFrac(3, 1); masBumaga[3, 5] = new TFrac(-27, 1);
+            masBumaga[4, 0] = new TFrac(15, 1); masBumaga[4, 1] = new TFrac(4, 1); masBumaga[4, 2] = new TFrac(-3, 1); masBumaga[4, 3] = new TFrac(-1, 1); masBumaga[4, 4] = new TFrac(3, 1); masBumaga[4, 5] = new TFrac(-4, 1);
 
             mas = masBumaga;
             initilaizeHeaders();
@@ -111,13 +111,13 @@ namespace L1_2
 
         private void button3_Click(object sender, EventArgs e) //                 "test"
         {
-            Drob db = new Drob(0, 0);
+            TFrac db = new TFrac(0, 0);
 
-            Drob d1 = new Drob(-94, 3);
-            Drob d2 = new Drob(1, 1);
-            Drob d3 = new Drob(28, 3);
-            Drob d4 = new Drob(-1, 2);
-            Drob dRes = new Drob(0, 0);
+            TFrac d1 = new TFrac(-94, 3);
+            TFrac d2 = new TFrac(1, 1);
+            TFrac d3 = new TFrac(28, 3);
+            TFrac d4 = new TFrac(-1, 2);
+            TFrac dRes = new TFrac(0, 0);
             d1 = db.mul(d1, d2);
             textBox1.AppendText(d1.toStr() + "\n");
             d3 = db.mul(d3, d4);
@@ -131,7 +131,7 @@ namespace L1_2
         private void button4_Click(object sender, EventArgs e)//                  "Solve"
         {
             if (flagSolved) return;
-            Drob d = new Drob(0, 0);//just an object for functions invocation
+            TFrac d = new TFrac(0, 0);//just an object for functions invocation
             int x0 = 0, y0 = 0, x1 = 0, y1 = 0;// works for the first case for all columns!
             int x2 = 0, y2 = 0, x3 = 0, y3 = 0;
             int rColumn = 0;
@@ -149,7 +149,7 @@ namespace L1_2
 
 
                 {
-                    Drob temp1 = (Drob)mas[rRow, rColumn].Clone();//created a clone of the solving element
+                    TFrac temp1 = (TFrac)mas[rRow, rColumn].Clone();//created a clone of the solving element
                     for (int i = rColumn; i < n2; i++)
                     {
                         mas[rRow, i] = d.div(mas[rRow, i], temp1);//turning the solving element to 1 by divividing all the elements of the row by the first element

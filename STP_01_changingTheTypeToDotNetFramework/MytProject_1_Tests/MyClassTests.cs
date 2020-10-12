@@ -32,7 +32,6 @@ namespace MytProject_1_Tests
         [TestMethod]
         public void sToInt_bBase_58_16_34375()
         {
-            //arrange(обеспечить)
             string s = "58";
             int b = 16;
             int expected = 34375;

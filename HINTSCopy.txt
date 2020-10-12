@@ -6,7 +6,7 @@ Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в
 
 КРУТОЙ САЙТ С БОЛЬШИМ КОЛИЧЕСТВОМ БЕСПЛАТНЫХ КНИГ ПО ПРОГРАММИРОВАНИЮ НА АНГЛИЙСКОМ: http://www.allitebooks.org/  ВООБЩЕ КНИГИ МОЖНО БЕСПЛАТНО ЧИТАТЬ ТУТ НАПРИМЕР: https://livebook.manning.com/discussion
 
-Fn + end на steelseries даёт end, как на обычной клавиатуре.
+Fn + end на steelseries даёт end, как на обычной клавиатуре. Также end & home есть на нампаде. 
 
 Кодировка:
 	IntelliJIdea File -> Settings -> Editor -> File Encoding
@@ -34,7 +34,9 @@ sudo mount /dev/sda1 /mnt (Здесь sda1 - раздел с линуксом(ч
 sudo grub-install —root-directory=/mnt /dev/sda(может не сработать, но сработает следующая команда)
 sudo update-grub —output=/mnt/boot/grub/grub.cfg   
 
-Диаграммы UML diagrams lucid.app бесплатная версия не позволяет однако превысить некоторое число деталей
+Диаграммы UML diagrams lucid.app бесплатная версия не позволяет однако превысить некоторое число деталей. https://app.creately.com/
+
+На моей клаве всё таки есть клавиша end & home, просто они на циферной клаве справа и работают только с включённым numLock.
 
 В сишарпе cs c# чтобы передать ссылку на массив по ссылке, а не по значению, надо дописывать ref как при вызове функции, так и при определении метода. GetArray(ref Integer[] A)
 
@@ -118,7 +120,7 @@ Click the Language property page.
 Modify the Disable Language Extensions property (Change to Yes (/Za)).
 
 Вставка оглавления, содержания в ворде: Ссылки - слева оглавление.
-Чтобы сделать скриншот только активного окна, нажмите сочетание клавиш: 
+Чтобы сделать скриншот только активного окна, нажмите сочетание клавиш: Alt + PrtScr
 скриншот области экрана: win + shift + s
 
 Чтобы вызвать большое меню принтера kypcera 5021 cdw надо зарускать печать на KYOCERA 5021 cdw KX (1)
