@@ -1,4 +1,4 @@
-﻿namespace L2_0
+﻿namespace L2_0CS
 {
     partial class Form1
     {

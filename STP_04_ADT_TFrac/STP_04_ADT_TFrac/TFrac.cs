@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace STP_04_ADT_TFrac
             Console.WriteLine("Something wrong with the input string");
         }
     }
-   public class TFrac : ICloneable
+   public class TFrac : ICloneable, IEnumerable<int>
     {
         static void Main(string[] args)
         {
@@ -56,11 +57,11 @@ namespace STP_04_ADT_TFrac
                 throw new ZeroDenominatorException();
             }
             
-            if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
+/*            if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
             {
                 numerator *= -1;
                 denominator *= -1;
-            }
+            }*/
             if (denominator < 0)//переношу минус из знаменателя в числитель
             {
                 numerator *= -1;
@@ -128,11 +129,11 @@ namespace STP_04_ADT_TFrac
         }
         public void transformToOneDenominator(ref TFrac a, ref TFrac b)//привести дроби к общему знаменателю
         {
-            if (a.denominator < 0)//удаляю минус из знаменателей если они там были
+ /*           if (a.denominator < 0)//удаляю минус из знаменателей если они там были
             {
                 a.denominator *= -1;
                 a.numerator *= -1;
-            }
+            }*/
             if (b.denominator < 0)
             {
                 b.denominator *= -1;
@@ -280,5 +281,14 @@ namespace STP_04_ADT_TFrac
             Console.WriteLine("d5 = " + d5.ToString());
         }
 
+        IEnumerator<int> IEnumerable<int>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
