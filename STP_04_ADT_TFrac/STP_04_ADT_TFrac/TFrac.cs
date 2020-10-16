@@ -10,7 +10,7 @@ namespace STP_04_ADT_TFrac
     public class ZeroDenominatorException : Exception
     {
         public ZeroDenominatorException()//Можно ли как в джаве подписывать справа от объявления метода throws SomeException и т.о. избавиться от 
-        {//необходимости писать try catch всё время? Что такое UFrac? Это д.б. класс, в котором будут реализованы все методы? А TFrac д.б. абстрактным классом?
+        {//необходимости писать try catch всё время? Даже в джаве всё время надо прописывать try catch. Что такое UFrac? Это д.б. класс, в котором будут реализованы все методы? А TFrac д.б. абстрактным классом?
             Console.WriteLine("You've probably created a denominator equal to zero");
         }
     }

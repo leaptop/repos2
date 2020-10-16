@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L1_2
 {
-    public class TFrac : ICloneable
+    public class TFrac : ICloneable//Before this class was called Drob
     {
         
         public int numerator;//chislitel
@@ -31,7 +31,7 @@ namespace L1_2
             }
                 if (denominator != 0)
             {
-                int t = GCD(numerator, denominator);
+                int t = GCD(numerator, denominator);//
                 this.numerator = numerator / t;
                 this.denominator = denominator / t;
             }
