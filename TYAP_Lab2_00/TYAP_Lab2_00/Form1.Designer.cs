@@ -43,7 +43,6 @@
             this.button2CheckTheChain = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button2ClearTheRichTextBoxes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +138,7 @@
             this.button1CreateTheTable.Name = "button1CreateTheTable";
             this.button1CreateTheTable.Size = new System.Drawing.Size(300, 46);
             this.button1CreateTheTable.TabIndex = 10;
-            this.button1CreateTheTable.Text = "0 сформировать/перезагрузить таблицу\r\nпо полям состояний и алфавита";
+            this.button1CreateTheTable.Text = "0 сформировать dataGridView";
             this.button1CreateTheTable.UseVisualStyleBackColor = true;
             this.button1CreateTheTable.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -187,15 +187,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1ReadMatrixFromTheMemoryFieldsfromTheScreen);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1037, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 17);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "служебная информация";
-            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(607, 203);
@@ -226,11 +217,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1287, 142);
+            this.button3.Location = new System.Drawing.Point(1040, 145);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(203, 23);
             this.button3.TabIndex = 20;
-            this.button3.Text = "вывести массивы";
+            this.button3.Text = "вывести все данные";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -254,13 +245,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("BorderStyle", global::TYAP_Lab2_00.Properties.Settings.Default, "a", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 347);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 49;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 454);
+            this.dataGridView1.Size = new System.Drawing.Size(577, 364);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // button5
             // 
@@ -268,9 +258,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(254, 47);
             this.button5.TabIndex = 22;
-            this.button5.Text = "-1 считать состояние задачи 17,\r\nпостроить всё";
+            this.button5.Text = "-1 считать состояние задачи 17a,\r\nпостроить всё";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.button5InitExercise17a);
             // 
             // button6
             // 
@@ -278,15 +268,26 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(254, 47);
             this.button6.TabIndex = 23;
-            this.button6.Text = "-1 считать состояние задачи 16,\r\nпостроить всё";
+            this.button6.Text = "-1 считать состояние задачи 16а,\r\nпостроить всё";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.button6InitTask16a);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(272, 257);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(300, 46);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "0 считать символы из матрицы";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7ReadMatrixSymbols);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1502, 793);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -294,7 +295,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button2ClearTheRichTextBoxes);
             this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button2CheckTheChain);
@@ -337,7 +337,6 @@
         private System.Windows.Forms.Button button2CheckTheChain;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button button2ClearTheRichTextBoxes;
         private System.Windows.Forms.Button button2;
@@ -345,6 +344,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 

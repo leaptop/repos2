@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TYAP_Lab2_00
-{
+{//В общем программу надо перезапускать в случае изменения ДКА. Всё остальное(цепочка, стартовый, конечные состояние) 
+    //можно менять прямо в процессе работы
     public partial class Form1 : Form
     {
         public ArrayList columnsIE_Alphabet;
@@ -21,7 +16,7 @@ namespace TYAP_Lab2_00
         string ChainToCheck;
         string startingState;
         string[] finalStates;
-        int indexOfTheCurrentRow;
+        int indexOfTheCurrentRow = Int32.MaxValue;
         string[] stringsToAvoid = { " ", "  " };//для подчищения пробелов и разделения(Split) строк
         public Form1()
         {
@@ -88,26 +83,7 @@ namespace TYAP_Lab2_00
                 }
             }
         }
-        public void readMatrixFromDataGridViewAndCheckIfItsElementsBelongToArrayOfStates()
-        {
-            matrixOfTransitions = new string[rowsNum, columnsNum];
-            for (int i = 0; i < rowsNum; i++)
-            {
-                for (int j = 0; j < columnsNum; j++)
-                {
-                    string str = dataGridView1.Rows[i].Cells[j].ToString();
-                    if (checkIfTheStringBelongsToArrayList(rowsIE_States, str))
-                        matrixOfTransitions[i, j] = str;
-                    else
-                    {
-                        MessageBox.Show("Символ в матрице по адресу[" + i + ", " + j + "] не принадлежит списку состояний");
-                        matrixOfTransitions = null;
-                        return;
-                    }
-                }
-            }
 
-        }
         public void readMatrixFromMemory()
         {
             matrixOfTransitions = new string[,] {
@@ -162,20 +138,21 @@ namespace TYAP_Lab2_00
                 }
                 else
                 {
-                    richTextBox2.AppendText("Строка содержит символ " + nextCharacter +
-                        ", не являющийся символом алфавита нашего ДКА, а значит не принимается им");
+                    richTextBox2.AppendText("\nСтрока содержит символ " + nextCharacter +
+                        ", не являющийся символом алфавита нашего ДКА, а значит не принимается им\n");
                     MessageBox.Show("Строка содержит символ " + nextCharacter +
                         ", не являющийся символом алфавита нашего ДКА, а значит не принимается им");
+                    ChainToCheck = textBox5ChainToCheck.Text;
                     return;
                 }
                 ChainToCheck = ChainToCheck.Substring(1);//удаляю считанный символ
                 richTextBox2.AppendText("остаток строки: " + ChainToCheck + ", текущее состояние: " +
-                    str+"\n");
+                    str + "\n");
 
                 // richTextBox1.AppendText("\nnextCharacter = " + nextCharacter);
 
             }
-            richTextBox2.AppendText("\n---------------------------------------------");
+            richTextBox2.AppendText("\n---------------------------------------------\n");
             string strFinishing = rowsIE_States[indexOfTheCurrentRow].ToString();
             if (finalStates.Contains(strFinishing))
             {
@@ -185,11 +162,22 @@ namespace TYAP_Lab2_00
             {
                 MessageBox.Show("Строка прочитана. Конечное состояние " + strFinishing + " не входит в множество конечных состояний. Цепочка не принята");
             }
+            ChainToCheck = textBox5ChainToCheck.Text;
         }
         public bool checkIfSymbolBelongsToAlphabet(string str)
         {
             if (columnsIE_Alphabet.Contains(str)) return true;
             else return false;
+        }
+
+        
+        private void button1_Click(object sender, EventArgs e)//0 сформировать/перезагрузить таблицу по полям состояний и алфавита
+        {
+            initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();// не здесь вызовет исключение, т.к. datagridview м.б. ещё не инициализирована
+        }
+        private void button7ReadMatrixSymbols(object sender, EventArgs e)
+        {
+            readMatrixFromDataGridViewAndCheckIfItsElementsBelongToArrayOfStates();
         }
         public void initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows()
         {
@@ -226,56 +214,24 @@ namespace TYAP_Lab2_00
                 }
             }
         }
-        private void printArraysToRichTextBox1JustServiceInfo()
+        public void readMatrixFromDataGridViewAndCheckIfItsElementsBelongToArrayOfStates()
         {
-            try
+            matrixOfTransitions = new string[rowsNum, columnsNum];
+            for (int i = 0; i < rowsNum; i++)
             {
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n-------------------------------------\n");
-                for (int i = columnsIE_Alphabet.Count-1; i >=0 ; i--)
-                {//просто вывожу в ричтекстбокс полученные массивы, чтобы проверить, всё ли сохранилось как надо
-                    //richTextBox1.AppendText("columnsIE_Alphabet[" + i + "] = " + columnsIE_Alphabet[i] + "\n");
-                  richTextBox1.Text =  richTextBox1.Text.Insert(0, "columnsIE_Alphabet[" + i + "] = " + columnsIE_Alphabet[i] + "\n");
-                }
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
-                for (int i = rowsIE_States.Count-1; i >=0; i--)
+                for (int j = 0; j < columnsNum; j++)
                 {
-                     richTextBox1.Text = richTextBox1.Text.Insert(0, "elemsRowsIE_States[" + i + "] = " + rowsIE_States[i] + "\n");
-                    //richTextBox1.AppendText( "elemsRowsIE_States[" + i + "] = " + rowsIE_States[i] + "\n");
-                }
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
-                for (int i = finalStates.Length-1; i >=0 ; i--)
-                {
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, "finalStates[" + i + "] = " + finalStates[i] + "\n");
-                }
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nindexOfTheCurrentRow = " + indexOfTheCurrentRow + "\n");
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
-               
-                for (int i = rowsNum-1; i >=0 ; i--)
-                {
-                    for (int j = columnsNum-1; j >=0 ; j--)
+                    string str = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    if (checkIfTheStringBelongsToArrayList(rowsIE_States, str))//если такой символ есть в списке возможных состояний, то добавляем его
+                        matrixOfTransitions[i, j] = str;
+                    else
                     {
-                        richTextBox1.Text = richTextBox1.Text.Insert(0, matrixOfTransitions[i, j] + "  ");
+                        MessageBox.Show("Символ в матрице по адресу[" + i + ", " + j + "] не принадлежит списку состояний");
+                        matrixOfTransitions = null;
+                        return;
                     }
-                    richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
                 }
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nAnd the matrix is:");
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nЦепочка: " + ChainToCheck);
             }
-            catch (Exception ee)
-            {
-                richTextBox1.Text = richTextBox1.Text.Insert(0, "NO DATA IN THE ARRAYS");
-                //throw;
-            }
-
-
-            
-        }
-        private void button1_Click(object sender, EventArgs e)//0 сформировать/перезагрузить таблицу по полям состояний и алфавита
-        {
-            initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();// не здесь вызовет исключение, т.к. datagridview м.б. ещё не инициализирована
-            readMatrixFromDataGridViewAndCheckIfItsElementsBelongToArrayOfStates();
 
         }
         private void button1ReadMatrixFromTheMemoryFieldsfromTheScreen(object sender, EventArgs e)
@@ -293,9 +249,64 @@ namespace TYAP_Lab2_00
         {
             printArraysToRichTextBox1JustServiceInfo();
         }
+        private void printArraysToRichTextBox1JustServiceInfo()
+        {
 
+            if (ChainToCheck == null || startingState == null || finalStates  == null
+                || indexOfTheCurrentRow == Int32.MaxValue)
+            {
+                MessageBox.Show("Введите остальные значения сначала( стартовое и т.п.");
+            }else
+            try
+            {
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n-------------------------------------\n");
+                for (int i = columnsIE_Alphabet.Count - 1; i >= 0; i--)
+                {//просто вывожу в ричтекстбокс полученные массивы, чтобы проверить, всё ли сохранилось как надо
+                 //richTextBox1.AppendText("columnsIE_Alphabet[" + i + "] = " + columnsIE_Alphabet[i] + "\n");
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, "columnsIE_Alphabet[" + i + "] = " + columnsIE_Alphabet[i] + "\n");
+                }
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+                for (int i = rowsIE_States.Count - 1; i >= 0; i--)
+                {
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, "elemsRowsIE_States[" + i + "] = " + rowsIE_States[i] + "\n");
+                    //richTextBox1.AppendText( "elemsRowsIE_States[" + i + "] = " + rowsIE_States[i] + "\n");
+                }
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+                for (int i = finalStates.Length - 1; i >= 0; i--)
+                {
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, "finalStates[" + i + "] = " + finalStates[i] + "\n");
+                }
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nindexOfTheCurrentRow = " + indexOfTheCurrentRow + "\n");
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+
+                for (int i = rowsNum - 1; i >= 0; i--)
+                {
+                    for (int j = columnsNum - 1; j >= 0; j--)
+                    {
+                        richTextBox1.Text = richTextBox1.Text.Insert(0, matrixOfTransitions[i, j] + "  ");
+                    }
+                    richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+                }
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nAnd the matrix is:");
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\n");
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "\nЦепочка: " + ChainToCheck);
+            }
+            catch (NullReferenceException ee)
+            {
+                richTextBox1.Text = richTextBox1.Text.Insert(0, "NO DATA IN THE ARRAYS");
+                //throw;
+            }
+
+
+
+        }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+           /* if ((e.ColumnIndex == -1 || e.RowIndex == -1)) return;
+            else
+                readMatrixFromDataGridViewAndCheckIfItsElementsBelongToArrayOfStates();*/
+            //Здесь заменить соответсвующее значение ячейки матрицы в случае замены пользователем
             // checkIfTheNewCellContentBelongsToStatesList(e.RowIndex, e.ColumnIndex);
             // MessageBox.Show("   e.ToString()");
         }
@@ -346,14 +357,58 @@ namespace TYAP_Lab2_00
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6InitTask16a(object sender, EventArgs e)
         {
-
+            textBox1Alphabet.Text = "0 1 a b c";
+            textBox2States.Text = "A B C";
+            textBox3StartingState.Text = startingState = "A";
+            textBox4FinalStates.Text = "C";
+            finalStates = new string[] { "C" };
+            textBox5ChainToCheck.Text = ChainToCheck = "0101";
+            initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();//здесь эта инициализация идёт ниже... не вся
+            matrixOfTransitions = new string[,] {
+                { "C", "C", "B", "B" , "B" },
+                { "B", "B" , "B", "B" , "B" },
+                { "C", "C","C", "C", "C" }
+            };
+            for (int i = 0; i < matrixOfTransitions.GetLength(0); i++)//Заполняю таблицу, ограничившись, естсетвенно, сущетсвующей матрицей, чтобы не выйти за границы
+            {
+                for (int j = 0; j < matrixOfTransitions.GetLength(1); j++)
+                {
+                    dataGridView1.Rows[i].Cells[j].Value = matrixOfTransitions[i, j];//ЗДЕСЬ ВВОЖУ ТАБЛИЦУ ИЗ matrixOfTransitions[,]
+                }
+            }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5InitExercise17a(object sender, EventArgs e)
         {
-
+            textBox1Alphabet.Text = "0 1 a";
+            textBox2States.Text = "A B C D";
+            textBox3StartingState.Text = startingState = "A";
+            textBox4FinalStates.Text = "C";
+            finalStates = new string[] { "C" };
+            textBox5ChainToCheck.Text = ChainToCheck = "0101";
+            initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();//здесь эта инициализация идёт ниже... не вся
+            matrixOfTransitions = new string[,] {
+                { "B", "D", "D"},//A
+                { "C", "C", "C"},//B
+                { "B", "B", "B"},//C
+                { "D", "D", "D"}//D
+            };
+            for (int i = 0; i < matrixOfTransitions.GetLength(0); i++)//Заполняю таблицу, ограничившись, естсетвенно, сущетсвующей матрицей, чтобы не выйти за границы
+            {
+                for (int j = 0; j < matrixOfTransitions.GetLength(1); j++)
+                {
+                    dataGridView1.Rows[i].Cells[j].Value = matrixOfTransitions[i, j];//ЗДЕСЬ ВВОЖУ ТАБЛИЦУ ИЗ matrixOfTransitions[,]
+                }
+            }
         }
+
+        private void dataGridView1_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+
     }
 }
