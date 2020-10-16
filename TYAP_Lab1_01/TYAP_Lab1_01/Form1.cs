@@ -24,14 +24,198 @@ namespace TYAP_Lab1_01
             terminalCombs = new ArrayList();
             tempNonterminalCombs = new ArrayList();
             tempTerminalCombs = new ArrayList();
-            numericUpDownMax.Value = 6;
+            numericUpDownMax.Value = 10;
             numericUpDownMin.Value = 1;
-            iterNum = 8;//a number of times to iterate the deriving cycle
+            iterNum = 10;//a number of times to iterate the deriving cycle
 
-            iterNum = 6;
+            /*  dataGridView1.Rows[0].Cells[0].Value = "A";
+              dataGridView1.Rows[0].Cells[1].Value = "aB";
+              dataGridView1.Rows[1].Cells[0].Value = "B";
+              dataGridView1.Rows[1].Cells[1].Value = "aC";
+              dataGridView1.Rows[2].Cells[0].Value = "C";
+              dataGridView1.Rows[2].Cells[1].Value = "aD";
+              dataGridView1.Rows[3].Cells[0].Value = "C";
+              dataGridView1.Rows[3].Cells[1].Value = "0D";
+              dataGridView1.Rows[4].Cells[0].Value = "C";
+              dataGridView1.Rows[4].Cells[1].Value = "1D";
+
+              dataGridView1.Rows[5].Cells[0].Value = "D";
+              dataGridView1.Rows[5].Cells[1].Value = "aE";
+              dataGridView1.Rows[6].Cells[0].Value = "D";
+              dataGridView1.Rows[6].Cells[1].Value = "0E";
+              dataGridView1.Rows[7].Cells[0].Value = "D";
+              dataGridView1.Rows[7].Cells[1].Value = "1E";
+              dataGridView1.Rows[8].Cells[0].Value = "D";
+              dataGridView1.Rows[8].Cells[1].Value = "bE";
+
+              dataGridView1.Rows[9].Cells[0].Value = "E";
+              dataGridView1.Rows[9].Cells[1].Value = "aF";
+              dataGridView1.Rows[10].Cells[0].Value = "E";
+              dataGridView1.Rows[10].Cells[1].Value = "0F";
+              dataGridView1.Rows[11].Cells[0].Value = "E";
+              dataGridView1.Rows[11].Cells[1].Value = "1F";*/
+
+            /*            numericUpDownMax.Value = 10;
+                        textBoxForStartingSymbol.Text = "S";//Чётность как объясняла Бах
+                                                            //
+                        dataGridView1.Rows[0].Cells[0].Value = "S";
+                        dataGridView1.Rows[0].Cells[1].Value = "A";//B instead of A here will derive strings of odd length
+                        dataGridView1.Rows[1].Cells[0].Value = "A";
+                        dataGridView1.Rows[1].Cells[1].Value = "0B";
+                        dataGridView1.Rows[2].Cells[0].Value = "A";
+                        dataGridView1.Rows[2].Cells[1].Value = "1B";
+
+                        dataGridView1.Rows[3].Cells[0].Value = "A";
+                        dataGridView1.Rows[3].Cells[1].Value = "";
+                        dataGridView1.Rows[4].Cells[0].Value = "B";
+                        dataGridView1.Rows[4].Cells[1].Value = "0A";
+                        dataGridView1.Rows[5].Cells[0].Value = "B";
+                        dataGridView1.Rows[5].Cells[1].Value = "1A";*/
+
+            /* iterNum = 10;
+             numericUpDownMax.Value = 10;
+             textBoxForStartingSymbol.Text = "F";//Контрольная вариант 4 №2
+                                                 //КС грамматика строящая L = {c^(2k)w|w belongs to {a,b}*, a number of a's is equal to a number of b's, k>0}
+             dataGridView1.Rows[0].Cells[0].Value = "F";
+             dataGridView1.Rows[0].Cells[1].Value = "ccLW";
+             dataGridView1.Rows[1].Cells[0].Value = "L";
+             dataGridView1.Rows[1].Cells[1].Value = "FF";
+             dataGridView1.Rows[2].Cells[0].Value = "L";
+             dataGridView1.Rows[2].Cells[1].Value = "";
+
+             dataGridView1.Rows[3].Cells[0].Value = "W";
+             dataGridView1.Rows[3].Cells[1].Value = "AB";
+             dataGridView1.Rows[4].Cells[0].Value = "A";
+             dataGridView1.Rows[4].Cells[1].Value = "ab";
+             dataGridView1.Rows[5].Cells[0].Value = "A";
+             dataGridView1.Rows[5].Cells[1].Value = "AA";
+
+             dataGridView1.Rows[6].Cells[0].Value = "B";
+             dataGridView1.Rows[6].Cells[1].Value = "ba";
+             dataGridView1.Rows[7].Cells[0].Value = "B";
+             dataGridView1.Rows[7].Cells[1].Value = "BB";*/
+
+            /*  
+
+            /*  iterNum = 8;
+              numericUpDownMax.Value = 5;
+              textBoxForStartingSymbol.Text = "A";//exercise number 17 к) (all chains of {0, 1, a, b}
+              //starting from "aa" and their length is didvided by 3
+              dataGridView1.Rows[0].Cells[0].Value = "A";
+              dataGridView1.Rows[0].Cells[1].Value = "aB";
+              dataGridView1.Rows[1].Cells[0].Value = "B";
+              dataGridView1.Rows[1].Cells[1].Value = "aC";
+              dataGridView1.Rows[2].Cells[0].Value = "C";
+              dataGridView1.Rows[2].Cells[1].Value = "aD";
+              dataGridView1.Rows[3].Cells[0].Value = "C";
+              dataGridView1.Rows[3].Cells[1].Value = "0D";
+              dataGridView1.Rows[4].Cells[0].Value = "C";
+              dataGridView1.Rows[4].Cells[1].Value = "1D";
+
+              dataGridView1.Rows[5].Cells[0].Value = "D";
+              dataGridView1.Rows[5].Cells[1].Value = "aE";
+              dataGridView1.Rows[6].Cells[0].Value = "D";
+              dataGridView1.Rows[6].Cells[1].Value = "0E";
+              dataGridView1.Rows[7].Cells[0].Value = "D";
+              dataGridView1.Rows[7].Cells[1].Value = "1E";
+              dataGridView1.Rows[8].Cells[0].Value = "D";
+              dataGridView1.Rows[8].Cells[1].Value = "bE";
+
+              dataGridView1.Rows[9].Cells[0].Value = "E";
+              dataGridView1.Rows[9].Cells[1].Value = "aF";
+              dataGridView1.Rows[10].Cells[0].Value = "E";
+              dataGridView1.Rows[10].Cells[1].Value = "0F";
+              dataGridView1.Rows[11].Cells[0].Value = "E";
+              dataGridView1.Rows[11].Cells[1].Value = "1F";
+              dataGridView1.Rows[12].Cells[0].Value = "E";
+              dataGridView1.Rows[12].Cells[1].Value = "bF";
+
+              dataGridView1.Rows[13].Cells[0].Value = "F";
+              dataGridView1.Rows[13].Cells[1].Value = "aD";
+              dataGridView1.Rows[14].Cells[0].Value = "F";
+              dataGridView1.Rows[14].Cells[1].Value = "0D";
+              dataGridView1.Rows[15].Cells[0].Value = "F";
+              dataGridView1.Rows[15].Cells[1].Value = "1D";
+              dataGridView1.Rows[16].Cells[0].Value = "F";
+              dataGridView1.Rows[16].Cells[1].Value = "bD";
+
+              dataGridView1.Rows[17].Cells[0].Value = "D";
+              dataGridView1.Rows[17].Cells[1].Value = "";
+
+              dataGridView1.Rows[18].Cells[0].Value = "C";
+              dataGridView1.Rows[18].Cells[1].Value = "bD";*/
+
+
+
+            iterNum = 8;
+            numericUpDownMax.Value = 5;
+            textBoxForStartingSymbol.Text = "A";//вариант 4 номер 1
+                                                //containing "aab" and having even number of characters).       DOESN'T WORK FOR SOME REASON
+            dataGridView1.Rows[0].Cells[0].Value = "A";
+            dataGridView1.Rows[0].Cells[1].Value = "aB";
+            dataGridView1.Rows[1].Cells[0].Value = "A";
+            dataGridView1.Rows[1].Cells[1].Value = "aB";
+            dataGridView1.Rows[2].Cells[0].Value = "A";
+            dataGridView1.Rows[2].Cells[1].Value = "bF";
+            dataGridView1.Rows[3].Cells[0].Value = "A";
+            dataGridView1.Rows[3].Cells[1].Value = "1F";
+
+            dataGridView1.Rows[4].Cells[0].Value = "B";
+            dataGridView1.Rows[4].Cells[1].Value = "aC";
+            dataGridView1.Rows[5].Cells[0].Value = "B";
+            dataGridView1.Rows[5].Cells[1].Value = "bA";
+            dataGridView1.Rows[6].Cells[0].Value = "B";
+            dataGridView1.Rows[6].Cells[1].Value = "1A";
+
+            dataGridView1.Rows[7].Cells[0].Value = "C";
+            dataGridView1.Rows[7].Cells[1].Value = "1F";
+            dataGridView1.Rows[8].Cells[0].Value = "C";
+            dataGridView1.Rows[8].Cells[1].Value = "aH";
+            dataGridView1.Rows[9].Cells[0].Value = "C";
+            dataGridView1.Rows[9].Cells[1].Value = "bD";
+
+            dataGridView1.Rows[10].Cells[0].Value = "D";
+            dataGridView1.Rows[10].Cells[1].Value = "1E";
+            dataGridView1.Rows[11].Cells[0].Value = "D";
+            dataGridView1.Rows[11].Cells[1].Value = "aE";
+            dataGridView1.Rows[12].Cells[0].Value = "D";
+            dataGridView1.Rows[12].Cells[1].Value = "bE";
+
+            dataGridView1.Rows[13].Cells[0].Value = "E";
+            dataGridView1.Rows[13].Cells[1].Value = "";
+            dataGridView1.Rows[14].Cells[0].Value = "E";
+            dataGridView1.Rows[14].Cells[1].Value = "1D";
+            dataGridView1.Rows[15].Cells[0].Value = "E";
+            dataGridView1.Rows[15].Cells[1].Value = "aD";
+            dataGridView1.Rows[16].Cells[0].Value = "E";
+            dataGridView1.Rows[16].Cells[1].Value = "bD";
+
+            dataGridView1.Rows[17].Cells[0].Value = "F";
+            dataGridView1.Rows[17].Cells[1].Value = "1A";
+            dataGridView1.Rows[18].Cells[0].Value = "F";
+            dataGridView1.Rows[18].Cells[1].Value = "bA";
+            dataGridView1.Rows[19].Cells[0].Value = "F";
+            dataGridView1.Rows[19].Cells[1].Value = "aG";
+
+            dataGridView1.Rows[20].Cells[0].Value = "G";
+            dataGridView1.Rows[20].Cells[1].Value = "1F";
+            dataGridView1.Rows[21].Cells[0].Value = "G";
+            dataGridView1.Rows[21].Cells[1].Value = "bF";
+            dataGridView1.Rows[22].Cells[0].Value = "G";
+            dataGridView1.Rows[22].Cells[1].Value = "aH";
+
+            dataGridView1.Rows[23].Cells[0].Value = "H";
+            dataGridView1.Rows[23].Cells[1].Value = "1A";
+            dataGridView1.Rows[24].Cells[0].Value = "H";
+            dataGridView1.Rows[24].Cells[1].Value = "bE";
+            dataGridView1.Rows[25].Cells[0].Value = "H";
+            dataGridView1.Rows[25].Cells[1].Value = "aCdat";
+
+
+            /*iterNum = 6;
             numericUpDownMax.Value = 5;
             textBoxForStartingSymbol.Text = "A";//exercise number 17 ж) (all chains of {0, 1, a, b, c}
-            //where the number of '0' is even). 
+                                                //where the number of '0' is even). 
             dataGridView1.Rows[0].Cells[0].Value = "A";
             dataGridView1.Rows[0].Cells[1].Value = "1A";
             dataGridView1.Rows[1].Cells[0].Value = "A";
@@ -54,7 +238,7 @@ namespace TYAP_Lab1_01
             dataGridView1.Rows[9].Cells[0].Value = "B";
             dataGridView1.Rows[9].Cells[1].Value = "bB";
             dataGridView1.Rows[10].Cells[0].Value = "B";
-            dataGridView1.Rows[10].Cells[1].Value = "cB";
+            dataGridView1.Rows[10].Cells[1].Value = "cB";*/
 
 
             /* iterNum = 8;
@@ -147,7 +331,7 @@ namespace TYAP_Lab1_01
         ArrayList terminalCombs;
         ArrayList tempNonterminalCombs;
         ArrayList tempTerminalCombs;
-    public int iterNum;
+        public int iterNum;
         private void buttonLaunchGenerationAndPrintingOfAllCombinations(object sender, EventArgs e)
         {
             buttonCleanRichTextBox(sender, e);
@@ -181,7 +365,7 @@ namespace TYAP_Lab1_01
             //Конец первого прохода со стартовым символом.
 
             for (int i = 0; i < iterNum; i++)// от ограничивающего числа зависит число возможной длины строки из скобочек
-                                        //Эта длина примерно на 2 меньше числа. На 18 и выше программа заметно загружает процессор. 
+                                             //Эта длина примерно на 2 меньше числа. На 18 и выше программа заметно загружает процессор. 
             {//Хотя на другом задании нормально вывело 27 символов при 20 установленных здесь...              
                 //Можно попробовать склонировать nonterminalCombs и работать с клоном, потом в конце цикла
                 //добавить ... Нет. Лучше просто при работе метода добавлять результаты во временные ArrayList-ы.
@@ -319,10 +503,10 @@ namespace TYAP_Lab1_01
         }
         public void printAllCombinationsAndAllTerminalStringsToRichTextBox()
         {
-            //richTextBox1.AppendText("\nОставшиеся нетерминальные комбинации:\n");
+            //  richTextBox1.AppendText("\nОставшиеся нетерминальные комбинации:\n");
             for (int i = 0; i < nonterminalCombs.Count; i++)
             {
-                //    richTextBox1.AppendText(nonterminalCombs[i].ToString() + "\n");
+                // richTextBox1.AppendText(nonterminalCombs[i].ToString() + "\n");
             }
             richTextBox1.AppendText("\nТерминальные цепочки:\n");
             for (int i = 0; i < terminalCombs.Count; i++)
