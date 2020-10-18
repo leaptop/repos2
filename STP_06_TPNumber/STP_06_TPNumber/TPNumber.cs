@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace STP_06_TPNumber
+//Вещественное число (s2). Система счисления(base), точность представления числа(c) – целые числа.
 /*Р-ичное число TPNumber - это действительное число (n) со знаком в системе
 счисления с основанием (base) (в диапазоне 2..16), содержащее целую и дробную части.
 Точность представления числа – (c >= 0). Р-ичные числа изменяемые.
@@ -22,21 +24,149 @@ NCreate(s2,3,2) = число s2 в системе
 троичной точки.*/
     public class TPNumber : ICloneable
     {
-        public double nDecimal;
-        public string aToStrInteger;
-        public string aToStrFractional;
-        public int aToIntInt;
-        public int aToIntFrac;
-        public int b;
-        public int c;
-        public string na = "";//В случае числа в системе счисления больше 10 храню числа в виде строк. na - целая часть, nb - дробная, n - всё вместе
-        public string nb = "";
-        public string n = "";
-        static void Main(string[] args)
+        public double nDecimal = 0;
+        public string aToStrInteger;//здесь оригинальное распарсенное, переданное в конструктор 
+        public string aToStrFractional;//здесь оригинальное распарсенное, переданное в конструктор 
+        public int integerPartOfaInIntegerDecimal;
+        public int fractionalPartOfaInIntegerDecimal;
+        public int b;//base
+        public int c;//precision
+        public string na = "";//Здесь превращенная в соответствии с введённым основанием b целая часть//В случае числа в системе счисления больше 10 храню числа в виде строк. na - целая часть, nb - дробная, n - всё вместе
+        public string nb = "";//Здесь превращенная в соответствии с введённым основанием b дробная часть
+        public string n = "";//Здесь просто сконкатенированные через запятую na & nb //число в его оригинальной системе счисления (b-ичное)
+        public string[] alphabet;
+        static void Main(string[] args)//при вводе числа в в иде строки обязательно указывать дробную часть через точку, даже если там ноль
         {
             TPNumber tp = new TPNumber(24.36, 2, 7);
-            //tp.sToInt_bBase_2(tp.aToStrInteger, tp.aToStrFractional, 3);
+            TPNumber tp1 = new TPNumber("212,22", 3, 7);
+            TPNumber tp2 = new TPNumber("AC,B9A", 15, 7);//AC.B9A(пятнадцатеричная) = 162.776296296(десятичная)
+            Console.ReadLine();
         }
+        public TPNumber(double a, int b, int c)
+        {
+            if (a == 0)
+            {
+                nDecimal = 0;
+                n = "0,0";
+                return;
+            }          
+            if (b < 2 || b > 16 || c < 0)
+            {
+                throw new WrongInput();
+            }
+            string aToStrInteger = a.ToString().Split(',')[0];
+            string aToStrFractional = a.ToString().Split(',')[1];
+            integerPartOfaInIntegerDecimal = Int32.Parse(aToStrInteger);
+            fractionalPartOfaInIntegerDecimal = Int32.Parse(aToStrFractional);
+            this.b = b;
+            this.c = c;
+            nDecimal = a;
+            translateFromDecimalTo_b_basedNumber(integerPartOfaInIntegerDecimal, fractionalPartOfaInIntegerDecimal, b, c);
+        }
+        public TPNumber(string a, int b, int c)
+        {
+            if (a == "0" || a == "0,0" || a == "0.0")
+            {
+                nDecimal = 0;
+                n = "0,0";
+                return;
+            }
+            string[] tempAlphabet = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" };
+            alphabet = new string[b];
+            for (int i = 0; i < b; i++)
+            {//определяю допустимые элементы числа в соответствии с основанием системы счисления b
+                alphabet[i] = tempAlphabet[i];
+            }
+            string naa = a.Split(',')[0];
+            string nbb = a.Split(',')[1];
+            bool contains = false;
+            string naanbb = naa + nbb;
+            for (int i = 0; i < naanbb.Length; i++)//проверяю каждый символ числа
+            {
+                // Console.WriteLine("naa[i] = " + naa[i]);
+                for (int j = 0; j < b; j++)
+                {
+                    if (naanbb[i].ToString() == alphabet[j])
+                    {//если символ числа хоть раз совпадёт с одним из символов алфавита, значит он входит в множество допустимых символов
+                        contains = true;
+                    }
+                }
+                if (!contains)
+                {//если же после прохода по всем символам алавита совпадения не произошло, значит этот символ не принадлежит множеству допустимых
+                    //и введённое в конструктор число не соответствует своей системе счисления b
+                    throw new WrongInput();
+                }
+                contains = false;
+            }          
+            na = naa;//после проверок выше становится ясно, что числа в правильном формате и их можно сохранить
+            nb = nbb;
+            n = na + "," + nb;
+            //Дальше просто перевожу число в десятичную систему счисления, для занесения его в nDecimal
+
+            char[] sToCharArr = nbb.ToCharArray();//работаю с дробной частью
+            int numOfchars = sToCharArr.Length;
+            int[] sToCharArrToInt = new int[numOfchars];//decimal representations of chars of s
+            for (int i = 0; i < numOfchars; i++)
+            {
+                if (sToCharArr[i] == 'A')
+                    sToCharArrToInt[i] = 10;
+                else if (sToCharArr[i] == 'B')
+                    sToCharArrToInt[i] = 11;
+                else if (sToCharArr[i] == 'C')
+                    sToCharArrToInt[i] = 12;
+                else if (sToCharArr[i] == 'D')
+                    sToCharArrToInt[i] = 13;
+                else if (sToCharArr[i] == 'E')
+                    sToCharArrToInt[i] = 14;
+                else if (sToCharArr[i] == 'F')
+                    sToCharArrToInt[i] = 15;
+                else sToCharArrToInt[i] = sToCharArr[i] - '0';//it's kinda ugly way of converting char to int
+            }
+            double sum = 0;
+            for (int i = 1; i < numOfchars + 1; i++)
+            {
+                sum += Math.Pow(b, -i) * sToCharArrToInt[i - 1];
+            }
+            if (sum != 0)
+            {
+                fractionalPartOfaInIntegerDecimal = Int32.Parse(sum.ToString().Substring(2, c));// отрезаю "0," от дробного числа 
+               // nDecimal += sum;
+            }
+
+            else
+            {
+                fractionalPartOfaInIntegerDecimal = 0;                
+            }
+            //---------------------------------------------------------------------------------
+            sToCharArr = naa.ToCharArray();//работаю с целой частью
+            numOfchars = sToCharArr.Length;
+            sToCharArrToInt = new int[numOfchars];//decimal representations of chars of s
+            for (int i = 0; i < numOfchars; i++)
+            {
+                if (sToCharArr[i] == 'A')
+                    sToCharArrToInt[i] = 10;
+                else if (sToCharArr[i] == 'B')
+                    sToCharArrToInt[i] = 11;
+                else if (sToCharArr[i] == 'C')
+                    sToCharArrToInt[i] = 12;
+                else if (sToCharArr[i] == 'D')
+                    sToCharArrToInt[i] = 13;
+                else if (sToCharArr[i] == 'E')
+                    sToCharArrToInt[i] = 14;
+                else if (sToCharArr[i] == 'F')
+                    sToCharArrToInt[i] = 15;
+                else sToCharArrToInt[i] = sToCharArr[i] - '0';//it's kinda ugly way of converting char to int
+            }
+            sum = 0;
+            for (int i = numOfchars - 1, j = 0; i >= 0; i--, j++)
+            {
+                sum += Math.Pow(b, i) * sToCharArrToInt[j];
+            }
+            string temp = sum.ToString();
+            integerPartOfaInIntegerDecimal = Int32.Parse(temp);
+            nDecimal = Double.Parse (temp + ","+ fractionalPartOfaInIntegerDecimal.ToString());
+        }
+
         public void setCString(string newc)
         {
             c = Int32.Parse(newc);
@@ -102,32 +232,9 @@ NCreate(s2,3,2) = число s2 в системе
         {
             return this.MemberwiseClone();
         }
-        public TPNumber(double a, int b, int c)
-        {
-            if (b < 2 || b > 16 || c < 0)
-            {
-                throw new WrongInputInConstructor();
-            }
-            string aToStrInteger = a.ToString().Split(',')[0];
-            string aToStrFractional = a.ToString().Split(',')[1];
-            Console.WriteLine("aToStrInteger = " + aToStrInteger);
-            Console.WriteLine("aToStrFractional = " + aToStrFractional);
-            aToIntInt = Int32.Parse(aToStrInteger);
-            aToIntFrac = Int32.Parse(aToStrFractional);
-            Console.WriteLine("aToIntInt = " + aToIntInt);
-            Console.WriteLine("aToIntFrac = " + aToIntFrac);
-            // Console.ReadLine();
-            this.b = b;
-            this.c = c;
-            nDecimal = a;
-            translateFromDecimalAandB(aToIntInt, aToIntFrac, b, c);
-            Console.WriteLine("na = " + na);
-            //Console.ReadLine();
-        }
-        //Вещественное число (s2). Система счисления(base), точность представления числа(c) – целые числа.
 
 
-        public void translateFromDecimalAandB(int a, int b, int bas, int c)
+        public void translateFromDecimalTo_b_basedNumber(int a, int b, int bas, int c)
         {
             na = "";
             nb = "";
@@ -245,45 +352,13 @@ NCreate(s2,3,2) = число s2 в системе
             }
             n += (na + "," + nb);
         }
-        public TPNumber(string a, int b, int c){
-            string naa = a.Split('.')[0];
-            string nbb = a.Split('.')[1];
-            for (int i = 0; i < naa.Length; i++)
-            {
 
-            }
-            char[] sToCharArr = nbb.ToCharArray();//работаю с дробной частью
-            int numOfchars = sToCharArr.Length;
-            int[] sToCharArrToInt = new int[numOfchars];//decimal representations of chars of s
-            for (int i = 0; i < numOfchars; i++)
-            {
-                if (sToCharArr[i] == 'A')
-                    sToCharArrToInt[i] = 10;
-                else if (sToCharArr[i] == 'B')
-                    sToCharArrToInt[i] = 11;
-                else if (sToCharArr[i] == 'C')
-                    sToCharArrToInt[i] = 12;
-                else if (sToCharArr[i] == 'D')
-                    sToCharArrToInt[i] = 13;
-                else if (sToCharArr[i] == 'E')
-                    sToCharArrToInt[i] = 14;
-                else if (sToCharArr[i] == 'F')
-                    sToCharArrToInt[i] = 15;
-                else sToCharArrToInt[i] = sToCharArr[i] - '0';//it's kinda ugly way of converting char to int
-            }
-            double sum = 0;
-            for (int i = 1; i < numOfchars + 1; i++)
-            {
-                sum += Math.Pow(b, -i) * sToCharArrToInt[i - 1];
-            }
-            aToIntFrac = Int32.Parse( sum.ToString().Substring(2, c));
-
-        }
 
     }
-    public class WrongInputInConstructor : Exception
+
+    public class WrongInput : Exception
     {
-        public WrongInputInConstructor()
+        public WrongInput()
         {
             Console.WriteLine("wrong input in constructor exception");
         }
