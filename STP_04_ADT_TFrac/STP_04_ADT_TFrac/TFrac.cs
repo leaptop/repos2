@@ -42,8 +42,8 @@ namespace STP_04_ADT_TFrac
         public int numerator;//chislitel
         public int denominator;//znamenatel
         public string f = "";//a fraction in shape of a string
-        public string aStr = "";
-        public string bStr = "";
+        public string aStr = "";//numerator in string view
+        public string bStr = "";//denominator in string view
 
         //public TFrac()
         //{// it would be difficult to implement some actions like addition for example. So such default constructor is undesirable.
@@ -112,7 +112,7 @@ namespace STP_04_ADT_TFrac
             }
             aStr = this.numerator.ToString();
             bStr = this.denominator.ToString();
-            f += aStr + "/" + aStr;
+            f += aStr + "/" + bStr;
         }
         public object Clone()//Копировать
         {

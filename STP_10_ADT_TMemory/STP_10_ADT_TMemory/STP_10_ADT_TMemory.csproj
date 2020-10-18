@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8441178C-A724-4C5A-BE2C-6EF678CCF048}</ProjectGuid>
+    <ProjectGuid>{50A268B0-1504-441F-989C-B33F76A9799D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>STP_08_TEditorForCommonFraction</RootNamespace>
-    <AssemblyName>STP_08_TEditorForCommonFraction</AssemblyName>
+    <RootNamespace>STP_10_ADT_TMemory</RootNamespace>
+    <AssemblyName>STP_10_ADT_TMemory</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TEditorForCommonFraction.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\STP_04_ADT_TFrac\STP_04_ADT_TFrac\STP_04_ADT_TFrac.csproj">
-      <Project>{d6f68706-a8c4-47bc-b234-ef8dd77513be}</Project>
-      <Name>STP_04_ADT_TFrac</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

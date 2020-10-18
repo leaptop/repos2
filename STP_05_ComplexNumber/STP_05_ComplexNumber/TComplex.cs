@@ -23,23 +23,28 @@ namespace STP_05_ComplexNumber
         }
         private double a;
         private double b;
+        private string abIEFullStringRepresentation = "";
         private char signOfb;
 
         public TComplex(double a, double b)
         {
             this.a = a;
             this.b = b;
+            abIEFullStringRepresentation = ToString();
         }
         public TComplex(string str)//Вызов возможен в виде "6+i*3", "-5 + i*2"
         {
             str = str.Replace(" ", "");
-            string[] stringsToAvoid = { "/", "+", "*", " ", "-i" };
+            string[] stringsToAvoid = { "/", "+", "*", " ", "-i", "i" };
             string[] strSplit = str.Split(stringsToAvoid, 6, StringSplitOptions.RemoveEmptyEntries);
             if (!Double.TryParse(strSplit[0], out a)) Console.WriteLine("first number is in bad shape");
             if (!Double.TryParse(strSplit[1], out b)) Console.WriteLine("second number is in bad shape");
             char[] strToChars = str.ToCharArray();
             if (str.Contains("-i")) b *= -1;
+            abIEFullStringRepresentation = ToString();
         }
+        
+       // public void set
         public object Clone()
         {
             return this.MemberwiseClone();
@@ -155,7 +160,7 @@ namespace STP_05_ComplexNumber
             if (Math.Sign(b) == -1)
                 return a + "-i*" + b * (-1);
             else if (Math.Sign(b) == 1)
-                return a + "+i*" + b;
+                return (a.ToString() + "+i*" + b.ToString());
             else
                 return a.ToString();
         }

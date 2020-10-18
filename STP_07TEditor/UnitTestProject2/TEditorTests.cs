@@ -85,7 +85,7 @@ namespace STP_07TEditor.Tests
         [TestMethod()]
         public void get_nStringTest()
         {
-          string str =  teGeneral.get_nString(tpGeneral);
+            string str = teGeneral.get_nString(tpGeneral);
             Assert.AreEqual(str, "AC4D,A5");
         }
 
