@@ -44,11 +44,15 @@ namespace STP_07TEditor
             {
                 tp.n = "-" + tp.n;
             }
+            tp.nDecimal *= (-1);
         }
         public void addADelimeterOfIntAndFrac(TPNumber tp, int index)
-        {
-            int ind = tp.n.IndexOf(",");
-            tp.n = tp.n.Remove(ind, 1);
+        {//В общем перемещает запятую по новому индексу, а если её не было, просто устанавливает
+            if (tp.n.Contains(","))
+            {
+                int ind = tp.n.IndexOf(",");
+                tp.n = tp.n.Remove(ind, 1);
+            }            
             tp.n = tp.n.Insert(index, ",");
         }
         public void backSpace(TPNumber tp)

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8441178C-A724-4C5A-BE2C-6EF678CCF048}</ProjectGuid>
+    <ProjectGuid>{8FD874C2-E8DF-4AB1-8862-AEC17D0872DB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>STP_08_TEditorForCommonFraction</RootNamespace>
-    <AssemblyName>STP_08_TEditorForCommonFraction</AssemblyName>
+    <RootNamespace>STP_09_TEditor_ComplexNumbers</RootNamespace>
+    <AssemblyName>STP_09_TEditor_ComplexNumbers</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TEditorForCommonFraction.cs" />
+    <Compile Include="TEditorForComplexNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\STP_04_ADT_TFrac\STP_04_ADT_TFrac\STP_04_ADT_TFrac.csproj">
-      <Project>{d6f68706-a8c4-47bc-b234-ef8dd77513be}</Project>
-      <Name>STP_04_ADT_TFrac</Name>
+    <ProjectReference Include="..\..\STP_05_ComplexNumber\STP_05_ComplexNumber\STP_05_ComplexNumber.csproj">
+      <Project>{b0b0fecf-a59c-43b8-81e6-f2388ae7ddae}</Project>
+      <Name>STP_05_ComplexNumber</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

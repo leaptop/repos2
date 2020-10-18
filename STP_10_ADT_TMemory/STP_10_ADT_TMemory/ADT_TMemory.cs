@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STP_08_TEditorForCommonFraction
+namespace STP_10_ADT_TMemory
 {
-    class Program
+    class ADT_TMemory
     {
         static void Main(string[] args)
         {

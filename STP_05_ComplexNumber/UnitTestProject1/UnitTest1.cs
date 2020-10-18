@@ -177,6 +177,13 @@ namespace UnitTestProject1
             string str = tc.ToString();
             Assert.AreEqual(str, "7-i*2");
         }
+        [TestMethod]
+        public void TestMethod22ToStringDouble()
+        {
+            TComplex tc = new TComplex(7.5, -2.4);
+            string str = tc.ToString();
+            Assert.AreEqual(str, "7,5-i*2,4");
+        }
     }
     
 }
