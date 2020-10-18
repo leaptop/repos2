@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{50A268B0-1504-441F-989C-B33F76A9799D}</ProjectGuid>
+    <ProjectGuid>{86CB8F07-36EE-43E0-B87E-0EBC8E2577DE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>STP_10_ADT_TMemory</RootNamespace>
-    <AssemblyName>STP_10_ADT_TMemory</AssemblyName>
+    <RootNamespace>STP_11_ADT_TProc</RootNamespace>
+    <AssemblyName>STP_11_ADT_TProc</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,26 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADT_TMemory.cs" />
-    <Compile Include="InterfaceForNumbers.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\STP_04_ADT_TFrac\STP_04_ADT_TFrac\STP_04_ADT_TFrac.csproj">
-      <Project>{d6f68706-a8c4-47bc-b234-ef8dd77513be}</Project>
-      <Name>STP_04_ADT_TFrac</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\STP_05_ComplexNumber\STP_05_ComplexNumber\STP_05_ComplexNumber.csproj">
-      <Project>{b0b0fecf-a59c-43b8-81e6-f2388ae7ddae}</Project>
-      <Name>STP_05_ComplexNumber</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\STP_06_TPNumber\STP_06_TPNumber\STP_06_TPNumber.csproj">
-      <Project>{d1533b41-73a1-4fad-a1c9-d6b3e87a54b4}</Project>
-      <Name>STP_06_TPNumber</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

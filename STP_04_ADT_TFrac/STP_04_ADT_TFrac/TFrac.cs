@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//using STP_10_ADT_TMemory;
 namespace STP_04_ADT_TFrac
 {
     public class ZeroDenominatorException : Exception
@@ -21,7 +21,7 @@ namespace STP_04_ADT_TFrac
             Console.WriteLine("Something wrong with the input string");
         }
     }
-   public class TFrac : ICloneable, IEnumerable<int>
+    public class TFrac : ICloneable, IEnumerable<int>
     {
         static void Main(string[] args)
         {
@@ -52,16 +52,16 @@ namespace STP_04_ADT_TFrac
         //}
         public TFrac(int numerator, int denominator)// : throws ZeroDenominator;
         {
-            if(denominator == 0)
+            if (denominator == 0)
             {
                 throw new ZeroDenominatorException();
             }
-            
-/*            if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
-            {
-                numerator *= -1;
-                denominator *= -1;
-            }*/
+
+            /*            if (numerator < 0 && denominator < 0)//сокращаю минусы в числителе и знаменталел
+                        {
+                            numerator *= -1;
+                            denominator *= -1;
+                        }*/
             if (denominator < 0)//переношу минус из знаменателя в числитель
             {
                 numerator *= -1;
@@ -73,7 +73,7 @@ namespace STP_04_ADT_TFrac
                 this.numerator = numerator / t;
                 this.denominator = denominator / t;
             }
-           else
+            else
             {
                 //this.numerator = numerator;
                 //this.denominator = denominator;
@@ -114,6 +114,14 @@ namespace STP_04_ADT_TFrac
             bStr = this.denominator.ToString();
             f += aStr + "/" + bStr;
         }
+        public TFrac()
+        {
+            numerator = 0;//chislitel
+            denominator = 1;//znamenatel
+            f = "0/1";//a fraction in shape of a string
+            aStr = "0";//numerator in string view
+            bStr = "1";//denominator in string view
+        }
         public object Clone()//Копировать
         {
             // return new TFrac(numerator, denominator) { numerator = this.numerator, denominator = this.denominator };
@@ -129,11 +137,11 @@ namespace STP_04_ADT_TFrac
         }
         public void transformToOneDenominator(ref TFrac a, ref TFrac b)//привести дроби к общему знаменателю
         {
- /*           if (a.denominator < 0)//удаляю минус из знаменателей если они там были
-            {
-                a.denominator *= -1;
-                a.numerator *= -1;
-            }*/
+            /*           if (a.denominator < 0)//удаляю минус из знаменателей если они там были
+                       {
+                           a.denominator *= -1;
+                           a.numerator *= -1;
+                       }*/
             if (b.denominator < 0)
             {
                 b.denominator *= -1;
