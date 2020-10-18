@@ -10,35 +10,35 @@ namespace UnitTestProject1
         public void TestMethod1dvoichnaiaA()
         {
             TPNumber tp = new TPNumber(24.36, 2, 7);// 24.36=11000.0101110
-            tp.translateFromDecimalAandB(tp.aToIntInt, tp.aToIntFrac, tp.b, tp.c);
+            tp.translateFromDecimalTo_b_basedNumber(tp.integerPartOfaInIntegerDecimal, tp.fractionalPartOfaInIntegerDecimal, tp.b, tp.c);
             Assert.AreEqual(tp.na, "11000");
         }
         [TestMethod]
         public void TestMethod1dvoichnaiaB()
         {
             TPNumber tp = new TPNumber(24.36, 2, 7);// 24.36=11000.0101110         
-            tp.translateFromDecimalAandB(tp.aToIntInt, tp.aToIntFrac, tp.b, tp.c);
+            tp.translateFromDecimalTo_b_basedNumber(tp.integerPartOfaInIntegerDecimal, tp.fractionalPartOfaInIntegerDecimal, tp.b, tp.c);
             Assert.AreEqual(tp.nb, "0101110");
         }
         [TestMethod]
         public void TestMethod2HexA()
         {
             TPNumber tp = new TPNumber(193.36, 16, 7);// 193.36=C1.5C28F5C28F6
-            tp.translateFromDecimalAandB(tp.aToIntInt, tp.aToIntFrac, tp.b, tp.c);
+            tp.translateFromDecimalTo_b_basedNumber(tp.integerPartOfaInIntegerDecimal, tp.fractionalPartOfaInIntegerDecimal, tp.b, tp.c);
             Assert.AreEqual(tp.na, "C1");
         }
         [TestMethod]
         public void TestMethod3CHETIRNADCATERICHNAIAA()
         {
             TPNumber tp = new TPNumber(193.36, 14, 7);// 193.36=DB.507BA8D
-            tp.translateFromDecimalAandB(tp.aToIntInt, tp.aToIntFrac, tp.b, tp.c);
+            tp.translateFromDecimalTo_b_basedNumber(tp.integerPartOfaInIntegerDecimal, tp.fractionalPartOfaInIntegerDecimal, tp.b, tp.c);
             Assert.AreEqual(tp.na, "DB");
         }
         [TestMethod]
         public void TestMethod3CHETIRNADCATERICHNAIAB()
         {
             TPNumber tp = new TPNumber(193.36, 14, 7);// 193.36=DB.507BA8D
-            tp.translateFromDecimalAandB(tp.aToIntInt, tp.aToIntFrac, tp.b, tp.c);
+            tp.translateFromDecimalTo_b_basedNumber(tp.integerPartOfaInIntegerDecimal, tp.fractionalPartOfaInIntegerDecimal, tp.b, tp.c);
             Assert.AreEqual(tp.nb, "507BA8D");
         }
         [TestMethod]
@@ -121,12 +121,44 @@ namespace UnitTestProject1
             Assert.AreEqual(tp2.nDecimal, 24.36);
         }
         [TestMethod]
-        public void TestMethodStringConstructor()
+        public void TestMethodStringConstructorFrac()
         {
-            TPNumber tp = new TPNumber("20.22", 3, 7);
+            TPNumber tp = new TPNumber("212,22", 3, 7);//"212.22(троичная) = 23.888888888888(десятичная)
 
 
-            Assert.AreEqual(tp.aToIntFrac, 8888888);
+            Assert.AreEqual(tp.fractionalPartOfaInIntegerDecimal, 8888888);
+        }
+        [TestMethod]
+        public void TestMethodStringConstructorInt()
+        {
+            TPNumber tp = new TPNumber("212,22", 3, 7);//"212.22(троичная) = 23.888888888888(десятичная)
+
+
+            Assert.AreEqual(tp.integerPartOfaInIntegerDecimal, 23);
+        }
+        [TestMethod]
+        public void TestMethodStringConstructorFracFifteenFrac()
+        {
+            TPNumber tp = new TPNumber("AB4C,B9A", 15, 7);//AB4C.B9A(пятнадцатеричная) = 36297.776296296(десятичная)
+
+
+            Assert.AreEqual(tp.fractionalPartOfaInIntegerDecimal, 7762962);
+        }
+        [TestMethod]
+        public void TestMethodStringConstructorIntFifteenInt()
+        {
+            TPNumber tp = new TPNumber("AB4C,B9A", 15, 7);//AB4C.B9A(пятнадцатеричная) = 36297.776296296(десятичная)
+
+
+            Assert.AreEqual(tp.integerPartOfaInIntegerDecimal, 36297);
+        }
+        [TestMethod]
+        public void TestMethodStringConstructorIntFifteennDecimal()
+        {
+            TPNumber tp = new TPNumber("AB4C,B9A", 15, 7);//AB4C.B9A(пятнадцатеричная) = 36297.776296296(десятичная)
+
+
+            Assert.AreEqual(tp.nDecimal, 36297.7762962);
         }
     }
 }
