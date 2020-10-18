@@ -42,6 +42,13 @@ NCreate(s2,3,2) = число s2 в системе
             TPNumber tp2 = new TPNumber("AC,B9A", 15, 7);//AC.B9A(пятнадцатеричная) = 162.776296296(десятичная)
             Console.ReadLine();
         }
+        public TPNumber()
+        {
+            nDecimal = 0;
+            b = 10;
+            n = "0";
+
+        }
         public TPNumber(double a, int b, int c)
         {
             if (a == 0)

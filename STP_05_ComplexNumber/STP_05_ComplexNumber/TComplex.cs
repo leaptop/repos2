@@ -26,6 +26,10 @@ namespace STP_05_ComplexNumber
         private string abIEFullStringRepresentation = "";
         private char signOfb;
 
+        public TComplex()
+        {
+            abIEFullStringRepresentation = "1+i*1";
+        }
         public TComplex(double a, double b)
         {
             this.a = a;

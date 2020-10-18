@@ -73,10 +73,9 @@ namespace STP_07TEditor
         }
     }
     public class WrongInput : Exception
-    {
-        public WrongInput()
+    {        public WrongInput()
         {
-            Console.WriteLine("wrong input in constructor exception");
+            Console.WriteLine("wrong input");
         }
     }
 
