@@ -10,18 +10,27 @@ using STP_06_TPNumber;
 namespace STP_10_ADT_TMemory
 {
     //public class ADT_TMemory<T> where T : InterfaceForNumbers<T>, new()//   where T : InterfaceForNumbers<T>,  new() //<T> просто объявляет, что в классе есть параметризованный тип
-    // public class ADT_TMemory<T> where T : InterfaceForNumbers<T>, new()
-    public abstract class ADT_TMemory<T> where T :  new()
+     public class ADT_TMemory<T> where T : InterfaceForNumbers<T>, new()
+         //так в строчке  ADT_TMemory<TFrac> newNumber = new ADT_TMemory<TFrac>(); TFrac подчёркнуто красным,
+         //а здесь FNumber = FNumber.add(e); ошибки нет
+
+         //public abstract class ADT_TMemory<T> where T :  new()
+
+         // public  class ADT_TMemory<T> where T : new()// так строчка ADT_TMemory<TFrac> newNumber = new ADT_TMemory<TFrac>(); срабатывает,
+         ////но здесь FNumber = FNumber.add(e); add подчёркнуто красным
     {
-       private T FNumber;
+        public T FNumber;
         string FState = "";//Memory state
-        static void Main(string[] args)
+
+         static void Main(string[] args)
         {
+            Console.WriteLine("hello");
+            Console.ReadLine();
         }
         public ADT_TMemory()
         {
-            //FNumber = new TFrac();
-           ADT_TMemory<TFrac> newNumber = new ADT_TMemory<TFrac>();//               Как создать объект?
+            //T = new TFrac();
+            InterfaceForNumbers<TFrac> newNumber = (InterfaceForNumbers<TFrac>)new ADT_TMemory<T>();//               Как создать объект?
             //ADT_TMemory<TFrac> newNumber = new ADT_TMemory<TFrac>();
             newNumber.FNumber = new TFrac();
             FState = "_Off";

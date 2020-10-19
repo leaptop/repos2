@@ -72,30 +72,41 @@ namespace TYAP_Lab1_01
                         dataGridView1.Rows[5].Cells[0].Value = "B";
                         dataGridView1.Rows[5].Cells[1].Value = "1A";*/
 
-            /* iterNum = 10;
-             numericUpDownMax.Value = 10;
-             textBoxForStartingSymbol.Text = "F";//Контрольная вариант 4 №2
-                                                 //КС грамматика строящая L = {c^(2k)w|w belongs to {a,b}*, a number of a's is equal to a number of b's, k>0}
-             dataGridView1.Rows[0].Cells[0].Value = "F";
-             dataGridView1.Rows[0].Cells[1].Value = "ccLW";
-             dataGridView1.Rows[1].Cells[0].Value = "L";
-             dataGridView1.Rows[1].Cells[1].Value = "FF";
-             dataGridView1.Rows[2].Cells[0].Value = "L";
-             dataGridView1.Rows[2].Cells[1].Value = "";
+            //Контрольная вариант 15 №2// a & b всегда рядом, цепочки вида ссаааbaabbbb не получить, поэтому не правильно сделал
+            //КС грамматика строящая L = {c^(2k)w|w belongs to {a,b}*, a number of a's is equal to a number of b's, k>0}
+            /*iterNum = 12;
+            numericUpDownMax.Value = 14;
+            textBoxForStartingSymbol.Text = "F"; dataGridView1.Rows[0].Cells[0].Value = "F";
+            dataGridView1.Rows[0].Cells[1].Value = "ccLW";
+            dataGridView1.Rows[1].Cells[0].Value = "L";
+            dataGridView1.Rows[1].Cells[1].Value = "FF";
+            dataGridView1.Rows[2].Cells[0].Value = "L";
+            dataGridView1.Rows[2].Cells[1].Value = "";
 
-             dataGridView1.Rows[3].Cells[0].Value = "W";
-             dataGridView1.Rows[3].Cells[1].Value = "AB";
-             dataGridView1.Rows[4].Cells[0].Value = "A";
-             dataGridView1.Rows[4].Cells[1].Value = "ab";
-             dataGridView1.Rows[5].Cells[0].Value = "A";
-             dataGridView1.Rows[5].Cells[1].Value = "AA";
+            dataGridView1.Rows[3].Cells[0].Value = "W";
+            dataGridView1.Rows[3].Cells[1].Value = "AB";
+            dataGridView1.Rows[4].Cells[0].Value = "A";
+            dataGridView1.Rows[4].Cells[1].Value = "ab";
+            dataGridView1.Rows[5].Cells[0].Value = "A";
+            dataGridView1.Rows[5].Cells[1].Value = "AA";
 
-             dataGridView1.Rows[6].Cells[0].Value = "B";
-             dataGridView1.Rows[6].Cells[1].Value = "ba";
-             dataGridView1.Rows[7].Cells[0].Value = "B";
-             dataGridView1.Rows[7].Cells[1].Value = "BB";*/
+            dataGridView1.Rows[6].Cells[0].Value = "B";
+            dataGridView1.Rows[6].Cells[1].Value = "ba";
+            dataGridView1.Rows[7].Cells[0].Value = "B";
+            dataGridView1.Rows[7].Cells[1].Value = "BB";
 
-            /*  
+            dataGridView1.Rows[8].Cells[0].Value = "A";
+            dataGridView1.Rows[8].Cells[1].Value = "bAa";
+
+            dataGridView1.Rows[9].Cells[0].Value = "B";
+            dataGridView1.Rows[9].Cells[1].Value = "aBb";
+
+            dataGridView1.Rows[10].Cells[0].Value = "A";
+            dataGridView1.Rows[10].Cells[1].Value = "bBa";
+
+            dataGridView1.Rows[11].Cells[0].Value = "B";
+            dataGridView1.Rows[11].Cells[1].Value = "aAb";*/
+
 
             /*  iterNum = 8;
               numericUpDownMax.Value = 5;
@@ -143,13 +154,13 @@ namespace TYAP_Lab1_01
               dataGridView1.Rows[17].Cells[1].Value = "";
 
               dataGridView1.Rows[18].Cells[0].Value = "C";
-              dataGridView1.Rows[18].Cells[1].Value = "bD";*/
+              dataGridView1.Rows[18].Cells[1].Value = "bD";
 
 
 
-            iterNum = 8;
+          /*  iterNum = 8;
             numericUpDownMax.Value = 5;
-            textBoxForStartingSymbol.Text = "A";//вариант 4 номер 1
+            textBoxForStartingSymbol.Text = "A";//вариант 15 номер 1
                                                 //containing "aab" and having even number of characters).       DOESN'T WORK FOR SOME REASON
             dataGridView1.Rows[0].Cells[0].Value = "A";
             dataGridView1.Rows[0].Cells[1].Value = "aB";
@@ -209,7 +220,7 @@ namespace TYAP_Lab1_01
             dataGridView1.Rows[24].Cells[0].Value = "H";
             dataGridView1.Rows[24].Cells[1].Value = "bE";
             dataGridView1.Rows[25].Cells[0].Value = "H";
-            dataGridView1.Rows[25].Cells[1].Value = "aCdat";
+            dataGridView1.Rows[25].Cells[1].Value = "aCdat";*/
 
 
             /*iterNum = 6;
