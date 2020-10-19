@@ -26,7 +26,7 @@ namespace STP_08_TEditorForCommonFraction.Tests
         {
             TFrac tf2 = new TFrac(35, 1);
             TEditorForCommonFraction te = new TEditorForCommonFraction();
-            TFrac tfMinus = te.multiplyByMinus( tf2);
+            TFrac tfMinus = te.multiplyByMinus(tf2);
             Assert.AreEqual(tfMinus.f, "-35/1");
         }
 
@@ -62,7 +62,7 @@ namespace STP_08_TEditorForCommonFraction.Tests
         {
             TFrac tf2 = new TFrac(36, 7);
             TEditorForCommonFraction te = new TEditorForCommonFraction();
-          string str =  te.readFractionString(tf2);
+            string str = te.readFractionString(tf2);
             Assert.AreEqual(str, "36/7");
         }
 
