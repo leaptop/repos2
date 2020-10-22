@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ADT_TProc.cs" />
+    <Compile Include="Interface1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\STP_04_ADT_TFrac\STP_04_ADT_TFrac\STP_04_ADT_TFrac.csproj">
+      <Project>{d6f68706-a8c4-47bc-b234-ef8dd77513be}</Project>
+      <Name>STP_04_ADT_TFrac</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -108,7 +108,7 @@ namespace UnitTestProject1
             {
                 f = new TFrac("3/11");
                 g = new TFrac(5, 2);
-                divResult = f.div(f, g);
+                divResult = f.dvd(f, g);
                 result = divResult.ToString();
             }
             catch (Exception ex)
@@ -197,7 +197,7 @@ namespace UnitTestProject1
             try
             {
                 f = new TFrac("12/3");
-                g = f.square(f);
+                g = f.sqr(f);
                 str = g.ToString();
             }
             catch (Exception ex)

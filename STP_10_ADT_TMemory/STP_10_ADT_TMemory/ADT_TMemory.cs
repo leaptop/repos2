@@ -24,13 +24,14 @@ namespace STP_10_ADT_TMemory
 
          static void Main(string[] args)
         {
+           // ADT_TMemory<TFrac> newNumber = /*(InterfaceForNumbers<TFrac>)*/new ADT_TMemory<TFrac>();
             Console.WriteLine("hello");
             Console.ReadLine();
         }
         public ADT_TMemory()
         {
             //T = new TFrac();
-            InterfaceForNumbers<TFrac> newNumber = (InterfaceForNumbers<TFrac>)new ADT_TMemory<T>();//               Как создать объект?
+            ADT_TMemory<TFrac> newNumber = /*(InterfaceForNumbers<TFrac>)*/new ADT_TMemory<TFrac>();//               Как создать объект?
             //ADT_TMemory<TFrac> newNumber = new ADT_TMemory<TFrac>();
             newNumber.FNumber = new TFrac();
             FState = "_Off";

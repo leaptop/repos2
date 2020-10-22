@@ -51,6 +51,8 @@ NCreate(s2,3,2) = число s2 в системе
         }
         public TPNumber(double a, int b, int c)
         {
+            this.b = b;
+            this.c = c;
             if (a == 0)
             {
                 nDecimal = 0;
@@ -62,7 +64,10 @@ NCreate(s2,3,2) = число s2 в системе
                 throw new WrongInput();
             }
             string aToStrInteger = a.ToString().Split(',')[0];
-            string aToStrFractional = a.ToString().Split(',')[1];
+            string aToStrFractional;
+            if (a.ToString().Contains(","))
+                aToStrFractional = a.ToString().Split(',')[1];
+            else aToStrFractional = "0";
             integerPartOfaInIntegerDecimal = Int32.Parse(aToStrInteger);
             fractionalPartOfaInIntegerDecimal = Int32.Parse(aToStrFractional);
             this.b = b;
@@ -72,6 +77,8 @@ NCreate(s2,3,2) = число s2 в системе
         }
         public TPNumber(string a, int b, int c)
         {
+            this.b = b;
+            this.c = c;
             if (a == "0" || a == "0,0" || a == "0.0")
             {
                 nDecimal = 0;
@@ -312,7 +319,10 @@ NCreate(s2,3,2) = число s2 в системе
                 string strInt = multiplication.ToString().Split(',')[0];//0101110
 
                 celoe = Int32.Parse(strInt);
-                string strFrac = multiplication.ToString().Split(',')[1];
+                string strFrac;
+                if (multiplication.ToString().Contains(","))
+                    strFrac = multiplication.ToString().Split(',')[1];
+                else strFrac = "0";
                 drobnoe = multiplication - (double)celoe;
                 integerParts.Add(celoe);
             }
@@ -359,7 +369,10 @@ NCreate(s2,3,2) = число s2 в системе
             }
             n += (na + "," + nb);
         }
-
+        public string ToString()
+        {
+            return n;
+        }
 
     }
 
