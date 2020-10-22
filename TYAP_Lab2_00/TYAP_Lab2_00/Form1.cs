@@ -409,6 +409,29 @@ namespace TYAP_Lab2_00
             
         }
 
-
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1Alphabet.Text = "0 1 2";
+            textBox2States.Text = "a b c d e";
+            textBox3StartingState.Text = startingState = "a";
+            textBox4FinalStates.Text = "e";
+            finalStates = new string[] { "e" };
+            textBox5ChainToCheck.Text = ChainToCheck = "012010200110";
+            initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();
+            matrixOfTransitions = new string[,] {
+                { "b", "a", "a" },
+                { "b", "c", "a" },
+                { "b", "d", "a" },
+                { "e", "a", "a" },
+                { "b", "c", "a" }
+            };
+            for (int i = 0; i < matrixOfTransitions.GetLength(0); i++)//Заполняю таблицу, ограничившись, естсетвенно, сущетсвующей матрицей, чтобы не выйти за границы
+            {
+                for (int j = 0; j < matrixOfTransitions.GetLength(1); j++)
+                {
+                    dataGridView1.Rows[i].Cells[j].Value = matrixOfTransitions[i, j];//ЗДЕСЬ ВВОЖУ ТАБЛИЦУ ИЗ matrixOfTransitions[,]
+                }
+            }
+        }
     }
 }

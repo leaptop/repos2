@@ -21,7 +21,7 @@ namespace STP_04_ADT_TFrac
             Console.WriteLine("Something wrong with the input string");
         }
     }
-    public class TFrac : ICloneable, IEnumerable<int>
+    public class TFrac : ICloneable, IEnumerable<int>, Interface1<TFrac>
     {
         static void Main(string[] args)
         {
@@ -174,12 +174,12 @@ namespace STP_04_ADT_TFrac
             transformToOneDenominator(ref aa, ref bb);
             return new TFrac(aa.numerator - bb.numerator, aa.denominator);
         }
-        public TFrac div(TFrac a, TFrac b)//divides a by b
+        public TFrac dvd(TFrac a, TFrac b)//divides a by b
         {
             //return new TFrac(a.numerator * b.denominator, a.denominator * b.numerator);
             return mul(a, new TFrac(b.denominator, b.numerator));
         }
-        public TFrac square(TFrac a)
+        public TFrac sqr(TFrac a)
         {
             return new TFrac(a.numerator * a.numerator, a.denominator * a.denominator);
         }
@@ -295,6 +295,16 @@ namespace STP_04_ADT_TFrac
         }
 
         IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TFrac none(TFrac a, TFrac b)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TFrac rev(TFrac a)
         {
             throw new NotImplementedException();
         }

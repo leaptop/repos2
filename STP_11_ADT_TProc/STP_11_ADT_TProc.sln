@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STP_11_ADT_TProc", "STP_11_ADT_TProc\STP_11_ADT_TProc.csproj", "{86CB8F07-36EE-43E0-B87E-0EBC8E2577DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STP_04_ADT_TFrac", "..\STP_04_ADT_TFrac\STP_04_ADT_TFrac\STP_04_ADT_TFrac.csproj", "{D6F68706-A8C4-47BC-B234-EF8DD77513BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{86CB8F07-36EE-43E0-B87E-0EBC8E2577DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CB8F07-36EE-43E0-B87E-0EBC8E2577DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CB8F07-36EE-43E0-B87E-0EBC8E2577DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F68706-A8C4-47BC-B234-EF8DD77513BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F68706-A8C4-47BC-B234-EF8DD77513BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F68706-A8C4-47BC-B234-EF8DD77513BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F68706-A8C4-47BC-B234-EF8DD77513BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
