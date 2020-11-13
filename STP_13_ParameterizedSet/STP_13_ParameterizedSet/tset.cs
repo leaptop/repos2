@@ -24,14 +24,6 @@ namespace STP_13_ParameterizedSet
         }
         public void add(T d)
         {
-            if(d.GetType().Name == "TFrac")
-            {
-                // if()
-            }
-            else
-            {
-
-            }
             if (contains(d))
             {
                 return;
