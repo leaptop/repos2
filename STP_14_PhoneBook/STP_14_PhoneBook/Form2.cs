@@ -17,12 +17,14 @@ namespace STP_14_PhoneBook
         string name;
         string phone;
         Form1 f1;
-        public Form2(ref Dictionary<string, long> dict, string name, string phone, Form1 f1)
+        string path;
+        public Form2(ref Dictionary<string, long> dict, string name, string phone, Form1 f1, string path)
         {
             this.dict = dict;
             this.name = name;
             this.phone = phone;
             this.f1 = f1;
+            this.path = path;
             InitializeComponent();
             textBox1.Text = name;
             textBox2.Text = phone;
@@ -32,11 +34,21 @@ namespace STP_14_PhoneBook
 
         private void button4_Ok(object sender, EventArgs e)
         {
-            long newPhone;
+            long newPhone = long.Parse(textBox4.Text);
             string newName = textBox3.Text;
+            if (dict.ContainsKey(newName) )
+            {
+                MessageBox.Show("Такое имя уже существует");
+                return;
+            }
+            else if (dict.ContainsValue(newPhone))
+            {
+                MessageBox.Show("Такой телефон уже существует");
+                return;
+            }
             dict.Remove(name);
-            dict.Add(newName, long.Parse(textBox4.Text));//пока только записал в dict
-            f1.Sort_dictAndWriteToFileFrom_dict();
+            dict.Add(newName, newPhone);//пока только записал в dict
+            f1.Sort_dictAndWriteToFileFrom_dict(path);
             f1.clearRTB();
             f1.printFRom_dictToRichTextBox();
             this.Close();

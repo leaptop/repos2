@@ -113,6 +113,8 @@ namespace TYAP_Lab2_00
             int columnIndexOfNextCharacter;
             while (ChainToCheck.Length > 0)
             {
+                richTextBox2.AppendText("остаток строки: " + ChainToCheck + ", текущее состояние: " + textBox3StartingState.Text + "\n");
+
                 nextCharacter = ChainToCheck.Substring(0, 1);//считываю 1 символ с 0-ой позиции слева
                 if (checkIfSymbolBelongsToAlphabet(nextCharacter))//убеждаюсь, что очередная подстрока цепочки является символом алфавита
                 {
@@ -411,19 +413,19 @@ namespace TYAP_Lab2_00
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1Alphabet.Text = "0 1 2";
-            textBox2States.Text = "a b c d e";
+            textBox1Alphabet.Text = "0 1";
+            textBox2States.Text = "a b c d";
             textBox3StartingState.Text = startingState = "a";
-            textBox4FinalStates.Text = "e";
-            finalStates = new string[] { "e" };
-            textBox5ChainToCheck.Text = ChainToCheck = "012010200110";
+            textBox4FinalStates.Text = "b";
+            finalStates = new string[] { "b" };
+            textBox5ChainToCheck.Text = ChainToCheck = "1001";
             initTableRowsColumnsHeadersViaParsingTheTextFieldsForColumnsAndRows();
             matrixOfTransitions = new string[,] {
-                { "b", "a", "a" },
-                { "b", "c", "a" },
-                { "b", "d", "a" },
-                { "e", "a", "a" },
-                { "b", "c", "a" }
+                { "d", "b" },
+                { "c", "c" },
+                { "b", "b" },
+                { "d", "d" }
+                
             };
             for (int i = 0; i < matrixOfTransitions.GetLength(0); i++)//Заполняю таблицу, ограничившись, естсетвенно, сущетсвующей матрицей, чтобы не выйти за границы
             {

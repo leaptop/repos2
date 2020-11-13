@@ -1,5 +1,5 @@
 ФОРМАТ КОДА:
-Ctrl+Alt+L - выровнять в idea & CLion
+Ctrl+Alt+L - выровнять в idea & CLion & Android Studio
 IntelliJ IDEA Default Keymap.pdf
 Ctrl+a Ctrl+i выровнять код в QT     //ПОМНИТЬ, ЧТО ДЛЯ ЭТИХ ШОРТКАТОВ ЯЗЫК ДОЛЖЕН БЫТЬ АНГЛИЙСКИМ. ПО КРАЙНЕЙ МЕРЕ В QT
 Ctrl+k, Ctrl+D text formatting in Visual Studio выровнять текст в виже. Необязаельно этот текст выделять.
@@ -26,13 +26,18 @@ Ctrl+Shift+/ комментирует весь выделенный блок в 
   В intellijidea можно удалить все комментарии из текста: Ctrl+r, галочку Regex(режим регулярных выражений), для удаления всех комментов в верхнюю строчку вставляем (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*), жмём replace all. Если надо удалить только комменты //: ([ \t]*//.*), если /**/: (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)
   В виже также можно в поисковике, просто надо нажать ещё кнопку(квадратик со звёздочкой) для разрешения регулярных выражений
   
+  
+In android studio to switch between text and design if there are no such buttons, there are other buttons in the upper right corner(one of the three is with mountains).
+In android studio to turn explanation of methods by hovering a cursor on it: File-> Settings -> Editor -> General -> Show quick documentation on mouse move.
 spacedesk allows to use ipad as an additional monitor for windows. Позволяет использовать айпад как монитор из винды. Мой айпад: 4 MD512TU/A 60Гб	Дисплей IPS, 2048×1536 пикселей, QXGA, 264 ppi, диагональ 9,7 дюйма
   
 Восстановление GRUB:
 sudo fdisk -l
 sudo mount /dev/sda1 /mnt (Здесь sda1 - раздел с линуксом(число м.б. другим))
 sudo grub-install —root-directory=/mnt /dev/sda(может не сработать, но сработает следующая команда)
-sudo update-grub —output=/mnt/boot/grub/grub.cfg   
+sudo update-grub —output=/mnt/boot/grub/grub.cfg  
+
+На непрерывность работы беспроводной мыши также влияет одновременно подключённый к тому же usb порту внешний жёсткий диск. 
 
 Абстрактные классы в сишарпе могут иметь реализацию методов, но чтобы их использовать надо создать другой класс, наследующий от абстрктного.
 

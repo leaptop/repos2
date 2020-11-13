@@ -82,7 +82,7 @@ namespace STP_12_Polynomial
             return FCoeff.ToString() + "*x^" + FDegree.ToString();
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(object obj)//такой компаратор нужен для сортировки Tmember-ов в полиноме по убыванию степени
         {
             return FDegree.CompareTo(obj);
         }
