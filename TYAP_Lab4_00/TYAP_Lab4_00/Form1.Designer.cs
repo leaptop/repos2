@@ -111,6 +111,7 @@
             this.textBox1AlphabetOfTheLanguage.Name = "textBox1AlphabetOfTheLanguage";
             this.textBox1AlphabetOfTheLanguage.Size = new System.Drawing.Size(100, 20);
             this.textBox1AlphabetOfTheLanguage.TabIndex = 7;
+            this.textBox1AlphabetOfTheLanguage.Leave += new System.EventHandler(this.textBox1AlphabetOfTheLanguage_Leave);
             // 
             // textBox2AlphabetOfTheStack
             // 
@@ -118,6 +119,7 @@
             this.textBox2AlphabetOfTheStack.Name = "textBox2AlphabetOfTheStack";
             this.textBox2AlphabetOfTheStack.Size = new System.Drawing.Size(100, 20);
             this.textBox2AlphabetOfTheStack.TabIndex = 8;
+            this.textBox2AlphabetOfTheStack.Leave += new System.EventHandler(this.textBox2AlphabetOfTheStack_Leave);
             // 
             // textBox3States
             // 
@@ -125,6 +127,7 @@
             this.textBox3States.Name = "textBox3States";
             this.textBox3States.Size = new System.Drawing.Size(100, 20);
             this.textBox3States.TabIndex = 9;
+            this.textBox3States.Leave += new System.EventHandler(this.textBox3States_Leave);
             // 
             // textBox4InitialState
             // 
@@ -148,6 +151,7 @@
             this.textBox6FinalStates.Name = "textBox6FinalStates";
             this.textBox6FinalStates.Size = new System.Drawing.Size(100, 20);
             this.textBox6FinalStates.TabIndex = 12;
+            this.textBox6FinalStates.Leave += new System.EventHandler(this.textBox6FinalStates_Leave);
             // 
             // textBox7StringToCheck
             // 
@@ -172,7 +176,7 @@
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.dataGridView1.Location = new System.Drawing.Point(388, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(463, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(578, 506);
             this.dataGridView1.TabIndex = 15;
             // 
             // label8
@@ -186,9 +190,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(857, 36);
+            this.richTextBox1.Location = new System.Drawing.Point(972, 36);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(427, 380);
+            this.richTextBox1.Size = new System.Drawing.Size(312, 506);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
@@ -206,7 +210,7 @@
             // 
             this.richTextBox2Output.Location = new System.Drawing.Point(30, 256);
             this.richTextBox2Output.Name = "richTextBox2Output";
-            this.richTextBox2Output.Size = new System.Drawing.Size(352, 349);
+            this.richTextBox2Output.Size = new System.Drawing.Size(352, 466);
             this.richTextBox2Output.TabIndex = 19;
             this.richTextBox2Output.Text = "";
             // 
@@ -224,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 631);
+            this.ClientSize = new System.Drawing.Size(1334, 734);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox2Output);
             this.Controls.Add(this.button1);

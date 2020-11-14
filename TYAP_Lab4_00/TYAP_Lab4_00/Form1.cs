@@ -28,37 +28,47 @@ namespace TYAP_Lab4_00
         public string nextCharacterOfTheString;
         public string topOfTheStack;
         public string stringToAttachToStack;
+        public string[] stringToAttachToStackInArrayOfSymbols;
         public Stack stack;// I will fill the initial stack from left to right
         public string[,] mainMatrix;
         char[] stringTocheckInChars;
         public string[] stringToCheckInStringArray;
-         public string initialStackInString;
+        public string initialStackInString;
         public string[] initialstackInStringArray;
         public string currentState = "";
         public string initialState = "";
         public string newState = "";
+        public string currentSymbolOfTheCheckedString = "";
+        public bool initializationIsInProgress = true;
         public void dataGridViewTask20aInit()
         {
             dataGridView1.ColumnHeadersVisible = true;
             dataGridView1.RowHeadersVisible = true;
-            
+
+            // readConditionsFromTheInterface();//need to call it twice to initialize LanguageAlphabet and
+            //opthers with something
             textBox1AlphabetOfTheLanguage.Text = "0 1";
             textBox2AlphabetOfTheStack.Text = "0 1 z";
             textBox3States.Text = "q0 q1 q2";
             currentState = initialState = textBox4InitialState.Text = "q0";
-            textBox5InitialStackContents.Text = "z";
+            initialStackInString = textBox5InitialStackContents.Text = "z";
             textBox6FinalStates.Text = "q2";
-            stringToCheck = textBox7StringToCheck.Text = "01";
+            stringToCheck = textBox7StringToCheck.Text = "011";
             stringTocheckInChars = stringToCheck.ToCharArray();
+            readConditionsFromTheInterface();
 
             dataGridView1.RowCount = 6;
             dataGridView1.ColumnCount = 6;
-            dataGridView1.Columns[0].HeaderText = "state(q)";
-            dataGridView1.Columns[1].HeaderText = "nextSymbol";
-            dataGridView1.Columns[2].HeaderCell.Value = "topOfTheStack";
-            dataGridView1.Columns[3].HeaderCell.Value = "tact";
-            dataGridView1.Columns[4].HeaderCell.Value = "newState";
-            dataGridView1.Columns[5].HeaderCell.Value = "newSymbolsForStack";
+            dataGridView1.TopLeftHeaderCell.Value = "правило № ";
+            int sd = dataGridView1.TopLeftHeaderCell.ColumnIndex;
+            dataGridView1.Columns[0].HeaderText = "состояние(q)";
+            dataGridView1.Columns[1].HeaderText = "след. символ";
+            dataGridView1.Columns[2].HeaderCell.Value = "удаляемая вершина стека";
+            dataGridView1.Columns[3].HeaderCell.Value = "такт";
+            dataGridView1.Columns[4].HeaderCell.Value = "новое состояние";
+            dataGridView1.Columns[5].HeaderCell.Value = "новые символы для записи в стек";
+
+
 
             dataGridView1.Rows[0].Cells[0].Value = "q0";
             dataGridView1.Rows[0].Cells[1].Value = "0";
@@ -109,12 +119,13 @@ namespace TYAP_Lab4_00
                           states[j] = dataGridView1.Rows[j].Cells[0].Value.ToString();
                           richTextBox1.AppendText("states[" + j + "] = " + states[j]+", ");
                           //the problem is that states are not always unique and that the left parts of the rules not always
-                          //contain all the states, so maybe it's better to work directly with datagridview
+                          //contain all the states, so maybe it's better to work directly with datagridview...
                       }*/
             int i = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                dataGridView1.Rows[i].HeaderCell.Value = i++.ToString();
+                dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
+
             }
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
@@ -128,7 +139,22 @@ namespace TYAP_Lab4_00
 
         private void textBox7_TextChangedStringToCheck(object sender, EventArgs e)
         {
+            if (!initializationIsInProgress)
+            {
+                string[] stringInArray = stringToArrayOfStrings(textBox7StringToCheck.Text);
+                for (int i = 0; i < stringInArray.Length; i++)
+                {
+                    if (!LanguageAlphabet.Contains(stringInArray[i]))
+                    {
+                        richTextBox2Output.AppendText("Введённый символ (" + stringInArray[i] + ") " +
+                           "не является частью алфавита языка. Цепочка не принимается.\n");
+                        textBox7StringToCheck.Text = stringToCheck;
+                        return;
+                    }
+                }
+            }
             stringToCheck = textBox7StringToCheck.Text;
+
             richTextBox1.AppendText("stringToCheck now is:" + stringToCheck + "\n");
             stringToCheckInStringArray = stringToArrayOfStrings(stringToCheck);
 
@@ -158,20 +184,161 @@ namespace TYAP_Lab4_00
         private void buttonCheckTheChain(object sender, EventArgs e)
         {
             readConditionsFromTheInterface();
-
-            for (int i = 0; i < stringToCheck.Length; i++)
+            int usedRule = -1;
+            int stringsLength = stringToCheckInStringArray.Length;
+            for (int i = 0; i < stringToCheckInStringArray.Length + stack.Count; i++)//-1 добавил от балды
             {
-                richTextBox2Output.AppendText("Текущее состояние: " + currentState + "\n");
-                richTextBox2Output.AppendText("Остаток цепочки: " + stringToCheckInStringArray[i]+"\n");
-                richTextBox2Output.AppendText("Вершина стека: " + stack.Peek() + "\n");
-                // richTextBox2Output.AppendText("Стек: " +   //Do I need to print the whole stack?
-                //if the curr
-                richTextBox2Output.AppendText("Новое состояние: " + newState + "\n");
-                richTextBox2Output.AppendText("Цепочка добавляемая в стек: " + stringToAttachToStack + "\n\n");
+                if (i > (stringsLength - 1))
+                {
+                    stringToCheckInStringArray = new string[stringToCheckInStringArray.Length + stack.Count];
+                    for (int p = 0; p < stringToCheckInStringArray.Length; p++)
+                    {
+                        stringToCheckInStringArray[p] = "";
+                    }
+                }
+                richTextBox2Output.AppendText("Текущее состояние:          " + currentState + "\n");
 
-            }
+                richTextBox2Output.AppendText("Провер-й симв. цепочки:  " + stringToCheckInStringArray[i] + "\n");
+                richTextBox2Output.AppendText("Вершина стека:                 " + stack.Peek() + "\n");
+                richTextBox2Output.AppendText("Остаток цепочки: ");
+                for (int m = i; m < stringToCheckInStringArray.Length; m++)
+                {
+                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                }
+                richTextBox2Output.AppendText("\n");
+
+                if ((stack.Count == 0))//эта проверка уже есть внизу... куда её поставить лучше?
+                {
+                    richTextBox2Output.AppendText("Стек пуст. Следующий такт невозможен. Цепочка не принята\n");
+                    return;
+                }
 
 
+                //output in parentheses:
+                richTextBox2Output.AppendText("(" + currentState + ", ");// + stringToCheckInStringArray[i] + ", " + stack.Peek() + ")\n");
+                for (int m = i; m < stringToCheckInStringArray.Length; m++)
+                {
+                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                }
+                richTextBox2Output.AppendText(", ");
+                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
+                Stack stackToPrint = (Stack)stack.Clone();
+                PrintStack(stackToPrint);
+                richTextBox2Output.AppendText(")\n");
+
+                // richTextBox2Output.AppendText("Стек: " +   //Do I need to print the whole stack?     YES PRINT THE WHOLE STACK
+                //if the curr... now it's time to go through the rules in datagridview1
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    richTextBox1.AppendText("currentState is: " + currentState + "\n");
+                    richTextBox1.AppendText("dataGridView1.Rows[j].Cells[0].Value.ToString() is: " + dataGridView1.Rows[j].Cells[0].Value.ToString() + "\n");
+                    richTextBox1.AppendText("stringToCheckInStringArray[i] is: " + stringToCheckInStringArray[i] + "\n");
+                    richTextBox1.AppendText("dataGridView1.Rows[j].Cells[1].Value.ToString() is: " + dataGridView1.Rows[j].Cells[1].Value.ToString() + "\n");
+                    richTextBox1.AppendText("stack.Peek().ToString() is: " + stack.Peek().ToString() + "\n");
+                    richTextBox1.AppendText("dataGridView1.Rows[j].Cells[2].Value.ToString() is: " + dataGridView1.Rows[j].Cells[2].Value.ToString() + "\n");
+                    richTextBox1.AppendText("\n");
+                    if (currentState.Equals(dataGridView1.Rows[j].Cells[0].Value.ToString()) &&
+                        stringToCheckInStringArray[i].Equals(dataGridView1.Rows[j].Cells[1].Value.ToString()) &&
+                        stack.Peek().ToString().Equals(dataGridView1.Rows[j].Cells[2].Value.ToString()))
+                    {
+                        usedRule = j;
+
+                        stack.Pop();
+                        currentState = dataGridView1.Rows[j].Cells[4].Value.ToString();
+
+                        stringToAttachToStack = dataGridView1.Rows[j].Cells[5].Value.ToString();
+                        if (!stringToAttachToStack.Equals(""))
+                        {
+                            //need to push the string to stack: symbol by symbol from right to left
+                            stringToAttachToStackInArrayOfSymbols = stringToArrayOfStrings(stringToAttachToStack);
+                            for (int k = stringToAttachToStack.Length - 1; k >= 0; k--)
+                            {
+                                // stringToAttachToStackInArrayOfSymbols[k] = 
+                                stack.Push(stringToAttachToStackInArrayOfSymbols[k]);
+                            }
+                        }//else nothing to push                     
+
+                        break;//have found the rule and applied it, so have to brake the search of the rule
+                    }
+                    if (j == dataGridView1.RowCount - 1)
+                    {
+                        richTextBox2Output.AppendText("Правило для текущего состояния, символа цепочки и " +
+                        "вершины стека не найдено. Цепочка не принимается\n");
+                        return;//надо сделать холостые такты для остатка цепочки даже если цепочка не принята?
+                        //но как тогда определять, прочитана цепочка или нет? Добавить флаг?
+                    }
+
+                }
+                richTextBox2Output.AppendText("Номер используемого правила: " + usedRule + ", новая конфигурация:\n");
+                //output in parentheses:
+                richTextBox2Output.AppendText("(" + currentState + ", ");// + stringToCheckInStringArray[i] + ", " + stack.Peek() + ")\n");
+                for (int m = i; m < stringToCheckInStringArray.Length; m++)
+                {
+                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                }
+                richTextBox2Output.AppendText(", ");
+                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
+                stackToPrint = (Stack)stack.Clone();
+                PrintStack(stackToPrint);
+                richTextBox2Output.AppendText(")\n\n");
+
+                /* richTextBox2Output.AppendText("Новое состояние: " + currentState + "\n");
+                 richTextBox2Output.AppendText("Символ, удаляемый из стека: " + stack.Peek().ToString() + "\n");
+                 richTextBox2Output.AppendText("Цепочка добавляемая в стек: " + stringToAttachToStack + "\n\n");*/
+
+                if (i < (stringsLength - 1) && stack.Count == 0)
+                {
+                    richTextBox2Output.AppendText("Цепочка не прочитана, а стек уже пуст, значит цепочка не принимается");
+                }
+
+                if (i >= (stringsLength - 1) && finalStates.Contains(currentState) &&
+                    stack.Count == 0)
+                {
+                    richTextBox2Output.AppendText("Цепочка прочитана, находимся в конечном состоянии " + currentState +
+                        ", стек пуст, значит цепочка принята и является цепочкой КС языка, описываемого данным ДМПА\n");
+                    break;
+                }
+                else
+                {
+                    if (//i >= (stringsLength)  &&//это должно гарантироваться правилами. Т.е. даже при пустом символе цепочки 
+                        //работа со стеком может идти
+                        i >= (stringToCheckInStringArray.Length + stack.Count) &&
+                    stack.Count > 0)
+                    {
+                        richTextBox2Output.AppendText("Цепочка не принята, т.к. стек не пуст\n");
+                    }
+                    // richTextBox2Output.AppendText("Цепочка не принята\n");
+                    //break;
+                }
+            }//ЦЕПОЧКА М.Б. ПРОЧИТАНА, ПРИ ЭТОМ В СТЕКЕ ВСЁ ЕЩЁ МОГУТ БЫТЬ СИМВОЛЫ И ДЛЯ ЭТИХ 
+             //КОНФИГУРАЦИЙ МОГУТ БЫТЬ ПРАВИЛА
+
+        }
+        public void PrintStack(Stack s)
+        {
+            // If stack is empty then return 
+            if (s.Count == 0)
+                return;
+
+            var x = s.Peek();
+
+            // Pop the top element of the stack 
+            s.Pop();
+
+            string result = "";
+
+            richTextBox2Output.AppendText(x.ToString());
+
+            // Recursively call the function PrintStack 
+            PrintStack(s);
+
+            // Print the stack element starting 
+            // from the bottom 
+
+
+            // Push the same element onto the stack 
+            // to preserve the order 
+            s.Push(x);
         }
         public void readConditionsFromTheInterface()
         {//one of the problems is what to consider correct: textBoxes or the rules... Let it be the textBoxes
@@ -188,12 +355,32 @@ namespace TYAP_Lab4_00
             }
             finalStates = textBox6FinalStates.Text.Split(' ');
             stringToCheck = textBox7StringToCheck.Text;
+            stringToCheckInStringArray = stringToArrayOfStrings(stringToCheck);
+            initializationIsInProgress = false;
 
         }
 
         private void textBox5_TextChangedStackInitChanged(object sender, EventArgs e)
         {
-            string initialStackInString = textBox5InitialStackContents.Text;
+            if (!initializationIsInProgress)
+            {
+                string[] stringInArray = stringToArrayOfStrings(textBox5InitialStackContents.Text);
+                for (int i = 0; i < stringInArray.Length; i++)
+                {
+                    if (!StackAlphabet.Contains(stringInArray[i]))
+                    {
+                        richTextBox2Output.AppendText("Введённый символ (" + stringInArray[i] + ") " +
+                           "не является частью алфавита стека.\n");
+                        textBox5InitialStackContents.Text = initialStackInString;
+                        return;
+                    }
+                }
+            }
+            initialStackInString = textBox5InitialStackContents.Text;
+
+
+            // string initialStackInString = textBox5InitialStackContents.Text;
+            initialStackInString = textBox5InitialStackContents.Text;
             richTextBox1.AppendText("stack was changed. InitialStackInString now is = " + initialStackInString + "\n");
             initialstackInStringArray = stringToArrayOfStrings(initialStackInString);
             stack = new Stack();
@@ -240,6 +427,26 @@ namespace TYAP_Lab4_00
         private void button2_Click(object sender, EventArgs e)
         {
             richTextBox2Output.Clear();
+        }
+
+        private void textBox6FinalStates_Leave(object sender, EventArgs e)
+        {
+            finalStates = textBox6FinalStates.Text.Split(' ');
+        }
+
+        private void textBox1AlphabetOfTheLanguage_Leave(object sender, EventArgs e)
+        {
+            LanguageAlphabet = textBox1AlphabetOfTheLanguage.Text.Split(' ');
+        }
+
+        private void textBox2AlphabetOfTheStack_Leave(object sender, EventArgs e)
+        {
+            StackAlphabet = textBox2AlphabetOfTheStack.Text.Split(' ');
+        }
+
+        private void textBox3States_Leave(object sender, EventArgs e)
+        {
+            states = textBox3States.Text.Split(' ');
         }
     }
 
