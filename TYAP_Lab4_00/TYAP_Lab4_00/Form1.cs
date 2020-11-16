@@ -43,6 +43,7 @@ namespace TYAP_Lab4_00
 
         private void buttonCheckTheChain(object sender, EventArgs e)
         {
+            richTextBox2Output.Clear();
             readConditionsFromTheInterface();
             if ((stack.Count == 0))//эта проверка уже есть внизу... куда её поставить лучше?
             {
@@ -51,7 +52,7 @@ namespace TYAP_Lab4_00
             }
             int usedRule = -1;
             int stringsLength = stringToCheckInStringArray.Length;
-            for (int i = 0; i < stringToCheckInStringArray.Length + stack.Count; i++)//-1 добавил от балды
+            for (int i = 0; i < stringToCheckInStringArray.Length + stack.Count; i++)
             {
                 string ith_stringToCheckInStringArray;
                 if (i >= (stringsLength))
@@ -103,7 +104,6 @@ namespace TYAP_Lab4_00
                         "вершины стека не найдено. Цепочка не принимается\n");
                         return;//надо сделать холостые такты для остатка цепочки даже если цепочка не принята? Сомневаюсь, что надо, 
                         //т.к. это приведёт к неверному выводу.
-                        //но как тогда определять, прочитана цепочка или нет? Добавить флаг?
                     }
                 }
                 richTextBox2Output.AppendText("Номер используемого правила: " + usedRule + ", новая конфигурация:\n");
@@ -119,26 +119,10 @@ namespace TYAP_Lab4_00
                 PrintStack(stackToPrint);
                 richTextBox2Output.AppendText(")\n\n");
 
-
                 if (i < (stringsLength - 1) && stack.Count == 0)
                 {
                     richTextBox2Output.AppendText("Цепочка не прочитана, а стек уже пуст, значит цепочка не принимается");
                 }
-/*
-                if (i > (stringsLength) && finalStates.Contains(currentState) && stack.Count == 0)
-                {
-                    richTextBox2Output.AppendText("Цепочка прочитана, находимся в конечном состоянии " + currentState +
-                        ", стек пуст, значит цепочка принята и является цепочкой КС языка, описываемого данным ДМПА\n");
-                    break;
-                }
-                else
-                {
-                    if (i >= (stringToCheckInStringArray.Length + stack.Count) &&//до сюда не дойдёт, т.к. цикл с i этого не позволит
-                    stack.Count > 0)
-                    {
-                        richTextBox2Output.AppendText("Цепочка не принята, т.к. стек не пуст\n");
-                    }
-                }*/
             }//ЦЕПОЧКА М.Б. ПРОЧИТАНА, ПРИ ЭТОМ В СТЕКЕ ВСЁ ЕЩЁ МОГУТ БЫТЬ СИМВОЛЫ И ДЛЯ ЭТИХ 
              //КОНФИГУРАЦИЙ МОГУТ БЫТЬ ПРАВИЛА
             if (finalStates.Contains(currentState) && stack.Count == 0)
@@ -534,6 +518,124 @@ namespace TYAP_Lab4_00
                 dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
             }
         }
+        public void task22_2_Init()
+        {
+            textBox1AlphabetOfTheLanguage.Text = "a b c";
+            textBox2AlphabetOfTheStack.Text = "a b c z";
+            textBox3States.Text = "q0 q1 q2 q3 q4 q5 q6 qf";
+            currentState = initialState = textBox4InitialState.Text = "q0";
+            initialStackInString = textBox5InitialStackContents.Text = "z";
+            textBox6FinalStates.Text = "qf";
+            stringToCheck = textBox7StringToCheck.Text = "aabccc";
+            stringTocheckInChars = stringToCheck.ToCharArray();
+            readConditionsFromTheInterface();
+
+            dataGridView1.RowCount = 14;
+
+            dataGridView1.Rows[0].Cells[0].Value = "q0";
+            dataGridView1.Rows[0].Cells[1].Value = "b";
+            dataGridView1.Rows[0].Cells[2].Value = "z";
+            dataGridView1.Rows[0].Cells[3].Value = "|--";
+            dataGridView1.Rows[0].Cells[4].Value = "q0";
+            dataGridView1.Rows[0].Cells[5].Value = "bz";
+
+            dataGridView1.Rows[1].Cells[0].Value = "q0";
+            dataGridView1.Rows[1].Cells[1].Value = "c";
+            dataGridView1.Rows[1].Cells[2].Value = "b";
+            dataGridView1.Rows[1].Cells[3].Value = "|--";
+            dataGridView1.Rows[1].Cells[4].Value = "q6";
+            dataGridView1.Rows[1].Cells[5].Value = "";
+
+            dataGridView1.Rows[2].Cells[0].Value = "";
+            dataGridView1.Rows[2].Cells[1].Value = "";
+            dataGridView1.Rows[2].Cells[2].Value = "";
+            dataGridView1.Rows[2].Cells[3].Value = "|--";
+            dataGridView1.Rows[2].Cells[4].Value = "";
+            dataGridView1.Rows[2].Cells[5].Value = "";
+
+            dataGridView1.Rows[3].Cells[0].Value = "q0";
+            dataGridView1.Rows[3].Cells[1].Value = "a";
+            dataGridView1.Rows[3].Cells[2].Value = "z";
+            dataGridView1.Rows[3].Cells[3].Value = "|--";
+            dataGridView1.Rows[3].Cells[4].Value = "q1";
+            dataGridView1.Rows[3].Cells[5].Value = "az";
+
+            dataGridView1.Rows[4].Cells[0].Value = "q1";
+            dataGridView1.Rows[4].Cells[1].Value = "a";
+            dataGridView1.Rows[4].Cells[2].Value = "a";
+            dataGridView1.Rows[4].Cells[3].Value = "|--";
+            dataGridView1.Rows[4].Cells[4].Value = "q1";
+            dataGridView1.Rows[4].Cells[5].Value = "aa";
+
+            dataGridView1.Rows[5].Cells[0].Value = "q1";
+            dataGridView1.Rows[5].Cells[1].Value = "b";
+            dataGridView1.Rows[5].Cells[2].Value = "a";
+            dataGridView1.Rows[5].Cells[3].Value = "|--";
+            dataGridView1.Rows[5].Cells[4].Value = "q2";
+            dataGridView1.Rows[5].Cells[5].Value = "a";
+
+            dataGridView1.Rows[6].Cells[0].Value = "q2";
+            dataGridView1.Rows[6].Cells[1].Value = "c";
+            dataGridView1.Rows[6].Cells[2].Value = "a";
+            dataGridView1.Rows[6].Cells[3].Value = "|--";
+            dataGridView1.Rows[6].Cells[4].Value = "q3";
+            dataGridView1.Rows[6].Cells[5].Value = "";
+
+            dataGridView1.Rows[7].Cells[0].Value = "q3";
+            dataGridView1.Rows[7].Cells[1].Value = "c";
+            dataGridView1.Rows[7].Cells[2].Value = "z";
+            dataGridView1.Rows[7].Cells[3].Value = "|--";
+            dataGridView1.Rows[7].Cells[4].Value = "q3";
+            dataGridView1.Rows[7].Cells[5].Value = "z";
+
+            dataGridView1.Rows[8].Cells[0].Value = "q4";
+            dataGridView1.Rows[8].Cells[1].Value = "c";
+            dataGridView1.Rows[8].Cells[2].Value = "z";
+            dataGridView1.Rows[8].Cells[3].Value = "|--";
+            dataGridView1.Rows[8].Cells[4].Value = "q5";
+            dataGridView1.Rows[8].Cells[5].Value = "z";
+
+            dataGridView1.Rows[9].Cells[0].Value = "q5";
+            dataGridView1.Rows[9].Cells[1].Value = "";
+            dataGridView1.Rows[9].Cells[2].Value = "z";
+            dataGridView1.Rows[9].Cells[3].Value = "|--";
+            dataGridView1.Rows[9].Cells[4].Value = "qf";
+            dataGridView1.Rows[9].Cells[5].Value = "";
+
+            dataGridView1.Rows[10].Cells[0].Value = "q3";
+            dataGridView1.Rows[10].Cells[1].Value = "c";
+            dataGridView1.Rows[10].Cells[2].Value = "a";
+            dataGridView1.Rows[10].Cells[3].Value = "|--";
+            dataGridView1.Rows[10].Cells[4].Value = "q4";
+            dataGridView1.Rows[10].Cells[5].Value = "";
+
+            dataGridView1.Rows[11].Cells[0].Value = "q4";
+            dataGridView1.Rows[11].Cells[1].Value = "c";
+            dataGridView1.Rows[11].Cells[2].Value = "a";
+            dataGridView1.Rows[11].Cells[3].Value = "|--";
+            dataGridView1.Rows[11].Cells[4].Value = "q3";
+            dataGridView1.Rows[11].Cells[5].Value = "";
+
+            dataGridView1.Rows[12].Cells[0].Value = "q2";
+            dataGridView1.Rows[12].Cells[1].Value = "b";
+            dataGridView1.Rows[12].Cells[2].Value = "a";
+            dataGridView1.Rows[12].Cells[3].Value = "|--";
+            dataGridView1.Rows[12].Cells[4].Value = "q2";
+            dataGridView1.Rows[12].Cells[5].Value = "a";
+
+            dataGridView1.Rows[13].Cells[0].Value = "q6";
+            dataGridView1.Rows[13].Cells[1].Value = "";
+            dataGridView1.Rows[13].Cells[2].Value = "z";
+            dataGridView1.Rows[13].Cells[3].Value = "|--";
+            dataGridView1.Rows[13].Cells[4].Value = "qf";
+            dataGridView1.Rows[13].Cells[5].Value = "";
+
+            int i = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
+            }
+        }
 
         public void PrintStack(Stack s)
         {
@@ -828,6 +930,16 @@ namespace TYAP_Lab4_00
         private void textBox3States_Leave(object sender, EventArgs e)
         {
             states = textBox3States.Text.Split(' ');
+            string[] statesCopy = (string[]) states.Clone();
+            if (textBox3States.Text.Split(' ').Intersect(finalStates).Any())
+            {
+                
+            }
+            else
+            {
+                richTextBox2Output.AppendText("\n Введённые состояния не содержат в себе финальных\n\n");
+                textBox6FinalStates.Text = "";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -855,6 +967,10 @@ namespace TYAP_Lab4_00
             task22_1_Init();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            task22_2_Init();
+        }
     }
 
 }

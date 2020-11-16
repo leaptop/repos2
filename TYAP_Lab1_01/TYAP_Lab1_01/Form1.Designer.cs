@@ -51,51 +51,57 @@
             // 
             // numericUpDownMin
             // 
-            this.numericUpDownMin.Location = new System.Drawing.Point(540, 34);
+            this.numericUpDownMin.Location = new System.Drawing.Point(405, 28);
+            this.numericUpDownMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownMin.Name = "numericUpDownMin";
-            this.numericUpDownMin.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMin.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownMin.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 39);
+            this.label1.Location = new System.Drawing.Point(10, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Правила";
             // 
             // numericUpDownMax
             // 
-            this.numericUpDownMax.Location = new System.Drawing.Point(674, 34);
+            this.numericUpDownMax.Location = new System.Drawing.Point(506, 28);
+            this.numericUpDownMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownMax.Name = "numericUpDownMax";
-            this.numericUpDownMax.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownMax.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownMax.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 70);
+            this.label2.Location = new System.Drawing.Point(10, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 24;
             this.label2.Text = "левая часть";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 70);
+            this.label3.Location = new System.Drawing.Point(101, 57);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "правая часть";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Location = new System.Drawing.Point(9, 7);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(311, 17);
+            this.label5.Size = new System.Drawing.Size(242, 13);
             this.label5.TabIndex = 27;
             this.label5.Text = "Реализую Контекстно Свободную грамматику";
             // 
@@ -106,26 +112,29 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 134);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 109);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 49;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(312, 488);
+            this.dataGridView1.Size = new System.Drawing.Size(317, 396);
             this.dataGridView1.TabIndex = 28;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(442, 117);
+            this.richTextBox1.Location = new System.Drawing.Point(332, 95);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(313, 505);
+            this.richTextBox1.Size = new System.Drawing.Size(236, 411);
             this.richTextBox1.TabIndex = 31;
             this.richTextBox1.Text = "";
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(372, 70);
+            this.Button1.Location = new System.Drawing.Point(279, 57);
+            this.Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(271, 23);
+            this.Button1.Size = new System.Drawing.Size(203, 19);
             this.Button1.TabIndex = 32;
             this.Button1.Text = "Вывести все комбинации грамматики";
             this.Button1.UseVisualStyleBackColor = true;
@@ -134,60 +143,67 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(537, 9);
+            this.label6.Location = new System.Drawing.Point(403, 7);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 17);
+            this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 34;
             this.label6.Text = "минимум букв";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(671, 9);
+            this.label4.Location = new System.Drawing.Point(503, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 17);
+            this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 35;
             this.label4.Text = "максимум букв";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 101);
+            this.label7.Location = new System.Drawing.Point(9, 82);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 17);
+            this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 36;
             this.label7.Text = "нетерминалы";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 101);
+            this.label8.Location = new System.Drawing.Point(101, 82);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 17);
+            this.label8.Size = new System.Drawing.Size(64, 13);
             this.label8.TabIndex = 37;
             this.label8.Text = "терминалы";
             // 
             // textBoxForStartingSymbol
             // 
-            this.textBoxForStartingSymbol.Location = new System.Drawing.Point(413, 34);
+            this.textBoxForStartingSymbol.Location = new System.Drawing.Point(310, 28);
+            this.textBoxForStartingSymbol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxForStartingSymbol.Name = "textBoxForStartingSymbol";
-            this.textBoxForStartingSymbol.Size = new System.Drawing.Size(100, 22);
+            this.textBoxForStartingSymbol.Size = new System.Drawing.Size(76, 20);
             this.textBoxForStartingSymbol.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(400, 9);
+            this.label9.Location = new System.Drawing.Point(300, 7);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 17);
+            this.label9.Size = new System.Drawing.Size(102, 13);
             this.label9.TabIndex = 39;
             this.label9.Text = "стартовый символ";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(649, 67);
+            this.button2.Location = new System.Drawing.Point(487, 54);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 23);
+            this.button2.Size = new System.Drawing.Size(109, 19);
             this.button2.TabIndex = 40;
             this.button2.Text = "Очистить память";
             this.button2.UseVisualStyleBackColor = true;
@@ -195,9 +211,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 634);
+            this.ClientSize = new System.Drawing.Size(602, 515);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxForStartingSymbol);
@@ -214,6 +230,7 @@
             this.Controls.Add(this.numericUpDownMax);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDownMin);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
