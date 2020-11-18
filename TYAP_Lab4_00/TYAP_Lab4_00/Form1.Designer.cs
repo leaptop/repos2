@@ -54,6 +54,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,14 +101,14 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(27, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 13);
+            this.label5.Size = new System.Drawing.Size(164, 26);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Начальное содержимое стека:";
+            this.label5.Text = "Символы вставляемые в стек \r\nпри инициализации:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 166);
+            this.label6.Location = new System.Drawing.Point(27, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 6;
@@ -153,7 +156,7 @@
             // 
             // textBox6FinalStates
             // 
-            this.textBox6FinalStates.Location = new System.Drawing.Point(213, 166);
+            this.textBox6FinalStates.Location = new System.Drawing.Point(213, 175);
             this.textBox6FinalStates.Name = "textBox6FinalStates";
             this.textBox6FinalStates.Size = new System.Drawing.Size(100, 20);
             this.textBox6FinalStates.TabIndex = 12;
@@ -161,7 +164,7 @@
             // 
             // textBox7StringToCheck
             // 
-            this.textBox7StringToCheck.Location = new System.Drawing.Point(213, 192);
+            this.textBox7StringToCheck.Location = new System.Drawing.Point(213, 201);
             this.textBox7StringToCheck.Name = "textBox7StringToCheck";
             this.textBox7StringToCheck.Size = new System.Drawing.Size(100, 20);
             this.textBox7StringToCheck.TabIndex = 13;
@@ -188,7 +191,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 192);
+            this.label8.Location = new System.Drawing.Point(26, 201);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 13);
             this.label8.TabIndex = 16;
@@ -216,7 +219,7 @@
             // 
             this.richTextBox2Output.Location = new System.Drawing.Point(30, 256);
             this.richTextBox2Output.Name = "richTextBox2Output";
-            this.richTextBox2Output.Size = new System.Drawing.Size(352, 466);
+            this.richTextBox2Output.Size = new System.Drawing.Size(352, 373);
             this.richTextBox2Output.TabIndex = 19;
             this.richTextBox2Output.Text = "";
             // 
@@ -290,11 +293,46 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(972, 548);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(161, 23);
+            this.button9.TabIndex = 27;
+            this.button9.Text = "check 711";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Visible = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(972, 577);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(161, 23);
+            this.button10.TabIndex = 28;
+            this.button10.Text = "check kr 2";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Visible = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(722, 621);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(161, 23);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "Загрузить задачу 22 8)";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 734);
+            this.ClientSize = new System.Drawing.Size(1334, 653);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -357,6 +395,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 
