@@ -103,7 +103,8 @@ namespace TYAP_Lab4_00
                         richTextBox2Output.AppendText("Правило для текущего состояния, символа цепочки и " +
                         "вершины стека не найдено. Цепочка не принимается\n");
                         return;//надо сделать холостые такты для остатка цепочки даже если цепочка не принята? Сомневаюсь, что надо, 
-                        //т.к. это приведёт к неверному выводу.
+                        //т.к. это приведёт к неверному выводу. Можно сделать, просто в случае не нахождения правила, нужно тупо опустошить стек, оставив 
+                        //цепочку недочитанной.
                     }
                 }
                 richTextBox2Output.AppendText("Номер используемого правила: " + usedRule + ", новая конфигурация:\n");
@@ -198,7 +199,7 @@ namespace TYAP_Lab4_00
             currentState = initialState = textBox4InitialState.Text = "q0";
             initialStackInString = textBox5InitialStackContents.Text = "z";
             textBox6FinalStates.Text = "q2";
-            stringToCheck = textBox7StringToCheck.Text = "011";
+            stringToCheck = textBox7StringToCheck.Text = "0011";
             stringTocheckInChars = stringToCheck.ToCharArray();
             readConditionsFromTheInterface();
 
@@ -320,7 +321,7 @@ namespace TYAP_Lab4_00
             currentState = initialState = textBox4InitialState.Text = "q0";
             initialStackInString = textBox5InitialStackContents.Text = "z";
             textBox6FinalStates.Text = "q5";
-            stringToCheck = textBox7StringToCheck.Text = "ab";
+            stringToCheck = textBox7StringToCheck.Text = "ababaaabbb";
             stringTocheckInChars = stringToCheck.ToCharArray();
             readConditionsFromTheInterface();
 
@@ -636,6 +637,319 @@ namespace TYAP_Lab4_00
                 dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
             }
         }
+        public void task711_ProtectionInit()
+        {
+            textBox1AlphabetOfTheLanguage.Text = "0 1";
+            textBox2AlphabetOfTheStack.Text = "0 1 z";
+            textBox3States.Text = "A B";
+            currentState = initialState = textBox4InitialState.Text = "A";
+            initialStackInString = textBox5InitialStackContents.Text = "z";
+            textBox6FinalStates.Text = "B";
+            stringToCheck = textBox7StringToCheck.Text = "011";
+            stringTocheckInChars = stringToCheck.ToCharArray();
+            readConditionsFromTheInterface();
+
+            dataGridView1.RowCount = 5;
+
+            dataGridView1.Rows[0].Cells[0].Value = "A";
+            dataGridView1.Rows[0].Cells[1].Value = "0";
+            dataGridView1.Rows[0].Cells[2].Value = "z";
+            dataGridView1.Rows[0].Cells[3].Value = "|--";
+            dataGridView1.Rows[0].Cells[4].Value = "A";
+            dataGridView1.Rows[0].Cells[5].Value = "0z";
+
+            dataGridView1.Rows[1].Cells[0].Value = "A";
+            dataGridView1.Rows[1].Cells[1].Value = "0";
+            dataGridView1.Rows[1].Cells[2].Value = "0";
+            dataGridView1.Rows[1].Cells[3].Value = "|--";
+            dataGridView1.Rows[1].Cells[4].Value = "A";
+            dataGridView1.Rows[1].Cells[5].Value = "";
+
+            dataGridView1.Rows[2].Cells[0].Value = "A";
+            dataGridView1.Rows[2].Cells[1].Value = "";
+            dataGridView1.Rows[2].Cells[2].Value = "z";
+            dataGridView1.Rows[2].Cells[3].Value = "|--";
+            dataGridView1.Rows[2].Cells[4].Value = "B";
+            dataGridView1.Rows[2].Cells[5].Value = "z";
+
+            dataGridView1.Rows[3].Cells[0].Value = "B";
+            dataGridView1.Rows[3].Cells[1].Value = "1";
+            dataGridView1.Rows[3].Cells[2].Value = "z";
+            dataGridView1.Rows[3].Cells[3].Value = "|--";
+            dataGridView1.Rows[3].Cells[4].Value = "B";
+            dataGridView1.Rows[3].Cells[5].Value = "z";
+
+            dataGridView1.Rows[4].Cells[0].Value = "B";
+            dataGridView1.Rows[4].Cells[1].Value = "";
+            dataGridView1.Rows[4].Cells[2].Value = "z";
+            dataGridView1.Rows[4].Cells[3].Value = "|--";
+            dataGridView1.Rows[4].Cells[4].Value = "B";
+            dataGridView1.Rows[4].Cells[5].Value = "";
+
+            int i = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
+            }
+        }
+        public void taskKR_2_exampleInit()
+        {
+            textBox1AlphabetOfTheLanguage.Text = "a b c";
+            textBox2AlphabetOfTheStack.Text = "a b c z";
+            textBox3States.Text = "q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 qf";
+            currentState = initialState = textBox4InitialState.Text = "q0";
+            initialStackInString = textBox5InitialStackContents.Text = "z";
+            textBox6FinalStates.Text = "qf";
+            stringToCheck = textBox7StringToCheck.Text = "aaaaacccb";
+            stringTocheckInChars = stringToCheck.ToCharArray();
+            readConditionsFromTheInterface();
+
+            dataGridView1.RowCount = 19;
+
+            dataGridView1.Rows[0].Cells[0].Value = "q0";
+            dataGridView1.Rows[0].Cells[1].Value = "a";
+            dataGridView1.Rows[0].Cells[2].Value = "z";
+            dataGridView1.Rows[0].Cells[3].Value = "|--";
+            dataGridView1.Rows[0].Cells[4].Value = "q1";
+            dataGridView1.Rows[0].Cells[5].Value = "az";
+
+            dataGridView1.Rows[1].Cells[0].Value = "q1";
+            dataGridView1.Rows[1].Cells[1].Value = "c";
+            dataGridView1.Rows[1].Cells[2].Value = "a";
+            dataGridView1.Rows[1].Cells[3].Value = "|--";
+            dataGridView1.Rows[1].Cells[4].Value = "q2";
+            dataGridView1.Rows[1].Cells[5].Value = "a";
+
+            dataGridView1.Rows[2].Cells[0].Value = "q2";
+            dataGridView1.Rows[2].Cells[1].Value = "c";
+            dataGridView1.Rows[2].Cells[2].Value = "a";
+            dataGridView1.Rows[2].Cells[3].Value = "|--";
+            dataGridView1.Rows[2].Cells[4].Value = "q3";
+            dataGridView1.Rows[2].Cells[5].Value = "a";
+
+            dataGridView1.Rows[3].Cells[0].Value = "q3";
+            dataGridView1.Rows[3].Cells[1].Value = "c";
+            dataGridView1.Rows[3].Cells[2].Value = "a";
+            dataGridView1.Rows[3].Cells[3].Value = "|--";
+            dataGridView1.Rows[3].Cells[4].Value = "q4";
+            dataGridView1.Rows[3].Cells[5].Value = "a";
+
+            dataGridView1.Rows[4].Cells[0].Value = "q4";
+            dataGridView1.Rows[4].Cells[1].Value = "c";
+            dataGridView1.Rows[4].Cells[2].Value = "a";
+            dataGridView1.Rows[4].Cells[3].Value = "|--";
+            dataGridView1.Rows[4].Cells[4].Value = "q4";
+            dataGridView1.Rows[4].Cells[5].Value = "a";
+
+            dataGridView1.Rows[5].Cells[0].Value = "q4";
+            dataGridView1.Rows[5].Cells[1].Value = "";
+            dataGridView1.Rows[5].Cells[2].Value = "a";
+            dataGridView1.Rows[5].Cells[3].Value = "|--";
+            dataGridView1.Rows[5].Cells[4].Value = "q5";
+            dataGridView1.Rows[5].Cells[5].Value = "";
+
+            dataGridView1.Rows[6].Cells[0].Value = "q5";
+            dataGridView1.Rows[6].Cells[1].Value = "";
+            dataGridView1.Rows[6].Cells[2].Value = "z";
+            dataGridView1.Rows[6].Cells[3].Value = "|--";
+            dataGridView1.Rows[6].Cells[4].Value = "qf";
+            dataGridView1.Rows[6].Cells[5].Value = "";
+
+            dataGridView1.Rows[7].Cells[0].Value = "q1";
+            dataGridView1.Rows[7].Cells[1].Value = "a";
+            dataGridView1.Rows[7].Cells[2].Value = "a";
+            dataGridView1.Rows[7].Cells[3].Value = "|--";
+            dataGridView1.Rows[7].Cells[4].Value = "q6";
+            dataGridView1.Rows[7].Cells[5].Value = "aa";
+
+            dataGridView1.Rows[8].Cells[0].Value = "q6";
+            dataGridView1.Rows[8].Cells[1].Value = "a";
+            dataGridView1.Rows[8].Cells[2].Value = "a";
+            dataGridView1.Rows[8].Cells[3].Value = "|--";
+            dataGridView1.Rows[8].Cells[4].Value = "q7";
+            dataGridView1.Rows[8].Cells[5].Value = "aa";
+
+            dataGridView1.Rows[9].Cells[0].Value = "q7";
+            dataGridView1.Rows[9].Cells[1].Value = "c";
+            dataGridView1.Rows[9].Cells[2].Value = "a";
+            dataGridView1.Rows[9].Cells[3].Value = "|--";
+            dataGridView1.Rows[9].Cells[4].Value = "q8";
+            dataGridView1.Rows[9].Cells[5].Value = "";
+            /*
+                        dataGridView1.Rows[9].Cells[0].Value = "q7";
+                        dataGridView1.Rows[9].Cells[1].Value = "c";
+                        dataGridView1.Rows[9].Cells[2].Value = "a";
+                        dataGridView1.Rows[9].Cells[3].Value = "|--";
+                        dataGridView1.Rows[9].Cells[4].Value = "q7";
+                        dataGridView1.Rows[9].Cells[5].Value = "a";*/
+
+            dataGridView1.Rows[10].Cells[0].Value = "q8";
+            dataGridView1.Rows[10].Cells[1].Value = "c";
+            dataGridView1.Rows[10].Cells[2].Value = "a";
+            dataGridView1.Rows[10].Cells[3].Value = "|--";
+            dataGridView1.Rows[10].Cells[4].Value = "q9";
+            dataGridView1.Rows[10].Cells[5].Value = "";
+
+            dataGridView1.Rows[11].Cells[0].Value = "q9";
+            dataGridView1.Rows[11].Cells[1].Value = "c";
+            dataGridView1.Rows[11].Cells[2].Value = "a";
+            dataGridView1.Rows[11].Cells[3].Value = "|--";
+            dataGridView1.Rows[11].Cells[4].Value = "q10";
+            dataGridView1.Rows[11].Cells[5].Value = "";
+
+            dataGridView1.Rows[12].Cells[0].Value = "q10";
+            dataGridView1.Rows[12].Cells[1].Value = "";
+            dataGridView1.Rows[12].Cells[2].Value = "z";
+            dataGridView1.Rows[12].Cells[3].Value = "|--";
+            dataGridView1.Rows[12].Cells[4].Value = "qf";
+            dataGridView1.Rows[12].Cells[5].Value = "";
+
+            dataGridView1.Rows[13].Cells[0].Value = "q7";
+            dataGridView1.Rows[13].Cells[1].Value = "a";
+            dataGridView1.Rows[13].Cells[2].Value = "a";
+            dataGridView1.Rows[13].Cells[3].Value = "|--";
+            dataGridView1.Rows[13].Cells[4].Value = "q11";
+            dataGridView1.Rows[13].Cells[5].Value = "";
+
+            dataGridView1.Rows[14].Cells[0].Value = "q11";
+            dataGridView1.Rows[14].Cells[1].Value = "a";
+            dataGridView1.Rows[14].Cells[2].Value = "a";
+            dataGridView1.Rows[14].Cells[3].Value = "|--";
+            dataGridView1.Rows[14].Cells[4].Value = "q12";
+            dataGridView1.Rows[14].Cells[5].Value = "";
+
+            dataGridView1.Rows[15].Cells[0].Value = "q12";
+            dataGridView1.Rows[15].Cells[1].Value = "b";
+            dataGridView1.Rows[15].Cells[2].Value = "a";
+            dataGridView1.Rows[15].Cells[3].Value = "|--";
+            dataGridView1.Rows[15].Cells[4].Value = "q13";
+            dataGridView1.Rows[15].Cells[5].Value = "";
+
+            dataGridView1.Rows[16].Cells[0].Value = "q13";
+            dataGridView1.Rows[16].Cells[1].Value = "";
+            dataGridView1.Rows[16].Cells[2].Value = "z";
+            dataGridView1.Rows[16].Cells[3].Value = "|--";
+            dataGridView1.Rows[16].Cells[4].Value = "qf";
+            dataGridView1.Rows[16].Cells[5].Value = "";
+
+            dataGridView1.Rows[17].Cells[0].Value = "q13";
+            dataGridView1.Rows[17].Cells[1].Value = "b";
+            dataGridView1.Rows[17].Cells[2].Value = "a";
+            dataGridView1.Rows[17].Cells[3].Value = "|--";
+            dataGridView1.Rows[17].Cells[4].Value = "q13";
+            dataGridView1.Rows[17].Cells[5].Value = "";
+
+            dataGridView1.Rows[18].Cells[0].Value = "q12";
+            dataGridView1.Rows[18].Cells[1].Value = "c";
+            dataGridView1.Rows[18].Cells[2].Value = "a";
+            dataGridView1.Rows[18].Cells[3].Value = "|--";
+            dataGridView1.Rows[18].Cells[4].Value = "q12";
+            dataGridView1.Rows[18].Cells[5].Value = "a";
+
+            int i = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
+            }
+        }
+
+        public void task22_8_Init()
+        {
+            textBox1AlphabetOfTheLanguage.Text = "a b c";
+            textBox2AlphabetOfTheStack.Text = "a b c z";
+            textBox3States.Text = "q0 q1 q2 q3 q4 q5 q6 q7 q8 qf";
+            currentState = initialState = textBox4InitialState.Text = "q0";
+            initialStackInString = textBox5InitialStackContents.Text = "z";
+            textBox6FinalStates.Text = "qf";
+            stringToCheck = textBox7StringToCheck.Text = "aaabcbcaacc";
+            stringTocheckInChars = stringToCheck.ToCharArray();
+            readConditionsFromTheInterface();
+
+            dataGridView1.RowCount = 11;
+
+            dataGridView1.Rows[0].Cells[0].Value = "q0";
+            dataGridView1.Rows[0].Cells[1].Value = "a";
+            dataGridView1.Rows[0].Cells[2].Value = "z";
+            dataGridView1.Rows[0].Cells[3].Value = "|--";
+            dataGridView1.Rows[0].Cells[4].Value = "q0";
+            dataGridView1.Rows[0].Cells[5].Value = "az";
+
+            dataGridView1.Rows[1].Cells[0].Value = "q0";
+            dataGridView1.Rows[1].Cells[1].Value = "a";
+            dataGridView1.Rows[1].Cells[2].Value = "a";
+            dataGridView1.Rows[1].Cells[3].Value = "|--";
+            dataGridView1.Rows[1].Cells[4].Value = "q1";
+            dataGridView1.Rows[1].Cells[5].Value = "aa";
+
+            dataGridView1.Rows[2].Cells[0].Value = "q1";
+            dataGridView1.Rows[2].Cells[1].Value = "a";
+            dataGridView1.Rows[2].Cells[2].Value = "a";
+            dataGridView1.Rows[2].Cells[3].Value = "|--";
+            dataGridView1.Rows[2].Cells[4].Value = "q0";
+            dataGridView1.Rows[2].Cells[5].Value = "aa";
+
+            dataGridView1.Rows[3].Cells[0].Value = "q0";
+            dataGridView1.Rows[3].Cells[1].Value = "b";
+            dataGridView1.Rows[3].Cells[2].Value = "a";
+            dataGridView1.Rows[3].Cells[3].Value = "|--";
+            dataGridView1.Rows[3].Cells[4].Value = "q2";
+            dataGridView1.Rows[3].Cells[5].Value = "ba";
+
+            dataGridView1.Rows[4].Cells[0].Value = "q2";
+            dataGridView1.Rows[4].Cells[1].Value = "c";
+            dataGridView1.Rows[4].Cells[2].Value = "b";
+            dataGridView1.Rows[4].Cells[3].Value = "|--";
+            dataGridView1.Rows[4].Cells[4].Value = "q3";
+            dataGridView1.Rows[4].Cells[5].Value = "";
+
+            dataGridView1.Rows[5].Cells[0].Value = "q3";
+            dataGridView1.Rows[5].Cells[1].Value = "b";
+            dataGridView1.Rows[5].Cells[2].Value = "a";
+            dataGridView1.Rows[5].Cells[3].Value = "|--";
+            dataGridView1.Rows[5].Cells[4].Value = "q2";
+            dataGridView1.Rows[5].Cells[5].Value = "ba";
+
+            dataGridView1.Rows[6].Cells[0].Value = "q3";
+            dataGridView1.Rows[6].Cells[1].Value = "";
+            dataGridView1.Rows[6].Cells[2].Value = "a";
+            dataGridView1.Rows[6].Cells[3].Value = "|--";
+            dataGridView1.Rows[6].Cells[4].Value = "q4";
+            dataGridView1.Rows[6].Cells[5].Value = "";
+
+            dataGridView1.Rows[7].Cells[0].Value = "q4";
+            dataGridView1.Rows[7].Cells[1].Value = "";
+            dataGridView1.Rows[7].Cells[2].Value = "z";
+            dataGridView1.Rows[7].Cells[3].Value = "|--";
+            dataGridView1.Rows[7].Cells[4].Value = "qf";
+            dataGridView1.Rows[7].Cells[5].Value = "";
+
+            dataGridView1.Rows[8].Cells[0].Value = "q3";
+            dataGridView1.Rows[8].Cells[1].Value = "a";
+            dataGridView1.Rows[8].Cells[2].Value = "a";
+            dataGridView1.Rows[8].Cells[3].Value = "|--";
+            dataGridView1.Rows[8].Cells[4].Value = "q3";
+            dataGridView1.Rows[8].Cells[5].Value = "";
+
+            dataGridView1.Rows[9].Cells[0].Value = "q3";
+            dataGridView1.Rows[9].Cells[1].Value = "c";
+            dataGridView1.Rows[9].Cells[2].Value = "a";
+            dataGridView1.Rows[9].Cells[3].Value = "|--";
+            dataGridView1.Rows[9].Cells[4].Value = "q3";
+            dataGridView1.Rows[9].Cells[5].Value = "";
+
+            dataGridView1.Rows[10].Cells[0].Value = "q3";
+            dataGridView1.Rows[10].Cells[1].Value = "c";
+            dataGridView1.Rows[10].Cells[2].Value = "z";
+            dataGridView1.Rows[10].Cells[3].Value = "|--";
+            dataGridView1.Rows[10].Cells[4].Value = "q3";
+            dataGridView1.Rows[10].Cells[5].Value = "";
+
+            int i = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[i].HeaderCell.Value = (i++.ToString());
+            }
+        }
 
         public void PrintStack(Stack s)
         {
@@ -727,7 +1041,44 @@ namespace TYAP_Lab4_00
                 {
                     if (!StackAlphabet.Contains(stringInArray[i]))
                     {
-                        richTextBox2Output.AppendText("Введённый символ (" + stringInArray[i] + ") " +
+                        richTextBox2Output.AppendText("\n\nВведённый символ (" + stringInArray[i] + ") " +
+                           "не является частью алфавита стека.\n");
+                        textBox5InitialStackContents.Text = initialStackInString;
+                        return;
+                    }
+                }
+            }
+            initialStackInString = textBox5InitialStackContents.Text;
+
+
+            // string initialStackInString = textBox5InitialStackContents.Text;
+            initialStackInString = textBox5InitialStackContents.Text;
+            richTextBox1.AppendText("stack was changed. InitialStackInString now is = " + initialStackInString + "\n");
+            initialstackInStringArray = stringToArrayOfStrings(initialStackInString);
+            stack = new Stack();
+            for (int i = initialstackInStringArray.Length - 1; i >= 0; i--)
+            {
+                stack.Push(initialstackInStringArray[i]);
+            }
+            richTextBox1.AppendText("stack was changed. it's contents now are: ");
+            Stack stackCopy = (Stack)stack.Clone();
+            for (int i = 0; i < stack.Count; i++)
+            {
+                richTextBox1.AppendText(stackCopy.Peek().ToString());
+                stackCopy.Pop();
+            }
+            richTextBox1.AppendText("\n");
+        }
+        private void textBox5_TextChangedStackInitChanged0(object sender, EventArgs e)
+        {
+            if (!initializationIsInProgress)
+            {
+                string[] stringInArray = stringToArrayOfStrings(textBox5InitialStackContents.Text);
+                for (int i = 0; i < stringInArray.Length; i++)
+                {
+                    if (!StackAlphabet.Contains(stringInArray[i]))
+                    {
+                        richTextBox2Output.AppendText("\n\nВведённый символ (" + stringInArray[i] + ") " +
                            "не является частью алфавита стека.\n");
                         textBox5InitialStackContents.Text = initialStackInString;
                         return;
@@ -930,10 +1281,10 @@ namespace TYAP_Lab4_00
         private void textBox3States_Leave(object sender, EventArgs e)
         {
             states = textBox3States.Text.Split(' ');
-            string[] statesCopy = (string[]) states.Clone();
+            string[] statesCopy = (string[])states.Clone();
             if (textBox3States.Text.Split(' ').Intersect(finalStates).Any())
             {
-                
+
             }
             else
             {
@@ -970,6 +1321,21 @@ namespace TYAP_Lab4_00
         private void button8_Click(object sender, EventArgs e)
         {
             task22_2_Init();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            task711_ProtectionInit();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            taskKR_2_exampleInit();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            task22_8_Init();
         }
     }
 
