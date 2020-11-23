@@ -1,6 +1,13 @@
 # Compiled class file
 *.class
 
+TYAP_KR_00/automatic-graph-layout-master/automatic-graph-layout-master/GraphLayout/Test/MSAGLTests/Resources/Constraints/OverlapRemoval/Data/*
+TYAP_KR_00/automatic-graph-layout-master/automatic-graph-layout-master/GraphLayout/Test/MSAGLTests/Resources/Constraints/ProjectionSolver/Data/
+
+*Cycles_Vars100_ConstraintsMax10_EqualityConstraints_PosMax1M_GapMax100K_WeightMax10K_Cycles10.txt А как чисто по названию файла заигнорить?
+*Clusters_Vars100_ConstraintsMax3_PosMax1M_WeightMax10K_Margins100_ClustersDefault_FixedBordersRandom.txt
+*Clusters_Vars200_ConstraintsMax3_PosMax1M_WeightMax10K_Margins100_ClustersDefault_FixedBordersRandom.txt
+
 # Log file
 *.log
 

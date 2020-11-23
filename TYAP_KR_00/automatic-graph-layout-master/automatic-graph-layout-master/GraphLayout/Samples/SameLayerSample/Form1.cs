@@ -75,23 +75,19 @@ namespace SameLayerSample {
 
             //graph.Attr
             gViewer.Graph = graph;
-            IEnumerable < Edge > listOfEdges = graph.Edges;
-          
-            foreach (var item in graph.Nodes) {
-                richTextBox1.AppendText("item.Id.ToString() = " + item.Id.ToString() + "^\n");
-                foreach (Edge e in item .Edges) {
-                    richTextBox1.AppendText("e.LabelText = " + e.LabelText + "\n");
+            IEnumerable<Edge> listOfEdges = graph.Edges;
+
+            foreach (var node in graph.Nodes) {
+                richTextBox1.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                foreach (Edge edge in node.Edges) {
+                    richTextBox1.AppendText("edge.LabelText = " + edge.LabelText + "\n");
                 }
             }
-
-
             dataGridView1.RowCount = dataGridView1.ColumnCount = graph.NodeCount;
-            for (int i = 0; i < graph.NodeCount; i++) {
-                //dataGridView1.Columns[i].HeaderCell.Value = graph.
-            }
+
             int p = 0;
             Hashtable hash = graph.NodeMap;
-            Edge edge = graph.EdgeById("q0q1");
+            // Edge edge = graph.EdgeById("q0q1");
 
             List<string> lst = new List<string>();//normally hashtable isn't sorted, so I had to make a list for sorting
             foreach (var key2 in hash.Keys) {
@@ -103,6 +99,25 @@ namespace SameLayerSample {
                 dataGridView1.Columns[p].HeaderCell.Value = dataGridView1.Rows[p++].HeaderCell.Value = item;
                 lastNode = item;
             }
+
+            foreach (var node in graph.Nodes) {//apparently it's easier to build graph by a table, not vice versa... but I'm lazy...
+                foreach (Edge edge in node.Edges) {
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++) {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++) {
+                            if (edge.Source.Equals(dataGridView1.Rows[i].HeaderCell.Value) &&
+                                edge.Target.Equals(dataGridView1.Columns[j].HeaderCell.Value)) {
+                                dataGridView1.Rows[i].Cells[j].Value = edge.LabelText;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            for (int i = 0; i < graph.NodeCount; i++) {
+                //dataGridView1.Columns[i].HeaderCell.Value = graph.
+            }
+
 
             foreach (DictionaryEntry de in hash) {
                 richTextBox1.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");

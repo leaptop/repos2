@@ -156,12 +156,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 196);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.Size = new System.Drawing.Size(428, 433);
+            this.dataGridView1.Size = new System.Drawing.Size(691, 433);
             this.dataGridView1.TabIndex = 13;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(928, 13);
+            this.richTextBox1.Location = new System.Drawing.Point(1477, 12);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(403, 647);
             this.richTextBox1.TabIndex = 14;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 672);
+            this.ClientSize = new System.Drawing.Size(1892, 672);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
