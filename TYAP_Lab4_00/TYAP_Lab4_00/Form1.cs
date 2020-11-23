@@ -40,7 +40,11 @@ namespace TYAP_Lab4_00
         public string newState = "";
         public string currentSymbolOfTheCheckedString = "";
         public bool initializationIsInProgress = true;
-
+        string ith_stringToCheckInStringArray;
+        int usedRule = -1;
+        public string unreadSymbolsOfTheString = "";
+        bool symbolIsAcceptedByOneOfTheRules = true;
+        bool searchingForTheRuleForIncorrectSymbol = false;
         private void buttonCheckTheChain(object sender, EventArgs e)
         {
             richTextBox2Output.Clear();
@@ -50,11 +54,12 @@ namespace TYAP_Lab4_00
                 richTextBox2Output.AppendText("Стек пуст. Следующий такт невозможен. Цепочка не принята\n");
                 return;
             }
-            int usedRule = -1;
+
             int stringsLength = stringToCheckInStringArray.Length;
             for (int i = 0; i < stringToCheckInStringArray.Length + stack.Count; i++)
             {
-                string ith_stringToCheckInStringArray;
+                symbolIsAcceptedByOneOfTheRules = true;
+                searchingForTheRuleForIncorrectSymbol = false;
                 if (i >= (stringsLength))
                 {
                     ith_stringToCheckInStringArray = "";
@@ -64,20 +69,11 @@ namespace TYAP_Lab4_00
                     ith_stringToCheckInStringArray = stringToCheckInStringArray[i];
                 }
                 //output in parentheses:
-                richTextBox2Output.AppendText("(" + currentState + ", ");
-                for (int m = i; m < stringToCheckInStringArray.Length; m++)
-                {
-                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
-                }
-                richTextBox2Output.AppendText(", ");
-                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
-                Stack stackToPrint = (Stack)stack.Clone();
-                PrintStack(stackToPrint);
-                richTextBox2Output.AppendText(")\n");
+                outputInParentheses();
 
                 //now it's time to go through the rules in datagridview1
-                for (int j = 0; j < dataGridView1.RowCount; j++)
-                {
+                for (int j = 0; j < dataGridView1.RowCount && stack.Count != 0; j++)
+                {//to avoid eternal loop there have to be rules to work on emptying the stack for any situation
                     if (currentState.Equals(dataGridView1.Rows[j].Cells[0].Value.ToString()) &&
                         ith_stringToCheckInStringArray.Equals(dataGridView1.Rows[j].Cells[1].Value.ToString()) &&
                         stack.Peek().ToString().Equals(dataGridView1.Rows[j].Cells[2].Value.ToString()))
@@ -94,39 +90,67 @@ namespace TYAP_Lab4_00
                             {
                                 stack.Push(stringToAttachToStackInArrayOfSymbols[k]);
                             }
-                        }//else nothing to push                     
+                        }//else nothing to push   
+                        if (!symbolIsAcceptedByOneOfTheRules) //if the symbol is not accepted, then it stays in the stringToCheck
+                        {
 
+                        }
+                        else//else it is accepted and not needed to be shown in the new configuration
+                        {
+                            if (!(i >= stringToCheckInStringArray.Length))
+                            {
+                                stringToCheckInStringArray[i] = "";
+                            }
+                            //stringToCheckInStringArray[i] = "";
+                            symbolIsAcceptedByOneOfTheRules = true;
+                        }
                         break;//have found the rule and applied it, so have to brake the search of the rule
                     }
-                    if (j == dataGridView1.RowCount - 1)
+                    if (j == (dataGridView1.RowCount - 1) && stack.Count > 0)
                     {
-                        richTextBox2Output.AppendText("Правило для текущего состояния, символа цепочки и " +
-                        "вершины стека не найдено. Цепочка не принимается\n");
-                        return;//надо сделать холостые такты для остатка цепочки даже если цепочка не принята? Сомневаюсь, что надо, 
-                        //т.к. это приведёт к неверному выводу. Можно сделать, просто в случае не нахождения правила, нужно тупо опустошить стек, оставив 
-                        //цепочку недочитанной.
+                        if (searchingForTheRuleForIncorrectSymbol)
+                        //if searched for the rule for incorrect symbol and haven't found it
+                        {
+                            goto End;//instead of goto I could ofcourse just change i to maximum
+                            //and write break to break the inner loop for j. After the j-cycle
+                            //just write continue... not just continue, but if(needToEnd(a boolean
+                            //indicating, that the machine has to stop)){continue;}                            // break outerloop;
+                            break;
+                            richTextBox2Output.AppendText("\nНе нашёл правила даже для пустого символа\n\n");
+                            symbolIsAcceptedByOneOfTheRules = true;//
+                            searchingForTheRuleForIncorrectSymbol = false;
+                            break;
+                        }
+                        symbolIsAcceptedByOneOfTheRules = false;
+                        j = -1;
+                        ith_stringToCheckInStringArray = "";
+                        searchingForTheRuleForIncorrectSymbol = true;
+
+                        richTextBox1.AppendText("\n\nsearching for the rule for an incorrect symbol for emptying the stack\n\n");
+                        // richTextBox1.AppendText()
+                        /* richTextBox2Output.AppendText("Правило для текущего состояния, символа цепочки и " +
+                         "вершины стека не найдено. Цепочка не принимается\n");
+                         return;*///надо сделать холостые такты для остатка цепочки даже если цепочка не принята? Сомневаюсь, что надо, 
+                                  //т.к. это приведёт к неверному выводу. Можно сделать, просто в случае не нахождения правила, 
+                                  //нужно искать правило для того же состояния, пустого символа цепочки и того же стека.  
+                                  //Если такого правила тоже нет, то останавливаю автомат!
+
+                        //НЕТ перехожу к следующему символу цепочки, оставив этот символ
+                        //в цепочке. Если же нашёл такое правило, то выполняю его и символ всё равно оставляю в цепочке.
                     }
                 }
                 richTextBox2Output.AppendText("Номер используемого правила: " + usedRule + ", новая конфигурация:\n");
-                //output in parentheses:
-                richTextBox2Output.AppendText("(" + currentState + ", ");// + stringToCheckInStringArray[i] + ", " + stack.Peek() + ")\n");
-                for (int m = i + 1; m < stringToCheckInStringArray.Length; m++)
-                {
-                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
-                }
-                richTextBox2Output.AppendText(", ");
-                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
-                stackToPrint = (Stack)stack.Clone();
-                PrintStack(stackToPrint);
-                richTextBox2Output.AppendText(")\n\n");
-
+                outputInParentheses();
+                richTextBox2Output.AppendText("\n");
                 if (i < (stringsLength - 1) && stack.Count == 0)
                 {
                     richTextBox2Output.AppendText("Цепочка не прочитана, а стек уже пуст, значит цепочка не принимается");
+                    return;
                 }
             }//ЦЕПОЧКА М.Б. ПРОЧИТАНА, ПРИ ЭТОМ В СТЕКЕ ВСЁ ЕЩЁ МОГУТ БЫТЬ СИМВОЛЫ И ДЛЯ ЭТИХ 
              //КОНФИГУРАЦИЙ МОГУТ БЫТЬ ПРАВИЛА
-            if (finalStates.Contains(currentState) && stack.Count == 0)
+        End:
+            if (finalStates.Contains(currentState) && stack.Count == 0 && everyMemberIsEmpty())
             {
                 richTextBox2Output.AppendText("Цепочка прочитана, находимся в конечном состоянии " + currentState +
                     ", стек пуст, значит цепочка принята и является цепочкой КС языка, описываемого данным ДМПА\n");
@@ -137,8 +161,50 @@ namespace TYAP_Lab4_00
                 if (stack.Count > 0)
                 {
                     richTextBox2Output.AppendText("Цепочка не принята, т.к. стек не пуст\n");
+                    return;
+                }
+                else if (!everyMemberIsEmpty())
+                {
+                    richTextBox2Output.AppendText("Цепочка не принята, т.к. цепочка не прочитана\n");
+                    return;
+                }
+                // else if()
+            }
+        }
+        public bool everyMemberIsEmpty()
+        {
+            bool empty = true;
+            for (int i = 0; i < stringToCheckInStringArray.Length; i++)
+            {
+                if (stringToCheckInStringArray[i] != "")
+                {
+                    empty = false;
+                    return false;
                 }
             }
+            return true;
+        }
+        public void emptyingTheStack()
+        {
+
+        }
+        public string outputInParentheses()
+        {
+            string configuration = "";
+            configuration += "(" + currentState + ", ";
+            richTextBox2Output.AppendText("(" + currentState + ", ");
+            for (int m = 0; m < stringToCheckInStringArray.Length; m++)
+            {
+                richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                configuration += stringToCheckInStringArray[m];
+            }
+            richTextBox2Output.AppendText(", ");
+            configuration += ", ";
+            // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
+            Stack stackToPrint = (Stack)stack.Clone();
+            PrintStack(stackToPrint);
+            richTextBox2Output.AppendText(")\n");
+            return configuration;
         }
 
         public void dataGridViewInit()
@@ -246,6 +312,8 @@ namespace TYAP_Lab4_00
             dataGridView1.Rows[5].Cells[3].Value = "|--";
             dataGridView1.Rows[5].Cells[4].Value = "q2";
             dataGridView1.Rows[5].Cells[5].Value = "";
+
+
             int i = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -254,13 +322,13 @@ namespace TYAP_Lab4_00
         }
         public void task20bInit()
         {
-            textBox1AlphabetOfTheLanguage.Text = "0 1";
+            textBox1AlphabetOfTheLanguage.Text = "0 1 2";
             textBox2AlphabetOfTheStack.Text = "0 1 z";
             textBox3States.Text = "q0 q1 q2";
             currentState = initialState = textBox4InitialState.Text = "q0";
             initialStackInString = textBox5InitialStackContents.Text = "z";
             textBox6FinalStates.Text = "q2";
-            stringToCheck = textBox7StringToCheck.Text = "011";
+            stringToCheck = textBox7StringToCheck.Text = "0211";
             stringTocheckInChars = stringToCheck.ToCharArray();
             readConditionsFromTheInterface();
 
@@ -861,11 +929,11 @@ namespace TYAP_Lab4_00
             currentState = initialState = textBox4InitialState.Text = "q0";
             initialStackInString = textBox5InitialStackContents.Text = "z";
             textBox6FinalStates.Text = "qf";
-            stringToCheck = textBox7StringToCheck.Text = "aaabcbcaacc";
+            stringToCheck = textBox7StringToCheck.Text = "aaabcbcaa";
             stringTocheckInChars = stringToCheck.ToCharArray();
             readConditionsFromTheInterface();
 
-            dataGridView1.RowCount = 11;
+            dataGridView1.RowCount = 10;
 
             dataGridView1.Rows[0].Cells[0].Value = "q0";
             dataGridView1.Rows[0].Cells[1].Value = "a";
@@ -931,18 +999,25 @@ namespace TYAP_Lab4_00
             dataGridView1.Rows[8].Cells[5].Value = "";
 
             dataGridView1.Rows[9].Cells[0].Value = "q3";
-            dataGridView1.Rows[9].Cells[1].Value = "c";
-            dataGridView1.Rows[9].Cells[2].Value = "a";
+            dataGridView1.Rows[9].Cells[1].Value = "";
+            dataGridView1.Rows[9].Cells[2].Value = "z";
             dataGridView1.Rows[9].Cells[3].Value = "|--";
             dataGridView1.Rows[9].Cells[4].Value = "q3";
             dataGridView1.Rows[9].Cells[5].Value = "";
 
-            dataGridView1.Rows[10].Cells[0].Value = "q3";
-            dataGridView1.Rows[10].Cells[1].Value = "c";
-            dataGridView1.Rows[10].Cells[2].Value = "z";
-            dataGridView1.Rows[10].Cells[3].Value = "|--";
-            dataGridView1.Rows[10].Cells[4].Value = "q3";
-            dataGridView1.Rows[10].Cells[5].Value = "";
+            /*            dataGridView1.Rows[9].Cells[0].Value = "q3";
+                        dataGridView1.Rows[9].Cells[1].Value = "c";
+                        dataGridView1.Rows[9].Cells[2].Value = "a";
+                        dataGridView1.Rows[9].Cells[3].Value = "|--";
+                        dataGridView1.Rows[9].Cells[4].Value = "q3";
+                        dataGridView1.Rows[9].Cells[5].Value = "";
+
+                        dataGridView1.Rows[10].Cells[0].Value = "q3";
+                        dataGridView1.Rows[10].Cells[1].Value = "c";
+                        dataGridView1.Rows[10].Cells[2].Value = "z";
+                        dataGridView1.Rows[10].Cells[3].Value = "|--";
+                        dataGridView1.Rows[10].Cells[4].Value = "q3";
+                        dataGridView1.Rows[10].Cells[5].Value = "";*/
 
             int i = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -1132,6 +1207,107 @@ namespace TYAP_Lab4_00
             }
 
         }
+
+        private void buttonCheckTheChain1(object sender, EventArgs e)
+        {
+            richTextBox2Output.Clear();
+            readConditionsFromTheInterface();
+            if ((stack.Count == 0))//эта проверка уже есть внизу... куда её поставить лучше?
+            {
+                richTextBox2Output.AppendText("Стек пуст. Следующий такт невозможен. Цепочка не принята\n");
+                return;
+            }
+            int usedRule = -1;
+            int stringsLength = stringToCheckInStringArray.Length;
+            for (int i = 0; i < stringToCheckInStringArray.Length + stack.Count; i++)
+            {
+                string ith_stringToCheckInStringArray;
+                if (i >= (stringsLength))
+                {
+                    ith_stringToCheckInStringArray = "";
+                }
+                else
+                {
+                    ith_stringToCheckInStringArray = stringToCheckInStringArray[i];
+                }
+                //output in parentheses:
+                richTextBox2Output.AppendText("(" + currentState + ", ");
+                for (int m = i; m < stringToCheckInStringArray.Length; m++)
+                {
+                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                }
+                richTextBox2Output.AppendText(", ");
+                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
+                Stack stackToPrint = (Stack)stack.Clone();
+                PrintStack(stackToPrint);
+                richTextBox2Output.AppendText(")\n");
+
+                //now it's time to go through the rules in datagridview1
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    if (currentState.Equals(dataGridView1.Rows[j].Cells[0].Value.ToString()) &&
+                        ith_stringToCheckInStringArray.Equals(dataGridView1.Rows[j].Cells[1].Value.ToString()) &&
+                        stack.Peek().ToString().Equals(dataGridView1.Rows[j].Cells[2].Value.ToString()))
+                    {
+                        usedRule = j;
+                        stack.Pop();
+                        currentState = dataGridView1.Rows[j].Cells[4].Value.ToString();
+                        stringToAttachToStack = dataGridView1.Rows[j].Cells[5].Value.ToString();
+                        if (!stringToAttachToStack.Equals(""))
+                        {
+                            //need to push the string to stack: symbol by symbol from right to left
+                            stringToAttachToStackInArrayOfSymbols = stringToArrayOfStrings(stringToAttachToStack);
+                            for (int k = stringToAttachToStack.Length - 1; k >= 0; k--)
+                            {
+                                stack.Push(stringToAttachToStackInArrayOfSymbols[k]);
+                            }
+                        }//else nothing to push                     
+
+                        break;//have found the rule and applied it, so have to brake the search of the rule
+                    }
+                    if (j == dataGridView1.RowCount - 1)
+                    {
+                        richTextBox2Output.AppendText("Правило для текущего состояния, символа цепочки и " +
+                        "вершины стека не найдено. Цепочка не принимается\n");
+                        return;//надо сделать холостые такты для остатка цепочки даже если цепочка не принята? Сомневаюсь, что надо, 
+                        //т.к. это приведёт к неверному выводу. Можно сделать, просто в случае не нахождения правила, нужно тупо опустошить стек, оставив 
+                        //цепочку недочитанной.
+                    }
+                }
+                richTextBox2Output.AppendText("Номер используемого правила: " + usedRule + ", новая конфигурация:\n");
+                //output in parentheses:
+                richTextBox2Output.AppendText("(" + currentState + ", ");// + stringToCheckInStringArray[i] + ", " + stack.Peek() + ")\n");
+                for (int m = i + 1; m < stringToCheckInStringArray.Length; m++)
+                {
+                    richTextBox2Output.AppendText(stringToCheckInStringArray[m]);
+                }
+                richTextBox2Output.AppendText(", ");
+                // richTextBox2Output.AppendText("stack.ToString() = " + stack.);//outputs the name of the class
+                stackToPrint = (Stack)stack.Clone();
+                PrintStack(stackToPrint);
+                richTextBox2Output.AppendText(")\n\n");
+
+                if (i < (stringsLength - 1) && stack.Count == 0)
+                {
+                    richTextBox2Output.AppendText("Цепочка не прочитана, а стек уже пуст, значит цепочка не принимается");
+                }
+            }//ЦЕПОЧКА М.Б. ПРОЧИТАНА, ПРИ ЭТОМ В СТЕКЕ ВСЁ ЕЩЁ МОГУТ БЫТЬ СИМВОЛЫ И ДЛЯ ЭТИХ 
+             //КОНФИГУРАЦИЙ МОГУТ БЫТЬ ПРАВИЛА
+            if (finalStates.Contains(currentState) && stack.Count == 0)
+            {
+                richTextBox2Output.AppendText("Цепочка прочитана, находимся в конечном состоянии " + currentState +
+                    ", стек пуст, значит цепочка принята и является цепочкой КС языка, описываемого данным ДМПА\n");
+                return;
+            }
+            else
+            {
+                if (stack.Count > 0)
+                {
+                    richTextBox2Output.AppendText("Цепочка не принята, т.к. стек не пуст\n");
+                }
+            }
+        }
+
         private void buttonCheckTheChain0(object sender, EventArgs e)
         {
             readConditionsFromTheInterface();
