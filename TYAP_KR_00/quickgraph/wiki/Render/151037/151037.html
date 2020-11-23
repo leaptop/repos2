@@ -1,0 +1,28 @@
+<div class="wikidoc"><h4>Graph Theory Reminder</h4>
+This is intended to refresh these notions for those who have not played with them recently. It is also intended to specify the standards names used in the project and the library itself. As much as possible, QuickGraph naming convention follows the standard of graph theory naming.<br /> <br /><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10935" alt="graphconcepts.png" title="graphconcepts.png" /><br />
+<h5>Directed Graph, Vertex, Edges</h5>
+Let us start by redefining the basic concepts of directed graphs, vertices and edges. All these definitions are illustrated in the figure above.<br />
+<ul><li>A <b>directed graph</b> <span class="codeInline">G=(VxE)</span> consists of a finite set <span class="codeInline">V=V(G)</span> of vertices and a finite multi-set <span class="codeInline">E</span> contained in <span class="codeInline">VxV = {(u,v)| u,v in V</span>} of edges that are ordered pair of vertices where <span class="codeInline">u</span> is called the <b>source vertex</b> and <span class="codeInline">v</span> the <b>target vertex</b>.</li></ul>
+<br /><i>Tip:</i>
+<ul><li><b>TVertex</b> and <b>TEdge</b> are generic parameters in QuickGraph. The <span class="codeInline">TEdge</span> parameter has an additional constraint that it has to implement <span class="codeInline">IEdge&lt;TVertex&gt;</span></li></ul>
+<pre>
+public interface IEdge&lt;TVertex&gt;
+{
+    TVertex Source {get;}
+    TVertex Target { get;}
+}
+</pre><br /><pre>
+public interface ISomeGraphAlgorithm&lt;TVertex,TEdge&gt;
+    where Edge : IEdge&lt;TVertex&gt;
+{…}
+</pre><br />
+<ul><li>If <span class="codeInline">e=(u,v)</span>, then <span class="codeInline">e</span> is an <b>out-edge</b> of <span class="codeInline">u</span> and an <b>in-edge</b> of <span class="codeInline">v</span>. <b><span class="codeInline">in-degree(v)</span></b> denotes the number of incoming edges of <span class="codeInline">v</span> and <b><span class="codeInline">out-degree(u)</span></b>, the number of outgoing edges of <span class="codeInline">u</span>. The degree of <span class="codeInline">u</span> is the sum of its in-degree and out-degree.</li>
+<li>If a graph allows multiple edges from the same <span class="codeInline">u</span>,<span class="codeInline">v</span> vertex pair, it is called a <b>multi-graph</b>. Such edges are called <b>parallel edges</b>.</li>
+<li>A <b>path</b> from <span class="codeInline">u</span> to <span class="codeInline">v</span> is a sequence of edges <span class="codeInline">e1,e2,...,en</span> such that <span class="codeInline">e1</span> source is <span class="codeInline">u</span>, <span class="codeInline">en</span> target is <span class="codeInline">v</span> and each edge in the sequence is an out-edge of it’s predecessor. </li>
+<li>A <b>cycle</b> is a path where the beginning vertex is equal to the end vertex. </li>
+<li>A <b>directed acyclic graph</b> (DAG) is a directed graph with no cycle.</li>
+<li>A <b>weighted directed graph</b> <span class="codeInline">G:(VxExW)</span> is a directed graph with an additional relation that associate each edge to a weight: <span class="codeInline">e -&gt; w(e)</span> (for example, the distance).</li>
+<li>An <a href="https://quickgraph.codeplex.com/wikipage?title=AdjacencyGraph&referringTitle=graph%20theory%20reminder">adjacency graph</a> is a data structure to represent a directed graph where the out-edges of any vertex can be accessed in amortized constant time. </li>
+<li>A <a href="https://quickgraph.codeplex.com/wikipage?title=BidirectionalGraph&referringTitle=graph%20theory%20reminder">bidirectional graph</a> is a data structure to represent directed graph where both the out-edges and the in-edges of any vertex can be accessed in amortized constant time. </li>
+<li>QuickGraph also provides data structures for <a href="https://quickgraph.codeplex.com/wikipage?title=UndirectedGraph&referringTitle=graph%20theory%20reminder">UndirectedGraph</a>.</li></ul>
+<br /><i>tip:</i><br />The adjacency graph is implemented as a dictionary of Vertex to a collection of out-edges. When using a bidirectional graph, two dictionaries (one for in-edges, one for out-edges) have to be used, which doubles the required memory. Such data structures are most efficient for sparse graphs.<br /></div><div class="ClearBoth"></div>

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "745701",
+    "ThreadId": "297643",
+    "Html": "\r\n<p>In version 2 of the library there used to be a TransitiveClosure algorithm implementation based on the one in Boost Graph Library. From what I can see it has been removed in the latest versions. Is it possible to include it again?</p>\r\n",
+    "PostedDate": "2012-02-07T12:15:20.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

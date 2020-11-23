@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "By design&#58; QuickGraph does not use IO efficient data structures. Tip&#58; you probably want to avoid using &#39;MyEdge&#39; and use a struct Edge type instead to avoid pushing it into the heap.",
+    "ClosedDate": "2010-11-06T22:07:58.347-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a huge UndirectedGraph(Of Integer, Edge(Of Integer)) consisting of ~220k vertices and ~200k edges. When I'm calling ConnectedComponentsAlgorithm.Compute() on this graph, it fails with System.OutOfMemoryException. Everything works fine on small test graphs, boost implementation is working fine with this graph too. I don't see any excessive system memory consumption in task manager.\nCall stack:\n \tmscorlib.dll!System.Collections.Generic.Dictionary<QuickGraphTest.MyEdge,int>.Initialize(int capacity) + 0x73 bytes\t\n \tmscorlib.dll!System.Collections.Generic.Dictionary<QuickGraphTest.MyEdge,int>.Dictionary(int capacity, System.Collections.Generic.IEqualityComparer<QuickGraphTest.MyEdge> comparer = null) + 0x61 bytes\t\n \tmscorlib.dll!System.Collections.Generic.Dictionary<System.__Canon,int>.Dictionary(int capacity) + 0x7 bytes\t\n \tQuickGraph.dll!QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm<int,QuickGraphTest.MyEdge>.Visit(int root = 720134682) + 0x19a bytes\t\n \tQuickGraph.dll!QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm<int,QuickGraphTest.MyEdge>.InternalCompute() + 0x12c bytes\t\n \tQuickGraph.dll!QuickGraph.Algorithms.AlgorithmBase<QuickGraph.IUndirectedGraph<int,QuickGraphTest.MyEdge>>.Compute() + 0x38 bytes\t\n \tQuickGraph.dll!QuickGraph.Algorithms.ConnectedComponents.ConnectedComponentsAlgorithm<int,QuickGraphTest.MyEdge>.InternalCompute() + 0x1ef bytes\t\n \tQuickGraph.dll!QuickGraph.Algorithms.AlgorithmBase<QuickGraph.IUndirectedGraph<int,QuickGraphTest.MyEdge>>.Compute() + 0x38 bytes",
+    "LastUpdatedDate": "2013-05-16T04:59:16.01-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-02-17T07:11:17.517-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OutOfMemoryException when computing connected components for huge graph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 16388
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've got the same exception when working 100K vertices and 200k edges. Any news??\r\n\r\n[OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown.]\r\n   System.Collections.Generic.Dictionary`2.Initialize(Int32 capacity) +114\r\n   System.Collections.Generic.Dictionary`2..ctor(Int32 capacity, IEqualityComparer`1 comparer) +96\r\n   QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm`2.Visit(TVertex root) +197\r\n   QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm`2.InternalCompute() +211\r\n   QuickGraph.Algorithms.AlgorithmBase`1.Compute() +41\r\n   QuickGraph.Algorithms.ConnectedComponents.ConnectedComponentsAlgorithm`2.InternalCompute() +363\r\n   QuickGraph.Algorithms.AlgorithmBase`1.Compute() +41\r\n",
+      "PostedDate": "2010-08-17T13:29:48.99-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've just run the same piece of code on a system with Windows 2008 x64 and 16Gb of RAM and worked :)\r\nHardware upgrade some times solve non-optimal software.",
+      "PostedDate": "2010-08-17T14:05:21.247-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-06T22:07:58.347-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:41.78-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:16.01-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Just replace code\n```\nforeach (TVertex key in this.VisitedGraph.Vertices)\n        this.vertexIds.Add(key, num++);\n```\nto\n```\nforeach (TVertex key in this.VisitedGraph.Vertices)\n        this.vertexIds.Add(key, key.ToString());\n```",
+    "LastUpdatedDate": "2014-06-19T06:00:55.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2014-06-19T06:00:40.55-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow custom names for nodes when we generate Graphviz's dot file",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 25565
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

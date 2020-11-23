@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "285378",
+    "ThreadId": "83037",
+    "Html": "<p>Wondering if there will be a release of QuickGraph&nbsp;for Silverlight 4?&nbsp;</p>",
+    "PostedDate": "2010-02-03T09:36:34.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290669",
+    "ThreadId": "83037",
+    "Html": "<p>I'm currently migrating to VS2010.... so you'll have to wait till VS2010 supports SL4.</p>",
+    "PostedDate": "2010-02-14T14:34:32.41-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

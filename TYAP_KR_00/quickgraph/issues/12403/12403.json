@@ -1,0 +1,101 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-01-21T22:07:45.617-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Consider the following graph.\n \n<graph id=\"G\" edgedefault=\"directed\">\n    <node id=\"0\">\n      <data key=\"isSpecial\">true</data>\n      <data key=\"isSuperSpecial\">true</data>\n    </node>\n    <node id=\"1\">\n      <data key=\"isSuperSpecial\">true</data>\n    </node>\n    <node id=\"2\"/>\n  </graph>\n \nThe IsSpecial and IsSuperSpecial keys are properties that are decorated with an appropriate XmlAttribtueAttribute.  When I deserialize this graph, I am hoping that the missing property values for nodes 1,2 will be deserialized with a suitable default.  However, none of the property values are deserialized, even the ones that are explicitly provided in node 0.\n \nI'm not sure if this is intended, but the semantics appear correct for a GraphML document.",
+    "LastUpdatedDate": "2013-05-16T04:59:23.99-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-01-19T22:07:32.277-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GraphML Deserialization for Missing <node>/<edge> Data Elements",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12403
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1628,
+      "FileName": "GraphML.zip",
+      "DownloadUrl": ".\\1628"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "After reviewing the GraphML spec, I believe what is missing is the ability to define a default value for the global key declaration.  Sadly, I don't think we can't use XmlAttributeAttribtue to accomplish this without overloading one of its fields.",
+      "PostedDate": "2009-01-19T22:24:33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You need to declare isSpecial and isSuperSpecial up-front in the 'key' section. In that section, you can define the default in a <default> value... QuickGraph does not support this yet but we could use the 'DefaultAttribute' to specify the default value.\r\n",
+      "PostedDate": "2009-01-20T06:10:30.027-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "There seems to be 2 issues here: 1) the property do not get properly deserialized for some reason. (2) lack of support for default. Please open multiple work item.",
+      "PostedDate": "2009-01-20T08:54:20.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry, I omitted the global key declarations in the above example for brevity.\r\n\r\nI'll keep this work item to address the deserialization issue, and open another to address support for the <default> directive.",
+      "PostedDate": "2009-01-20T13:24:51.483-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-21T13:19:44.07-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please post a full graphml sample with corresponding C#.",
+      "PostedDate": "2009-01-21T15:31:35.69-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Resolved with changeset 30496.",
+      "PostedDate": "2009-01-21T22:07:45.617-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Example attached, using 3.1.40104.0 version of QuickGraph.dll.",
+      "PostedDate": "2009-01-21T22:51:26.557-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-21T22:51:27.73-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:52.193-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:23.99-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

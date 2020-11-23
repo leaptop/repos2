@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1298604",
+    "ThreadId": "565084",
+    "Html": "I am using predecessorObserver.TryGetPath on the categories structure (tree) of the German wikipedia. I want to generate all paths from all category pages to the root category. However I see from my code that way not all categories product a valid path. Please note that I am using an edge cost of &quot;1&quot; for each edge. \r<br />\n<br />\nQuestion: Under which circumstances can the above named method be non valid?<br />\n",
+    "PostedDate": "2014-09-03T07:38:56.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

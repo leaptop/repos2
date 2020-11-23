@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using QuickGraph;
+using QuickGraph.Algorithms;
+using QuickGraph.Algorithms.MaximumFlow;
+
+namespace QuickGraphTest
+{
+
+	public class Node
+	{
+		private String name;
+		public Node (String s)
+		{
+			this.name = s;
+		}
+
+		public override String ToString ()
+		{
+			return this.name;
+		}
+	}
+
+	public class Program
+	{
+		static void Main (string[] args)
+		{
+			// we need a graph, a source and a sink
+			IMutableVertexAndEdgeListGraph<Node, Edge<Node>> graph = new AdjacencyGraph<Node, Edge<Node>> ();
+
+			Node source = new Node ("Start");
+			Node sink = new Node ("Finish");
+
+			List<Node> staffList = new List<Node> ();
+			for (int i = 0; i < 2; i++)
+				staffList.Add (new Node ("Staff " + i));
+
+			List<Node> jobList = new List<Node> ();
+			for (int i = 0; i < 2; i++)
+				jobList.Add (new Node ("Job " + i));
+
+			graph.AddVertex (source);
+
+			graph.AddVertexRange (staffList);
+			graph.AddVertexRange (jobList);
+
+			graph.AddVertex (sink);
+
+			List<Edge<Node>> edges = new List<Edge<Node>> ();
+			foreach (var node in staffList)
+				edges.Add (new Edge<Node> (source, node));
+
+			edges.Add (new Edge<Node> (staffList[0], jobList[0]));
+			edges.Add (new Edge<Node> (staffList[1], jobList[1]));
+			edges.Add (new Edge<Node> (staffList[1], jobList[0]));
+
+	/*		edges.Add (new Edge<Node> (staffList[0], jobList[2]));
+			edges.Add (new Edge<Node> (staffList[0], jobList[4]));
+			edges.Add (new Edge<Node> (staffList[1], jobList[0]));
+			edges.Add (new Edge<Node> (staffList[1], jobList[6]));
+			edges.Add (new Edge<Node> (staffList[2], jobList[1]));
+			edges.Add (new Edge<Node> (staffList[2], jobList[4]));
+			edges.Add (new Edge<Node> (staffList[3], jobList[1]));
+			edges.Add (new Edge<Node> (staffList[3], jobList[3]));
+			edges.Add (new Edge<Node> (staffList[4], jobList[5]));
+			edges.Add (new Edge<Node> (staffList[4], jobList[6]));
+			edges.Add (new Edge<Node> (staffList[5], jobList[0]));
+			edges.Add (new Edge<Node> (staffList[5], jobList[2]));
+			edges.Add (new Edge<Node> (staffList[6], jobList[5]));  */
+
+			foreach (var node in jobList)
+				edges.Add (new Edge<Node> (node, sink));
+
+			graph.AddEdgeRange (edges);
+			
+			// A function with maps an edge to its capacity
+			Func<Edge<Node>, double> capacityFunc = (edge => 1);
+
+			// A function which takes a vertex and returns the edge connecting to its predecessor in the flow network
+			TryFunc<Node, Edge<Node>> flowPredecessors;
+
+			// A function used to create new edges during the execution of the algorithm.  These edges are removed before the computation returns
+			EdgeFactory<Node, Edge<Node>> edgeFactory = (start, target) => new Edge<Node> (start, target);
+			VertexFactory<Node> vertexFactory = () => new Node ("s");
+
+			// computing the maximum flow using Edmonds Karp.
+			double flow = AlgorithmExtensions.MaximumFlowEdmondsKarp<Node, Edge<Node>> (graph,
+			    capacityFunc,
+			    source, sink,
+			    out flowPredecessors,
+			    edgeFactory);
+
+			Edge<Node> predecessorEdge; 
+
+			foreach (Node vertex in graph.Vertices)
+			{
+				flowPredecessors.Invoke (vertex, out predecessorEdge);
+				if (predecessorEdge != null)
+				{
+					Console.WriteLine (predecessorEdge);
+				}
+			}
+			
+			Console.ReadLine ();
+		}
+
+	}
+}

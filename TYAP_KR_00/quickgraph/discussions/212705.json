@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "443086",
+    "ThreadId": "212705",
+    "Html": "<p>Hi,</p>\r\n<p>Does quickgraph have methods for these simple requests?&nbsp; Or do you have to use algorithms / observers etc to do this.</p>\r\n<ol>\r\n<li>Vertex.GetAdjacentOutEdgeVertexs() - i.e. just want to get the parents of a vertex</li>\r\n<li>Vertex.GetAdjacentInEdgeVertexs() - i.e. just want to get the children  of a vertex</li>\r\n<li>BidirectionalGraph.FindVertex(IEdge) - i.e. just quickly find a vertex in the graph based on the key</li>\r\n</ol>\r\n<p>thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-14T14:47:24.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443170",
+    "ThreadId": "212705",
+    "Html": "<p>All these methods are usually definted on the graph types.</p>",
+    "PostedDate": "2010-05-14T22:59:12.14-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

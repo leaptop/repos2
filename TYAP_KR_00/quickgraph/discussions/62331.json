@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "211592",
+    "ThreadId": "62331",
+    "Html": "<p>Hello every one!</p>\r\n<p>Typical compilation order problem:</p>\r\n<p>In a graph of dependencies between files, how to get the minimal ordered (re)build list&nbsp; starting from one source to the target(s).</p>\r\n<p>Remark : Using the topological sort algorithm on the graph, I get the ordered (re)build list with all files, witch is too much.</p>\r\n<p>Thanks for helping</p>\r\n<p>Code exemple welcome :-)</p>\r\n<p>Thanks, Regards</p>\r\n<p>Stephane</p>",
+    "PostedDate": "2009-07-13T23:40:02.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211740",
+    "ThreadId": "62331",
+    "Html": "<p>an example would be helpful. Not what you are trying to solve exactly...</p>",
+    "PostedDate": "2009-07-14T07:40:00.663-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

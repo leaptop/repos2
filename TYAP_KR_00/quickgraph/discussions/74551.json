@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "255106",
+    "ThreadId": "74551",
+    "Html": "<p>Using version <a id=\"ctl00_ctl00_MasterContent_Content_ProjectReleasesSidebar_Sidebar_ReleaseTypeRepeater_ctl00_ReleaseRepeater_ctl01_ReleaseLink\" title=\"Recommended Release: 3.3.40824.00\">3.3.40824.00, when I add Quickgraph.dll and Quickgraph.Graphviz.dll to the project, whenever I compile I get a conflict telling me that System.Diagnostics.Contracts.Contract is defined in both assemblies. As well, if I remove one of them I still get a conflict with Microsoft.Contracts because we are using it in our code. Am I doing something wrong?<br></a></p>",
+    "PostedDate": "2009-11-09T08:40:48.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261447",
+    "ThreadId": "74551",
+    "Html": "<p>Not really. I've had my own version of the Contract type waiting for the .NET release. I will remove it in the next release.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-28T17:41:35.173-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

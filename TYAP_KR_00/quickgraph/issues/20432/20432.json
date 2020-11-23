@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "A new binary download was created.",
+    "ClosedDate": "2011-05-13T07:53:48.397-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When I tried to install package I've got following error:\n \nPM> Install-Package QuickGraph\nSuccessfully installed 'QuickGraph 3.3.51106.0'.\nInstall-Package : Unable to find assembly references that are compatible with the target framework '.NETFramework,Version=v2.0'.\nAt line:1 char:16\n+ Install-Package <<<<  QuickGraph\n    + CategoryInfo          : NotSpecified: (:) [Install-Package], InvalidOperationException\n    + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand",
+    "LastUpdatedDate": "2013-05-16T04:59:14.843-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-04-06T06:53:23.617-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't install package",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 20432
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

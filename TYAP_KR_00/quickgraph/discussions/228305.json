@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "497457",
+    "ThreadId": "228305",
+    "Html": "<p>Hi everyone</p>\r\n<p>I want to use MaximumBipartiteMatchingAlgorithm To find the Maximum matching of an UndirectedGraph.</p>\r\n<p>Please give me a short sample code for this.</p>\r\n<p>Thank You</p>\r\n<p>for example I have &amp; i want to apply the algorithm to this:</p>\r\n<p><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">\r\n<pre>UndirectedGraph\r\n&gt; Gstar=new UndirectedGraph&gt;(false); \r\nGstar.AddVertex(\r\n&quot;1,1&quot;);\r\nGstar.AddVertex(\r\n&quot;1,2&quot;); \r\nGstar.AddVertex(\r\n&quot;2,1&quot;); \r\nGstar.AddVertex(\r\n&quot;2,2&quot;); \r\nGstar.AddEdge(\r\nnew Edge(&quot;1,1&quot;,&quot;1,2&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;1,2&quot;, &quot;1,1&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;1,1&quot;, &quot;2,1&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;2,1&quot;, &quot;1,1&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;1,2&quot;, &quot;2,2&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;2,2&quot;, &quot;1,2&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;2,1&quot;, &quot;2,2&quot;)); \r\nGstar.AddEdge(\r\nnew Edge(&quot;2,2&quot;, &quot;2,1&quot;));</pre>\r\n</span></span></span></p>\r\n<p><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">&nbsp;</span></span></p>",
+    "PostedDate": "2010-09-23T03:46:03.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497689",
+    "ThreadId": "228305",
+    "Html": "<p>Download the source code, and then search for the unit test that calls MaximumBipartiteMatchingAlgorithm.&nbsp; This should serve as an example of how it's used.</p>",
+    "PostedDate": "2010-09-23T10:45:49.127-07:00",
+    "UserRole": "Developer",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "499836",
+    "ThreadId": "228305",
+    "Html": "<p>Thank you very much.&nbsp; but in the unit test a constructor is used which takes 5 arguments but the original constructor takes 3 arguments .can you explain please</p>\r\n<p>i found that you fixed this bug sorry it may be a dumb question but how can i fix it using the .dll files as refrences?</p>",
+    "PostedDate": "2010-09-29T02:39:56.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500236",
+    "ThreadId": "228305",
+    "Html": "<p>sorry but I'm doing an achademic&nbsp;project with your prouct , can you release a new version???</p>",
+    "PostedDate": "2010-09-29T14:39:23.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

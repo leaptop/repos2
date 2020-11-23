@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "163519",
+    "ThreadId": "48955",
+    "Html": "Hello,<br>\r\n<br>\r\nI'm using the graphviz functionality with nodes of type 'Record' with multiple cells in each node. When I declare an edge I want to connect from one specific cell on the first node to one specific cell on the second. Using graphviz straight-up this down via 'ports'.<br>\r\n<br>\r\nI see where I can specify the port names for each cell but I do not see where I can specify the ports of the edge. <br>\r\n<br>\r\nCan someone point in the direction where I can find this?<br>\r\n<br>\r\nThank you,<br>\r\nJoe<br>\r\n",
+    "PostedDate": "2009-03-02T09:20:36.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173182",
+    "ThreadId": "48955",
+    "Html": "I don't maintain ngraphviz, which is the managed layer that generates the graphviz code. I haven't looked at it recently (in a long time), maybe it has a hook to emit custom text which could be a workaround.\r\n",
+    "PostedDate": "2009-03-29T01:39:00.297-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173228",
+    "ThreadId": "48955",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=12905\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-03-29T09:22:33.437-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

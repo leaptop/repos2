@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1274671",
+    "ThreadId": "552283",
+    "Html": "I plan to use quickgraph for Utility network(directed graph with source sink node) with some concept:<br />\n<pre><code>- Tracing Upstream: tracing all the edges whose flow directions are towards the node under the flow direction with one node as the beginning to upstream.\n- Tracing Downstream: tracing all the edges whose flow directions are towards the node under the flow direction with one node as the beginning to downstream.\n- Source: it is a node at the head of upstream, like valve in water net.\n- Sink: it is a node at the bottom of downstream, like the outlet in water supplying network.\n- Barrie: it is a stop node, like outage on pile in water net\n- Disable node: it is a stop node like closer with open status in electric net  </code></pre>\n\nSo In Quickgraph <br />\n<pre><code>- is there algorithm for Tracing Upstream, Tracing Downstream?\n- is there concept barrie, disable node?</code></pre>\n\nThanks in advance<br />\n",
+    "PostedDate": "2014-07-21T01:13:52.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

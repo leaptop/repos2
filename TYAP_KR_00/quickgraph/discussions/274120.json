@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "677717",
+    "ThreadId": "274120",
+    "Html": "\r\n<p>I'm trying to build a graph of N vertices, where all vertices are constrained from having more than 3 in/out edges.</p>\r\n<p>In my feeble attempt to do this for the first time using QuickGraph, everything is going fine up until I need to get the number of edges going from each vertex:</p>\r\n<p>Please excuse me for not using the code snippet function (for some reason it doesn't work on my computer)</p>\r\n<p><em>public void makeGraph(int nodes)</em><br>\r\n<em>{</em><br>\r\n<em>AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt; graph = new AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;(true);</em><br>\r\n<br>\r\n<em>for (int i = 0; i &lt; nodes; i&#43;&#43;)</em><br>\r\n<em>&nbsp; &nbsp; &nbsp;graph.AddVertex(i);</em></p>\r\n<p><em>foreach (var vertice in graph.Vertices)</em><br>\r\n<em>&nbsp; &nbsp; while (vertice.getNumberOfEdges &lt; 3)</em></p>\r\n<p><em>}&nbsp;</em></p>\r\n<p>This is sort of how i imagined it to work, but I can't seem to find how this is really done...</p>\r\n",
+    "PostedDate": "2011-09-28T07:52:23.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

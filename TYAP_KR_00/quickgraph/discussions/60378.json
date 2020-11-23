@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "204474",
+    "ThreadId": "60378",
+    "Html": "<p>Peli,</p>\r\n<p>&nbsp;&nbsp; When can we expect a new release of QuickGraph?</p>\r\n<p>Thanks,</p>\r\n<p>Reid</p>",
+    "PostedDate": "2009-06-23T06:20:02.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204501",
+    "ThreadId": "60378",
+    "Html": "<p>Seems like it would be a good idea in the light of all the fixes. Sometimes this week.</p>",
+    "PostedDate": "2009-06-23T07:20:25.17-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227516",
+    "ThreadId": "60378",
+    "Html": "<p>Done.</p>",
+    "PostedDate": "2009-08-25T08:57:23.407-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227545",
+    "ThreadId": "60378",
+    "Html": "<p>Awesome, Thanks Peli.</p>",
+    "PostedDate": "2009-08-25T10:02:00.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

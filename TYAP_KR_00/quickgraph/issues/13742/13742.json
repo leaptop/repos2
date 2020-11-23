@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed.",
+    "ClosedDate": "2009-08-06T02:34:18.717-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Having the FileDotEngine Run method automatically append a \".dot\" extension may seem nice, but it can lead to an awkward situation. Take this for example a user provides, from the command line, the path to a file, when the user looks for the file they expect to find it, but instead they find the file they specified plus the \".dot\" extension\n \nEx.\ncommand /in:graphData.txt /out:C:\\temp\\graphData.gv\nwould cause the file C:\\temp\\graphData.gv.dot to be created instead. \n \nI've attached a updated version of FileDotEngine.cs.\n \nThanks,\nReid Hochstedler",
+    "LastUpdatedDate": "2013-05-16T04:59:16.87-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-07-28T06:16:45.837-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "FileDotEngine Run method should not automatically append \".dot\" file extension.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13742
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2061,
+      "FileName": "FileDotEngine.cs",
+      "DownloadUrl": ".\\2061"
+    }
+  ],
+  "Comments": []
+}

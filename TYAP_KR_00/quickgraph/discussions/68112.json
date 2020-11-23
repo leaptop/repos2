@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "231643",
+    "ThreadId": "68112",
+    "Html": "<p>Does anyone have a QuickGraph demo project with c# source? The old CodeProject source seems to be in .NET 1.0 and I can't get it to run in Visual Web Developer 2008 on Vista.</p>",
+    "PostedDate": "2009-09-06T14:35:35.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232031",
+    "ThreadId": "68112",
+    "Html": "<p>What are you looking in particular?</p>",
+    "PostedDate": "2009-09-07T20:59:16.64-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232046",
+    "ThreadId": "68112",
+    "Html": "<p>Working with directed acyclic graphs in C#. If there are any extensions for visualizations in html, that would be great. I started exploring the JavaScript InfoVis Toolkit, <a href=\"http://thejit.org/\">http://thejit.org/</a>, but it doesn't quite do what I want with directed acycllic graphs. I understand QuickGraph is primarily algorithms for operations on graphs. The source to a working demo is a great way to get started.</p>",
+    "PostedDate": "2009-09-07T22:41:42.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232937",
+    "ThreadId": "68112",
+    "Html": "<p>You might want to take a look at Graph# or Graphviz (QuickGraph can render any graph to its format).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-09T21:47:09.67-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233665",
+    "ThreadId": "68112",
+    "Html": "<p>Thanks for the tip. I think I still might want to check-out QuickGraph. I was just hoping for a pre-built demo system with simple UI and existing test case data, rather than having to build all that from scratch. One example is often worth many lines of documentation.</p>",
+    "PostedDate": "2009-09-11T09:27:11.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "239910",
+    "ThreadId": "68112",
+    "Html": "<p>jackfox: you get that with Graph#.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-29T02:46:48.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

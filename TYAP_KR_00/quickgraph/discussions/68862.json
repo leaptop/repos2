@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "234294",
+    "ThreadId": "68862",
+    "Html": "<p>hello, i known that this subject is a little bit related to the one post before, but my question is different. Is there a way to recover the minimum cut directly from the maximum flow algorith</p>\r\n<p>ie: the maximum flow algorith give&nbsp;a list of&nbsp;residual capacities and the maximum flow value, from those is that possible to get the minimum cut directly and if yes how?</p>\r\n<p>here is what i have to do for now :</p>\r\n<p>1- apply a maximum flow algorith</p>\r\n<p>2- from&nbsp;the residual capacities i create a new graph (edge that have 0 of residual capacities, or that were not existing&nbsp;in the original graph&nbsp;are not added)</p>\r\n<p>3-on this new graph composed of Vertex named V&nbsp;i apply the&nbsp;StronglyConnectedComponentsAlgorithm to find all vertex related to the source vertex (i ll name them X)</p>\r\n<p>4-from this group of vertex i apply the cut in checking all&nbsp;&nbsp;&nbsp; (X,V-X) possibilities</p>\r\n<p>thz in advance</p>",
+    "PostedDate": "2009-09-14T06:38:22.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

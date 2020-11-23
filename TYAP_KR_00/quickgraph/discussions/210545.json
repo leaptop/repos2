@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "435445",
+    "ThreadId": "210545",
+    "Html": "<p>Hi,</p>\r\n<p>Would QuickGraph be able to help me out with my requirements below?&nbsp;</p>\r\n<p>(a) want to model a graph of nodes and directional relationships between nodes - for example to model web pages/files linked  under a URL, or modeling IT infrastructure and dependencies between hardware/software.&nbsp; The library would include methods such as</p>\r\n<ul>\r\n<li>\r\n<p>Node.GetDirectParents()&nbsp;&nbsp; //i.e. there could be more than one direct parent for a node</p>\r\n</li>\r\n<li>\r\n<p>Node.GetRootParents()&nbsp; //i.e. traverse the tree to the top root parent(s) for the given node</p>\r\n</li>\r\n<li>\r\n<p>Node.GetDirectChildren()</p>\r\n</li>\r\n<li>\r\n<p>Node.GetAllChildren()</p>\r\n</li>\r\n</ul>\r\n<p>(b) have to persist the data to a database - so it should support SQL Server and ideally SQLite as well.</p>\r\n<p>&nbsp;</p>\r\n<p>If it does support these requirement then I'd love to hear:</p>\r\n<p>i) any pointers to any parts of QuickGraph to dig into?</p>\r\n<p>ii) what is the best concept re it's usage in terms of how to use database persistence - is it a simpler design to assume every search/method works directly on the database, or does QuickGraph support smarts to be able to work in memory and the &quot;save&quot; to database all changes at an appropriate point in time (e.g. like ADO.net does with DataTable etc)</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>",
+    "PostedDate": "2010-04-26T04:23:21.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

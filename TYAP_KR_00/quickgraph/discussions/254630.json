@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "600280",
+    "ThreadId": "254630",
+    "Html": "<p>Hey guys,</p>\n<p>I'm new to this whole stuff, so perhaps this is a stupid question. I experimented a bit with a SL Project, adding Speech Recognition and some controls - nothing special, just wanted to check, how some things worked. After installing QuickGraph I ran into  an error with strong name validation, so I skipped strong name verification and everything compiles fine. But when I run the app (Out of Browser btw, don't now if that has anything to do with it) it just opens the window, but nothing more. There should be  two buttons and some text, which aren't showing. When I remove 'QuickGraph.Silverlight.Contracts' everything works as is should be (with 'QuickGraph.Silverlight' still being referenced) - what am I missing here?</p>\n<p>Thanks,<br /> Marcus</p>\n<p>Edit: Additional info: I didn't use any QuickGraph functionality, I just added the references.</p>",
+    "PostedDate": "2011-04-20T03:15:19.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

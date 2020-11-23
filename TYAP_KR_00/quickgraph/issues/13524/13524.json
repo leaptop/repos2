@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "I&#39;m pulling out the Petri simulator - it is not well maintained and understood.",
+    "ClosedDate": "2010-11-07T04:25:26.42-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm trying to use QuickGraph.Petri code and it looks like there are couple issues with PetriNetSimulator implementation.\nThere is no documentation or examples for Petri net use in QuickGraph, so it is possible that my interpretation of its use is completely wrong.\n \nThe following problems were found using Petri net with two transitions {Begin, END} and two places {DA, SA}.\nPlaces (2):\n\tP(DA|0)\n\tP(SA|1)\n \nTransitions (2)\n\tT(BEGIN)\n\tT(END)\nArcs\n\tT(BEGIN) -> P(DA|0)\n\tP(DA|0) -> T(END)\n\tT(END) -> P(SA|1)\n\tP(SA|1) -> T(BEGIN)\n}\nThis is a simple Ping-Pong model (BTW, SA stands for Space Available, and DA stands for Data Available).\n \n1. PetriNetSimulator.SimulateStep() throws an exception during the Third Step: \n \n...\n\t\t\t// get annotated tokens\n\t\t\tIList<Token> annotatedTokens = arc.Annotation.Eval(arc.Place.Marking);\n\t\t\t// remove annotated comments from source place\n\t\t\tforeach(Token annotatedToken in annotatedTokens)\n\t\t\t\tarc.Place.Marking.Remove(annotatedToken);\n...\n \nTo fix this problem, the annotatedTokens list should be shallow copied to, say, atokens array that will be used in foreach statement:\n...\n\t\t\t// get annotated tokens\n\t\t\tIList<Token> annotatedTokens = arc.Annotation.Eval(arc.Place.Marking);\n\t\t\tvar alist = new Token[annotatedTokens.Count];\n\t\t\tannotatedTokens.CopyTo(alist, 0);\n\t\t\t// remove annotated comments from source place\n\t\t\tforeach ( Token annotatedToken in alist )\n\t\t\t\tarc.Place.Marking.Remove(annotatedToken);\n...\n \n2. The second problem is more serious. The use of token addition and removal within the same loop (third step) leads to erroneous token propagation.\nHere is the erroneous loop:\n \n\t\t\t// third step, iterate over the arcs\n\t\t\tforeach(IArc<Token> arc in this.Net.Arcs)\n\t\t\t{\n\t\t\t    if (!this.transitionBuffers[arc.Transition].Enabled)\n\t\t\t        continue;\n \n\t\t\t    if(arc.IsInputArc)\n\t\t\t    {\n\t\t\t        // get annotated tokens\n\t\t\t        IList<Token> annotatedTokens = arc.Annotation.Eval(arc.Place.Marking);\n\t\t\t        var alist = new Token[annotatedTokens.Count];\n\t\t\t        annotatedTokens.CopyTo(alist, 0);\n\t\t\t        // remove annotated comments from source place\n\t\t\t        foreach ( Token annotatedToken in alist )\n\t\t\t            arc.Place.Marking.Remove(annotatedToken);\n\t\t\t    }\n\t\t\t    else\n\t\t\t    {\n\t\t\t        IList<Token> tokens = this.transitionBuffers[arc.Transition].Tokens;\n\t\t\t        // get annotated tokens\n\t\t\t        IList<Token> annotatedTokens = arc.Annotation.Eval(tokens);\n\t\t\t        // IList<Token> annotated comments to target place\n\t\t\t        foreach(Token annotatedToken in annotatedTokens)\n\t\t\t            arc.Place.Marking.Add(annotatedToken);\n\t\t\t    }\n\t\t\t}\n \nTo fix this problem token removal should be conducted first without token addition. The second loop should add the token to incidental places:\n \n\t\t\tforeach ( IArc<Token> arc in this.Net.Arcs ) {\n\t\t\t\tif ( this.transitionBuffers[arc.Transition].Enabled && arc.IsInputArc ) {\n\t\t\t\t\t// get annotated tokens\n\t\t\t\t\tIList<Token> annotatedTokens = arc.Annotation.Eval(arc.Place.Marking);\n\t\t\t\t\tvar alist = new Token[annotatedTokens.Count];\n\t\t\t\t\tannotatedTokens.CopyTo(alist, 0);\n\t\t\t\t\t// remove annotated comments from source place\n\t\t\t\t\tforeach ( Token annotatedToken in alist )\n\t\t\t\t\t\tarc.Place.Marking.Remove(annotatedToken);\n\t\t\t\t} \n\t\t\t}\n\t\t\tforeach ( IArc<Token> arc in this.Net.Arcs ) {\n\t\t\t\tif ( this.transitionBuffers[arc.Transition].Enabled && ! arc.IsInputArc ) {\n\t\t\t\t\tIList<Token> tokens = this.transitionBuffers[arc.Transition].Tokens;\n\t\t\t\t\t// get annotated tokens\n\t\t\t\t\tIList<Token> annotatedTokens = arc.Annotation.Eval(tokens);\n\t\t\t\t\t// IList<Token> annotated comments to target place\n\t\t\t\t\tforeach ( Token annotatedToken in annotatedTokens )\n\t\t\t\t\t\tarc.Place.Marking.Add(annotatedToken);\n\t\t\t\t}\n\t\t\t}\n \nBest regards,\nms440",
+    "LastUpdatedDate": "2013-05-16T04:59:18.14-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-06-22T01:14:12.757-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "QuickGraph.Petri.PetriNetSimulator issues",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13524
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "There are a couple of other things that puzzle me about the simulator.  I was expecting a transition to fire if there were tokens on every incoming place to the transition but I couldn't see anything in the code that ensured this.  More worryingly, if a place is connected to multiple transitions then multiple transitions can fire, even though one of them firing should disable the others.  Either I've completely misunderstood how this code is expected to be used, or else this code looks like it is still \"work in progress\".",
+      "PostedDate": "2009-08-28T08:38:50.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-07T04:25:26.42-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:45.037-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:18.14-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

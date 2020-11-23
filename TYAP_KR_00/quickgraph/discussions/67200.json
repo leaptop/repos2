@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "228432",
+    "ThreadId": "67200",
+    "Html": "<p>Hello, I am trying to create my first graph with QuickGraph using the following example code:</p>\r\n<p><a href=\"http://quickgraph.codeplex.com/Wiki/View.aspx?title=Creating Graphs&referringTitle=Home\">http://quickgraph.codeplex.com/Wiki/View.aspx?title=Creating%20Graphs&amp;referringTitle=Home</a></p>\r\n<p>Here is the code-behind for an C# 3.5 windows form:</p>\r\n<p>using System;<br>using System.Collections.Generic;<br>using System.ComponentModel;<br>using System.Data;<br>using System.Drawing;<br>using System.Linq;<br>using System.Text;<br>using System.Windows.Forms;<br>using QuickGraph;<br>using QuickGraph.Algorithms;<br><br>namespace TestQuickGraph<br>{<br>&nbsp;&nbsp;&nbsp; public partial class Form1 : Form<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Form1()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InitializeComponent();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void btnSubmit_Click(object sender, EventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var edges = new Edge&lt;int&gt;[] { new Edge&lt;int&gt;(1, 2), new Edge&lt;int&gt;(0, 1) };<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var graph = edges.ToAdjacencyGraph(edges); //error is here<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br><br>&nbsp;&nbsp;&nbsp; }<br>}</p>\r\n<p>&nbsp;</p>\r\n<p>I cannot get past this point, I receive an error:</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;The type arguments for method 'QuickGraph.GraphExtensions.ToAdjacencyGraph&lt;TVertex,TEdge&gt;(System.Collections.Generic.IEnumerable&lt;TVertex&gt;, System.Func&lt;TVertex,System.Collections.Generic.IEnumerable&lt;TEdge&gt;&gt;)'</p>\r\n<p>cannot be inferred from the usage. Try specifying the type arguments explicitly.</p>\r\n<p>&nbsp;</p>\r\n<p>Can anyone help me resolve this error? It must be something simple I am doing wrong...</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks Before Hand,<br>Adiel</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-27T08:30:45.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228465",
+    "ThreadId": "67200",
+    "Html": "<p>Looks like C# does not infer the generic type arguments. I've updated the docs, try</p>\r\n<p><span style=\"font-size:x-small\">\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>            <span style=\"color:Blue\">var</span> edges = <span style=\"color:Blue\">new</span> SEdge&lt;<span style=\"color:Blue\">int</span>&gt;[] { <span style=\"color:Blue\">new</span> SEdge&lt;<span style=\"color:Blue\">int</span>&gt;(1,2), <span style=\"color:Blue\">new</span> SEdge&lt;<span style=\"color:Blue\">int</span>&gt;(0,1) };\r\n            <span style=\"color:Blue\">var</span> graph = edges.ToAdjacencyGraph&lt;<span style=\"color:Blue\">int</span>, SEdge&lt;<span style=\"color:Blue\">int</span>&gt;&gt;();\r\n\r\n</pre>\r\n</div>\r\n</span></p>",
+    "PostedDate": "2009-08-27T10:01:50.203-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228679",
+    "ThreadId": "67200",
+    "Html": "<p>Thanks that worked great! :)&nbsp; By the way I think you added an extra field in the doc update:</p>\r\n<p>... SEdge&lt;int&gt;&gt;(<strong>edges</strong>);</p>\r\n<p>My next question if you dont mind, now that I have this graph, what is the easiest way to add vertices, edges and then have the graph display on a windows form.&nbsp; If you have a sample code, I would gladly appreciate it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks Again,<br>Adiel</p>\r\n<p><span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\"> </span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-28T05:13:46.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228722",
+    "ThreadId": "67200",
+    "Html": "<p>AdjacencyGraph has methods like 'AddVertex', 'AddEdge', 'AddVertexRange', 'AddEdgeRange', etc... QuickGraph does not provide any graph viewer, other project provide such functionality (i.e. MsAgl or Graph#).</p>",
+    "PostedDate": "2009-08-28T07:52:36.483-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228731",
+    "ThreadId": "67200",
+    "Html": "<p>Thanks, I seem to be having a problem finding Graph#.&nbsp; Do you have their website?</p>\r\n<p>Thanks,<br>Adiel</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-28T08:14:25.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228737",
+    "ThreadId": "67200",
+    "Html": "<p>hi look for graphSharp :)&nbsp;</p>\r\n<p><a href=\"http://graphsharp.codeplex.com/\">http://graphsharp.codeplex.com/</a></p>\r\n<p>have a nice day</p>",
+    "PostedDate": "2009-08-28T08:29:36.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

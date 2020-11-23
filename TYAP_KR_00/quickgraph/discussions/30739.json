@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "102272",
+    "ThreadId": "30739",
+    "Html": "Hi.<br>\r\nI just started with QuickGraph and I want to ordering the output of the graph. Example:<br>\r\nWe have the Nodes connected like:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; a_b = new Edge&lt;string&gt;(&quot;A&quot;, &quot;B&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; e_b = new Edge&lt;string&gt;(&quot;E&quot;, &quot;B&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; e_f = new Edge&lt;string&gt;(&quot;E&quot;, &quot;F&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; h_f = new Edge&lt;string&gt;(&quot;H&quot;, &quot;F&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; b_i = new Edge&lt;string&gt;(&quot;B&quot;, &quot;I&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; f_i = new Edge&lt;string&gt;(&quot;F&quot;, &quot;I&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; i_c = new Edge&lt;string&gt;(&quot;I&quot;, &quot;C&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; i_g = new Edge&lt;string&gt;(&quot;I&quot;, &quot;G&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; c_d = new Edge&lt;string&gt;(&quot;C&quot;, &quot;D&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; Edge&lt;string&gt; c_b = new Edge&lt;string&gt;(&quot;C&quot;, &quot;B&quot;);<br>\r\n<br>\r\nSo I want to print in this order, first the possible starting nodes, I mean the nodes that does not had InEdges behind:<br>\r\nIn this case [A,E,H]<br>\r\nAnd then the others nodes that had the previous predecessor nodes [A,E,H]<br>\r\nIn this case [F, B, I, G, C, D]<br>\r\nSo the the final printing is:<br>\r\n[A, E, H, F, B, I, G, C, D]<br>\r\n<br>\r\nAnybody know how to do it?<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2008-07-02T14:34:58.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113863",
+    "ThreadId": "30739",
+    "Html": "Look for the method AlgoUtility.TopologicalSort\r\n",
+    "PostedDate": "2008-08-26T09:17:31.357-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In HoffmanPavleyRankedShortestPathAlgorithm.cs the algorithm can get caught in the while-loop starting at line 107. If the path found contains a cycle, it is not added to the list of found pathes, but still its deviation pathes are added to the queue. So it may happen (and does in an example that I encountered), that ComputedShortestPathCount does not increase, the queue grows and grows and the loop never exits. Shouldnt you put the \"// append new deviation paths\" block under the condition \"if (!EdgeExtensions.HasCycles<TVertex, TEdge>(path))\" ?",
+    "LastUpdatedDate": "2013-02-23T16:46:05.433-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-02-22T04:07:21.71-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "bug in HoffmanPavleyRankedShortestPathAlgorithm",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 16473
+  },
+  "FileAttachments": [
+    {
+      "FileId": 5680,
+      "FileName": "TestCrash.zip",
+      "DownloadUrl": ".\\5680"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Attached is an example project that replicates the hang",
+      "PostedDate": "2012-02-27T01:16:52.27-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:41.6-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-23T16:43:54.913-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\" Shouldnt you put the \"// append new deviation paths\" block under the condition \"if (!EdgeExtensions.HasCycles<TVertex, TEdge>(path))\" ?\"\r\n\r\nIf you do that it won't find all the shortest paths, e.g., where you wish to travel from A to B, which are both points connected in a loop, and the shortest path is one way round the loop, but there is a longer path going the other way.",
+      "PostedDate": "2013-02-23T16:46:05.433-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "600854",
+    "ThreadId": "254780",
+    "Html": "<p><span style=\"color: #000000;\">Could anyone inform me as to the optimal algorithm for finding the center vertex for an undirected, unweighted but cyclical graph? My thought so far is to find the spanning tree and then remove leaf nodes until there are at most 2 vertices in the tree; however  I am not certain that this algorithm is optimal.</span></p>\n<p><span style=\"color: #000000;\">Thank you kindly in advance.</span></p>\n<p>&nbsp;</p>",
+    "PostedDate": "2011-04-21T01:41:30.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "134188",
+    "ThreadId": "40449",
+    "Html": "Hi,<div><br></div><div>if I have a simple Adjacency Graph (<span style=\"font-weight:bold\">AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;</span>) can I Serialize and then Deserialize it?</div><div><br></div><div>Can I use .net Serialization?</div><div><br></div><div>Thanks.</div>",
+    "PostedDate": "2008-11-21T03:21:59.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134348",
+    "ThreadId": "40449",
+    "Html": "This should work in 3.0\r\n",
+    "PostedDate": "2008-11-21T12:42:39.01-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134424",
+    "ThreadId": "40449",
+    "Html": "Does it work for undirect Path?",
+    "PostedDate": "2008-11-22T02:30:33.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134448",
+    "ThreadId": "40449",
+    "Html": "Hi serialize and deserialize using the functions below. When I deserialize it returns null value. Why?<div><br></div><div>public static class FileSerializer<br></div><div><p>{<br>public static void Serialize( string filename, object objectToSerialize )<br>{<br>if (objectToSerialize == null)<br>throw new ArgumentNullException(&quot;objectToSerialize cannot be null&quot;);<br>Stream stream = null;<br>try<br>{<br>stream = File.Open(filename, FileMode.Create);<br>BinaryFormatter bFormatter = new BinaryFormatter();<br>bFormatter.Serialize(stream, objectToSerialize);<br>}<br>finally<br>{<br>if (stream != null)<br>stream.Close();<br>}<br>}</p><p> public static T Deserialize&lt;T&gt;( string filename )<br>{<br>T objectToSerialize = default(T);<br>Stream stream = null;<br>try<br>{<br>stream = File.Open(filename, FileMode.Open);<br>BinaryFormatter bFormatter = new BinaryFormatter();<br>objectToSerialize = (T)bFormatter.Deserialize(stream);<br>}<br>catch (Exception err)<br>{<br>//MessageBox.Show(&quot;The application failed to retrieve the inventory - &quot; + err.Message); <br>}<br>finally<br>{<br>if (stream != null)<br>stream.Close();<br>}<br>return objectToSerialize;<br>}<br>}</p></div>",
+    "PostedDate": "2008-11-22T06:19:52.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134528",
+    "ThreadId": "40449",
+    "Html": "<p>You can use the SerializationExtensions class to take care of this.</p>\r\n<span style=\"font-size:18px\"><blockquote style=\"margin-right:0px\" dir=ltr>\r\n<p>&nbsp;</p>\r\n</blockquote></span><blockquote style=\"margin-right:0px\" dir=ltr>\r\n<p>var g = ...; // some graph<br>\r\n// serialize<br>\r\nvar stream = new MemoryStream();<br>\r\ng.SerializeToBinary(stream);</p>\r\n<p>// deserializestream.Position = 0;<br>\r\nvar result = stream.DeserializeFromBinary&lt;TVertex, TEdge, TGraph&gt;();</p>\r\n</blockquote>\r\n<p> </p>\r\n",
+    "PostedDate": "2008-11-22T17:00:03.597-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134562",
+    "ThreadId": "40449",
+    "Html": "<span style=\"font-weight:bold\">Using this:</span><div><br></div><div>var g = new AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;();<br></div><div><div>var stream = new MemoryStream();</div><div>g.SerializeToBinary(stream);</div></div><div><br></div><div><span style=\"font-weight:bold\">returns this error:</span></div><div><br></div><div><div>Error<span style=\"white-space:pre\">\t</span>16<span style=\"white-space:pre\">\t</span>'QuickGraph.AdjacencyGraph&lt;int,QuickGraph.Edge&lt;int&gt;&gt;' does not contain a definition for 'SerializeToBinary' and no extension method 'SerializeToBinary' accepting a first argument of type 'QuickGraph.AdjacencyGraph&lt;int,QuickGraph.Edge&lt;int&gt;&gt;' could be found (are you missing a using directive or an assembly reference?)<span style=\"white-space:pre\">\t</span>C:\\Documents and Settings\\All Users.WINDOWS\\Documenti\\Cotrap\\CotrapClassi\\Funzioni.cs<span style=\"white-space:pre\">\t</span>642<span style=\"white-space:pre\">\t</span>15<span style=\"white-space:pre\">\t</span>CotrapClassi</div><div><br></div><div><br></div><div>Can you help me?</div></div>",
+    "PostedDate": "2008-11-23T02:42:21.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134590",
+    "ThreadId": "40449",
+    "Html": "SerializeToBinary is an extension method from the SerializationExtensions class. I think it lives under QuickGraph.Serialization, but you can always use Ctrl + . to figure it out.\r\n",
+    "PostedDate": "2008-11-23T09:35:11.073-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

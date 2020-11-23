@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1395737",
+    "ThreadId": "613581",
+    "Html": "I stored my graph in form of a 2D float array (i.e. float[ , ] myGraph). I want apply Shortest Path, but need to firstly convert float[ , ] to a QuickGraph.\r<br />\n<br />\nNote: float[ i , j ] is the distance between node i and node j. If there is no direct path between each node it is shown by float.PosetiveInfinity.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2015-03-25T06:50:29.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

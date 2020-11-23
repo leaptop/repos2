@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have created a graph \n \n________-> staff 0 -> job 0 -> \nSource_____________ /_______________sink\n________-> staff 1 -> job 1 -> \n \nand every edge's capacity is 1\n \nBut the result is:\nStart->Staff 0\nStart->Staff 1\nStaff 1->Job 0\nStaff 1->Job 1\nJob 1->Finish\n \nwhich i expect should be \n \nStart->Staff 0\nStart->Staff 1\nStaff 0->Job 0\nStaff 1->Job 1\nJob 0->Finish\nJob 1->Finish\n \nThe source I am using is the latest version found in source code (Changeset 53210)\n \nAttached please find the testing source",
+    "LastUpdatedDate": "2013-02-21T17:44:40.583-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-09-23T18:21:07.313-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "MaximumFlowEdmondsKarp fails to produce correct result",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 18812
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4062,
+      "FileName": "Program.cs",
+      "DownloadUrl": ".\\4062"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "144683",
+    "ThreadId": "43526",
+    "Html": "What would be the best way to discover a vertex that doesn't have any edges after I used ClearVertex()?<br>\r\nQuickGraph doesn't seem to want to have anything to do with verteces without edges or that are not 'adjacent.'<br>\r\nI am using QG 1.0 ATM.&nbsp; <br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-01-06T05:00:20.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144710",
+    "ThreadId": "43526",
+    "Html": "QG 1.0 is not supported anymore. That being said, you should be able to enumerate the vertices using (Vertices property) and check their degree (Degree(v)) if you use an adjacency method. Otherwise, you need to enumerate all edges and build a set of all targets, then enumerate the vertices and see which does not belong to the set.\r\n",
+    "PostedDate": "2009-01-06T07:36:58.293-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151045",
+    "ThreadId": "43526",
+    "Html": "Looks like IsolatedVertices should work well as it should check all edges at once.<br>\r\n",
+    "PostedDate": "2009-01-26T11:36:34.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

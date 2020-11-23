@@ -1,0 +1,56 @@
+<div class="wikidoc"><h4>Depth First Search Example</h4>
+Let us illustrate how algorithms work by applying a <a href="http://en.wikipedia.org/wiki/Depth-first_search">depth-first-search</a> algorithm on a simple graph. <br /><br />When possible, a depth-first traversal chooses a vertex adjacent to the current vertex to visit next. If all adjacent vertices have already been discovered, or there are no adjacent vertices, then the algorithm backtracks to the last vertex that had undiscovered neighbors. Once all reachable vertices have been visited, the algorithm selects from any remaining undiscovered vertices and continues the traversal. The algorithm finishes when all vertices have been visited. <br />Depth-first search is useful for categorizing edges in a graph, and for imposing an ordering on the vertices. <br /><br />The depth-first-search algorithm is part of a family of graph algorithms that colorize vertices. By convention such algorithms always use the same 3 color markers:
+<ul><li><span class="codeInline">White</span>: vertex not yet discovered </li>
+<li><span class="codeInline">Gray</span>: vertex discovered, and sub-tree being explored </li>
+<li><span class="codeInline">Black</span>: vertex discovered and sub-tree traversal finished </li></ul>
+<br /><i>tip:</i> In QuickGraph, algorithms that colorize vertices implement the <span class="codeInline">IVertexColorizerAlgorithm</span> interface.<br /><br />The depth first search is implemented by the <span class="codeInline">DepthFirstSearchAlgorithm</span> class. This class exposes a number of events (not all are detailed here) that are used by observers:<br />
+<ul><li><a href="https://quickgraph.codeplex.com/wikipage?title=InitializeVertex&referringTitle=Depth%20First%20Search%20Example">InitializeVertex</a>, invoked on each vertex before starting the computation,</li>
+<li><a href="https://quickgraph.codeplex.com/wikipage?title=DiscoverVertex&referringTitle=Depth%20First%20Search%20Example">DiscoverVertex</a>, invoked when a vertex is encountered for the first time, </li>
+<li><a href="https://quickgraph.codeplex.com/wikipage?title=ExamineEdge&referringTitle=Depth%20First%20Search%20Example">ExamineEdge</a>, invoked on every out-edge of each vertex after it is discovered, </li>
+<li><a href="https://quickgraph.codeplex.com/wikipage?title=TreeEdge&referringTitle=Depth%20First%20Search%20Example">TreeEdge</a>, invoked on each edge as it becomes a member of the edges that form the search tree, </li>
+<li><a href="https://quickgraph.codeplex.com/wikipage?title=FinishVertex&referringTitle=Depth%20First%20Search%20Example">FinishVertex</a>, invoked on a vertex after all of its out edges have been added to the search tree and all of the adjacent vertices have been discovered (but before their out edges have been examined). </li></ul>
+<br />The application of the depth first search to a simple graph is detailed in the figures below. The code to achieve this looks (more or less) as follows:<br /><br /><pre>
+// A graph that implements the IVertexListGraph interface
+var g = new AdjacencyGraph&lt;Vertex,Edge&gt;();
+...
+// create algorithm
+var dfs = new DepthFirstSearchAlgorithm&lt;Vertex,Edge&gt;(g);
+//do the search
+dfs.Compute();
+</pre><br />
+<ul><li><span class="codeInline">InitializeVertex</span> event is triggered on each vertex, </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10936" alt="dfs1.png" title="dfs1.png" />
+<ul><li>Visiting <span class="codeInline">u</span> vertex yields to the following event triggers: 
+<ul><li><span class="codeInline">StartVertex(u)</span>, </li>
+<li><span class="codeInline">DiscoverVertex(v)</span>, </li>
+<li><span class="codeInline">ExamineEdge(u,v)</span>, </li>
+<li><span class="codeInline">TreeEdge(u,v)</span></li></ul></li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10940" alt="dfsvisit.png" title="dfsvisit.png" /> 
+<ul><li>Visiting <span class="codeInline">v</span> vertex, </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10941" alt="dfsvisitv.png" title="dfsvisitv.png" />
+<ul><li>Visiting <span class="codeInline">y</span> vertex, </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10944" alt="dfsvisity.png" title="dfsvisity.png" />
+<ul><li>Visiting <span class="codeInline">x</span> vertex. The edge <span class="codeInline">(x,v)</span> is a <a href="https://quickgraph.codeplex.com/wikipage?title=back%20edge&referringTitle=Depth%20First%20Search%20Example">back edge</a>, i.e. it points to a gray vertex. Since there are no more out-edges to explorer, the vertex is finished and blacked.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10943" alt="dfsvisitx.png" title="dfsvisitx.png" />
+<ul><li>Finishing u vertex.  The edge <span class="codeInline">(u,x)</span> is a cross-edge because it points to a black vertex (x).</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10937" alt="dfsfinish.png" title="dfsfinish.png" />
+<ul><li>Since <span class="codeInline">w</span> was not reachable from <span class="codeInline">u</span>, the search is restarted. </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10942" alt="dfsvisitw.png" title="dfsvisitw.png" />
+<ul><li>Finishing graph </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=10938" alt="dfsfinishvertex.png" title="dfsfinishvertex.png" /><br /> The figures above show when the events are called. The events are used by the observers to record data. For example, using the <a href="https://quickgraph.codeplex.com/wikipage?title=TreeEdge&referringTitle=Depth%20First%20Search%20Example">TreeEdge</a> event one can extract a tree out of the graph. The tree is recorded under the form of a dictionary associating each vertex with it’s predecessor edge:<br /><pre>
+dfs.TreeEdge += new EdgeEventArgs&lt;Vertex,Edge&gt;(this.treeEdge);
+
+Dictionary&lt;Vertex,Edge&gt; vertexPredecessors;
+void treeEdge(Object sender, EdgeEventArgs&lt;Vertex,Edge&gt; e)
+{
+    vertexPredecessors.Add(e.Target, e);    
+}
+</pre><br />In fact, this is what the <span class="codeInline">VertexPredecessorRecorderObserver</span> does by building  one a table of vertex parents.<br /><pre>
+var observer =  new VertexPredecessorRecorderObserver&lt;Vertex,Edge&gt;();
+using(ObserverScope.Create(dfs, observer)) // attach, detach to dfs events
+    dfs.Compute();
+
+// oberser.Predecessors is a IDictionary&lt;Vertex,Edge&gt; that link vertices
+// to their parent edges
+…
+</pre></div><div class="ClearBoth"></div>

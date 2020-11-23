@@ -1,0 +1,12 @@
+<div class="wikidoc"><h3>Minimum Spanning Tree</h3>
+Finding the <a href="http://en.wikipedia.org/wiki/Minimum_spanning_tree">minimum spanning tree</a> of an weighted undirected graph is a fundamental problem that applies to many areas. QuickGraph provides 2 implementations to solve this problem: <a href="http://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim&#39;s</a> and <a href="http://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal&#39;s</a>.<br />
+<ul><li>Prim&#39;s algorithm is based on Dijkstra shortest path. This algorithm is implemented as an extension method in <a href="https://quickgraph.codeplex.com/wikipage?title=AlgorithmExtensions&referringTitle=Minimum%20Spanning%20Tree">AlgorithmExtensions</a>. This method returns a sequence of edges that represent the tree.</li></ul>
+<pre>
+    IUndirectedGraph&lt;TVertex, TEdge&gt; g = ...;
+    Func&lt;TEdge, double&gt; edgeWeights = ...;
+    IEnumerable&lt;TEdge&gt; mst = g.MinimumSpanningTreePrim(g, edgeWeights);
+</pre>
+<ul><li>Kruskal&#39;s algorithm is based on disjoint-sets. This algorithm can be invoked similarly to <span class="codeInline">MinimumSpanningTreePrim</span>.</li></ul>
+<pre>
+    IEnumerable&lt;TEdge&gt; mst = g.MinimumSpanningTreeKruskal(g, edgeWeights);
+</pre></div><div class="ClearBoth"></div>

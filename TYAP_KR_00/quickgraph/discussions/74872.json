@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "256254",
+    "ThreadId": "74872",
+    "Html": "<p>Suppose I have a directed weighted graph, where I have used Dijkstra to calculate the shortest path from O to D.</p>\r\n<p>Then I add one link somewhere in the graph. I am sure there is a way to update the shortest-path-tree without having to restart the SP algo?</p>\r\n<p>&nbsp;</p>\r\n<p>/A</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-12T02:15:32.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258633",
+    "ThreadId": "74872",
+    "Html": "<p>Update on updating the shortest-path-tree without having to restart the SP algo....</p>\r\n<p>I found an algorithm in Figure 4.5 in</p>\r\n<p>http://www.springerlink.com/content/d126702146j65554/fulltext.pdf</p>\r\n<p>So, let's see how to implement this one in QuickGraph....</p>\r\n<p>&nbsp;</p>\r\n<p>/A</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-19T05:00:21.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261489",
+    "ThreadId": "74872",
+    "Html": "<p>Thanks for the link!</p>",
+    "PostedDate": "2009-11-28T21:00:40.363-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

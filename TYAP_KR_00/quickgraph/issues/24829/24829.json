@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, this simple code produces KeyNotFoundException:\n\n``` C#\nvar gg = new UndirectedGraph<int, UndirectedEdge<int>>();\ngg.AddEdge(new UndirectedEdge<int>(1,2));\n```\n\nUpdate:\nMaybe it's WAD and this method expects vertices to be already in the adjacency dictionary.",
+    "LastUpdatedDate": "2013-10-23T08:53:30.153-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2013-10-23T05:27:36.337-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in QuickGraph.UndirectedGraph`2.AddEdge(TEdge edge)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 24829
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1492210",
+    "ThreadId": "661154",
+    "Html": "Sorry for this probably simple question, but I've got trouble with serialization of AdjacaencyGraph.<br />\n<br />\nI use this type of graph <br />\n<pre><code> AdjacencyGraph&lt;MyClass, TaggedEdge&lt;MyClass, double&gt;&gt;</code></pre>\n\nI try use it for cloning my Dictionary which contain this type of graphs, thats how I do it:<br />\n<pre><code> public static T Clone&lt;T&gt;(T source)\n        { \n            IFormatter formatter = new BinaryFormatter();\n            Stream stream = new MemoryStream();\n            using (stream)\n            {\n                formatter.Serialize(stream, source);\n                stream.Seek(0, SeekOrigin.Begin);\n                return (T)formatter.Deserialize(stream);\n            }\n        }</code></pre>\n\nAnd programm fall when try to serialize, it says that this type not mentioned as serializable.<br />\n<br />\nHow can I fix it&amp; Or is there are any other way to make a clone.<br />\n",
+    "PostedDate": "2017-02-05T06:24:35.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

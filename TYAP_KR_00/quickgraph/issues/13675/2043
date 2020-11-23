@@ -1,0 +1,47 @@
+#light
+open System
+open QuickGraph
+open QuickGraph.Algorithms
+open QuickGraph.Collections
+open System.Collections.Generic
+open System.IO
+
+
+
+let chains_scores_1_read_simple input_read =     
+    let edge =
+        match input_read with
+        |19 -> seq[new SUndirectedTaggedEdge<int, int> (19, 47, 11);new SUndirectedTaggedEdge<int, int> (input_read, input_read+1, 0)]
+        |61 ->  seq[new SUndirectedTaggedEdge<int, int> (61, 87, 13);new SUndirectedTaggedEdge<int, int> (input_read, input_read+1, 0)]
+        |39 -> seq[new SUndirectedTaggedEdge<int, int> (39, 96, 8);new SUndirectedTaggedEdge<int, int> (input_read, input_read+1, 0)]
+        |68 -> seq[new SUndirectedTaggedEdge<int, int> (68, 93, 8);new SUndirectedTaggedEdge<int, int> (input_read, input_read+1, 0)]
+        |98 -> Seq.empty
+        |input_read -> seq[ new SUndirectedTaggedEdge<int, int> (input_read, input_read+1, 0)]
+    edge    
+ 
+
+let getMEM_filter_simple () =
+    new TryFunc<int, IEnumerable<SUndirectedTaggedEdge<int, int>>  >
+      (
+      fun i ([<Out>] res: byref <IEnumerable<SUndirectedTaggedEdge<int, int>>>  ) ->
+
+           res <-   (chains_scores_1_read_simple   i  )
+           Printf.printf "edges=%A\n" (Seq.to_array res)
+           not (Seq.isEmpty res))    
+     
+
+let build_graph ()= 
+    let encoding=new System.Text.ASCIIEncoding()
+    let num_reads = 99
+    let edge_enum = getMEM_filter_simple ()
+    let graph = new DelegateUndirectedGraph<int,SUndirectedTaggedEdge<int, int>>
+                     ((seq[0..num_reads - 1]), edge_enum, false)
+    let mst_edges = graph.MinimumSpanningTreeKruskal  (fun key -> -float (key.Tag))
+    let mutable weight = 0
+    for edge in mst_edges do
+        weight <- weight + edge.Tag
+        Printf.printf "Edge %A\n" edge
+
+    Printf.printf "Total weight=%d\n" weight        
+
+let _ = build_graph()

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "70344",
+    "ThreadId": "21136",
+    "Html": "\r\nHi,<br /><br />I would like to get clarification on the following methods as their meanings are not clear:<br /><ul><li>bool IsRealEdge(TEdge edge);</li><li>int InducedEdgeCount(TVertex source, TVertex target);</li></ul><br />Thanks,<br />Anton<br />",
+    "PostedDate": "2008-01-28T02:27:58.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70971",
+    "ThreadId": "21136",
+    "Html": "\r\nThis interface is not yet implemented.<br />",
+    "PostedDate": "2008-01-30T21:53:15.577-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71082",
+    "ThreadId": "21136",
+    "Html": "\r\nHi Pelikhan,<br /><br />I would like to implement the <b><i>IHierarchy</i></b> interface and therefore I am interested in what  the <b><i>IsRealEdge</i></b> and <b><i>InducedEdgeCount</i></b> methods are supposed to do.<br /><br />I think the idea of the <b><i>InducedEdgeCount</i></b> method is to check how many edges there are in a path between the two specified vertices.<br /><br />However, I cannot think of a meaning for the <b><i>IsRealEdge</i></b> method.<br /><br />Can you please help me with the intended purpose of these two methods?<br /><br />Thanks<br />",
+    "PostedDate": "2008-01-31T09:58:52.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "71083",
+    "ThreadId": "21136",
+    "Html": "\r\nHi Pelikhan,<br /><br />Does the <b><i>IsCrossEdge</i></b> method have anything to do with the <b><i>IsRealEdge</i></b> method? And, was your intention with the <b><i>IsCrossEdge</i></b> method to prevent cross edges being added to the hierarchy?<br /><br />Thanks for your time and efforts Pelikhan :)<br />",
+    "PostedDate": "2008-01-31T09:58:53.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "239906",
+    "ThreadId": "21136",
+    "Html": "<p>Is there a design rationale for IHierarchy?</p>\r\n<p>I'm in love with QuickGraph: very impressed, but afraid to approach it, let alone touch it ...</p>\r\n<p>and I want to use it for hierarchical graphs.&nbsp; The hierarchy is a containment relation on the nodes.</p>\r\n<p>There are many ways to model this, e.g. use a TVertex that implements IGraph - and I find it hard to pick one.</p>\r\n<p>I haven't found classes and interfaces for trees or hierarchical graphs in QuickGraph - although some algorithms use trees.</p>\r\n<p>Graph# has something of its own.</p>\r\n<p>&nbsp;</p>\r\n<p>My question: what approach do you suggest: do I extend QuickGraph, send my patches and hope for the best,</p>\r\n<p>or is it better to use my own projects and copy over any QuickGraph code I need to modify (e.g. the GraphML serialization)?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-29T02:41:42.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245298",
+    "ThreadId": "21136",
+    "Html": "<p>I didn't get much of a response with regards to my questions about the IHierarchy interface. I don't know what Pelikhan's intension is with the IHierarchy interface.</p>\r\n<p>&nbsp;</p>\r\n<p>I would just use QuickGraph &quot;as is&quot; and extend it where necessary. Implement the IHierarchy interface and delegate most of the methods to an internal BidirectionalGraph instance.</p>\r\n<p>&nbsp;</p>\r\n<p>Good luck rp :)</p>",
+    "PostedDate": "2009-10-13T14:54:57.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "216049",
+    "ThreadId": "63531",
+    "Html": "<p>Could You please add to FormatVertexEventArgs.VertexFormatter the position field?</p>\r\n<p>So the User will be able to set the position of node during the *.dot file generation.</p>\r\n<p>current generated :</p>\r\n<p>digraph G {<br>0;<br>1;<br>2;</p>\r\n<p>...</p>\r\n<p>&nbsp;target:</p>\r\n<p>digraph G {<br>0 [ pos = &quot;0,2!&quot; ];<br>1 [ pos = &quot;0,0!&quot; ];<br>2 [ pos = &quot;1,1!&quot; ];<br>...</p>\r\n<p>It will be helpful for communication graphs visualization.</p>\r\n<p>If possible please make the VertexFormatter.Position type System.Drawing.Point.</p>\r\n<p>Thank you for great graph library.</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Misha</p>",
+    "PostedDate": "2009-07-25T15:25:57.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216145",
+    "ThreadId": "63531",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=13708\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-07-26T06:39:35.85-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216218",
+    "ThreadId": "63531",
+    "Html": "<p>Tested - works fine. Thank you!</p>",
+    "PostedDate": "2009-07-26T15:24:37.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

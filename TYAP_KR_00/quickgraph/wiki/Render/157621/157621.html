@@ -1,0 +1,22 @@
+<div class="wikidoc"><h3>Edges</h3>
+While a vertex could be any type with QuickGraph, the edge type must implement <span class="codeInline">IEdge&lt;TVertex&gt;</span> (and comply to it&#39;s contract). QuickGraph comes with various default implementations:
+<ul><li>classes
+<ul><li><span class="codeInline">Edge&lt;TVertex&gt;</span>, an vanilla implementation,</li>
+<li><span class="codeInline">EquatableEdge&lt;TVertex&gt;</span>, implements <span class="codeInline">IEquatable&lt;EquatableEdge&lt;TVertex&gt;&gt;</span>,</li>
+<li><span class="codeInline">TaggedEdge&lt;TVertex,TTag&gt;</span>, holds a tag,</li>
+<li><span class="codeInline">TaggedEquatableEdge&lt;TVertex,TTag&gt;</span>, equatable and holds a tag,</li></ul></li>
+<li>structs
+<ul><li><span class="codeInline">SEdge&lt;TVertex&gt;</span>, an immutable edge,</li>
+<li><span class="codeInline">SEquatableEdge&lt;TVertex&gt;</span>, a struct that implements <span class="codeInline">IEquatable&lt;SEquatableEdge&lt;TVertex&gt;&gt;</span>,</li>
+<li><span class="codeInline">STaggedEdge&lt;TVertex, TTag&gt;</span>, holds a tag</li>
+<li><span class="codeInline">STaggedEquatableEdge&lt;TVertex,TTag&gt;</span>, equatable and holds a tag,</li></ul></li></ul>
+<br />The struct based edge will provide better performance and should be used when you do not plan to use custom edges. Of course, you can always implement your own version <span class="codeInline">IEdge&lt;TVertex&gt;</span>. Tagged edges also implement <span class="codeInline">ITagged&lt;TTag&gt;</span>. <br />
+<h4>Undirected edges</h4>
+In undirected graphs, the order of the source or target vertices should not matter. In order to improve efficiency, edges that implement the <span class="codeInline">IUndirectedEdge&lt;TVertex&gt;</span> interface must sort the vertices so that <span class="codeInline">Source &lt;= Target</span> (with respect to the default Comparer). This provides some performance gains in various data structures and algorithms. 
+<ul><li>classes
+<ul><li><span class="codeInline">UndirectedEdge&lt;TVertex&gt;</span>, an vanilla implementation,</li>
+<li><span class="codeInline">TaggedUndirectedEdge&lt;TVertex,TTag&gt;</span>, holds a tag,</li></ul></li>
+<li>structs
+<ul><li><span class="codeInline">SUndirectedEdge&lt;TVertex&gt;</span>, an immutable edge,</li>
+<li><span class="codeInline">STaggedUndirectedEdge&lt;TVertex, TTag&gt;</span>, holds a tag</li></ul></li></ul>
+</div><div class="ClearBoth"></div>

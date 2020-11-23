@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "155006",
+    "ThreadId": "46411",
+    "Html": "Hi @all,<br>\r\n<br>\r\ni have the following problem:<br>\r\ni have an existing objectstructure and an graphical editor for this structure. i want to use the graphviz component to &quot;auto&quot;-route my relations(my edges) between my elements(my vertices) to avoid loops and intersections between these relations.<br>\r\nSo I can create a graph with all the information of my objectstructure, but now the problem...the graphviz component returns only a picture(or jpeg or something)...is there any function or component in quickgraph that gives me the generated positions of vertices and edges? <br>\r\ni need these generated positions to reallocate my elements and relations of my objectsructure in the graphical editor.<br>\r\n<br>\r\nThanks for Help :)<br>\r\nGreetz - Arek<br>\r\n",
+    "PostedDate": "2009-02-06T02:53:43.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155066",
+    "ThreadId": "46411",
+    "Html": "Msal can be used to that purpose. Graphviz has a mode where it dumps the positions of nodes as xml, then you would need to parse it.\r\n",
+    "PostedDate": "2009-02-06T06:42:54.76-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155686",
+    "ThreadId": "46411",
+    "Html": "ok, thanks for your answer, but what is Msal?<br>\r\n<br>\r\n<br>\r\nand where can I find the mode in graphivz which dumps the positions as xml?<br>\r\n<br>\r\nGreetz<br>\r\n",
+    "PostedDate": "2009-02-08T23:47:49.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "155880",
+    "ThreadId": "46411",
+    "Html": "msagl: <a href=\"http://research.microsoft.com/msagl\">http://research.microsoft.com/msagl</a><br>\r\nFor graphviz questions, please refer to the graphviz documentation. <br>\r\n&nbsp;<br>\r\n",
+    "PostedDate": "2009-02-09T10:25:37.897-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

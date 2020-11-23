@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "202952",
+    "ThreadId": "59953",
+    "Html": "<p>Hi,</p>\r\n<p>I'm trying to do this..</p>\r\n<p>\r\n<pre>static void graphviz_FormatEdge(object sender, FormatEdgeEventArgs&gt; \r\n{\r\n    e.EdgeFormatter.FontColor = Color.RoyalBlue;\r\n    e.EdgeFormatter.Length = 2;\r\n}</pre>\r\n</p>\r\n<p>However, I see that &quot;Length&quot; isn't present. I had to add..</p>\r\n<p>private int length = 1;</p>\r\n<p>if (this.length != 1)<br>{<br>&nbsp;&nbsp;&nbsp; dic[&quot;len&quot;] = this.length;<br>}</p>\r\n<p>and</p>\r\n<p>public int Length<br>{<br>&nbsp;&nbsp;&nbsp; get<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return this.length;<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; set<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.length = value;<br>&nbsp;&nbsp;&nbsp;&nbsp; }<br>}</p>\r\n<p>or, am I missing an alternative?</p>",
+    "PostedDate": "2009-06-18T07:56:33.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203208",
+    "ThreadId": "59953",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=13507\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-06-18T21:08:48.887-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

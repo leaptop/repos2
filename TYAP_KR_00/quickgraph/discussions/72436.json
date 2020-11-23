@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "247316",
+    "ThreadId": "72436",
+    "Html": "<p>Hello,</p>\r\n<p>I haven't found any mentioning of bipartite graphs in QuickGraph. Is there some support for this kind of graphs ?</p>\r\n<p>I am also looking for implementations of algorithms maximum matching or Dulmage-Mendelsohn decompositions.</p>\r\n<p>Any ideas are welcome.</p>\r\n<p>&nbsp;</p>\r\n<p>Lars</p>",
+    "PostedDate": "2009-10-19T08:48:38.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451926",
+    "ThreadId": "72436",
+    "Html": "<p>I'm no expert, but you could try using <a href=\"http://quickgraph.codeplex.com/wikipage?title=Edges&referringTitle=Documentation\">tagged graphs</a> with a boolean tag, even more with enumeration you can create n-partite graphs where n is enumeration's cardinality. Hope it works :)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-04T20:38:09.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

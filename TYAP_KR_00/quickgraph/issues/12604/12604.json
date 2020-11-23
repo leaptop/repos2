@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-03-29T09:21:58.92-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi again,\n \nFirstly, thanks for the quicker reponse, I really appreciate your effort.\n \nOnce wrote this post, I began to research deeper and I found that the graphviz writer has always, or in major cases, the same behaviour. \n \nIt includes the header digraph on dot files without take into account the graph type. I don't know if this is an error or not because I'm a begginer with this API.\n \nI solved it with a \"little trick\". Keep the data structure of UndirectedGraph for compatibility purposes, and change edge direction toNone on rendering tier, and get a true correspondence between data structure and rendering tier.\n \nRegards.",
+    "LastUpdatedDate": "2013-05-16T04:59:22.573-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-02-13T17:07:32.877-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Undirected Graphs Visualization",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12604
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 32646.",
+      "PostedDate": "2009-03-29T09:21:58.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:50.47-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:22.573-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "On some computers it behaves ordinary while on others, it loads QuickGraph.dll (I make BidirectionalGraph), but  throws on calculating WeaklyConnectedComponents algorhytm on bidirectional graph:\n\n\n\"....at QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm`2..ctor(IAlgorithmComponent host, IVertexListGraph`2 visitedGraph, IDictionary`2 colors)\n   at QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm`2..ctor(IVertexListGraph`2 visitedGraph)\n   at QuickGraph.Algorithms.ConnectedComponents.WeaklyConnectedComponentsAlgorithm`2.InternalCompute()\n   at QuickGraph.Algorithms.AlgorithmBase`1.Compute()\".",
+    "LastUpdatedDate": "2014-10-22T13:39:09.137-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2014-10-22T13:39:09.137-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WeaklyConnectedComponentsAlgorithm on calling Compute() behaves differently on different machines",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 25793
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

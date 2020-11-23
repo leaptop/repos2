@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "476958",
+    "ThreadId": "222605",
+    "Html": "Hi All,\r\n\r\nI'm new for this Quickgraph, Actually I need to create family tree by using this. For that I have downloaded sample code from QuickGraph site. Now I'm getting error when I'm building the application. Under &quot;QuickGraph.Algorithms.Graphviz&quot; library there is one class called &quot;DotRenderer.cs&quot; In that class we have the method name's &quot;Render&quot;. In that method following lines are there in the end of the method.\r\n\r\n// create commandline\r\n\t\t\tString commandLine = String.Format(&quot;-T{0} -o{1} {2}&quot;,\r\n\t\t\t\text,\r\n\t\t\t\toutputFileName,\r\n\t\t\t\tfileName\r\n\t\t\t\t);\r\n            \r\n\t\t\tlock(typeof(GraphVizdotNet.Dot))\r\n\t\t\t{\r\n\t\t\t\tGraphVizdotNet.Dot.Exec(commandLine);\t\r\n\t\t\t}\r\n\r\nHere I'm getting error as &quot;The type or namespace name &quot;GraphVizdotNet&quot; could not found&quot;\r\n\r\nCan anyone help me to come out from this?\r\n\r\nIf I run this application I will be very happy. Please help me to solve this problem.\r\n\r\nThanks,\r\nGanesh",
+    "PostedDate": "2010-08-05T08:35:02.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

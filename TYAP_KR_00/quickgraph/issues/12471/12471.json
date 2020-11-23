@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-01-26T07:27:36.713-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\ni have this sample code:\n \n \nUndirectedGraph\n \n \n \n \n \n<object, Edge<object>> ug =\n \n \n \n \n \n \nnew UndirectedGraph<object, Edge<object>>(true);\n \n \n \n \n \n \nobject v1 = \"vertex1\";\n \n \n \n \n \n \nobject v2 = \"vertex2\";\n \n \n \n \n \n \nobject v3 = \"vertex3\";\n \n \n \n \n \n \nEdge<object> e1 = new Edge<object>(v1, v2);\n \n \n \n \n \n \nEdge<object> e2 = new Edge<object>(v2, v3);\n \n \n \n \n \n \nEdge<object> e3 = new Edge<object>(v3, v1);\n \n \nug.AddVertex(v1);\n \nug.AddVertex(v2);\n \nug.AddVertex(v3);\n \nug.AddEdge(e1);\n \nug.AddEdge(e2);\n \nug.AddEdge(e3);\n \nQuickGraph.Algorithms.ShortestPath.\n \n \n \nUndirectedDijkstraShortestPathAlgorithm<object, QuickGraph.Edge<object>> udspa =\n \n \n \n \n \n \nnew QuickGraph.Algorithms.ShortestPath.UndirectedDijkstraShortestPathAlgorithm<object, QuickGraph.Edge<object>>(ug, edge => (double)1);\n \n \nQuickGraph.Algorithms.Observers.\n \n \n \nUndirectedVertexPredecessorRecorderObserver<object, Edge<object>> observer =\n \n \n \n \n \n \nnew QuickGraph.Algorithms.Observers.UndirectedVertexPredecessorRecorderObserver<object, Edge<object>>();\n \n \nobserver.Attach(udspa); \n \nudspa.Compute(v1);\n \n \n \n \n \nIEnumerable<QuickGraph.Edge<object>> path;\n \n \nobserver.TryGetPath(v3, \n \n \n \nout path);\n \n \nand i get out of memory exception. what am i doing wrong? \n \n \ntnx,\nAlfred.",
+    "LastUpdatedDate": "2013-05-16T04:59:23.273-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-01-26T07:13:22.537-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Undirected Graph shortest path problem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12471
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 30674.",
+      "PostedDate": "2009-01-26T07:27:36.713-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:51.287-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:23.273-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

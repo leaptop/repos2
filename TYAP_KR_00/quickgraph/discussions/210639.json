@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "435759",
+    "ThreadId": "210639",
+    "Html": "<p>Hi,<br><br>Q1 - How can I associate an Edge with a Class?&nbsp; (i.e. like you can with a Vertex)<br><br>In my case there are various types of edges I want to be able to model.&nbsp; So my real question I guess is how can I associate some level of data with Edges (e.g. edge type).<br><br>The graph I was looking at using was:&nbsp; http://quickgraph.codeplex.com/wikipage?title=BidirectionalGraph&amp;referringTitle=Documentation<br><br>thanks</p>",
+    "PostedDate": "2010-04-26T20:32:49.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441504",
+    "ThreadId": "210639",
+    "Html": "<p>In all graph structures expected type of edge is IEdge&lt;TVertex&gt;, or something implementing this interface.<br>So you can simple create class MyEdge : IEdge&lt;TVertex&gt;. If you prefer composition over impl. you can use<br>TaggedEdge&lt;TVertex,TTag&gt;. But to be honest i must say that i don't understand your problem. Can you<br>provide some details?</p>",
+    "PostedDate": "2010-05-11T07:23:15.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441981",
+    "ThreadId": "210639",
+    "Html": "<p>I think I have the hang of it now.&nbsp; This seems to work:</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>    <span style=\"color:blue\">class</span> Program\r\n    {\r\n        <span style=\"color:blue\">static</span> <span style=\"color:blue\">void</span> Main(<span style=\"color:blue\">string</span>[] args)\r\n        {\r\n            <span style=\"color:blue\">var</span> graph = <span style=\"color:blue\">new</span> BidirectionalGraph&lt;Node, Relationship&lt;Node&gt;&gt;();\r\n\r\n            Node n1 = <span style=\"color:blue\">new</span> Node();\r\n            n1.Name = <span style=\"color:#a31515\">&quot;first&quot;</span>;\r\n            Node n2 = <span style=\"color:blue\">new</span> Node();\r\n            n1.Name = <span style=\"color:#a31515\">&quot;second&quot;</span>;\r\n            graph.AddVertex(n1);\r\n            graph.AddVertex(n2);\r\n\r\n            <span style=\"color:blue\">var</span> r1 = <span style=\"color:blue\">new</span> Relationship&lt;Node&gt;(n1, n2);\r\n            graph.AddEdge(r1);\r\n\r\n            Debug.WriteLine(<span style=\"color:#a31515\">&quot;finished&quot;</span>);\r\n        }\r\n    }\r\n\r\n\r\n    <span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> Relationship&lt;TVertex&gt; : Edge&lt;TVertex&gt;\r\n    {\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">int</span> Type { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">set</span>; }\r\n\r\n        <span style=\"color:blue\">public</span> Relationship(TVertex source, TVertex target)\r\n            : <span style=\"color:blue\">base</span>(source, target)\r\n        {\r\n        }\r\n\r\n    }\r\n\r\n    <span style=\"color:blue\">internal</span> <span style=\"color:blue\">class</span> Node\r\n    {\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">string</span> Name { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">set</span>; }\r\n\r\n        \r\n    }\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-05-12T04:36:45.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

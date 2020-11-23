@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1061042",
+    "ThreadId": "448199",
+    "Html": "Hi,\r<br />\n<br />\nI am new to QuickGraph, and appreciate your effort in putting this library together.\r<br />\n<br />\nI'd like to ask which class (in which file) implements Tarjan's cycle detection algorithm?  I went through the source code once, and couldn't quickly identify such a class.\r<br />\n<br />\nThanks,\r<br />\nCandy<br />\n",
+    "PostedDate": "2013-06-25T11:31:43.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

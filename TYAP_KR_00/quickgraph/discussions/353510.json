@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "828306",
+    "ThreadId": "353510",
+    "Html": "\r\n<p>Hi,&nbsp;</p>\r\n<p>I am using NuGet QuickGraph 3&nbsp;3.6.61119.7.&nbsp;It generates .NET portable class library which needs version 2.0.5.0 of System.core. We observed that dll with this version is not installed when some versions (probably older, I am still not very sure\r\n about this) of .NET 4 are installed. This is causing problem to me. &nbsp;However the problem was solved when the .Net 4.0 framework is upgraded. But still on some of my machine where .Net 4.0 is installed (Without upgrading .Net 4.0), It throws the exception\r\n :</p>\r\n<p><strong>Could not load file or assembly 'System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, Retargetable=Yes' or one of its&nbsp;dependencies. The given assembly name or codebase was invalid. (Exception from HRESULT: 0x80131047)</strong></p>\r\n<p>However, &nbsp;I just used NuGet QuickGraph 3.6.61119.7 source code to replace the old assemblies of 2.0.5.0 with the new one 4.0 and created my own nuget packages which solves the problem. But I still like to directly install upgraded NuGet QuickGraph pacakge\r\n which solve my problem. Can you provide me the upgraded NuGet QuickGraph&nbsp;3.6.61119.7 &nbsp;?</p>\r\n<p>Thanks</p>\r\n<p>Sanz Bajracharya</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-25T04:10:57.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835958",
+    "ThreadId": "353510",
+    "Html": "<p>I'm having the same issue, only I can't get the project to load so I can build it myself. :(</p>",
+    "PostedDate": "2012-05-14T02:32:16.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "837557",
+    "ThreadId": "353510",
+    "Html": "<p>Also having the same project. I'll raise an issue in the tracker.</p>",
+    "PostedDate": "2012-05-17T01:19:24.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "837580",
+    "ThreadId": "353510",
+    "Html": "<p>Update: there is no problem with the package - you need to have .NET 4 up to date. Installing&nbsp;<a href=\"http://support.microsoft.com/kb/2468871\">http://support.microsoft.com/kb/2468871</a>&nbsp;fixed the problem for us.</p>",
+    "PostedDate": "2012-05-17T02:01:12.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "837587",
+    "ThreadId": "353510",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>wilhol wrote:</strong><br />\r\n<p>Update: there is no problem with the package - you need to have .NET 4 up to date. Installing&nbsp;<a href=\"http://support.microsoft.com/kb/2468871\">http://support.microsoft.com/kb/2468871</a>&nbsp;fixed the problem for us.</p>\r\n</blockquote>\r\n<p>I ended up working around it by rebuilding QuickGraph without the multi-framework stuff, instead just targeting .NET 4</p>\r\n<p>I'll give the KB patch a try with the nuget package.</p>",
+    "PostedDate": "2012-05-17T02:12:51.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "849994",
+    "ThreadId": "353510",
+    "Html": "<p>The&nbsp;<span>.NET 4 update works for me too.</span></p>",
+    "PostedDate": "2012-06-17T04:23:13.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

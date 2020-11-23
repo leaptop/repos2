@@ -1,0 +1,19 @@
+<div class="wikidoc"><h4>Floyd Warshall All Path Shortest Path</h4>
+The <a href="http://en.wikipedia.org/wiki/Floyd-Warshall_algorithm">Floyd Warshall All Path Shortest Path</a> finds all the shortest path in a weighted, directed path. It can also be used to detect negative cycles.<br /><br /><pre>
+var g = ... ; // some graph of TVertex, TEdge
+var weights = ... ; // a function that maps TEdge -&gt; double
+var fw = new FloydWarshallAllShortestPathAlgorithm&lt;TVertex, TEdge&gt;(g, weights);
+
+// compute
+fw.Compute();
+
+// get interresting paths,
+foreach(var source in g.Vertices)
+    foreach(var target in g.Vertices)
+    {
+        IEnumerable&lt;TEdge&gt; path;
+        if(fw.TryGetPath(source, target, out path)
+            foreach(var edge in path)
+                Console.WriteLine(edge);
+    }
+</pre><br /></div><div class="ClearBoth"></div>

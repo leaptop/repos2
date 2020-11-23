@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "118395",
+    "ThreadId": "35619",
+    "Html": "The idea is you store the entire graph in a DB and load a &quot;View&quot; into QG. When you hit a node that has some edges left in the DB you go get them while possibly discarding a few nodes from memory. Any ideas on how to do it?&nbsp;&nbsp;&nbsp;&nbsp;\r\n",
+    "PostedDate": "2008-09-13T21:12:57.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118406",
+    "ThreadId": "35619",
+    "Html": "Look for &quot;I/O Efficient data structure&quot; in the litterature.\r\n",
+    "PostedDate": "2008-09-14T00:58:40.787-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118548",
+    "ThreadId": "35619",
+    "Html": "Forgive me, I am new here.&nbsp; Exactly what literature are you referring to?&nbsp; The User Manual wiki?&nbsp; Can you recommend the best book to buy in regards to getting my mind around this concept or any sample code where quick graph is used to solve every day problems.&nbsp; For example&nbsp;determining electrical load between devices?<br>\r\n<br>\r\nThanks,<br>\r\nJustin\r\n",
+    "PostedDate": "2008-09-15T06:28:18.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "118558",
+    "ThreadId": "35619",
+    "Html": "Justin, this is a different topic. Please start a new thread.<br>\r\n<br>\r\nBy litterate, I mean academic article (and there is a lot of research on this topic). Most of the tools in this area are in C++ (look for STXXL).<br>\r\n<br>\r\nUse your favorite search engine.\r\n",
+    "PostedDate": "2008-09-15T07:25:42.333-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120686",
+    "ThreadId": "35619",
+    "Html": "Any decent implementations that I can buy, beg or borrow? Most of the work I found are theoritical.\r\n",
+    "PostedDate": "2008-09-24T09:57:40.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120835",
+    "ThreadId": "35619",
+    "Html": "Not that i'm aware of in the .net space.\r\n",
+    "PostedDate": "2008-09-24T21:30:32.34-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

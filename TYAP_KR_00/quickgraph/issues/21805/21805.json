@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all!\n \nThis may be a problem:\n \n \n \n \n            var g = new UndirectedGraph<int, UndirectedEdge<int>>();\n \n            g.AddVerticesAndEdge(new UndirectedEdge<int>(1, 2));\n \n            var c = g.ContainsEdge(2, 1); // false\n \n \nThe last line returns false, however since this is an undirected graph, IMHO should really return true. Am I wrong?",
+    "LastUpdatedDate": "2014-05-23T12:10:13.867-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-11-19T20:30:46.013-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ContainsEdge() with UndirectedGraph not recognizing reverse direction",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 21805
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Any new whether you want to fix this? Thanks.",
+      "PostedDate": "2012-01-13T09:12:11.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I would appreciate a solution as well.",
+      "PostedDate": "2012-06-25T16:20:10.883-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:36.997-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-20T23:45:58.13-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "As far as I can tell, adding an undirected edge to an undirected graph has precisely the same effect as adding a directed edge to a directed graph.  Is there any way at all that the QuickGraph UndirectedGraph reflects the mathematical definition of an undirected graph?",
+      "PostedDate": "2014-05-23T12:10:13.867-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

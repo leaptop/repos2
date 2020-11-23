@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "91171",
+    "ThreadId": "27339",
+    "Html": "\r\nHello,<br /><br />can someone please show me a way to produce a file with coordinates - I wanted to produce a SVG<br />and I am missing something - the manual is not helping, I am afraid...<br /><br />AdjacencyGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; ag = new AdjacencyGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt;();<br /><br /><br />            Entity e1 = new Entity();<br />            Entity e2 = new Entity();<br />            Entity e3 = new Entity();<br />            Interactions i1 = new Interactions();<br />            Interactions i2 = new Interactions();<br />            TaggedEdge&lt;Entity, Interactions&gt; te = new TaggedEdge&lt;Entity, Interactions&gt;(e1, e2, i1);<br />            TaggedEdge&lt;Entity, Interactions&gt; te2 = new TaggedEdge&lt;Entity, Interactions&gt;(e2, e3, i2);<br /><br /><br />            ag.AddVertex(e1);<br />            ag.AddVertex(e2);<br />            ag.AddVertex(e3);<br /><br />            ag.AddEdge(te);<br />            ag.AddEdge(te2);<br /><br />            IVertexAndEdgeListGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; temp = ag;<br /><br />            GraphvizAlgorithm&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; gviz = new GraphvizAlgorithm&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt;(temp, @\".\\\", QuickGraph.Graphviz.Dot.GraphvizImageType.Png);<br /><br /><br /><br />            gviz.Generate(new FileDotEngine(), \"output\");<br /><br /><br />Thx for your help - btw: how can I use the markups :D?<br />",
+    "PostedDate": "2008-05-08T01:56:51.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "91416",
+    "ThreadId": "27339",
+    "Html": "\r\nOk, great work but without a real documentation I feel so lost. <br /><br />I have a Bidirectionalgraph I want to visualize -&gt; I map it to a IVertexandEdgeListGraph<br /><br />Then I instantiate the GraphvizAlgorithm with the IVertexandEdgeListGraph...<br /><br />Generate.... I have an dot... but there's just 0 - 5 in it (for Vertices and TaggedEdges). I need e.g. the name<br />of the Vertices and Edges.<br /><br />Please help me, thats really important :)<br /><br />What am I missing?<br />",
+    "PostedDate": "2008-05-09T04:16:15.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "91718",
+    "ThreadId": "27339",
+    "Html": "Your question is not very clear. But if you are trying to add a name to each vertex/edge, attach an event handler before calling Generate.<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graphviz.FormatVertex += new FormatVertexEventHandler&lt;Entity&gt;( FormatVertex );<br>\r\n<br>\r\nwith:<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; private void FormatVertex( object sender , FormatVertexEventArgs&lt;Node&gt; e )<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.VertexFormatter.Label = e.Vertex.WhatEverPropertyStoresTheStringYouWantToDisplay;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; } <br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-05-10T15:58:21.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "92248",
+    "ThreadId": "27339",
+    "Html": "Thx, I figured it out, but forgot to post :(<br>\r\n<br>\r\nThe framework is really great, but I think a wiki would be perfect. I had a hard time, teaching me the internals.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-05-13T11:25:50.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "96725",
+    "ThreadId": "27339",
+    "Html": "<br>\r\n<div style=\"border-right:medium none;padding-right:0.2em;border-top:#aaa 0.1em dotted;padding-left:0.2em;padding-bottom:0.2em;margin:1em 0em 2.5em 3em;border-left:medium none;padding-top:0.2em;border-bottom:#aaa 0.1em dotted;font-style:italic\"><br>\r\nMMF wrote:<br>\r\nHello,<br>\r\n<br>\r\ncan someone please show me a way to produce a file with coordinates - I wanted to produce a SVG<br>\r\nand I am missing something - the manual is not helping, I am afraid...<br>\r\n<br>\r\nAdjacencyGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; ag = new AdjacencyGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt;();<br>\r\n<br>\r\n<br>\r\nEntity e1 = new Entity();<br>\r\nEntity e2 = new Entity();<br>\r\nEntity e3 = new Entity();<br>\r\nInteractions i1 = new Interactions();<br>\r\nInteractions i2 = new Interactions();<br>\r\nTaggedEdge&lt;Entity, Interactions&gt; te = new TaggedEdge&lt;Entity, Interactions&gt;(e1, e2, i1);<br>\r\nTaggedEdge&lt;Entity, Interactions&gt; te2 = new TaggedEdge&lt;Entity, Interactions&gt;(e2, e3, i2);<br>\r\n<br>\r\n<br>\r\nag.AddVertex(e1);<br>\r\nag.AddVertex(e2);<br>\r\nag.AddVertex(e3);<br>\r\n<br>\r\nag.AddEdge(te);<br>\r\nag.AddEdge(te2);<br>\r\n<br>\r\nIVertexAndEdgeListGraph&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; temp = ag;<br>\r\n<br>\r\nGraphvizAlgorithm&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt; gviz = new GraphvizAlgorithm&lt;Entity, TaggedEdge&lt;Entity, Interactions&gt;&gt;(temp, @&quot;.\\&quot;, QuickGraph.Graphviz.Dot.GraphvizImageType.Png);<br>\r\n<br>\r\n<br>\r\n<br>\r\ngviz.Generate(new FileDotEngine(), &quot;output&quot;);<br>\r\n<br>\r\n<br>\r\nThx for your help - btw: how can I use the markups :D?<br>\r\n<br>\r\n<br>\r\n</div>\r\nHello : <br>\r\n    what is the meaning of Entity ?<br>\r\n",
+    "PostedDate": "2008-06-04T06:22:15.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424330",
+    "ThreadId": "27339",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>MMF wrote:</strong><br>Thx, I figured it out, but forgot to post :(<br> <br> The framework is really great, but I think a wiki would be perfect. I had a hard time, teaching me the internals.<br> <br> <br></blockquote>\r\n<p>So did you manage to create and output file containing SVG markup? If so tell me how..</p>\r\n<p>&nbsp;</p>\r\n<p>The following code has a resultant output file containing dot code:</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<pre>using (StreamReader reader = new StreamReader(filename))\r\n            {\r\n                string outfile = Path.Combine(Path.GetDirectoryName(filename), @&quot;testicle42.svg&quot;);\r\n\r\n                using (StreamWriter writer = new StreamWriter(outfile))\r\n                {\r\n                    new QuickGraph.Graphviz.FileDotEngine().Run(\r\n                        QuickGraph.Graphviz.Dot.GraphvizImageType.Svg, reader.ReadToEnd(), outfile);\r\n                }\r\n            }</pre>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-26T18:35:23.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424339",
+    "ThreadId": "27339",
+    "Html": "<p>Never mind. I see in the FileDotEngine source that the imageType parameter is not used in the implementation. It's basically just wrapping a single IO call. Uber handy.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-26T19:49:44.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

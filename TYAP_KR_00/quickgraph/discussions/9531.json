@@ -1,0 +1,154 @@
+[
+  {
+    "Id": "31015",
+    "ThreadId": "9531",
+    "Html": "\r\nHi<br /><br />QuickGraph 1.0 had the ability to take a DOT file as input and produce the JPG (or other) output from that. I don't seem to find the .Render methods for this anymore. Has this been removed?<br /><br />Also, is the licensing for QuickGraph 2.0 the same as for GLEE (since there seems to be a dependency on it)? If so, QuickGraph 2.0 is out of the question for commerical use, correct?<br />",
+    "PostedDate": "2007-04-24T06:30:38.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31214",
+    "ThreadId": "9531",
+    "Html": "\r\nI will add support for emitting dot files soon. However, I will not ship NGraphviz anymore, you will have to do the rendering yourself.<br />",
+    "PostedDate": "2007-04-25T09:24:51.84-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31223",
+    "ThreadId": "9531",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />pelikhan wrote:<br />I will add support for emitting dot files soon. However, I will not ship NGraphviz anymore, you will have to do the rendering yourself.<br /><br /></div><br />Whether it is possible to download NGraphviz code?<br />",
+    "PostedDate": "2007-04-25T10:20:28.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31235",
+    "ThreadId": "9531",
+    "Html": "\r\nigorfle<br /><br />Looks like the NGraphviz is a DLL that is included in MBunit. You can download it here: http://www.mbunit.com/downloads.aspx.<br /><br />",
+    "PostedDate": "2007-04-25T11:25:03.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31252",
+    "ThreadId": "9531",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />davidk13 wrote:<br />igorfle<br /><br />Looks like the NGraphviz is a DLL that is included in MBunit. You can download it here: http://www.mbunit.com/downloads.aspx.<br /><br /><br /><br /></div><br />I looked it, it not new. I would like to compile NGRAPHVIZ with new version of GRAPHVIZ<br />",
+    "PostedDate": "2007-04-25T13:11:37.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31269",
+    "ThreadId": "9531",
+    "Html": "\r\nA long time ago, I put up NGraphviz together. This module has a lot of issues which I don't want to support anymore. Hence, I don't support it anymore.<br />",
+    "PostedDate": "2007-04-25T15:06:42.423-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31291",
+    "ThreadId": "9531",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />pelikhan wrote:<br />A long time ago, I put up NGraphviz together. This module has a lot of issues which I don't want to support anymore. Hence, I don't support it anymore.<br /><br /></div><br />Can there was a source of that old version?<br />",
+    "PostedDate": "2007-04-25T20:53:12.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31314",
+    "ThreadId": "9531",
+    "Html": "\r\nI lost the source somewhere while moving to the US.<br />",
+    "PostedDate": "2007-04-26T01:30:26.76-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31334",
+    "ThreadId": "9531",
+    "Html": "\r\nThat's a real shame. The generation of image files based on DOT input is what I was actually looking forward to.<br /><br />Thx anyway Peli :)<br /><br /><div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />pelikhan wrote:<br />I lost the source somewhere while moving to the US.<br /><br /></div><br />",
+    "PostedDate": "2007-04-26T05:39:04.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31438",
+    "ThreadId": "9531",
+    "Html": "\r\nI could get the NGraphviz rendered back but I don't plan to ship it/support it anymore.<br />",
+    "PostedDate": "2007-04-26T22:23:11.947-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31452",
+    "ThreadId": "9531",
+    "Html": "\r\nI don't understand .... by saying \"I could get NGraphviz rendered back\" do you mean re-including it in QuickGraph? If so, I'm confused by the \"don't plan to ship it\" comment. <br /><br />You'd add it to Quickgraph but not make it available?<br />",
+    "PostedDate": "2007-04-27T04:31:54.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31540",
+    "ThreadId": "9531",
+    "Html": "\r\nI mean I would add <i>generating dot files</i> back but I would not ship NGraphviz anymore. However, I'm pretty busy right now so it might take a while.<br />",
+    "PostedDate": "2007-04-27T23:05:47.867-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31601",
+    "ThreadId": "9531",
+    "Html": "\r\nThx Peli. It would be quite presumptuous of my part to expect you to do this quickly, especially since it is free and you're doing it as a favour.<br /><br />I'll wait for the addition. I only hope you add a note to this forum to indicate it is ready when you're done.<br /><br />Thx again.<br />",
+    "PostedDate": "2007-04-28T16:08:07.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31609",
+    "ThreadId": "9531",
+    "Html": "\r\nI'll make a release. You can suscribe to the release RSS :)<br />",
+    "PostedDate": "2007-04-28T21:49:20.313-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31622",
+    "ThreadId": "9531",
+    "Html": "\r\nThx. Will do.<br />",
+    "PostedDate": "2007-04-29T04:15:45.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31808",
+    "ThreadId": "9531",
+    "Html": "\r\nI've checked in dot support.<br />",
+    "PostedDate": "2007-05-01T10:36:05.897-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32049",
+    "ThreadId": "9531",
+    "Html": "\r\nHi Peli<br /><br />I've downloaded v2.0.30421.00, and cannot find any references to to either GraphViz or DOT in there. QuickGraph 1 had something like a DOT.Render method, and that is was I was looking for. Is it different in this version?<br />",
+    "PostedDate": "2007-05-03T07:25:35.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32065",
+    "ThreadId": "9531",
+    "Html": "\r\nIt's in the source, I have not made a release yet.<br /><br />Note that I have remove the Dot.render method. QuickGraph will produce a flat .dot file, but you will have to actually call graphviz to render it. <br />This is extendible so you'll be able to use NGraphviz as well but I won't ship NGraphviz anymore.<br />",
+    "PostedDate": "2007-05-03T09:20:31.583-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32075",
+    "ThreadId": "9531",
+    "Html": "\r\nOh, ok. Gotcha.<br /><br />I was actually looking for the rendering support, given that I'm already producing the DOT file. I need to create the image at this point.<br /><br />Thx anyway, though.<br />",
+    "PostedDate": "2007-05-03T11:12:57.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

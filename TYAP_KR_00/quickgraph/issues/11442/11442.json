@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2008-10-14T02:15:45.633-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "--- Description\npassing test\n \nthis.Test();\n \n \n[TestMethod]\n[PexGeneratedBy(typeof(Class1Test))]\npublic void Test02()\n{\n    this.Test();\n}",
+    "LastUpdatedDate": "2013-05-16T04:59:29.237-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-10-14T02:15:13.04-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "passing test",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 0,
+    "Id": 11442
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

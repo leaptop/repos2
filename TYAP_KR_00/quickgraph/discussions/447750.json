@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1059372",
+    "ThreadId": "447750",
+    "Html": "Trying to install most recent package on a Silverlight 4 project and receiving this error.\r<br />\n<br />\nInstall-Package QuickGraph\r<br />\nInstalling 'QuickGraph 3.6.61119.7'.\r<br />\nSuccessfully installed 'QuickGraph 3.6.61119.7'.\r<br />\nAdding 'QuickGraph 3.6.61119.7' to ProjectSilverlight.\r<br />\nUninstalling 'QuickGraph 3.6.61119.7'.\r<br />\nSuccessfully uninstalled 'QuickGraph 3.6.61119.7'.\r<br />\nInstall failed. Rolling back...\r<br />\nInstall-Package : Could not install package 'QuickGraph 3.6.61119.7'. You are trying to install this package into a project that targets 'Silverlight,Version=v4.0', but the package does not contain any assembly refere\r<br />\nnces or content files that are compatible with that framework. For more information, contact the package author.\r<br />\nAt line:1 char:16<br />\n<ul>\n<li>\nInstall-Package &lt;&lt;&lt;&lt;  QuickGraph\n<ul>\n<li>CategoryInfo          : NotSpecified: (:) [Install-Package], InvalidOperationException</li>\n<li>FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand</li>\n</ul>\n</li>\n</ul>\n",
+    "PostedDate": "2013-06-20T14:00:18.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1118834",
+    "ThreadId": "447750",
+    "Html": "Read this: <a href=\"https://quickgraph.codeplex.com/discussions/284944\" rel=\"nofollow\">https://quickgraph.codeplex.com/discussions/284944</a>\r<br />\n<br />\nIt seems that NuGet package is for FW 4.0 only thus making SL projects to unable to use it.<br />\n",
+    "PostedDate": "2013-11-06T04:45:42.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

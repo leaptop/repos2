@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "76425",
+    "ThreadId": "22852",
+    "Html": "\r\nHow can I attach an event handler to the nodes, so that after visualising the network i can click on the nodes, triggering the event handler associated with them?<br /><br />Thanks!<br />",
+    "PostedDate": "2008-02-26T02:08:44.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "76484",
+    "ThreadId": "22852",
+    "Html": "\r\nThis quesiton should be asked to the GLEE/MSAGL developers.<br />",
+    "PostedDate": "2008-02-26T07:59:03.297-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "214549",
+    "ThreadId": "63140",
+    "Html": "<p>UndirectedDepthFirstSearchAlgorithm examines all edges on&nbsp;the current&nbsp;vertex and raises a BackEdge event on the edge from which it arrived. In my opinion this is&nbsp;undesirable behavior. BackEdge events are useful for detecting cycles&nbsp;but this event creates a 'false positive' at every vertex.&nbsp;Conversely, I don't see the utility of&nbsp;the event being raised on the&nbsp;'arriving&nbsp;from' edge - I'd be curious to hear about applications in which this event is actually interesting to the listener.</p>\r\n<p>Proposed&nbsp;change: add a TEdge source member to SearchFrame; then in v's edge iteration when the current edge equals source either skip all processing whatsoever or else only raise an ExamineEdge event on it (but no BackEdge event).</p>",
+    "PostedDate": "2009-07-21T15:46:05.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214625",
+    "ThreadId": "63140",
+    "Html": "<p>I foolisheled ported the directed algorithm to undirected. I need to look into that.</p>",
+    "PostedDate": "2009-07-21T22:42:21.12-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214851",
+    "ThreadId": "63140",
+    "Html": "<p>I've uploaded a .diff file with the proposed change.</p>",
+    "PostedDate": "2009-07-22T09:50:53.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

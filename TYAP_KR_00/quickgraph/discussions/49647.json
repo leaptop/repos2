@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "166183",
+    "ThreadId": "49647",
+    "Html": "Hello.<br>\r\n&nbsp; <br>\r\n&nbsp;&nbsp; I am using ConnectedComponentsAlgorithm to determine components of undirected graph. But it always returns me verticies of only&nbsp; one component and component count is 1. I have tried&nbsp; IncrementalConnectedComponentsAlgorithm and it works fine - return real number of components and their verticies.<br>\r\nCan this be confirmed? <br>\r\n<br>\r\nThanks , Aleksey.<br>\r\n",
+    "PostedDate": "2009-03-09T11:03:15.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173179",
+    "ThreadId": "49647",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=12900\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-03-29T01:35:49.827-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

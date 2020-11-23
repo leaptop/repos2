@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Add Name property to GraphvizFormat type.",
+    "ClosedDate": "2009-06-17T02:42:48.277-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "You should be able to supply a name for the graph when outputting with GraphvizAlgorithm, currently all graphs are named G.",
+    "LastUpdatedDate": "2013-05-16T04:59:18.64-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-06-16T11:35:05.767-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot name graph when outputting with GraphvizAlgorithm.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13493
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

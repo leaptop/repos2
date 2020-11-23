@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "285749",
+    "ThreadId": "83142",
+    "Html": "<p>Hi,</p>\r\n<p>The VertextAction and the EdgeAction to not provide the graph they are called on. This annoys a little bit since the graphs they are called upon have to be global within the context.</p>\r\n<p>Is it possible to pass on the reference to the current graph in accordance to the normal &lt;...&gt;Handler( object sender, EventArgs e)?</p>\r\n<p>Thank you for this software ;)</p>\r\n<p>Christoph</p>",
+    "PostedDate": "2010-02-04T05:06:34.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "285783",
+    "ThreadId": "83142",
+    "Html": "You can use closures to capture the graph.<br><br>\r\n<div>On Thu, Feb 4, 2010 at 5:06 AM, ChBaeumer <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid;margin:0px 0px 0px 0.8ex;padding-left:1ex\">\r\n<div>\r\n<p>From: ChBaeumer</p>\r\n<div>\r\n<p>Hi,</p>\r\n<p>The VertextAction and the EdgeAction to not provide the graph they are called on. This annoys a little bit since the graphs they are called upon have to be global within the context.</p>\r\n<p>Is it possible to pass on the reference to the current graph in accordance to the normal &lt;...&gt;Handler( object sender, EventArgs e)?</p>\r\n<p>Thank you for this software ;)</p>\r\n<p>Christoph</p></div>\r\n<div>\r\n<p>Read the <a href=\"http://quickgraph.codeplex.com/Thread/View.aspx?ThreadId=83142&ANCHOR#Post285749\">full discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:quickgraph@discussions.codeplex.com?subject=[quickgraph:83142]\">quickgraph@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:quickgraph@discussions.codeplex.com\">quickgraph@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"https://quickgraph.codeplex.com/subscriptions/thread/project/edit\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com/\">codeplex.com</a></p></div></div></blockquote>\r\n</div><br><br clear=all><br>-- <br>This posting is provided &quot;AS IS&quot; with no warranties, and confers no rights.<br>",
+    "PostedDate": "2010-02-04T06:20:08.857-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

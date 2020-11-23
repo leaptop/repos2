@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "213856",
+    "ThreadId": "62973",
+    "Html": "<p>Hi Jonathan,</p>\r\n<p>In the newest version (35457)</p>\r\n<p>When I define a delegate graph: DelegateUndirectedGraph&lt;int,&nbsp; SUndirectedTaggedEdge&lt;int, int&gt;&gt;</p>\r\n<p>I get the error: The type 'SUndirectedTaggedEdge&lt;int,int&gt;' is not compatible with the type 'IEquatable&lt;SUndirectedTaggedEdge&lt;int,int&gt;&gt;'&nbsp;&nbsp;</p>\r\n<p>This used to compile in 35064. How do I fix it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Vlad</p>",
+    "PostedDate": "2009-07-20T09:06:27.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214028",
+    "ThreadId": "62973",
+    "Html": "<p>I removed that requirement. Now uses a special edge equality comparer.</p>",
+    "PostedDate": "2009-07-20T15:17:05.763-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214030",
+    "ThreadId": "62973",
+    "Html": "<p>... in the latest sources</p>",
+    "PostedDate": "2009-07-20T15:17:16.477-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

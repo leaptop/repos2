@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "251455",
+    "ThreadId": "73575",
+    "Html": "<p>Is there an algorithm to identify all the loops in a graph?</p>\r\n<p>Currently, I am using a DFS with the adjacency graph&nbsp;to identify the loops.&nbsp;The way I am doing it is,</p>\r\n<p>1) Monitor StartVertex event till FinishVertex to&nbsp;consider a group of vertices as a part of same tree&nbsp;&nbsp;&nbsp;</p>\r\n<p>- All back edges would result in a loop</p>\r\n<p>- All forwardorcross edges with both the vertices in the same tree form a loop</p>\r\n<p>- Store all other forwardorcross edges to post process after the DFS.</p>\r\n<p>-&nbsp;Store the vertex predecessor list of the tree</p>\r\n<p>2) By the end of DFS we have a list of trees and list of forwardorcross edges across trees. I am having a problem with post processing these cross edges to identify the loop paths.</p>\r\n<p>- Each tree can form a loop with other tree if it has atleast 2 cross edges so remove all cross edges that does not satisy this criteria.</p>\r\n<p>I am not sure where to head from here because I need to handle cases like mulitple cross edges between two trees, a loop formed by cross edges spanning across trees :(((</p>\r\n<p>I am sure there should be a better way than this to acheive the task and any pointers would definitely help me. Thanks a lot.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-29T20:40:33.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

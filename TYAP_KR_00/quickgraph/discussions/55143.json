@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "186146",
+    "ThreadId": "55143",
+    "Html": "I am using the CyclePoppingRandomTreeAlgorithm and am monitoring State changes. I add a RandomTreewithRoot and sometimes it's State is Running and it just sits there forever. I can't even error handle it to see if it's broke. No error output or anything.<br>\r\n",
+    "PostedDate": "2009-05-02T12:12:49.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186168",
+    "ThreadId": "55143",
+    "Html": "Please provide a repro program for this issue.",
+    "PostedDate": "2009-05-02T14:20:16.507-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186224",
+    "ThreadId": "55143",
+    "Html": "I wanted to ask a question first, is there a way I can set the end vertex or tree end instead of just the root beginning? I think it is erroring because the root vertex becomes separated from 0,0. And the solution always ends at 0, 0. Maybe if I allowed it to automatically select a vertex that connects to the root it would work.<br>\r\n",
+    "PostedDate": "2009-05-02T20:33:54.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186253",
+    "ThreadId": "55143",
+    "Html": "I think i will modify RandomTreeWithRoot() to handle 2 overloads, root and branch. I need to select the entrance and exit for the maze. It should always be logical plus I need to have that control for AI path-finding.<br>\r\nI will send up my repro soon in the issue tracker.<br>\r\n",
+    "PostedDate": "2009-05-03T04:41:23.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186340",
+    "ThreadId": "55143",
+    "Html": "Don't hesitate to turn this conversation in an issue to do this.",
+    "PostedDate": "2009-05-03T15:40:09.207-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "201777",
+    "ThreadId": "55143",
+    "Html": "<p>Thanks so much for updating the code in the Random Walks folder. It has some nice &quot;TryGet&quot; features now. Good for keeping the graph unbroken and rock solid.</p>\r\n<p>I merged this code with my new root plus branch code and it actually is allot more legable and manageable when looping colors in the InternalCompute method of CyclePoppingRandomTreeAlgorithm.. I was getting a vido card memory leak so maybe this will help fix it too. I will submit a patch later and see what you think of RandomTreeWithRootBranch. It's pretty cool to select entrance and exit in the graph. I am getting obsessed with this maze creation. Allot can be done with it. when just feeding it different edge formations.</p>",
+    "PostedDate": "2009-06-15T15:12:31.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "201865",
+    "ThreadId": "55143",
+    "Html": "<p>Probably time i make a new release.</p>",
+    "PostedDate": "2009-06-15T21:35:47.837-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]
