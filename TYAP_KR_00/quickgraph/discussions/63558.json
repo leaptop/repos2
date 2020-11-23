@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "216123",
+    "ThreadId": "63558",
+    "Html": "<p>Hello,</p>\r\n<p>I have a dictionary where the key is the vertex and the value is an array of adjacent vertices.</p>\r\n<p>How this dictionary can be transformed to graph?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-07-26T03:10:00.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216150",
+    "ThreadId": "63558",
+    "Html": "<p>It's documented here: <a href=\"http://quickgraph.codeplex.com/Wiki/View.aspx?title=Creating Graphs&referringTitle=Home\">http://quickgraph.codeplex.com/Wiki/View.aspx?title=Creating%20Graphs&amp;referringTitle=Home</a></p>",
+    "PostedDate": "2009-07-26T06:49:49.387-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216430",
+    "ThreadId": "63558",
+    "Html": "<p>Sorry but:</p>\r\n<p>Dictionary&lt;int, int[]&gt; adjacencyGraph = ...; // vertex -&gt; target edges<br>var graph = adjacencyGraph.ToDelegateVertexAndEdgeListGraph(<br>&nbsp;   adjacencyGraph,<br>&nbsp;   kv =&gt; new SEdge(kv.Key, kv.Value) // map key value pairs to SEdge<br>&nbsp;   );<br><br>doesn't work.</p>\r\n<p>I tried also:</p>\r\n<p>var graph = channelsListeners.ToDelegateVertexAndEdgeListGraph(<br>&nbsp;               kv =&gt; new SEdge&lt;uint&gt;(kv.Key, kv.Value) // map key value pairs to SEdge<br>&nbsp;           );</p>\r\n<p>But the SEdge wants &lt;uint,uint&gt; and I have &lt;uint,uint[]&gt;</p>\r\n<p>Please suggest.</p>\r\n<p>Thank you!</p>",
+    "PostedDate": "2009-07-27T09:18:08.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217781",
+    "ThreadId": "63558",
+    "Html": "<p>Dear Pelikhan,</p>\r\n<p>Example says:</p>\r\n<p>Dictionary&lt;int, int[]&gt; adjacencyGraph = ...; // vertex -&gt; target edges</p>\r\n<p>Probably it should be:</p>\r\n<p>Dictionary&lt;int, int[]&gt; adjacencyGraph = ...; // vertex -&gt; target vertices</p>\r\n<p>&nbsp;</p>\r\n<p>There should be something other instead of SEdge which can handle &nbsp;int, int[], not int,int.</p>\r\n<p>Please correct the example xor</p>\r\n<p>please point to my mistake.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you very much!</p>",
+    "PostedDate": "2009-07-30T14:52:44.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217837",
+    "ThreadId": "63558",
+    "Html": "<p>Oops error in the docs. This is more accurate:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">var</span> graph = adjacencyGraph.ToDelegateVertexAndEdgeListGraph(\r\n  adjacencyGraph,\r\n  kv =&gt; <strong>Array.ConvertAll(kv.Value, v =&gt; <span style=\"color:Blue\">new</span> SEdge&lt;int&gt;(kv.Key, v))</strong> <span style=\"color:Green\">// map key value pairs to an enumeration of SEdge</span>\r\n );\r\n\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-07-30T19:43:56.69-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218131",
+    "ThreadId": "63558",
+    "Html": "<p>Pelikhan,</p>\r\n<p>Could you please provide working example? The</p>\r\n<p>var graph = adjacencyGraph.ToDelegateVertexAndEdgeListGraph(<br>&nbsp; adjacencyGraph,<br>&nbsp; kv =&gt; Array.ConvertAll(kv.Value, v =&gt; new SEdge&lt;int&gt;(kv.Key, v)) // map key value pairs to an enumeration of SEdge<br>&nbsp;);</p>\r\n<p>doesn't work.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-07-31T12:23:34.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218311",
+    "ThreadId": "63558",
+    "Html": "<p>I've updated the docs. You need to use a SEquatableEdge instead.</p>",
+    "PostedDate": "2009-08-01T08:59:41.217-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

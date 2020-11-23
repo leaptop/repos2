@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using QuickGraph;
+using QuickGraph.Algorithms.ShortestPath;
+using QuickGraph.Algorithms.Observers;
+using QuickGraph.Algorithms;
+using System.Collections.ObjectModel;
+
+
+namespace DijkstraAlgoTest
+{
+    public class DijkstraAlgo
+    {
+        private static AdjacencyGraph<string, Edge<string>> graph;
+        private static DijkstraShortestPathAlgorithm<string, Edge<string>> algo;
+        private static List<string> path;
+        private static VertexPredecessorRecorderObserver<string, Edge<string>> predecessorObserver;
+
+        public static void Main(string[] args)
+        {
+            CreateGraph();
+            Console.ReadLine();
+        }
+
+        public static void CreateGraph()
+        {
+            graph = new AdjacencyGraph<string, Edge<string>>(true);
+
+            // Add some vertices to the graph
+            graph.AddVertex("A");
+            graph.AddVertex("B");
+            
+            graph.AddVertex("D");
+            graph.AddVertex("C");
+            graph.AddVertex("E");
+          
+            // Create the edges
+            Edge<string> a_b = new Edge<string>("A", "B");          
+            Edge<string> a_c = new Edge<string>("A", "C");
+            Edge<string> b_e = new Edge<string>("B", "E");
+            Edge<string> c_d = new Edge<string>("C", "D");
+            Edge<string> d_e = new Edge<string>("D", "E");
+           
+            // Add edges to the graph
+            graph.AddEdge(a_b);
+            graph.AddEdge(a_c);
+            graph.AddEdge(c_d);
+            graph.AddEdge(d_e);
+            graph.AddEdge(b_e);
+           
+            // Define some weights to the edges
+            Dictionary<Edge<string>, double> weight = new Dictionary<Edge<string>, double>(graph.EdgeCount);
+            weight.Add(a_b, 30);
+            weight.Add(a_c, 30);
+            weight.Add(b_e, 60);
+            weight.Add(c_d, 40);
+            weight.Add(d_e, 4);
+                      
+            algo = new DijkstraShortestPathAlgorithm<string, Edge<string>>(graph, weight);
+
+            // Attach a Vertex Predecessor Recorder Observer to give us the paths
+            predecessorObserver = new VertexPredecessorRecorderObserver<string, Edge<string>>();
+            
+            using (ObserverScope.Create<IVertexPredecessorRecorderAlgorithm<string, Edge<string>>>(algo, predecessorObserver))
+            {
+                // Run the algorithm with A set to be the source
+                algo.Compute("A");
+            }
+
+            path = new List<string>();
+            PopulatePath("E");
+
+            path.Reverse();
+
+            foreach (string v in path)
+            {
+                Console.Write("{0} -> ", v);
+            }
+        }
+
+        static void PopulatePath(string vertex)
+        {
+            path.Add(vertex);
+            if (vertex == "A")
+                return;           
+            PopulatePath(predecessorObserver.VertexPredecessors[vertex].Source);            
+        }
+    }
+}

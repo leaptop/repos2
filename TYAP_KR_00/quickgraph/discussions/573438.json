@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1327012",
+    "ThreadId": "573438",
+    "Html": "On NuGet the latest QuickGraph version is 3.6.61119.7.\r<br />\nThe version info found in Source Code commit #69709 file 3.0\\sources\\version.cs is 3.6.61114.00.\r<br />\n<br />\nHow can I get the source code for the QuickGraph version is 3.6.61119.7 ?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-11-28T05:31:19.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328660",
+    "ThreadId": "573438",
+    "Html": "Maybe its the same source code but compiled some minutes after the commit? I think the last two digits indicate the build time...<br />\n",
+    "PostedDate": "2014-12-04T00:54:22.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328745",
+    "ThreadId": "573438",
+    "Html": "It seems that the NuGet package version differs from the assembly version.\r<br />\nThe NuGet package version 3.6.61119.7 comes with assembly version 3.6.61114.0.\r<br />\nSo the available source code matches the latest assembly version.<br />\n",
+    "PostedDate": "2014-12-04T05:59:04.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

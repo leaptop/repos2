@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "44404",
+    "ThreadId": "13621",
+    "Html": "\r\nThe licence for this project seems to grant no rights that would allow the use of this code in any other projects, commercial or non-commercial.<br /><br />Is this correct?  Is anyone using this code in a commercial or non-commercial project?<br /><br />__________________________________________________________________________________<br />License: Custom License <br />Copyright (c) Jonathan de Halleux. All rights reserved.<br /><br />This software is provided \"AS IS\", without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.<br />__________________________________________________________________________________<br /><br />Rgds<br />Andy<br />",
+    "PostedDate": "2007-08-09T11:21:04.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44454",
+    "ThreadId": "13621",
+    "Html": "\r\nNo, you have the rights to do whatever you want of the code but I won't be held accountable for it.<br />",
+    "PostedDate": "2007-08-09T17:54:02.777-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "44482",
+    "ThreadId": "13621",
+    "Html": "<br />Ok.  This then is the same as for the first version of the code on CodeProject which I have succesfully used.<br /><br />Might I suggest that you add something like <i>\"you have the rights to do whatever you want of the code but I won't be held accountable for it\"</i> to the licence.  <br /><br /><br />Rgds<br />Andy}<br />",
+    "PostedDate": "2007-08-09T23:46:54.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "51966",
+    "ThreadId": "13621",
+    "Html": "<br />Yes, a modification of the license to that effect would be great. Currently it basically forbids any use whatsoever: \"All rights reserved\" which does not seem to be what the author intended.<br />",
+    "PostedDate": "2007-10-04T23:41:54.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

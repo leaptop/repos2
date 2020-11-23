@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "137973",
+    "ThreadId": "41578",
+    "Html": "Hi all,<br>\r\n<br>\r\nI just bought Msagl from the Microsoft store with the following assemblies:<br>\r\n<blockquote>Microsoft.Msagl, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35<br>\r\nMicrosoft.Msagl.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35<br>\r\nMicrosoft.Msagl.GraphViewerGdi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35<br>\r\n</blockquote><br>\r\nBut the newest Quickgraph.Msagl.dll refers to the following assembly files:<br>\r\n<blockquote>Microsoft.Msagl, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35<br>\r\nMicrosoft.Msagl.Drawing, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35<br>\r\nMicrosoft.Msagl.GraphViewerGDI, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 <br>\r\n<br>\r\n</blockquote>==&gt; Could not load file or assembly 'Microsoft.Msagl.Drawing, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)<br>\r\n<br>\r\nDo you have any&nbsp; plan to update Quickgraph for this?<br>\r\nThanks in advance!<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-05T05:29:51.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138199",
+    "ThreadId": "41578",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=11893\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2008-12-05T21:11:34.61-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

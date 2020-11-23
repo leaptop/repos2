@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "456231",
+    "ThreadId": "216247",
+    "Html": "I am programming in VB.NET. I am quite happy with the QuickGraph library and the Shortest Path calculated using the HoffmanPavley method. However, I am struggling with easily obtaining the sum of the weights for the shortest path. I have supplied the code that generates my BidirectionalGraph. \r\n\r\nPrivate Sub CreateGraph()\r\n        'we need to fill the graph with vertices\r\n        Dim verts = (From v In IBMDataSet.GraphTable.AsEnumerable _\r\n                    Select v.Fnode).Distinct\r\n        For Each vts In verts\r\n            adjGraph.AddVertex(vts)\r\n        Next\r\n        'we need to fill the graph with edges\r\n        For Each edges In IBMDataSet.GraphTable.AsEnumerable\r\n            adjEdge = New Edge(Of String)(edges.Fnode, edges.Tnode)\r\n            adjGraph.AddEdge(adjEdge)\r\n            edgeCost.Add(adjEdge, edges.Distance)\r\n        Next\r\n\r\n        IBMDataSet.GraphTable.Clear() 'free up some memory\r\nEnd Sub\r\n\r\n'here is where I am running the ShortestPath and can see the array of paths used to find the shortest between the Source and Target\r\nDim test1 As New HoffmanPavleyRankedShortestPathAlgorithm(Of String, Edge(Of String))(adjGraph, AlgorithmExtensions.GetIndexer(Of Edge(Of String), Double)(edgeCost))\r\n        test1.ShortestPathCount = 1\r\n        'int.MaxValue;\r\n        test1.Compute(&quot;HB019_0&quot;, &quot;HB019_50&quot;)\r\n\r\nCan someone provide an example of an efficient/best way to sum the weights for the edges used in the shortest path?\r\n\r\nThanks.",
+    "PostedDate": "2010-06-16T08:30:24.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456755",
+    "ThreadId": "216247",
+    "Html": "Well, I think that I have come up with a solution. Not sure if it is the most ideal/best, but here is the code. If anyone has a better solution, I would love to see it!\r\n\r\nPrivate Sub CreateGraph()\r\n        'we need to fill the graph with vertices\r\n        Dim verts = (From v In IBMDataSet.GraphTable.AsEnumerable _\r\n                    Select v.Fnode).Distinct\r\n        For Each vts In verts\r\n            adjGraph.AddVertex(vts)\r\n        Next\r\n        'we need to fill the graph with edges\r\n        For Each edges In IBMDataSet.GraphTable.AsEnumerable\r\n            adjEdge = New Edge(Of String)(edges.Fnode, edges.Tnode)\r\n            adjGraph.AddEdge(adjEdge)\r\n            edgeCost.Add(adjEdge, edges.Distance)\r\n        Next\r\n\r\n        IBMDataSet.GraphTable.Clear() 'free up some memory\r\nEnd Sub\r\n\r\nPublic Function GetShortestPath() As Double\r\n        Dim shortPath As New HoffmanPavleyRankedShortestPathAlgorithm(Of String, Edge(Of String))(adjGraph, AlgorithmExtensions.GetIndexer(Of Edge(Of String), Double)(edgeCost))\r\n        'only return the shortest path\r\n        shortPath.ShortestPathCount = 1\r\n        shortPath.Compute(&quot;HB019_0&quot;, &quot;HB019_50&quot;) 'for a give pair of nodes\r\n        dblDist = 0\r\n        'loop through the list of edges and grab the cost to sum the total\r\n        For i As Integer = 0 To (shortPath.ComputedShortestPaths(0).ToArray.Length - 1) 'we only find shortest path, so index will always be 0\r\n            dblDist += edgeCost(shortPath.ComputedShortestPaths(0)(i)) 'keep a running total of distances\r\n        Next\r\n        shortPath = Nothing 'clear the object\r\n    End Sub",
+    "PostedDate": "2010-06-17T08:10:17.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

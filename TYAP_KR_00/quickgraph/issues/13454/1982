@@ -1,0 +1,611 @@
+#light
+open System
+open QuickGraph
+open QuickGraph.Algorithms
+open QuickGraph.Collections
+open System.Collections.Generic
+open System.IO
+
+
+(****************Globals********************)
+let k = 12 //k - length of the k-mer
+let threshold = 1uy //number of shared k-mers to report an edge
+let START_COST = 10
+let CHAR_COST = 1
+
+ (****************End of Globals********************)         
+                
+[<Struct>]
+type Overlap = 
+    val neighbor: int
+    val pos_in_curr: int
+    val pos_in_neighbor: int
+    new (neighbor, pos_in_curr, pos_in_neighbor) =
+       {neighbor=neighbor; pos_in_curr=pos_in_curr; pos_in_neighbor=pos_in_neighbor}
+
+[<Struct>]
+type Seed =
+    val read: int
+    val mutable position: int
+    new (read, position) = {read = read; position = position}
+
+[<Struct>]
+type Pair =
+    val x: int
+    val y: int
+    new (x,y)={x=x;y=y}
+let (|Pair|) (p: Pair) = (p.x, p.y);;    
+let neighborScr = Array.create 500000 0
+let thisPosScr = Array.create 50000 0
+let neighbPosScr = Array.create 50000 0
+  
+type Diag (diag: int) =
+    let Diagonal = diag
+    let MEMs = new System.Collections.Generic.List <int * int> ()
+    member this.Is_here point=
+        let mutable res = false 
+        let mutable i = 0
+        let count = MEMs.Count
+        while (i < count && res = false) do
+            let (start, len) = MEMs.[i]
+            if (point >= start && point < start + len) then 
+                res <- true
+    member this.Add_MEM start len =
+        MEMs.Add (start, len)           
+
+//[<Struct>]                
+type Rect = 
+    val x_tl: int
+    val y_tl: int
+    val x_br: int
+    val y_br: int
+    val score: int
+    val mutable score_sum: int
+    val mutable parent: Rect option
+    new (x_tl,y_tl,x_br, y_br,score,score_sum, parent) =
+         {x_tl = x_tl;y_tl = y_tl;x_br = x_br;y_br = y_br;score=score;score_sum=score_sum;parent = parent}
+
+type Direction = |Left|Right
+
+
+let link_squares (squares: List<Rect>) (output_chain:bool)=
+  if squares.Count = 1 then
+      if not output_chain then squares.[0].score, []
+      else let len = squares.[0].y_br - squares.[0].y_tl + 1
+           squares.[0].score, [squares.[0].x_tl, squares.[0].y_tl, len] 
+  else
+   
+    let front = new LinkedList <Rect> ()
+    let nil = new Rect (-1 , y_tl = -1 , x_br = -1 , y_br = -1 , score = 0 , score_sum = 0 , parent = None)
+    let max = new Rect ( 32000 , y_tl = 32000 , x_br = 32000 , y_br = 32000 , score=32000 , score_sum=32000 , parent = None)
+    let first = front.AddFirst  nil 
+    front.AddLast max
+    let find_up (sortedList: LinkedList <Rect>) threshold =
+        let mutable current = sortedList.First
+        while current.Next.Value.y_br < threshold do
+            current <- current.Next
+        current    
+    let get_events (squares: List<Rect>) = 
+        let count = squares.Count
+        let events = Array.init (2 * count)
+                            (fun i -> if i < count then
+                                        (Left, squares.[i])
+                                      else (Right, squares.[i-count])   )               
+        Array.sortInPlaceBy (fun (dir, (rect: Rect))-> if dir = Left then 2*rect.x_tl else 2*rect.x_br+1 ) events
+        events
+            
+    let events = get_events squares
+    for event in events do
+        let mutable rect = snd event
+        match (fst event) with 
+        | Left -> let upper_rect = (find_up front rect.y_br).Value
+                  rect.parent <- Some upper_rect
+                  rect.score_sum  <- upper_rect.score_sum + rect.score
+        | Right -> let upper_rect_node = find_up front rect.y_br
+                   let upper_rect = upper_rect_node.Value 
+                   if upper_rect.score_sum < rect.score_sum then
+                       let new_node = front.AddAfter (upper_rect_node, rect)
+                       let mutable curr = new_node.Next
+                       let mutable next = curr
+                       while (curr <> null && curr.Value.score_sum <= rect.score_sum) do
+                         next <- curr.Next
+                         front.Remove curr
+                         curr <- next
+    front.RemoveLast()
+    let mutable last = front.Last
+    let gain = last.Value.score_sum
+    if not output_chain then last.Value.score_sum,[]
+    else 
+        let mutable rect_chain = []
+        while last <> first do
+            let start_in_a = last.Value.x_tl
+            let start_in_b = last.Value.y_tl
+            let len = last.Value.y_br - start_in_b + 1
+           
+            rect_chain <- (start_in_a, start_in_b, len) ::rect_chain
+            last <- last.Previous
+        front.Last.Value.score_sum, rect_chain                    
+
+ (* Given a word represented as a sequence over an alphabet of size 4
+ the function go over all substring of
+ the word of length k and outputs the value of each substring considering it
+ as a number over alphabet of size 4. *)
+let genseeds_slow (read: byte[]) =
+    let range = (pown 4 k)
+    let nextseed current (letter: byte) =
+        (current*4 + int (letter)) % range
+    let current = ref 0  
+    let allseeds = 
+           seq {for letter in read do
+                 current := nextseed !current letter
+                 yield !current}  
+    allseeds |> Seq.skip (k-1)
+       
+let genseeds (read: byte[])  =
+    let read_len = Array.length read
+    let range = (pown 4 k)
+    let nextseed current (letter: byte) =
+        (current*4 + int (letter)) % range
+    let mutable current = 0  
+    for letter_pos = 0 to k-2 do
+        current <- nextseed current read.[letter_pos]
+    let allseeds = Array.create (read_len-(k-1))  0    
+    for i=k-1 to read_len - 1 do
+        current <- nextseed current read.[i]
+        allseeds.[i-(k-1)] <- current  
+    allseeds
+       
+
+(* ??? make sure works on bytes. change letter to byte 
+let seedtoindex seed =
+    Seq.fold (fun index_accum letter -> 4*index_accum+letter) 0 seed
+
+let word_to_number word basis =
+    Seq.fold (fun index_accum letter -> basis*index_accum+letter) 0 word    *)   
+(*******************************  createindex ***************************************)
+/// Input: reads - array of reads represented as byte arrays
+/// Output: seeds_to_reads: Dictionary <int, System.Collections.Generic.HashSet<int> > -
+///     Dictionary indexed by an integer representation of a seed. Each entry is a 
+///     HashSet of all reads containing the seed
+       
+let createindex_old (reads: byte[][]) =
+    let init_seeds_to_reads reads =
+        let seeds_to_reads = new System.Collections.Generic.Dictionary <int, System.Collections.Generic.HashSet<int> >(Array.length reads)
+        let seeds = new System.Collections.Generic.HashSet<int>()
+        let init_1_read index read =
+             
+            for seed in (genseeds read) do
+                seeds.Add seed
+        reads |> Seq.iteri init_1_read   
+        let init_seed_set seed = 
+            let seed_set = new HashSet<int>();
+            seeds_to_reads.Add (seed, seed_set);
+            
+        seeds |> Seq.iter  init_seed_set
+        seeds_to_reads 
+              
+    let mutable read_index = 0
+    let seeds_to_reads = init_seeds_to_reads reads
+    let seed_1_read index read = 
+        for seed in (genseeds read) do
+            let seed_set_KeyValuePair = seeds_to_reads.TryGetValue seed 
+            let seed_set = snd (seed_set_KeyValuePair)
+            seed_set.Add index
+ 
+    reads |> Seq.iteri seed_1_read            
+   // // Printf.printf "%A" seeds_to_reads 
+    seeds_to_reads        
+   
+(**********************************************************************)    
+
+let get_range_one_seed (seeds_arr: (int*int*int)[]) num_seeds start =
+    let mutable current = start + 1
+    let mutable current_seed = 0
+    let (seed, zero_or_one, _) = seeds_arr.[start]
+    
+    let mutable in_range = true
+    let end_of_0 =
+        if zero_or_one = 0 
+          then
+            while (current < num_seeds && in_range) do
+                let (current_seed, zero_or_one, _) = seeds_arr.[current]
+                if (current_seed <> seed) || (zero_or_one = 1) then in_range <- false
+                else current <- current + 1
+            current - 1
+          else start - 1  
+    in_range <- true
+    while (current < num_seeds && in_range) do
+        let (current_seed, zero_or_one, _) = seeds_arr.[current]
+        if (current_seed <> seed)  then in_range <- false    
+        else current <- current + 1
+        
+    let end_of_1 = current - 1    
+    (end_of_0 , end_of_1)
+
+     
+
+
+let overlap2reads_quick (reads: byte[][])  (read0index: int) (read1index: int) (init_count: int) (seeds_opt:  Dictionary <int,int> option) =
+    let read0 = reads.[read0index]
+    let read1 = reads.[read1index] 
+    let seeds =
+        match seeds_opt with
+        |Some seeds -> seeds
+        |None ->
+            let seeds = new Dictionary <int,int> ()
+            try
+             genseeds read0 |> Array.iteri (fun i seed -> seeds.Add(seed,i))
+            with | _ -> ()
+            seeds   
+    let seeds1 = genseeds read1 
+    let mutable pos_in_0 = 0
+    let mutable overlap_count = init_count
+  
+    for pos1 = 0 to (Array.length seeds1) - 1 do
+        let seed = seeds1.[pos1]
+    
+        if seeds.TryGetValue (seed, &pos_in_0) then 
+            neighborScr.[overlap_count] <- read1index
+            thisPosScr.[overlap_count] <- pos_in_0
+            neighbPosScr.[overlap_count] <- pos1 
+            overlap_count <- overlap_count + 1 
+
+    overlap_count
+
+let overlap2reads (reads: byte[][])  (read0index: int) (read1index: int) (init_count: int) =
+    let read0 = reads.[read0index]
+    let read1 = reads.[read1index] 
+    let seeds0 = genseeds read0 |> Array.mapi (fun i seed -> (seed, 0, i))
+    let seeds1 = genseeds read1 |> Array.mapi (fun i seed -> (seed, 1, i)) 
+    let seeds_arr = Seq.to_array (Array.append seeds0 seeds1)
+    Array.sortInPlace seeds_arr
+    let  overlap_count = ref init_count
+    let process_range_of_one_seed (seeds_arr: (int*int*int)[]) range0 range1 =
+        for (_,_,pos0) in range0 |> Seq.map (fun i -> seeds_arr.[i] ) do
+            for (_,_,pos1) in range1 |> Seq.map (fun i -> seeds_arr.[i] )  do
+                neighborScr.[!overlap_count] <- read1index
+                thisPosScr.[!overlap_count] <- pos0
+                neighbPosScr.[!overlap_count] <- pos1 
+               
+                overlap_count := !overlap_count + 1
+           
+     
+    let num_seeds = Array.length seeds_arr       
+        
+    let mutable current_seed = seeds_arr.[0]
+    let current_index = ref 0
+    
+    while !current_index < num_seeds do 
+       let (end_of_0 , end_of_1) = get_range_one_seed seeds_arr num_seeds !current_index 
+       if  (!current_index <= end_of_0) && (end_of_0 < end_of_1) then
+           (process_range_of_one_seed seeds_arr  (seq[!current_index .. end_of_0]) (seq[end_of_0+1 .. end_of_1]))
+       current_index := end_of_1 + 1    
+    
+    !overlap_count
+
+let overlap_1_read_new (reads: byte[][]) overlaps (seed_index: Dictionary <int, List<Seed>>)   input_read  = 
+    let mutable scratch_count = 0
+    let seeds = new Dictionary <int,int> ()
+    try
+     genseeds reads.[input_read] |> Array.iteri (fun i seed -> seeds.Add(seed,i))
+    with | _ -> ()
+    for neighbor in overlaps do
+        scratch_count <- overlap2reads_quick reads input_read neighbor scratch_count (Some seeds)
+    scratch_count
+    
+  
+    
+let createindex (reads: byte[][]) =
+    let seeds_to_reads = new Dictionary <int, List<Seed> >(Array.length reads)
+    let mutable read_index = 0
+    let seed_1_read argindex read = 
+        let seeds = genseeds read
+        let num_seeds = Array.length seeds
+        for i=0 to num_seeds-1 do
+            let seed = seeds.[i]
+            let seed_set_KeyValuePair = seeds_to_reads.TryGetValue seed 
+            let seed_set = 
+                if (not (fst seed_set_KeyValuePair)) then
+                    let seed_set = new List<Seed>(1)
+                    seeds_to_reads.Add (seed, seed_set);seed_set
+                else snd (seed_set_KeyValuePair)
+            seed_set.Add (new Seed(argindex, position = i)) //Inserts read, start_position into the seed_set for the seed
+    reads |> Seq.iteri seed_1_read            
+    // Printf.printf "%A" seeds_to_reads 
+    for list in seeds_to_reads.Values do
+        list.Sort()
+    seeds_to_reads       
+(*
+let process_seed  (seed_bucket:  List<int * int>) (edges: Dictionary <int*int, List<int*int>>) (seed: int) =
+    let add_match_to_edge (edge: Dictionary<int*List<int*int>>) 
+    for read1, pos1 in seed_bucket do
+        for read2, pos2 in seed_bucket do 
+            let edge_kvp = edges.TryGetValue ((read1, read2))
+            let edge =
+                if (not (fst edge_kvp)) then new System.Collections.Generic.List<int*int>(10)
+                else  (snd edge_kvp)
+            edge.Add (pos1, pos2)    
+            *)
+(*
+Given a read and an array of seeds, where entry (seedtoindex seed) contains 
+  a Dictionary of reads containing the seed,
+  return a sequence of reads having shared seeds with the inputread.*) 
+(*let overlap_1_read (reads: byte[][]) (seed_index: Dictionary <int, List<Seed>>)   input_read = 
+    let mutable scratch_count = 0
+    scratch_count <- 0
+    let seeds = genseeds reads.[input_read]
+    let num_seeds = Array.length seeds
+  //  printfn "Processing read %d" input_read
+    for pos_in_input = 0 to num_seeds - 1 do
+        let seed = seeds.[pos_in_input]
+        for seedPosition in snd (seed_index.TryGetValue seed) do
+           let neighbor = seedPosition.read
+           let pos_in_neighbor = seedPosition.position
+           if (true) (*neighbor > input_read*) then
+               neighborScr.[scratch_count] <- neighbor
+               thisPosScr.[scratch_count] <- pos_in_input
+               neighbPosScr.[scratch_count] <- pos_in_neighbor
+               scratch_count <- scratch_count + 1
+    scratch_count            
+*)
+let overlap_1_read_old (reads: byte[][]) (seed_index: Dictionary <int, List<Seed>>)   input_read = 
+    seq{for seed in (genseeds reads.[input_read]) do    
+            for readpos in snd (seed_index.TryGetValue seed) do
+                let read_index = readpos.read
+       //         if (read_index > input_read) then
+            //      Printf.printf "Seed=%d " seed
+              //    Printf.printf "In=%d,curr=%d\n"  input_read read_index
+                yield read_index}
+(*
+for seed in (genseeds reads.[input_read]) do  
+    for read_index in snd (seed_index.TryGetValue seed) do
+        get_count    
+
+*)
+let get_MEM k (read1: byte[]) (read2: byte[]) (start_in_r1: int) (start_in_r2: int) = 
+    let mutable e1 = start_in_r1 + k
+    let mutable e2 = start_in_r2 + k
+    let len1 = Array.length read1
+    let len2 = Array.length read2
+    let max_offset = (min (len1 - start_in_r1) (len2 - start_in_r2)) - 1
+    let mutable offset = k
+    while (offset <= max_offset
+            && read1.[start_in_r1 + offset] = read2.[start_in_r2 + offset]) do
+           offset <- offset + 1  
+    let high = offset - 1
+    offset <- 1
+    while ((offset <= (min  start_in_r1 start_in_r2 )) 
+          && read1.[start_in_r1 - offset] = read2.[start_in_r2 - offset]) do
+           offset <- offset + 1
+    let low = offset - 1
+    let len = high + low + 1
+    new Pair(min (start_in_r1 - low)  (start_in_r2 - low), len)
+    
+
+(*
+Input:
+seed_index - 
+
+*)
+
+
+let MEM_1_read (reads: byte[][]) overlaps (seed_index: Dictionary <int , List<Seed>>)   input_read (neighbor_opt: int option) =
+    let num_overlaps = 
+        match neighbor_opt with
+        | Some neighbor -> overlap2reads_quick reads input_read neighbor 0 None
+        | None -> overlap_1_read_new reads overlaps seed_index input_read  //all overlaps are of length k
+    let MEMs = new Dictionary <int, Dictionary<int , List<Pair>>>() // neighbor, diag, start*len
+   // for (neighbor, start_input, start_neighbor) in overlaps do
+    for i = 0 to num_overlaps - 1 do
+        let neighbor = neighborScr.[i]
+        let start_input = thisPosScr.[i]
+        let start_neighbor = neighbPosScr.[i]
+        let diag = start_input - start_neighbor
+        let start = min start_input start_neighbor //position in the diagonal where the match starts
+        let current_neighbor = 
+            let current_neighbor_diags_kvp = MEMs.TryGetValue neighbor 
+            if (fst current_neighbor_diags_kvp) then (snd current_neighbor_diags_kvp) 
+            else let current_neighbor_diags = new Dictionary<int , List <Pair>>() //diag*List(start*len)
+                 MEMs.Add (neighbor,current_neighbor_diags)   
+                 current_neighbor_diags   
+        let current_diag = 
+            let current_diag_kvp = current_neighbor.TryGetValue diag             
+            if (fst current_diag_kvp) then (snd current_diag_kvp)  
+            else let current_diag = new List <Pair>() //diag*List(start*len)
+                 current_neighbor.Add (diag, current_diag)   
+                 current_diag
+        //Look for the segment in the diagonal of MEMs. If the start is within one of the MEMs,
+        //then the whole segment is within the MEM, as it is a MEM! 
+        let mutable is_found = false
+        for Pair(segment_start_in_diag, segment_len)  in current_diag do
+            if start >= segment_start_in_diag && start <= segment_start_in_diag + segment_len then is_found <- true 
+        if (not is_found)  then  
+            let segment = get_MEM k reads.[input_read] reads.[neighbor] start_input start_neighbor  
+            current_diag.Add segment
+    MEMs    
+
+let gain_of_len len =
+    len * CHAR_COST - START_COST
+(*
+Input: 
+diag:List<start*len>
+segments: List<segment_start, segment_len>
+*)
+let convert_diag_to_square diag (segments: List <Pair>) = //diag:List<start*len>
+    let convert_segment (Pair (start, len)) =  
+        let gain = gain_of_len len
+        if diag >= 0
+          then new Rect(diag+start, y_tl = start, x_br = diag+start+len-1, y_br = start + len - 1,
+                    score=gain, score_sum=0, parent = None)
+          else new Rect(start, y_tl = -diag+start, x_br = start + len - 1, y_br = -diag + start + len - 1, 
+                    score=gain, score_sum=0, parent = None)
+    let squares = (segments |> Seq.map convert_segment)
+    squares 
+ 
+let chains_scores_1_read (reads: byte [][]) overlaps (seed_index: Dictionary <int , List<Seed>>)   input_read =
+    let MEMs_dict = MEM_1_read reads overlaps seed_index input_read None   //MEMs_dict - Dictionary<neighbor, Dictionary<diag, List<start_segment, segment_len>>>
+    [|
+    for KeyValue(neighbor, diags)  in MEMs_dict do 
+        let read_pair_squares = 
+            Seq.concat (diags |> Seq.map (fun (KeyValue(diag,segments)) -> convert_diag_to_square diag segments))
+        let read_pair_squares_List = new List <Rect>  (read_pair_squares)  
+        let neighbor_best_chain_score = (fst (link_squares read_pair_squares_List false))
+        yield   new Pair(neighbor, neighbor_best_chain_score)
+    |]    
+        
+
+
+
+
+  
+let index_filter_i (reads: byte[][]) (overlaps_scratch: byte[]) seed_index i = 
+    let max_neighbors = 10
+    let num_of_reads = Array.length reads
+    // Printf.printf "num_reads = %d" num_of_reads
+    let scratch_incrementer = fun j -> (overlaps_scratch.[j] <- overlaps_scratch.[j] + 1uy)
+    let scratch_read_and_clear candidate = 
+        let count = overlaps_scratch.[candidate]
+        if (count > threshold) then
+            overlaps_scratch.[candidate] <- 0uy;
+            Some (new Pair (-(int)count, candidate))
+        else overlaps_scratch.[candidate] <- 0uy; None
+    
+    let get_overlaps i =
+        let overlaps = i |> overlap_1_read_old reads seed_index
+        overlaps |> Seq.iter scratch_incrementer
+        let neighbors = (i |> overlap_1_read_old reads seed_index 
+                 |> Seq.map (fun candidate ->  scratch_read_and_clear candidate) |> Seq.choose (fun x->x))|> Seq.to_array 
+        let neighbors_count = Array.length neighbors         
+        if (neighbors_count > max_neighbors)   then      
+            Array.sortInPlace neighbors    
+        Array.init (min neighbors_count max_neighbors) (fun i -> neighbors.[i].y)     
+             
+        // Printf.printf "Read %d has %d neighbors \n"  i (Array.length neighbors)            
+                 
+    get_overlaps i
+    
+    
+    
+
+let MEM_filter (reads: byte[][]) = 
+    let seed_index = reads |> createindex
+    let num_reads = Array.length reads
+    let overlaps_scratch = Array.create  num_reads 0uy
+    seq{for i = 0 to num_reads-1 do
+          let overlaps = index_filter_i reads overlaps_scratch seed_index i
+          yield  chains_scores_1_read reads overlaps seed_index i},
+    seed_index
+    
+          
+   
+    
+    
+(********************Graphworks.fs*******************************)
+
+type overlap_graph = 
+    {
+        Reads:  byte[][]
+        Graph: UndirectedGraph<int, SEdge<int>>
+        Costs: Dictionary<SEdge<int>, int>
+    }
+    
+
+
+let create_vertices (reads:  byte[][]) =
+    let graph = new UndirectedGraph<int, SEdge<int>>(true);
+    let arr_len = Array.length reads
+    let vertices = Array.init arr_len (fun i ->i)
+    graph.AddVertexRange(vertices)
+
+    graph    
+
+//let build_graph_new (reads: byte[][]) =
+
+    
+(*See what happens for disconnected graph ???*)
+let build_graph (reads: byte[][]) (neighbor_array: seq<Pair []>)= //: seq<int * Array<int>> ) =
+    let encoding=new System.Text.ASCIIEncoding();
+    let graph = create_vertices reads
+    let edgeCost = new Dictionary<SEdge<int>, int>(graph.VertexCount)
+    let arr_len = Array.length reads
+    neighbor_array |> Seq.iteri (fun readi neighbors ->       
+        let read = reads.[readi]  
+        // Printf.printf "Building edges for read %d num of edges %d \n" readi  (Array.length neighbors)
+        for pair in neighbors do
+            let neighbori = pair.x
+            let score = pair.y
+            let neighbor = reads.[neighbori] 
+            let edge_score = score //calc_gain read neighbor 
+            let edge = new SEdge<int> (readi, neighbori);
+            graph.AddEdge(edge)
+            edgeCost.Add(edge, edge_score) )
+    {Reads = reads; Graph = graph; Costs = edgeCost}     
+    
+(*****************************  compute_span_tree *********************************)
+(* Returns the MST in form of Dictionary <int, SEdge<int> >
+Output: MinSpanTree containing the edges with the highest gain.
+     Dictionary<int, SEdge<int> >. For KeyValuePair (v, edge), edge is an mst's edge
+     leading to vertex v. Vertices of mst are given in the DFS order.*)            
+let compute_span_tree (overlap: overlap_graph)  =
+    let graph = overlap.Graph
+    let edgeCost = overlap.Costs
+    let count = edgeCost.Count
+    // Printf.printf "%d edges\n" count
+    let mst_edges = graph.MinimumSpanningTreePrim  (fun key -> - float (snd (edgeCost.TryGetValue key)))
+    let mst = create_vertices overlap.Reads
+    let num_reads = Array.length overlap.Reads
+    let closed = new HashSet<int> ()
+    for edge in mst_edges do
+        mst.AddEdge(edge) 
+    let dfs = new QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm<int, SEdge<int>>(mst)
+    let res =
+      seq{//  let i = 0
+            for i=0 to num_reads - 1 do
+            if (not (closed.Contains i)) then
+                let dfs = new QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm<int, SEdge<int>>(mst)
+
+                closed.Add i //new root of the tree (added together with its edge)
+                let observer =  new QuickGraph.Algorithms.Observers.UndirectedVertexPredecessorRecorderObserver<int, SEdge<int>>() 
+                observer.Attach (dfs) // attach, detach to dfs events
+                i |> dfs.Compute
+                for kvp in observer.VertexPredecessors do
+                    let edge = kvp.Value
+                    closed.Add edge.Source 
+                    closed.Add edge.Target
+                    yield kvp 
+         }
+    (edgeCost, res)
+
+
+let test () =
+
+    let start =DateTime.Now
+ 
+    let reads = [| [|1uy;0uy;3uy;1uy;2uy;3uy;3uy;0uy;3uy;1uy;0uy;2uy;3uy;0uy;1uy;1uy;1uy;0uy;1uy;2uy;2uy;0uy;3uy;2uy;2uy;3uy;1uy;2uy;3uy;0uy;1uy;1uy|]  ; 
+                 [|1uy;0uy;3uy;1uy;2uy;3uy;3uy;0uy;3uy;1uy;0uy;2uy;3uy;0uy;1uy;2uy;1uy;0uy;1uy;2uy;2uy;0uy;3uy;2uy;2uy;3uy;1uy;2uy;3uy;0uy;1uy;1uy|] |]
+    
+   
+
+    let num_reads = Array.length reads
+    let neighbor_array, seed_index = reads |> MEM_filter 
+    let stop = DateTime.Now
+    Printf.printf "Entering building graph: %A\n" (stop - start)
+    let graph = neighbor_array |> build_graph reads
+    let stop = DateTime.Now
+    Printf.printf "Entering spaning tree: %A. Number of edges in the graph is\n" (stop - start) //graph.Graph.EdgeCount
+    let span_tree = graph |> compute_span_tree
+    let stop = DateTime.Now
+    Printf.printf "Span tree computed at time: %A, num of edges=%d\n" (stop - start) ((fst span_tree).Count)
+ 
+
+  (*  let placements = fst encodings            
+    let decodings = decode_seqs num_reads (snd encodings)
+    if ((reorder decodings placements) = reads) then 
+         Printf.printf "success\n"
+    else  Printf.printf "fail\n"    *)
+    let stop = DateTime.Now
+    Printf.printf "Elapsed time: %A\n" (stop - start) 
+    //  encodings|> (fun (x,y)-> (// Printf.printf "%A; %A" x y))
+    
+    0 
+let _ = test ()   

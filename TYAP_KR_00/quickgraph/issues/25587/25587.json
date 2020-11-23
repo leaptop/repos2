@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nI am trying to use QuickGraph.dll and QuickGraph.Graphviz.dll assemblies in my F# program. Open source compiler Fsharpc compiles properly. But when I use Mono to run the exe file (I am using Ubuntu 10.04), I get a System.TypeLoadException as shown below.\n\nUnhandled Exception: System.TypeLoadException: A type load exception has occurred.\n[ERROR] FATAL UNHANDLED EXCEPTION: System.TypeLoadException: A type load exception has occurred.\n\nBy setting MONO_LOG_LEVEL to \"debug\", I understand that the problem is because Mono is not able to load System.Core.dll and System.dll referenced from within QuickGraph.dll and QuickGraph.Graphviz.dll respectively. There seems to be a Strongname (at the PublicKeyToken) mismatch between the System.Core.dll and System.dll assemblies referenced from within QuickGraph and the counterparts in Mono GAC (Global Assembly Cache). I can see that these assemblies are available in Mono GAC in my machine in folders /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089 and /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089. But as shown below in output from MONO_LOG_LEVEL=\"debug\" mono xxx.exe command, I understand that Mono is looking for these dlls in /usr/lib/mono/gac/System.Core/4.0.0.0__7cec85d7bea7798e/ and /usr/lib/mono/gac/System/4.0.0.0__7cec85d7bea7798e/ .\n\nMono: gc took 20 usecs\nMono: Assembly Loader probing location: '/usr/lib/mono/4.0/mscorlib.dll'.\nMono: Image addref mscorlib[0x198eca0] -> /usr/lib/mono/4.0/mscorlib.dll[0x198df70]: 2\nMono: AOT failed to load AOT module /usr/lib/mono/4.0/mscorlib.dll.so: /usr/lib/mono/4.0/mscorlib.dll.so: cannot open shared object file: No such file or directory\n\nMono: Assembly Loader loaded assembly from location: '/usr/lib/mono/4.0/mscorlib.dll'.\nMono: Config attempting to parse: '/usr/lib/mono/4.0/mscorlib.dll.config'.\nMono: Config attempting to parse: '/etc/mono/assemblies/mscorlib/mscorlib.config'.\nMono: Assembly mscorlib[0x198eca0] added to domain Hello_World.exe, ref_count=1\n.\n.\n.\n.\n.\n.\nMono: Assembly Loader loaded assembly from location: '/home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/QuickGraph.dll'.\nMono: Config attempting to parse: '/home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/QuickGraph.dll.config'.\nMono: Config attempting to parse: '/etc/mono/assemblies/QuickGraph/QuickGraph.config'.\nMono: Assembly Ref addref Hello_World[0x1a0c3a0] -> QuickGraph[0x1a1c090]: 2\nMono: The request to load the assembly mscorlib v2.0.5.0 was remapped to v4.0.0.0\nMono: Assembly Ref addref QuickGraph[0x1a1c090] -> mscorlib[0x198eca0]: 4\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll'.\nMono: Image addref QuickGraph.Graphviz[0x1a32c30] -> /usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll[0x1a31bb0]: 2\nMono: Assembly QuickGraph.Graphviz[0x1a32c30] added to domain Hello_World.exe, ref_count=1\nMono: AOT failed to load AOT module /usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll.so: /usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll.so: cannot open shared object file: No such file or directory\n\nMono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll'.\nMono: Config attempting to parse: '/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll.config'.\nMono: Config attempting to parse: '/etc/mono/assemblies/QuickGraph.Graphviz/QuickGraph.Graphviz.config'.\nMono: Assembly Ref addref Hello_World[0x1a0c3a0] -> QuickGraph.Graphviz[0x1a32c30]: 2\nMono: The request to load the assembly mscorlib v2.0.5.0 was remapped to v4.0.0.0\nMono: Assembly Ref addref QuickGraph.Graphviz[0x1a32c30] -> mscorlib[0x198eca0]: 5\nMono: Assembly Ref addref QuickGraph.Graphviz[0x1a32c30] -> QuickGraph[0x1a1c090]: 3\nMono: The request to load the assembly System.Core v2.0.5.0 was remapped to v4.0.0.0\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/System.Core/4.0.0.0__7cec85d7bea7798e/System.Core.dll'.\nMono: Assembly Loader probing location: '/home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/System.Core.dll'.\nMono: Assembly Loader probing location: '/usr/lib/System.Core.dll'.\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/System.Core/4.0.0.0__7cec85d7bea7798e/System.Core.exe'.\nMono: Assembly Loader probing location: '/home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/System.Core.exe'.\nMono: Assembly Loader probing location: '/usr/lib/System.Core.exe'.\nMono: The following assembly referenced from /home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/QuickGraph.dll could not be loaded:\n     Assembly:   System.Core    (assemblyref_index=2)\n     Version:    2.0.5.0\n     Public Key: 7cec85d7bea7798e\nThe assembly was not found in the Global Assembly Cache, a path listed in the MONO_PATH environment variable, or in the location of the executing assembly (/home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/).\n\nMono: Failed to load assembly QuickGraph[0x1a1c090]\n\nMono: Could not load file or assembly 'System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, Retargetable=Yes' or one of its dependencies.\nMissing method .ctor in assembly /home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/QuickGraph.dll, type System.Runtime.CompilerServices.ExtensionAttribute\nCan't find custom attr constructor image: /home/bhagya/Documents/PHD/Implementations/Git/TTA/project-tta/WCET/TTA_Abacus/Fsharp_Examples/QuickGraph/QuickGraph.dll mtoken: 0x0a000080\nMono: The request to load the assembly System v2.0.5.0 was remapped to v4.0.0.0\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/System/4.0.0.0__7cec85d7bea7798e/System.dll'.\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/System.dll'.\nMono: Assembly Loader probing location: '/usr/lib/System.dll'.\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/System/4.0.0.0__7cec85d7bea7798e/System.exe'.\nMono: Assembly Loader probing location: '/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/System.exe'.\nMono: Assembly Loader probing location: '/usr/lib/System.exe'.\nMono: The following assembly referenced from /usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/QuickGraph.Graphviz.dll could not be loaded:\n     Assembly:   System    (assemblyref_index=2)\n     Version:    2.0.5.0\n     Public Key: 7cec85d7bea7798e\nThe assembly was not found in the Global Assembly Cache, a path listed in the MONO_PATH environment variable, or in the location of the executing assembly (/usr/lib/mono/gac/QuickGraph.Graphviz/3.6.61114.0__f3fb40175eec2af3/).\n\nMono: Failed to load assembly QuickGraph.Graphviz[0x1a32c30]\n\nMono: Could not load file or assembly 'System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, Retargetable=Yes' or one of its dependencies.\n\nUnhandled Exception: System.TypeLoadException: A type load exception has occurred.\n[ERROR] FATAL UNHANDLED EXCEPTION: System.TypeLoadException: A type load exception has occurred.\n\nI have invested a lot of time in resolving this. On the brighter side, I understand things more clearly now. \nAny help, suggestions on how to go about resolving this will be really helpful!!!\n\nThank you,\nAnoop",
+    "LastUpdatedDate": "2014-09-11T05:17:29.353-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2014-07-03T02:01:42.143-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "QuickGraph with Mono",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 25587
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I copied all relevant dll files to my working directory and did a fsharpc --standalone build. Problem solved. But the disadvantage is that executable size gets big obviously. But at the moment I dont really care.\r\n\r\n-Anoop",
+      "PostedDate": "2014-09-11T05:17:29.353-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

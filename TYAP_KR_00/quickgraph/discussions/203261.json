@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "412321",
+    "ThreadId": "203261",
+    "Html": "<p>Hello, I'm new to Quickgraph and I've been working on an implementation of Breadth-First Search, I need to calculate the distance between an arbitrary start/root node and an end node.&nbsp; I have the following instantiation of a distance recorder:</p>\r\n<p><em>var distObserver =&nbsp; new UndirectedVertexDistanceRecorderObserver&lt;Vertex, TaggedEdge&lt;Vertex, double&gt;&gt;();</em></p>\r\n<p><br>where <em>Vertex </em>is a class I defined elsewhere in code.</p>\r\n<p>For some reason I keep getting the error:</p>\r\n<p><strong>'QuickGraph.Algorithms.Observers.UndirectedVertexDistanceRecorderObserver&lt;_469_A3.Vertex,QuickGraph.TaggedEdge&lt;_469_A3.Vertex,double&gt;&gt;' does not contain a constructor that takes '0' arguments</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Looking online, I've found other examples seem to declare it just as I have above without any complaint, I'm not sure what I'm doing wrong.&nbsp; Also, I've read that the AlgorithmsExtension handles this manually, is there an example of this somewhere on this site??&nbsp; Thank you.</p>",
+    "PostedDate": "2010-02-27T20:53:40.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

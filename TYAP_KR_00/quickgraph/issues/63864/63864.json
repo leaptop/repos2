@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Seems like the SILVERLIGHT flag is used during build which switches off the Serializable attribute. I'm using version 3.6.61114.0 downloaded today.",
+    "LastUpdatedDate": "2015-08-08T10:29:35.373-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2015-08-08T10:29:35.373-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "types in nuget package not Serializable",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 63864
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "590494",
+    "ThreadId": "252216",
+    "Html": "\r\n<p>I want to use <span class=\"codeInline\">ConnectedComponentsAlgorithm</span>&lt;Vertex, Edge&gt;(IUndirectedGraph igraph). But i just have IVertexListGraph&lt;Vertex,Edge&gt; g. I don't know, how to exchange IVertexListGraph to IUndirectedGraph.</p>\r\n",
+    "PostedDate": "2011-04-01T14:56:18.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

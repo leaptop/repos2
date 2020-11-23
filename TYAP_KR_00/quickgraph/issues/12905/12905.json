@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-03-29T09:26:15.1-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI'm using the graphviz functionality with nodes of type 'Record' with multiple cells in each node. When I declare an edge I want to connect from one specific cell on the first node to one specific cell on the second. Using graphviz straight-up this down via 'ports'.\n \nI see where I can specify the port names for each cell but I do not see where I can specify the ports of the edge. \n \nCan someone point in the direction where I can find this?\n \nThank you,\nJoe",
+    "LastUpdatedDate": "2013-05-16T04:59:21.16-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-03-29T09:22:32.597-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Graphviz: Specifying Edge ports.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12905
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 32648.",
+      "PostedDate": "2009-03-29T09:26:15.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:48.57-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:21.16-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

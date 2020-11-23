@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "284297",
+    "ThreadId": "82749",
+    "Html": "<p>I have the following graph instructions that i currently use dot.exe to create a jpg from. &nbsp;I am shelling dot which requires graphviz installed. &nbsp;What i am looking for is an integrated solution. &nbsp;I would like to be able to call an API and have it generate an image. &nbsp;Ideally without ever having to create a file. &nbsp;Is this something that QuickGraph can do?</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.Diagnostics.ProcessStartInfo pi = new System.Diagnostics.ProcessStartInfo(&quot;dot&quot;, &quot; -Tjpeg -o file.jpg file.txt&quot;);</div>\r\n<p>\r\n<p>System.Diagnostics.ProcessStartInfo pi = new System.Diagnostics.ProcessStartInfo(&quot;dot&quot;, &quot; -Tjpeg -o file.jpg file.txt&quot;);</p>\r\n<div>digraph g {68 -&gt; 67;68 -&gt; 65;68 [label=&quot;AND\\n68&quot;];67 -&gt; 66;67 -&gt; 64;67 [label=&quot;AND\\n67&quot;];65 -&gt; 79;65 -&gt; 80;65 [label=&quot;\\n65&quot;];79 [label=&quot;tblTripsActual.Override\\n79&quot;];80 [label=&quot;OR:\\n80&quot;];66 -&gt; 62;66 -&gt; 63;66 [label=&quot;AND\\n66&quot;];64 -&gt; 77;64 -&gt; 78;64 [label=&quot;=\\n64&quot;];77 [label=&quot;tblTripsActual.FundingSourceID\\n77&quot;];78 [label=&quot;FS:4\\n78&quot;];62 -&gt; 73;62 -&gt; 74;62 [label=&quot;=\\n62&quot;];73 [label=&quot;tblRunActual.Verified\\n73&quot;];74 [label=&quot;1\\n74&quot;];63 -&gt; 75;63 -&gt; 76;63 [label=&quot;=\\n63&quot;];75 [label=&quot;tblTripsActual.RunActualID\\n75&quot;];76 [label=&quot;tblRunActual.ID\\n76&quot;];}</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-01T08:32:12.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290670",
+    "ThreadId": "82749",
+    "Html": "<p>Try download the 'Automatic Graph Layout' engine on MSDN. It does exactly what you are looking for. QuickGraph has helper methods to convert graphs into AGL graphs.</p>",
+    "PostedDate": "2010-02-14T14:36:05.287-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "415043",
+    "ThreadId": "82749",
+    "Html": "<p>it costs. &nbsp;is there another alternative? &nbsp;I can use what i have. &nbsp;i am writing a non-essential utility; i can't justify the dollars.</p>",
+    "PostedDate": "2010-03-06T13:09:01.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

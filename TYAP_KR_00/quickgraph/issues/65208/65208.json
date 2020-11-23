@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here is the implementation for BidirectionalGraph :\n```\n        public IEnumerable<TEdge> OutEdges(TVertex v)\n        {\n            IEnumerable<TEdge> result;\n            if (this.TryGetInEdges(v, out result))\n                return result;\n            else\n                return Enumerable.Empty<TEdge>();\n        }\n```\nI think it should not use the method \"TryGetInEdges\".\n\nA symptom of this problem is that the algoritms have a weird behaviour. For exemple, is i have the following graph:\n```\nv1->v2\n^    |\n|    v\nv4<-v3\n```\nand if I use the StronglyConnectedComponents algorithm on this graph, the algorithm will output that there is 4 components (we should have only one component). I think, this is because the StronglyConnectedComponents algorithm use the OutEdges method, and since it is wrong, the algorithm actually see the following graph:\n```\n|-----|   |-----|   |-----|    |-----|\nv1<---|   v2<---|   v3<---|    v4<---|\n```\n(each vertex has a self-loop, and there is no other edge excepts these loops)",
+    "LastUpdatedDate": "2016-09-01T00:45:22.47-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2016-09-01T00:41:20.59-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Implementation of OutEdges(TVertex v) for BidirectionalGraph is (I think) wrong",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 65208
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

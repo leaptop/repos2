@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please show some examples of solving maximum flow problem using QuickGraph.\nAlgorithmExtensions doesn't contain anything about it.",
+    "LastUpdatedDate": "2013-02-21T17:44:48.733-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-03-29T01:36:56.933-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Maximum Flow",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 12902
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for adding MaximumFlowEdmondsKarp to AlgorithmExtensions. But what about other stuff in MaximumFlow namespace? Can you add even a small documentation?",
+      "PostedDate": "2009-05-21T01:33:55.323-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-28T11:47:30.12-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-09T19:12:31.98-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "http://quickgraph.codeplex.com/Wiki/View.aspx?title=Maximum%20Flow&referringTitle=Home",
+      "PostedDate": "2009-08-16T13:25:59.3-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:48.733-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "No repro.",
+    "ClosedDate": "2009-01-04T15:11:59.397-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI'm a student and I have been using the 3.0 release for a project with no problems, but when I moved to release 3.1 I noticed that the method ShortestPathsDijkstra from AlgorithmExtensions.cs does an infinite loop. I've tried compiling the last source (changeset 26955) with identical results. I managed to debug it and realized that in fact, the infinite loop is done in the \"while\" from the FlushVisitQueue method from the BreadthFirstSearchAlgorithm class, which is used by ShortestPathsDijkstra.\nI could continue using the 3.0 release, but I'm very interested in the FibonacciQueue implementation that the 3.1 release includes.\n \nThank you for your attention.",
+    "LastUpdatedDate": "2013-05-16T04:59:25.467-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "High",
+      "Severity": 150,
+      "Id": 3
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-12-05T15:37:47.317-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ShortestPathsDijkstra from AlgorithmExtensions.cs does infinite loop",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11890
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi, do you have a graph that reproes the issue?",
+      "PostedDate": "2008-12-06T07:12:20.6-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-08T23:18:38.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-04T15:11:59.397-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:53.967-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:25.467-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

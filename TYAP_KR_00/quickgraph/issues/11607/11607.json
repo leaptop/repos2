@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This algorithm is not recursive, but uses a stack so it should not stackoverflow anymore. Please attach a repro if the problem occurs again",
+    "ClosedDate": "2009-04-04T02:39:47.54-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Fails with stack overflow while trying to verify connectedness of the graph I am passing to Djikstra..\n \nQuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm<TigerViewer.PointVertex,QuickGraph.TaggedEdge<TigerViewer.PointVertex,int>>.Visit(TigerViewer.PointVertex u = Coords: Cannot evaluate expression because the current thread is in a stack overflow state., int depth = 3406) Line 193\tC#\n \nSpecific line is:   if (u.Equals(e.Source))\n \nOnly the top line in the call stack, since they are all the same...",
+    "LastUpdatedDate": "2013-05-16T04:59:26.32-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-11-12T02:33:42.867-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Undirected.ConnectedComponents",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11607
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Could you attach a repro so that I can investigate this?",
+      "PostedDate": "2009-03-29T23:17:58.773-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-29T23:21:08.077-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-04T02:39:47.54-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:55.053-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:26.32-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

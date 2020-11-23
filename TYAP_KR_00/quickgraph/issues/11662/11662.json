@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This bug should be fixed now. There was a bug with the new fibonacci heap.\n\nCross-tested with Floyd-Warshall algorithm",
+    "ClosedDate": "2008-12-03T11:50:59.713-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I also am having some strange results.\nI am guessing that you are using the bidirectionalGraph, as Undirected.Dijkstra does not work at this time.\n \nMy needs are for an undirected graph.  Using the hopefully functional Bidrectional, all edges have been added twice with swapped vertices\nI do not care about dead end points.  So for faster run times, I remove them - saves about 30% of cpu time..\nie: \n    For Each Vertex As PointVertex In Graph.Vertices\n            If Graph.InDegree(Vertex) = 1 Then\n                If Graph.OutDegree(Vertex) = 1 Then\n                        Dim Tag As Integer = Graph.OutEdge(Vertex, 0).Tag\n                        DeadEdges.Add(Tag) ' do not want to kill the iterator deleting here\n                        DeadEndsThisPass = DeadEndsThisPass + 1\n                End If\n            End If\n    Next\n    Remove the DeadEdges from the graph\n \nSince entering a vertice, which has only one way out (the entrance), will not get us a shorter path to ANYWHERE, \nI feel strongly that it should not affect the results of the shortest path process.\n \nThis is not the case..\nDeads Ends REMOVED\n=================================\nShortest path from 0 to 1: Edges = 209   Distance = 18.6871025766148\nShortest path from 0 to 2:   No Path\nShortest path from 0 to 3: Edges = 229   Distance = 25.1420981198549\nShortest path from 0 to 4: Edges = 279   Distance = 30.185930068833\nShortest path from 0 to 5: Edges = 278   Distance = 30.1852232020982\nShortest path from 0 to 6: Edges = 279   Distance = 30.1909297394133\nShortest path from 0 to 7: Edges = 282   Distance = 30.0787995138543\nShortest path from 0 to 8: Edges = 281   Distance = 30.0036287763947\nShortest path from 0 to 9: Edges = 280   Distance = 29.9563015749597\nShortest path from 0 to 10: Edges = 285   Distance = 30.1029364471016\nShortest path from 0 to 11: Edges = 284   Distance = 30.100420657676\nShortest path from 0 to 12: Edges = 279   Distance = 30.0861420986841\nShortest path from 0 to 13: Edges = 278   Distance = 30.080859530371\nShortest path from 0 to 14: Edges = 277   Distance = 30.078852230681\nShortest path from 0 to 15: Edges = 276   Distance = 30.0748250836192\nShortest path from 0 to 16: Edges = 275   Distance = 30.0647169042368\nShortest path from 0 to 17: Edges = 276   Distance = 30.066050328606\nShortest path from 0 to 18: Edges = 276   Distance = 30.0703928405923\nShortest path from 0 to 19: Edges = 277   Distance = 30.0762113850632\nShortest path from 0 to 20: Edges = 278   Distance = 30.0822445408384\nShortest path from 0 to 21: Edges = 283   Distance = 30.1869257130482\nShortest path from 0 to 22: Edges = 283   Distance = 30.0977362529961\nShortest path from 0 to 23: Edges = 280   Distance = 30.0916260071138\nShortest path from 0 to 24: Edges = 281   Distance = 30.1977373594932\nShortest path from 0 to 25: Edges = 280   Distance = 30.1967825679065\nShortest path from 0 to 26: Edges = 281   Distance = 30.0929290774213\nShortest path from 0 to 27: Edges = 282   Distance = 30.0941029083026\nShortest path from 0 to 28: Edges = 230   Distance = 25.2547387461507\nShortest path from 0 to 29: Edges = 230   Distance = 25.1470488312715\nShortest path from 0 to 30: Edges = 229   Distance = 25.249641895234\nShortest path from 0 to 31: Edges = 374   Distance = 31.2457734131495\nShortest path from 0 to 32: Edges = 207   Distance = 18.9107195764928\nShortest path from 0 to 33: Edges = 208   Distance = 18.9195743423705\nShortest path from 0 to 34: Edges = 206   Distance = 18.8739869214042\nShortest path from 0 to 35: Edges = 210   Distance = 18.6878648595076\n \n \nDead Ends PRESENT\n============================\nShortest path from 0 to 1: Edges = 227   Distance = 19.0100456527529\nShortest path from 0 to 2:   No Path\nShortest path from 0 to 3: Edges = 261   Distance = 26.5644314427133\nShortest path from 0 to 4: Edges = 314   Distance = 31.6082941722276\nShortest path from 0 to 5: Edges = 313   Distance = 31.6075873054928\nShortest path from 0 to 6: Edges = 314   Distance = 31.6132938428079\nShortest path from 0 to 7: Edges = 318   Distance = 31.7467679565931\nShortest path from 0 to 8: Edges = 316   Distance = 31.4259928797893\nShortest path from 0 to 9: Edges = 315   Distance = 31.3786656783543\nShortest path from 0 to 10: Edges = 316   Distance = 31.3790951118068\nShortest path from 0 to 11: Edges = 314   Distance = 31.3868351149137\nShortest path from 0 to 12: Edges = 309   Distance = 31.3725565559218\nShortest path from 0 to 13: Edges = 308   Distance = 31.3672739876087\nShortest path from 0 to 14: Edges = 307   Distance = 31.3652666879187\nShortest path from 0 to 15: Edges = 306   Distance = 31.3612395408569\nShortest path from 0 to 16: Edges = 305   Distance = 31.3511313614745\nShortest path from 0 to 17: Edges = 305   Distance = 31.3507770247126\nShortest path from 0 to 18: Edges = 304   Distance = 31.3449197391847\nShortest path from 0 to 19: Edges = 305   Distance = 31.3507382836556\nShortest path from 0 to 20: Edges = 306   Distance = 31.3567714394308\nShortest path from 0 to 21: Edges = 317   Distance = 31.6386417573992\nShortest path from 0 to 22: Edges = 313   Distance = 31.3841507102338\nShortest path from 0 to 23: Edges = 310   Distance = 31.3780404643515\nShortest path from 0 to 24: Edges = 316   Distance = 31.6201014628878\nShortest path from 0 to 25: Edges = 315   Distance = 31.6191466713011\nShortest path from 0 to 26: Edges = 311   Distance = 31.379343534659\nShortest path from 0 to 27: Edges = 312   Distance = 31.3805173655403\nShortest path from 0 to 28: Edges = 262   Distance = 26.6770720690091\nShortest path from 0 to 29: Edges = 262   Distance = 26.5693821541298\nShortest path from 0 to 30: Edges = 261   Distance = 26.6719752180924\nShortest path from 0 to 31: Edges = 341   Distance = 14.0733716554419\nShortest path from 0 to 32: Edges = 206   Distance = 20.449694441428\nShortest path from 0 to 33: Edges = 207   Distance = 20.4585492073057\nShortest path from 0 to 34: Edges = 205   Distance = 20.4129617863394\nShortest path from 0 to 35: Edges = 228   Distance = 19.0108079356457",
+    "LastUpdatedDate": "2013-05-16T04:59:25.783-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-11-19T21:49:40.19-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Possible bug in Dijkstra algorithm?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11662
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Great news!  Have unit tests been added so this oversight can not be repeated?\r\n\r\nAny chance this fix affected Undirected Dijkstra?",
+      "PostedDate": "2008-12-03T19:10:16.887-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "It is tested by comparing the result from Floyd-Warshall and Dijkstra over hundreds of sample graphs from GraphML.",
+      "PostedDate": "2008-12-03T23:37:58.137-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:54.417-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:25.783-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

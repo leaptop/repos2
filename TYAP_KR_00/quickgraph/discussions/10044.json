@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "32596",
+    "ThreadId": "10044",
+    "Html": "\r\nHello,<br /><br />Why did you use the recursive deep first traversal method instead a stack based algorithm? Can you provide such an algorithm or can i help you with this? If you inspect the stack based DFS and the queue based BFS you will notice many similarities, so you can refactor both algorithms to one base algorithm which is using only a different vertex buffer.<br /><br />regards<br /><br />Stefan<br />",
+    "PostedDate": "2007-05-09T04:38:10.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32997",
+    "ThreadId": "10044",
+    "Html": "\r\nMostly historical reasons. I wrote the DFS first then realized recursive was not a really good idea. I fill fix it.<br /><br />Unfortunately, I need to figure out a way to accept other contributors so I cannot give write access yet.<br />",
+    "PostedDate": "2007-05-12T09:34:27.903-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32998",
+    "ThreadId": "10044",
+    "Html": "\r\nThis discussion has been copied to a work item. Click here to <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=276\">go to the work item and continue the discussion</a>.<br />",
+    "PostedDate": "2007-05-12T09:34:43.31-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

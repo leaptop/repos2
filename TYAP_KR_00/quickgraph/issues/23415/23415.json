@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Is reproduced on adding huge amount of data (25000 vertices, 40000 edges) to graph.\nI subscribe on VertexAdded and try adding edge in my OnVertexAdded method.\nI get the attached exception.\nWhen debugging I tried to check if graph contains both vertices I'm trying to create an edge on - yes it does.",
+    "LastUpdatedDate": "2013-02-21T17:44:33.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2012-09-26T09:05:31.633-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "KeyNotFoundException on adding edge in BidirectionalGraph on huge data",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 23415
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6015,
+      "FileName": "exception.txt",
+      "DownloadUrl": ".\\6015"
+    }
+  ],
+  "Comments": []
+}

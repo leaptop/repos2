@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "GraphVizdotNet is not part of QuickGraph.",
+    "ClosedDate": "2010-11-07T04:20:46.98-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi All, \n \nI'm new for this Quickgraph, Actually I need to create family tree by using this. For that I have downloaded sample code from QuickGraph site. Now I'm getting error when I'm building the application. Under \"QuickGraph.Algorithms.Graphviz\" library there is one class called \"DotRenderer.cs\" In that class we have the method name's \"Render\". In that method following lines are there in the end of the method. \n \n// create commandline \nString commandLine = String.Format(\"-T{0} -o{1} {2}\", ext, outputFileName, fileName ); \nlock(typeof(GraphVizdotNet.Dot)) \n{ \n    GraphVizdotNet.Dot.Exec(commandLine); \n} \n \nHere I'm getting error as \"The type or namespace name \"GraphVizdotNet\" could not found\" Can anyone help me to come out from this? If I run this application I will be very happy. Please help me to solve this problem. \n \nThanks, \nGanesh",
+    "LastUpdatedDate": "2013-05-16T04:59:15.537-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-08-05T22:08:40.247-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "QuickGraph application is not running",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18424
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3845,
+      "FileName": "error-treeview.JPG",
+      "DownloadUrl": ".\\3845"
+    }
+  ],
+  "Comments": []
+}

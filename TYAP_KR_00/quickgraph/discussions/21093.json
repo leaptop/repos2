@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "70183",
+    "ThreadId": "21093",
+    "Html": "\r\nHi there,<br /><br />   I'm just getting started with your library, and trying to replicate the code you posted in your user manual under the \"Creating a graph\" section. The code there calls a \"MarkedEdge\" class that doesn't seem to be defined in the source code you have provided. I do see it in the compiled assembly, however.<br /><br />   Is the source code you have provided the most recent version, or the compiled version? Why are they different? What else in the binary form is missing from the source code?<br /><br />Thanks,<br /><br />CVK<br />",
+    "PostedDate": "2008-01-26T21:33:12.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70204",
+    "ThreadId": "21093",
+    "Html": "\r\nSeems like this class went missing in build 11810. I noticed also that GleeUtility referenced in the manual is now called GleeGraphUtility, and the .Execute() method of GleeGraphPopulator has been changed to Compute().<br /><br />Having gotten it working, though, it looks like a pretty cool library/utility set. I'm looking forward to getting into more detail with it.<br />",
+    "PostedDate": "2008-01-27T02:07:29.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70967",
+    "ThreadId": "21093",
+    "Html": "\r\nMarkedEdge got renamed to TaggedEdge, sorry about that.<br />",
+    "PostedDate": "2008-01-30T21:45:25.78-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

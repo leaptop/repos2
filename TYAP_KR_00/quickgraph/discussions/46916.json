@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "156949",
+    "ThreadId": "46916",
+    "Html": "Hi folks,<br>\r\n<br>\r\nI'm having some problems with undirected graphs by using graphviz visualization and I don't know how to solve it.<br>\r\n<br>\r\nInitially, I have the following pseudo-code:<br>\r\n<br>\r\n<blockquote>UndirectedGraph&lt;int, Edge&lt;int&gt;&gt; g = new UndirectedGraph&lt;int, Edge&lt;int&gt;&gt;();<br>\r\n... </blockquote><blockquote>GraphvizAlgorithm&lt;int, Edge&lt;int&gt;&gt; graphviz = new GraphvizAlgorithm&lt;int, Edge&lt;int&gt;&gt;(g);<br>\r\nstring output = graphviz.Generate(new FileDotEngine(), &quot;graph&quot;);\r\n<span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\"></span><br>\r\n</blockquote><br>\r\nBut when I run <strong>Generate</strong> method, it creates a dot file with the structure of directed graph.<br>\r\n<br>\r\n<blockquote>\r\n<pre>digraph G <br>{\r\n   a1;<br>   a2;<br><br>   a1 -&gt; a2 [];</pre>\r\n<pre>} </pre>\r\n</blockquote>It's very strange and I don't know why it happens. I'm using quickgraph ver. 3.1.40122.0 for .net framework 3.5.<br>\r\n<br>\r\nThanks in advanced and regards.<br>\r\n",
+    "PostedDate": "2009-02-12T03:08:51.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157233",
+    "ThreadId": "46916",
+    "Html": "The graphviz writer probably does not support undirected graphs.<br>\r\n",
+    "PostedDate": "2009-02-12T16:33:51.213-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157390",
+    "ThreadId": "46916",
+    "Html": "Hi again,<br>\r\n<br>\r\nFirstly, thanks for the quicker reponse, I really appreciate your effort.<br>\r\n<br>\r\nOnce wrote this post, I began to research deeper and I found that the graphviz writer has always, or in major cases, the same behaviour. <br>\r\n<br>\r\nIt includes the header <strong>digraph</strong> on dot files without take into account the graph type. I don't know if this is an error or not because I'm a begginer with this API.<br>\r\n<br>\r\nI solved it with a &quot;little trick&quot;. Keep the data structure of <strong>UndirectedGraph </strong>for compatibility purposes, and change edge direction to <strong>None</strong> on rendering tier, and get a true correspondence between data structure and rendering tier.<br>\r\n<br>\r\nRegards.<br>\r\n",
+    "PostedDate": "2009-02-13T04:44:56.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157603",
+    "ThreadId": "46916",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=12604\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-02-13T17:07:35.503-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

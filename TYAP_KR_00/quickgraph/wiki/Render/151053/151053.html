@@ -1,0 +1,10 @@
+<div class="wikidoc"><h3>Using QuickGraph</h3>
+<h4>Setting up your project</h4><ul><li>Add a reference to <span class="codeInline">QuickGraph.dll</span> to your project. QuickGraph provides a version backward compatible with .Net 2.0 or a .Net 3.5 version. The only difference lies in the support for extension methods.</li>
+<li>Most data structures are defined under the <span class="codeInline">QuickGraph</span> namespace, algorithms are under the <span class="codeInline">QuickGraph.Algorithms</span> namespace.</li></ul>
+
+<h4>Identify the vertex and edge types.</h4>The vertex type can be any type as all QuickGraph datastructure are generic. The edge type must implement the <span class="codeInline">IEdge&lt;TVertex&gt;</span> interface:<br /><pre>
+class FooVertex {} // custom vertex type
+class FooEdge : Edge&lt;FooVertex&gt; [] // custom edge type
+class FooGraph : AdjacencyGraph&lt;FooVertex, FooEdge&gt; {} // custom graph type
+</pre>
+<h4>That&#39;s it!</h4><ul><li>You can learn more about <a href="https://quickgraph.codeplex.com/wikipage?title=Create%20Graphs&referringTitle=Using%20Quickgraph">creating graphs</a>, <a href="https://quickgraph.codeplex.com/wikipage?title=Walking%20Graphs&referringTitle=Using%20Quickgraph">walking graphs</a> or <a href="https://quickgraph.codeplex.com/wikipage?title=Mutate%20Graphs&referringTitle=Using%20Quickgraph">mutating graphs</a>.</li></ul></div><div class="ClearBoth"></div>

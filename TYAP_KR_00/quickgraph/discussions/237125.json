@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "531092",
+    "ThreadId": "237125",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Is there a reason that the ComputeDisjointSet() extension method is defined on IUndirectedGraph? From what I see it should work just on IEdgeListGraph, right?</p>\r\n<p>jeroen</p>\r\n",
+    "PostedDate": "2010-12-04T05:16:07.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed",
+    "ClosedDate": "2009-06-22T23:49:33.133-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI'm trying to do this..\n \n \nstatic void graphviz_FormatEdge(object sender, FormatEdgeEventArgs> \n{\n    e.EdgeFormatter.FontColor = Color.RoyalBlue;\n    e.EdgeFormatter.Length = 2;\n}\n \n \nHowever, I see that \"Length\" isn't present. I had to add..\n \nprivate int length = 1;\n \nif (this.length != 1){    dic[\"len\"] = this.length;}\n \nand\n \npublic int Length{    get    {        return this.length;    }    set    {        this.length = value;     }}\n \nor, am I missing an alternative?",
+    "LastUpdatedDate": "2013-05-16T04:59:18.443-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-06-18T21:08:47.373-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "QuickGraph.Graphviz.Dot.GraphvizEdge .. cannot set len attribute",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13507
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thank you! Do you plan to add the entire set of attributes, or only a few? Also, do let me know if you want me to help out? ",
+      "PostedDate": "2009-06-19T06:18:15.123-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "At some point I had all of them but I guess graphviz keeps on adding them. I will fill the gap.",
+      "PostedDate": "2009-06-19T09:30:02.567-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Added missing length. I'll add the missing properties later.",
+      "PostedDate": "2009-06-19T10:27:51.02-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If you could look the list of missing attributes + type + default value, I could easily add them to QuickGraph. I'll close this issue.\r\n",
+      "PostedDate": "2009-06-22T23:49:25.347-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-22T23:49:33.133-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Will do. I had a quick scan and you do have the basic properties (for about 90% of the use cases). I'll try out a few more .. e.g. the \"image\" attr for a vertex, the ability to source and embed an image. Will send over something as and when I use more of it.\r\n\r\nMany thanks for the quick response. :)\r\n\r\ncheers",
+      "PostedDate": "2009-06-24T06:23:00.26-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:45.41-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:18.443-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

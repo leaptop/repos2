@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using QuickGraph;
+using QuickGraph.Algorithms;
+
+namespace QuickGraphTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /// <summary>
+            /// Current revision graph
+            /// </summary>
+            AdjacencyGraph<Entity, Edge<Entity>> graph = new AdjacencyGraph<Entity, Edge<Entity>>();
+
+            Entity root = new Entity() { Value = "Root" };
+            Entity node1 = new Entity() { Value = "Node1" };
+            Entity node2 = new Entity() { Value = "Node2" };
+
+            graph.AddVertex(root);
+            graph.AddVertex(node1);
+            graph.AddVertex(node2);
+            graph.AddEdge(new Edge<Entity>(root, node1));
+            graph.AddEdge(new Edge<Entity>(root, node2));
+
+            var pairs=new List<SEquatableEdge<Entity>>(){};
+            pairs.Add(new SEquatableEdge<Entity>(node1,node2));
+
+            graph.OfflineLeastCommonAncestorTarjan(root,pairs);
+        }
+
+        public class Entity
+        {
+            public string Value { get; set; }
+        }
+    }
+}

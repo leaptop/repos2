@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "No repro. Should be fixed.",
+    "ClosedDate": "2009-06-22T23:48:36.667-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The attached sample causes HoffmanPavleyRankedShortestPathAlgorithm.Compute() to run indefinitely. It creates a fully connected graph with 3 vertices and requests 5 shortest paths to be computed. But there are only two unique paths between any two vertices.\n \nIt seems like the while loop in HoffmanPavleyRankedShortestPathAlgorithm.InternalCompute always creates at least one deviation path per iteration.",
+    "LastUpdatedDate": "2013-05-16T04:59:18.28-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-06-19T13:44:04.373-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Infinite loop in HoffmanPavleyRankedShortestPathAlgorithm",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13511
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2001,
+      "FileName": "Tester.cs",
+      "DownloadUrl": ".\\2001"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "There's no attached sample.",
+      "PostedDate": "2009-06-21T21:44:56.133-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've fixed a bug in HouffmanPavleyRankedShortestPathAlgorithm. Please try again your example.",
+      "PostedDate": "2009-06-22T23:48:24.457-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-22T23:48:36.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yes, it works now.\r\n\r\nHere's the sample code for posterity.",
+      "PostedDate": "2009-06-23T12:22:36.81-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-23T12:22:44.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Cool thanks.\r\n",
+      "PostedDate": "2009-06-23T21:10:19.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:45.207-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:18.28-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

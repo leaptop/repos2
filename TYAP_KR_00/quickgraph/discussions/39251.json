@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "130207",
+    "ThreadId": "39251",
+    "Html": "Hello,<br>\r\n<br>\r\nI am trying to binary serialize and deserialize an adjacency graph and I am getting this error when deserializing:<br>\r\n<br>\r\n<em>&quot;The constructor to deserialize an object of type 'QuickGraph.AdjacencyGraph`2+VertexEdgeDictionary[EjemploQuickGraph.Nodo,EjemploQuickGraph.Arco]' was not found.&quot;<br>\r\n<br>\r\n</em>\r\n<ul>\r\n    <li>All my classes are marked as Serializable.</li>\r\n    <li>I use the .NET 2.0 version of QuickGraph (unfortunately)</li>\r\n    <li>This is the piece of code I am using:</li>\r\n</ul>\r\n<blockquote><blockquote>System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();<br>\r\nSystem.IO.MemoryStream ms = new System.IO.MemoryStream();<br>\r\n&nbsp;formatter.Serialize(ms, grafo);<br>\r\n<br>\r\nms.Seek(0, System.IO.SeekOrigin.Begin);<br>\r\n<br>\r\nobject x = formatter.Deserialize(ms);<br>\r\n</blockquote>Where 'grafo' is the AdjacencyGraph.<br>\r\n</blockquote>Is it not implemented for .NET 2.0 version? Am I missing something on my code?<br>\r\n<br>\r\nThanks in advance \r\n",
+    "PostedDate": "2008-11-05T06:37:09.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130408",
+    "ThreadId": "39251",
+    "Html": "I think only the BidirectionalGraph has been made serializable. Please open a workitem for this.\r\n",
+    "PostedDate": "2008-11-05T20:46:46.677-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

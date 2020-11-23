@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "624753",
+    "ThreadId": "260629",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I am trying to use QuickGraph with Graphviz. I see that Graphviz supports a few formats such as imap that can be used to add a URL to the node. I've successfully produced a &quot;.dot&quot; file. How can I add a URL to a node from within QuickGraph, such that it will\r\n end up in the &quot;.dot&quot; file?</p>\r\n",
+    "PostedDate": "2011-06-08T07:22:54.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "625536",
+    "ThreadId": "260629",
+    "Html": "<p>Also fyi it seems that there is no documentation of the QuickGraph.Graphviz code. Am I missing something?</p>\n<p>edit:</p>\n<p>Here are my thoughts, correct if necessary.</p>\n<p>1. GraphvizAlgorithm.Generate() controls how each vertex is written to file.</p>\n<p>2. WriteVertices() is called from within the Generate() method.</p>\n<p>3. For each vertex in the graph, OnFormatVertex() is called.</p>\n<p>4. In OnFormatVertex() a new GraphvizVertex() formatter is created. (A separate formatter - one per method call - is created for each vertex)</p>\n<p>5. The FormatVertexEventHandler is called. (Again, happens once per vertex)</p>\n<p>6. The ToDot() method is called finally writing each vertex out to file.</p>\n<p>&nbsp;</p>\n<p>To summarize, in order to write each node with a URL, one approach is the following:</p>\n<p>1. Create a new class to be used as your \"TVertex\".</p>\n<p>2. This class will contain the URL.</p>\n<p>3. Create an event handler method for the FormatVertexEventHandler, in this method, use vertex.formatter.url to set the URL.</p>\n<p>4. profit.</p>\n<p>&nbsp;</p>\n<p>Second edit:</p>\n<p>My thoughts above were correct, at least the ones pertaining to the delegate and event subscription model that QuickGraph.Graphviz uses in its GraphvizAlgorithm class. I'm still surprised that there is seemingly no documentation of the API, but for anyone interested, you can use .NET Reflector to look at the code, all you need to do is open the QuickGraph.Graphviz .dll in Reflector. Also see these articles about C# method delegation:</p>\n<p>http://www.akadia.com/services/dotnet_delegates_and_events.html</p>\n<p>http://msdn.microsoft.com/en-us/library/ms173171%28v=vs.80%29.aspx</p>\n<p>And these links show you how to skip the \".dot\" file creation and just create/draw the graph in memory using C#</p>\n<p>http://implicitoperator.com/blog/2009/12/24/rendering-an-in-memory-graphviz-image-with-c.html</p>\n<p>http://implicitoperator.com/blog/2010/4/11/graphviz-c-sample.html</p>",
+    "PostedDate": "2011-06-09T10:59:12.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "716975",
+    "ThreadId": "260629",
+    "Html": "<p>I've tried this with svg but it seems that setting the url has no effect (the url is not saved to svg):</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> svg = graph.ToSvg(algorithm =&gt;\r\n            {\r\n                algorithm.FormatVertex +=\r\n                    (sender, e) =&gt;\r\n                    {\r\n                        e.VertexFormatter.Label = e.Vertex.Label;\r\n                        e.VertexFormatter.Url = <span style=\"color: #a31515;\">\"http://my-url\"</span>;\r\n                    };\r\n            });\r\n</pre>\r\n</div>\r\nDoes anybody have succeeded to add links to the svg output?</p>",
+    "PostedDate": "2011-12-24T16:48:27.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

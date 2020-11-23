@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "145666",
+    "ThreadId": "43805",
+    "Html": "Hi there,<br>\r\n<br>\r\nI completely new in QuickGraph, I just find it yesterday.<br>\r\n<br>\r\nI'm trying to draw a Graph in PNG format using Graphviz.<br>\r\nI have follow the tutorial <a href=\"http://www.codeplex.com/quickgraph/Wiki/View.aspx?title=Visualization Using Graphviz&referringTitle=User Manual\">http://www.codeplex.com/quickgraph/Wiki/View.aspx?title=Visualization%20Using%20Graphviz&amp;referringTitle=User%20Manual</a> but I'm gettting the DOT file and not the PNG file.<br>\r\n<br>\r\nI have google this question, but the only tutorial that I found was related to a older version.<br>\r\nCan you give me a hand?<br>\r\n<br>\r\nmuek<br>\r\n",
+    "PostedDate": "2009-01-09T03:35:19.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145734",
+    "ThreadId": "43805",
+    "Html": "Once you have a .dot file, you can render it using the graphviz command line. You need to download graphviz tool from <a href=\"http://www.graphviz.org\">http://www.graphviz.org</a> and follow their instructions.\r\n",
+    "PostedDate": "2009-01-09T09:20:31.043-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

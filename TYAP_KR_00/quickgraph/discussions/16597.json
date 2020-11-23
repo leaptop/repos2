@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "53777",
+    "ThreadId": "16597",
+    "Html": "\r\n I am able to show a Graph in the glee graph viewer but I can't iterate the topological sort.  See  F A I L S    H E R E below.   I also tried with an AdjacencyGraph but got the same error  \"Error in the application\".  Can you tell me whatm I am doing wrong?<br /><br />Thanks<br />Rich<br /><br />            BidirectionalGraph&lt;DataTable, DataRelationEdge&gt; g; <br />            g = new BidirectionalGraph&lt;DataTable,DataRelationEdge&gt;();<br /><br />            DataSetGraphPopulatorAlgorithm dsGPA =<br />               new DataSetGraphPopulatorAlgorithm(g, dsSchema);<br /><br />            dsGPA.Compute();<br /><br />            GleeGraphPopulator&lt;DataTable, DataRelationEdge&gt; populator =<br />                GleeGraphUtility.Create&lt;DataTable, DataRelationEdge&gt;(dsGPA.VisitedGraph);<br />            populator.Compute();<br /><br />            Graph graph = populator.GleeGraph;<br />            gViewer1.Graph = graph;<br /><br />F A I L S     H E R E<br />            foreach (DataTable t in QuickGraph.Algorithms.AlgoUtility.TopologicalSort(dsGPA.VisitedGraph))<br />            {<br />                Console.WriteLine(t.TableName);<br />            }          <br /><br />",
+    "PostedDate": "2007-10-17T17:44:47.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "53933",
+    "ThreadId": "16597",
+    "Html": "\r\nHi,<br /><br />I found out what caused the failure.  It failed on a DataRelationshipEdge where a table joined to itself.  (Employees.ID is joined to Employees.ReportsTo).   When I bypassed that relationship it ran to completion.  This is a valid conditions for a Table Relationship...do I need to change something?  <br /><br />Also,  I'm not sure the TopologicalSort helps me here?  What I want to find out is.....say A user selects fields from two tables to query but those tables do not have a relationship.  What is the best way to discover the additional tables needed for the join?<br /><br />Thanks<br />Rich<br />",
+    "PostedDate": "2007-10-18T11:27:14.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "54220",
+    "ThreadId": "16597",
+    "Html": "\r\nOoops topological sort works on DAG only. In fact, it won't help you.<br /><br />You're looking for undirecteddepthfirstsearch algorithm. I think there's one in the library. It's been a while, I'll have to look around<br />",
+    "PostedDate": "2007-10-20T18:40:02.887-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

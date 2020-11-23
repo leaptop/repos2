@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2008-08-31T14:13:28.177-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a Dijkstra graph which I want to stop running when a particular node is reached (under certain circumstances). To do this, I added a FinishVertex listener to the algorithm, in which I want to abort the graph computation.\n \nMy first attempt was to call the Abort method on the Dijkstra algorithm. I found that this doesn't do anything because the Dijkstra algorithm uses a BredthFirstSearchAlgorithm internally, so the call wasn't going to the right code. I guess the intention is for this to be invisible, so I think the request should be passed through to the internal object.\n \nMy second attempt was to use the sender object passed in to the event handler:\n \nAlgorithmBase<IVertexListGraph<int, MarkedEdge<int, MoveGraphRunnerData.MoveRouteLinkRow>>> searcher =\n    sender as AlgorithmBase<IVertexListGraph<int, MarkedEdge<int, MoveGraphRunnerData.MoveRouteLinkRow>>>;\nsender.Abort();\n \nThis doesn't work because when the Dijkstra runs the BredthFirstSearchAlgorithm, it doesn't set the state of the algorithm to Running. I worked around this with a bit of reflection:\n \ntypeof(AlgorithmBase<IVertexListGraph<int, MarkedEdge<int, MoveGraphRunnerData.MoveRouteLinkRow>>>)\n            .GetField(\"state\", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(searcher, ComputationState.Running);\n \nAnd now it works.",
+    "LastUpdatedDate": "2013-05-16T04:59:30.113-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-02-01T13:54:48.027-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Abort doesn't work on Dijkstra algorithm",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9273
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Note that if you stop on finish vertex, there's no guarantee you'll have a shortest path.",
+      "PostedDate": "2008-08-25T10:17:32.647-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-08-25T10:17:46.24-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Resolved with changeset 22459.",
+      "PostedDate": "2008-08-31T14:13:28.177-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:58.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:30.113-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

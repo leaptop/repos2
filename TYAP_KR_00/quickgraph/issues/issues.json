@@ -1,0 +1,642 @@
+[
+  {
+    "Id": 276,
+    "Title": "Stackbased Deep first traversal algorithm?"
+  },
+  {
+    "Id": 304,
+    "Title": "Critical Path"
+  },
+  {
+    "Id": 477,
+    "Title": "RemoveVertex Events missing"
+  },
+  {
+    "Id": 5365,
+    "Title": "AlgoUtility.IsolatedVertices returns vertices with neighbours"
+  },
+  {
+    "Id": 6232,
+    "Title": "KeyNotFoundException"
+  },
+  {
+    "Id": 9273,
+    "Title": "Abort doesn't work on Dijkstra algorithm"
+  },
+  {
+    "Id": 9384,
+    "Title": "Wrong path from Dijkstra algorithm"
+  },
+  {
+    "Id": 11128,
+    "Title": "TopologicalSort KeyNotFoundException"
+  },
+  {
+    "Id": 11224,
+    "Title": "Missing pages in the user manual wiki"
+  },
+  {
+    "Id": 11367,
+    "Title": "Make AddVerticesAndEdge an extension method"
+  },
+  {
+    "Id": 11442,
+    "Title": "passing test"
+  },
+  {
+    "Id": 11550,
+    "Title": "Saving Graphs"
+  },
+  {
+    "Id": 11565,
+    "Title": "RootedAlgorithmBase.OnRooVertexChanged   has a typo.."
+  },
+  {
+    "Id": 11566,
+    "Title": "BidirectionalGraph.clone exists, yet no other GraphTypes have this."
+  },
+  {
+    "Id": 11567,
+    "Title": "UndirectedGraph.ClearAdjacentEdges has a bug"
+  },
+  {
+    "Id": 11568,
+    "Title": "Deserializing AdjacencyGraph"
+  },
+  {
+    "Id": 11578,
+    "Title": "Bug in UndirectedGraph.AllowParallelEdges implementation with TaggedEdge"
+  },
+  {
+    "Id": 11579,
+    "Title": "Optimization for UndirectedGraph.ContainsEdge?"
+  },
+  {
+    "Id": 11582,
+    "Title": "DepthFirstSearchAlgorithm.MaxDepth"
+  },
+  {
+    "Id": 11583,
+    "Title": "DepthFirstSearchAlgorithm.Visit"
+  },
+  {
+    "Id": 11586,
+    "Title": "Build 24003 has some problems..."
+  },
+  {
+    "Id": 11603,
+    "Title": "More folders.."
+  },
+  {
+    "Id": 11606,
+    "Title": "Undirected.ShortestPathsDijkstra does not work.."
+  },
+  {
+    "Id": 11607,
+    "Title": "Undirected.ConnectedComponents"
+  },
+  {
+    "Id": 11612,
+    "Title": "BidirectionalGraph.ContainsEdge(TVertex source, TVertex target) has a bug.."
+  },
+  {
+    "Id": 11613,
+    "Title": "Bidictional.Dijkstra is broken.."
+  },
+  {
+    "Id": 11662,
+    "Title": "Possible bug in Dijkstra algorithm?"
+  },
+  {
+    "Id": 11877,
+    "Title": "BidrectionalGraph.ContainsEdge Optimization - Re: Issue 11612"
+  },
+  {
+    "Id": 11890,
+    "Title": "ShortestPathsDijkstra from AlgorithmExtensions.cs does infinite loop"
+  },
+  {
+    "Id": 11893,
+    "Title": "Support for Msagl 2.0?"
+  },
+  {
+    "Id": 11894,
+    "Title": "Problems with ShortestPathsBellmanFord"
+  },
+  {
+    "Id": 11928,
+    "Title": "Search Algorithms with Heuristics"
+  },
+  {
+    "Id": 12237,
+    "Title": "K-th Shortest path"
+  },
+  {
+    "Id": 12240,
+    "Title": "Question about Prim spanning tree algorithm"
+  },
+  {
+    "Id": 12270,
+    "Title": "Make input parameter of StronglyConnectedComponents as Out"
+  },
+  {
+    "Id": 12273,
+    "Title": "Question about Prim spanning tree algorithm"
+  },
+  {
+    "Id": 12288,
+    "Title": "K-Shortest paths - Hoffman Pavley"
+  },
+  {
+    "Id": 12359,
+    "Title": "dijkstra"
+  },
+  {
+    "Id": 12403,
+    "Title": "GraphML Deserialization for Missing <node>/<edge> Data Elements"
+  },
+  {
+    "Id": 12417,
+    "Title": "Support GraphML <default> Directive for User-defined Keys"
+  },
+  {
+    "Id": 12425,
+    "Title": "Serialization of GraphML <data> element as child <graph> node"
+  },
+  {
+    "Id": 12469,
+    "Title": "BidirectionalGraph KeyNotFoundException errror"
+  },
+  {
+    "Id": 12470,
+    "Title": "EdgeEventArgs not accepting its' event method"
+  },
+  {
+    "Id": 12471,
+    "Title": "Undirected Graph shortest path problem"
+  },
+  {
+    "Id": 12472,
+    "Title": "EdgeEventArgs not accepting a method argument"
+  },
+  {
+    "Id": 12474,
+    "Title": "BidirectionalGraph addEdge() error"
+  },
+  {
+    "Id": 12503,
+    "Title": "Compiling 2.0 on Mono"
+  },
+  {
+    "Id": 12603,
+    "Title": "UndirectedGraph<string, Edge<string>>.RemoveVertex bug?"
+  },
+  {
+    "Id": 12604,
+    "Title": "Undirected Graphs Visualization"
+  },
+  {
+    "Id": 12726,
+    "Title": "Wrong documentation"
+  },
+  {
+    "Id": 12727,
+    "Title": "ICloneable for PetriNet"
+  },
+  {
+    "Id": 12754,
+    "Title": "AdjacencyGraph.VertexEdgeDictionary missing ctor(SerializationInfo, StreamingContext)"
+  },
+  {
+    "Id": 12786,
+    "Title": "Creation of random undirected graphs"
+  },
+  {
+    "Id": 12797,
+    "Title": "WeaklyConnectedComponentsAlgorithm"
+  },
+  {
+    "Id": 12798,
+    "Title": "RandomGraphFactory performance"
+  },
+  {
+    "Id": 12819,
+    "Title": "IEquatable for Edges"
+  },
+  {
+    "Id": 12900,
+    "Title": "Connected Components Count"
+  },
+  {
+    "Id": 12901,
+    "Title": "Infinite cycle"
+  },
+  {
+    "Id": 12902,
+    "Title": "Maximum Flow"
+  },
+  {
+    "Id": 12905,
+    "Title": "Graphviz: Specifying Edge ports."
+  },
+  {
+    "Id": 12907,
+    "Title": "SEdge is poorly named."
+  },
+  {
+    "Id": 12942,
+    "Title": "Not finished algorithms"
+  },
+  {
+    "Id": 12949,
+    "Title": "Too much edges"
+  },
+  {
+    "Id": 12957,
+    "Title": "Support for Msagl version 2.1?"
+  },
+  {
+    "Id": 12990,
+    "Title": "EquatableEdge is not serializable"
+  },
+  {
+    "Id": 13029,
+    "Title": "Typo - EdgeEqualityComporer in UndirectedGraph.cs and.."
+  },
+  {
+    "Id": 13034,
+    "Title": "Typo - EdgeEqualityComporer in UndirectedGraph.cs and.."
+  },
+  {
+    "Id": 13035,
+    "Title": "Unnecessary temp variables in UndirectedGraph.ContainsEdgeBetweenVertices"
+  },
+  {
+    "Id": 13036,
+    "Title": "Poor Name - QuickGraph.Algorithms.Condensation, CondensatedEdge"
+  },
+  {
+    "Id": 13100,
+    "Title": "FilteredBidirectionalGraph bug?"
+  },
+  {
+    "Id": 13111,
+    "Title": "HoffmanPavleyRankedShortestPathAlgorithm"
+  },
+  {
+    "Id": 13160,
+    "Title": "RandomTreeWithRoot() stalls at ComputationState.Running with broken graph"
+  },
+  {
+    "Id": 13371,
+    "Title": "Replacing VertexEdgeDictionary implementation"
+  },
+  {
+    "Id": 13428,
+    "Title": "XML Serialization"
+  },
+  {
+    "Id": 13454,
+    "Title": "Unhandled Null Pointer Exception in Line 351 of FibonacciHeap.cs"
+  },
+  {
+    "Id": 13493,
+    "Title": "Cannot name graph when outputting with GraphvizAlgorithm."
+  },
+  {
+    "Id": 13507,
+    "Title": "QuickGraph.Graphviz.Dot.GraphvizEdge .. cannot set len attribute"
+  },
+  {
+    "Id": 13511,
+    "Title": "Infinite loop in HoffmanPavleyRankedShortestPathAlgorithm"
+  },
+  {
+    "Id": 13524,
+    "Title": "QuickGraph.Petri.PetriNetSimulator issues"
+  },
+  {
+    "Id": 13526,
+    "Title": "HoffmanPavleyRankedShortestPathAlgorithm - ShortestPathCount = big value, more paths only 1 returned"
+  },
+  {
+    "Id": 13578,
+    "Title": "strong name for QuickGarph.Silverlight"
+  },
+  {
+    "Id": 13660,
+    "Title": "Binary release missing XML documentation"
+  },
+  {
+    "Id": 13661,
+    "Title": "Debug/Release build of QuickGraph.Silverlight fails"
+  },
+  {
+    "Id": 13671,
+    "Title": "TryGetEdge missing from IImplicitUndirectedGraph"
+  },
+  {
+    "Id": 13675,
+    "Title": "Spanning tree algorithm produces wrong results when used on a simple delegate graph."
+  },
+  {
+    "Id": 13681,
+    "Title": "UndirectedDepthFirstSearchAlgorithm has never-used ForwardOrCrossEdge event"
+  },
+  {
+    "Id": 13688,
+    "Title": "Consider marking Vertices and Edges properties virtual?"
+  },
+  {
+    "Id": 13708,
+    "Title": "Node position (coordinates) for visualizing using graphviz"
+  },
+  {
+    "Id": 13742,
+    "Title": "FileDotEngine Run method should not automatically append \".dot\" file extension."
+  },
+  {
+    "Id": 13759,
+    "Title": "Undirected self-edges iterated twice"
+  },
+  {
+    "Id": 13767,
+    "Title": "Edge & Vertex events have a non-standard type, F# compiler complains"
+  },
+  {
+    "Id": 13939,
+    "Title": "compute DijkstraShortestPathAlgorith with a target vertex"
+  },
+  {
+    "Id": 14112,
+    "Title": "Schema error in GraphMLExtensions.DeserializeAndValidateFromGraphML"
+  },
+  {
+    "Id": 14539,
+    "Title": "yEd files deserialization"
+  },
+  {
+    "Id": 15110,
+    "Title": "AdjacencyGraph & AlgorithmExtensions.Roots"
+  },
+  {
+    "Id": 15504,
+    "Title": "Having problems with Serialize and Deserialize using GraphML"
+  },
+  {
+    "Id": 16388,
+    "Title": "OutOfMemoryException when computing connected components for huge graph"
+  },
+  {
+    "Id": 16473,
+    "Title": "bug in HoffmanPavleyRankedShortestPathAlgorithm"
+  },
+  {
+    "Id": 18284,
+    "Title": "OnBefore* events"
+  },
+  {
+    "Id": 18292,
+    "Title": "Size, PageSize formatting syntax error for GraphViz DOT output"
+  },
+  {
+    "Id": 18372,
+    "Title": "Could you please unseal STaggedEquatableEdge?"
+  },
+  {
+    "Id": 18424,
+    "Title": "QuickGraph application is not running"
+  },
+  {
+    "Id": 18429,
+    "Title": "AlgorithmExtensions.GetIndexer throws MethodAccessException in Silverlight"
+  },
+  {
+    "Id": 18812,
+    "Title": "MaximumFlowEdmondsKarp fails to produce correct result"
+  },
+  {
+    "Id": 18847,
+    "Title": "KeyNotFoundException with OfflineLeastCommonAncestorTarjan Algorithm"
+  },
+  {
+    "Id": 18986,
+    "Title": "GraphML Serialization in Silverlight Runtime Error"
+  },
+  {
+    "Id": 19173,
+    "Title": "Serialization in Silverlight 4 DynamicMethod -> MethodAccessException"
+  },
+  {
+    "Id": 19242,
+    "Title": "NullReference exception in DelegateIncidenceGraph<TVertex, TEdge>.TryGetEdges"
+  },
+  {
+    "Id": 19856,
+    "Title": "False Negative Unit-Test Failure with upgrade to .NET 4.0"
+  },
+  {
+    "Id": 19860,
+    "Title": "HoffmanPavleyRankedShortestPathAll Test Failure"
+  },
+  {
+    "Id": 20359,
+    "Title": "Incorrect traversal of the graph (BreadthFirstSearchAlgorithm)"
+  },
+  {
+    "Id": 20360,
+    "Title": "Incorrect traversal of the graph (BreadthFirstSearchAlgorithm)"
+  },
+  {
+    "Id": 20432,
+    "Title": "Can't install package"
+  },
+  {
+    "Id": 20813,
+    "Title": "CompressedSparseRowGraph bugs"
+  },
+  {
+    "Id": 20980,
+    "Title": "RankedShortestPathAlgorithmBase writes to Console"
+  },
+  {
+    "Id": 21278,
+    "Title": "static graph on ASP.NET module/handler"
+  },
+  {
+    "Id": 21549,
+    "Title": "OnEdgeRemoved and OnVertexRemoved not called with BiDirectionalGraph.Clear() method"
+  },
+  {
+    "Id": 21550,
+    "Title": "OnEdgeRemoved and OnVertexRemoved not called with BiDirectionalGraph.Clear() method"
+  },
+  {
+    "Id": 21586,
+    "Title": "Bug Report: Bellman-Ford shortest path algorithm implementation does not accept negative weights."
+  },
+  {
+    "Id": 21804,
+    "Title": "ContainsEdge() with UndirectedGraph not recognizing reverse direction"
+  },
+  {
+    "Id": 21805,
+    "Title": "ContainsEdge() with UndirectedGraph not recognizing reverse direction"
+  },
+  {
+    "Id": 21826,
+    "Title": "FileDotEngine problem"
+  },
+  {
+    "Id": 21834,
+    "Title": "NuGet package 3.6.61119.7 missing WP7,WP7.1?"
+  },
+  {
+    "Id": 22004,
+    "Title": "GraphvizColor Error"
+  },
+  {
+    "Id": 22051,
+    "Title": "GraphvizEdge.ToDot() wrong graphviz properties"
+  },
+  {
+    "Id": 22118,
+    "Title": "Don't use Comparer<TVertex>.Default in RootedAlgorithmBase.SetRootVertex()"
+  },
+  {
+    "Id": 22273,
+    "Title": "Can't build source"
+  },
+  {
+    "Id": 22356,
+    "Title": "SourceFirstTopologicalSortAlgorithm throws NonAcyclicGraphException"
+  },
+  {
+    "Id": 22398,
+    "Title": "Strong name for QuickGraph.Data"
+  },
+  {
+    "Id": 22399,
+    "Title": "Strong name for QuickGraph.Data (duplicate)"
+  },
+  {
+    "Id": 22436,
+    "Title": "Nuget package missing QuickGraph.Glee"
+  },
+  {
+    "Id": 22698,
+    "Title": "Invalid Dot-Output for Record-based nodes"
+  },
+  {
+    "Id": 22699,
+    "Title": "Ports not added edges for Record based nodes"
+  },
+  {
+    "Id": 22746,
+    "Title": "EdgeListGraph - GetVertexCounts() => KeyNotFoundException"
+  },
+  {
+    "Id": 22749,
+    "Title": "graphviz  - DOT output/format"
+  },
+  {
+    "Id": 23203,
+    "Title": "Bug in serialization with single-line xml"
+  },
+  {
+    "Id": 23392,
+    "Title": "CondensationAlgorithm throws KeyNotFoundException"
+  },
+  {
+    "Id": 23415,
+    "Title": "KeyNotFoundException on adding edge in BidirectionalGraph on huge data"
+  },
+  {
+    "Id": 23557,
+    "Title": "GraphvizColor properties"
+  },
+  {
+    "Id": 24425,
+    "Title": "ArrayUndirectedGraph.IsEdgesEmpty implemented incorrectly"
+  },
+  {
+    "Id": 24829,
+    "Title": "Bug in QuickGraph.UndirectedGraph`2.AddEdge(TEdge edge)"
+  },
+  {
+    "Id": 24957,
+    "Title": "Bug when mouse over a changing graph"
+  },
+  {
+    "Id": 25159,
+    "Title": "Bidirectional Graph RemoveEdge: Inconsistent failure conditions for source and destination vertex"
+  },
+  {
+    "Id": 25260,
+    "Title": "Inconsistent actions name"
+  },
+  {
+    "Id": 25565,
+    "Title": "Allow custom names for nodes when we generate Graphviz's dot file"
+  },
+  {
+    "Id": 25569,
+    "Title": "All properties (A, R, G, B) in GraphvizColor class gets color from a field"
+  },
+  {
+    "Id": 25587,
+    "Title": "QuickGraph with Mono"
+  },
+  {
+    "Id": 25621,
+    "Title": "I want to generate the vector graph"
+  },
+  {
+    "Id": 25748,
+    "Title": "Is MaximumFlowEdmondsKarp Broken?"
+  },
+  {
+    "Id": 25751,
+    "Title": "Finding Disconnected Subgraphs or Components"
+  },
+  {
+    "Id": 25793,
+    "Title": "WeaklyConnectedComponentsAlgorithm on calling Compute() behaves differently on different machines"
+  },
+  {
+    "Id": 25880,
+    "Title": "GraphvizAlgorithm.WriteEdges(..) does not differ between directed and undirected edges"
+  },
+  {
+    "Id": 63583,
+    "Title": "QuickGraph repository"
+  },
+  {
+    "Id": 63864,
+    "Title": "types in nuget package not Serializable"
+  },
+  {
+    "Id": 65007,
+    "Title": "Please update the documentation about what NuGet Package should be used"
+  },
+  {
+    "Id": 65208,
+    "Title": "Implementation of OutEdges(TVertex v) for BidirectionalGraph is (I think) wrong"
+  },
+  {
+    "Id": 65209,
+    "Title": "Bug  in AlgorithmBase ?!"
+  },
+  {
+    "Id": 65793,
+    "Title": "GraphvizColor Struct is not rendering ARGB values correctly"
+  },
+  {
+    "Id": 65877,
+    "Title": "Edge equality backwards?"
+  },
+  {
+    "Id": 65901,
+    "Title": "Please add .NET Standard support"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "33032",
+    "ThreadId": "10196",
+    "Html": "\r\nIs there a way to find a critical path (longest path) using this library?<br />Also, (this may be a dumb question) once you have a start node and an end node, how do you find the exact path?<br /><br />Thank you very much for making this library available.<br />It is extremely useful and I appreciate the effort put into it.<br /><br />-Nick<br />",
+    "PostedDate": "2007-05-12T23:03:36.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33055",
+    "ThreadId": "10196",
+    "Html": "\r\n&gt;&gt; Is there a way to find a critical path (longest path) using this library?<br />what does graph literature say on this subject?<br /><br />&gt;&gt; Also, (this may be a dumb question) once you have a start node and an end node, how do you find the exact path?<br />Could you clarify what you mean by 'exact' path (otherwize your question has a lot of answers).<br />",
+    "PostedDate": "2007-05-13T08:44:19.303-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33056",
+    "ThreadId": "10196",
+    "Html": "\r\nIf it's a DAG, it seems fairly easy to compute on top of the DFS.<br />",
+    "PostedDate": "2007-05-13T08:49:23.67-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33062",
+    "ThreadId": "10196",
+    "Html": "\r\nIt is a DAG. I build a database schema representation as a graph. Vertexes are tables, edges are foreign key constraints.<br /><br />I'm really illiterate on graph theory, hence why I'm asking if there is a way to find the critical path using the existing framework or if I have to modify one of the algorithms (DijkstraShortestPathAlgorithm perhaps) to do this. A DAG exactly represents my problem hence why I chose it.<br /><br />As for the exact path, won't the DFS algorithm give me the shortest path to a node? Assuming, that I have multiple paths to a node, I need the critical path, not the shortest path.<br /><br />Thank you.<br /><br />-Nick<br />",
+    "PostedDate": "2007-05-13T11:13:12.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33067",
+    "ThreadId": "10196",
+    "Html": "\r\nYou can get the critical path by modifying the relaxation function of a DAG shortest path algorithm.<br />",
+    "PostedDate": "2007-05-13T12:31:14.527-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33068",
+    "ThreadId": "10196",
+    "Html": "\r\nThis discussion has been copied to a work item. Click here to <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=304\">go to the work item and continue the discussion</a>.<br />",
+    "PostedDate": "2007-05-13T12:31:54.78-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,13 @@
+<div class="wikidoc"><h3>Tarjan Offline Least Common Ancestor</h3>
+The <a href="https://quickgraph.codeplex.com/wikipage?title=http%3a%2f%2fen.wikipedia.org%2fwiki%2fTarjan%2527s_off-line_least_common_ancestors_algorithm&referringTitle=Tarjan%20Offline%20Least%20Common%20Ancestor">Tarjan off-line least common ancestor</a> is an algorithm for computing lowest common ancestors for pairs of nodes in a tree (based on the union-find data structure). <br /><br />The <span class="codeInline">AlgorithmExtensions.OfflineLeastCommonAncestorTarjan</span> returns a delegate that can be queried for each pair. The delegate returns true if there is a common ancestor and assigns the out parameter.<br /><pre>
+var g = new AdjacencyGraph&lt;int, SEdge&lt;int&gt;&gt;();
+int root = ...; // root vertex
+VertexPair&lt;int&gt; pairs = ...; // vertex pairs
+var lca = g.OfflineLeastCommonAncestorTarjan(root, pairs);
+
+// fetching the ancestor
+TVertex ancestor;
+foreach(var pair in pairs)
+    if (lca(pair, out ancestor))
+        Console.WriteLine(&quot;the ancestor of {0} is {1}&quot;, ancestor, pair); 
+</pre><br /></div><div class="ClearBoth"></div>

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all!\n \nThis may be a problem:\n \n \n \n \n            var g = new UndirectedGraph<int, UndirectedEdge<int>>();\n \n            g.AddVerticesAndEdge(new UndirectedEdge<int>(1, 2));\n \n            var c = g.ContainsEdge(2, 1); // false\n \n \nThe last line returns false, however since this is an undirected graph, IMHO should really return true. Am I wrong?",
+    "LastUpdatedDate": "2013-02-21T17:44:37.193-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-11-19T20:30:44.45-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ContainsEdge() with UndirectedGraph not recognizing reverse direction",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21804
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for opening an issue. Is this a valid bug?",
+      "PostedDate": "2011-11-20T02:45:08.153-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:37.193-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

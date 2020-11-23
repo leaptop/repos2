@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed",
+    "ClosedDate": "2008-11-08T13:20:39.533-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "specifically in UndirectedGraph.ClearAdjacentEdges\n \n                if (edge.Source.Equals(v))\n                    this.adjacentEdges[edge.Target].Remove(edge);\n                else\n                    this.adjacentEdges[edge.Source].Remove(edge);\n \nThe problem here is that my somewhat dirty data \n(Tiger RT1 records from the US Census road networks, all 18.3 gigs of them)\nsometimes has identical source and target points.  \nSo only one gets removed, the other lingers on in the graph.\nIf the points are coincident, both should be removed.\nUnderneath the RT1 points there is an RT2 chain, which might describe a loop\nbeginning and ending at the same point..  So it could actually be valid data..\n \nThanks in advance.",
+    "LastUpdatedDate": "2013-05-16T04:59:28.557-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-11-05T21:32:15.293-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "UndirectedGraph.ClearAdjacentEdges has a bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11567
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

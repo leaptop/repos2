@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Diagnostics;
+using QuickGraph;
+using QuickGraph.Algorithms;
+using QuickGraph.Algorithms.Search;
+using QuickGraph.Algorithms.RandomWalks;
+using QuickGraph.Collections;
+
+public class Program
+{
+    public Point<int> pointGraph;
+    public Edge<Point<int>> edge;
+    public BidirectionalGraph<Point<int>, Edge<Point<int>>> graph = null;
+
+	public Program()
+	{
+	}
+	
+	public void GenerateGraph()
+    {
+        // create a new graph			
+        this.graph = new BidirectionalGraph<Point<int>, Edge<Point<int>>>(false);
+
+        // adding vertices		    
+        for (int i = 0; i < 10; ++i)
+        {
+            for (int j = 0; j < 10; ++j)
+            {
+                pointGraph = new Point<int>(i, j);
+                this.graph.AddVertex(pointGraph);
+            }
+        }
+        
+        // adding Width edges			    
+        for (int i = 0; i < 10; ++i)
+        {
+            for (int j = 0; j < 10 - 1; ++j)
+            {
+                this.edge = new Edge<Point<int>>(new Point<int>(i, j), new Point<int>(i, j + 1));
+                this.graph.AddEdge(edge);
+            } 
+        }
+
+        // adding Length edges			    
+        for (int j = 0; j < 10; ++j)
+        {
+            for (int i = 0; i < 10 - 1; ++i)
+            {
+                this.edge = new Edge<Point<int>>(new Point<int>(i, j), new Point<int>(i + 1, j));
+                this.graph.AddEdge(edge);
+            } 
+        }
+        
+        // create cross edges 
+        foreach (Edge<Point<int>> e in this.graph.Edges) {  
+            this.edge = new Edge<Point<int>>(e.Target, e.Source);
+            this.graph.AddEdge(edge);
+         }
+         
+         // breaking graph apart
+         for (int i = 0; i < 10; ++i)
+        {
+            for (int j = 0; j < 10; ++j)
+            {
+                if (i == 5)
+                    graph.RemoveVertex(new Point<int>(i, j));
+             }
+         }
+     }
+	
+	[STAThread]
+    public static void Main()
+    {
+        try {
+            Program pgm = new Program();
+            pgm.GenerateGraph();
+            
+            // weighted out-edges
+            Dictionary<Edge<Point<int>>, double> weights = new Dictionary<Edge<Point<int>>, double>();
+            foreach (Edge<Point<int>> e in pgm.graph.Edges) {
+                weights[e] = 4;
+            }
+            
+            CyclePoppingRandomTreeAlgorithm<Point<int>, Edge<Point<int>>> pop =
+                new CyclePoppingRandomTreeAlgorithm<Point<int>, Edge<Point<int>>>
+                (pgm.graph, new WeightedMarkovEdgeChain<Point<int>, Edge<Point<int>>>(weights));
+                          
+            try { // create a Random Tree Maze with exit root. Creates new edges for you.
+                // it will stall here if graph is constantly randomized and not finding exit (graph is split)
+                pop.RandomTreeWithRoot(new Point<int>(9, 0)); 
+                Console.WriteLine("Graph Created and Root found");
+                Console.ReadLine();          
+            }
+            catch (Exception ex) {
+                    Console.WriteLine("{0} Module couldn't be searched... SKIPPING", ex.ToString());  
+            }
+        }
+        catch (Exception ex) {
+            Debug.Assert(false, ex.ToString(), Environment.StackTrace.ToString());
+        }
+    }
+
+    /// <summary>
+    /// Point struct 
+    /// </summary>
+    public struct Point<T> : IEquatable<Point<T>> 
+    {
+        private T width;
+        private T length;
+
+        public Point(T width, T length)
+        { 
+            this.width = width; 
+            this.length = length;      
+        }
+
+        public T Width { get { return this.width; } set { this.width = value; } }
+
+        public T Length { get { return this.length; } set {this.length = value;} }
+        
+        public bool Equals(Point<T> other)
+        {
+            bool result = false;
+
+            if (this.length.Equals(other.Length) && this.width.Equals(other.Width))
+            {
+                result = true;
+            }
+            return result;
+        }
+               
+        public override string ToString()
+        {
+            return(String.Format("{0} : {1}", Width, Length));
+        }
+    }
+}

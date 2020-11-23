@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "684703",
+    "ThreadId": "276016",
+    "Html": "\r\n<pre><span>I have just tried out this library and have been very happy but the graph types unfortunately cannot be used on vertex types that rely on external comparisons (do not overriding IsEqual and Get Hashcode).&nbsp;</span></pre>\r\n<pre>This is rather bothersome since I would like to use the graphing classes on some classes in a large project that by default use reference comparison, but which I would like the edge dictionaries to use a custom type of IEqualityComparer.</pre>\r\n<pre>Currently I either have to create a wrapper class and overload IsEqual/GetHashCode there, or create both my own version of the graph needed and an alternative VertexEdgeDictionary.</pre>\r\n<pre>It would be far more convenient for me to create a class inheriting from the graph needed and instantiate an inherited VertexEdgeDictionary&nbsp;with a supplied IEqualityComparer.</pre>\r\n<pre>Is there any particular reason why these classes are unfriendly to inheritors?</pre>\r\n",
+    "PostedDate": "2011-10-15T12:53:36.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700557",
+    "ThreadId": "276016",
+    "Html": "<p>Make sense.</p>",
+    "PostedDate": "2011-11-19T04:05:56.79-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700558",
+    "ThreadId": "276016",
+    "Html": "<p>Fixed in latest sources.</p>",
+    "PostedDate": "2011-11-19T04:06:53.613-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

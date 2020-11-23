@@ -1,0 +1,25 @@
+<div class="wikidoc"><h3>Developer Manual</h3>
+<h4>Branches</h4>
+<ul><li>Requires Visual Studio 2010</li>
+<li>2.0: deprecated.</li>
+<li>3.0:
+<ul><li>.NET 2.0:
+<ul><li>Use the <span class="codeInline">Release20</span> configuration.</li></ul></li>
+<li>.NET 3.5:
+<ul><li>Use the <span class="codeInline">Debug</span>, <span class="codeInline">Release</span> configurations.</li></ul></li>
+<li>.NET 3.5 + Code Contracts:
+<ul><li>Use the <span class="codeInline">DebugContracts</span> configuration.</li></ul></li></ul></li></ul>
+<br />As you may notice, the same codebase is used for .net 2.0 and .net 3.5. This means that anything that belongs to <span class="codeInline">System.Core</span> must be duplicated in QuickGraph conditionally. In that sense,
+<ul><li>do not use Linq. If you do, add the required method in the <span class="codeInline">Enumerable</span> type.</li>
+<li>put the <span class="codeInline">this</span> of extenion methods in an <span class="codeInline">#ifdef</span> region.</li></ul>
+<pre>
+#if !NET20
+    this
+#endif
+</pre><br />
+<h4>External tools</h4>
+<ul><li>Code Contracts <a href="http://research.microsoft.com/contracts">http://research.microsoft.com/contracts</a> (optional)</li>
+<li>Pex <a href="http://research.microsoft.com/Pex/downloads.aspx">http://research.microsoft.com/Pex/downloads.aspx</a> (required)</li></ul>
+
+<h4>Getting the source code</h4>
+<ul><li>Using the svn bridge is the recommended method to sync the sources.</li></ul></div><div class="ClearBoth"></div>

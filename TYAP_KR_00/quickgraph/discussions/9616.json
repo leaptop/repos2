@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "31227",
+    "ThreadId": "9616",
+    "Html": "\r\nWhere it is possible to look examples of usage QuickGraph without GLEE<br />",
+    "PostedDate": "2007-04-25T10:43:20.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31270",
+    "ThreadId": "9616",
+    "Html": "\r\nWhat kind of examples are you looking for? If you are trying to render graphs, QuickGraph only supports GLEE now.<br />",
+    "PostedDate": "2007-04-25T15:07:24.503-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31451",
+    "ThreadId": "9616",
+    "Html": "<div class=\"quote\" style=\"border: dotted .1em #aaa; border-left: none; border-right: none; font-style: italic; margin: 1em 0em 2.5em 3em;padding: .2em;\"><br />pelikhan wrote:<br />What kind of examples are you looking for? If you are trying to render graphs, QuickGraph only supports GLEE now.<br /><br /></div><br />Now rendering is not necessary for me, I am interested more with obtaining coordinates of the graph, for example such as on this link.<br /><a href=\"http://www.graphviz.org/Gallery/directed/datastruct.html\" class=\"externalLink\">http://www.graphviz.org/Gallery/directed/datastruct.html<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br /><br />Today we use NGRAPHVIZ for obtaining SVG format, in it receive all necessary coordinates, basically us any other  XML format containing arranges also coordinates.<br /><br />I'm sorry for my bad English<br /><br /><br />",
+    "PostedDate": "2007-04-27T04:16:06.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31541",
+    "ThreadId": "9616",
+    "Html": "\r\nI'm sorry I don't plan to support graphviz (maybe output of dot files in the future).<br />",
+    "PostedDate": "2007-04-27T23:07:02.66-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "31809",
+    "ThreadId": "9616",
+    "Html": "\r\nI've checked in dot support in. You will have to do the ngraphviz binding (see doc).<br />",
+    "PostedDate": "2007-05-01T10:36:45.183-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "33268",
+    "ThreadId": "9616",
+    "Html": "\r\nHi Pelikhan,<br /><br />Can you show me how to look example of Quick Graph using Glee (visualize)?<br />Tks much,<br />",
+    "PostedDate": "2007-05-14T21:05:40.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "34141",
+    "ThreadId": "9616",
+    "Html": "\r\nsee <a href=\"http://www.codeplex.com/quickgraph/Wiki/View.aspx?title=Visualization%20Using%20Glee&amp;referringTitle=User%20Manual\" class=\"externalLink\">http://www.codeplex.com/quickgraph/Wiki/View.aspx?title=Visualization%20Using%20Glee&amp;referringTitle=User%20Manual<span class=\"externalLinkIcon\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\"></span></a><br />",
+    "PostedDate": "2007-05-21T21:47:59.93-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

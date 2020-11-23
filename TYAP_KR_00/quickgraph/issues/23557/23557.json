@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "the GraphvizColor class properties return the worng variable  \n\npublic byte A { get { return this.a } }\npublic byte R { get { return this.a } }\npublic byte G { get { return this.a } }\npublic byte B { get { return this.a } }\n\ninstead of:\n\npublic byte A { get { return this.a } }\npublic byte R { get { return this.r } }\npublic byte G { get { return this.g } }\npublic byte B { get { return this.b } }",
+    "LastUpdatedDate": "2015-07-15T09:07:02.067-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2012-10-30T09:44:43.47-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GraphvizColor properties",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 6,
+    "Id": 23557
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have uploaded a patch for this.",
+      "PostedDate": "2012-12-04T14:15:52.38-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:33.27-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-27T12:46:48.567-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Could someone be so kind to provide me with an updated QuickGraph.Graphviz.dll file?\r\n\r\nI tried building it myself, to no avail.\r\n\r\nThank you.",
+      "PostedDate": "2013-05-09T11:30:51.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-08-13T00:01:22.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-01-21T07:39:05.753-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-07-15T09:07:02.067-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

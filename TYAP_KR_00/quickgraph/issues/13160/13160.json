@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Checked in a fix&#58; when asking the successor, restrain the list of edges to non-visited. Also dealing with value type vertices &#40;this was old code assuming reference types for vertex&#47;edges&#41;",
+    "ClosedDate": "2009-06-10T00:47:33.293-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "RandomTreeWithRoot() stalls at ComputationState.Running when graph doesn't connect from Root to first object in BidirectionalGraph.Vertices.\nI am working through this right now and will send a repro case when I get more organized with it.\n \nFor now I think I will modify RandomTreeWithRoot() to handle 2 overloads, root and branch. I need to select the entrance and exit for the maze and make sure they connect. It should always be logical, plus I need to have that control for AI path-finding.",
+    "LastUpdatedDate": "2013-05-16T04:59:19.09-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-05-03T17:47:26.68-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RandomTreeWithRoot() stalls at ComputationState.Running with broken graph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13160
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1887,
+      "FileName": "Program.cs",
+      "DownloadUrl": ".\\1887"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "If the algorithm doesn't find the Exit 'root' it has fun running around in circles re-going over the same edges forever it looks like. The Markov chain does this and I cannot not allow it to I think. I did try coloring the Edges instead of just Vertices to track this but no success so I just put in a count failsafe.\r\nI also put in the ability to select an entrance or 'branch' vertex but this is extra code. It works so nice I am pleased with it so far. Still buggy though as it deletes some extra edges.\r\nI can make a patch too of this if you want.\r\n\r\nI put this 'tick' failsafe in to stop it if it goes over an unrealistic amount of vertices while not finding the root. \r\n\r\n// process root and branch\r\nClearTree(rootVertex);\r\nSetInTreeExit(rootVertex); // vertex set to Black\r\nClearTree(branchVertex);\r\nSetInTreeEntrance(branchVertex); // vertex set to Gray\r\n\r\nTVertex u;\r\nforeach (var i in this.VisitedGraph.Vertices)\r\n{                    \r\n    if (i != null && !GrayInTree(i)) { // find entrance\r\n        continue;\r\n    }\r\n    \r\n    u = i; int tick = 0;               \r\n    // first pass, randomize           \r\n    while (u != null && !BlackInTree(u)) { // while vertex is not null and is White \r\n                 \r\n        if (!Tree(u, RandomSuccessor(u))) { // randomize all the white vertices  \r\n            throw new InvalidOperationException(\"No edge to randomize\"); // just something extra I put in\r\n        } \r\n        \r\n        if (tick > this.VisitedGraph.VertexCount * 20) { // 20 seems like a decent number\r\n                Console.WriteLine(\"Can't find exit root - quitting algorithm\"); // this could be changed         \r\n            break;\r\n        }    \r\n        else {\r\n            u = NextInTree(u);\r\n        }\r\n        \r\n        tick++;              \r\n    } \r\n    \r\n    u = i;\r\n    // second pass, color the rest black\r\n    while (u != null && NotInTree(u)) // while vertex is not null and is White\r\n    {                           \r\n        SetInTreeExit(u); // sets the rest of the White vertices Black \r\n        u = NextInTree(u); \r\n    }\r\n}\r\n\r\nThe test reproduction showing the algorithm stalling when graph is split is attached.\r\n\r\nThanks!",
+      "PostedDate": "2009-05-11T12:01:48.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-11T12:01:53.123-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "While using break or return to escape loop I am also now getting a 0x0c0000005 Fatal Memory exception related to unsafe code. Not in Debug mode though., only in Release",
+      "PostedDate": "2009-05-15T06:13:58.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "How's the progress with this issue? Any modifications to avoid the looping? I thought adding the 'branch' part was cool too. ",
+      "PostedDate": "2009-06-06T07:32:14.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-10T00:47:33.293-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:46.33-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:19.09-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

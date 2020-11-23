@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am trying to use Tarjan Offfline Least Common Ancestor Algorithm , but a KeyNotFoundException is occurring. It seem that it search the root node in a graph made of the 2 vertex that are present in the pair.",
+    "LastUpdatedDate": "2014-01-03T11:46:43.19-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-09-28T01:53:20.347-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "KeyNotFoundException with OfflineLeastCommonAncestorTarjan Algorithm",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 18847
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4073,
+      "FileName": "Program.cs",
+      "DownloadUrl": ".\\4073"
+    },
+    {
+      "FileId": 4078,
+      "FileName": "TarjanOfflineLeastCommonAncestorAlgorithm.cs",
+      "DownloadUrl": ".\\4078"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hello, I have some news about this:\r\n\r\nThe reason why i have had this exception is that the FinishVertex event don't check if the current vertex is contained in the collection of pairs before trying to access to the edges.\r\nThis bug wasn't detected by the Test because every vertices combination are added to the collection of pairs so every vertex is include in the collection of pairs.\r\nI have attached a corrected version of the Algorithm.\r\n\r\nI have also found an other bug : if we use a pair (Vertex1->Vertex2) it don't give the same result as (Vertex2->Vertex1). I think that the problem come from the use of SEquatableEdge in order to represent the pairs, this class implement a comparison that compare source together and destination together but don't make a cross comparison.\r\n\r\nI have also found a turnaround for this : Add every pairs in each order and make the search of the ancestor in both order.",
+      "PostedDate": "2010-09-29T02:45:54.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:40.39-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-01-03T11:46:43.19-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, \nwhen I tried to use such code in Silverlight App I a have an exception. Code is following:\n                     ......\n                   try\n                    {\n                        GraphMLSerializer<Node, Link, Diagram> serializer =\n                            new GraphMLSerializer<Node, Link, Diagram>();\n \n                        serializer.Serialize(\n                            xmlwriter,\n                            diagram,\n                            vertex => vertex.Id,\n                            edge => edge.Id);\n                    }\n                    catch (Exception e)\n                    {\n                        throw e;\n                    }\n \nException:\n         System.TypeInitializationException was unhandled by user code\n  Message=The type initializer for 'WriteDelegateCompiler' threw an exception.\n  TypeName=WriteDelegateCompiler\n  StackTrace:\n       at Artezio.SilverDraw.Export.XmlSaveStrategy.Save(String path)\n       at Artezio.SilverDraw.Export.DiagramSaver.Save(String path)\n       at Artezio.SilverDraw.AppEngine.AppCommandMenu.SaveGraphML()\n       at Artezio.SilverDraw.Commands.DelegateCommand.<>c__DisplayClass1.<Wrap>b__0(Object arg)\n       at Artezio.SilverDraw.Commands.DelegateCommand`1.Execute(T parameter)\n       at Artezio.SilverDraw.Commands.DelegateCommand`1.System.Windows.Input.ICommand.Execute(Object parameter)\n       at System.Windows.Controls.Primitives.ButtonBase.ExecuteCommand()\n       at System.Windows.Controls.Primitives.ButtonBase.OnClick()\n       at System.Windows.Controls.Button.OnClick()\n       at System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)\n       at System.Windows.Controls.Control.OnMouseLeftButtonUp(Control ctrl, EventArgs e)\n       at MS.Internal.JoltHelper.FireEvent(IntPtr unmanagedObj, IntPtr unmanagedObjArgs, Int32 argsTypeIndex, Int32 actualArgsTypeIndex, String eventName)\n \n  InnerException: System.MethodAccessException\n       Message=Методу \"QuickGraph.Serialization.GraphMLSerializer`3+WriteDelegateCompiler<TVertex,TEdge,TGraph>.CreateWriteDelegate(System.Type, System.Type)\", прозрачному для безопасности, не удалось получить доступ к критически важному методу безопасности \"System.Reflection.Emit.DynamicMethod..ctor(System.String, System.Type, System.Type[], System.Reflection.Module)\".\n       StackTrace:\n            at QuickGraph.Serialization.GraphMLSerializer`3.WriteDelegateCompiler.CreateWriteDelegate(Type nodeType, Type delegateType)\n            at QuickGraph.Serialization.GraphMLSerializer`3.WriteDelegateCompiler..cctor()\n       InnerException: \n \nThe main idea is that in code: GraphMLSerializer.cs, Line: 156\n \n            public static Delegate CreateWriteDelegate(Type nodeType, Type delegateType)\n            {\n                Contract.Requires(nodeType != null);\n                Contract.Requires(delegateType != null);\n \n                var method = new DynamicMethod(\n                    \"Write\" + delegateType.Name + nodeType.Name,\n                    typeof(void),\n                    new Type[] { typeof(XmlWriter), nodeType },\n                    nodeType.Module                   //owner\n                    );\n   We cannot use in Silverligth such constructor due security reasons (http://msdn.microsoft.com/en-us/library/0fe7t256(VS.95).aspx,  http://forums.silverlight.net/forums/t/16743.aspx)\n \nCan you check this issue soon and update it due NUget?\n \nMany thanks!",
+    "LastUpdatedDate": "2013-02-21T17:44:39.99-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-11-25T07:47:40.317-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Serialization in Silverlight 4 DynamicMethod -> MethodAccessException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19173
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

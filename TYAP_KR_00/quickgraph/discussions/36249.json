@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "120275",
+    "ThreadId": "36249",
+    "Html": "Hello all<br>\r\n<br>\r\nI have some problems with the performance of my autorouting application. The graph (AdjacencyGraph) contains over 56.000 edges and 16.000 vertices. It consumes 40 seconds to calculate the shortest path.But it is too much time. I thought to store or serialize the graph but every time the application is launched,&nbsp; the graph is new. How can I improve it? <br>\r\n<br>\r\nThank you so much<br>\r\n<br>\r\nPavleras<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-22T22:31:09.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120331",
+    "ThreadId": "36249",
+    "Html": "Profile your application to measure where you spend your time. Is the problem to build the graph or actually to compute Dijkstra?<br>\r\n",
+    "PostedDate": "2008-09-23T04:09:01.29-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

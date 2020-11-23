@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "438091",
+    "ThreadId": "211314",
+    "Html": "<p>Hello</p>\r\n<p>I'm currently looking into quick graph because I need to implement Job Shop Scheduling. I have been researching and found the shifting bottleneck algorithm very promising. As I'm not really proficient in math and search algorithm I wanted to ask you guys if shifting bottleneck would fit into my problem domain and how this could be achieved which quickgraph?</p>\r\n<p>I have a number of machines which need to manufacture individual pieces. Pieces are describe by a meta job description. It is possible to define priority on individual jobs. Each jobs needs a number of tools for the manufacturing process which is either present on a machine or not. Machines can be &quot;bound&quot; together into a resource group which describes what kind of pieces can be manufactured on the machine. For example when manufacturing LEGO parts there could be a resource group L-types and I-types (speaking of the form of the lego part). A manufacturing plant could for example have 3 L-Type machines and 2 I-type machines.</p>\r\n<p>The scheduling algorithm needs to calculate an optimal scheduling of work on the machines such that the machines are always occupied. The restrictions or the costs traveling from workpiece to workpiece could be the priority, the availability of the tools necessary to manufacture on the machine etc.</p>\r\n<p>Any ideas?</p>\r\n<p>Thanks</p>\r\n<p>Daniel</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-02T13:26:47.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

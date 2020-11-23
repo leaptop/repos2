@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-11-15T11:13:26.267-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello! I use BreadthFirstSearchAlgorithm in QuickGraph 3.0. Traverse on my graph (see attached picture) is incorrect.\nI use events TreeEdge and NonTreeEdge. I have edges in order 1-2-5-3-6-4 instead 1-2-5-3-4-6.\n \nThank you.",
+    "LastUpdatedDate": "2013-05-16T04:59:15.13-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-03-30T06:06:41.17-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incorrect traversal of the graph (BreadthFirstSearchAlgorithm)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 20359
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4776,
+      "FileName": "BFS.png",
+      "DownloadUrl": ".\\4776"
+    }
+  ],
+  "Comments": []
+}

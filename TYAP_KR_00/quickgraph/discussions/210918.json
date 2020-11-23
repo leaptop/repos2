@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "436722",
+    "ThreadId": "210918",
+    "Html": "<p>Hello, i want to ask if there is any way to generate the shortest path from node A to node B</p>\r\n<p>without generating the shortest paths to all the other nodes (stop when node B is in the examined set)</p>\r\n<p>with A-star.</p>\r\n<p>&nbsp;</p>\r\n<p>I want to plug QuickGraph into a game and thus generating all the paths is not allowed from the time</p>\r\n<p>limitations the environment imposes.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance,</p>\r\n<p>Xtapodi Kataifi.</p>",
+    "PostedDate": "2010-04-28T13:23:31.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441469",
+    "ThreadId": "210918",
+    "Html": "<p>IMHO you should add delegate to algorithm DiscoverVertex event with following manner:</p>\r\n<p>\r\n<pre><div style=\"color:black;background-color:white\"><pre>astar.DiscoverVertex(TVertex v) += <span style=\"color:blue\">delegate</span> (TVertex v){\r\n<span style=\"color:blue\">if</span> (v == vertexB) astar.Services.CancelManager.Cancel();\r\n}\r\nastar.Compute(vertexA);\r\n<br></pre>\r\n</div>\r\n</pre>\r\nIt should stop the algorithm after current iteration.</p>\r\n<p>Cheers, Witek</p>",
+    "PostedDate": "2010-05-11T06:26:57.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

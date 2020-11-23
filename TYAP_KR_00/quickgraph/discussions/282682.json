@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "711057",
+    "ThreadId": "282682",
+    "Html": "\r\n<p>AlgorithmExtensions.cs:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">class</span> DagTester&lt;TVertex,TEdge&gt;\r\n                <span style=\"color:blue\">where</span> TEdge : IEdge&lt;TVertex&gt;\r\n        {\r\n            <span style=\"color:blue\">private</span> <span style=\"color:blue\">bool</span> isDag = <span style=\"color:blue\">true</span>;\r\n\r\n            <span style=\"color:blue\">public</span> <span style=\"color:blue\">bool</span> IsDag(IVertexListGraph&lt;TVertex, TEdge&gt; g)\r\n            {\r\n                <span style=\"color:blue\">var</span> dfs = <span style=\"color:blue\">new</span> DepthFirstSearchAlgorithm&lt;TVertex, TEdge&gt;(g);\r\n                <span style=\"color:blue\">try</span>\r\n                {\r\n                    dfs.BackEdge &#43;= <span style=\"color:blue\">new</span> EdgeAction&lt;TVertex, TEdge&gt;(dfs_BackEdge);\r\n                    isDag = <span style=\"color:blue\">true</span>;\r\n                    dfs.Compute();\r\n                    <span style=\"color:blue\">return</span> isDag;\r\n                }\r\n                <span style=\"color:blue\">finally</span>\r\n                {\r\n                    dfs.BackEdge -= <span style=\"color:blue\">new</span> EdgeAction&lt;TVertex, TEdge&gt;(dfs_BackEdge);\r\n                }\r\n            }\r\n\r\n            <span style=\"color:blue\">void</span> dfs_BackEdge(TEdge e)\r\n            {\r\n                isDag = <span style=\"color:blue\">false</span>;\r\n            }\r\n        }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Why isn't dfs.Abort() called when isDag is set to false? &nbsp;(Obviously, this would require changing the scope of dfs.)</p>\r\n",
+    "PostedDate": "2011-12-12T11:48:44.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

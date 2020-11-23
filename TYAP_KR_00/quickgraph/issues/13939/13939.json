@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "You can call the &#39;Abort&#39; method on the algorithm once you&#39;ve found the vertex.",
+    "ClosedDate": "2010-11-07T05:06:12.353-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please split different questions in different threads. I'll tack the target vertex feature with this thread.\n \nAssertHeap() should not be called on Release build and is for debugging purpose only. Just delete it.",
+    "LastUpdatedDate": "2013-05-16T04:59:16.317-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-08-22T02:12:57.763-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "compute DijkstraShortestPathAlgorith with a target vertex",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13939
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello, \r\nanyone know where i should put the stop condition to stop the process of the dijkstraShortestPathAlgorith. I ve done a modified version of it that just receive an extra argument in constructor where i got some extra information like the wanted destination vertex. I have try to put my stop condition in the relax method, but it don't really seem to stop the process.\r\nhave a nice day",
+      "PostedDate": "2009-08-31T06:46:25.68-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "You can use BestFirstFrontierSearchAlgorithm which has a root -> goal concept. The algorithm stops when goal is found.",
+      "PostedDate": "2009-09-06T21:42:34.437-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "tanks a lot for the information",
+      "PostedDate": "2009-09-14T06:25:48.893-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-07T05:06:12.353-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:42.68-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:16.317-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

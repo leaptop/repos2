@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "36773",
+    "ThreadId": "11351",
+    "Html": "\r\nHi there  <br /><br />Both Glee and graphviz converters need graphs that extend the IVertexAndEdgeListGraph.<br />This means as far as I have understood that only directed graphs can be visualised.<br />Am I correct? Is there a way to visualize non-directed graphs<br /><br />Thank you <br />",
+    "PostedDate": "2007-06-13T09:19:44.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "37223",
+    "ThreadId": "11351",
+    "Html": "\r\nBoth libraries can visualize undirected graphs so QuickGraph should support it. Please open an issue on this.<br />",
+    "PostedDate": "2007-06-17T01:00:53.18-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "37226",
+    "ThreadId": "11351",
+    "Html": "\r\nI've checked in a fix. Works for undirected graphs as well.<br />",
+    "PostedDate": "2007-06-17T01:13:51.567-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

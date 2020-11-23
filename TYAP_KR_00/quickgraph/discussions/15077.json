@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "49071",
+    "ThreadId": "15077",
+    "Html": "\r\nAs mentioned in another thread i generate the graph out of an <span class=\"codeInline\" style=\"font-family:Consolas, Courier New, Courier, Monospace;\">AdjacencyGraph</span> like this<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\nGleeGraphPopulator&lt;string, Edge&lt;string&gt;&gt; populator = GleeGraphUtility.Create&lt;string, Edge&lt;string&gt;&gt;(graph);\r\npopulator.Compute();\r\nGraph gleeGraph = populator.GleeGraph;\r\n</pre><br />But all the vertices are suddenly numbered when displaying the graph using GLEE. E.g. there is a vertex called \"MyState\" and when displaying the graph it is called \"0: MyState\" and so on. Is there some way to suppress this?<br /><br />One more short question:<br />- How do i produce such gradient fills in my graph as they are shown on the GLEE Homepage?<br />",
+    "PostedDate": "2007-09-13T04:35:08.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49221",
+    "ThreadId": "15077",
+    "Html": "\r\nFirst question: use the 'Create' overload that takes a formatprovider and format string.<br /><br />Second question: use on VertexAdded and EdgeAdded to get notified about Glee vertex and edges being created. At this point, you can modify all the attributes of the glee nodes (including the label)<br />",
+    "PostedDate": "2007-09-14T00:23:07.577-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "49228",
+    "ThreadId": "15077",
+    "Html": "\r\ncan you give an example of the formatprovider overload? i have found it but haven't got a clue how to create such a formatprovider or even how to specyfy the format string for the third argument.<br />",
+    "PostedDate": "2007-09-14T01:40:31.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "51209",
+    "ThreadId": "15077",
+    "Html": "\r\njust a reminder if you could please post an example how the formatprovider can be used<br />",
+    "PostedDate": "2007-09-29T07:05:34.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "51659",
+    "ThreadId": "15077",
+    "Html": "\r\nAttach to the NodeAdded, EdgeAdded events of the GleePopulator objects<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n{\r\n    GleeGraphPopulator&lt;V, E&gt; populator = GleeGraphUtility.Create(g);\r\n    try\r\n    {\r\n        populator.NodeAdded += new GleeVertexNodeEventHandler&lt;V&gt;(populator_NodeAdded);\r\n        populator.EdgeAdded += new GleeEdgeEventHandler&lt;V, E&gt;(populator_EdgeAdded);\r\n        populator.Compute();\r\n        ,,,\r\n   }\r\n   finally\r\n   {\r\n       populator.NodeAdded -= new GleeVertexNodeEventHandler&lt;V&gt;(populator_NodeAdded);\r\n       populator.EdgeAdded -= new GleeEdgeEventHandler&lt;V, E&gt;(populator_EdgeAdded);\r\n    }\r\n \r\n    return this;\r\n}\r\n \r\n    void populator_EdgeAdded(object sender, GleeEdgeEventArgs&lt;V, E&gt; e)\r\n    {\r\n            // change the edge apperance here \r\n        }\r\n \r\n        void populator_NodeAdded(object sender, GleeVertexEventArgs&lt;V&gt; args)\r\n        { \r\n          // change the vertex appeance here\r\n        } \r\n \r\n</pre>",
+    "PostedDate": "2007-10-02T22:58:03.733-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "51749",
+    "ThreadId": "15077",
+    "Html": "\r\ni appreciate your examples for the formatting, it works fine now for me, but what i am still dont't get right is the IFormatprovider . The create method takes, as you mentioned before, this additonal argument with the iformatprovider. but how do i create such a formatprovider? what are the arguments for a formatstring? i know that for example for datetime you can provide a formatsting like \"dd.MM.YYYY\" but which arguments can be used here? is there some example you can provide?<br />",
+    "PostedDate": "2007-10-03T12:17:08.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "51808",
+    "ThreadId": "15077",
+    "Html": "\r\nYou don't need that. If you vertex supports a ToString(IFormatProvider fp) method, then it will be used. For example, DateTime supports this overload.<br />",
+    "PostedDate": "2007-10-03T20:27:13.103-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

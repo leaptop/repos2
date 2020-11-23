@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "604459",
+    "ThreadId": "255627",
+    "Html": "\r\n<p>Hello -- I've been able to create working solutions using all three types, SEdge, Edge, SEquatableEdge, without really having a good conceptual idea about the differences between these types -- mostly by snipping from the documentation and tweaking and by\r\n ad-hoc experimentation. Of course, I can look up their properties and methods in the debugger and with Reflector, and I can play with them in LinqPad, but I'd be grateful for even a quick discussion of these various types *at a conceptual level*.</p>\r\n",
+    "PostedDate": "2011-04-28T14:11:43.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

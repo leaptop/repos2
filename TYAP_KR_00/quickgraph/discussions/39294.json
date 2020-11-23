@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "130379",
+    "ThreadId": "39294",
+    "Html": "<p> RootedAlgorithmBase.OnRooVertexChanged   has a typo..  I like kangaroos, but..<br>\r\n<br>\r\nBidirectionalGraph.clone exists, yet no other GraphTypes have this.<br>\r\nWhy not have all of them clonable?<br>\r\n<br>\r\nExtension methods are not implemented on all graph types.  Why is this?</p>\r\n<p>What might UndirectedBidirectionalGraph graph be used for? Sounds Contradictory to me.  It is directed or not,<br>\r\nbut both?<br>\r\n<br>\r\nAlso, we need some XML docs in the code.  And some guidance on choosing an appropriate graph type<br>\r\nwould be nice.<br>\r\n<br>\r\nThanks in advance</p>\r\n",
+    "PostedDate": "2008-11-05T18:25:42.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130407",
+    "ThreadId": "39294",
+    "Html": "<p>Can you open separate issues for each problem?<br>\r\n<br>\r\nAlgorithm care about wether a graph is directed or not. Thus, the difference. </p>\r\n<p>Extension methods are defined on interfaces when it makes sense. Do you have particular examples?</p>\r\n<p>Cloneable: yes, just lack of time.</p>\r\n",
+    "PostedDate": "2008-11-05T20:44:12.017-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "130413",
+    "ThreadId": "39294",
+    "Html": "Typo is a new issue.<br>\r\nCloneable is a new issue<br>\r\nUndirectedGraph.RemoveVertex has a bug..  New Issue created.<br>\r\n",
+    "PostedDate": "2008-11-05T21:20:36.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

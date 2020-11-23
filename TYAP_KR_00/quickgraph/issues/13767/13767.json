@@ -1,0 +1,101 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Stupid limitation of F&#35;",
+    "ClosedDate": "2010-11-07T04:24:29.407-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I believe F#'s event support requires events be of type EventHandler<T> with the event args derived from EventArgs.\n \ncompiler error:\nVertexService.fs(183,9): error FS0191: The event 'EdgeAdded has a non-standard type. If this event is declared in another .NET language, you may need to access this event using the explicit add_EdgeAdded and remove_EdgeAdded methods for the event. If this event is declared in F#, make the type of the event an instantiation of either 'IDelegateEvent<_>' or 'IEvent<_,_>'\n \nhere is a repro case from vs2008 with the current f# ctp, though it should also fail in vs2010:\n \nlet x = QuickGraph.BidirectionalGraph()\nx.EdgeAdded |> Event.listen (fun _ -> ()) // error\nx.add_EdgeAdded(fun _ -> ()) // works",
+    "LastUpdatedDate": "2013-05-16T04:59:16.46-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-08-03T17:52:36.553-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Edge & Vertex events have a non-standard type, F# compiler complains",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13767
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2072,
+      "FileName": "EventRepro.7z",
+      "DownloadUrl": ".\\2072"
+    },
+    {
+      "FileId": 2168,
+      "FileName": "EventRepro.zip",
+      "DownloadUrl": ".\\2168"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Have you raised the issue to the F# team? This is the most stupid limitation i've ever heard of.",
+      "PostedDate": "2009-08-04T06:16:07.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "QuickGraph used to use EventArgs but I moved to my own classes a while ago. Where are IDelegateEvent/IEvent defined?",
+      "PostedDate": "2009-08-04T14:19:15.91-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "IDelegateEvent/IEvent are F# specific so it doesn't affect QuickGraph. I agree it's pretty dumb but I'm not sure if they're going to fix it for VS 2010... mostly due to generic constraints put on the F# Event library. I've attached a simple repro case that shows it being fixed by using EventHandler<T> & EventArgs.",
+      "PostedDate": "2009-08-04T17:30:14.867-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-08-04T17:30:16.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please attach .zip file as repro.",
+      "PostedDate": "2009-08-26T00:15:56.513-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "here ya go",
+      "PostedDate": "2009-09-03T08:55:07.23-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-03T08:55:09.36-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-11-07T04:24:29.407-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:42.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:16.46-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

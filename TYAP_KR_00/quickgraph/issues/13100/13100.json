@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-04-23T17:26:11.5-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nThe implementation of QuickGraph.Predicates.FilteredBidirectionalGraph.InEdges(TVertex v) is causing a stack overflow:\n \npublic IEnumerable<TEdge> InEdges(TVertex v)\n        {\n            foreach (var edge in this.InEdges(v))\n...\n \nI think two things should change:\n1) The restrictions on TGraph should be:\n        where TGraph : IBidirectionalGraph<TVertex, TEdge>\n2) The InEdges(v) should call the BaseGraph's method, and filter the results:\n      public IEnumerable<TEdge> InEdges(TVertex v)\n        {\n            foreach (var edge in this.BaseGraph.InEdges(v))\n \nRegards,\n \nJan-Willem",
+    "LastUpdatedDate": "2013-05-16T04:59:19.4-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-04-23T17:25:18.337-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "FilteredBidirectionalGraph bug?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13100
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for the bug repro. Checked in a fix.",
+      "PostedDate": "2009-04-23T17:26:38.78-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:46.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:19.4-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

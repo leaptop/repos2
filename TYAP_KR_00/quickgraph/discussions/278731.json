@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "695332",
+    "ThreadId": "278731",
+    "Html": "\r\n<p>Attempted to install the right components (Contracts, Silverlight, PowerTools, Pex) to get the whole project to build in VS2010.&nbsp; Still struggling to get all the unit tests to pass - and some of the components would appear to need paid-for bits from\r\n MS Research.&nbsp; Is there any more documentation on configuring for VS2010 build or should I just post specific questions here?&nbsp; Quite interested in getting back to a 'base' build rather than with all the frilly add on bits.</p>\r\n",
+    "PostedDate": "2011-11-08T07:31:14.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700732",
+    "ThreadId": "278731",
+    "Html": "<p>Should build now. You need the portable class libraries.</p>",
+    "PostedDate": "2011-11-19T20:30:07.357-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

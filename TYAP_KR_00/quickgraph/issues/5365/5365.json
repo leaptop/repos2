@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "data structures",
+      "DisplayName": "data structures"
+    },
+    "ClosedComment": "Fixed",
+    "ClosedDate": "2007-08-24T22:16:50.047-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "LS,\n \nI wrote a small program to illustrate a problem that I encountered while working with QuickGraph (change set 7900, still present in 9398). The program searches for isolated vertices in a graph. At this stage, I – sadly – don’t have enough time to dig into your code, but hopefully this post helps you to improve your library by reproducing what I find to be a bug.\n \nWhen I build the following bidirectional graph (see uploaded file and code below), I expect AlgoUtility.IsolatedVertices to return TT05, TT06, TT10 and TT11. However it additionally returns TT02, TT13, TT14 and TT19.\n \nFrom this (and assuming you use degree==0 of a vertex to see if it’s isolated), I suspect that in order to obtain the degree of the vertex the in-degree and out-degree of a vertex are subtracted instead of added. If this were the case, it would be incorrect, they should be added (I used ‘Introduction to Algorithms’ by you-know-who, pp1081 to check).\n \n \nSincerely,\n \nMarijn\n \n \nPS: I couldn’t resist to, so I checked anyway and in your code I see you indeed use \n \n        public int Degree(Vertex v)\n        {\n            return this.OutDegree(v) - this.InDegree(v);\n        }\n \nin the class BidirectionalGraph on line 134. To me, this seems wrong. Am I mistaken?\n \n \n--------------------------------\nThe Graph ‘Example 1’\n--------------------------------\n \n        public static BidirectionalGraph<String, MarkedEdge<String, String>> Example1()\n        {\n            BidirectionalGraph<String, QuickGraph.MarkedEdge<string, string>> g =\n                new BidirectionalGraph<string, MarkedEdge<string, string>>();\n \n            List<string> lst = new List<string>();\n            for (int i = 0; i < 20; i++)\n            {\n                lst.Add(string.Format(\"TT{0:00}\", i));\n            }\n \n            g.AddVertexRange(lst.ToArray());\n \n            g.AddEdge(new MarkedEdge<string, string>(lst[0], lst[1], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[1], lst[2], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[2], lst[3], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[3], lst[4], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[3], lst[1], \"user constraint\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[7], lst[8], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[8], lst[9], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[8], lst[9], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[12], lst[13], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[13], lst[14], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[14], lst[15], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[16], lst[17], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[18], lst[19], \"unload order\"));\n            g.AddEdge(new MarkedEdge<string, string>(lst[19], lst[9], \"unload order\"));\n \n            return g;\n        }\n \n--------------------------------\nProgam\n--------------------------------\n \n    class Program\n    {\n        private static log4net.ILog log = log4net.LogManager.GetLogger(typeof(Program));\n \n        static void Main(string[] args)\n        {\n            log.Info(\"Application started.\");\n \n            BidirectionalGraph<String, MarkedEdge<String, String>> g = Dummies.Example1();\n \n            Analyze(g);\n \n            Export.Save(g, \"d:\\\\dev\\\\data\\\\graphs\\\\test\");\n            \n            log.Info(\"Application Ended.\");\n \n        }\n \n        static void Analyze<Vertex, Edge>(BidirectionalGraph<Vertex, Edge> g)\n                        where Edge : IEdge<Vertex>\n        {\n            foreach (Vertex v in AlgoUtility.IsolatedVertices(g))\n            {\n                log.InfoFormat(\"Found Isolated vertex: {0}\", v);\n            }\n \n            foreach (Vertex v in Helpers.Roots(g))\n            {\n                log.DebugFormat(\"Found root: {0}\", v);\n            }\n \n            foreach (Vertex v in Helpers.Sinks(g))\n            {\n                log.DebugFormat(\"Found sink: {0}\", v);\n            }\n        }\n \n \n    }\n \n--------------------------------\nOutput\n--------------------------------\n[graph-testing]\nINFO  APP_GraphOutput.Program - Application started.\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT02\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT05\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT06\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT10\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT11\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT13\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT14\nINFO  APP_GraphOutput.Program - Found Isolated vertex: TT19\nDEBUG APP_GraphOutput.Program - Found root: TT00\nDEBUG APP_GraphOutput.Program - Found root: TT05\nDEBUG APP_GraphOutput.Program - Found root: TT06\nDEBUG APP_GraphOutput.Program - Found root: TT07\nDEBUG APP_GraphOutput.Program - Found root: TT10\nDEBUG APP_GraphOutput.Program - Found root: TT11\nDEBUG APP_GraphOutput.Program - Found root: TT12\nDEBUG APP_GraphOutput.Program - Found root: TT16\nDEBUG APP_GraphOutput.Program - Found root: TT18\nDEBUG APP_GraphOutput.Program - Found sink: TT04\nDEBUG APP_GraphOutput.Program - Found sink: TT05\nDEBUG APP_GraphOutput.Program - Found sink: TT06\nDEBUG APP_GraphOutput.Program - Found sink: TT09\nDEBUG APP_GraphOutput.Program - Found sink: TT10\nDEBUG APP_GraphOutput.Program - Found sink: TT11\nDEBUG APP_GraphOutput.Program - Found sink: TT15\nDEBUG APP_GraphOutput.Program - Found sink: TT17\nINFO  GraphUtils.Export - Saved file: d:\\dev\\data\\graphs\\test.dot\nINFO  APP_GraphOutput.Program - Application Ended.\n[/graph-testing]",
+    "LastUpdatedDate": "2013-05-16T04:59:30.407-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2007-08-23T13:02:37.263-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AlgoUtility.IsolatedVertices returns vertices with neighbours",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5365
+  },
+  "FileAttachments": [
+    {
+      "FileId": 350,
+      "FileName": "test.png",
+      "DownloadUrl": ".\\350"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "CL 9497",
+      "PostedDate": "2007-08-24T22:16:36.157-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-08-24T22:16:36.843-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2007-08-24T22:16:50.047-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-08-26T08:57:31.59-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-31T07:17:05.823-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:58.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:30.407-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

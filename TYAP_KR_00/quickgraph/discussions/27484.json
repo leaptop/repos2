@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "91652",
+    "ThreadId": "27484",
+    "Html": "Hello, <br>\r\nsince this is not possible anymore:<br>\r\n<br>\r\npublic void Render(Graph g, VerteStringDictionary names)<br>\r\n{<br>\r\nm_Names =names;<br>\r\nGraphvizWriterAlgorithm algo = new GraphvizWriterAlgorithm(g);<br>\r\n<br>\r\nalgo.WriteVertex += new VertexHandler( this.WriteVertex );<br>\r\n<br>\r\nalgo.Renderer.ImageType = GraphvizImageType.Svg;<br>\r\nalgo.Compute();<br>\r\n}<br>\r\n<br>\r\nplease advice me, which Event (writeVertex not avail) I should subscribe too. I am desperate, because I need this stuff for an important academic work and am totally stuck :(<br>\r\n<br>\r\nThx in advance<br>\r\n",
+    "PostedDate": "2008-05-09T23:32:25.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

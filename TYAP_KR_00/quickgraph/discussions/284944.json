@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "720294",
+    "ThreadId": "284944",
+    "Html": "\r\n<p>Hi,</p>\r\n<p><strong>can you make dll silverlight 5 compatible? </strong></p>\r\n<p>Currently nuget statest following:</p>\r\n<p>&quot;Successfully installed 'QuickGraph 3.6.61119.7'.<br>\r\nSuccessfully uninstalled 'QuickGraph 3.6.61119.7'.<br>\r\nInstall failed. Rolling back...<br>\r\nCould not install package 'QuickGraph 3.6.61119.7'. You are trying to install this package into a project that targets 'Silverlight,Version=v5.0', but the package does not contain any assembly references that are compatible with that framework. For more information,\r\n contact the package author.&quot;</p>\r\n",
+    "PostedDate": "2012-01-04T06:29:57.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "720327",
+    "ThreadId": "284944",
+    "Html": "<p>I managed to get it working withou uptodate build (SL5). But still SL5 build would be nice.</p>",
+    "PostedDate": "2012-01-04T07:36:18.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952130",
+    "ThreadId": "284944",
+    "Html": "\r\n<p>I cant get it working, i want to compile the QuickGraph library with Silverlight SDK 5</p>\r\n<p>can you please help here?</p>\r\n<p>PM&gt; Install-Package QuickGraphSuccessfully installed 'QuickGraph 3.6.61119.7'.Successfully uninstalled 'QuickGraph 3.6.61119.7'.Install failed. Rolling back...Install-Package : Could not install package 'QuickGraph 3.6.61119.7'. You are trying to install\r\n this package into a project that targets 'Silverlight,Version=v4.0', but the package does not contain any assembly references or content files that are compatible with that&nbsp;framework. For more information, contact the package author.At line:1 char:16+ Install-Package\r\n &lt;&lt;&lt;&lt; &nbsp;QuickGraph&nbsp; &nbsp; + CategoryInfo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: NotSpecified: (:) [Install-Package], InvalidOperationException&nbsp; &nbsp; + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-06T01:32:55.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014960",
+    "ThreadId": "284944",
+    "Html": "how working on silverlight 5 sdk?\r<br />\n<br />\nuse Nuget, Install-Package QuickGraph error ...\r<br />\n<br />\ni'm try Transplant  <a href=\"http://graphsharp.codeplex.com/\" rel=\"nofollow\">http://graphsharp.codeplex.com/</a>  to silverlight, this way is true?<br />\n",
+    "PostedDate": "2013-03-13T19:13:57.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049192",
+    "ThreadId": "284944",
+    "Html": "please, do silverlight 5 support, russian students will thank you<br />\n",
+    "PostedDate": "2013-05-27T07:55:28.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1118832",
+    "ThreadId": "284944",
+    "Html": "Just tried to use nuget with the same result. To make it work download the sources, compile them and get the DLL file. It should be portable and can be used in SL 4/5.<br />\n",
+    "PostedDate": "2013-11-06T04:44:21.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1429557",
+    "ThreadId": "284944",
+    "Html": "Now available in correct PCL NuGet for Silverlight 5. Read <a href=\"https://quickgraph.codeplex.com/discussions/639658\" rel=\"nofollow\">https://quickgraph.codeplex.com/discussions/639658</a><br />\n",
+    "PostedDate": "2015-06-08T09:25:03.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

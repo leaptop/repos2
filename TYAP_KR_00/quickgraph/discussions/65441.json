@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "222883",
+    "ThreadId": "65441",
+    "Html": "<p>I am just getting introduced to QuickGraph. I was wondering whether the QuickGraph library (along with its support for GraphViz) can be used to generate an relationship diagram, given a Database Schema (DataSet??). I am looking for something similar to http://savage.net.au/Ron/html/graphing-database-schema.html&nbsp; but using QuickGraph.</p>\r\n<p>Any help/pointers are much appreciated.</p>\r\n<p>Thanks,</p>\r\n<p>Ananth</p>",
+    "PostedDate": "2009-08-13T02:29:15.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223769",
+    "ThreadId": "65441",
+    "Html": "<p>QuickGraph supports building graphs from DataSets. Look for the 'DataSetGraph' type in the QuickGraph.Data.dll assembly. There's no built-in output to Graphviz tough, you'll have to code that part yourself.</p>",
+    "PostedDate": "2009-08-14T20:20:48.287-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224524",
+    "ThreadId": "65441",
+    "Html": "<p>pelikhan, thanks for the response. I did look at DataSetGraph but was not sure whether they can be converted to a format accepted by the GraphViz module. If I understand the flow correct, I would be required to manipulate the DataSetGraph object and make it output a 'dot' file that can then be fed to GraphViz module in QuickGraph (which will then take over and output an image file??).</p>\r\n<p>I will try this option and post my feedback here.</p>\r\n<p>Thanks again.</p>",
+    "PostedDate": "2009-08-17T09:44:17.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226611",
+    "ThreadId": "65441",
+    "Html": "<p>You need to create a GraphvizAlgorithm (see <a href=\"http://quickgraph.codeplex.com/Wiki/View.aspx?title=Visualization Using Graphviz\">http://quickgraph.codeplex.com/Wiki/View.aspx?title=Visualization%20Using%20Graphviz</a>&nbsp;), hook to the FormatVertex, FormatEdge events to customize the output then render it to a .dot file. Then, you need to call Graphviz to render it.</p>",
+    "PostedDate": "2009-08-22T02:16:09.72-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227754",
+    "ThreadId": "65441",
+    "Html": "<p>I've just added a class that does this. Look for&nbsp;<span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DataSetGraphExtensions.ToGraphviz in the sources.\r\n<p>&nbsp;</p>\r\n</span></span></p>",
+    "PostedDate": "2009-08-25T21:03:28.957-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227770",
+    "ThreadId": "65441",
+    "Html": "<p>Thanks pelikhan for the follow-up. I ended up writing similar code that takes a DataSet and outputs a DOT file, but all done outside the GraphViz library. Now that I see how you have coded the algorithm in the context of GraphViz (as an extension to AlgorithmBase), I will try to use this and get back to you with feedback/improvements.</p>\r\n<p>Thanks again.</p>",
+    "PostedDate": "2009-08-25T22:21:54.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

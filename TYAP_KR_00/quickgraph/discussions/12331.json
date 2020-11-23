@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "40174",
+    "ThreadId": "12331",
+    "Html": "\r\nHi,<br /><br />Is there any way to construct graph from Input Iterator or something like this? So I like to construct the graph at one operation without using addvertex and addedge in the loop. Didn't find anything related to this in the lib source code.<br /><br />Thx<br />",
+    "PostedDate": "2007-07-08T21:56:55.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "40181",
+    "ThreadId": "12331",
+    "Html": "\r\nDoes exist yet. Are you looking for something like<br /><br /><pre style=\"background-color:#ECECEC; border:dashed .1em #3E62A6; font-family:Consolas, Courier New, Courier, Monospace; font-size:1em; margin-top:0; padding:.5em; height:auto; overflow:auto; overflow-x:auto; overflow-y:auto;\">\r\n     void AddVertexRange(IEnumerable&lt;Vertex&gt; vertices);\r\n     void AddEdgeRange(IEnumerable&lt;Edge&gt; edges);\r\n</pre>",
+    "PostedDate": "2007-07-08T23:58:50.567-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "40183",
+    "ThreadId": "12331",
+    "Html": "\r\nI've added AddVertexRange to IMutableVertexList (and impl.)<br />",
+    "PostedDate": "2007-07-09T00:09:38.273-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "40393",
+    "ThreadId": "12331",
+    "Html": "\r\nThank you very much for your help. I'll try these new methods.<br />",
+    "PostedDate": "2007-07-10T01:45:32.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

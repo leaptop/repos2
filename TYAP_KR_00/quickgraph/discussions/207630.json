@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "424923",
+    "ThreadId": "207630",
+    "Html": "<p>Hello,</p>\r\n<p>I have started using Quickgraph couple of days ago. In my project I need to create cographs and corresponding cotrees. Do you know how to do it in Quickgraph? I am a bit confused with what does cograph and cotree means. Is there an already defined function in Quickgraph for this? If not, can someone give me a hint about how to create a cograph from a given graph?</p>\r\n<p>Best regards,</p>",
+    "PostedDate": "2010-03-29T06:52:52.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

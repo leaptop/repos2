@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "267584",
+    "ThreadId": "78213",
+    "Html": "<p>&nbsp;</p>\r\n<p>I used QuickGraph for .Net 2.0 at some of the projects. Today I downloaded latest version of it, but unfortunately i saw that some of the classes had been removed (such that IdentifiableEdge, IdentifiableVertex) which i used them in many places in my&nbsp; source.&nbsp; I looked and tried to find new classes that took place of these missing classes but i couldn't succeed.&nbsp; Are there any classes in this latest version similar to IdentifiableEdge, IdentifiableVertex classes that i couldn't detect?</p>",
+    "PostedDate": "2009-12-15T07:35:44.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290673",
+    "ThreadId": "78213",
+    "Html": "<p>The algorithm that used to rely IdentifiableEgde/Vertex now receives a delegate that maps an edge/vertex to string. This is a more flexible solution to provide identities to edge/vertices.</p>",
+    "PostedDate": "2010-02-14T14:41:35.02-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

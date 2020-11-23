@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "214513",
+    "ThreadId": "63128",
+    "Html": "<p>I'd be interested in hearing thoughts about the following suggestion: mark the Edges and Vertices properties of the provided graph implementations as virtual.&nbsp;Because these iterators&nbsp;aren't ordered in a non-arbitrary manner, this would allow subclasses to impose orderings (with the help of Linq) that could be useful for efficient traversals.&nbsp;&nbsp;</p>",
+    "PostedDate": "2009-07-21T13:58:18.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214574",
+    "ThreadId": "63128",
+    "Html": "<p>That seems reasonable.</p>",
+    "PostedDate": "2009-07-21T17:19:43.023-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214575",
+    "ThreadId": "63128",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=13688\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-07-21T17:19:51.383-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]
