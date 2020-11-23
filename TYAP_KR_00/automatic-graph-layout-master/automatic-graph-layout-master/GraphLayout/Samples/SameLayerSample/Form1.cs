@@ -2,6 +2,7 @@
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 using Microsoft.Msagl.Layout.Layered;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,10 @@ namespace SameLayerSample {
         public string[] alphabet;
         public int kratnost = 0;
         Form1 formForTheInputs;
+        public string[] stringTocheckInArrayOfStrings;
+        string initialState = "q0";
+        string finalState = "";
+        string currentState = "";
 
         public void initializeTestCase_abcdefg_3a_bfg_() {
             textBox1StringToCheck.Text = "bcadacabfg";
@@ -64,25 +69,13 @@ namespace SameLayerSample {
             graph.AddEdge("q6", "q1").LabelText = "a";
             graph.AddEdge("q6", "q3").LabelText = "c d e f g";
 
-            //graph.Directed;
-            //graph.LayerConstraints.PinNodesToSameLayer(new[] { graph.FindNode("A"), graph.FindNode("B"), graph.FindNode("C") });
-            // graph.LayerConstraints.PinNodesToSameLayer(new[] { graph.FindNode("A"), graph.FindNode("B"), graph.FindNode("C") });
-            // graph.LayerConstraints.AddSameLayerNeighbors(graph.FindNode("q0"), graph.FindNode("q1"), graph.FindNode("q2"),
-            //  graph.FindNode("q3"), graph.FindNode("q4"), graph.FindNode("q5"), graph.FindNode("q6"));//sets horizontal neighbors
-            //graph.LayoutAlgorithmSettings.ClusterMargi;
             graph.Attr.OptimizeLabelPositions = true;
             graph.Attr.SimpleStretch = true;
 
-            //graph.Attr
             gViewer.Graph = graph;
             IEnumerable<Edge> listOfEdges = graph.Edges;
 
-            foreach (var node in graph.Nodes) {
-                richTextBox1.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
-                foreach (Edge edge in node.Edges) {
-                    richTextBox1.AppendText("edge.LabelText = " + edge.LabelText + "\n");
-                }
-            }
+
             dataGridView1.RowCount = dataGridView1.ColumnCount = graph.NodeCount;
 
             int p = 0;
@@ -97,7 +90,7 @@ namespace SameLayerSample {
             string lastNode = "";
             foreach (var item in lst) {
                 dataGridView1.Columns[p].HeaderCell.Value = dataGridView1.Rows[p++].HeaderCell.Value = item;
-                lastNode = item;
+                finalState = lastNode = item;
             }
 
             foreach (var node in graph.Nodes) {//apparently it's easier to build graph by a table, not vice versa... but I'm lazy...
@@ -129,14 +122,75 @@ namespace SameLayerSample {
                     //Node.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
                 }
             }
+            foreach (var node in graph.Nodes) {
+                richTextBox1.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                foreach (Edge edge in node.Edges) {
+                    richTextBox1.AppendText("edge.LabelText = " + edge.LabelText + "\n");
+                }
+            }
             foreach (var item in hash) {
                 richTextBox1.AppendText(" item.GetType() = " + item.GetType() + "\n");
                 richTextBox1.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
                 richTextBox1.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
             }
+        }
+        public void checkAStringByDataGridview1() {
+            richTextBox2.Clear();
+            stringToCheck = textBox1StringToCheck.Text;
+            alphabet = textBox2Alphabet.ToString().Split(' ');
+            stringTocheckInArrayOfStrings = stringToArrayOfStrings(stringToCheck);
+            currentState = initialState;
+            for (int i = 0; i < stringTocheckInArrayOfStrings.Length; i++) {
+                if (alphabet.Contains(stringTocheckInArrayOfStrings[i])) {
+                    for (int j = 0; j < dataGridView1.RowCount; j++) {
+                        for (int k = 0; k < dataGridView1.ColumnCount; k++) {
+                            if (!dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Equals("null")) {
+                                string[] symbolsOfCurrentCell = dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Split(' ');
+                                for (int m = 0; m < symbolsOfCurrentCell.Length; m++) {
+                                    if (currentState.Equals(dataGridView1.Rows[j].HeaderCell.Value) &&
+                                stringTocheckInArrayOfStrings[i].Equals(symbolsOfCurrentCell[m])) {
+                                        richTextBox2.AppendText("Текущее состояние: " + currentState + ", ");
+                                        currentState = dataGridView1.Columns[k].HeaderText;
+                                        richTextBox2.AppendText("новое состояние: " + currentState + ", перешли по символу: " + symbolsOfCurrentCell[m] +
+                                            ", остаток цепочки: ");
+                                        for (int h = i + 1; h < stringTocheckInArrayOfStrings.Length; h++) {
+                                            if (!(h == stringTocheckInArrayOfStrings.Length))
+                                                richTextBox2.AppendText(stringTocheckInArrayOfStrings[h]);
+                                        }
+                                        richTextBox2.AppendText("\n");
+                                        m = k = j = Int32.MaxValue - 1;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (j == dataGridView1.RowCount - 1 && k == dataGridView1.ColumnCount - 1) {
+                                richTextBox2.AppendText("Правила перехода для текущего символа и состояния не найдено. Цепочка не принимается. \n");
+                                k = j = i = Int32.MaxValue - 1;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else {
+                    richTextBox2.AppendText("Символа " + stringTocheckInArrayOfStrings[i] + " нет в алфавите, цепочка не принимается. \n");
+                    break;
+                }
 
-            //graph.EdgeById("q0").Label.Text = "a";
-            //graph.EdgeById("0").At;
+            }
+            if (currentState.Equals(finalState)) {
+                richTextBox2.AppendText("Находимся в финальном состоянии, цепочка принята\n");
+            }
+            else {
+                richTextBox2.AppendText("Находимся в состоянии, отличном от финального, цепочка не принята\n");
+            }
+        }
+        public string[] stringToArrayOfStrings(string stringToCheck) {
+            char[] stringTocheckInChars = stringToCheck.ToCharArray();
+            string[] stringToCheckInStringArray = new string[stringTocheckInChars.Length];
+            for (int i = 0; i < stringTocheckInChars.Length; i++) {
+                stringToCheckInStringArray[i] = stringTocheckInChars[i].ToString();
+            }
+            return stringToCheckInStringArray;
         }
         public void readInformationFromTheInterface() {
             stringToCheck = textBox1StringToCheck.Text;
@@ -153,6 +207,10 @@ namespace SameLayerSample {
         private void button1_Click(object sender, System.EventArgs e) {
             // formForTheGraph = new Form2ForGraph(formForTheInputs);
             buildDFA();
+        }
+
+        private void button3_Click(object sender, System.EventArgs e) {
+            checkAStringByDataGridview1();
         }
     }
 }
