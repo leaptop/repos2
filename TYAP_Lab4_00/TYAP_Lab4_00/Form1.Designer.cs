@@ -199,9 +199,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(972, 36);
+            this.richTextBox1.Location = new System.Drawing.Point(875, 10);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 506);
+            this.richTextBox1.Size = new System.Drawing.Size(91, 20);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             // 
@@ -217,9 +217,9 @@
             // 
             // richTextBox2Output
             // 
-            this.richTextBox2Output.Location = new System.Drawing.Point(30, 256);
+            this.richTextBox2Output.Location = new System.Drawing.Point(972, 10);
             this.richTextBox2Output.Name = "richTextBox2Output";
-            this.richTextBox2Output.Size = new System.Drawing.Size(352, 373);
+            this.richTextBox2Output.Size = new System.Drawing.Size(297, 644);
             this.richTextBox2Output.TabIndex = 19;
             this.richTextBox2Output.Text = "";
             // 
@@ -295,7 +295,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(972, 548);
+            this.button9.Location = new System.Drawing.Point(555, 645);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(161, 23);
             this.button9.TabIndex = 27;
@@ -306,7 +306,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(972, 577);
+            this.button10.Location = new System.Drawing.Point(722, 650);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(161, 23);
             this.button10.TabIndex = 28;
@@ -329,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 653);
+            this.ClientSize = new System.Drawing.Size(1333, 686);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
