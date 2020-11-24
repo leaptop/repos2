@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1StringToCheck = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,16 +36,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3FinalSubString = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4SymbolForKratnost = new System.Windows.Forms.TextBox();
+            this.textBox4SymbolForMultiplicity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1Kratnost = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1Multiplicity = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Kratnost)).BeginInit();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Multiplicity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,10 +113,10 @@
             // 
             // textBox4SymbolForKratnost
             // 
-            this.textBox4SymbolForKratnost.Location = new System.Drawing.Point(208, 140);
-            this.textBox4SymbolForKratnost.Name = "textBox4SymbolForKratnost";
-            this.textBox4SymbolForKratnost.Size = new System.Drawing.Size(47, 20);
-            this.textBox4SymbolForKratnost.TabIndex = 6;
+            this.textBox4SymbolForMultiplicity.Location = new System.Drawing.Point(208, 140);
+            this.textBox4SymbolForMultiplicity.Name = "textBox4SymbolForKratnost";
+            this.textBox4SymbolForMultiplicity.Size = new System.Drawing.Size(47, 20);
+            this.textBox4SymbolForMultiplicity.TabIndex = 6;
             // 
             // label5
             // 
@@ -133,10 +139,10 @@
             // 
             // numericUpDown1Kratnost
             // 
-            this.numericUpDown1Kratnost.Location = new System.Drawing.Point(330, 141);
-            this.numericUpDown1Kratnost.Name = "numericUpDown1Kratnost";
-            this.numericUpDown1Kratnost.Size = new System.Drawing.Size(110, 20);
-            this.numericUpDown1Kratnost.TabIndex = 11;
+            this.numericUpDown1Multiplicity.Location = new System.Drawing.Point(330, 141);
+            this.numericUpDown1Multiplicity.Name = "numericUpDown1Kratnost";
+            this.numericUpDown1Multiplicity.Size = new System.Drawing.Size(110, 20);
+            this.numericUpDown1Multiplicity.TabIndex = 11;
             // 
             // button2
             // 
@@ -171,7 +177,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(452, 167);
+            this.button3.Location = new System.Drawing.Point(357, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
             this.button3.TabIndex = 15;
@@ -187,21 +193,70 @@
             this.richTextBox2.TabIndex = 16;
             this.richTextBox2.Text = "";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(10, 33);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 23);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Тема";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(452, 33);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Автор";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(502, 167);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(194, 23);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "сохранить результаты вычислений";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(125, 167);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(210, 23);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Построить ДКА улучшенная версия)";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1892, 672);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.numericUpDown1Kratnost);
+            this.Controls.Add(this.numericUpDown1Multiplicity);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4SymbolForKratnost);
+            this.Controls.Add(this.textBox4SymbolForMultiplicity);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3FinalSubString);
             this.Controls.Add(this.label2);
@@ -210,7 +265,7 @@
             this.Controls.Add(this.textBox1StringToCheck);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Kratnost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Multiplicity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,15 +281,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3FinalSubString;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4SymbolForKratnost;
+        private System.Windows.Forms.TextBox textBox4SymbolForMultiplicity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1Kratnost;
+        private System.Windows.Forms.NumericUpDown numericUpDown1Multiplicity;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
