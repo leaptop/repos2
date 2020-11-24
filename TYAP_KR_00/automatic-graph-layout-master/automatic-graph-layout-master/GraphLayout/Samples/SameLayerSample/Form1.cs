@@ -14,9 +14,9 @@ namespace SameLayerSample {
             InitializeComponent();
             formForTheInputs = this;
 
-            BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring();
+          //  BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring();
 
-            // buildFirstDFA_AndDatagridviewByIt();
+             buildFirstDFA_AndDatagridviewByIt();
 
             //CreatClusteredLayout();
         }
@@ -86,14 +86,25 @@ namespace SameLayerSample {
             graph.AddEdge("q" + multiplicity, "q" + multiplicity).LabelText = setWithout_a_and_b_InString;
             graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity + 1)).LabelText = bb[0];
 
+            for (int i = multiplicity + 2; i < finalSubStringInArray.Length + multiplicity + 1; i++) {
+                graph.AddEdge("q" + i, "q" + (multiplicity + 1)).LabelText = bb[0];
+            }
+
             if (finalSubstring.Length > 1) {//in general it can be redone by just adding edges with a set of set/LabelText for each next state
-
-                string f = finalSubstring.Substring(1, 1);
+                //
+               /* string f = finalSubstring.Substring(1, 1);
                 string setWithout_a_and_b_and_f_InString = setExceptParameter(setWithout_a_and_b_InString, f);
+                graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString; */              
+            }
 
-                graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString;
-                for (int i = multiplicity + 2; i < finalSubStringInArray.Length + multiplicity + 1; i++) {
-                    graph.AddEdge("q" + i, "q" + (multiplicity + 1)).LabelText = bb[0];
+            for (int i = 1; i < finalSubstring.Length + 1; i++) {
+                if(i != (finalSubstring.Length)) {
+                    string f = finalSubstring.Substring(i, 1);
+                    string setWithout_a_and_b_and_f_InString = setExceptParameter(setWithout_a_and_b_InString, f);
+                    graph.AddEdge("q" + (multiplicity + i), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString;
+                }
+                else {
+                    graph.AddEdge("q" + (multiplicity + i), "q" + (multiplicity)).LabelText = setWithout_a_and_b_InString;
                 }
             }
 
