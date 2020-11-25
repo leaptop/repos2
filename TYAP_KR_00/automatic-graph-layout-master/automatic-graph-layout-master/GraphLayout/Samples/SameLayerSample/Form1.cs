@@ -14,15 +14,15 @@ namespace SameLayerSample {
             InitializeComponent();
             formForTheInputs = this;
 
-          //  BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring();
+            //  BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring();
 
-             buildFirstDFA_AndDatagridviewByIt();
+            // buildFirstDFA_AndDatagridviewByIt();
 
             //CreatClusteredLayout();
         }
         public string stringToCheck = "";
         public string finalSubstring = "";
-        public string symbolKratnost = "";
+        public string symbolForMultiplicity = "";
         public string[] alphabet;
         public int kratnost = 0;
         Form1 formForTheInputs;
@@ -32,6 +32,7 @@ namespace SameLayerSample {
         string currentState = "";
         Graph graph;
         IEnumerable<string> alphabetInIEnumerable;
+        int multiplicity;
 
         public string setExceptParameter(string set, string str) {//returns a string, for example: 
             //set.Except(str) or {a, b, c}/b = {a, c} = "a c". I.e. the returned string is "a c".
@@ -45,14 +46,38 @@ namespace SameLayerSample {
             }
             return setWithout_a_InString;
         }
-        public void BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring() {
-            //need to have intersections and not equal sets...
-            initializeTestCase_abcdefg_3a_bfg_();
-            readInformationFromTheInterface();
+        public void BuildDFAFinalSubstringIsEmpty_case_3() {
 
             string a = textBox4SymbolForMultiplicity.Text;
+            multiplicity = (int)numericUpDown1Multiplicity.Value;
+            string alphabetInString = textBox2Alphabet.Text;
+            string setWithout_a_InString = setExceptParameter(alphabetInString, a);
+            GViewer gViewer = new GViewer() { Dock = DockStyle.Fill };
+            SuspendLayout();
+            Controls.Add(gViewer);
+            ResumeLayout();
+            graph = new Graph();
+            var sugiyamaSettings = (SugiyamaLayoutSettings)graph.LayoutAlgorithmSettings;
+            sugiyamaSettings.NodeSeparation *= 2;
 
-            int multiplicity = (int)numericUpDown1Multiplicity.Value;
+            for (int i = 0; i < multiplicity; i++) {
+                graph.AddEdge("q" + i, "q" + i).LabelText = setWithout_a_InString;
+                graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = a;
+            }
+            graph.AddEdge("q" + multiplicity, "q" + multiplicity).LabelText = setWithout_a_InString;
+            graph.AddEdge("q" + (multiplicity), "q1").LabelText = a;
+
+            graph.Attr.OptimizeLabelPositions = true;
+            graph.Attr.SimpleStretch = true;
+            gViewer.Graph = graph;
+
+            buildDataGridView1ByGraph();
+        }
+        public void BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsNotInTheFinalSubstring() {
+            //need to have intersections and not equal sets...
+            //initializeTestCase_abcdefg_3a_bfg_();
+
+            string a = textBox4SymbolForMultiplicity.Text;
 
             string alphabetInString = textBox2Alphabet.Text;
 
@@ -91,14 +116,14 @@ namespace SameLayerSample {
             }
 
             if (finalSubstring.Length > 1) {//in general it can be redone by just adding edges with a set of set/LabelText for each next state
-                //
-               /* string f = finalSubstring.Substring(1, 1);
-                string setWithout_a_and_b_and_f_InString = setExceptParameter(setWithout_a_and_b_InString, f);
-                graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString; */              
+                                            //
+                /* string f = finalSubstring.Substring(1, 1);
+                 string setWithout_a_and_b_and_f_InString = setExceptParameter(setWithout_a_and_b_InString, f);
+                 graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString; */
             }
 
             for (int i = 1; i < finalSubstring.Length + 1; i++) {
-                if(i != (finalSubstring.Length)) {
+                if (i != (finalSubstring.Length)) {
                     string f = finalSubstring.Substring(i, 1);
                     string setWithout_a_and_b_and_f_InString = setExceptParameter(setWithout_a_and_b_InString, f);
                     graph.AddEdge("q" + (multiplicity + i), "q" + (multiplicity)).LabelText = setWithout_a_and_b_and_f_InString;
@@ -268,9 +293,10 @@ namespace SameLayerSample {
         public void readInformationFromTheInterface() {
             stringToCheck = textBox1StringToCheck.Text;
             finalSubstring = textBox3FinalSubString.Text;
-            symbolKratnost = textBox4SymbolForMultiplicity.Text;
-            kratnost = (int)numericUpDown1Multiplicity.Value;
+            symbolForMultiplicity = textBox4SymbolForMultiplicity.Text;
+            multiplicity =  (int)numericUpDown1Multiplicity.Value;
             alphabet = textBox2Alphabet.Text.Split(' ');
+            
         }
         public void initializeTestCase_abcdefg_3a_bfg_() {
             textBox1StringToCheck.Text = "bcadacabfg";
@@ -325,7 +351,20 @@ namespace SameLayerSample {
         }
 
         private void button7_Click(object sender, EventArgs e) {
-            BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsntInTheFinalSubstring();
+            readInformationFromTheInterface();
+            if (finalSubstring.Contains(multiplicity.ToString())) {
+                //the cases when the final substring contains the multiplicity symbol 
+
+            }
+            else if (finalSubstring.Length != 0 && multiplicity !=0 && !finalSubstring.Contains(multiplicity.ToString())) {
+                //the case when the final substring is not empty, multiplicity != 0, multiplicity symbol is not in the final substring
+                BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsNotInTheFinalSubstring();
+            }
+            else if (finalSubstring.Length == 0) {
+                //the case when the final substring is empty
+                BuildDFAFinalSubstringIsEmpty_case_3();
+            }
+
         }
     }
 }
