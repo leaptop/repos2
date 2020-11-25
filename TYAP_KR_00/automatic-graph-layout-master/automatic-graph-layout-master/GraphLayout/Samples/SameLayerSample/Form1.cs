@@ -24,7 +24,7 @@ namespace SameLayerSample {
         public string finalSubstring = "";
         public string symbolForMultiplicity = "";
         public string[] alphabet;
-        public int kratnost = 0;
+        //public int kratnost = 0;
         Form1 formForTheInputs;
         public string[] stringTocheckInArrayOfStrings;
         string initialState = "q0";
@@ -33,6 +33,8 @@ namespace SameLayerSample {
         Graph graph;
         IEnumerable<string> alphabetInIEnumerable;
         int multiplicity;
+        GViewer gViewer;
+        string alphabetInString = "";
 
         public string setExceptParameter(string set, string str) {//returns a string, for example: 
             //set.Except(str) or {a, b, c}/b = {a, c} = "a c". I.e. the returned string is "a c".
@@ -52,7 +54,7 @@ namespace SameLayerSample {
             multiplicity = (int)numericUpDown1Multiplicity.Value;
             string alphabetInString = textBox2Alphabet.Text;
             string setWithout_a_InString = setExceptParameter(alphabetInString, a);
-            GViewer gViewer = new GViewer() { Dock = DockStyle.Fill };
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
             SuspendLayout();
             Controls.Add(gViewer);
             ResumeLayout();
@@ -74,16 +76,12 @@ namespace SameLayerSample {
             buildDataGridView1ByGraph();
         }
         public void BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsNotInTheFinalSubstring() {
-            //need to have intersections and not equal sets...
-            //initializeTestCase_abcdefg_3a_bfg_();
 
             string a = textBox4SymbolForMultiplicity.Text;
 
-            string alphabetInString = textBox2Alphabet.Text;
-
             string setWithout_a_InString = setExceptParameter(alphabetInString, a);
 
-            GViewer gViewer = new GViewer() { Dock = DockStyle.Fill };
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
             SuspendLayout();
             Controls.Add(gViewer);
             ResumeLayout();
@@ -109,8 +107,11 @@ namespace SameLayerSample {
             string setWithout_a_and_b_InString = setExceptParameter(setWithout_a_InString, bb[0]);
 
             graph.AddEdge("q" + multiplicity, "q" + multiplicity).LabelText = setWithout_a_and_b_InString;
-            graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity + 1)).LabelText = bb[0];
 
+            if (!finalSubstring.Substring(0, 1).Equals(finalSubstring.Substring(1, 1))) {
+                graph.AddEdge("q" + (multiplicity + 1), "q" + (multiplicity + 1)).LabelText = bb[0];//it was added for the case when the first symbol of the finalSubstring differs from the second symbol. When the symbols are the same it breaks the algorythm...
+            }
+            // 
             for (int i = multiplicity + 2; i < finalSubStringInArray.Length + multiplicity + 1; i++) {
                 graph.AddEdge("q" + i, "q" + (multiplicity + 1)).LabelText = bb[0];
             }
@@ -144,7 +145,7 @@ namespace SameLayerSample {
         public void buildFirstDFA_AndDatagridviewByIt() {
             initializeTestCase_abcdefg_3a_bfg_();
             readInformationFromTheInterface();
-            GViewer gViewer = new GViewer() { Dock = DockStyle.Fill };
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
             SuspendLayout();
             Controls.Add(gViewer);
             ResumeLayout();
@@ -294,9 +295,10 @@ namespace SameLayerSample {
             stringToCheck = textBox1StringToCheck.Text;
             finalSubstring = textBox3FinalSubString.Text;
             symbolForMultiplicity = textBox4SymbolForMultiplicity.Text;
-            multiplicity =  (int)numericUpDown1Multiplicity.Value;
+            multiplicity = (int)numericUpDown1Multiplicity.Value;
             alphabet = textBox2Alphabet.Text.Split(' ');
-            
+            alphabetInString = textBox2Alphabet.Text;
+
         }
         public void initializeTestCase_abcdefg_3a_bfg_() {
             textBox1StringToCheck.Text = "bcadacabfg";
@@ -304,7 +306,13 @@ namespace SameLayerSample {
             textBox3FinalSubString.Text = "bfg";
             textBox4SymbolForMultiplicity.Text = "a";
             numericUpDown1Multiplicity.Value = 3;
-
+        }
+        public void initVLPKBug() {
+            textBox1StringToCheck.Text = "ппллввввпп";
+            textBox2Alphabet.Text = "в л п к";
+            textBox3FinalSubString.Text = "пп";
+            textBox4SymbolForMultiplicity.Text = "в";
+            numericUpDown1Multiplicity.Value = 4;
         }
         public string[] stringToArrayOfStrings(string stringToCheck) {
             char[] stringTocheckInChars = stringToCheck.ToCharArray();
@@ -356,7 +364,7 @@ namespace SameLayerSample {
                 //the cases when the final substring contains the multiplicity symbol 
 
             }
-            else if (finalSubstring.Length != 0 && multiplicity !=0 && !finalSubstring.Contains(multiplicity.ToString())) {
+            else if (finalSubstring.Length != 0 && multiplicity != 0 && !finalSubstring.Contains(multiplicity.ToString())) {
                 //the case when the final substring is not empty, multiplicity != 0, multiplicity symbol is not in the final substring
                 BuildDFAFirstCase_multiplicityNotEqualToZeroAndTheSymbolIsNotInTheFinalSubstring();
             }
@@ -365,6 +373,10 @@ namespace SameLayerSample {
                 BuildDFAFinalSubstringIsEmpty_case_3();
             }
 
+        }
+
+        private void button8_Click(object sender, EventArgs e) {
+            initVLPKBug();
         }
     }
 }

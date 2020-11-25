@@ -50,6 +50,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Multiplicity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -111,10 +112,10 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Кратность появления символа:";
             // 
-            // textBox4SymbolForKratnost
+            // textBox4SymbolForMultiplicity
             // 
             this.textBox4SymbolForMultiplicity.Location = new System.Drawing.Point(208, 140);
-            this.textBox4SymbolForMultiplicity.Name = "textBox4SymbolForKratnost";
+            this.textBox4SymbolForMultiplicity.Name = "textBox4SymbolForMultiplicity";
             this.textBox4SymbolForMultiplicity.Size = new System.Drawing.Size(47, 20);
             this.textBox4SymbolForMultiplicity.TabIndex = 6;
             // 
@@ -131,16 +132,16 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 167);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(142, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Построить ДКА";
+            this.button1.Text = "Построить ДКА пример";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // numericUpDown1Kratnost
+            // numericUpDown1Multiplicity
             // 
             this.numericUpDown1Multiplicity.Location = new System.Drawing.Point(330, 141);
-            this.numericUpDown1Multiplicity.Name = "numericUpDown1Kratnost";
+            this.numericUpDown1Multiplicity.Name = "numericUpDown1Multiplicity";
             this.numericUpDown1Multiplicity.Size = new System.Drawing.Size(110, 20);
             this.numericUpDown1Multiplicity.TabIndex = 11;
             // 
@@ -177,7 +178,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(357, 167);
+            this.button3.Location = new System.Drawing.Point(557, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
             this.button3.TabIndex = 15;
@@ -220,7 +221,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(502, 167);
+            this.button6.Location = new System.Drawing.Point(502, 114);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(194, 23);
             this.button6.TabIndex = 21;
@@ -230,7 +231,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(125, 167);
+            this.button7.Location = new System.Drawing.Point(341, 167);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(210, 23);
             this.button7.TabIndex = 22;
@@ -238,11 +239,22 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(452, 62);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(232, 23);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "инициализировать в л п к";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1892, 672);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -295,6 +307,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 
