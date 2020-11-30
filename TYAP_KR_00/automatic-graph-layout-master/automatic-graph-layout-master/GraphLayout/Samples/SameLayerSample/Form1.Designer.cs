@@ -130,12 +130,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 167);
+            this.button1.Location = new System.Drawing.Point(585, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "Построить ДКА пример";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // numericUpDown1Multiplicity
@@ -172,7 +173,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(1477, 12);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(403, 647);
+            this.richTextBox1.Size = new System.Drawing.Size(403, 477);
             this.richTextBox1.TabIndex = 14;
             this.richTextBox1.Text = "";
             // 
@@ -235,18 +236,19 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(210, 23);
             this.button7.TabIndex = 22;
-            this.button7.Text = "Построить ДКА улучшенная версия)";
+            this.button7.Text = "Построить ДКА по интерфейсу";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(452, 62);
+            this.button8.Location = new System.Drawing.Point(502, 62);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(232, 23);
             this.button8.TabIndex = 23;
             this.button8.Text = "инициализировать в л п к";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
