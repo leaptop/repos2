@@ -37,6 +37,12 @@ sudo mount /dev/sda1 /mnt (Здесь sda1 - раздел с линуксом(ч
 sudo grub-install —root-directory=/mnt /dev/sda(может не сработать, но сработает следующая команда)
 sudo update-grub —output=/mnt/boot/grub/grub.cfg  
 
+Чтобы гит открывался в нужной папке:
+.bashrc лежит в C:\Users\Stepan
+Add this line to your .bashrc file:
+cd C:/xampp/htdocs/<name of your project>;
+If the .bashrc file doesn't exist, create one in your root folder.
+
 На непрерывность работы беспроводной мыши также влияет одновременно подключённый к тому же usb порту внешний жёсткий диск. 
 
 Абстрактные классы в сишарпе могут иметь реализацию методов, но чтобы их использовать надо создать другой класс, наследующий от абстрктного.
