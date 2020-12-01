@@ -22,7 +22,9 @@ namespace SameLayerSample {
         }
         public string stringToCheck = "";
         public string finalSubstring = "";
+        public string[] finalSubstringInArrayOfStrings;
         public string symbolForMultiplicity = "";
+        int multiplicity;
         public string[] alphabet;
         //public int kratnost = 0;
         Form1 formForTheInputs;
@@ -32,7 +34,8 @@ namespace SameLayerSample {
         string currentState = "";
         Graph graph;
         IEnumerable<string> alphabetInIEnumerable;
-        int multiplicity;
+        public bool finalSubstringContainsSymbolForMultiplicity = false;
+
         GViewer gViewer;
         string alphabetInString = "";
 
@@ -47,6 +50,74 @@ namespace SameLayerSample {
                 setWithout_a_InString += v + " ";
             }
             return setWithout_a_InString;
+        }
+        public void buildDFA_UnifiedAlgorythm() {
+            //Firstly I need to ensure, that the number of symbols for multiplicity is correct. For that I need to count
+            //them in the final substring and then build enough states.
+            //I also need to count consequent equal symbols in the beginning of the final 
+            //substring(for example in bbbcbdr there are 3 such symbols). If there are such symbols, I need to point 
+            //transitions to the last of them from states, reading the final substring.
+            //
+            //
+       /*     gViewer = null;
+            graph = null;*/
+            if(gViewer != null) {
+                gViewer.Dispose();
+            }
+
+            int numberOfSymbolsForMultiplicityInFinalSubstring = 0;
+            int numberOfEqualSymbolsInTheBeginningOfFinalSubstring = 0;
+            if (finalSubstring.Length != 0) {
+                for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                    if (finalSubstringInArrayOfStrings[i].Equals(symbolForMultiplicity)) {
+                        numberOfSymbolsForMultiplicityInFinalSubstring++;
+                        finalSubstringContainsSymbolForMultiplicity = true;
+                    }
+                }
+
+                for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                    if (finalSubstringInArrayOfStrings[0].Equals(finalSubstringInArrayOfStrings[i]) && i != 0) {
+                        numberOfEqualSymbolsInTheBeginningOfFinalSubstring++;
+                    }
+                    else if (i > 0) {
+                        break;
+                    }
+                    else if (i == 0) {
+                        continue;
+                    }
+                }
+            }
+            int numberOfSymbolsForMultiplicityToCreateAdditionalStates = 0;
+            if (numberOfSymbolsForMultiplicityInFinalSubstring > 0) {
+                while (((numberOfSymbolsForMultiplicityInFinalSubstring + numberOfSymbolsForMultiplicityToCreateAdditionalStates) %
+   multiplicity) != 0) {
+                    numberOfSymbolsForMultiplicityToCreateAdditionalStates++;
+                }
+            }else {
+                numberOfSymbolsForMultiplicityToCreateAdditionalStates = multiplicity;
+            }
+
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
+            SuspendLayout();
+            Controls.Add(gViewer);
+            ResumeLayout();
+            graph = new Graph();
+            var sugiyamaSettings = (SugiyamaLayoutSettings)graph.LayoutAlgorithmSettings;
+            sugiyamaSettings.NodeSeparation *= 2;
+
+            string setWithout_SymbolForMul_InString = setExceptParameter(alphabetInString, symbolForMultiplicity);
+            for (int i = 0; i < numberOfSymbolsForMultiplicityToCreateAdditionalStates; i++) {
+                graph.AddEdge("q" + i, "q" + i).LabelText = setWithout_SymbolForMul_InString;
+                graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = symbolForMultiplicity;
+
+            }
+
+
+            graph.Attr.OptimizeLabelPositions = true;
+            graph.Attr.SimpleStretch = true;
+            gViewer.Graph = graph;
+
+            buildDataGridView1ByGraph();
         }
         public void BuildDFAFinalSubstringIsEmpty_case_3() {
 
@@ -294,10 +365,22 @@ namespace SameLayerSample {
         public void readInformationFromTheInterface() {
             stringToCheck = textBox1StringToCheck.Text;
             finalSubstring = textBox3FinalSubString.Text;
+            finalSubstringInArrayOfStrings = stringToArrayOfStrings(finalSubstring);
             symbolForMultiplicity = textBox4SymbolForMultiplicity.Text;
+            if (symbolForMultiplicity.Length != 1) {
+                MessageBox.Show("Символ для кратности должен быть один");
+                textBox4SymbolForMultiplicity.Text = "";
+            }
             multiplicity = (int)numericUpDown1Multiplicity.Value;
+            if (multiplicity < 1) {
+                MessageBox.Show("Кратность не м.б. меньше одного");
+                numericUpDown1Multiplicity.Value = 1;
+            }
             alphabet = textBox2Alphabet.Text.Split(' ');
             alphabetInString = textBox2Alphabet.Text;
+            stringTocheckInArrayOfStrings = stringToArrayOfStrings(stringToCheck);
+            initialState = textBoxInitialState.Text;
+            finalState = textBoxFinalState.Text;
 
         }
         public void initializeTestCase_abcdefg_3a_bfg_() {
@@ -306,6 +389,7 @@ namespace SameLayerSample {
             textBox3FinalSubString.Text = "bfg";
             textBox4SymbolForMultiplicity.Text = "a";
             numericUpDown1Multiplicity.Value = 3;
+
         }
         public void initVLPKBug() {
             textBox1StringToCheck.Text = "ппллввввпп";
@@ -359,6 +443,11 @@ namespace SameLayerSample {
         }
 
         private void button7_Click(object sender, EventArgs e) {
+            readInformationFromTheInterface();
+            buildDFA_UnifiedAlgorythm();
+
+        }
+        private void button7_Click0(object sender, EventArgs e) {// Not correct way, because there is only one algorithm
             readInformationFromTheInterface();
             if (finalSubstring.Contains(multiplicity.ToString())) {
                 //the cases when the final substring contains the multiplicity symbol 
