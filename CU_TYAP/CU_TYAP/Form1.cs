@@ -19,10 +19,10 @@ namespace CU_TYAP
             InitializeComponent();
             textBoxMultiplicity.Text = "3";
             radioButton1.Checked = true;//left
-            textBoxAlphabet.Text = "a,b,c";
-            textBoxParameter.Text = "b";
-            textBoxSubstring.Text = "ab";
-            radioButton3.Checked = true;
+            textBoxAlphabet.Text = "a,b,c,d,e,f,g";
+            textBoxParameter.Text = "a";
+            textBoxSubstring.Text = "bfg";
+            radioButton3.Checked = true;//first rule
             nonTerminals = new List<NonTerminal>();
             listFinished = new List<Chain>();
             nonTermSequenceMaxLength.Value = 5;

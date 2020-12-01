@@ -51,6 +51,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.textBoxInitialState = new System.Windows.Forms.TextBox();
+            this.textBoxFinalState = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Multiplicity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +183,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(557, 167);
+            this.button3.Location = new System.Drawing.Point(557, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
             this.button3.TabIndex = 15;
@@ -232,7 +236,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(341, 167);
+            this.button7.Location = new System.Drawing.Point(486, 171);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(210, 23);
             this.button7.TabIndex = 22;
@@ -251,11 +255,47 @@
             this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // textBoxInitialState
+            // 
+            this.textBoxInitialState.Location = new System.Drawing.Point(139, 171);
+            this.textBoxInitialState.Name = "textBoxInitialState";
+            this.textBoxInitialState.Size = new System.Drawing.Size(47, 20);
+            this.textBoxInitialState.TabIndex = 24;
+            // 
+            // textBoxFinalStates
+            // 
+            this.textBoxFinalState.Location = new System.Drawing.Point(330, 171);
+            this.textBoxFinalState.Name = "textBoxFinalStates";
+            this.textBoxFinalState.Size = new System.Drawing.Size(110, 20);
+            this.textBoxFinalState.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Начальное состояние:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(205, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Конечное состояние:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1892, 672);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxFinalState);
+            this.Controls.Add(this.textBoxInitialState);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -310,6 +350,10 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBoxInitialState;
+        private System.Windows.Forms.TextBox textBoxFinalState;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
