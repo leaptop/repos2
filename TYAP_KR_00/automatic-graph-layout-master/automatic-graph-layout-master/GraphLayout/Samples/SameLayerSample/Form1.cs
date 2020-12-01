@@ -35,6 +35,7 @@ namespace SameLayerSample {
         Graph graph;
         IEnumerable<string> alphabetInIEnumerable;
         public bool finalSubstringContainsSymbolForMultiplicity = false;
+        public bool mulSymbIsTheFirstSymbOfFSSg = false;// multiplicity symbol is the first symbol of the FinalSubstring
 
         GViewer gViewer;
         string alphabetInString = "";
@@ -51,7 +52,7 @@ namespace SameLayerSample {
             }
             return setWithout_a_InString;
         }
-        public void buildDFA_UnifiedAlgorythm() {
+        public void buildDFA_UnifiedAlgorythm() {//пока написано для случая с непустой конечной подстрокой и кратностью больше 1
             //Firstly I need to ensure, that the number of symbols for multiplicity is correct. For that I need to count
             //them in the final substring and then build enough states.
             //I also need to count consequent equal symbols in the beginning of the final 
@@ -59,44 +60,9 @@ namespace SameLayerSample {
             //transitions to the last of them from states, reading the final substring.
             //
             //
-       /*     gViewer = null;
-            graph = null;*/
-            if(gViewer != null) {
+            if (gViewer != null) {
                 gViewer.Dispose();
             }
-
-            int numberOfSymbolsForMultiplicityInFinalSubstring = 0;
-            int numberOfEqualSymbolsInTheBeginningOfFinalSubstring = 0;
-            if (finalSubstring.Length != 0) {
-                for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
-                    if (finalSubstringInArrayOfStrings[i].Equals(symbolForMultiplicity)) {
-                        numberOfSymbolsForMultiplicityInFinalSubstring++;
-                        finalSubstringContainsSymbolForMultiplicity = true;
-                    }
-                }
-
-                for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
-                    if (finalSubstringInArrayOfStrings[0].Equals(finalSubstringInArrayOfStrings[i]) && i != 0) {
-                        numberOfEqualSymbolsInTheBeginningOfFinalSubstring++;
-                    }
-                    else if (i > 0) {
-                        break;
-                    }
-                    else if (i == 0) {
-                        continue;
-                    }
-                }
-            }
-            int numberOfSymbolsForMultiplicityToCreateAdditionalStates = 0;
-            if (numberOfSymbolsForMultiplicityInFinalSubstring > 0) {
-                while (((numberOfSymbolsForMultiplicityInFinalSubstring + numberOfSymbolsForMultiplicityToCreateAdditionalStates) %
-   multiplicity) != 0) {
-                    numberOfSymbolsForMultiplicityToCreateAdditionalStates++;
-                }
-            }else {
-                numberOfSymbolsForMultiplicityToCreateAdditionalStates = multiplicity;
-            }
-
             gViewer = new GViewer() { Dock = DockStyle.Fill };
             SuspendLayout();
             Controls.Add(gViewer);
@@ -105,12 +71,196 @@ namespace SameLayerSample {
             var sugiyamaSettings = (SugiyamaLayoutSettings)graph.LayoutAlgorithmSettings;
             sugiyamaSettings.NodeSeparation *= 2;
 
-            string setWithout_SymbolForMul_InString = setExceptParameter(alphabetInString, symbolForMultiplicity);
-            for (int i = 0; i < numberOfSymbolsForMultiplicityToCreateAdditionalStates; i++) {
-                graph.AddEdge("q" + i, "q" + i).LabelText = setWithout_SymbolForMul_InString;
-                graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = symbolForMultiplicity;
+            if (finalSubstring.Length == 0 && multiplicity == 1) {//                            I
+                graph.AddEdge("q0", "q0").LabelText = alphabetInString;
+                textBoxFinalState.Text = "q0";
+                textBoxInitialState.Text = "q0";
+            }
+            else if (finalSubstring.Length == 0 && multiplicity > 1) {//                        II
+                for (int i = 0; i < multiplicity - 1; i++) {
+                    graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = symbolForMultiplicity;
+                    graph.AddEdge("q" + i, "q" + i).LabelText = setExceptParameter(alphabetInString, symbolForMultiplicity);
+                }
+                graph.AddEdge("q" + (multiplicity - 1), "q" + 0).LabelText = symbolForMultiplicity;
+                graph.AddEdge("q" + (multiplicity - 1), "q" + (multiplicity - 1)).LabelText =
+                    setExceptParameter(alphabetInString, symbolForMultiplicity);
+                textBoxFinalState.Text = "q0";
+                textBoxInitialState.Text = "q0";
+            }
+            else if (finalSubstring.Length > 0 && multiplicity == 1) {//                        III
+                int numEqualInFSSg = 0;//numberOfEqualSymbolsInTheBeginningOfFinalSubstring
+                for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                    if (finalSubstringInArrayOfStrings[0].Equals(finalSubstringInArrayOfStrings[i]) && i != 0) {
+                        numEqualInFSSg++;//это число повторений. Число одинаковых символов на 1 больше
+                    }//считаю символы конечной подстроки, начиная слева, одинаковые и смежные с последующими символами подстроки
+                    else if (i > 0) { break; }
+                    else if (i == 0) { continue; }
+                }
+                if (numEqualInFSSg == 0) {//                                                    a   нет повторяющихся символов в начале подстроки
+                    if (finalSubstring.Length == 1) {//                                          1   длина конечной подстроки равна 1
+                        graph.AddEdge("q0", "q1").LabelText = finalSubstring;
+                        graph.AddEdge("q0", "q0").LabelText = setExceptParameter(alphabetInString, finalSubstring);
+                        graph.AddEdge("q1", "q1").LabelText = finalSubstring;
+                        graph.AddEdge("q1", "q0").LabelText = setExceptParameter(alphabetInString, finalSubstring);
+                        textBoxInitialState.Text = "q0";
+                        textBoxFinalState.Text = "q1";
+                    }
+                    else {//                                                                    2   длина конечной подстроки больше 1
+                        for (int i = 0; i < finalSubstring.Length; i++) {
+                            //Добавляю рёбра для всей конечной подстроки:
+                            graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = finalSubstringInArrayOfStrings[i];
+                        }
+                        //Из последнего состояния возвращаемся в нулевое по алфавиту без первого символа конечной подстроки:
+                        graph.AddEdge("q" + (finalSubstring.Length), "q0").LabelText =
+                            setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]);
+                        for (int i = 1; i < finalSubstring.Length + 1; i++) {//по первому символу конечной подстроки все переходят в q1
+                            graph.AddEdge("q" + i, "q1").LabelText = finalSubstringInArrayOfStrings[0];
+                        }
+                        //Нулевое состояние замыкается на себя по алфавиту без первого символа конечной подстроки:
+                        graph.AddEdge("q0", "q0").LabelText =
+                            setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]);
+                        //Все состояния кроме нулевого и последнего переходят в нулевое по алфавиту без первого символа конечной подстроки
+                        //и без символа, по которому они переходят в следующее состояние:
+                        for (int i = 1; i < finalSubstring.Length; i++) {
+                            graph.AddEdge("q" + i, "q0").LabelText = setExceptParameter(
+                                setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]), finalSubstringInArrayOfStrings[i]);
+                        }
+                        textBoxInitialState.Text = "q0";
+                        textBoxFinalState.Text = "q" + (finalSubstring.Length);
+                    }
+                }
+                else {//                                                                        b   есть повторяющиеся символы в начале подстроки
+                    if ((numEqualInFSSg + 1) == finalSubstring.Length) {//                      1   вся конечная подстрока состоит из одинаковых символов
+                        for (int i = 0; i < finalSubstring.Length; i++) {
+                            //Добавляю рёбра для всей конечной подстроки:
+                            graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = finalSubstringInArrayOfStrings[i];
+                        }
+                        //Абсолютно из всех состояний есть ребро в q0 по алфавиту без первого символа конечной подстроки:
+                        for (int i = 0; i < finalSubstring.Length + 1; i++) {
+                            graph.AddEdge("q" + i, "q0").LabelText =
+                                setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]);
+                        }
+                        //Последнее состояние - финальное и замыкается на себя по первому символу конечной подстроки:
+                        graph.AddEdge("q" + finalSubstring.Length, "q" + finalSubstring.Length).LabelText = finalSubstringInArrayOfStrings[0];
+                        textBoxInitialState.Text = "q0";
+                        textBoxFinalState.Text = "q" + (finalSubstring.Length);
+
+                    }//                                                                         2   после повторяющихся символов конечной подстроки есть и другой(ие)
+                    else {
+                        for (int i = 0; i < finalSubstring.Length; i++) {
+                            //Добавляю рёбра для всей конечной подстроки:
+                            graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = finalSubstringInArrayOfStrings[i];
+                        }
+                        //Из последнего состояния возвращаемся в нулевое по алфавиту без первого символа конечной подстроки:
+                        graph.AddEdge("q" + finalSubstring.Length, "q0").LabelText =
+                            setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]);
+                    }
+
+                }
+            }
+            else {
+                int numSymbInFSSg = 0;//numberOfSymbolsForMultiplicityInFinalSubstring
+                int numEqualInFSg = 0;//numberOfEqualSymbolsInTheBeginningOfFinalSubstring
+                if (finalSubstring.Length != 0) {
+                    for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                        if (finalSubstringInArrayOfStrings[i].Equals(symbolForMultiplicity)) {
+                            numSymbInFSSg++;//посчитал символы кратности в конечной подстроке
+                            finalSubstringContainsSymbolForMultiplicity = true;
+                        }
+                    }
+
+                    for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                        if (finalSubstringInArrayOfStrings[0].Equals(finalSubstringInArrayOfStrings[i]) && i != 0) {
+                            numEqualInFSg++;//посчитал символы конечной подстроки, начиная слева, одинаковые и смежные с последующими символами подстроки
+                        }
+                        else if (i > 0) {
+                            break;
+                        }
+                        else if (i == 0) {
+                            continue;
+                        }
+                    }
+                    if (finalSubstringInArrayOfStrings[0].Equals(symbolForMultiplicity)) {
+                        mulSymbIsTheFirstSymbOfFSSg = true;//вычислил, является ли символ кратности первым символом конечной подстроки
+                    }
+                }
+                int numOfAdditEdges = 0;//numberOfSymbolsForMultiplicityToCreateAdditionalStates better to say "additional edges"
+                if (numSymbInFSSg > 0) {//Если в конечной подстроке есть символы кратности, то нахожу такое число numOfAdditEdges, при котором
+                                        //будет выполняться кратность:
+                    while (((numSymbInFSSg + numOfAdditEdges) % multiplicity) != 0) {
+                        numOfAdditEdges++;
+                        //посчитал сколько рёбер для подсчета символа кратности нужно добавить. Если в конечной подстроке
+                        //есть такие символы, то нужно добавить число рёбер, равное numOfAdditEdges, такое, что  
+                        //((число символов кратности в 
+                        //конечной подстроке + число рёбер(инкрементирую его на 1, начиная с нуля)) % кратность) != 0.
+                    }
+                }
+                else {//иначе, если символов кратности нет в конечной подстроке, то числом добавляемых рёбер 
+                      //назначаю кратность
+                    numOfAdditEdges = multiplicity;
+                }
+                int indexToStartCheckingFSSg = 0;//если в конечной посдтроке нет символов кратности, то поиск конечной подстроки
+                                                 //начинаем с нулевого состояния
+                if (numSymbInFSSg > 0) {//Если в конечной подстроке есть символы кратности, то начинать поиск конечной подстроки
+                                        //нужно не с нулевого состояния, а с состояния ... С каждым новым символом кратности в конечной подстроке уменьшается число 
+                                        //добавляемых в начале состояний... Соответственно, состояние для старта проверки конечной подстроки в случае numSymbInFSSg > 0
+                                        //будет всегда в последнем добавленном состоянии для подсчёта символов кратности. (опять же найдено опытным путём).
+                    indexToStartCheckingFSSg = numOfAdditEdges;
+                }
+                int numberToAddEdges = numOfAdditEdges - 1;
+                string setWithout_SymbolForMul_InString = setExceptParameter(alphabetInString, symbolForMultiplicity);
+                string setWithout_SymbolForMulAndFirstSymbolOfFSSg = setExceptParameter(setWithout_SymbolForMul_InString, finalSubstringInArrayOfStrings[0]);
+                for (int i = 0; i < numberToAddEdges; i++) {//Добавляю состояния от нулевого до numOfAdditSts включительно
+                                                            //(это индекс последнего состояния). Здесь надо немного не так. numOfAdditSts - это число символов кратности, которые нужно принять 
+                                                            //до проверки конечной подстроки. Т.о. это ещё и число рёбер по символу кратности. Последнее из этих рёбер чаще всего 
+                                                            //должно возвращаться в нулевое состояние. А в случае, когда первый символ конечной подстроки - это ещё и символ кратности,
+                                                            //то, иногда(всегда?) последнее ребро должно переходить сразу к проверке конечной подстроки. А вот возвращаться в нулевое 
+                                                            //состояние нужно при получении лишнего символа кратности в конечной подстроке(только если конечная подстрока содержит
+                                                            //символы кратности). Если не содержит, то возвращаться по символу кратности надо в состояние с индексом 1.
+                                                            //Если кратность равна единице, то состояний создавать не нужно... Точнее, видимо, нужно, но оно по символу кратности д.б.
+                                                            //замкнуто на себя. И из него же начинается проверка конечной подстроки.
+                    if (i != indexToStartCheckingFSSg)//каждый раз проверяю, не работаю ли с состоянием, из которого надо начинать считывать
+                                                      //конечную подстроку
+                                                      //добавляю закольцовывание на себе состояний по ходу подсчета символов кратности:
+                        graph.AddEdge("q" + i, "q" + i).LabelText = setWithout_SymbolForMul_InString;
+                    //если текущее состояние является стартовым для проверки последней подцепочки, то, соотвтетственно убираем из 
+                    //его закольцовывания на себя первый символ конечной подстроки:
+                    else graph.AddEdge("q" + i, "q" + i).LabelText = setWithout_SymbolForMulAndFirstSymbolOfFSSg;
+                    //добавляю следующие состояния для перехода по символу кратности:
+                    graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = symbolForMultiplicity;
+                }
+                if ((numberToAddEdges) != indexToStartCheckingFSSg)
+                    //добавляю закольцовывание на себе последнего состояния при подсчете символов кратности:
+                    graph.AddEdge("q" + (numberToAddEdges), "q" + (numberToAddEdges)).LabelText = setWithout_SymbolForMul_InString;
+                else
+                    //если текущее состояние является стартовым для проверки последней подцепочки, то, соотвтетственно,
+                    //убираем из его закольцовывания на себя первый символ конечной подстроки
+                    graph.AddEdge("q" + (numberToAddEdges), "q" + (numberToAddEdges)).LabelText = setWithout_SymbolForMulAndFirstSymbolOfFSSg;
+                //Если превый символ конечной подстроки не является символом кратности, то
+                //добавляю возврат по последнему символу кратности в нулевое состояние:
+                //Здесь, вероятно, косяк, т.к. если numOfAdditSts будет равно нулю, то следующее ребро замкнётся на себе по символу кратности...
+                //Поэтому добавил тупо проверку numberToAddEdges != 0
+                if (!mulSymbIsTheFirstSymbOfFSSg && numberToAddEdges != 0) graph.AddEdge("q" + (numberToAddEdges), "q" + 0).LabelText = symbolForMultiplicity;
+                // else 
+                //Previously the counting was below. But now it's upper.
+                //now I need to understand where to attach the finalSubstring checking states. It depends on the number of
+                //symbols for multiplicity in finalSubstring. If there are zero symbols, then it's the zeroe's(нулевое) state.
+
+                if (finalSubstring.Length != 0) {
+                    graph.AddEdge("q" + indexToStartCheckingFSSg, "q" + (numOfAdditEdges)).LabelText = finalSubstringInArrayOfStrings[0];
+                    for (int i = 1; i < finalSubstring.Length; i++) {
+                        graph.AddEdge("q" + (numOfAdditEdges + i - 1), "q" + (numOfAdditEdges + i)).LabelText = finalSubstringInArrayOfStrings[i];
+                    }
+                }//для кратности равной 1 надо делать как-нибудь отдельно, т.к., например, setWithout_SymbolForMul_InString будет уже обманчивым
+                 //названием, т.к. в нём в этом случае должен присутствовать символ кратности. Кстати пустую строку автомат должен принимать при 
+                 //пустой конечной подстроке... Т.е., видимо, нужно создать нулевое стартовое состояние, которое будет и финальным. Это отдельно
+                 //для случая с пустой подстрокой.
+
+                //                      ДО ЭТОГО МОМЕНТА БАЗА ВРОДЕ БЫ ПОСТРОЕНА. ТЕПЕРЬ НУЖНО ОБЕСПЕЧИТЬ ВОЗВРАТЫ
+                //Нет. Если кратность равна 1, то строит не то.
 
             }
+
 
 
             graph.Attr.OptimizeLabelPositions = true;
@@ -262,7 +412,7 @@ namespace SameLayerSample {
 
         }
         public void checkAStringByDataGridview1() {
-            richTextBox2.Clear();
+            richTextBox2CheckResults.Clear();
             readInformationFromTheInterface();
             stringTocheckInArrayOfStrings = stringToArrayOfStrings(stringToCheck);
             currentState = initialState;
@@ -275,21 +425,21 @@ namespace SameLayerSample {
                                 for (int m = 0; m < symbolsOfCurrentCell.Length; m++) {
                                     if (currentState.Equals(dataGridView1.Rows[j].HeaderCell.Value) &&
                                 stringTocheckInArrayOfStrings[i].Equals(symbolsOfCurrentCell[m])) {
-                                        richTextBox2.AppendText(currentState + " -> ");
+                                        richTextBox2CheckResults.AppendText(currentState + " -> ");
                                         currentState = dataGridView1.Columns[k].HeaderText;
-                                        richTextBox2.AppendText(currentState + " (" + symbolsOfCurrentCell[m] + ") ");
+                                        richTextBox2CheckResults.AppendText(currentState + " (" + symbolsOfCurrentCell[m] + ") ");
                                         for (int h = i + 1; h < stringTocheckInArrayOfStrings.Length; h++) {
                                             if (!(h == stringTocheckInArrayOfStrings.Length))
-                                                richTextBox2.AppendText(stringTocheckInArrayOfStrings[h]);
+                                                richTextBox2CheckResults.AppendText(stringTocheckInArrayOfStrings[h]);
                                         }
-                                        richTextBox2.AppendText("\n");
+                                        richTextBox2CheckResults.AppendText("\n");
                                         m = k = j = Int32.MaxValue - 1;
                                         break;
                                     }
                                 }
                             }
                             if (j == dataGridView1.RowCount - 1 && k == dataGridView1.ColumnCount - 1) {
-                                richTextBox2.AppendText("Правила перехода для текущего символа и состояния не найдено. Цепочка не принимается. \n");
+                                richTextBox2CheckResults.AppendText("Правила перехода для текущего символа и состояния не найдено. Цепочка не принимается. \n");
                                 k = j = i = Int32.MaxValue - 1;
                                 break;
                             }
@@ -297,16 +447,16 @@ namespace SameLayerSample {
                     }
                 }
                 else {
-                    richTextBox2.AppendText("Символа " + stringTocheckInArrayOfStrings[i] + " нет в алфавите, цепочка не принимается. \n");
+                    richTextBox2CheckResults.AppendText("Символа " + stringTocheckInArrayOfStrings[i] + " нет в алфавите, цепочка не принимается. \n");
                     break;
                 }
 
             }
             if (currentState.Equals(finalState)) {
-                richTextBox2.AppendText("Находимся в финальном состоянии, цепочка принята\n");
+                richTextBox2CheckResults.AppendText("Находимся в финальном состоянии, цепочка принята\n");
             }
             else {
-                richTextBox2.AppendText("Находимся в состоянии, отличном от финального, цепочка не принята\n");
+                richTextBox2CheckResults.AppendText("Находимся в состоянии, отличном от финального, цепочка не принята\n");
             }
         }
         public void buildDataGridView1ByGraph() {
@@ -340,25 +490,25 @@ namespace SameLayerSample {
             }
 
             foreach (DictionaryEntry de in hash) {
-                richTextBox1.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
+                richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
             }
             foreach (var Node in graph.Nodes) {
                 Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
                 if (Node.Attr.Id.Equals(lastNode)) {
-                    Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.DoubleCircle;
+                    // Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.DoubleCircle;
                     //Node.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
                 }
             }
             foreach (var node in graph.Nodes) {
-                richTextBox1.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
                 foreach (Edge edge in node.Edges) {
-                    richTextBox1.AppendText("edge.LabelText = " + edge.LabelText + "\n");
+                    // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
                 }
             }
             foreach (var item in hash) {
-                richTextBox1.AppendText(" item.GetType() = " + item.GetType() + "\n");
-                richTextBox1.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
-                richTextBox1.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
+                //  richTextBox1Helper.AppendText(" item.GetType() = " + item.GetType() + "\n");
+                //  richTextBox1Helper.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
+                //  richTextBox1Helper.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
             }
         }
 
@@ -386,7 +536,7 @@ namespace SameLayerSample {
         public void initializeTestCase_abcdefg_3a_bfg_() {
             textBox1StringToCheck.Text = "bcadacabfg";
             textBox2Alphabet.Text = "a b c d e f g";
-            textBox3FinalSubString.Text = "bfg";
+            textBox3FinalSubString.Text = "afg";
             textBox4SymbolForMultiplicity.Text = "a";
             numericUpDown1Multiplicity.Value = 3;
 
@@ -439,7 +589,7 @@ namespace SameLayerSample {
         }
 
         private void button6_Click(object sender, EventArgs e) {
-            System.IO.File.WriteAllText(@"C:\Users\stepa\repos2\TYAP_KR_00\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\SameLayerSample\WriteText.txt", richTextBox2.Text);
+            System.IO.File.WriteAllText(@"C:\Users\stepa\repos2\TYAP_KR_00\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\SameLayerSample\WriteText.txt", richTextBox2CheckResults.Text);
         }
 
         private void button7_Click(object sender, EventArgs e) {
