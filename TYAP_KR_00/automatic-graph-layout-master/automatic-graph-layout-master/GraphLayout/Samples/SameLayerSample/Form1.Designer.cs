@@ -42,9 +42,9 @@
             this.numericUpDown1Multiplicity = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1Helper = new System.Windows.Forms.RichTextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2CheckResults = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -167,23 +167,23 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 187);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 197);
             this.dataGridView1.TabIndex = 13;
             // 
-            // richTextBox1
+            // richTextBox1Helper
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(1477, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(403, 477);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
+            this.richTextBox1Helper.Location = new System.Drawing.Point(1477, 12);
+            this.richTextBox1Helper.Name = "richTextBox1Helper";
+            this.richTextBox1Helper.Size = new System.Drawing.Size(403, 477);
+            this.richTextBox1Helper.TabIndex = 14;
+            this.richTextBox1Helper.Text = "";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(557, 143);
+            this.button3.Location = new System.Drawing.Point(557, 114);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
             this.button3.TabIndex = 15;
@@ -191,13 +191,13 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // richTextBox2
+            // richTextBox2CheckResults
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(12, 389);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(684, 271);
-            this.richTextBox2.TabIndex = 16;
-            this.richTextBox2.Text = "";
+            this.richTextBox2CheckResults.Location = new System.Drawing.Point(12, 396);
+            this.richTextBox2CheckResults.Name = "richTextBox2CheckResults";
+            this.richTextBox2CheckResults.Size = new System.Drawing.Size(684, 264);
+            this.richTextBox2CheckResults.TabIndex = 16;
+            this.richTextBox2CheckResults.Text = "";
             // 
             // contextMenuStrip1
             // 
@@ -226,7 +226,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(502, 114);
+            this.button6.Location = new System.Drawing.Point(502, 85);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(194, 23);
             this.button6.TabIndex = 21;
@@ -236,7 +236,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(486, 171);
+            this.button7.Location = new System.Drawing.Point(486, 138);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(210, 23);
             this.button7.TabIndex = 22;
@@ -257,22 +257,22 @@
             // 
             // textBoxInitialState
             // 
-            this.textBoxInitialState.Location = new System.Drawing.Point(139, 171);
+            this.textBoxInitialState.Location = new System.Drawing.Point(139, 370);
             this.textBoxInitialState.Name = "textBoxInitialState";
             this.textBoxInitialState.Size = new System.Drawing.Size(47, 20);
             this.textBoxInitialState.TabIndex = 24;
             // 
-            // textBoxFinalStates
+            // textBoxFinalState
             // 
-            this.textBoxFinalState.Location = new System.Drawing.Point(330, 171);
-            this.textBoxFinalState.Name = "textBoxFinalStates";
+            this.textBoxFinalState.Location = new System.Drawing.Point(330, 370);
+            this.textBoxFinalState.Name = "textBoxFinalState";
             this.textBoxFinalState.Size = new System.Drawing.Size(110, 20);
             this.textBoxFinalState.TabIndex = 25;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 174);
+            this.label6.Location = new System.Drawing.Point(12, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 13);
             this.label6.TabIndex = 26;
@@ -281,7 +281,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(205, 174);
+            this.label7.Location = new System.Drawing.Point(205, 373);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 27;
@@ -301,9 +301,9 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox2CheckResults);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBox1Helper);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numericUpDown1Multiplicity);
@@ -341,9 +341,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1Multiplicity;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1Helper;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox2CheckResults;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

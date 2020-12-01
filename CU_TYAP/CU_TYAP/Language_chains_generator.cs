@@ -105,13 +105,13 @@ namespace CU_TYAP
     {
         bool IEqualityComparer<Chain>.Equals(Chain x, Chain y)
         {
-
+            return (x.chain.CompareTo(y.chain) == 0);
             throw new NotImplementedException();
         }
 
         int IEqualityComparer<Chain>.GetHashCode(Chain obj)
         {
-           return obj.GetHashCode();
+            return obj.GetHashCode();
             throw new NotImplementedException();
         }
     }
