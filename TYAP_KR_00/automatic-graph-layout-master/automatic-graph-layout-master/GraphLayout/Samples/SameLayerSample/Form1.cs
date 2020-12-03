@@ -177,7 +177,10 @@ namespace SameLayerSample {
                         for (int i = 0; i < finalSubstring.Length; i++) {//отсюда доделывать
                             //Добавляю рёбра для всей конечной подстроки:
                             graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = finalSubstringInArrayOfStrings[i];
+                            
                         }
+                        graph.AddEdge("w0", "bac", "w0").Attr.Id = "idishnik";
+                        graph.EdgeById("idishnik").LabelText = "another";
                         //Из последнего состояния возвращаемся в нулевое по алфавиту без первого символа конечной подстроки:
                         graph.AddEdge("q" + finalSubstring.Length, "q0").LabelText =
                             setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[0]);
@@ -373,6 +376,8 @@ namespace SameLayerSample {
                     }
                     //Последнее состояние переходит в q0 по флфавиту без символа кратности:
                     graph.AddEdge("q" + (numOfAdditEdges + finalSubstring.Length), "q0").LabelText = setExceptParameter(alphabetInString, symbolForMultiplicity);
+                    label8InitialState.Text = "q0";
+                    label9FinalState.Text = "q" + (finalSubstring.Length + numOfAdditEdges);
                 }
 
             }
@@ -652,6 +657,63 @@ namespace SameLayerSample {
             }
         }
         public void buildDataGridView1ByGraph() {
+            //Каждому состоянию сооответствует одна строка таблицы:
+            dataGridView1.RowCount = graph.NodeCount;
+            //Столбцов д.б. столько, сколько символов в алфавите:
+            dataGridView1.ColumnCount = alphabet.Length;
+            for (int i = 0; i < alphabet.Length; i++) {
+                dataGridView1.Columns[i].HeaderCell.Value = alphabet[i];
+            }
+            int p = 0;
+            Hashtable hash = graph.NodeMap;
+            List<string> lst = new List<string>();//normally hashtable isn't sorted, so I had to make a list for sorting
+            foreach (var key2 in hash.Keys) {
+                lst.Add(key2.ToString());
+            }
+            lst.Sort();
+            string lastNode = "";
+            foreach (var item in lst) {
+                dataGridView1.Rows[p++].HeaderCell.Value = item;
+                finalState = lastNode = item;
+            }
+            foreach (var node in graph.Nodes) {//apparently it's easier to build graph by a table, not vice versa... but I'm lazy...
+                foreach (Edge edge in node.Edges) {//building a datagridview by graph
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++) {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++) {
+                            if (edge.Source.Equals(dataGridView1.Rows[i]) && 
+                                
+                                edge.Source.Equals(dataGridView1.Rows[i].HeaderCell.Value) &&
+                                edge.Target.Equals(dataGridView1.Columns[j].HeaderCell.Value)) {
+                                dataGridView1.Rows[i].Cells[j].Value = edge.LabelText;
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (DictionaryEntry de in hash) {
+                richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
+            }
+            foreach (var Node in graph.Nodes) {
+                Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
+                if (Node.Attr.Id.Equals(lastNode)) {
+                    // Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.DoubleCircle;
+                    //Node.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                }
+            }
+            foreach (var node in graph.Nodes) {
+                richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                foreach (Edge edge in node.Edges) {
+                    // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
+                }
+            }
+            foreach (var item in hash) {
+                //  richTextBox1Helper.AppendText(" item.GetType() = " + item.GetType() + "\n");
+                //  richTextBox1Helper.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
+                //  richTextBox1Helper.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
+            }
+        }
+        public void buildDataGridView1ByGraph0() {
             dataGridView1.RowCount = dataGridView1.ColumnCount = graph.NodeCount;
 
             int p = 0;
@@ -726,11 +788,11 @@ namespace SameLayerSample {
 
         }
         public void initializeTestCase_abcdefg_3a_bfg_() {
-            textBox1StringToCheck.Text = "bcadacabfg";
-            textBox2Alphabet.Text = "a b c d e f g";
-            textBox3FinalSubString.Text = "bbad";
+            textBox1StringToCheck.Text = "ffbbad_q4_q1_неправильно_aabaabab_надо_в_q2";
+            textBox2Alphabet.Text = "a b c";
+            textBox3FinalSubString.Text = "aabab";
             textBox4SymbolForMultiplicity.Text = "a";
-            numericUpDown1Multiplicity.Value = 2;
+            numericUpDown1Multiplicity.Value = 1;
 
         }
         public void initVLPKBug() {
