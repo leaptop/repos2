@@ -55,6 +55,8 @@
             this.textBoxFinalState = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8InitialState = new System.Windows.Forms.Label();
+            this.label9FinalState = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1Multiplicity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 114);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(134, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Строка для проверки:";
             // 
@@ -80,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 13);
+            this.label2.Size = new System.Drawing.Size(144, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Алфавит через пробел:";
             // 
@@ -96,7 +98,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 13);
+            this.label3.Size = new System.Drawing.Size(223, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Обязательная конечная подцепочка:";
             // 
@@ -112,7 +114,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 13);
+            this.label4.Size = new System.Drawing.Size(192, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Кратность появления символа:";
             // 
@@ -128,7 +130,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(284, 147);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(45, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "равна:";
             // 
@@ -201,6 +203,7 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
@@ -257,14 +260,14 @@
             // 
             // textBoxInitialState
             // 
-            this.textBoxInitialState.Location = new System.Drawing.Point(139, 370);
+            this.textBoxInitialState.Location = new System.Drawing.Point(409, 373);
             this.textBoxInitialState.Name = "textBoxInitialState";
             this.textBoxInitialState.Size = new System.Drawing.Size(47, 20);
             this.textBoxInitialState.TabIndex = 24;
             // 
             // textBoxFinalState
             // 
-            this.textBoxFinalState.Location = new System.Drawing.Point(330, 370);
+            this.textBoxFinalState.Location = new System.Drawing.Point(532, 373);
             this.textBoxFinalState.Name = "textBoxFinalState";
             this.textBoxFinalState.Size = new System.Drawing.Size(110, 20);
             this.textBoxFinalState.TabIndex = 25;
@@ -274,7 +277,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 373);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 13);
+            this.label6.Size = new System.Drawing.Size(138, 15);
             this.label6.TabIndex = 26;
             this.label6.Text = "Начальное состояние:";
             // 
@@ -283,15 +286,35 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(205, 373);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.Size = new System.Drawing.Size(130, 15);
             this.label7.TabIndex = 27;
             this.label7.Text = "Конечное состояние:";
+            // 
+            // label8InitialState
+            // 
+            this.label8InitialState.AutoSize = true;
+            this.label8InitialState.Location = new System.Drawing.Point(156, 373);
+            this.label8InitialState.Name = "label8InitialState";
+            this.label8InitialState.Size = new System.Drawing.Size(14, 15);
+            this.label8InitialState.TabIndex = 28;
+            this.label8InitialState.Text = "_";
+            // 
+            // label9FinalState
+            // 
+            this.label9FinalState.AutoSize = true;
+            this.label9FinalState.Location = new System.Drawing.Point(341, 373);
+            this.label9FinalState.Name = "label9FinalState";
+            this.label9FinalState.Size = new System.Drawing.Size(14, 15);
+            this.label9FinalState.TabIndex = 29;
+            this.label9FinalState.Text = "_";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1892, 672);
+            this.Controls.Add(this.label9FinalState);
+            this.Controls.Add(this.label8InitialState);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxFinalState);
@@ -354,6 +377,8 @@
         private System.Windows.Forms.TextBox textBoxFinalState;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8InitialState;
+        private System.Windows.Forms.Label label9FinalState;
     }
 }
 
