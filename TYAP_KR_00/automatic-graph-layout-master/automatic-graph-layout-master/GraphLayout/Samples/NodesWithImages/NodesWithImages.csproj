@@ -48,9 +48,7 @@
     <DefineConstants>TRACE;TEST_MSAGL;DEVTRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Form1.cs" />
     <Compile Update="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>

@@ -2,13 +2,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 using Microsoft.Msagl.Layout.Layered;
 
 namespace SameLayerSample {
+    class Node {
+        public Node(string name, string prefix) {
+            this.name = name;
+            this.prefix = prefix;
+            // this.suffix = suffix;
+        }
+        string name;
+        string prefix;
+        // string suffix;
+        string[] tryingSuffixes;
+        static bool compareSuffToPref(string suff, string pref) {
+            return suff.Equals(pref);
+        }
+    }
+
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
@@ -40,13 +57,31 @@ namespace SameLayerSample {
         int numMulSymbInFSSg = 0;//numberOfSymbolsForMultiplicityInFinalSubstring
         int indexOfTheLastMul = 0;//Индекс последнего символа кратности в конечной подстроке
         int indexOfTheFirstMul = 0;//Индекс первого символа кратности в конечной подстроке
+        List<Node> list;
+        string fullPrefix = "";
+        string suffix = "";
+        string currentPrefix = "";
+        string currentSuffix = "";
+        bool foundEqualSuffAndPref = false;
+        int lengthOfEqualSufAndPref = 0;
+        string stateFrom = "";
+        string stateTo = "";
+        string symbOfEqualSufAndPref = "";
 
+        public void initializeTestCase_abcdefg_3a_bfg_() {
+            textBox1StringToCheck.Text = "ffbbad_q4_q1_неправильно_aabaabab_надо_в_q2";
+            textBox2Alphabet.Text = "a b c";
+            textBox3FinalSubString.Text = "aabaab";
+            textBox4SymbolForMultiplicity.Text = "a";
+            numericUpDown1Multiplicity.Value = 1;
+
+        }
         GViewer gViewer;
         string alphabetInString = "";
 
         public string setExceptParameter(string set, string str) {//returns a string, for example: 
             //set.Except(str) or {a, b, c}/b = {a, c} = "a c". I.e. the returned string is "a c".
-            string[] aa = new string[1];
+            string[] aa = new string[1];//      НЕ ИСПОЛЬЗОВАТЬ ЭТОТ МЕТОД
             aa[0] = str;
             string[] setInArray = set.Split(' ');
             IEnumerable<string> setWithout_str = setInArray.Except(aa);
@@ -56,7 +91,144 @@ namespace SameLayerSample {
             }
             return setWithout_a_InString;
         }
-        public void buildDFA_UnifiedAlgorythm() {
+        public void buildDFASuffPref() {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;//turning exception messages to English
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+            numEqualInBgnFSSg = 0;
+            numMulSymbInFSSg = 0;
+            if (gViewer != null) {
+                gViewer.Dispose();
+            }
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
+            SuspendLayout();
+            Controls.Add(gViewer);
+            ResumeLayout();
+            graph = new Graph();
+            var sugiyamaSettings = (SugiyamaLayoutSettings)graph.LayoutAlgorithmSettings;
+            sugiyamaSettings.NodeSeparation *= 2;
+            //сначала надо построить базу: состояния для считывания символов кратности, 
+            //состояния для считывания конечной подстроки: это всё пока для кратности равной 1... с кратностью больше 1, вероятно, надо будет
+            //строить по-другому
+            list = new List<Node>();//Создал список состояний, в которых буду хранить сцффиксы, префиксы и другое в удобном для меня виде
+            int numOfAdditEdges = 0;//numberOfSymbolsForMultiplicityToCreateAdditionalStates better to say "additional edges"          
+            for (int i = 0; i < finalSubstringInArrayOfStrings.Length; i++) {
+                if (finalSubstringInArrayOfStrings[i].Equals(symbolForMultiplicity)) {
+                    numMulSymbInFSSg++;//Посчитал символы кратности в конечной подстроке
+                }
+            }
+            while (((numMulSymbInFSSg + numOfAdditEdges) % multiplicity) != 0) {
+                numOfAdditEdges++;
+            }
+
+            //Строю состояния для кратности:
+            for (int i = 0; i < numOfAdditEdges; i++) {
+                graph.AddEdge("q" + i, symbolForMultiplicity, "q" + (i + 1)).Attr.Id = ("q" + i + " " + symbolForMultiplicity + " " + "q" + (i + 1));
+                for (int j = 0; j < i; j++) {
+                    //prefix += symbolForMultiplicity;//вообще для случая, когда кратность равна 1, префиксы можно строить с первого состояния, принимающего 
+                    //первый символ конечной подцепочки
+                    //   suffix = prefix;
+                }
+                //list.Add(new Node("q" + i, prefix, suffix));
+            }
+            // if (multiplicity == 1 || numMulSymbInFSSg == 0) 
+            {
+                //Строю состояния для конечной подстроки:
+                for (int i = 0; i < finalSubstring.Length; i++) {
+                    string currentStateName = "q" + (numOfAdditEdges + i);
+                    string newStateName = "q" + (numOfAdditEdges + i + 1);
+                    graph.AddEdge(currentStateName, finalSubstringInArrayOfStrings[i], newStateName).Attr.Id =
+                        (currentStateName + " " + finalSubstringInArrayOfStrings[i] + " " + "q" + (i + 1));
+                    fullPrefix = (finalSubstring.Substring(0, i));//it's full from the beginning up to i'th symbol
+                    list.Add(new Node(currentStateName, fullPrefix));//создал свой узел с префиксом и именем как у оригинального состояния
+                                                                     //    string[] strToExcept = { finalSubstringInArrayOfStrings[i] };
+                                                                     // string setWOCorrSymb = setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[i]);
+                    string[] alphWithOneCorrSymb = { finalSubstringInArrayOfStrings[i] };
+                    string[] alphWOCorSymb = (string[])alphabet.Except(alphWithOneCorrSymb).ToArray();
+                    //string[] alphabetWOCorrSymb = setWOCorrSymb.Split();
+                    //Теперь надо найти равные суффикс и префикс максимальной длины и сделать переход по соотвтетствующему символу:
+                    currentSuffix = "";
+                    for (int j = 0; j < alphWOCorSymb.Length; j++) {
+                        //сначала иду по алфавиту. Для каждого символа алфавита д.б. переход(построение ребра). 
+                        for (int k = fullPrefix.Length - 1 + 1; k >= 0; k--) {//-1+1 Написано для ясности, чтобы понять, что мне нужен один индекс, по которому я не 
+                            //буду брать часть префикса для построения суффикса, а возьму только символ алфавита. +1 Нужен для одной дополнительной итерации.
+                            //потом иду по длине префикса, т.к. суффикс и префикс д.б. одной длины
+                            //Каждой длине префикса, видимо, соостветствует только одно состояние. Так что здесь же можно и состояния сразу перебирать
+                            //Состоянию с индексом k соотвтетствует... Нет. Префикс длины 0 у нас в нулевом состоянии, принимающем первый 
+                            //символ КПС(конечной подстроки), и имеющем переход в следующее состояние по этому символу. Это число (numOfAdditEdges + k).
+                            //Длина префикса ноль, длина суффикса 1. Сравнение на нулевом(numOfAdditEdges + 0) состоянии вернёт ложь всегда. Единственный переход 
+                            //будет по следующему верному символу кпс. Все сотальные символы закольцуют нулевое состояние на само себя.
+                            //Вообще все состояния, не имеющие суффикса равного префиксу должны переходить в нулевое состояние по соотвтетствующему символу
+                            //подцепочки. Префикс имеет смысл рассматривать только с начала, по очереди сравнивая все возможные суффиксы длины префикса с этими
+                            //же префиксами. Т.е. ещё один цикл д.б. по всем вариантам суффиксов... Нет. Этот перебор уже идёт в цикле с индексом j.
+                            //Итак, имею следующий символ и длину префикса. На следующем шаге текущего цикла изменится длина префикса. Как сравнивать с префиксом
+                            //нулевой длины? Вообще получение суффикса:
+                            currentSuffix = "";
+                            if (!(k == fullPrefix.Length)) {//если не находимся в дополнительной итерации, то рассматриваем суффиксы длины 2 и больше.
+                                //Индекс для взятия части префикса уменьшается от максимального, а число забираемых символов соотвтетсвенно увеличивается:
+                                currentSuffix += fullPrefix.Substring(k, (fullPrefix.Length) - k) + alphWOCorSymb[j];
+                            }
+                            else {//Иначе берём только символ алфавита.
+                                currentSuffix = alphWOCorSymb[j];
+                            }
+                            //На этом моменте понятно, что я смогу перебрать все суффиксы. Но смогу ли я перебрать все префиксы без доп. цикла...
+                            //Префиксы мне нужны будут только длины равной длине суффикса. При создании всех предыдущих состояний, читающих
+                            //кпс, я также проходил по всем предыдущим состояниям... Так что итерация по всем префиксам кажется нужной...
+                            //Хотя нет. Достаточно одного назначения:
+                            // stateFrom = "q" + i; 
+                            // stateTo = "q0";
+                            currentPrefix = "";
+                            if (!(fullPrefix.Length == 0) && (fullPrefix.Length >= currentSuffix.Length))
+                                currentPrefix = fullPrefix.Substring(0, currentSuffix.Length);
+                            richTextBox1Helper.AppendText("i = " + i + ", currentPrefix = " + currentPrefix + ", currentSuffix = " + currentSuffix + "\n");
+                            if (currentPrefix.Equals(currentSuffix)) {
+                                foundEqualSuffAndPref = true;
+                                lengthOfEqualSufAndPref = currentPrefix.Length;
+                                stateFrom = "q" + i;
+                                stateTo = "q" + currentPrefix.Length;
+                                symbOfEqualSufAndPref = alphWOCorSymb[j];
+                            }
+                            else {
+                                if (k == 0 && !foundEqualSuffAndPref)
+                                    graph.AddEdge("q" + i, alphWOCorSymb[j], "q0").Attr.Id = ("q" + i + " " + alphWOCorSymb[j] + " " + "q0");
+                            }
+                        }
+                        richTextBox1Helper.AppendText("End of k'th for loop\n\n");
+                        if (foundEqualSuffAndPref) {
+                            foundEqualSuffAndPref = false;
+                            graph.AddEdge(stateFrom, symbOfEqualSufAndPref, stateTo).Attr.Id = (stateFrom + " " + symbOfEqualSufAndPref + " " + stateTo);
+                        }
+                    }
+                    richTextBox1Helper.AppendText("End of j'th for loop\n\n");
+
+
+                }
+
+            }
+            //Теперь для всех состояний нужно пройтись с помощью сравнений суффиксов и префиксов и, т.о., построить все рёбра...
+            IEnumerable ie;
+            /*   foreach (Node node in graph.Nodes) {
+                   richTextBox1Helper.AppendText(node.Attr.Id+"\n\n");
+
+               }*/
+            /* foreach (Node node in graph.NodeMap) {
+                ie = node.OutEdges;
+                 foreach (var outEdge in ie) {
+                     richTextBox1Helper.AppendText("outEdge.ToString() = "+ outEdge.ToString());
+                 }
+
+             }*/
+
+            graph.AddEdge("w0", "bac", "w0").Attr.Id = "idishnik";
+            graph.EdgeById("idishnik").LabelText = "another";
+
+
+            graph.Attr.OptimizeLabelPositions = true;
+            graph.Attr.SimpleStretch = true;
+            gViewer.Graph = graph;
+
+            buildDataGridView1ByGraph();
+        }
+        public void buildDFA_UnifiedAlgorythm0() {
             //пока написано для случая с непустой конечной подстрокой и кратностью больше 1
             //Firstly I need to ensure, that the number of symbols for multiplicity is correct. For that I need to count
             //them in the final substring and then build enough states.
@@ -177,7 +349,7 @@ namespace SameLayerSample {
                         for (int i = 0; i < finalSubstring.Length; i++) {//отсюда доделывать
                             //Добавляю рёбра для всей конечной подстроки:
                             graph.AddEdge("q" + i, "q" + (i + 1)).LabelText = finalSubstringInArrayOfStrings[i];
-                            
+
                         }
                         graph.AddEdge("w0", "bac", "w0").Attr.Id = "idishnik";
                         graph.EdgeById("idishnik").LabelText = "another";
@@ -680,8 +852,8 @@ namespace SameLayerSample {
                 foreach (Edge edge in node.Edges) {//building a datagridview by graph
                     for (int i = 0; i < dataGridView1.Rows.Count; i++) {
                         for (int j = 0; j < dataGridView1.Columns.Count; j++) {
-                            if (edge.Source.Equals(dataGridView1.Rows[i]) && 
-                                
+                            if (edge.Source.Equals(dataGridView1.Rows[i]) &&
+
                                 edge.Source.Equals(dataGridView1.Rows[i].HeaderCell.Value) &&
                                 edge.Target.Equals(dataGridView1.Columns[j].HeaderCell.Value)) {
                                 dataGridView1.Rows[i].Cells[j].Value = edge.LabelText;
@@ -692,7 +864,7 @@ namespace SameLayerSample {
             }
 
             foreach (DictionaryEntry de in hash) {
-                richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
+                //richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
             }
             foreach (var Node in graph.Nodes) {
                 Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
@@ -702,7 +874,7 @@ namespace SameLayerSample {
                 }
             }
             foreach (var node in graph.Nodes) {
-                richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                //richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
                 foreach (Edge edge in node.Edges) {
                     // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
                 }
@@ -744,7 +916,7 @@ namespace SameLayerSample {
             }
 
             foreach (DictionaryEntry de in hash) {
-                richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
+                // richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
             }
             foreach (var Node in graph.Nodes) {
                 Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
@@ -754,7 +926,7 @@ namespace SameLayerSample {
                 }
             }
             foreach (var node in graph.Nodes) {
-                richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                // richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
                 foreach (Edge edge in node.Edges) {
                     // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
                 }
@@ -787,14 +959,7 @@ namespace SameLayerSample {
             finalState = textBoxFinalState.Text;
 
         }
-        public void initializeTestCase_abcdefg_3a_bfg_() {
-            textBox1StringToCheck.Text = "ffbbad_q4_q1_неправильно_aabaabab_надо_в_q2";
-            textBox2Alphabet.Text = "a b c";
-            textBox3FinalSubString.Text = "aabab";
-            textBox4SymbolForMultiplicity.Text = "a";
-            numericUpDown1Multiplicity.Value = 1;
 
-        }
         public void initVLPKBug() {
             textBox1StringToCheck.Text = "ппллввввпп";
             textBox2Alphabet.Text = "в л п к";
@@ -848,7 +1013,7 @@ namespace SameLayerSample {
 
         private void button7_Click(object sender, EventArgs e) {
             readInformationFromTheInterface();
-            buildDFA_UnifiedAlgorythm();
+            buildDFASuffPref();
 
         }
         private void button7_Click0(object sender, EventArgs e) {// Not correct way, because there is only one algorithm
