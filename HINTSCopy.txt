@@ -21,10 +21,13 @@ File - learn -browse courses - shows courses.
 
 ЗАКОММЕНТИРОВАТЬ выделенное:
 Ctrl+k Ctrl+c, VS Ctrl+k+u соответственно раскомментировать. In Visual Studio
-Ctrl+/ комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator & CLion
+Ctrl+/(на английской раскладке) комментирует строку, даже если она вся не выделена  in intellij idea & in QT Creator & CLion
 Ctrl+Shift+/ комментирует весь выделенный блок в стиле /* */ in intellij idea
   В intellijidea можно удалить все комментарии из текста: Ctrl+r, галочку Regex(режим регулярных выражений), для удаления всех комментов в верхнюю строчку вставляем (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*), жмём replace all. Если надо удалить только комменты //: ([ \t]*//.*), если /**/: (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)
   В виже также можно в поисковике, просто надо нажать ещё кнопку(квадратик со звёздочкой) для разрешения регулярных выражений
+  
+Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;//turning exception messages in VS to English
+Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
   
 Чтобы записывать звук с микрофона и звуки от приложений в винде пришлось переустановить аудиодрайвер с перезагрузкой. Качал с сайта производителя. Потом включить аудио микшер в Параметры - звук - управление звуковыми устройствами.
 

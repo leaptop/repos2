@@ -142,36 +142,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="DrawingPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="GViewer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="LayoutSettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="DrawingPanel.cs" />
+    <Compile Update="GViewer.cs" />
+    <Compile Update="LayoutSettingsForm.cs" />
     <Compile Update="LayoutSettingsForm.designer.cs">
       <DependentUpon>LayoutSettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Update="printing.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="SaveInVectorFormatForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="printing.cs" />
+    <Compile Update="SaveInVectorFormatForm.cs" />
     <Compile Update="SaveInVectorFormatForm.Designer.cs">
       <DependentUpon>SaveInVectorFormatForm.cs</DependentUpon>
     </Compile>
-    <Compile Update="SaveViewAsImageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="SaveViewAsImageForm.cs" />
     <Compile Update="SaveViewAsImageForm.Designer.cs">
       <DependentUpon>SaveViewAsImageForm.cs</DependentUpon>
     </Compile>
-    <Compile Update="ScrollGViewer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="ScrollGViewer.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
