@@ -31,6 +31,7 @@ Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
   
 Чтобы записывать звук с микрофона и звуки от приложений в винде пришлось переустановить аудиодрайвер с перезагрузкой. Качал с сайта производителя. Потом включить аудио микшер в Параметры - звук - управление звуковыми устройствами.
 
+Debug - windows - call stack - in visual studio shows calling methods
   
 In android studio to switch between text and design if there are no such buttons, there are other buttons in the upper right corner(one of the three is with mountains).
 In android studio to turn explanation of methods by hovering a cursor on it: File-> Settings -> Editor -> General -> Show quick documentation on mouse move.

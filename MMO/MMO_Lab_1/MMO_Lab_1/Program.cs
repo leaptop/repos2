@@ -139,7 +139,7 @@ namespace MMO_Lab_1
         {
             int count = 0;
             foreach (var d in data)
-            {
+            {//считаю совпадения по классу
                 var trainingData = sortedTrainingDatas[d];
                 if (d.Class == Categorize(d, trainingData, k))
                     count++;

@@ -11,20 +11,7 @@ using Microsoft.Msagl.GraphViewerGdi;
 using Microsoft.Msagl.Layout.Layered;
 
 namespace SameLayerSample {
-    class Node {
-        public Node(string name, string prefix) {
-            this.name = name;
-            this.prefix = prefix;
-            // this.suffix = suffix;
-        }
-        string name;
-        string prefix;
-        // string suffix;
-        string[] tryingSuffixes;
-        static bool compareSuffToPref(string suff, string pref) {
-            return suff.Equals(pref);
-        }
-    }
+
 
     public partial class Form1 : Form {
         public Form1() {
@@ -67,14 +54,26 @@ namespace SameLayerSample {
         string stateFrom = "";
         string stateTo = "";
         string symbOfEqualSufAndPref = "";
+        string currentStateName = "";
+        string newStateName = "";
+        int numMulSymbs = 0;
+        string[] statesInStrings;
+        public List<string> lst;
 
         public void initializeTestCase_abcdefg_3a_bfg_() {
-            textBox1StringToCheck.Text = "ffbbad_q4_q1_неправильно_aabaabab_надо_в_q2";
+            textBox1StringToCheck.Text = "abc";
             textBox2Alphabet.Text = "a b c";
-            textBox3FinalSubString.Text = "aabaab";
-            textBox4SymbolForMultiplicity.Text = "a";
-            numericUpDown1Multiplicity.Value = 1;
-
+            textBox3FinalSubString.Text = "aabab";
+            textBox4SymbolForMultiplicity.Text = "c";
+            numericUpDown1Multiplicity.Value = 2;
+            lst = new List<string>();
+            lst.Add("rt");
+            lst.Add("ry");
+            lst.Add("rt");
+            var lst2 = lst.Distinct();
+            foreach (var item in lst2) {
+                richTextBox1Helper.AppendText("item = " + item + ", ");
+            }
         }
         GViewer gViewer;
         string alphabetInString = "";
@@ -92,6 +91,252 @@ namespace SameLayerSample {
             return setWithout_a_InString;
         }
         public void buildDFASuffPref() {
+            richTextBox1Helper.Clear();
+            //statesInStrings = n
+            lst = new List<string>();
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;//turning exception messages to English
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+            numEqualInBgnFSSg = 0;
+            numMulSymbInFSSg = 0;
+            if (gViewer != null) {
+                gViewer.Dispose();
+            }
+            gViewer = new GViewer() { Dock = DockStyle.Fill };
+            SuspendLayout();
+            Controls.Add(gViewer);
+            ResumeLayout();
+            graph = new Graph();
+            var sugiyamaSettings = (SugiyamaLayoutSettings)graph.LayoutAlgorithmSettings;
+            sugiyamaSettings.NodeSeparation *= 2;
+            //сначала надо построить базу: состояния для считывания символов кратности, 
+            //состояния для считывания конечной подстроки: это всё пока для кратности равной 1... с кратностью больше 1, вероятно, надо будет
+            //строить по-другому
+            list = new List<Node>();//Создал список состояний, в которых буду хранить сцффиксы, префиксы и другое в удобном для меня виде
+
+            int numOfAdditEdges = 0;//numberOfSymbolsForMultiplicityToCreateAdditionalStates better to say "additional edges"          
+            if (!(multiplicity == 1)) {//Если кратность больше 1, то надо добавить состояния для приёма символов кратности
+                numOfAdditEdges = 1;
+                while (((multiplicity + numOfAdditEdges) % multiplicity) != 0) {//Подбираю число дополнительных рёбер
+                    numOfAdditEdges++;
+                }
+                //Строю состояния для приёма символов кратности:
+                string[] sethWithSymbForMul = { symbolForMultiplicity };
+                string[] alphWOSymbForMul = (string[])alphabet.Except(sethWithSymbForMul).ToArray();
+                for (int i = 0; i < numOfAdditEdges - 1; i++) {
+                    if (i == 0)//Если строю из нулевого состояния, то нулевое в прежнем виде, а добавочные в измененном
+                        {
+                        graph.AddEdge("q" + i, symbolForMultiplicity, "q1_" + (i + 1));
+                        lst.Add("q" + i);
+                        lst.Add("q1_" + (i + 1));
+                        for (int p = 0; p < alphWOSymbForMul.Length; p++) {//Закольцовываю на себя состояния по всем символам кроме кратности
+                            graph.AddEdge("q1_" + (i + 1), alphWOSymbForMul[p], "q1_" + (i + 1));
+                            lst.Add("q1_" + (i + 1));
+                        }
+
+                    }
+                    else {
+                        graph.AddEdge("q1_" + i, symbolForMultiplicity, "q1_" + (i + 1));
+                        lst.Add("q1_" + i);
+                        lst.Add("q1_" + (i + 1));
+                        for (int p = 0; p < alphWOSymbForMul.Length; p++) {//Закольцовываю на себя состояния по всем символам кроме кратности
+                            graph.AddEdge("q1_" + (i + 1), alphWOSymbForMul[p], "q1_" + (i + 1));
+                        }
+
+                    }
+
+                    //list.Add(new Node("q" + i, prefix, suffix));
+                }//Добавляю переход из последнего символа для кратности в нулевое состояние:
+                graph.AddEdge("q1_" + (numOfAdditEdges - 1), symbolForMultiplicity, "q0").Attr.Id =
+                    ("q1_" + (numOfAdditEdges - 1) + " " + symbolForMultiplicity + " " + "q0");
+                lst.Add("q1_" + (numOfAdditEdges - 1));
+
+            }
+            // if (multiplicity == 1) 
+            {                //Строю состояния для конечной подстроки:
+                for (int i = 0; i < finalSubstring.Length; i++) {
+                    currentStateName = "q" + (0 + i);//was: currentStateName = "q" + (numOfAdditEdges + i);
+                    newStateName = "q" + (0 + i + 1);//was: newStateName = "q" + (numOfAdditEdges + i + 1);                                     
+
+                    graph.AddEdge(currentStateName, finalSubstringInArrayOfStrings[i], newStateName).Attr.Id =
+                        (currentStateName + " " + finalSubstringInArrayOfStrings[i] + " " + "q" + (i + 1));
+                    lst.Add(currentStateName);
+                    lst.Add("q" + (i + 1));
+                    lst.Add(newStateName);
+                    fullPrefix = (finalSubstring.Substring(0, i));//it's full from the beginning up to i'th symbol
+                    list.Add(new Node(currentStateName, fullPrefix));//создал свой узел с префиксом и именем как у оригинального состояния
+                                                                     //string[] strToExcept = { finalSubstringInArrayOfStrings[i] };                                                                    
+                    string[] alphWithOneCorrSymb = { finalSubstringInArrayOfStrings[i] };
+                    string[] alphWOCorSymb = (string[])alphabet.Except(alphWithOneCorrSymb).ToArray();
+
+                    if (multiplicity > 1) {//Если кратность больше одного, то нужно не допустить переходов по символу кратности в q0
+                        //Если кратность больше одного, то надо из каждого состояния, читающего конечную подцепочку
+                        //по символу кратности переходить в состояние q1_1. А переходы по этому символу в нулевое, соотвтетсвенно отменить.
+                        string[] alphWithSymbForMul = { symbolForMultiplicity };
+                        alphWOCorSymb = (string[])alphWOCorSymb.Except(alphWithSymbForMul).ToArray();
+                        if (i != 0)//Из нулевого в q1_1 уже есть ребро, поэтому второе добавлять не нужно
+                            {
+                            graph.AddEdge(currentStateName, symbolForMultiplicity, "q1_1");
+                            lst.Add(currentStateName);
+                            lst.Add("q1_1");
+                        }
+                    }
+                    //Теперь надо найти равные суффикс и префикс максимальной длины и сделать переход по соотвтетствующему символу:
+                    currentSuffix = "";
+                    for (int j = 0; j < alphWOCorSymb.Length; j++) {
+                        //сначала иду по алфавиту. Для каждого символа алфавита д.б. переход(построение ребра). 
+                        for (int k = fullPrefix.Length - 1 + 1; k >= 0; k--) {//-1+1 Написано для ясности, чтобы понять, что мне нужен один индекс, по которому я не 
+                            //буду брать часть префикса для построения суффикса, а возьму только символ алфавита. +1 Нужен для одной дополнительной итерации.
+                            //потом иду по длине префикса, т.к. суффикс и префикс д.б. одной длины
+                            //Каждой длине префикса, видимо, соостветствует только одно состояние. Так что здесь же можно и состояния сразу перебирать
+                            //Состоянию с индексом k соотвтетствует... Нет. Префикс длины 0 у нас в нулевом состоянии, принимающем первый 
+                            //символ КПС(конечной подстроки), и имеющем переход в следующее состояние по этому символу. Это число (numOfAdditEdges + k).
+                            //Длина префикса ноль, длина суффикса 1. Сравнение на нулевом(numOfAdditEdges + 0) состоянии вернёт ложь всегда. Единственный переход 
+                            //будет по следующему верному символу кпс. Все сотальные символы закольцуют нулевое состояние на само себя.
+                            //Вообще все состояния, не имеющие суффикса равного префиксу должны переходить в нулевое состояние по соотвтетствующему символу
+                            //подцепочки. Префикс имеет смысл рассматривать только с начала, по очереди сравнивая все возможные суффиксы длины префикса с этими
+                            //же префиксами. Т.е. ещё один цикл д.б. по всем вариантам суффиксов... Нет. Этот перебор уже идёт в цикле с индексом j.
+                            //Итак, имею следующий символ и длину префикса. На следующем шаге текущего цикла изменится длина префикса. Как сравнивать с префиксом
+                            //нулевой длины? Вообще получение суффикса:
+                            currentSuffix = "";
+                            if (!(k == fullPrefix.Length)) {//если не находимся в дополнительной итерации, то рассматриваем суффиксы длины 2 и больше.
+                                //Индекс для взятия части префикса уменьшается от максимального, а число забираемых символов соотвтетсвенно увеличивается:
+                                currentSuffix += fullPrefix.Substring(k, (fullPrefix.Length) - k) + alphWOCorSymb[j];
+                            }
+                            else {//Иначе берём только символ алфавита.
+                                currentSuffix = alphWOCorSymb[j];
+                            }
+                            //На этом моменте понятно, что я смогу перебрать все суффиксы. Но смогу ли я перебрать все префиксы без доп. цикла...
+                            //Префиксы мне нужны будут только длины равной длине суффикса. При создании всех предыдущих состояний, читающих
+                            //кпс, я также проходил по всем предыдущим состояниям... Так что итерация по всем префиксам кажется нужной...
+                            //Хотя нет. Достаточно одного назначения:
+                            // stateFrom = "q" + i; 
+                            // stateTo = "q0";
+                            currentPrefix = "";
+                            if (!(fullPrefix.Length == 0) && (fullPrefix.Length >= currentSuffix.Length))
+                                currentPrefix = fullPrefix.Substring(0, currentSuffix.Length);
+                            richTextBox1Helper.AppendText("i = " + i + ", currentPrefix = " + currentPrefix + ", currentSuffix = " + currentSuffix + "\n");
+                            if (currentPrefix.Equals(currentSuffix)) {
+                                foundEqualSuffAndPref = true;
+                                lengthOfEqualSufAndPref = currentPrefix.Length;
+                                //stateFrom = "q" + i;
+                                stateFrom = currentStateName;
+                                stateTo = "q" + currentPrefix.Length;//Если обнаружится подходящий суффикс большей длины, то он обязательно будет переназначен,
+                                //т.к. идём от меньшей длины суффикса к большей по k
+                                symbOfEqualSufAndPref = alphWOCorSymb[j];
+                            }
+                            else {
+                                if (k == 0 && !foundEqualSuffAndPref) {
+                                    graph.AddEdge(currentStateName, alphWOCorSymb[j], "q0").Attr.Id = (currentStateName + " " + alphWOCorSymb[j] + " " + "q0");
+                                    lst.Add(currentStateName);
+                                    lst.Add("q0");
+                                }
+                                   
+                            }
+                        }//Проверили суффиксы всех длин и теперь можно добавить ребро, если нашли суффикс и префикс максимальной длины:
+                        richTextBox1Helper.AppendText("End of k'th for loop\n\n");
+                        if (foundEqualSuffAndPref) {
+                            foundEqualSuffAndPref = false;
+                            graph.AddEdge(stateFrom, symbOfEqualSufAndPref, stateTo).Attr.Id = (stateFrom + " " + symbOfEqualSufAndPref + " " + stateTo);
+                            lst.Add(stateFrom);
+                            lst.Add(stateTo);
+                        }
+                    }
+                    richTextBox1Helper.AppendText("End of j'th for loop\n\n");
+
+
+                }//Здесь нужно написать добавление рёбер из последнего состояния:
+                string numOfAdditEdgesPlusFSSgLength = (0 + finalSubstring.Length).ToString();
+                currentStateName = "q" + numOfAdditEdgesPlusFSSgLength;
+                //newStateName = "q" + (numOfAdditEdges + i + 1);     
+
+                if (multiplicity > 1) {//Если кратность больше одного, то нужно не допустить переходов по символу кратности в q0
+                                       //Если кратность больше одного, то надо из каждого состояния, читающего конечную подцепочку
+                                       //по символу кратности переходить в состояние q1_1. А переходы по этому символу в нулевое, соотвтетсвенно отменить.
+                                       //string[] alphWithSymbForMul = { symbolForMultiplicity };
+                                       // alphWOCorSymb = (string[])alphWOCorSymb.Except(alphWithSymbForMul).ToArray();
+                    graph.AddEdge(currentStateName, symbolForMultiplicity, "q1_1");
+                    lst.Add(currentStateName);
+                    lst.Add("q1_1");
+                }
+
+                fullPrefix = (finalSubstring.Substring(0, finalSubstring.Length));//it's full from the beginning up to i'th symbol
+                for (int j = 0; j < alphabet.Length; j++) {
+                    for (int k = fullPrefix.Length - 1 + 1; k >= 0; k--) {
+                        currentSuffix = "";
+                        if (!(k == fullPrefix.Length)) {//если не находимся в дополнительной итерации, то рассматриваем суффиксы длины 2 и больше.
+                                                        //Индекс для взятия части префикса уменьшается от максимального, а число забираемых символов соотвтетсвенно увеличивается:
+                            currentSuffix += fullPrefix.Substring(k, (fullPrefix.Length) - k) + alphabet[j];
+                        }
+                        else {//Иначе берём только символ алфавита.
+                            currentSuffix = alphabet[j];
+                        }
+                        //На этом моменте понятно, что я смогу перебрать все суффиксы. Но смогу ли я перебрать все префиксы без доп. цикла...
+                        //Префиксы мне нужны будут только длины равной длине суффикса. При создании всех предыдущих состояний, читающих
+                        //кпс, я также проходил по всем предыдущим состояниям... Так что итерация по всем префиксам кажется нужной...
+                        //Хотя нет. Достаточно одного назначения:
+                        // stateFrom = "q" + i; 
+                        // stateTo = "q0";
+                        currentPrefix = "";
+                        if (!(fullPrefix.Length == 0) && (fullPrefix.Length >= currentSuffix.Length))
+                            currentPrefix = fullPrefix.Substring(0, currentSuffix.Length);
+                        richTextBox1Helper.AppendText("i = " + numOfAdditEdgesPlusFSSgLength +
+                            ", currentPrefix = " + currentPrefix + ", currentSuffix = " + currentSuffix + "\n");
+                        if (currentPrefix.Equals(currentSuffix)) {
+                            foundEqualSuffAndPref = true;
+                            lengthOfEqualSufAndPref = currentPrefix.Length;
+                            stateFrom = "q" + numOfAdditEdgesPlusFSSgLength;
+                            stateTo = "q" + currentPrefix.Length;//Если обнаружится подходящий суффикс большей длины, то он обязательно 
+                                                                 //будет переназначен,
+                                                                 //т.к. идём от меньшей длины суффикса к большей по k
+                            symbOfEqualSufAndPref = alphabet[j];
+                        }
+                        else {
+                            if (k == 0 && !foundEqualSuffAndPref) {
+                                graph.AddEdge("q" + numOfAdditEdgesPlusFSSgLength, alphabet[j], "q0").Attr.Id =
+                                    ("q" + numOfAdditEdgesPlusFSSgLength + " " + alphabet[j] + " " + "q0");
+                                lst.Add("q" + numOfAdditEdgesPlusFSSgLength);
+                                lst.Add("q0");
+                            }
+                                
+                        }
+                    }//Проверили суффиксы всех длин и теперь можно добавить ребро, если нашли суффикс и префикс максимальной длины:
+                    richTextBox1Helper.AppendText("End of k'th for loop\n\n");
+                    if (foundEqualSuffAndPref) {
+                        foundEqualSuffAndPref = false;
+                        graph.AddEdge(stateFrom, symbOfEqualSufAndPref, stateTo).Attr.Id = (stateFrom + " " + symbOfEqualSufAndPref + " " + stateTo);
+                        lst.Add(stateFrom);
+                        lst.Add(stateTo);
+                    }
+                }
+
+
+            }
+            var lstDistinct = lst.Distinct();
+            richTextBox1M.Clear();
+            richTextBox1M.AppendText("M({");
+            foreach (var item in lstDistinct) {
+                richTextBox1M.AppendText(item + ", ");
+            }
+            richTextBox1M.AppendText("}, {");
+            foreach (var item in alphabet) {
+                richTextBox1M.AppendText(item + ", ");
+            }
+            richTextBox1M.AppendText("}, ");
+            richTextBox1M.AppendText("δ, q0, {q" + finalSubstring.Length + "})");
+
+            richTextBox1M.Text =  richTextBox1M.Text.Replace(", }", "}");
+            label8InitialState.Text = "q0";
+            label9FinalState.Text = "q" + finalSubstring.Length;
+
+            graph.Attr.OptimizeLabelPositions = true;
+            graph.Attr.SimpleStretch = true;
+            gViewer.Graph = graph;
+
+            buildDataGridView1ByGraph();
+        }
+
+        public void buildDFASuffPref0BeforeUproshenie() {
+            richTextBox1Helper.Clear();
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;//turning exception messages to English
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
             numEqualInBgnFSSg = 0;
@@ -130,18 +375,23 @@ namespace SameLayerSample {
                 }
                 //list.Add(new Node("q" + i, prefix, suffix));
             }
-            // if (multiplicity == 1 || numMulSymbInFSSg == 0) 
+            // if (multiplicity == 1) 
             {
                 //Строю состояния для конечной подстроки:
                 for (int i = 0; i < finalSubstring.Length; i++) {
-                    string currentStateName = "q" + (numOfAdditEdges + i);
-                    string newStateName = "q" + (numOfAdditEdges + i + 1);
+                    currentStateName = "q" + (numOfAdditEdges + i);
+                    newStateName = "q" + (numOfAdditEdges + i + 1);
+
+                    if (multiplicity > 1) {//Если кратность больше одного, то надо из каждого состояния, читающего конечную подцепочку
+                        //по символу кратности переходить в состояние q1_1
+
+                    }
+
                     graph.AddEdge(currentStateName, finalSubstringInArrayOfStrings[i], newStateName).Attr.Id =
                         (currentStateName + " " + finalSubstringInArrayOfStrings[i] + " " + "q" + (i + 1));
                     fullPrefix = (finalSubstring.Substring(0, i));//it's full from the beginning up to i'th symbol
                     list.Add(new Node(currentStateName, fullPrefix));//создал свой узел с префиксом и именем как у оригинального состояния
-                                                                     //    string[] strToExcept = { finalSubstringInArrayOfStrings[i] };
-                                                                     // string setWOCorrSymb = setExceptParameter(alphabetInString, finalSubstringInArrayOfStrings[i]);
+                                                                     //string[] strToExcept = { finalSubstringInArrayOfStrings[i] };                                                                    
                     string[] alphWithOneCorrSymb = { finalSubstringInArrayOfStrings[i] };
                     string[] alphWOCorSymb = (string[])alphabet.Except(alphWithOneCorrSymb).ToArray();
                     //string[] alphabetWOCorrSymb = setWOCorrSymb.Split();
@@ -183,15 +433,17 @@ namespace SameLayerSample {
                             if (currentPrefix.Equals(currentSuffix)) {
                                 foundEqualSuffAndPref = true;
                                 lengthOfEqualSufAndPref = currentPrefix.Length;
-                                stateFrom = "q" + i;
-                                stateTo = "q" + currentPrefix.Length;
+                                //stateFrom = "q" + i;
+                                stateFrom = currentStateName;
+                                stateTo = "q" + currentPrefix.Length;//Если обнаружится подходящий суффикс большей длины, то он обязательно будет переназначен,
+                                //т.к. идём от меньшей длины суффикса к большей по k
                                 symbOfEqualSufAndPref = alphWOCorSymb[j];
                             }
                             else {
                                 if (k == 0 && !foundEqualSuffAndPref)
-                                    graph.AddEdge("q" + i, alphWOCorSymb[j], "q0").Attr.Id = ("q" + i + " " + alphWOCorSymb[j] + " " + "q0");
+                                    graph.AddEdge(currentStateName, alphWOCorSymb[j], "q0").Attr.Id = (currentStateName + " " + alphWOCorSymb[j] + " " + "q0");
                             }
-                        }
+                        }//Проверили суффиксы всех длин и теперь можно добавить ребро, если нашли суффикс и префикс максимальной длины:
                         richTextBox1Helper.AppendText("End of k'th for loop\n\n");
                         if (foundEqualSuffAndPref) {
                             foundEqualSuffAndPref = false;
@@ -201,26 +453,59 @@ namespace SameLayerSample {
                     richTextBox1Helper.AppendText("End of j'th for loop\n\n");
 
 
+                }//Здесь нужно написать добавление рёбер из последнего состояния:
+                currentStateName = "q" + (numOfAdditEdges + finalSubstring.Length);
+                //newStateName = "q" + (numOfAdditEdges + i + 1);               
+                fullPrefix = (finalSubstring.Substring(0, finalSubstring.Length));//it's full from the beginning up to i'th symbol
+                for (int j = 0; j < alphabet.Length; j++) {
+                    for (int k = fullPrefix.Length - 1 + 1; k >= 0; k--) {
+                        currentSuffix = "";
+                        if (!(k == fullPrefix.Length)) {//если не находимся в дополнительной итерации, то рассматриваем суффиксы длины 2 и больше.
+                                                        //Индекс для взятия части префикса уменьшается от максимального, а число забираемых символов соотвтетсвенно увеличивается:
+                            currentSuffix += fullPrefix.Substring(k, (fullPrefix.Length) - k) + alphabet[j];
+                        }
+                        else {//Иначе берём только символ алфавита.
+                            currentSuffix = alphabet[j];
+                        }
+                        //На этом моменте понятно, что я смогу перебрать все суффиксы. Но смогу ли я перебрать все префиксы без доп. цикла...
+                        //Префиксы мне нужны будут только длины равной длине суффикса. При создании всех предыдущих состояний, читающих
+                        //кпс, я также проходил по всем предыдущим состояниям... Так что итерация по всем префиксам кажется нужной...
+                        //Хотя нет. Достаточно одного назначения:
+                        // stateFrom = "q" + i; 
+                        // stateTo = "q0";
+                        currentPrefix = "";
+                        if (!(fullPrefix.Length == 0) && (fullPrefix.Length >= currentSuffix.Length))
+                            currentPrefix = fullPrefix.Substring(0, currentSuffix.Length);
+                        richTextBox1Helper.AppendText("i = " + (numOfAdditEdges + finalSubstring.Length) +
+                            ", currentPrefix = " + currentPrefix + ", currentSuffix = " + currentSuffix + "\n");
+                        if (currentPrefix.Equals(currentSuffix)) {
+                            foundEqualSuffAndPref = true;
+                            lengthOfEqualSufAndPref = currentPrefix.Length;
+                            stateFrom = "q" + (numOfAdditEdges + finalSubstring.Length);
+                            stateTo = "q" + currentPrefix.Length;//Если обнаружится подходящий суффикс большей длины, то он обязательно 
+                                                                 //будет переназначен,
+                                                                 //т.к. идём от меньшей длины суффикса к большей по k
+                            symbOfEqualSufAndPref = alphabet[j];
+                        }
+                        else {
+                            if (k == 0 && !foundEqualSuffAndPref)
+                                graph.AddEdge("q" + (numOfAdditEdges + finalSubstring.Length), alphabet[j], "q0").Attr.Id =
+                                    ("q" + (numOfAdditEdges + finalSubstring.Length) + " " + alphabet[j] + " " + "q0");
+                        }
+                    }//Проверили суффиксы всех длин и теперь можно добавить ребро, если нашли суффикс и префикс максимальной длины:
+                    richTextBox1Helper.AppendText("End of k'th for loop\n\n");
+                    if (foundEqualSuffAndPref) {
+                        foundEqualSuffAndPref = false;
+                        graph.AddEdge(stateFrom, symbOfEqualSufAndPref, stateTo).Attr.Id = (stateFrom + " " + symbOfEqualSufAndPref + " " + stateTo);
+                    }
                 }
 
+
             }
-            //Теперь для всех состояний нужно пройтись с помощью сравнений суффиксов и префиксов и, т.о., построить все рёбра...
-            IEnumerable ie;
-            /*   foreach (Node node in graph.Nodes) {
-                   richTextBox1Helper.AppendText(node.Attr.Id+"\n\n");
+            //   else {//multiplicity > 1                  //  buildDFA_UnifiedAlgorythm0();            }
 
-               }*/
-            /* foreach (Node node in graph.NodeMap) {
-                ie = node.OutEdges;
-                 foreach (var outEdge in ie) {
-                     richTextBox1Helper.AppendText("outEdge.ToString() = "+ outEdge.ToString());
-                 }
-
-             }*/
-
-            graph.AddEdge("w0", "bac", "w0").Attr.Id = "idishnik";
-            graph.EdgeById("idishnik").LabelText = "another";
-
+            label8InitialState.Text = "q0";
+            label9FinalState.Text = "q" + (graph.NodeCount - 1);
 
             graph.Attr.OptimizeLabelPositions = true;
             graph.Attr.SimpleStretch = true;
@@ -228,6 +513,129 @@ namespace SameLayerSample {
 
             buildDataGridView1ByGraph();
         }
+        public void buildDataGridView1ByGraph() {
+            //Каждому состоянию сооответствует одна строка таблицы:
+            dataGridView1.RowCount = graph.NodeCount;
+            //Столбцов д.б. столько, сколько символов в алфавите:
+            dataGridView1.ColumnCount = alphabet.Length;
+            for (int i = 0; i < alphabet.Length; i++) {
+                dataGridView1.Columns[i].HeaderCell.Value = alphabet[i];
+            }
+            int p = 0;
+            Hashtable hash = graph.NodeMap;
+            List<string> lst = new List<string>();//normally hashtable isn't sorted, so I had to make a list for sorting
+            foreach (var key2 in hash.Keys) {
+                lst.Add(key2.ToString());
+            }
+            lst.Sort();
+            string lastNode = "";
+            foreach (var item in lst) {
+                dataGridView1.Rows[p++].HeaderCell.Value = item;
+                finalState = lastNode = item;
+            }
+            foreach (var node in graph.Nodes) {//apparently it's easier to build graph by a table, not vice versa... but I'm lazy...
+                foreach (Edge edge in node.Edges) {//building a datagridview by graph
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++) {
+                        for (int j = 0; j < dataGridView1.Columns.Count; j++) {
+                            if (edge.Source.ToString().Equals(dataGridView1.Rows[i].HeaderCell.Value.ToString())) {
+                                string lbl = edge.LabelText.ToString();
+                                string hdr = dataGridView1.Columns[j].HeaderText;
+                                if (lbl.CompareTo(hdr) == 0) {
+                                    dataGridView1.Rows[i].Cells[j].Value = edge.Target.ToString();
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            foreach (DictionaryEntry de in hash) {
+                //richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
+            }
+            foreach (var Node in graph.Nodes) {
+                Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
+                if (Node.Attr.Id.Equals(lastNode)) {
+                    // Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.DoubleCircle;
+                    //Node.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                }
+            }
+            foreach (var node in graph.Nodes) {
+                //richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
+                foreach (Edge edge in node.Edges) {
+                    // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
+                }
+            }
+            foreach (var item in hash) {
+                //  richTextBox1Helper.AppendText(" item.GetType() = " + item.GetType() + "\n");
+                //  richTextBox1Helper.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
+                //  richTextBox1Helper.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
+            }
+        }
+        public void checkAStringByDataGridview1() {
+            richTextBox2CheckResults.Clear();
+            readInformationFromTheInterface();
+            stringTocheckInArrayOfStrings = stringToArrayOfStrings(stringToCheck);
+            currentState = label8InitialState.Text;//Назначил состояния по лейблам
+            finalState = label9FinalState.Text;
+            //ArrayList arrayL =  stringTocheckInArrayOfStrings.ToArray();
+            List<string> arr = stringTocheckInArrayOfStrings.ToList<string>();
+            richTextBox2CheckResults.AppendText("(" + currentState + ", " + stringToCheck + ") |-- ");
+            for (int i = 0; i < stringTocheckInArrayOfStrings.Length; i++) {//иду по цепочке для проверки
+                if (alphabet.Contains(stringTocheckInArrayOfStrings[i])) {//если символ является частью алфавита, то проверяем дальше
+                    //Далее мне нужно сравнивать символы цепочки с хедерами столбцов, а также отталкиваться от того, какое состояние текущее:
+                    for (int j = 0; j < dataGridView1.RowCount; j++) {//идём по хедерам рядов
+                        for (int k = 0; k < dataGridView1.ColumnCount; k++) {//идём по хедерам стобцов
+                            if (currentState.Equals(dataGridView1.Rows[j].HeaderCell.Value.ToString()) &&
+                                dataGridView1.Columns[k].HeaderCell.Value.ToString().Equals(stringTocheckInArrayOfStrings[i])) {
+                                currentState = dataGridView1.Rows[j].Cells[k].Value.ToString();
+                                if (!(i == stringTocheckInArrayOfStrings.Length - 1))//Если нахожусь не на последнем символе
+                                    richTextBox2CheckResults.AppendText("(" + currentState + ", " + stringToCheck.
+                                        Substring(i + 1, (stringToCheck.Length - (i + 1))) + ") |-- ");
+                                else richTextBox2CheckResults.AppendText("(" + currentState + ", " + ") |-- ");
+                                k = dataGridView1.ColumnCount;
+                                j = dataGridView1.RowCount;
+                            }
+                            /* if (!dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Equals("null")) {
+                                 string[] symbolsOfCurrentCell = dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Split(' ');
+                                 for (int m = 0; m < symbolsOfCurrentCell.Length; m++) {
+                                     if (currentState.Equals(dataGridView1.Rows[j].HeaderCell.Value) &&
+                                 stringTocheckInArrayOfStrings[i].Equals(symbolsOfCurrentCell[m])) {
+                                         richTextBox2CheckResults.AppendText(currentState + " -> ");
+                                         currentState = dataGridView1.Columns[k].HeaderText;
+                                         richTextBox2CheckResults.AppendText(currentState + " (" + symbolsOfCurrentCell[m] + ") ");
+                                         for (int h = i + 1; h < stringTocheckInArrayOfStrings.Length; h++) {
+                                             if (!(h == stringTocheckInArrayOfStrings.Length))
+                                                 richTextBox2CheckResults.AppendText(stringTocheckInArrayOfStrings[h]);
+                                         }
+                                         richTextBox2CheckResults.AppendText("\n");
+                                         m = k = j = Int32.MaxValue - 1;
+                                         break;
+                                     }
+                                 }
+                             }*/
+                            if (j == dataGridView1.RowCount - 1 && k == dataGridView1.ColumnCount - 1) {
+                                richTextBox2CheckResults.AppendText("Правила перехода для текущего символа и состояния не найдено. Цепочка не принимается. \n");
+                                k = j = i = Int32.MaxValue - 1;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else {
+                    richTextBox2CheckResults.AppendText("Символа " + stringTocheckInArrayOfStrings[i] + " нет в алфавите, цепочка не принимается. \n");
+                    break;
+                }
+
+            }
+            if (currentState.Equals(finalState)) {
+                richTextBox2CheckResults.AppendText("Находимся в финальном состоянии, цепочка принята\n");
+            }
+            else {
+                richTextBox2CheckResults.AppendText("Находимся в состоянии, отличном от финального, цепочка не принята\n");
+            }
+        }
+
         public void buildDFA_UnifiedAlgorythm0() {
             //пока написано для случая с непустой конечной подстрокой и кратностью больше 1
             //Firstly I need to ensure, that the number of symbols for multiplicity is correct. For that I need to count
@@ -638,6 +1046,7 @@ namespace SameLayerSample {
 
             buildDataGridView1ByGraph();
         }
+
         public void BuildDFAFinalSubstringIsEmpty_case_3() {
 
             string a = textBox4SymbolForMultiplicity.Text;
@@ -780,111 +1189,7 @@ namespace SameLayerSample {
 
 
         }
-        public void checkAStringByDataGridview1() {
-            richTextBox2CheckResults.Clear();
-            readInformationFromTheInterface();
-            stringTocheckInArrayOfStrings = stringToArrayOfStrings(stringToCheck);
-            currentState = initialState;
-            for (int i = 0; i < stringTocheckInArrayOfStrings.Length; i++) {
-                if (alphabet.Contains(stringTocheckInArrayOfStrings[i])) {
-                    for (int j = 0; j < dataGridView1.RowCount; j++) {
-                        for (int k = 0; k < dataGridView1.ColumnCount; k++) {
-                            if (!dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Equals("null")) {
-                                string[] symbolsOfCurrentCell = dataGridView1.Rows[j].Cells[k].AccessibilityObject.Value.ToString().Split(' ');
-                                for (int m = 0; m < symbolsOfCurrentCell.Length; m++) {
-                                    if (currentState.Equals(dataGridView1.Rows[j].HeaderCell.Value) &&
-                                stringTocheckInArrayOfStrings[i].Equals(symbolsOfCurrentCell[m])) {
-                                        richTextBox2CheckResults.AppendText(currentState + " -> ");
-                                        currentState = dataGridView1.Columns[k].HeaderText;
-                                        richTextBox2CheckResults.AppendText(currentState + " (" + symbolsOfCurrentCell[m] + ") ");
-                                        for (int h = i + 1; h < stringTocheckInArrayOfStrings.Length; h++) {
-                                            if (!(h == stringTocheckInArrayOfStrings.Length))
-                                                richTextBox2CheckResults.AppendText(stringTocheckInArrayOfStrings[h]);
-                                        }
-                                        richTextBox2CheckResults.AppendText("\n");
-                                        m = k = j = Int32.MaxValue - 1;
-                                        break;
-                                    }
-                                }
-                            }
-                            if (j == dataGridView1.RowCount - 1 && k == dataGridView1.ColumnCount - 1) {
-                                richTextBox2CheckResults.AppendText("Правила перехода для текущего символа и состояния не найдено. Цепочка не принимается. \n");
-                                k = j = i = Int32.MaxValue - 1;
-                                break;
-                            }
-                        }
-                    }
-                }
-                else {
-                    richTextBox2CheckResults.AppendText("Символа " + stringTocheckInArrayOfStrings[i] + " нет в алфавите, цепочка не принимается. \n");
-                    break;
-                }
 
-            }
-            if (currentState.Equals(finalState)) {
-                richTextBox2CheckResults.AppendText("Находимся в финальном состоянии, цепочка принята\n");
-            }
-            else {
-                richTextBox2CheckResults.AppendText("Находимся в состоянии, отличном от финального, цепочка не принята\n");
-            }
-        }
-        public void buildDataGridView1ByGraph() {
-            //Каждому состоянию сооответствует одна строка таблицы:
-            dataGridView1.RowCount = graph.NodeCount;
-            //Столбцов д.б. столько, сколько символов в алфавите:
-            dataGridView1.ColumnCount = alphabet.Length;
-            for (int i = 0; i < alphabet.Length; i++) {
-                dataGridView1.Columns[i].HeaderCell.Value = alphabet[i];
-            }
-            int p = 0;
-            Hashtable hash = graph.NodeMap;
-            List<string> lst = new List<string>();//normally hashtable isn't sorted, so I had to make a list for sorting
-            foreach (var key2 in hash.Keys) {
-                lst.Add(key2.ToString());
-            }
-            lst.Sort();
-            string lastNode = "";
-            foreach (var item in lst) {
-                dataGridView1.Rows[p++].HeaderCell.Value = item;
-                finalState = lastNode = item;
-            }
-            foreach (var node in graph.Nodes) {//apparently it's easier to build graph by a table, not vice versa... but I'm lazy...
-                foreach (Edge edge in node.Edges) {//building a datagridview by graph
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++) {
-                        for (int j = 0; j < dataGridView1.Columns.Count; j++) {
-                            if (edge.Source.Equals(dataGridView1.Rows[i]) &&
-
-                                edge.Source.Equals(dataGridView1.Rows[i].HeaderCell.Value) &&
-                                edge.Target.Equals(dataGridView1.Columns[j].HeaderCell.Value)) {
-                                dataGridView1.Rows[i].Cells[j].Value = edge.LabelText;
-                            }
-                        }
-                    }
-                }
-            }
-
-            foreach (DictionaryEntry de in hash) {
-                //richTextBox1Helper.AppendText(de.Key + "\n\n" + de.Value + "\n\n\n");
-            }
-            foreach (var Node in graph.Nodes) {
-                Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-                if (Node.Attr.Id.Equals(lastNode)) {
-                    // Node.Attr.Shape = Microsoft.Msagl.Drawing.Shape.DoubleCircle;
-                    //Node.Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-                }
-            }
-            foreach (var node in graph.Nodes) {
-                //richTextBox1Helper.AppendText("node.Id.ToString() = " + node.Id.ToString() + "\n");
-                foreach (Edge edge in node.Edges) {
-                    // richTextBox1Helper.AppendText("edge.LabelText = " + edge.LabelText + "\n");
-                }
-            }
-            foreach (var item in hash) {
-                //  richTextBox1Helper.AppendText(" item.GetType() = " + item.GetType() + "\n");
-                //  richTextBox1Helper.AppendText(" item.GetHashCode() = " + item.GetHashCode() + "\n");
-                //  richTextBox1Helper.AppendText(" item.ToString() = " + item.ToString() + "\n\n");
-            }
-        }
         public void buildDataGridView1ByGraph0() {
             dataGridView1.RowCount = dataGridView1.ColumnCount = graph.NodeCount;
 
@@ -947,7 +1252,7 @@ namespace SameLayerSample {
                 MessageBox.Show("Символ для кратности должен быть один");
                 textBox4SymbolForMultiplicity.Text = "";
             }
-            multiplicity = (int)numericUpDown1Multiplicity.Value;
+            numMulSymbs = multiplicity = (int)numericUpDown1Multiplicity.Value;
             if (multiplicity < 1) {
                 MessageBox.Show("Кратность не м.б. меньше одного");
                 numericUpDown1Multiplicity.Value = 1;
@@ -1038,7 +1343,20 @@ namespace SameLayerSample {
         }
     }
 }
-
+class Node {
+    public Node(string name, string prefix) {
+        this.name = name;
+        this.prefix = prefix;
+        // this.suffix = suffix;
+    }
+    string name;
+    string prefix;
+    // string suffix;
+    string[] tryingSuffixes;
+    static bool compareSuffToPref(string suff, string pref) {
+        return suff.Equals(pref);
+    }
+}
 
 /*//Original contents
  * 
