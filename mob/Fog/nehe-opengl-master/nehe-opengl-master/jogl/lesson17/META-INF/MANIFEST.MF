@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Created-By: NetBeans IDE
-Specified-By: Texture_Font/Lesson17.jarContent
-Main-Class: Texture_Font/Lesson17
-

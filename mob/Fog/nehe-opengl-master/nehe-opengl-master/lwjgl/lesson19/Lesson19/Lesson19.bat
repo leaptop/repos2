@@ -1,1 +1,0 @@
-javaw -Djava.library.path=%LWJGL_HOME% Lesson19 %1

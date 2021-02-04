@@ -1,9 +1,0 @@
-<div class="wikidoc"><h3>Mutating Graphs</h3>
-Most data structures are mutable and support batched addition/removal of vertices/edges.<br />
-<h4>Removing vertices with a predicate</h4><pre>
-var g = new AjacencyGraph&lt;string, Edge&lt;string&gt;&gt;();
-...
-// remove any vertex starting with foo
-int removed = g.RemoveVertexIf(v =&gt; v.StartsWith(&quot;foo&quot;));
-Console.WriteLine(&quot;{0} vertices removed&quot;, removed);
-</pre><br /></div><div class="ClearBoth"></div>

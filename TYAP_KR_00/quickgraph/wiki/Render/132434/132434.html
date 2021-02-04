@@ -1,14 +1,0 @@
-<div class="wikidoc"><h4>Walking Graphs</h4>
-<h5>Iterate vertices</h5>Use the <span class="codeInline">Vertices</span> property to get an enumerable collection of vertices:<br /><pre>
-foreach(var v in g.Vertices)
-    Console.WriteLine(v);
-</pre>
-<h5>Iterate edges</h5>Use the <span class="codeInline">Edges</span> property get an enumerable collection of edges:<br /><pre>
-foreach(var e in g.Edges)
-    Console.WriteLine(e);
-</pre>
-<h5>Iterate out edges</h5>The <span class="codeInline">OutEdges</span> method returns an enumerable collection of out-edges:<br /><pre>
-foreach(var v in g.Vertices)
-    foreach(var e in g.OutEdges(v))
-        Console.WriteLine(e);
-</pre><br />Similarly, <span class="codeInline">InEdges</span> returns an enumerable collection of in-edges.<br /></div><div class="ClearBoth"></div>
