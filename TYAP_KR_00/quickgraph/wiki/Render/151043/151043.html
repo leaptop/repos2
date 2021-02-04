@@ -1,9 +1,0 @@
-<div class="wikidoc"><h3>BidirectionalMatrixGraph</h3>
-The <span class="codeInline">BidirectionalMatrixGraph&lt;TVertex, TEdge&gt;</span> provides an efficient data structure to access the out edges and the in edges of a vertex of dense directed graphs with known number of vertices. This class is mutable, serializable, cloneable and <a href="https://quickgraph.codeplex.com/wikipage?title=Creating%20Graphs&referringTitle=BidirectionalMatrixGraph">can be constructed in many different ways</a>. Internally, the data structure keeps a 2D fixed size array of edges. Does not support <a href="https://quickgraph.codeplex.com/wikipage?title=Multi%20Edge&referringTitle=BidirectionalMatrixGraph">multi-edges</a>.<br /><br /><pre>
-int vertexCount = ...; // must be known a-priori
-var graph = new BidirectionalMatrixGraph&lt;int, Edge&lt;int&gt;&gt;(vertexCount);
-...
-foreach(var vertex in graph.Vertices)
-    foreach(var edge in graph.InEdges(vertex))
-        Console.WriteLine(edge);
-</pre><br /><br />For sparse graphs, consider using <a href="https://quickgraph.codeplex.com/wikipage?title=AdjacencyGraph&referringTitle=BidirectionalMatrixGraph">AdjacencyGraph</a> or <a href="https://quickgraph.codeplex.com/wikipage?title=BidirectionalGraph&referringTitle=BidirectionalMatrixGraph">BidirectionalGraph</a>.<br /><br /></div><div class="ClearBoth"></div>

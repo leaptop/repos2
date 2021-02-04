@@ -1,1 +1,0 @@
-javaw -classpath %LWJGL_HOME%\lwjgl.jar -Djava.library.path=%LWJGL_HOME% Lesson06 %1

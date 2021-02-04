@@ -1,3 +1,0 @@
-#include "\masm32\include\resource.h"
-
-100 BITMAP "glass.bmp"

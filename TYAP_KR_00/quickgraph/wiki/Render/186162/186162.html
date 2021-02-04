@@ -1,43 +1,0 @@
-<div class="wikidoc"><h4>Creating Graphs</h4>
-<h5>Easy creation with extension methods</h5>QuickGraph provides several extension methods in <span class="codeInline">QuickGraph.GraphExtensions</span> to create graph from list of edge or vertices. For example, from an <span class="codeInline">IEnumerable&lt;Edge&lt;int&gt;&gt;</span>:<br /><pre>
-using QuickGraph; // enables extension methods
-
-var edges = new SEdge&lt;int&gt;[] { new SEdge&lt;int&gt;(1,2), new SEdge&lt;int&gt;(0,1) };
-var graph = edges.ToAdjacencyGraph&lt;int, SEdge&lt;int&gt;&gt;(edges);
-</pre><br />
-<h5>Create a graph instance</h5>Let us assume we need integer vertices and edges tagged with string. Int is the vertex type and we can use the MarkedEdge generic type for the edge type:
-<ul><li><span class="codeInline">TVertex</span> type: <span class="codeInline">int</span></li>
-<li><span class="codeInline">TEdge</span> type using <span class="codeInline">TaggedEdge&lt;Vertex,Marker&gt;: TaggedEdge&lt;int, string&gt;</span></li></ul>
-<pre>
-var g = new AdjacencyGraph&lt;int, TaggedEdge&lt;int, string&gt;&gt;();
-</pre><br />
-<h5>Wrapping a dictionary into a graph</h5>You may have already a dictionary on hand that represents a graph, where the keys are the vertices and the value is a collection of out-edges (or adjacent edges). You can wrap this dictionary with QuickGraph without re-allocating new memory:<br /><pre>
-Dictionary&lt;int, int[]&gt; dic = ...; // vertex -&gt; target edges
-var graph = dic.ToVertexAndEdgeListGraph(
-    kv =&gt; Array.ConvertAll(kv.Value, v =&gt; new SEquatableEdge&lt;int&gt;(kv.Key, v))
-    );
-
--- without extension methods
-var graph = GraphExtensions.ToVertexAndEdgeListGraph(
-    dic,
-    kv =&gt; Array.ConvertAll(kv.Value, v =&gt; new SEquatableEdge&lt;int&gt;(kv.Key, v))
-    );
-</pre><br />
-<h5>Adding vertices</h5>This snippet creates two vertices and adds them to the graph.<br /><pre>
-int v1 = 1;
-int v2 = 2;
-
-g.AddVertex(v1);
-g.AddVertex(v2);
-</pre>
-<h5>Adding edges</h5>The edges <span class="codeInline">(v1,v2)</span> and <span class="codeInline">(v2,v1)</span> are created and added to the graph.<br /><pre>
-var e1 = new TaggedEdge&lt;int,string&gt;(v1,v2,”hello”);
-
-g.AddEdge(e1); 
-</pre>
-<h5>Adding edges (and vertices)</h5>You can also add an edge and implicitely add the vertices if they are missing<br /><pre>
-// v3, v4 are not added to the graph yet
-var e2 = new TaggedEdge&lt;int,string&gt;(v3,v4,”hello”);
-
-g.AddVerticesAndEdge(e2); 
-</pre><br /></div><div class="ClearBoth"></div>

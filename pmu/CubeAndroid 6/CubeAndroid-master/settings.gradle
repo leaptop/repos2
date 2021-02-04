@@ -1,1 +1,0 @@
-include ':app', ':ndk_helper', ':native_app_glue'

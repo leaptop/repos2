@@ -1,12 +1,0 @@
-<div class="wikidoc"><h3>Strongly Connected Components</h3>A <i>strongly connected component</i> of a graph is a set of vertices such that for each pair <span class="codeInline">u,v</span> of vertices in the component, there exists a path from <span class="codeInline">u</span> to <span class="codeInline">v</span> and <span class="codeInline">v</span> to <span class="codeInline">u</span>.<br /> <br />This algorithm sorts the vertices in the different strongly connected components of the graph. It is implemented by the <span class="codeInline">StronglyConnectedComponentsAlgorithm</span> which uses the <span class="codeInline">DepthFirstSearchVertexAlgorithm</span> internally. Again, <span class="codeInline">AlgorithmExtensions</span> contains extension methods that hides these implementation details for you. <br /><br />The concept of strong connectivity is very important in many algorithms because it means there is always “a way back”. For example, one expects that the directed graph that represent the different states of a dialog window is strongly connected, i.e. the user can always go back or undo. <br /><br />This sample shows how to compute and display the component information from a directed graph:<br /><pre>
-IVertexListGraph&lt;Vertex,Edge&gt; g=…;
-IDictionary&lt;Vertex,int&gt; components=new Dictionary&lt;Vertex,int&gt;();
-
-int componentCount = g.StronglyConnectedComponents(components);
-if (componentCount!=0)
-{
-    Console.WriteLine(“Warning the graph is not strongly connected”);
-    foreach(KeyValuePair&lt;Vertex,int&gt; kv in components)
-        Console.WriteLine(“{0}-{1}”,kv.Value,kv.Key);
-}
-</pre><br /></div><div class="ClearBoth"></div>

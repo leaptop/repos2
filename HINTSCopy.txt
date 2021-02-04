@@ -25,7 +25,17 @@ Ctrl+/(на английской раскладке) комментирует с
 Ctrl+Shift+/ комментирует весь выделенный блок в стиле /* */ in intellij idea
   В intellijidea можно удалить все комментарии из текста: Ctrl+r, галочку Regex(режим регулярных выражений), для удаления всех комментов в верхнюю строчку вставляем (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/|[ \t]*//.*), жмём replace all. Если надо удалить только комменты //: ([ \t]*//.*), если /**/: (/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)
   В виже также можно в поисковике, просто надо нажать ещё кнопку(квадратик со звёздочкой) для разрешения регулярных выражений
-  
+ 
+DARK THEMES:
+QT Инструменты, Параметры, Среда, Тема Dark
+MS Word и другие - файл - учётная запись - Тема Offce 
+IntelliJIdea color scheme dracula тёмная тема темная тема тёмный цвет Ctrl Alt s (File-settings)- appearance - dracula
+Notepad++ Опции-определение стиля-можно поменять цвет фона, текста Twilight
+Settings -> Preferences dialog control the way Notepad++ prints a document: Print - Colour and Margin and Print - Header and Footer.
+The former lets you choose the four margins, in centimeters. There are also four colour schemes to choose from. 
+ 
+In phpMyAdmin in openServer default user: root; default password: root.
+ 
 Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;//turning exception messages in VS to English
 Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
   
@@ -60,6 +70,14 @@ If the .bashrc file doesn't exist, create one in your root folder.
 В сишарпе cs c# чтобы передать ссылку на массив по ссылке, а не по значению, надо дописывать ref как при вызове функции, так и при определении метода. GetArray(ref Integer[] A)
 
 С помощью VLC можно записывать экран: Медиа - конвертировать/сохранить - устройство захвата - экран - установка частоты кадров(30 fps - хорошее качество) - конвертировать/сохранить (запись началась).
+  
+Чтобы создать проект на сайте спринга:
+https://start.spring.io/
+создаёшь всё как здесь написано
+открываешь папку в idea без создания проекта
+жмешь справа внизу что-то
+потом тоже справа внизу import
+только тогда проект соберётся нормально
   
 Luhn's correct credit card number example: 4561261212345467
 
@@ -111,22 +129,12 @@ spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
 Делаю по инструкциям: https://spring.io/guides/gs/accessing-data-mysql/#initial
 Добавил автоматически зависимости в maven чтобы import javax.persistence.Entity; было найдено
 Создал UserRepository.java, подключил зависимости maven для CrudRepository
-
-
   
 разбирает apk: https://ibotpeaches.github.io/Apktool/
 Однако это не позволяет импортировать всё в проект андроид студии просто так... Там всё равно много хуков, изменений, которые не похожи на обычный проект.
   
 Android Studio работает только при запуске в кране ноута. В дополнительном мониторе эмулятор не работает, всё тупит.
 Чтобы редактировать текст .xml в андроид студии, надо справа сверху выбрать кнопочку с полосками, для дизайна кнопочку с двумя горками.
-
-DARK THEMES:
-QT Инструменты, Параметры, Среда, Тема Dark
-MS Word и другие - файл - учётная запись - Тема Offce 
-IntelliJIdea color scheme dracula тёмная тема темная тема тёмный цвет Ctrl Alt s (File-settings)- appearance - dracula
-Notepad++ Опции-определение стиля-можно поменять цвет фона, текста Twilight
-Settings -> Preferences dialog control the way Notepad++ prints a document: Print - Colour and Margin and Print - Header and Footer.
-The former lets you choose the four margins, in centimeters. There are also four colour schemes to choose from.
 
 stdc++.h - это просто заголовочный файл, который подгружает множество библиотек. Нужен чтобы "не утруждать себя" прописыванием всех этих инклудов.
 

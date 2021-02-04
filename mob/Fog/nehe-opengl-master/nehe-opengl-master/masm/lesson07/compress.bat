@@ -1,1 +1,0 @@
-C:\masm32\perso\OpenGL\scalp\upx --best lesson07.exe

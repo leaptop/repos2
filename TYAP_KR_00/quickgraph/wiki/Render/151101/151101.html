@@ -1,7 +1,0 @@
-<div class="wikidoc"><h4>Topological Sort</h4>
-This algorithm creates an <a href="http://en.wikipedia.org/wiki/Topological_sort">linear ordering</a> of the vertices (or edges) in a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a> such that each vertex comes before its outbound vertices. A typical example of the topological sort is the build dependencies ordering.<br /><br />The topological sort is simply computed using the <span class="codeInline">TopologicalSortAlgorithm</span> class, <br />which uses the <span class="codeInline">DepthFirstSearchVertexAlgorithm</span> internaly. <br /><br /><span class="codeInline">TopologicalSort</span> is an extension method of <a href="https://quickgraph.codeplex.com/wikipage?title=AlgorithmExtensions&referringTitle=Topological%20Sort">AlgorithmExtensions</a> to simplify this task:<br /><pre>
-IVertexListGraph&lt;Vertex,Edge&gt; g;
-// iterating over the sorted vertices
-foreach(Vertex v in g.TopologialSort())
-{…}
-</pre><br />QuickGraph contains a second topological sort algorithm that sorts vertices by increasing in-degree such that source vertices are takened first. It is implemented by <span class="codeInline">SourceFirstTopologicalSortAlgorithm</span> and wrapped by the extension method <span class="codeInline">AlgoExtensions.SourceFirstTopologicalSort</span>.<br /></div><div class="ClearBoth"></div>
