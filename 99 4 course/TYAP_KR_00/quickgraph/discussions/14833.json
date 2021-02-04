@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "48196",
+    "ThreadId": "14833",
+    "Html": "\r\ni want to do shortest path algorithm in NTS or SharpMap. But i find quickgraph do not support them.<br />pelikhan, can you tell me ? thanks ..<br />",
+    "PostedDate": "2007-09-07T00:59:43.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48331",
+    "ThreadId": "14833",
+    "Html": "\r\nNTS? SharpMap?<br />",
+    "PostedDate": "2007-09-07T23:19:59.41-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48357",
+    "ThreadId": "14833",
+    "Html": "\r\nNTS and SharpMap is GIS(Geograph Information System) open source based on .net.<br />the shortest path algorithm is important in GIS.<br />I hope QuickGraph can support them... <br />maybe my suggestion will do some help on development of QuickGraph . :-)<br />",
+    "PostedDate": "2007-09-08T06:42:41.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48374",
+    "ThreadId": "14833",
+    "Html": "\r\nCould you be more specific which class of SharpMap should be suported? (example would be good)<br />",
+    "PostedDate": "2007-09-08T09:58:11.8-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48508",
+    "ThreadId": "14833",
+    "Html": "\r\nI'm a newer to QuickGraph. I still dont understand the structure. <br />In sharpmap, <br />use this code <i>SharpMap.Data.Providers.ShapeFile shp = new SharpMap.Data.Providers.ShapeFile(HttpContext.Current.Server.MapPath(@\"~\\App</i>data\\countries.shp\"), true);_  to read GIS file.<br />then store on a layer like this : <br /><i>SharpMap.Layers.VectorLayer layGeoms = new SharpMap.Layers.VectorLayer(\"Geometries\");</i><br /><i>layGeoms.DataSource = shp;</i><br /><br />i think QuickGraph should support the sharpmap layer. or, convert sharpmap layer to QuickGraph support graph ?<br />but i don't know what graph format does QuickGraph support.<br />",
+    "PostedDate": "2007-09-09T19:49:12.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "48646",
+    "ThreadId": "14833",
+    "Html": "\r\nI don't see a graph in VectorLayer. <br />",
+    "PostedDate": "2007-09-10T14:07:53.25-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

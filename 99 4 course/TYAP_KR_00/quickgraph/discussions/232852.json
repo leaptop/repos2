@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "514803",
+    "ThreadId": "232852",
+    "Html": "\r\n<p>There are some binaries (some dlls and an exe) in the source tree; what are they?</p>\r\n<p>(iconic.zip.dll, nupack.exe, CodePlex.WebServices.Client.dll, Microsoft.Cci.MsBuild.dll, Microsoft.Contracts.dll,Microsoft.GLEE.dll, etc.)</p>\r\n",
+    "PostedDate": "2010-10-29T18:43:25.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519144",
+    "ThreadId": "232852",
+    "Html": "\r\n<p>They support the automated build.</p>\r\n",
+    "PostedDate": "2010-11-08T21:51:32.77-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519151",
+    "ThreadId": "232852",
+    "Html": "\r\n<p>Where are their source files?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-08T22:08:35.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520129",
+    "ThreadId": "232852",
+    "Html": "\r\n<p>There are no source files for those.</p>\r\n",
+    "PostedDate": "2010-11-10T11:14:41.08-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

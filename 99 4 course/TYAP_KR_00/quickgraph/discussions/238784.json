@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "537510",
+    "ThreadId": "238784",
+    "Html": "\r\n<p>Hello All,</p>\r\n<p>I'm new to QuickGraph, and graph structures in general. &nbsp;I would like to create a graph with labeled edges, and then search (traverse?) the graph to find all the nodes that have the label that I'm searching for. &nbsp;I guess this would be similar to\r\n RDF. &nbsp;Is this something that is possible with QuickGraph? &nbsp;If someone could point me to a code example or some literature on searching edge-labeled graphs. &nbsp;Thank you for any help.</p>\r\n<p>&nbsp;</p>\r\n<p>Cheers,<br>\r\nDavid&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-17T13:04:31.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

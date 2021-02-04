@@ -1,0 +1,46 @@
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/bin/nvcc.exe 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+1
+Microsoft (R) C/C++ Optimizing Compiler Version 19.27.29112 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+tmpxft_00009604_00000000-1.cpp
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc fatal   : Host compiler targets unsupported OS.
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/bin/nvcc.exe 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+1
+Microsoft (R) C/C++ Optimizing Compiler Version 19.27.29112 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+tmpxft_00001ed0_00000000-1.cpp
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc fatal   : Host compiler targets unsupported OS.
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: C:/Users/stepa/repos2/gpu/rgrAR/home/death/CLionProjects/rgr_sample/cublas_sample/out/build/x64-Debug (default)/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_71d7a && [1/2] Building CUDA object CMakeFiles\cmTC_71d7a.dir\main.cu.obj
+FAILED: CMakeFiles/cmTC_71d7a.dir/main.cu.obj 
+cmd.exe /C "C:\PROGRA~1\NVIDIA~2\CUDA\v8.0\bin\nvcc.exe     -x cu -c main.cu -o CMakeFiles\cmTC_71d7a.dir\main.cu.obj && C:\PROGRA~1\NVIDIA~2\CUDA\v8.0\bin\nvcc.exe     -x cu -M main.cu -MT CMakeFiles\cmTC_71d7a.dir\main.cu.obj -o CMakeFiles\cmTC_71d7a.dir\main.cu.obj.d"
+Microsoft (R) C/C++ Optimizing Compiler Version 19.27.29112 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+tmpxft_00003120_00000000-1.cpp
+nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+nvcc fatal   : Host compiler targets unsupported OS.
+ninja: build stopped: subcommand failed.
+
+
+

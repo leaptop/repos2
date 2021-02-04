@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "184935",
+    "ThreadId": "54822",
+    "Html": "Hi Guys,<div><br></div><div>How are you?</div><div>I've a question:</div><div><br></div><div>I want to obtain a sub adjacency graph thats meets certain criteria.</div><div><br></div><div>Here's an example:</div><div><br></div><div><div>            AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt; g = new AdjacencyGraph&lt;int,Edge&lt;int&gt;&gt;();</div><div><br></div><div>            var H = from F in g.Edges</div><div>                    where F.Source &gt; 25 &amp;&amp; F.Target &gt; 25</div><div>                    select F;</div><div><br></div><div><div>            AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt; J = new AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;();</div><div>            J.AddVerticesAndEdgeRange(H);</div><div><br></div><div><br></div><div>According to you Is there a more elegant version?</div><div><br></div><div>Thanks for your attention!!</div><div><br></div></div></div>",
+    "PostedDate": "2009-04-29T05:38:33.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185063",
+    "ThreadId": "54822",
+    "Html": "Yes, use the QuickGraph.Filtered.*** datastructures. There must be a FitleredVertexAndEdgeListGraph&lt;TVertex, TEdge&gt; class that lets you filter according vertices and edges.\r\n",
+    "PostedDate": "2009-04-29T09:38:12.09-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185132",
+    "ThreadId": "54822",
+    "Html": "Can you write me an example? Do it only if you can!<div><br></div><div>Thanks.</div>",
+    "PostedDate": "2009-04-29T11:33:22.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185153",
+    "ThreadId": "54822",
+    "Html": "<div>Why I can Filter only by Vertex and not also by EdgeList? Is there an error?</div><div><br></div><div>Thanks.</div><div><strong><br></strong></div><div><strong>Example</strong></div><div><strong><br></strong></div><div>{</div><div>            AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt; g = new AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;();</div><div>            </div><div>            VertexPredicate&lt;int&gt; VP = new VertexPredicate&lt;int&gt;(GreaterThan);</div><div>            EdgePredicate&lt;int, Edge&lt;int&gt;&gt; EP = new EdgePredicate&lt;int, Edge&lt;int&gt;&gt;(GreaterThan);</div><div>            FilteredVertexAndEdgeListGraph&lt;int, Edge&lt;int&gt;, AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;&gt; N = new FilteredVertexAndEdgeListGraph&lt;int, Edge&lt;int&gt;, AdjacencyGraph&lt;int, Edge&lt;int&gt;&gt;&gt;(g, VP, EP);</div><div>}</div><div><div>        public bool GreaterThan(int Args)</div><div>        {</div><div>            //return Args &gt; 25;</div><div>            return true;</div><div>        }</div><div>        public bool GreaterThan(Edge&lt;int&gt; Args)</div><div>        {</div><div>            return Args.Source &gt;20;</div><div>        }</div></div>",
+    "PostedDate": "2009-04-29T12:11:13.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185309",
+    "ThreadId": "54822",
+    "Html": "I don't understand your question: you can provide a filter for the vertices and the edges.\r\n",
+    "PostedDate": "2009-04-29T21:21:44.17-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

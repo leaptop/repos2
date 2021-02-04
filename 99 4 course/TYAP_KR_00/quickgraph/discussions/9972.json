@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "32388",
+    "ThreadId": "9972",
+    "Html": "\r\nHi,<br /><br />I downloaded the quickgraph assemblies recently. I have to implement Dijkstra's shortest path algorithm for my project. Can you please tell me which assembly and namespace contains VertexPredecessorRecorderObserver method? I am not able to find this method. <br />I am using the 2.1.1441.30422 version. Also if I am referring to the wrong dlls then plz give me the correct link to the dlls.<br /><br />Thanks<br />",
+    "PostedDate": "2007-05-07T17:16:54.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "32432",
+    "ThreadId": "9972",
+    "Html": "\r\nYou can search for types in managed code assemblies using Reflector (http://www.aisto.com/roeder/dotnet/).<br />",
+    "PostedDate": "2007-05-08T01:23:38.307-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

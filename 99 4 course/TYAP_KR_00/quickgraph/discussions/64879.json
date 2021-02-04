@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "220930",
+    "ThreadId": "64879",
+    "Html": "<p>I'm trying out  QuickGraph in a distance product we have. I got to work with an AdjacencyGraph but our connections are both ways so I just added two edges for each connection, I would like to avoid this, but cannot quite figure it out, please help:</p>\r\n<p>This works on a AdjacencyGraph</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>DijkstraShortestPathAlgorithm&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; dijkstra = <span style=\"color:Blue\">new</span> DijkstraShortestPathAlgorithm&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;(graph, AlgorithmExtensions.GetIndexer&lt;Edge&lt;<span style=\"color:Blue\">string</span>&gt;, <span style=\"color:Blue\">double</span>&gt;(edgeCost));\r\nQuickGraph.Algorithms.Observers.VertexPredecessorRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; predecessorObserver = <span style=\"color:Blue\">new</span> QuickGraph.Algorithms.Observers.VertexPredecessorRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;();\r\npredecessorObserver.Attach(dijkstra);\r\nVertexDistanceRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; distObserver = <span style=\"color:Blue\">new</span> VertexDistanceRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;(AlgorithmExtensions.GetIndexer&lt;Edge&lt;<span style=\"color:Blue\">string</span>&gt;, <span style=\"color:Blue\">double</span>&gt;(edgeCost));\r\ndistObserver.Attach(dijkstra);\r\ndijkstra.Compute(StartP);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>This does not work on a UndirectedGraph</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>UndirectedDijkstraShortestPathAlgorithm&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; dijkstra = <span style=\"color:Blue\">new</span> UndirectedDijkstraShortestPathAlgorithm&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;(graph, AlgorithmExtensions.GetIndexer&lt;Edge&lt;<span style=\"color:Blue\">string</span>&gt;, <span style=\"color:Blue\">double</span>&gt;(edgeCost));\r\nVertexPredecessorRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; predecessorObserver = <span style=\"color:Blue\">new</span> VertexPredecessorRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;();\r\npredecessorObserver.Attach(dijkstra);\r\nVertexDistanceRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt; distObserver = <span style=\"color:Blue\">new</span> VertexDistanceRecorderObserver&lt;<span style=\"color:Blue\">string</span>, Edge&lt;<span style=\"color:Blue\">string</span>&gt;&gt;(AlgorithmExtensions.GetIndexer&lt;Edge&lt;<span style=\"color:Blue\">string</span>&gt;, <span style=\"color:Blue\">double</span>&gt;(edgeCost));\r\ndistObserver.Attach(dijkstra);\r\ndijkstra.Compute(StartP);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>I get a error:</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;The best overloaded method match for 'QuickGraph.Algorithms.Observers.VertexPredecessorRecorderObserver&lt;string,QuickGraph.Edge&lt;string&gt;&gt;.Attach(QuickGraph.Algorithms.ITreeBuilderAlgorithm&lt;string,QuickGraph.Edge&lt;string&gt;&gt;)' has some invalid arguments&nbsp;&nbsp; &nbsp;C:\\projects\\Shipping\\EFDistance\\DistanceServerModule\\DistanceServerModule.cs&nbsp;&nbsp; &nbsp;655&nbsp;&nbsp; &nbsp;13&nbsp;&nbsp; &nbsp;DistanceServerModule</p>\r\n<p>What should I do?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-07T13:59:45.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221399",
+    "ThreadId": "64879",
+    "Html": "<p>You need to use&nbsp;<span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">UndirectedVertexPredecessorRecorderObserver</span></span> instead.</p>",
+    "PostedDate": "2009-08-09T23:15:38.783-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221431",
+    "ThreadId": "64879",
+    "Html": "<p>Great, it worked. thank you !</p>",
+    "PostedDate": "2009-08-10T01:23:28.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224471",
+    "ThreadId": "64879",
+    "Html": "<p>Hmm.. very strange. I have a new problem with the Undirected graph. I'm getting the same distance from the Undirected graph as from the AdjacencyGraph(with all edges duplicated from-&gt;to to-&gt;from), but i'm getting two different paths with TryGetPath. The Undirected graph gives me a path thats not valid. It looks like there are steps missing (Compared to the Adjecencygraph)?</p>\r\n<p>What can I do to debug this ?</p>",
+    "PostedDate": "2009-08-17T07:56:11.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226815",
+    "ThreadId": "64879",
+    "Html": "<p>I'll need a,repro</p>",
+    "PostedDate": "2009-08-23T07:49:24.557-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

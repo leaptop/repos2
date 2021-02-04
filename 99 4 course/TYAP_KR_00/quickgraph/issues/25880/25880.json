@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If I export an undirectedgraph into graphviz, the edges will appear in the dot file as:\n_Vertex1 -> Vertex2_\nBut because of the graph is undirected the output should look like:\n_Vertex1 -- Vertex2_",
+    "LastUpdatedDate": "2015-07-13T12:36:01.293-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2014-12-17T06:54:27.983-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GraphvizAlgorithm.WriteEdges(..) does not differ between directed and undirected edges",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 25880
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

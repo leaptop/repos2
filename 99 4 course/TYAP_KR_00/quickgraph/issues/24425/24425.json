@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The logic for ArrayUndirectedGraph.IsEdgesEmpty is reversed. It returns false when the edges are empty and true when they are not.",
+    "LastUpdatedDate": "2013-06-20T23:49:55.9-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2013-06-20T23:49:55.9-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ArrayUndirectedGraph.IsEdgesEmpty implemented incorrectly",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 24425
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

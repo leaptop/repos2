@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "By design&#58; STaggedEquatableEdge is a struct - so it is sealed. TaggedEquatableEdge is not sealed.",
+    "ClosedDate": "2010-11-06T22:05:37.11-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I would like to create derived classes to make the code more readable:\n \n        class EntityGraphEdge :\n            STaggedEquatableEdge<EntityGraphNode, EntityGraphAssociation>\n        {\n            public EntityGraphEdge(EntityGraphNode source, EntityGraphNode target, EntityGraphAssociation tag)\n                : base(source, target, tag)\n            {\n            }\n        }\n \nThanks,\nPedro",
+    "LastUpdatedDate": "2013-05-16T04:59:15.74-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2010-08-04T08:39:01.16-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Could you please unseal STaggedEquatableEdge?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18372
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

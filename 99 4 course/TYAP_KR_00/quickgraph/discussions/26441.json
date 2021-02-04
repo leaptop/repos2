@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "88449",
+    "ThreadId": "26441",
+    "Html": "\r\nI optimized the PriorithizedVertexBuffer a little since it took minitues to complete on my machine for very large graphs.<br />I reduced the calls to sort to a minum which resulted in rediced execution duration of a few seconds.<br /><br />public void Update(TVertex v)<br />{<br />  // remove from old position<br />  bool removed = base.Remove(v);<br />  System.Diagnostics.Debug.Assert(removed);<br /><br />  // re- Add <br />  base.Push(v);<br />}<br /><br />public new void Push(TVertex v)<br />{<br />  // find location to insert<br />  int index =  this.BinarySearch(v, this.comparer);<br />  System.Diagnostics.Debug.Assert(index &lt; 0);<br />  // add to queue<br />  base.Insert(~index, v);<br />    * */<br />}<br />",
+    "PostedDate": "2008-04-23T02:14:58.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "114941",
+    "ThreadId": "26441",
+    "Html": "I've rewritten the priorithizedvertexbuffer (now PrioirityQueue) using a binary heap. Performance shoud be significantly faster.\r\n",
+    "PostedDate": "2008-08-30T16:17:14.247-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

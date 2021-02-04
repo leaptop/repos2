@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I need to implement a solution to the TSP via min span tree and plan to use QuickGraph for this (I also need it to process some data). I'd like my implementation to remain open source and if possible on QuickGraph itself. However, I don't know: how do I contribute to QuickGraph? Where is the repo? I am more accustomed to projects on Github.",
+    "LastUpdatedDate": "2015-08-11T07:00:53.21-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2015-07-01T08:14:00.693-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "QuickGraph repository",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 63583
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nI'm not official maintainer of original QuickGraph, but we have GitHub clone of this repo and we maintain it.  Our GitHub repo: https://github.com/YaccConstructor/QuickGraph  So, feel free to contribute.\n",
+      "PostedDate": "2015-08-11T07:00:53.21-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "441991",
+    "ThreadId": "212406",
+    "Html": "<p>Hi,</p>\r\n<p>Would someone be able to give a high level overview of the QuickGraph implementation and how it works in principle.&nbsp; I've been having a look through the code, and as a new .NET developer I'm kind of having a hard time at the moment.&nbsp; Some of the things re the design I had in mind are:</p>\r\n<ul>\r\n<li>&nbsp;events - there seems to be a lot of code around events - what's the driver for having events in the design?&nbsp; It seems to make it complicated to understand.&nbsp; Is it to allow algorithms to be highly paralleled when they run or something? </li>\r\n</ul>\r\n<ul>\r\n<li>re the code below, what's the design concept here re the observers (which ties into events in Q1 no doubt), how does this design concept work &amp; what are the benefits</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>            <span style=\"color:blue\">var</span> dfs = <span style=\"color:blue\">new</span> DepthFirstSearchAlgorithm&lt;Node, Relationship&lt;Node&gt;&gt;(graph);\r\n            <span style=\"color:blue\">var</span> observer = <span style=\"color:blue\">new</span> VertexPredecessorRecorderObserver&lt;Node, Relationship&lt;Node&gt;&gt;();\r\n\r\n            <span style=\"color:blue\">using</span> (observer.Attach(dfs)) <span style=\"color:green\">// attach, detach to dfs events</span>\r\n                dfs.Compute();\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>database persistence - unless I've missed something there is no database persistence?&nbsp; Is there a reason for this? (e.g. is it because its generics based so it is difficult to write a data access layer without the concrete classes used?) </li>\r\n<li>what do people normally do re persisting large graphs then?&nbsp; </li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-12T04:58:55.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442139",
+    "ThreadId": "212406",
+    "Html": "<p>- events:<br><br>Algorithms are usually composed of visitor who trigger events, and observers who listen to a subset of those events. Events allow to hook to a subset of the events and also to dispatch the events to multiple observers easily.</p>\r\n<p>- observers:<br><br>The idea of observers comes from the Boost Graph Library. For example, the breath first search algorithm can be reused to solve different problems by using different observersers.</p>\r\n<p>- db persistence:<br><br>No particular reason. Database schemas are usually highly application specific, so each user should simply write its own.</p>\r\n<p>- large graph<br><br>QuickGraph was not designed to deal with extremely large graphs. You need to use io-efficient libraries such as STLXX to deal with those. Otherwise, try sticking to int as vertices&nbsp;and SEquatableEdge&lt;int&gt;&nbsp;in order to avoid bloating your heap.</p>",
+    "PostedDate": "2010-05-12T09:37:47.783-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442300",
+    "ThreadId": "212406",
+    "Html": "<p>Hi pelikhan - just to clarify then.&nbsp;&nbsp; So would be true to say that the reason the basis of the design isn't just a simpler set of methods that work on a simple structure based on Dictionary/Lists of Apex/Vertices is that it becomes more difficult to reuse some of the algorithms?&nbsp; But then why for example couldn't the algorithms just be simple methods (with no events / observers) and supply the resultant list of hits, after which the client does what he specifically want to do with them after this?&nbsp;&nbsp; So I guess I'm trying to understand what type of requirement pushed the design over the edge requiring events/observers etc</p>\r\n<p>thanks</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-12T16:06:39.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442386",
+    "ThreadId": "212406",
+    "Html": "<p>&gt; So would be true to say that the reason the basis of the design isn't just a simpler set of methods that work on a simple structure based on Dictionary/Lists of Apex/Vertices is that it becomes more difficult to reuse some of the algorithms?&nbsp;</p>\r\n<p>I'm not sure I get your sentence.</p>\r\n<p>&gt;&nbsp;&nbsp;But then why for example couldn't the algorithms just be simple methods (with no events / observers) and supply the resultant list of hits, after which the client does what he specifically want to do with them after this?&nbsp;</p>\r\n<p>Look for the AlgorithmsExtensions. There are a number of helper methods that hide the complexity and provide simple methods to solve common problems.</p>",
+    "PostedDate": "2010-05-12T21:58:25.067-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442391",
+    "ThreadId": "212406",
+    "Html": "<p>I guess I was trying to say that one could create a few classes that model a graph and write methods that walk-the-tree so to speak, without having to have events &amp; observers as part of the design - so I'm trying to understand why the QuickGraph design does have events &amp; observers as part of the design?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-12T22:41:08.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443254",
+    "ThreadId": "212406",
+    "Html": "<p>You can read about the Boost Graph Library, it has more details about this kind of architecture.</p>",
+    "PostedDate": "2010-05-15T07:54:37.007-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443324",
+    "ThreadId": "212406",
+    "Html": "<p>ok - thanks</p>",
+    "PostedDate": "2010-05-15T14:56:05.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

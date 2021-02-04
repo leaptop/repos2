@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1037817",
+    "ThreadId": "442136",
+    "Html": "Hi, \r<br />\n<br />\nWhen I use Package Manager Console then I get the following error:<br />\n<pre><code>PM&gt; Install-Package QuickGraph\nInstalling 'QuickGraph 3.6.61119.7'.\nSuccessfully installed 'QuickGraph 3.6.61119.7'.\nAdding 'QuickGraph 3.6.61119.7' to AuthorPlugIns.\nUninstalling 'QuickGraph 3.6.61119.7'.\nSuccessfully uninstalled 'QuickGraph 3.6.61119.7'.\nInstall failed. Rolling back...\nInstall-Package : Could not install package 'QuickGraph 3.6.61119.7'. You are trying to install this pac\nkage into a project that targets '.NETFramework,Version=v3.5', but the package does not contain any asse\nmbly references or content files that are compatible with that framework. For more information, contact \nthe package author.\nAt line:1 char:16\n+ Install-Package &lt;&lt;&lt;&lt;  QuickGraph\n    + CategoryInfo          : NotSpecified: (:) [Install-Package], InvalidOperationException\n    + FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCom \n   mand\n </code></pre>\n\nI also tried adding it to .NET 2.0 using GUI and it didn't show the project as one I could add it to. I cannot upgrade to .NET 4 because I'm developing a plug-in for something that is built on .NET 3.5.\r<br />\n<br />\nHow can I install QuickGraph for .NET 3.5 project?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-04-30T13:57:52.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115229",
+    "ThreadId": "442136",
+    "Html": "I would like to be able to use a NuGet 3.5 compatible package also, can one be added?<br />\n",
+    "PostedDate": "2013-10-31T11:09:50.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "200049",
+    "ThreadId": "59085",
+    "Html": "<p>I want to get the list of paths that have been walked during Compute in the following snippet.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:#000080\"><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\"><strong>Code:</strong></span></span></span></p>\r\n<p style=\"padding-left:30px\"><span style=\"color:#000080\"><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">var</span></span><span style=\"font-size:x-small\">&nbsp;algo = </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">new</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">DepthFirstSearchAlgorithm</span></span><span style=\"font-size:x-small\">&lt;</span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">FunctionNode</span></span><span style=\"font-size:x-small\">, </span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">Edge</span></span><span style=\"font-size:x-small\">&lt;</span><span style=\"color:#2b91af;font-size:x-small\"><span style=\"color:#2b91af;font-size:x-small\">FunctionNode</span></span></span><span style=\"font-size:x-small\"><span style=\"color:#000080\">&gt;&gt;(_graph);</span></span></p>\r\n<p style=\"padding-left:30px\"><span style=\"font-size:x-small\"></span><span style=\"color:#000080\">algo.Compute(startNode); //F1</span></p>\r\n<p style=\"padding-left:30px\"><span style=\"color:#000080\"><strong>Desired Sample&nbsp;Output</strong>: F1-&gt;F2-&gt;F3; F1-&gt;F5</span></p>\r\n<p>&nbsp;What is a good way of getting that?</p>\r\n<p style=\"padding-left:30px\">&nbsp;</p>",
+    "PostedDate": "2009-06-10T08:57:47.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200217",
+    "ThreadId": "59085",
+    "Html": "<p>DFS builds a tree rather than a list of path. You can build the list of path from the tree.&nbsp;</p>\r\n<p>The DepthFirstSearchAlgorithm does not record anything on its own. You need to attach an observer to it. Read the documentation at the bottom of&nbsp;<a href=\"http://quickgraph.codeplex.com/Wiki/View.aspx?title=Depth First Search Example&referringTitle=Home\">http://quickgraph.codeplex.com/Wiki/View.aspx?title=Depth%20First%20Search%20Example</a>&nbsp;. There is also probably a helper method to extracts path in the AlgorithmExtensions type.</p>",
+    "PostedDate": "2009-06-10T16:14:46.093-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "200249",
+    "ThreadId": "59085",
+    "Html": "<p>Got it, using <span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\">TryGetPath, Thanks</span></span><span style=\"font-family:Consolas;font-size:x-small\"></span></p>",
+    "PostedDate": "2009-06-10T19:20:44.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

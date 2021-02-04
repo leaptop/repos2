@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "488720",
+    "ThreadId": "225925",
+    "Html": "<p>Hi,</p>\r\n<p>I am using Quickgraph Version&nbsp;3.3.50603.0 in VS2010 / .Net 4.0.</p>\r\n<p>I've got simple relations between string-verteces.</p>\r\n<p>If I user the GraphvizAlgorithm to generate a graph, all my strings were replaced by numbers. If I subscribe to the&nbsp;FormatVertex-event, without doing anything in the eventhandler method, my verteces were the original strings..</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> graphviz = <span style=\"color:blue\">new</span> GraphvizAlgorithm&lt;<span style=\"color:blue\">string</span>,Edge&lt;<span style=\"color:blue\">string</span>&gt;&gt;(graph);\r\ngraphviz.FormatVertex += <span style=\"color:blue\">new</span> FormatVertexEventHandler&lt;<span style=\"color:blue\">string</span>&gt;(graphviz_FormatVertex);\r\ngraphviz.Generate(<span style=\"color:blue\">new</span> FileDotEngine(), <span style=\"color:#a31515\">&quot;graph&quot;</span>);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Ok, now while writing this, I realize, that maybe the generic parameter of the event handler does the trick?&nbsp;</p>\r\n<p>Is there another possibility to control the output?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Jonathan</p>",
+    "PostedDate": "2010-09-03T01:56:14.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

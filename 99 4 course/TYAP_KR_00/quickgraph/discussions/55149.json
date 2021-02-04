@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "186173",
+    "ThreadId": "55149",
+    "Html": "Hi, I just started using QuickGraph, and I am trying to rank a bi-graph using the PageRank algorithm but have had no success. Could anyone include a simple example of how to use this algorithm?<br>\r\n<br>\r\nHere's what I've tried:<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<span style=\"font-size:13px;color:#2b91af\"><span style=\"font-size:13px\">\r\n<p>influencegraph = </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">BidirectionalGraph</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\">,</span><span style=\"font-size:13px;color:#2b91af\">Edge</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\">&gt;&gt;();\r\n<p>&nbsp;</p>\r\n<p>influencegraph.AddVertex(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;Joe&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n<p>influencegraph.AddVertex(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#a31515\">&quot;Bob&quot;</span><span style=\"font-size:13px\">);\r\n<p>&nbsp;</p>\r\n<p>influencegraph.AddEdge(</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Edge</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\">&gt;(</span><span style=\"font-size:13px;color:#a31515\">&quot;Joe&quot;</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#a31515\">&quot;Bob&quot;</span><span style=\"font-size:13px\">));\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<br>\r\n<br>\r\nPageRankAlgorithm</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">String</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#2b91af\">Edge</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">String</span><span style=\"font-size:13px\">&gt;&gt; pra = </span><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">PageRankAlgorithm</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\">, </span><span style=\"font-size:13px;color:#2b91af\">Edge</span><span style=\"font-size:13px\">&lt;</span><span style=\"font-size:13px;color:#0000ff\">string</span><span style=\"font-size:13px\">&gt;&gt;(influencegraph); </span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">String</span><span style=\"font-size:13px\"> ranks = </span><span style=\"font-size:13px;color:#a31515\">&quot;&quot;</span><span style=\"font-size:13px\">;\r\n<p>pra.InitializeRanks();</p>\r\n<p>pra.Compute();</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">for</span><span style=\"font-size:13px\"> (</span><span style=\"font-size:13px;color:#0000ff\">int</span><span style=\"font-size:13px\"> i = 0; i &lt; pra.Ranks.Count(); i++)\r\n<p>ranks += pra.Ranks.ElementAt(i).ToString() + System.</p>\r\n</span></p>\r\n<p><span style=\"font-size:13px;color:#2b91af\">Environment</span><span style=\"font-size:13px\">.NewLine;</span></p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"><br>\r\nWhen I try this, I get a stack overflow exception on the compute call. I'm sure I'm doing it completely wrong, but I couldn't find any documentation on the algorithm. Any help would be greatly appreciated!<br>\r\n<br>\r\nThanks!</span></p>\r\n",
+    "PostedDate": "2009-05-02T14:52:53.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186204",
+    "ThreadId": "55149",
+    "Html": "Nevermind. I built from the latest source, and it's now working.<br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2009-05-02T18:43:27.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186341",
+    "ThreadId": "55149",
+    "Html": "Look like I should do a release then...",
+    "PostedDate": "2009-05-03T15:40:54.05-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

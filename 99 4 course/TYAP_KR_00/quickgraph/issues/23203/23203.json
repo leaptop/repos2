@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I found the following bug: if the description of a node/edge is in the same xml line, alternate data information is ignored. This is due to the following code\n \n                    // read data\n                    while (subReader.Read())\n                    {\n                        if (reader.NodeType == XmlNodeType.Element &&\n                            reader.Name == \"data\" &&\n                            reader.NamespaceURI == this.graphMLNamespace)\n                            ReadDelegateCompiler.VertexAttributesReader(subReader, this.graphMLNamespace, vertex);\n                    }\n \nSince the VertexAttributesReader advances also the reader, when there is no intermediate node, the are two consecutive reads and one is lost.\n \nThe following code change in the loop corrects the situation:\n \n                    // read data\n                    subReader.Read();  \n                    while (!subReader.EOF)  //changed guard\n                    {\n                        if (reader.NodeType == XmlNodeType.Element &&\n                            reader.Name == \"data\" &&\n                            reader.NamespaceURI == this.graphMLNamespace)\n                        {\n                            ReadDelegateCompiler.VertexAttributesReader(subReader, this.graphMLNamespace, vertex);\n                        }\n                        else\n                            subReader.Read();  //also advance here\n                    }",
+    "LastUpdatedDate": "2013-02-21T17:44:34.197-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2012-08-21T07:12:55.987-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in serialization with single-line xml",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 23203
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

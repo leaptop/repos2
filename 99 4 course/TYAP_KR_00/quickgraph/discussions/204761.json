@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "417412",
+    "ThreadId": "204761",
+    "Html": "<p>Hi,</p>\r\n<p>I'm looking at an application where I would need to remove the direct edge when an indirect one exists.</p>\r\n<p>The example would be three vertexes, A, B and C and three edges, from A to B, from B to C and from A to C.</p>\r\n<p>This graph would mean that vertex C can start when both A and B are ready. In this case I could remove the edge from A to C, as that one is implied by the path from A -&gt; B -&gt; C. A direct edge can always be removed if there is an indirect one.</p>\r\n<p>I feel I somehow have to use&nbsp;a shortest path algorithm but I'm unsure how. Any help would be greatly appreciated.</p>\r\n<p><br>Thanks!</p>",
+    "PostedDate": "2010-03-12T05:14:39.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424920",
+    "ThreadId": "204761",
+    "Html": "<p>It seems I can use the <span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\">HoffmanPavleyRankedShortestPathAlgorithm</span></span></span>&nbsp;to find all the paths between vertexes and their length. If there are 2 paths or more and one path has length 1 I can delete that one.</p>\r\n<p>It would mean tho I have to traverse the graph from the starting node completely and to do the <span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\">HoffmanPavleyRankedShortestPathAlgorithm</span></span></span>&nbsp;calculation for every vertex found. After that from the node after the starting node and do the whole calculation again. This is doable but doesn't sound like an elegant solution.</p>\r\n<p>Is there a better solution to solve this?<span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"><span style=\"font-family:Consolas;color:#2b91af;font-size:x-small\"></span></span></p>",
+    "PostedDate": "2010-03-29T06:46:59.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426353",
+    "ThreadId": "204761",
+    "Html": "If I get you right, what you are looking for is a spanning tree. If the graph is directed, the term is &quot;arborescence&quot;. ",
+    "PostedDate": "2010-04-01T01:53:22.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427101",
+    "ThreadId": "204761",
+    "Html": "<p>Hi Hieronymus,</p>\r\n<p>thanks for your reaction. I fail to see however how I can use a spanning tree.</p>\r\n<p>What I'm doing at the moment is use a DFS and put all the paths found in a list. I'm then going through that list&nbsp;in a double loop and for every vertex in the outer loop I try all the vertices in the inner loop and do a&nbsp;HoffmanPavley on the two vertices. If in the resulting paths from HoffmanPavley I find one path with a length of 1 I delete that one.</p>\r\n<p>Strangly enough that takes care of a few of instances but some other still popup.</p>\r\n<p>I'll look into the spanning tree a bit more.<span style=\"color:#2b91af;font-size:x-small\"></span></p>",
+    "PostedDate": "2010-04-03T13:04:43.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

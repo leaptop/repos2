@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "946354",
+    "ThreadId": "404428",
+    "Html": "\r\n<p>I have converted the example available at this page to a windows application one.<a rel=\"nofollow\" href=\"http://www.pedautreppe.com/post/How-to-render-a-finite-state-machine-graph-in-ASPNET-.aspx\">http://www.pedautreppe.com/post/How-to-render-a-finite-state-machine-graph-in-ASPNET-.aspx</a></p>\r\n<p>The application is generating the images as expected but when i try to change the layout, I am not able to get it to work . I am trying to use &quot;Circo&quot; or &quot;Sfdp&quot; instead of the &quot;dot&quot;. I have tried the following changes but the generated image always has the\r\n exact layout as the &quot;dot&quot; one:</p>\r\n<p>1- I changed the line:</p>\r\n<p><code>process.StartInfo.FileName = @&quot;C:\\Program Files\\Graphviz 2.21\\bin\\dot.exe&quot;;</code></p>\r\n<p>to:&nbsp;<code>process.StartInfo.FileName = @&quot;C:\\Program Files\\Graphviz 2.21\\bin\\sfdp.exe&quot;;</code></p>\r\n<p>or:&nbsp;<code>process.StartInfo.FileName = @&quot;C:\\Program Files\\Graphviz 2.21\\bin\\circo.exe&quot;;</code></p>\r\n<p>2- I added &quot; -Kspfg&quot;/&quot; -Kcirco&quot; to&nbsp;</p>\r\n<pre>process.StartInfo.Arguments = <span>&quot;-Tgif -Gcharset=latin1&quot;</span>;</pre>\r\n<p>&nbsp;</p>\r\n<p>3- I tried combining 1 and 2</p>\r\n<p>none of the above seems to work. could you please help?</p>\r\n<p>Many thanks</p>\r\n",
+    "PostedDate": "2012-11-24T01:19:53.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "946482",
+    "ThreadId": "404428",
+    "Html": "\r\n<p>fixed.. there was problem with arguments spaces in my code.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks thu,</p>\r\n<p>M&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-24T12:22:13.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

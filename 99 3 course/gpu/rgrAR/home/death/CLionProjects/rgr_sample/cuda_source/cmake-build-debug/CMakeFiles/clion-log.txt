@@ -1,0 +1,9 @@
+/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.eSW4Qsjvwt
+-- The CUDA compiler identification is NVIDIA 9.1.85
+-- Check for working CUDA compiler: /usr/local/cuda-9.1/bin/nvcc
+-- Check for working CUDA compiler: /usr/local/cuda-9.1/bin/nvcc -- works
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/tmp.eSW4Qsjvwt/cmake-build-debug

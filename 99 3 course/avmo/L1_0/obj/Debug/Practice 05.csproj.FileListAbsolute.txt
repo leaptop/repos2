@@ -1,0 +1,11 @@
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\Practice 05.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.Form1.resources
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.Form2.resources
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.Form3.resources
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.Properties.Resources.resources
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\Practice 05.csproj.GenerateResource.cache
+C:\Users\stepa\repos2\avmo\L1_0\bin\Debug\L0.exe.config
+C:\Users\stepa\repos2\avmo\L1_0\bin\Debug\L0.exe
+C:\Users\stepa\repos2\avmo\L1_0\bin\Debug\L0.pdb
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.exe
+C:\Users\stepa\repos2\avmo\L1_0\obj\Debug\L0.pdb

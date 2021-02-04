@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1430602",
+    "ThreadId": "640012",
+    "Html": "Hi,<br />\n<pre><code>I have a custom Vertex\n</code></pre>\n\n<pre><code>Class PocVertex\n{\n       [XmlAttribute(&quot;member1&quot;)]\n        public string member1\n        \n        [XmlAttribute(&quot;member2&quot;)]\n        public string  member2\n        ''\n        ''\n        [XmlAttribute(&quot;member10&quot;)]\n         public string member10\n}\n\npublic class POCEdge&lt;TVertex&gt; : Edge&lt;TVertex&gt;\n    {\n        [XmlAttribute(&quot;Tag&quot;)]\n        public string Tag { get; set; }\n\n        public SysEdge(TVertex source, TVertex target)\n            : base(source, target) { }\n\n        public SysEdge(TVertex source, TVertex target, string tag)\n            : this(source, target)\n        {\n            Tag = tag;\n        }\n    }\n</code></pre>\n\nI am having trouble deserializing, here is my code<br />\n<pre><code>AdjacencyGraph&lt;POCVertex, POCEdge&lt;POCVertex&gt;&gt; deserializedGraph \n                                    = new AdjacencyGraph&lt;POCVertex, POCEdge&lt;POCVertex&gt;&gt;();\n\nXmlReader xreader = XmlReader.Create(XMLPath);\n                IdentifiableVertexFactory&lt;POCVertex&gt; vertexFactory = new IdentifiableVertexFactory&lt;POCVertex&gt;();\n                IdentifiableEdgeFactory&lt;POCVertex, POCEdge&lt;POCVertex&gt;&gt; edgeFactory;\n\n                GraphMLExtensions.DeserializeFromGraphML&lt;POCVertex, POCEdge&lt;POCVertex&gt;,\n                    AdjacencyGraph&lt;POCVertex, POCEdge&lt;POCVertex&gt;&gt;&gt;(deserializedGraph, xreader, vertexFactory, edgeFactory);</code></pre>\n\nCan you please explain what does &quot;IdentifiableVertexFactory&quot; and &quot;IdentifiableEdgeFactory&quot; do, how should I use  them here?<br />\n",
+    "PostedDate": "2015-06-16T10:51:26.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1430628",
+    "ThreadId": "640012",
+    "Html": "Hi, if i remember correctly factories should implement methods to generate vertex and edge classes you use. Create custom factory classes for vertices and edges and use them in Deserialize method.<br />\n",
+    "PostedDate": "2015-06-16T16:50:23.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1430656",
+    "ThreadId": "640012",
+    "Html": "Thanks, I got that resolved. Also, while using custom vertex and edges, do I need implement &quot;IEqualityComparer&quot; in order to use functions like\r<br />\ngraph.TryGetOutEdges() and &quot;HoffmanPavleyRankedShortestPathAlgorithm&quot;? <br />\n",
+    "PostedDate": "2015-06-17T00:18:51.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1430716",
+    "ThreadId": "640012",
+    "Html": "Also,<br />\n<pre><code>  What would be the best approach to update node\\vertex.</code></pre>\n\nExample : If I update a member of Vertex custom class.\r<br />\nCan you please suggest?<br />\n",
+    "PostedDate": "2015-06-17T08:35:24.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432279",
+    "ThreadId": "640012",
+    "Html": "I'm not a big expert in Quickgraph, you can look in the sources for method implementations to see what they use.\r<br />\n<br />\nNot sure what you mean by updating, you just select vertex from the list and update data in it. If you need to use new data in calculations you just call corresponding method to regenerate results.<br />\n",
+    "PostedDate": "2015-06-29T04:14:45.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

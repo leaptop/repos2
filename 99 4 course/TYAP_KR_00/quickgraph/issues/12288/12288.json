@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-01-06T09:17:17.397-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Ok, sorry.\n \nI've seen the extension method (To bidirectional) with the new changeset.Thanks!\n \nI've a problem. Executing the code below, it returns always (KeyNotFoundException) Error: key not found in the dictionary:\n \n            IBidirectionalGraph<int, Edge<int>> g1 = g.ToBidirectionalGraph();\n \n            int Source = 1;\n            int Target = 33;\n \n            int pathCount = 5;\n \n            foreach (IEnumerable<Edge<int>> path in g1.RankedShortestPathHoffmanPavley(E=> 5, Source, Target, pathCount))\n            {\n            }\n \nAttached my serialized adjacency graph\n \nBye.",
+    "LastUpdatedDate": "2013-05-16T04:59:24.297-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-01-05T23:18:23.563-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "K-Shortest paths - Hoffman Pavley",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12288
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1592,
+      "FileName": "AdjacencyGraph.bin",
+      "DownloadUrl": ".\\1592"
+    },
+    {
+      "FileId": 1593,
+      "FileName": "TestGraph.zip",
+      "DownloadUrl": ".\\1593"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Please post the full test case to reproduce this issue. Thanks",
+      "PostedDate": "2009-01-06T00:08:14.34-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Also please use the graphml file format.",
+      "PostedDate": "2009-01-06T00:14:47.607-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi,  this is a sample application.\r\n\r\nBye.",
+      "PostedDate": "2009-01-06T00:27:04.723-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-06T00:27:05.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "See attachment (TestGraph.zip). Bye.",
+      "PostedDate": "2009-01-06T00:57:32.43-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Resolved with changeset 29945.",
+      "PostedDate": "2009-01-06T09:17:17.397-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:52.563-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:24.297-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

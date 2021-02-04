@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "198271",
+    "ThreadId": "58582",
+    "Html": "<p>Hi,</p>\r\n<p>Sorry if this is s stupid question...</p>\r\n<p>I'm a complete QuickGraph newby looking for an implementation of the Push-Relabel max flow algo. I though QuickGraph used this?</p>\r\n<p>I didn't just make this up, but read it at&nbsp;<a href=\"http://www.testingreflections.com/node/view/574\">http://www.testingreflections.com/node/view/574</a>&nbsp;which says:&nbsp;&quot;<a title=\"QuickGraph, 100% C# directed graph library\" href=\"http://mbunit.tigris.org\"><strong><span style=\"color:#cc9966\">QuickGraph</span></strong></a> implements 2 maximum flow algorithms: Edmund Karp and Push Relabel. We will use PushRelabel as it is more efficient, however, both inherit from the abstract base class MaximumFlowAlgorithm.&quot;</p>\r\n<p>Am I missing something? Any help gratefully received...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-05T08:28:26.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198733",
+    "ThreadId": "58582",
+    "Html": "<p>I did not migrate the push-relabel algorithm when I moved QuickGraph from Tigris because I could not trace it's origin. You should be able to dig it out at&nbsp;<a href=\"http://quickgraph.tigris.org/\">http://quickgraph.tigris.org/</a></p>",
+    "PostedDate": "2009-06-07T07:23:44.117-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

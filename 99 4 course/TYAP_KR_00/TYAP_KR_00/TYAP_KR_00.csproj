@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C81070A8-0E1F-4576-8754-5D74B1690BD0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TYAP_KR_00</RootNamespace>
+    <AssemblyName>TYAP_KR_00</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Drawing\AutomaticGraphLayout.Drawing.csproj">
+      <Project>{b76f8f71-4b00-4242-be36-c9f0732511f7}</Project>
+      <Name>AutomaticGraphLayout.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\MSAGL\AutomaticGraphLayout.csproj">
+      <Project>{415d3e3f-7105-46c1-84d2-7ecb34213d92}</Project>
+      <Name>AutomaticGraphLayout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\AspectRatioSample\SettingGraphBoundsSample.csproj">
+      <Project>{18d464c1-1f40-4a32-8e3b-89e19dce590d}</Project>
+      <Name>SettingGraphBoundsSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\DrawingFromGeometryGraphSample\DrawingFromGeometryGraphSample.csproj">
+      <Project>{76c7b926-d1c1-405f-ab40-41914fec3e89}</Project>
+      <Name>DrawingFromGeometryGraphSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\EdgeRoutingSample\EdgeRoutingSample.csproj">
+      <Project>{5bafc4e1-9f39-4d4a-92a3-d2ffe9f52e07}</Project>
+      <Name>EdgeRoutingSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\Editing\Editing.csproj">
+      <Project>{2e68a550-16ec-4e12-b4fa-0af8789d8731}</Project>
+      <Name>Editing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\FastIncrementalLayoutWithGdi\FastIncrementalLayoutWithGdi.csproj">
+      <Project>{f999d14c-a1f2-4c95-912d-dda2f1b28b9f}</Project>
+      <Name>FastIncrementalLayoutWithGdi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\FindEmptySpotSample\FindEmptySpotSample.csproj">
+      <Project>{e1195625-fce6-4073-9a87-76e17782aef8}</Project>
+      <Name>FindEmptySpotSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\FindOverlapSample\OverlapRemovalExperiments.csproj">
+      <Project>{cbfa3f16-b154-4127-8419-beb716f791df}</Project>
+      <Name>OverlapRemovalExperiments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\GeometryRoutinesSample\GeometryRoutinesSample.csproj">
+      <Project>{c5ed937c-9739-4991-9a12-f25bba60f9ce}</Project>
+      <Name>GeometryRoutinesSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\LayerConstraintsFromGeometrySample\LayerConstraintsFromGeometrySample.csproj">
+      <Project>{26b3b8c1-2aa8-48d3-9da2-ac2d6aa34c33}</Project>
+      <Name>LayerConstraintsFromGeometrySample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\LayoutOfADisconnectedGraphWithSugiyama\LayoutOfADisconnectedGraphWithSugiyama.csproj">
+      <Project>{f2b48220-24e6-4e5c-b526-976f1541884d}</Project>
+      <Name>LayoutOfADisconnectedGraphWithSugiyama</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\LoadingDgmlGraph\LoadingDgmlGraph.csproj">
+      <Project>{931cd0aa-49bf-4038-a1fa-e8ec6c4f59de}</Project>
+      <Name>LoadingDgmlGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\LocationLabeling\LocationLabeler.csproj">
+      <Project>{8d541a86-e1cf-4ef2-a817-d79b3f237d9b}</Project>
+      <Name>LocationLabeler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\MinWpfApp\MinWpfApp.csproj">
+      <Project>{543b61a8-a0a4-4c9e-93ab-79559a59eaea}</Project>
+      <Name>MinWpfApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\NodesWithImages\NodesWithImages.csproj">
+      <Project>{63eb7360-5a2b-479d-b1e9-d5d0e8c49d2b}</Project>
+      <Name>NodesWithImages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\PhyloTreeFromGeometrySample\PhyloTreeFromGeometrySample.csproj">
+      <Project>{158aaaf4-939f-419a-b3ea-2871d167bb1a}</Project>
+      <Name>PhyloTreeFromGeometrySample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\PhyloTreeSampleOverGDI\PhyloTreeSampleOverGDI.csproj">
+      <Project>{5ba112f2-350d-463e-9059-9cbfcebe92a4}</Project>
+      <Name>PhyloTreeSampleOverGDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\SameLayerSample\SameLayerSample.csproj">
+      <Project>{85248fb4-bb05-41d1-98b2-481752f0670a}</Project>
+      <Name>SameLayerSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\SimplestWinFormsSample\SimplestWinFormsSample.csproj">
+      <Project>{6827ba1e-0922-4223-8a5a-3e2194e229d2}</Project>
+      <Name>SimplestWinFormsSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Samples\UsingMDSLayoutSample\UsingMDSLayoutSample.csproj">
+      <Project>{e09aba0a-df98-4bdf-961b-7a03cbd1bd40}</Project>
+      <Name>UsingMDSLayoutSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\MSAGLTests\MSAGLTests.csproj">
+      <Project>{a6d1f09a-3db0-4cb2-a7f0-422bf1afe222}</Project>
+      <Name>MSAGLTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\Test01\Test01.csproj">
+      <Project>{fbdc1032-9fd3-4bf0-81ac-7df45920413a}</Project>
+      <Name>Test01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\TestForGDI\TestForGDI.csproj">
+      <Project>{2a784e8e-0778-49a9-9d33-32f7c4efb2cc}</Project>
+      <Name>TestForGDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\TestFormForGViewer\TestFormForGViewer.csproj">
+      <Project>{af9121c3-e4b7-464f-8ebb-96c9cf627c06}</Project>
+      <Name>TestFormForGViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\TestGraphmaps\TestGraphmaps.csproj">
+      <Project>{c662bbf3-97d2-4000-8304-b900f785d48f}</Project>
+      <Name>TestGraphmaps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\TestWpfViewer\TestWpfViewer.csproj">
+      <Project>{89066a48-4e50-46a3-84d5-ab99870f1912}</Project>
+      <Name>TestWpfViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Test\VoronoiDiagramTest\VoronoiDiagramTest.csproj">
+      <Project>{742050c1-7040-4065-bd7a-23dfcbecf2c9}</Project>
+      <Name>VoronoiDiagramTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\TinyClickDemo\TinyClickDemo.csproj">
+      <Project>{0744500e-dbf3-435b-b7d9-085868b8c7a9}</Project>
+      <Name>TinyClickDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\ArgsParser\ArgsParser.csproj">
+      <Project>{b9ab0b32-d315-4ed1-83f6-5dbb2f832070}</Project>
+      <Name>ArgsParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\DebugCurveViewer\DebugCurveViewer.csproj">
+      <Project>{5767aa9a-b6f6-46f1-b3e6-4e76fa049263}</Project>
+      <Name>DebugCurveViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\DgmlParser\DgmlParser.csproj">
+      <Project>{561233e4-4fb4-47cc-adcd-f6a0e8d8ac87}</Project>
+      <Name>DgmlParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\Dot2Graph\Dot2Graph.csproj">
+      <Project>{ba8fed53-458e-4cb3-8eb3-cbfcadd87e5d}</Project>
+      <Name>Dot2Graph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\Dot2Svg\Dot2Svg.csproj">
+      <Project>{363ca13d-7aee-4229-8279-fbf7754f4426}</Project>
+      <Name>Dot2Svg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\GraphmapsWpfControl\GraphmapsWpfControl.csproj">
+      <Project>{abe9e888-50bb-4806-8345-d8d69a23f39a}</Project>
+      <Name>GraphmapsWpfControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\Tools\GraphViewerGDI\GraphViewerGDI.csproj">
+      <Project>{725cd2cb-cf37-414e-a5a6-f1d87d4d6ede}</Project>
+      <Name>GraphViewerGDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\automatic-graph-layout-master\automatic-graph-layout-master\GraphLayout\tools\QUT.ShiftReduceParser\QUT.ShiftReduceParser.csproj">
+      <Project>{ef5cf15e-5645-433b-8a23-af93e3f2682f}</Project>
+      <Name>QUT.ShiftReduceParser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

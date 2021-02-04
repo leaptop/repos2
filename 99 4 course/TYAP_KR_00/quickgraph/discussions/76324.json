@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "260887",
+    "ThreadId": "76324",
+    "Html": "<p>Hello,</p>\r\n<p>I'm creating an AdjacencyGraph and using the AlgorithmExtensions.Roots method to try to find all of the &quot;exit-only&quot; nodes.&nbsp; Looking through the code a bit, this seems to be what the algorithm is intended for.&nbsp; However, given a graph, {A-&gt;B,B-&gt;C}, I would expect Roots to return A, and I'm getting an empty list.&nbsp; If this is an API misunderstanding on my part, appoligies for the bother.&nbsp; Here's the code I'm using:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static void Main(string[] args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AdjacencyGraph&lt;string, Edge&lt;string&gt;&gt; graph = new AdjacencyGraph&lt;string, Edge&lt;string&gt;&gt;(false);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.AddVertex(&quot;A&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.AddVertex(&quot;B&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.AddVertex(&quot;C&quot;);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.AddEdge(new Edge&lt;string&gt;(&quot;A&quot;, &quot;B&quot;));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.AddEdge(new Edge&lt;string&gt;(&quot;B&quot;, &quot;C&quot;));</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var roots = graph.Roots();</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Roots:&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (string vertex in roots)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;\\t&quot; + vertex);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;End Roots&quot;);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var topologicalSort = AlgorithmExtensions.TopologicalSort&lt;string, Edge&lt;string&gt;&gt;(graph);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Topological (nmake) Sort Order:&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach(string vertex in topologicalSort)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;\\t&quot; + vertex);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;End Topological Sort&quot;);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Press any key to exit.&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.ReadKey();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>Thanks for your time!</p>\r\n<p>Rich</p>",
+    "PostedDate": "2009-11-26T05:37:10.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261450",
+    "ThreadId": "76324",
+    "Html": "<p>Thanks for the repro, I will investigate.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-28T17:43:25.933-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261485",
+    "ThreadId": "76324",
+    "Html": "<p>There was a bug in the roots implementation. I've checked in a fix.</p>",
+    "PostedDate": "2009-11-28T20:55:25.01-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261486",
+    "ThreadId": "76324",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=15110\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-11-28T20:55:46.247-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261545",
+    "ThreadId": "76324",
+    "Html": "<p>Thanks for the quick investigation and turn around on this Peli - I really appreciate it!</p>\r\n<p>Cheers,</p>\r\n<p>Rich</p>",
+    "PostedDate": "2009-11-29T03:14:37.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

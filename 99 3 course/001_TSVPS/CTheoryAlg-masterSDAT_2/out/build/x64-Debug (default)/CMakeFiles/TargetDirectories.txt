@@ -1,0 +1,3 @@
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/CTheoryAlg-masterSDAT_2/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/CTheoryAlg-masterSDAT_2/out/build/x64-Debug (default)/CMakeFiles/CTheoryAlg_masterSDAT_2.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/CTheoryAlg-masterSDAT_2/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir

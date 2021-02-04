@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "lr_svertkiDlaConsoli",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "lr_svertkiDlaConsoli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lr_svertkiDlaConsoli-Debug-7881250c3610a71dfc8d.json",
+					"name" : "lr_svertkiDlaConsoli",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/stepa/repos2/99 3 course/001_TSVPS/lr_svertkiDlaConsoli/out/build/x64-Debug (default)",
+		"source" : "C:/Users/stepa/repos2/99 3 course/001_TSVPS/lr_svertkiDlaConsoli"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

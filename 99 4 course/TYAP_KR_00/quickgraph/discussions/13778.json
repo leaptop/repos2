@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "44910",
+    "ThreadId": "13778",
+    "Html": "\r\nIs it intended to implemented some more layout algorithms like a hierarchical layout (sugiyama). It would be useful to visualize program flows for example.<br />I know GLEE has such layout , but it is restricted to non-commercial use.<br /><br />Regards<br />",
+    "PostedDate": "2007-08-14T05:36:41.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "45514",
+    "ThreadId": "13778",
+    "Html": "\r\nThere's no plan to work on any layout algorithms.<br />",
+    "PostedDate": "2007-08-17T22:39:02.663-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "103473",
+    "ThreadId": "13778",
+    "Html": "I've&nbsp;implemented some layout algorithms (based on the interfaces of the QuickGraph). The implementation is not public at the moment, but i would like to make it opensource (i need some time to do this), so please wait for&nbsp;a little while... :)\r\n",
+    "PostedDate": "2008-07-08T15:49:24.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "103474",
+    "ThreadId": "13778",
+    "Html": "The implemented algorithms:<br>\r\n- Class diagram layout and Sugiyama<br>\r\n- Fruchterman-Reingold<br>\r\n- LinLog<br>\r\n- ISOM<br>\r\n- Kamada-Kawai<br>\r\n<br>\r\nand i'm planning to implement more algorithms.\r\n",
+    "PostedDate": "2008-07-08T15:50:49.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "107888",
+    "ThreadId": "13778",
+    "Html": "<p>Hi Palesz,<br>\r\n<br>\r\nThanks very much for offering to make this available.</p>\r\n<p>Will the licence allow <strong>commercial</strong> use?<br>\r\n<br>\r\nDo you have any idea of the <strong>latest time</strong> at which this might be available?</p>\r\n",
+    "PostedDate": "2008-07-29T23:35:52.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113241",
+    "ThreadId": "13778",
+    "Html": "Hello palesz,<br>\r\n<br>\r\nI'm also very interested about layout-algorithms. Do you have made any progress yet?<br>\r\n<br>\r\nRegards,<br>\r\nHendrik<br>\r\n",
+    "PostedDate": "2008-08-24T06:05:47.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119884",
+    "ThreadId": "13778",
+    "Html": "Hello MikeGale, herjann, and everybody else!<br>\r\n<br>\r\nAt the moment i'm cleaning the code, reviewing/optimizing the algorithms. I plan to make it public in 3 weeks.<br>\r\n<br>\r\nCommercial usage: i will allow it (i don't know which license will i choose, but i will allow the commercial usage)\r\n",
+    "PostedDate": "2008-09-21T12:22:27.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119901",
+    "ThreadId": "13778",
+    "Html": "Hello palesz,<br>\r\n<br>\r\nthis defintly sounds great! Thanks a lot for planing to share your work with the community. I'm looking forward to hear more from your project.<br>\r\n<br>\r\nRegards<br>\r\nherjann<br>\r\n",
+    "PostedDate": "2008-09-21T14:13:03.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131792",
+    "ThreadId": "13778",
+    "Html": "Hello palesz,<br>\r\n<br>\r\nare there any news regarding your layout-algorithms. I'm still very interested in it :-)<br>\r\n<br>\r\nRegards<br>\r\nherjann\r\n",
+    "PostedDate": "2008-11-11T12:47:10.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157509",
+    "ThreadId": "13778",
+    "Html": "Hello palesz,<br>\r\n<br>\r\nI would like to renew my interests about your project. Are there any news you would like to share?<br>\r\n<br>\r\nRegards<br>\r\nherjann \r\n",
+    "PostedDate": "2009-02-13T10:56:17.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171130",
+    "ThreadId": "13778",
+    "Html": "Take a look at my project at <a href=\"http://graphsharp.codeplex.com\">http://graphsharp.codeplex.com</a>. Graph layout framework based for WPF, based on QuickGraph.<br>\r\n",
+    "PostedDate": "2009-03-23T18:34:34.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

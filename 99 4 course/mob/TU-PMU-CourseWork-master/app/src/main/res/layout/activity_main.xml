@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:contentDescription="LOGO"
+        android:src="@drawable/logo" />
+
+    <Button
+        android:id="@+id/m_create_new"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Create New"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/m_view_all"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="View All"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+
+    <LinearLayout
+        android:id="@+id/m_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Important reminder"
+            android:textAlignment="center"
+            android:textColor="#ff1122"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/m_reminder_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:textColor="#ff5522"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/m_reminder_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:textColor="#ff5522"
+
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/m_reminder_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:textColor="#ff5522"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "514806",
+    "ThreadId": "232854",
+    "Html": "\r\n<p>The docs</p>\r\n<p>&nbsp;&nbsp; http://quickgraph.codeplex.com/wikipage?title=Developer%20Manual&amp;referringTitle=Home</p>\r\n<p>say VS2008 is required. I've only found a VS2010 sln in the source. Is there a VS2008 sln, or how do you use this with VS2008?</p>\r\n",
+    "PostedDate": "2010-10-29T18:53:08.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519143",
+    "ThreadId": "232854",
+    "Html": "\r\n<p>Sorry, we have migrated the solution to VS2010.</p>\r\n",
+    "PostedDate": "2010-11-08T21:50:55.767-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519149",
+    "ThreadId": "232854",
+    "Html": "\r\n<p>Then it would probably be better to change</p>\r\n<p><em>Requires Visual Studio 2008</em></p>\r\n<p>to say</p>\r\n<p><em>Requires Visual Studio 2008 (but the VS solution file is only provided for Visual Studio 2010)</em></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-08T22:06:41.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

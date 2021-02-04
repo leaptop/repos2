@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "53334",
+    "ThreadId": "16449",
+    "Html": "\r\nIs there any way to save graphs created by quickgraph and open the graph at a later time?<br />",
+    "PostedDate": "2007-10-15T07:34:19.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "53382",
+    "ThreadId": "16449",
+    "Html": "\r\nThe GraphMLSerializer will serialize a graph to the GraphML format. Are you looking for .Net serialization support?<br />",
+    "PostedDate": "2007-10-15T11:53:03.153-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "57544",
+    "ThreadId": "16449",
+    "Html": "\r\nI've tried using the GraphMLSerializer but I'm currently having problems with the deserialization process. I'm using the BidirectionalGraph.<br /><br />Here's the graph initialization.<br />// single line<br />{  { BidirectionalGraph&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt; distributionGraph = new idirectionalGraph&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt;(); } }<br /><br /><br />Here's the serialization code<br />{ {<br />GraphMLSerializer&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt; s = new GraphMLSerializer&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt;();<br /><br />XmlTextWriter x = new XmlTextWriter( GRAPH_FILE, Encoding.UTF8 );<br />s.Serialize( x, distributionGraph );<br />} }<br /><br />Here's the deserialization code.<br />{ {<br />GraphMLSerializer&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt; s = new GraphMLSerializer&lt;IdentifiableVertex, IdentifiableEdge&lt;IdentifiableVertex&gt;&gt;();<br /><br />IdentifiableVertexFactory vFact = new IdentifiableVertexFactory();<br />IdentifiableEdgeFactory&lt;IdentifiableVertex&gt; eFact = new IdentifiableEdgeFactory&lt;IdentifiableVertex&gt;();<br /><br />XmlTextReader r = new XmlTextReader( GRAPH_FILE );<br />s.Deserialize( r, distributionGraph, vFact, eFact );<br />} }<br /><br />The error message I'm getting is \"Cannot find vertex 1\" or \"There is no root element\"<br />",
+    "PostedDate": "2007-11-09T09:33:21.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "62854",
+    "ThreadId": "16449",
+    "Html": "\r\nI'll take a look.<br />",
+    "PostedDate": "2007-12-13T09:01:49.467-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "67275",
+    "ThreadId": "16449",
+    "Html": "\r\nAny updates on this case?  Looks like serialization is not generating any output (definately in my case).  Thx.<br />",
+    "PostedDate": "2008-01-10T17:18:24.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70969",
+    "ThreadId": "16449",
+    "Html": "\r\nPlease send a full unit test case that I can try out. thanks.<br />",
+    "PostedDate": "2008-01-30T21:50:48.637-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "128200",
+    "ThreadId": "16449",
+    "Html": "Hi Jonathan,<br>\r\n<br>\r\nI was happy to find this package because it supports one of my main requirements: serialization to GraphML and back. Unfortunately I haven't been able to get even your serialization round-trip example to work. I made a copy of the QuickGraph.Tests folder and added it as a project to my solution. I ripped out all files from the QuickGraph.Tests project that did not compile because of references to System.Threading which I don't seem to have in my .NET installation. After this I was able to build the executable. When run it generated a html file which had 476 tests but one failure: the serialization test !! I also created the following snippet:<br>\r\n<br>\r\n<p>      static void Main(string[] args)<br>\r\n      {<br>\r\n         GraphMLSerializerTest serializerTest = new GraphMLSerializerTest();</p>\r\n<p>         serializerTest.RoundTrip();<br>\r\n      }<br>\r\n<br>\r\nbut this fails with the same error: an AccessViolation exception at GraphMLSerializer.cs line 516.<br>\r\n<br>\r\nI am using VS2008 installed on an x64 Vista machine.<br>\r\n<br>\r\nHas anybody else had this same problem ?<br>\r\n<br>\r\nThanks</p>\r\n",
+    "PostedDate": "2008-10-27T23:06:04.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129470",
+    "ThreadId": "16449",
+    "Html": "My serializer might have a bug (I use dynamic code generation for performance). Could you send me the type of the edge, vertex that you are trying to serialize. <br>\r\n<br>\r\nI'll take a look at the serialization test.\r\n",
+    "PostedDate": "2008-11-02T00:32:52.607-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129490",
+    "ThreadId": "16449",
+    "Html": "A snippet to repro would be appreciated.\r\n",
+    "PostedDate": "2008-11-02T07:07:20.143-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129536",
+    "ThreadId": "16449",
+    "Html": "I've checked in a fix.\r\n",
+    "PostedDate": "2008-11-02T13:57:32.403-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "129537",
+    "ThreadId": "16449",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=11550\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2008-11-02T13:57:51.387-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

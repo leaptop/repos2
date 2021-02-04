@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "218095",
+    "ThreadId": "64139",
+    "Html": "<p>UndirectedGraph.AdjacentEdges(TVertex vertex) iterates through all self-edges twice. One could argue that this is correct behavior, since it guarantees that the number of iterated&nbsp;edges matches the degree of the vertex. On the other hand, the name of the method implies that you're getting an enumerator of edges, not instances of edges meeting the vertex, so this could also be unexpected behavior. As it is, this creates&nbsp;a problem for anyone wanting to do a traversal of the graph's edges without double-counting (for the purpose of, say, drawing them).&nbsp;Using an EdgeDepthFirstSearch doesn't support UndirectedGraph and if it did would be somewhat inefficient. One approach is to pass an adjacentEdgeEnumerator to the DFS algorithm that filters out repeated edges. But this does not comply with the method documentation which says &quot;All vertices[should be edges]&nbsp;passed to the method should be enumerated once and only once.&quot;</p>\r\n<p>Either way, this should be included in the method documentation when it is written (which I am happy to help with, by the way).</p>",
+    "PostedDate": "2009-07-31T10:13:31.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218312",
+    "ThreadId": "64139",
+    "Html": "<p>Good point. Adjacent edges should not enumerate self-edges twice.</p>",
+    "PostedDate": "2009-08-01T09:00:59.283-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218313",
+    "ThreadId": "64139",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://quickgraph.codeplex.com/WorkItem/View.aspx?WorkItemId=13759\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-08-01T09:01:10.127-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

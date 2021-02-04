@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1216377",
+    "ThreadId": "535969",
+    "Html": "Hi,<br />\n<br />\nI have a graph detailing document versions. Vertices can both represent existing documents and missing documents. I would now like to merge all missing document nodes in between two existing document nodes into one. My graph is a BidirectionalGraph and my vertices have a bool attribute exist to determine if the document represent by them is accessible. So technically, for each two nodes that are connected by an edge, merge those if both nodes have node.exist=false. <br />\n<br />\nI figured I would have to use the method BidirectionalGraph.MergeVertexIf, but I found no documentation on how to call that method properly.<br />\n<br />\nedit: to be more precise. I do not quite understand the parameters wanted by the MergeVertex and MergeVertexIf methods. The methods call for a vertex and an EdgeFactory. Is the EdgeFactory used to supply edges to all vertices that need to be merged with the given vertex? How is the EdgeFactory initialized?<br />\n<br />\nThanks for any help!<br />\nMichael<br />\n",
+    "PostedDate": "2014-02-28T20:10:52.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

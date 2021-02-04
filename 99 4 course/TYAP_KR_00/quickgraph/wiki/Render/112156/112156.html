@@ -1,0 +1,11 @@
+<div class="wikidoc"><h4>Traversal Concepts</h4>
+The <b>traversal concepts</b> define the different way the vertices and edges of a graph can be accessed and enumerated. <br />
+<ul><li><i>Tip:</i> All the interfaces depend on 2 generic parameters <span class="codeInline">TVertex</span> and <span class="codeInline">TEdge</span>, where <span class="codeInline">TEdge</span> has the additional constraint of implementing <span class="codeInline">IEdge&lt;TVertex&gt;</span>.</li></ul>
+<br />Each of these interfaces is described below (generic arguments have been omitted for the sake of clarity):<br />
+<ul><li><span class="codeInline">IImplicitGraph</span> defines a graph that contains information about the out-edges of a vertex. This interface is particularly important when the size of your graph is infinite and you only have “local information”,</li>
+<li><span class="codeInline">IIncidenceGraph</span> extends IImplicitGraph by providing the out-edges count,</li>
+<li><span class="codeInline">IVertexListGraph</span> defines a graph that publishes the collection of vertices. With this concept, one can iterate the vertices and access the out edges of each vertex. This is an important concept that is used by many algorithms.</li>
+<li><span class="codeInline">IEdgeListGraph</span> defines a graph that publishes the collection of edges. No information about out-edges is available.</li>
+<li><span class="codeInline">IVertexAndEdgeListGraph</span> merges IVertexListGraph and IEdgeListGraph functionalities</li>
+<li><span class="codeInline">IBidirectionalGraph</span> defines a vertex list graph that also publishes the in-edges. Such graph can be used to explore a graph in a both directions.</li></ul>
+<br /><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=quickgraph&DownloadId=43773" alt="TraversalInterfaces.png" title="TraversalInterfaces.png" /></div><div class="ClearBoth"></div>

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "447688",
+    "ThreadId": "213926",
+    "Html": "Hi, I have looked at QuickGraph but haven't programmed with it yet.\r\nI'm a little overwhelmed by it, to be honest.\r\n\r\n<p>\r\nMy question is as follows.  If I decide to use QuickGraph I will need to write several different\r\nimporters from and exporters to certain file formats and maintain them.\r\n\r\n<p>\r\nFor instance, one thing I need to support in particular is a hierarchical graph format\r\n(i.e. graphs in which nodes form a containment hierachy).\r\nSerialization\\ already contains a serializer and deserializer for the GraphML format, which supports this in principle, but they don't.\r\nExtending them to support this is nontrivial, it requires several design decisions, most importantly a way to represent hierarchical graphs\r\nin QuickGraph.  Once that is decided, the existing GraphML (de)serializers will need to be refactored before I can extend them to support node hierarchies.\r\n\r\n<p>\r\nOf course I can hack on my own copy of QuickGraph until it does what I want, but I'd rather not to.\r\nI'd prefer to use QuickGraph unchanged and add my own assemblies with graph implementations and (de)serializations,\r\nwithout having to copy&paste lots of QuickGraph code over to my own projects.\r\n\r\n<p>\r\nIs this feasible with the present architecture?  If it is, how?\r\nIf not, what is the best way to proceed?",
+    "PostedDate": "2010-05-26T08:16:01.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

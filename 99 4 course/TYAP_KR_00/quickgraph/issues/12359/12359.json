@@ -1,0 +1,111 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "By design: TestGraph_02 is running the debug version of Pex - which contains a lot of checks.",
+    "ClosedDate": "2009-01-13T21:41:06.993-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've problem with dijkstra and the last changeset. It' s too slow.\n \nAttached two sample applications.\nThe first (Testgraph_01) is developed with a Changeset before 29945 (I don't remember).\nTe second one (Testgraph_02) with the last changeset (30070).\n \nAs you can see, the second one It's too much slow and uses over 50% of CPU.\n \nBye",
+    "LastUpdatedDate": "2013-05-16T04:59:24.15-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-01-12T07:37:07.493-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "dijkstra",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 12359
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1604,
+      "FileName": "TestGraph_01.zip",
+      "DownloadUrl": ".\\1604"
+    },
+    {
+      "FileId": 1605,
+      "FileName": "TestGraph_02.zip",
+      "DownloadUrl": ".\\1605"
+    },
+    {
+      "FileId": 1606,
+      "FileName": "Graph.graphml",
+      "DownloadUrl": ".\\1606"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Second attachment!",
+      "PostedDate": "2009-01-12T07:37:48.71-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-12T07:37:49.617-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please send the graph data as GraphML, it is very independent. Thanks.",
+      "PostedDate": "2009-01-12T08:59:45.68-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "GraphML Graph Format",
+      "PostedDate": "2009-01-13T03:47:56.167-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T03:47:57.543-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Are you running the Release version?",
+      "PostedDate": "2009-01-13T18:19:32.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "What are the weights?",
+      "PostedDate": "2009-01-13T18:31:27.067-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Which root do you use?",
+      "PostedDate": "2009-01-13T18:32:01.567-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-13T21:41:06.993-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:52.357-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:24.15-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

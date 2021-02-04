@@ -1,0 +1,3 @@
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/lr_Clion/out/build/x64-Debug (default)/CMakeFiles/lr_Clion.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/lr_Clion/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/lr_Clion/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir

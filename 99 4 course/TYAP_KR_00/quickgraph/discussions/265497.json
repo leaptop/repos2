@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "643563",
+    "ThreadId": "265497",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I was going to develop my own drag and drop capability for a graph but couldn't do that. seems like the drag and drop context of the graph does not allow my to do so. Am I right? is it possible to override the drag and drop function of the graphs and use\r\n our own?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-07-17T23:12:25.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

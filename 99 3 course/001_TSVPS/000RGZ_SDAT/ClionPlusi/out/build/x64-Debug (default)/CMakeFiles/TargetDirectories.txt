@@ -1,0 +1,3 @@
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/000RGZ_SDAT/ClionPlusi/out/build/x64-Debug (default)/CMakeFiles/ClionPlusi.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/000RGZ_SDAT/ClionPlusi/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Users/stepa/repos2/99 3 course/001_TSVPS/000RGZ_SDAT/ClionPlusi/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir

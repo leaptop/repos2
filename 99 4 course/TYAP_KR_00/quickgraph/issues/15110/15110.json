@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed",
+    "ClosedDate": "2009-11-28T20:56:03.537-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI'm creating an AdjacencyGraph and using the AlgorithmExtensions.Roots method to try to find all of the \"exit-only\" nodes.  Looking through the code a bit, this seems to be what the algorithm is intended for.  However, given a graph, {A->B,B->C}, I would expect Roots to return A, and I'm getting an empty list.  If this is an API misunderstanding on my part, appoligies for the bother.  Here's the code I'm using:\n \n        static void Main(string[] args)        {            AdjacencyGraph<string, Edge<string>> graph = new AdjacencyGraph<string, Edge<string>>(false);            graph.AddVertex(\"A\");            graph.AddVertex(\"B\");            graph.AddVertex(\"C\");\n \n            graph.AddEdge(new Edge<string>(\"A\", \"B\"));            graph.AddEdge(new Edge<string>(\"B\", \"C\"));\n \n            var roots = graph.Roots();\n \n            Console.WriteLine(\"Roots:\");            foreach (string vertex in roots)            {                Console.WriteLine(\"\\t\" + vertex);            }            Console.WriteLine(\"End Roots\");\n \n            var topologicalSort = AlgorithmExtensions.TopologicalSort<string, Edge<string>>(graph);            Console.WriteLine(\"Topological (nmake) Sort Order:\");            foreach(string vertex in topologicalSort)            {                Console.WriteLine(\"\\t\" + vertex);            }            Console.WriteLine(\"End Topological Sort\");\n \n            Console.WriteLine(\"Press any key to exit.\");            Console.ReadKey();        }\n \nThanks for your time!\n \nRich",
+    "LastUpdatedDate": "2013-05-16T04:59:16.167-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-11-28T20:55:40.81-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AdjacencyGraph & AlgorithmExtensions.Roots",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15110
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

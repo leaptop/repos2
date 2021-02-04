@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1292296",
+    "ThreadId": "561831",
+    "Html": "1) Is there a way to force a graph data structure to be acyclical? Meaning that while I add nodes and edges, the graph will throw me an exception if a cyclic path exists instead of adding the node and then checking .IsDirectedAcyclicGraph? (I've used AdjacencyGraph so far)\r<br />\n<br />\n2) Is it possible to use a function as an 'aggregator'? I would like to get a topological sort for a particular vertex, then being able to execute some code at each of the dependant nodes and aggregate the result. (Like for example having a directed graph of ints, and passing a sum function to sum all the dependant nodes of any particular node)\r<br />\n<br />\nCheers\r<br />\nLeo<br />\n",
+    "PostedDate": "2014-08-21T20:04:28.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

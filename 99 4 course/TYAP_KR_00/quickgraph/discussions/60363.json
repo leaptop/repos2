@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "204423",
+    "ThreadId": "60363",
+    "Html": "<p>I work with DFA (Deteministic Finite Automata ) / NFA&nbsp; (Nondeterministic Finite Automata ) in my application ,&nbsp;</p>\r\n<p>since they can be modeled as weighted graph I searched for graph frameworks in .net and I found this project and I found this project great work and useful</p>\r\n<p>so I decided to shift to Quickgraph.</p>\r\n<p>My questions are:</p>\r\n<p>&nbsp;1- How can I create weighted directed graph ?</p>\r\n<p>&nbsp;2- How can I layout and display weighted directed graph ? each edge should be marked with label displaying its weight.</p>\r\n<p>3- How can I change display style of one vertex ? I.E: change its color or its shape to show whether it is final state.</p>\r\n<p>I appreciate your answers.</p>\r\n<p>In case you want to add DFA , NFA and their common algorithms to your library I can join your project.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-23T04:03:10.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204499",
+    "ThreadId": "60363",
+    "Html": "<p>1) All data structure in QuickGraph are generic with respect to the vertex and edge type. You can create your own weighted edge or use TaggedEdge&lt;int, double&gt;, assuming your vertex type is an int.<br>2,3) QuickGraph does not provide any layout algorithm per se, but it provides 'bridges' to dot (Graphviz language), GLEE or MsAgl. Each tool is different but the pattern is similar using quickgraph: when you render a graph (see user manual in wiki), you can hook to an event that gets raised for each edge (EdgeFormat I beleive). In the callback, you receive an object that controls the 'looks' for the edge vertex. There's some doc here: <a href=\"http://quickgraph.codeplex.com/Wiki/View.aspx?title=Visualization Using Graphviz&referringTitle=Home\">http://quickgraph.codeplex.com/Wiki/View.aspx?title=Visualization%20Using%20Graphviz&amp;referringTitle=Home</a>.</p>",
+    "PostedDate": "2009-06-23T07:19:32.837-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

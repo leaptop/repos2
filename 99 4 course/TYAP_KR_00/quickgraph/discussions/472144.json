@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1132612",
+    "ThreadId": "472144",
+    "Html": "I have used QuickGraph very successfully on a transportation road network to find the shortest path using the Dijkstra algorithm.  I am interested in any information on alternative algorithms that incorporate node penalties, in particular turning penalties (for example to represent the additional time spent in attempting to make a left turn from one link to another).   This is generically referred to as a vine-building algorithm (<a href=\"http://www.slideshare.net/ikkikim/vine-shortest-example\" rel=\"nofollow\">http://www.slideshare.net/ikkikim/vine-shortest-example</a>)\r<br />\n<br />\nThanks in advance\r<br />\n<br />\nDick Males\r<br />\nCincinnati, Ohio, USA<br />\n",
+    "PostedDate": "2013-12-06T11:58:33.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

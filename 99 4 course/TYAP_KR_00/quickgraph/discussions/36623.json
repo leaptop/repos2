@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "121469",
+    "ThreadId": "36623",
+    "Html": "I am using the latest of everything (that I am aware of).&nbsp; Building QuickGraph 2.0 using VS2008 and Pex 0.7 get build errors as PexUseGenericArguments seems to be missing (BinaryHeapTest.cs).&nbsp; I commented out the attribute and i then build and all unit tests passed, but I thought someone shoudl know.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-09-28T20:59:51.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121477",
+    "ThreadId": "36623",
+    "Html": "You're right. PexUseGenericArguments was renamed but I have not updated the 2.0 branch.<br>\r\nWhy not working on the 3.0?\r\n",
+    "PostedDate": "2008-09-28T22:22:09.093-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643469",
+    "ThreadId": "36623",
+    "Html": "<p>I am unable to find the following attributes in PEX.Framwrok.Factories, &nbsp;if they are renamed, then kindly share its alternate. I will be grateful to you. Thank You.</p>\r\n<p>PexUseGenericArguments&nbsp;attribute</p>\r\n<p>[PexFactoryClass] attribute</p>\r\n<p>Kind Regards,</p>\r\n<p>Majid Ismail.</p>",
+    "PostedDate": "2011-07-17T10:30:27.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

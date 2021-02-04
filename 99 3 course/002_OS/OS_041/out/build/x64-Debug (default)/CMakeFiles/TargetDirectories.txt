@@ -1,0 +1,3 @@
+C:/Users/stepa/repos2/99 3 course/002_OS/OS_041/out/build/x64-Debug (default)/CMakeFiles/OS_041.dir
+C:/Users/stepa/repos2/99 3 course/002_OS/OS_041/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Users/stepa/repos2/99 3 course/002_OS/OS_041/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir

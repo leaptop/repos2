@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "143818",
+    "ThreadId": "43277",
+    "Html": "I would prefer<br>\r\n<br>\r\nIDictionary&lt;int, int&gt; com;<br>\r\nvar comp = testGraph.StronglyConnectedComponents(out com);<br>\r\n<br>\r\ninstead of this currently,<br>\r\nvar com = new Dictionary&lt;int, int&gt;();<br>\r\n var comp = testGraph.StronglyConnectedComponents(com);<br>\r\n<br>\r\n<br>\r\n--------------<br>\r\nSimilar to how ShortestPathsBellmanFord works\r\n",
+    "PostedDate": "2008-12-31T20:00:27.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143873",
+    "ThreadId": "43277",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://www.codeplex.com/quickgraph/WorkItem/View.aspx?WorkItemId=12270\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2009-01-01T10:20:27.483-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

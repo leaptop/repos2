@@ -1,0 +1,24 @@
+<div class="wikidoc"><h4>Maximum Flow</h4>
+The <a href="http://en.wikipedia.org/wiki/Edmonds-Karp_algorithm">Edmond and Karp</a> algorithm computes a maximum flow for directed graph with positive capacities and flows. <br /><br /><pre>
+// we need a graph, a source and a sink
+IMutableVertexAndEdgeListGraph&lt;TVertex,TEdge&gt; graph = ...;
+TVertex source = ...;
+TVertex sink = ...;
+
+// A function with maps an edge to its capacity
+Func&lt;TEdge, double&gt; capacityFunc = (edge =&gt; 1);
+
+// A function which takes a vertex and returns the edge connecting to its predecessor in the flow network
+TryFunc&lt;TVertex, TEdge&gt; flowPredecessors;
+
+// A function used to create new edges during the execution of the algorithm.  These edges are removed before the computation returns
+EdgeFactory&lt;TVertex, TEdge&gt; edgeFactory = (source, target) =&gt; new Edge&lt;TVertex&gt;(source,target);
+
+// computing the maximum flow using Edmonds Karp.
+double flow = AlgorithmExtensions.MaximumFlowEdmondsKarp&lt;TVertex, TEdge&gt;(
+    graph,
+    capacityFunc,
+    source, sink,
+    out flowPredecessors,
+    edgeFactory);
+</pre></div><div class="ClearBoth"></div>

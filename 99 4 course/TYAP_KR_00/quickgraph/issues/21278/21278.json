@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Having a static graph object within a ASP.NET environment it seems that the graph cannot be used a second time.\nA graph should be usable as input for an algorithm such as dijkstrashortest on other requests. It seems that a static graph after the first request is not valid for usage within an algorithm. ASP.NET doesn't find any result? (Key not found errors).\nWhat happens to a graph when asp.net closes the response? Is there a way to keep the graph valid within an asp.net environment?",
+    "LastUpdatedDate": "2013-02-21T17:44:38.013-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-08-01T16:49:18.007-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "static graph on ASP.NET module/handler",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21278
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

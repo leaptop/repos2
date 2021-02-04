@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "NuGet package seems to only contain .net4 libraries.  I can't get it to work with SL 4, WP7 or WP7.1:\n \nFrom the description, it sound like this should be supported.  \n \nSuccessfully installed 'QuickGraph 3.6.61119.7'.\nSuccessfully uninstalled 'QuickGraph 3.6.61119.7'.\nInstall failed. Rolling back...\nCould not install package 'QuickGraph 3.6.61119.7'. You are trying to install this package into a project that targets 'Silverlight,Version=v4.0,Profile=WindowsPhone71', but the package does not contain any assembly references that are compatible with that framework. For more information, contact the package author.",
+    "LastUpdatedDate": "2013-02-21T17:44:36.63-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2011-11-27T23:45:59.88-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NuGet package 3.6.61119.7 missing WP7,WP7.1?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 21834
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The net40 dlls in the latest package also refer to System.Core 2.0.5.0, which is Silverlight.  This is breaking for us on machines without Silverlight installed.",
+      "PostedDate": "2011-12-21T15:59:50.74-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-01T13:25:56.94-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:36.63-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The following code makes SourceFirstTopologicalSortAlgorithm throws a NonAcyclicGraphException for no apparent reason:\n \nBidirectionalGraph<string, Edge<string>> graph = new BidirectionalGraph<string, Edge<string>>();\ngraph.AddVerticesAndEdge(new Edge<string>(\"1\", \"2\"));\ngraph.SourceFirstTopologicalSort();\n \nThe TopologicalSortAlgorithm appears to work properly.\n \ngabriel",
+    "LastUpdatedDate": "2015-05-16T06:56:36.903-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2012-03-06T13:38:19.547-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "SourceFirstTopologicalSortAlgorithm throws NonAcyclicGraphException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 22356
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The following code throws the same exception:\r\n\r\n            var test = new AdjacencyGraph<string, Edge<string>>();\r\n            test.AddVerticesAndEdgeRange(new[] \r\n            {\r\n                new Edge<string>(\"A\", \"B\"),\r\n                new Edge<string>(\"A\", \"C\"),\r\n            });\r\n            test.SourceFirstTopologicalSort();\r\n\r\nIt's seems SourceFirstTopologicalSort works unpredictable.\r\n\r\nDmitry.",
+      "PostedDate": "2012-03-12T16:14:33.193-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-03-12T16:15:03.273-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-07-02T14:16:04.11-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:35.71-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-01-19T01:56:17.24-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I believe this bug can be fixed by changing SourceFirstTopologicalSortAlgorithm.InitializeInDegrees() to something like\r\n\r\n```\n        private void InitializeInDegrees()\n        {\n            foreach (var v in this.VisitedGraph.Vertices)\n            {\n                this.inDegrees.Add(v, 0);\n            }\r\n\r\n            foreach (var e in this.VisitedGraph.Edges)\n            {\n                if (e.Source.Equals(e.Target))\n                    continue;\n                this.inDegrees[e.Target]++;\n            }\r\n\r\n            foreach (var v in this.VisitedGraph.Vertices)\n            {\n                this.heap.Enqueue(v);\n            }\n        }\n```\r\n\r\nThe important thing being that inDegrees is fully initialised before heap.Enqueue() is called otherwise the internal priority queue doesn't sort the vertices correctly.",
+      "PostedDate": "2014-03-19T11:24:17.333-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-05-16T06:56:36.903-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "717836",
+    "ThreadId": "284351",
+    "Html": "\r\n<p>Anybody got a decent solution for generating images (preferably an SVG for rich functionality, like hyperlinks) from QuickGraph graphs?</p>\r\n<p>I see that SVG generation is now gone, but it seems it just called a web service at rise4fun.com to generate an svg from a dot file (<a href=\"http://quickgraph.codeplex.com/SourceControl/changeset/changes/55091#3.0%2fsources%2fQuickGraph.Graphviz%2fGraphvizExtensions.cs\">see\r\n the changeset for the original implementation</a>), so this is pretty simple to replicate, but I wonder why it's not there anymore.</p>\r\n<p>Dot generation is great, but despite the plenty of QuickGraph.Graphviz.Dot.GraphvizImageType types, only dot files can be generated (which is not surprising, the return value being a string).</p>\r\n<p>Generating an image from a dot file is not simple, though, and I haven't found any tools suitable for me (I write an ASP.NET application, so firing off command-line generators is pretty much not an option).</p>\r\n<p>Maybe somebody succeeded with images? Any help would be greatly appreciated.</p>\r\n",
+    "PostedDate": "2011-12-28T04:46:08.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

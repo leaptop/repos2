@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2008-12-05T21:46:35.283-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi Pelikhan,\n \nthanks for your reply.\ntestPath(1) was indeed a bad example as it is the source node. \nBut as I wrote, testPath is empty for any other node, too.\nCan anybody verify that? Here is a complete test example:\n \nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing QuickGraph;\nusing QuickGraph.Algorithms;\n \nnamespace ConsoleApplication1\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            AdjacencyGraph<int, Edge<int>> testGraph = new AdjacencyGraph<int, Edge<int>>();\n            testGraph.AddVerticesAndEdge(new Edge<int>(1, 2));\n            testGraph.AddVerticesAndEdge(new Edge<int>(1, 3));\n            testGraph.AddVerticesAndEdge(new Edge<int>(3, 4));\n            testGraph.AddVerticesAndEdge(new Edge<int>(1, 4));\n            var testPath = testGraph.ShortestPathsBellmanFord<int, Edge<int>>(e => 1.0, 1);\n            for (int i = 1; i <= 4; i++)\n            {\n                Console.WriteLine(testPath(i).Count());\n            }\n        }\n    }\n}",
+    "LastUpdatedDate": "2013-05-16T04:59:25.163-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-12-05T21:20:04.66-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problems with ShortestPathsBellmanFord",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11894
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 26995.",
+      "PostedDate": "2008-12-05T21:46:35.283-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:53.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:25.163-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

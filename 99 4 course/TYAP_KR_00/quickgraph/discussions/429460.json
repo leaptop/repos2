@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "986128",
+    "ThreadId": "429460",
+    "Html": "\r\n<p>I conduct a path finding library. QuickGraph&nbsp;fits all my requirements but I have met one problem. I need the shortest path algorithms to skip an edges which are impassable&nbsp;by current moving agent. What i want is something like this:</p>\r\n<p>&nbsp;</p>\r\n<hr>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><br>Func&lt;SEquatableEdge&lt;VectorD3&gt;, <span style=\"color:blue\">double</span>&gt; cityDistances = <span style=\"color:blue\">delegate</span>(SEquatableEdge&lt;VectorD3&gt; edge)\n{\n\n\t<span style=\"color:blue\">if</span>(edge.IsPassableBy(agent))\n\t\t<span style=\"color:blue\">return</span> edgeWeight; <span style=\"color:green\">// Edge is passable, return its weight</span>\n\t<span style=\"color:blue\">else</span>\n\t\t<span style=\"color:blue\">return</span> -1; <span style=\"color:green\">// Edge is impassable, return -1, which means, that path finder should skip it</span>\n\n};\n\nFunc&lt;VectorD3, <span style=\"color:blue\">double</span>&gt; heuristic = ...;\n\nTryFunc&lt;VectorD3, IEnumerable&lt;SEquatableEdge&lt;VectorD3&gt;&gt;&gt; tryGetPath = graph2.ShortestPathsAStar(cityDistances, heuristic, sourceCity);\n\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<hr>\r\n<p>&nbsp;</p>\r\n<p>I could imagine solving this problem by creating a copy of graph and deleting the impassable edges, but it is unnecessary waste of computer's resources. Could one, please, hint me on how to solve this problem? Or there is no solution and I should update\r\n the source?</p>\r\n<p>Thanks in advance!</p>\r\n",
+    "PostedDate": "2013-01-13T08:18:02.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

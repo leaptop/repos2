@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed 35572",
+    "ClosedDate": "2009-07-26T06:47:46.02-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Could You please add to FormatVertexEventArgs.VertexFormatter the position field?\n \nSo the User will be able to set the position of node during the *.dot file generation.\n \ncurrent generated :\n \ndigraph G {0;1;2;\n \n...\n \n target:\n \ndigraph G {0 [ pos = \"0,2!\" ];1 [ pos = \"0,0!\" ];2 [ pos = \"1,1!\" ];...\n \nIt will be helpful for communication graphs visualization.\n \nIf possible please make the VertexFormatter.Position type System.Drawing.Point.\n \nThank you for great graph library.\n \n              Misha",
+    "LastUpdatedDate": "2013-05-16T04:59:17.013-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-07-26T06:39:34.3-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Node position (coordinates) for visualizing using graphviz",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13708
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

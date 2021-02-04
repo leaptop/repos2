@@ -1,0 +1,26 @@
+﻿Source.obj : error LNK2019: ссылка на неразрешенный внешний символ __imp__glGetError@0 в функции "void __cdecl checkErrors(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?checkErrors@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ __imp__glewInit@0 в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ _glfwInit в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ _glfwTerminate в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ _glfwWindowHint в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ _glfwCreateWindow в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ _glfwMakeContextCurrent в функции "void __cdecl initGL(void)" (?initGL@@YAXXZ)
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewBindBuffer"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewBufferData"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewDeleteBuffers"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewGenBuffers"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewMapBuffer"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewUnmapBuffer"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewAttachShader"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewCompileShader"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewCreateProgram"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewCreateShader"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewDeleteProgram"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewLinkProgram"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewShaderSource"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewUseProgram"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewDispatchCompute"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewMemoryBarrier"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp____glewBindBufferBase"
+Source.obj : error LNK2001: неразрешенный внешний символ "__imp__glewExperimental"
+C:\Users\stepa\repos2\gpu\rgr_3_2\Debug\rgr_3_2.exe : fatal error LNK1120: неразрешенных внешних элементов: 25

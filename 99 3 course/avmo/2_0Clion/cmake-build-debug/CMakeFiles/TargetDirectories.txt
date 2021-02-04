@@ -1,0 +1,3 @@
+C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug/CMakeFiles/2_0Clion.dir
+C:/Users/stepa/repos2/avmo/2_0Clion/cmake-build-debug/CMakeFiles/edit_cache.dir

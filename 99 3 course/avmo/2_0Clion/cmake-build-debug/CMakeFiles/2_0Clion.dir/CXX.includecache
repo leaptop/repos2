@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/stepa/repos2/avmo/2_0Clion/main.cpp
+bits/stdc++.h
+-
+../lib/fractions.h
+C:/Users/stepa/repos2/avmo/lib/fractions.h
+
+C:/Users/stepa/repos2/avmo/lib/fractions.h
+iostream
+-
+

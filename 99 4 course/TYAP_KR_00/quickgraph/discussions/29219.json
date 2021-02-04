@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "97389",
+    "ThreadId": "29219",
+    "Html": "Hello all,<br>\r\n<br>\r\nI have downloaded the QuickGraph solutions. I have to say it is brilliant and thank you for sharing it. <br>\r\nIt saves a lot of people a lot of time and heartache.<br>\r\n<br>\r\nI have been trying to write some code to detect a loop in a directional graph. For example:<br>\r\n<br>\r\nA-&gt;B<br>\r\nB-&gt;C<br>\r\nC-&gt;A<br>\r\nB-&gt;A<br>\r\n<br>\r\ncontains couple of loops. Now, I used the quick graph and tried to use the events, to build up my <br>\r\nlist of paths and anyway, it got a bit complicated, as I don't seem to be able to think clear about<br>\r\nthis problem?<br>\r\n<br>\r\nCan someone please help and let me know how I could detect the loops in a graph and even better<br>\r\ngive the list of loops(e.g A-&gt;B-&gt;C-&gt;A and A-&gt;B-&gt;A)?<br>\r\n<br>\r\nI appreciate your help. Sorry if the solution looks trivial to you but I am really stuck.<br>\r\n<br>\r\nThanks and cheers,<br>\r\nBen.\r\n",
+    "PostedDate": "2008-06-06T22:19:05.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "97871",
+    "ThreadId": "29219",
+    "Html": "You can detect loops by doing a depth first search and listening to back edges (gray edges). There's no algorithm in Pex that can enumerate all cycles. I suggest looking in the literature for such algorithm.\r\n",
+    "PostedDate": "2008-06-10T00:52:02.293-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "98081",
+    "ThreadId": "29219",
+    "Html": "I actually found a way to do it. What I did was I only created a graph and then wrote a recursive function to enumerate each of the outedges and check to see if the next node is in the current<br>\r\nlist of visited nodes. Seems to work. I also didn't use any of the algorithms or events.<br>\r\nThanks anyway.\r\n",
+    "PostedDate": "2008-06-10T22:10:22.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113516",
+    "ThreadId": "29219",
+    "Html": "Ben,<br>\r\n<br>\r\nIf you use a recursive function and a graph that is big enough, you will have a stack overflow - and it will take down your process. Just to let you know.\r\n",
+    "PostedDate": "2008-08-25T10:24:57.81-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113637",
+    "ThreadId": "29219",
+    "Html": "pelikhan,<br>\r\n<br>\r\nThank you. Yes I was aware as the number of nodes grow the process time explodes, but for my situation this was good enough as I didn't have that many nodes.<br>\r\n<br>\r\nThanks again.<br>\r\nBen.<br>\r\n",
+    "PostedDate": "2008-08-25T17:52:00.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113712",
+    "ThreadId": "29219",
+    "Html": "Look at AlgoUtility.IsDirectedAcyclicGraph, it detects loop using the DFS.\r\n",
+    "PostedDate": "2008-08-26T01:45:18.55-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993781",
+    "ThreadId": "29219",
+    "Html": "\r\n<p>ben123,</p>\r\n<p>&nbsp;I am really interested in the solution you found to detect all the cycles in graph. I am actually working on a project where i am supposed to do the same. Do you mind sending me your code ?&nbsp;</p>\r\n<p>Thank you&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-29T10:37:05.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993918",
+    "ThreadId": "29219",
+    "Html": "\r\n<p>Hi&nbsp;<a href=\"http://www.codeplex.com/site/users/view/cgadjoro\">cgadjoro</a>,</p>\r\n<p>Wow, that was about 5 years ago. Honestly I can't even remember where I used this or any details about it. I can't even believe I managed to guess my password for this site.&nbsp;</p>\r\n<p>Sorry I wish I could help out but this doesn't ring a bell.</p>\r\n<p>Cheers,</p>\r\n<p>Ben.</p>\r\n",
+    "PostedDate": "2013-01-29T16:23:30.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1353423",
+    "ThreadId": "29219",
+    "Html": "Hi all,\r<br />\n<br />\njust for clarification: I am using the latest Nuget version of Quickgraph (v4.0.30319).\r<br />\n<br />\nI was reading a lot of posts regarding the topic of cycle detection within QuickGraph. At first i tried to apply DFS on a cyclic graph. As it was written in several posts, this should have led to an exception. In my situation, i encountered none. To have the check being performed by &quot;IsDirectedAcyclicGraph&quot; is working fine, but in my case, it would be cool to know which node or edge closes the cycle.\r<br />\n<br />\nIf one is able to shed light on the actual behaviour of DFS and which event should be tracked i would be very happy.\r<br />\n<br />\nCheers.<br />\n",
+    "PostedDate": "2015-02-17T07:44:19.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

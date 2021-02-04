@@ -1,0 +1,14 @@
+<div class="wikidoc"><h4>.NET Serialization</h4>
+All graph data structure can be serialized using the .NET serialization mechanism. You can also use the <span class="codeInline">SerializeToBinary</span> extension methods.<br />
+<ul><li>writing</li></ul>
+<pre>
+var g = ...; // some graph
+using(var stream = File.Open(&quot;graph.bin&quot;))
+    g.SerializeToBinary(stream);
+</pre>
+<ul><li>reading</li></ul>
+<pre>
+AdjacencyGraph&lt;TVertex,TEdge&gt; g; // some graph
+using(var stream = File.Open(&quot;graph.bin&quot;))
+    g = stream.DeseralizeFromBinary();
+</pre><br /></div><div class="ClearBoth"></div>

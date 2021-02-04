@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "826415",
+    "ThreadId": "352958",
+    "Html": "\r\n<p>hi, i am using quickgraph in my project .. I want to visualize my data( retrieve from the database ) in the form of graph as an interactive web browser ...</p>\r\n<p>plz help me or provide any example how can i visualize interactively on web through Graphviz...</p>\r\n<p>Thanks and Regards</p>\r\n<p>Raheel</p>\r\n",
+    "PostedDate": "2012-04-20T03:16:06.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "828691",
+    "ThreadId": "352958",
+    "Html": "<p>For interactive graphs I'd advise you js frameworks like the JavaScript Infovis Toolkit.</p>",
+    "PostedDate": "2012-04-25T15:48:08.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829370",
+    "ThreadId": "352958",
+    "Html": "<p>i considered ur advise about JavaScript Infovis Toolkit ....</p>\r\n<p>i installed JavaScript Infovis Toolkit through NuGet and run the examples they provide .. thats really cool thanks ....</p>\r\n<p>now i will use this in my Project..</p>\r\n<p>thank u very much piedone...</p>\r\n<p>plz .keep intouch ..</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-04-27T06:49:30.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829975",
+    "ThreadId": "352958",
+    "Html": "<p>If you have any questions about QuickGraph feel free to contact me, I do experimented a lot with it so maybe I could help. It's sad that this project is on hold as it's a great (an AFAIK pretty much only) C# graph framework out there.</p>",
+    "PostedDate": "2012-04-29T14:23:35.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830997",
+    "ThreadId": "352958",
+    "Html": "<p>thanks for ur help and support</p>\r\n<p>Can u please tell we can use quickgraph with graphviz library to visualize graph interactively on web ???</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2012-05-02T02:04:05.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "831147",
+    "ThreadId": "352958",
+    "Html": "<p>I haven't looked into Graphviz. I only tried .dot file generation. That works well but alone won't give you anything in terms of interaction of course. I used this only to then generate .svg images through the http://rise4fun.com/services.svc/ask/agl service, just as it was included in QuickGraph previously but then removed. Basically this service takes a .dot string (the representation of a graph) and returns the SVG XML.</p>\r\n<p>But if you want interactive layouts for web pages, I don't advice that for you. JIT is much better in terms of interactivity, as well as <a href=\"http://www.graphdracula.net/\">Dracula</a> or <a href=\"http://jsplumb.org\">jsPlumb</a>. <a href=\"http://code.google.com/p/canviz/\">Canviz</a> as an in-browser .dot viewer is promising but not yet ready.</p>",
+    "PostedDate": "2012-05-02T08:01:27.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "842398",
+    "ThreadId": "352958",
+    "Html": "<p>Thank you so much piedone i feel so pleased to tell you that your sugestions really work for me i succesfully used<strong> javascript infoviz toolkit </strong>to visualize</p>\r\n<p>data in an interactive graphical browser.....</p>\r\n<p>sorry for late reply as i was busy in other work, without your suggestion i will remain stuck in graphviz.</p>\r\n<p>thank you so much</p>",
+    "PostedDate": "2012-05-30T00:06:22.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "842993",
+    "ThreadId": "352958",
+    "Html": "<p>Awesome! Can you show your project BTW?</p>",
+    "PostedDate": "2012-05-31T02:51:18.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

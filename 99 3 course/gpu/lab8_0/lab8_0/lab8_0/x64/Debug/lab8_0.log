@@ -1,0 +1,5 @@
+﻿     Создается библиотека C:\Users\stepa\repos2\gpu\lab8_0\lab8_0\x64\Debug\lab8_0.lib и объект C:\Users\stepa\repos2\gpu\lab8_0\lab8_0\x64\Debug\lab8_0.exp
+kernel.cu.obj : error LNK2019: ссылка на неразрешенный внешний символ cufftPlan1d в функции main
+kernel.cu.obj : error LNK2019: ссылка на неразрешенный внешний символ cufftExecC2C в функции main
+kernel.cu.obj : error LNK2019: ссылка на неразрешенный внешний символ cufftDestroy в функции main
+C:\Users\stepa\repos2\gpu\lab8_0\lab8_0\x64\Debug\lab8_0.exe : fatal error LNK1120: неразрешенных внешних элементов: 3

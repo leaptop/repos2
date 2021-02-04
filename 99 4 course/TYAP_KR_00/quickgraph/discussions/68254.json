@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "232126",
+    "ThreadId": "68254",
+    "Html": "<p>Hello,</p>\r\n<p>could you please suggest how to apply one of&nbsp;Minimum Spanning Tree algorithms to AdjacencyGraph which I have in code?</p>\r\n<p>Should I transform it to other representation (UndirectedGraph)? If yes, how to achieve this?</p>\r\n<p>In general I need to verify connectivity of a graph.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-08T03:07:38.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

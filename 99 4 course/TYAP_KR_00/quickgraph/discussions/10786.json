@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "34966",
+    "ThreadId": "10786",
+    "Html": "\r\nHi there<br /><br />I have the following problem. When I try to convert a Quickgraph graph to Glee, the string identifiers of each vertex appear as a number in the Glee graph.<br />For example vertex A appear as 0 in Glee Graph<br />Is this a known problem?<br /><br /><br />Thank you<br /><br />",
+    "PostedDate": "2007-05-29T14:25:24.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "35423",
+    "ThreadId": "10786",
+    "Html": "\r\nUse the GleeIndentifiableGraphPopulator instead of the GleeDefaultGraphPopulator, it will use the ID as keys in the GLee graph. Otherwize it numbers each vertex with an integer.<br />",
+    "PostedDate": "2007-06-01T23:48:09.34-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "35434",
+    "ThreadId": "10786",
+    "Html": "\r\nThanks a lot it worked<br />",
+    "PostedDate": "2007-06-02T02:54:29.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "37227",
+    "ThreadId": "10786",
+    "Html": "\r\nTake a look at GleeUtil which contains factory method to create populators.<br />",
+    "PostedDate": "2007-06-17T01:19:54.063-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

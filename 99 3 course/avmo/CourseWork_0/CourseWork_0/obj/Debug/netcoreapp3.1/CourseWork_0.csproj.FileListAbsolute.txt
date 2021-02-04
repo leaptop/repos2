@@ -1,0 +1,11 @@
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.exe
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.deps.json
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.runtimeconfig.json
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.runtimeconfig.dev.json
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.dll
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\bin\Debug\netcoreapp3.1\CourseWork_0.pdb
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\obj\Debug\netcoreapp3.1\CourseWork_0.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\obj\Debug\netcoreapp3.1\CourseWork_0.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\obj\Debug\netcoreapp3.1\CourseWork_0.AssemblyInfo.cs
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\obj\Debug\netcoreapp3.1\CourseWork_0.dll
+C:\Users\stepa\repos2\avmo\CourseWork_0\CourseWork_0\obj\Debug\netcoreapp3.1\CourseWork_0.pdb

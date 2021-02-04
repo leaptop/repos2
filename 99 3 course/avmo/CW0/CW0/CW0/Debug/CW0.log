@@ -1,0 +1,8 @@
+﻿  fractions.cpp
+C:\Users\stepa\repos2\avmo\CW0\CW0\CW0\fractions.cpp(25,11): warning C4244: аргумент: преобразование "unsigned __int64" в "const unsigned int", возможна потеря данных
+C:\Users\stepa\repos2\avmo\CW0\CW0\CW0\fractions.cpp(27,25): warning C4244: аргумент: преобразование "unsigned __int64" в "const unsigned int", возможна потеря данных
+C:\Users\stepa\repos2\avmo\CW0\CW0\CW0\fractions.cpp(29,46): warning C4244: аргумент: преобразование "unsigned __int64" в "const unsigned int", возможна потеря данных
+C:\Users\stepa\repos2\avmo\CW0\CW0\CW0\fractions.cpp(29,24): warning C4244: аргумент: преобразование "unsigned __int64" в "const unsigned int", возможна потеря данных
+  Source.cpp
+  Создание кода...
+  CW0.vcxproj -> C:\Users\stepa\repos2\avmo\CW0\CW0\Debug\CW0.exe

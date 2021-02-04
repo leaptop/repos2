@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2009-04-17T13:13:03.94-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Why are 2 vars being created/assigned here, when Edge PROPERTIES (to comply with whatever..) could just be passed directly?\n \nprivate bool ContainsEdgeBetweenVertices(IEnumerable<TEdge> edges, TEdge edge)\n{\nContract.Requires(edges != null);\nContract.Requires(edge != null);\n \nvar source = edge.Source;\nvar target= edge.Target;\nforeach (var e in edges)\nif (this.EdgeEqualityComparer(e,source, target))\n \nreturn true;\nreturn false;\n}\n \n \nCOULD BE RESTATED AS:\n \nprivate bool ContainsEdgeBetweenVertices(IEnumerable<TEdge> edges, TEdge edge)\n{\nContract.Requires(edges != null);\nContract.Requires(edge != null);\n \nforeach (var e in edges)\nif (this.EdgeEqualityComparer(e,edge.Source  edge.Target))\n \nreturn true;\nreturn false;\n}\n \njust pass the PROPERTIES directly, without hitting the stack for 2 variable declarations.\nthere is NO NEED for two temp vars in this routine..",
+    "LastUpdatedDate": "2013-05-16T04:59:19.757-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2009-04-17T05:00:28.26-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unnecessary temp variables in UndirectedGraph.ContainsEdgeBetweenVertices",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13035
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "To be more clear: Properties are inlined anyway, so temp vars just do explicitly what the compiler does for us anyway..\r\n\r\n\r\n",
+      "PostedDate": "2009-04-17T05:05:34.537-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Interface methods are virtual and, thus, do not get inlined by the JIT. For particular type instantiations (sealed classes, value types) inlining should occur. It is just cleaner to inline them manually.",
+      "PostedDate": "2009-04-17T13:12:56.463-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-04-17T13:13:03.94-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:47.063-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:19.757-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

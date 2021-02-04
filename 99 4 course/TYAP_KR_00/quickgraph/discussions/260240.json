@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "623147",
+    "ThreadId": "260240",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>&nbsp;</p>\r\n<p>I'm Really new to this library, and i'd like to know how to create a graph with edges likes this:</p>\r\n<p>My datas are:</p>\r\n<p>AIRPORT DEPARTURE CODE: <br>\r\nAIRPORT TIME OF DEPARTURE</p>\r\n<p>AIRPORT ARRIVAL CODE:<br>\r\nAIRPORT TIME OF ARRIVAL:</p>\r\n<p>PRICE</p>\r\n<p>i'd like to build a graph from the airport A to the airport Z, but the nodes aren't the airports but the airports with hours. i don't know if it's clear. I can have many many flights, and one user could go from airport B at 5pm and take a flight (1) at 6\r\n pm to airport C, an other one could go from airport B at 7pm and take a flight (2) at 9 pm to airport D<br>\r\nMeaning that there will be one node with flight (1) and (2), and the other one only with (2).</p>\r\n<p>Any clue how to build such a tree?</p>\r\n<p>The fact is that all same flight arrow are pointing to the same node. That's the only property i found about my graph.</p>\r\n<p>That's for a school work</p>\r\n<p>&nbsp;</p>\r\n<p>The goal of this is to find out the minimum price from airport A to airport Z, knowing a lot lot lot of flights, by applying Djikstra</p>\r\n<p><br>\r\nThanks a lot !</p>\r\n",
+    "PostedDate": "2011-06-05T07:02:42.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

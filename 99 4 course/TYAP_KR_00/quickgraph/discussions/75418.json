@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "258120",
+    "ThreadId": "75418",
+    "Html": "<p>I would like to find a vertex's adjacent neighbors. There doesn't seem to be a method I can use.</p>\r\n<p>Perhaps I am using the wrong graph type, AdjacencyGraph. All I could find for this graph was outEdges() which returns a list of all edges.</p>\r\n<p>Could someone point me to the appropriate graph type or method with which I can find the adjacent neighbors for a vertex?</p>\r\n<p>Thank you,</p>\r\n<p>Pawel</p>",
+    "PostedDate": "2009-11-17T20:46:49.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261448",
+    "ThreadId": "75418",
+    "Html": "<p>You want to use either an UndirectedGraph or a BiDirectionalGraph which provides fast access to in and out edges.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-28T17:42:25.933-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

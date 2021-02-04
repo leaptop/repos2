@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "70379",
+    "ThreadId": "21151",
+    "Html": "\r\nFirst of all to the author, thanks for creating a great library. I came across the project while looking for <br />a .NET data visualisation library. More specifically, I am looking for ways to visualise high-dimensional <br />data in a graph. <br /><br />One of the algorithms I know of is a force-directed algorithm, unfortunately it seems<br />the algorithm is not yet implemented in the QuickGraph algorithm namespace (<br />it throws an exception in an internal method). <br /><br />I was wondering if there are any developments going on or if anyone has implemented the algorithm. <br />If not I'd like to try implementing it myself, however I have little experience with graph theory nor do<br />I write very structured code, so I'm afraid I would need some help (I am just lazy :)) or at least feedback ..<br /><br />Would it make sense to have the distances between the n-dimensional objects as edge weights, call<br />RandomLayoutAlgorithm to initialize the positions of the nodes and somehow pass them to the<br />ForceDirectedLayoutAlgorithm?<br /><br />Thanks,<br /><br />Martijn <br /><br /><br />",
+    "PostedDate": "2008-01-28T07:22:03.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "70966",
+    "ThreadId": "21151",
+    "Html": "\r\nThat's seems like a good starting point.<br />",
+    "PostedDate": "2008-01-30T21:41:04.42-08:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

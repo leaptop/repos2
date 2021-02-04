@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "480408",
+    "ThreadId": "223535",
+    "Html": "Hi,\r\n\r\nI think it would be good idea to add a copy constructor to BidirectionalGraph&lt;&gt;. Here's how I arrived at that conclusion:\r\n\r\nI want to have a slightly customized bidirectional graph. So, naturally I make a class, MyGraph, that derives from BidirectionalGraph&lt;&gt;. All is well, except that statements such as the following fail: &quot;MyGraph gg = g.Clone();&quot;, where g is of MyGraph. The issue is that Clone() is coming from the base class, and has return type of BidirectionalGraph&lt;&gt;. Hence the compiler asks for explicit cast. And well, just a cast doesn't really work, because there is more stuff in MyGraph that needs to be copied too. So, I try to write MyGraph.Clone(). Now the question is how to clone the base class stuff. BidirectionalGraph&lt;&gt; provides Clone(), but no copy constructor (there is a private constructor that is essentially a copy constructor). I don't see any way of using BidirectionalGraph&lt;&gt;.Clone() inside MyGraph.Clone() to clone the base class members. Is it possible? (I'm a newbie to C#, so maybe I'm missing something).\r\n\r\nOtherwise, the best solution is to add a public copy constructor to BidirectionalGraph&lt;&gt;. Well, I added it in my local copy of QuickGraph code. Let me know if I should pass it on as a patch.\r\n\r\nthanks,\r\nRhishikesh\r\n",
+    "PostedDate": "2010-08-13T15:14:14.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

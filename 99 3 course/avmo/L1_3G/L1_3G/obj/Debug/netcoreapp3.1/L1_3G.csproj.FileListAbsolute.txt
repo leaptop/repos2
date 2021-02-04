@@ -1,0 +1,24 @@
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.exe
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.deps.json
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.runtimeconfig.json
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.runtimeconfig.dev.json
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.dll
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.pdb
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.AssemblyInfo.cs
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.dll
+C:\Users\stepa\repos2\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.pdb
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.exe
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.deps.json
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.runtimeconfig.json
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.runtimeconfig.dev.json
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.dll
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\bin\Debug\netcoreapp3.1\L1_3G.pdb
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.AssemblyInfo.cs
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.dll
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.pdb
+C:\Users\stepa\repos2\99 3 course\avmo\L1_3G\L1_3G\obj\Debug\netcoreapp3.1\L1_3G.genruntimeconfig.cache

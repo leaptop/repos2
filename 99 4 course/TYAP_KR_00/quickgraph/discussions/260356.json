@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "623567",
+    "ThreadId": "260356",
+    "Html": "\r\n<p>When I'm running BreadthFirstSearchAlgorithm on BidirectionalGraph graph i have different results according to if i add 'back' edges. I need to find all 'reachable' verteices from a given. According to documentation of IUndirectedEdge I was constructing\r\n graph adding edges only when 'source' &lt; 'target', but BFS where not founding paths to vertexes that are 'smaller' than root vertex. Here is code:</p>\r\n<p>var edges = List&lt;UndirectedEdge&lt;int&gt;&gt;();</p>\r\n<p>// filling edges</p>\r\n<p>var graph = new BidirectionalGraph&lt;int, UndirectedEdge&lt;int&gt;&gt;(true);</p>\r\n<p>graph.AddVerticesAndEdgeRange(edges);</p>\r\n<p>var observer = new VertexDistanceRecorderObserver&lt;int, UndirectedEdge&lt;int&gt;&gt;(e =&gt; 1);<br>\r\nvar algoritm = new BreadthFirstSearchAlgorithm&lt;int, UndirectedEdge&lt;int&gt;&gt;(clientGraph);<br>\r\nusing (observer.Attach(algoritm))<br>\r\n{<br>\r\n&nbsp; algoritm.Compute(clientID);<br>\r\n&nbsp;}</p>\r\n<p>Is it correct behaviour? If so, is there undirected implementation of IVertexListGraph in the library as BSF expects such graph?</p>\r\n",
+    "PostedDate": "2011-06-06T09:16:37.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

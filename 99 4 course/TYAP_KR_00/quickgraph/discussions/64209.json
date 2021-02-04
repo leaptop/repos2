@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "218427",
+    "ThreadId": "64209",
+    "Html": "<p>Hi guys,</p>\r\n<p>&nbsp;</p>\r\n<p>I need your help please.</p>\r\n<p>I have undirected weighted graph (with positive weights). With a given vertexes list, I need to find a minimum weighted path that goes throw all of the given vertexes.</p>\r\n<p>Any ideas?</p>",
+    "PostedDate": "2009-08-02T00:58:28.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218816",
+    "ThreadId": "64209",
+    "Html": "<p>Unfortunately, there are no algorithm in QuickGraph that approximate a TSP solution.</p>",
+    "PostedDate": "2009-08-03T08:22:54.003-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

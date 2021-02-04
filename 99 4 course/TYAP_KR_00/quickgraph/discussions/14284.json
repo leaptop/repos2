@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "46441",
+    "ThreadId": "14284",
+    "Html": "\r\nI found that AlgoUtility.IsolatedVertices returns vertices with neighbours. I've listed this as workitem 5365 in the issue tracker and a detailed description is given there. (I'm not sure if that is the way you want work-items to be handed out to you, but anyway)<br /><br />Hopefully, this will help you improve your library further more,<br /><br />Marijn<br />",
+    "PostedDate": "2007-08-24T08:32:50.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "46542",
+    "ThreadId": "14284",
+    "Html": "\r\nThanks for reporting, I've fixed the bug.<br />",
+    "PostedDate": "2007-08-24T22:15:53.71-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

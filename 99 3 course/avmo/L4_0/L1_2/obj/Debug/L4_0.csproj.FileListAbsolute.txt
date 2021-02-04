@@ -1,0 +1,9 @@
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\bin\Debug\L1_2.exe.config
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\bin\Debug\L1_2.exe
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\bin\Debug\L1_2.pdb
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\L4_0.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\CW3.Form1.resources
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\L1_2.Properties.Resources.resources
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\L4_0.csproj.GenerateResource.cache
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\L1_2.exe
+C:\Users\stepa\repos2\avmo\L4_0\L1_2\obj\Debug\L1_2.pdb

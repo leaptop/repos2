@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "algorithms",
+      "DisplayName": "algorithms"
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2007-05-13T17:20:58.77-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nWhy did you use the recursive deep first traversal method instead a stack based algorithm? Can you provide such an algorithm or can i help you with this? If you inspect the stack based DFS and the queue based BFS you will notice many similarities, so you can refactor both algorithms to one base algorithm which is using only a different vertex buffer.\n \nregards\n \nStefan",
+    "LastUpdatedDate": "2013-05-16T04:59:30.843-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "High",
+      "Severity": 150,
+      "Id": 3
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2007-05-12T09:34:42.467-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Stackbased Deep first traversal algorithm?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 276
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

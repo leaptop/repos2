@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "422601",
+    "ThreadId": "207030",
+    "Html": "<p>I have downloaded the latest source.</p>\r\n<p>I run this code:</p>\r\n<p>DataSet ds = _repository.GetSchemaDataSet(_tableNames);<br>var g = ds.ToGraph();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>g.ToDirectedGraphML().WriteXml(&quot;test.xml&quot;);</p>\r\n<p>My question (I will blog about this, I promise!):</p>\r\n<p>How do I get Label tags in the generated dgml? (Or are we just not there yet)...</p>\r\n<p>Thanks for a wonderful library.</p>",
+    "PostedDate": "2010-03-23T08:36:05.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422617",
+    "ThreadId": "207030",
+    "Html": "<p>There are different 'ToDirectedGraphML' overloads that allow to pass a delegate that can modify the Node element. From there, you can set the Label property.</p>",
+    "PostedDate": "2010-03-23T09:08:01.03-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423189",
+    "ThreadId": "207030",
+    "Html": "<p>Thanks, it got this to work - will complete my dataset population and then do some blogging.</p>\r\n<p>\r\n<p><span style=\"font-size:x-small\">\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internal void GenerateSchemaGraph()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var formatNode = new Action&lt;DataTable, DirectedGraphNode&gt;(Generator.FormatNode);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var formatLink = new Action&lt;DataRelationEdge, DirectedGraphLink&gt;(Generator.FormatLink);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataSet ds = _repository.GetSchemaDataSet(_tableNames);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var g = ds.ToGraph();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g.ToDirectedGraphML(AlgorithmExtensions.GetVertexIdentity(g), AlgorithmExtensions.GetEdgeIdentity(g), formatNode, formatLink).WriteXml(&quot;test.xml&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n&lt;font size=&quot;2&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p>&nbsp;</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2010-03-24T12:19:56.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423321",
+    "ThreadId": "207030",
+    "Html": "<p>If you write to a test.dgml file, you can simply double-click on it and it will open in VS2010 magically.</p>",
+    "PostedDate": "2010-03-24T17:30:29.313-07:00",
+    "UserRole": "Owner",
+    "MarkedAsAnswerDate": null
+  }
+]

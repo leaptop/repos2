@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2008-12-04T23:50:27.28-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Issue 11612  - Closed Today at 11:31 PM  by pelikhan\nBy design. Source/Target should be in the graph. \n \nif this behavior is BY DESIGN, then just DELETE the function.  Why check to see if it is\npresent if BY DESIGN it should be in the graph?   Seems redundant.\n \nIn order to maintain backwards compatibility just have the function return TRUE and exit.  This would give a \nperformance gain, due to the lack of iterating..",
+    "LastUpdatedDate": "2013-05-16T04:59:25.623-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2008-12-04T17:24:30.51-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "BidrectionalGraph.ContainsEdge Optimization - Re: Issue 11612",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11877
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The fact that source and target are part of the graph, does not mean there is an edge between them.",
+      "PostedDate": "2008-12-04T23:06:59.593-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Resolved with changeset 26117.",
+      "PostedDate": "2008-12-04T23:50:27.28-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:44:54.137-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:59:25.623-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

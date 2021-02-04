@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Both properties \"VertexCount\" and \"Vertices\" rely on the \"GetVertexCounts()\" method.\nThe latter always fails with a KeyNotFoundException, since the vertices dictionary is initially empty.\n \nprivate Dictionary<TVertex, int> GetVertexCounts( )\n{\n            var vertices = new Dictionary<TVertex, int>( this.EdgeCount * 2 );\n            foreach ( var e in this.Edges )\n            {\n                vertices[e.Source]++;\n                vertices[e.Target]++;\n            }\n            return vertices;\n}\n \nso a solution would be e.g.:\n \n            foreach ( var e in this.Edges )\n            {\n                if ( !vertices.ContainsKey( e.Source ) )\n                    vertices[e.Source] = 1;\n                else\n                    vertices[e.Source]++;\n                if ( !vertices.ContainsKey( e.Target ) )\n                    vertices[e.Target] = 1;\n                else\n                    vertices[e.Target]++;\n            }",
+    "LastUpdatedDate": "2013-10-22T05:04:26.67-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "quickgraph",
+    "ReportedDate": "2012-05-13T08:24:35.533-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "EdgeListGraph - GetVertexCounts() => KeyNotFoundException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 22746
+  },
+  "FileAttachments": [],
+  "Comments": []
+}
