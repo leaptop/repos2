@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace STP_14_PhoneBook
 {
     static class Program
-    {public static string path = "C:/Users/stepa/repos2/STP_14_PhoneBook/STP_14_PhoneBook/book.txt";
+    {public static string path = "C:/Users/stepa/repos2/99 4 course/STP_14_PhoneBook/STP_14_PhoneBook/book.txt";// C:\Users\stepa\repos2\99 4 course
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
