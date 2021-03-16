@@ -1,0 +1,7 @@
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\bin\Debug\Lab5.0.exe.config
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\bin\Debug\Lab5.0.exe
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\bin\Debug\Lab5.0.pdb
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\obj\Debug\Lab5.0.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\obj\Debug\Lab5.0.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\obj\Debug\Lab5.0.exe
+C:\Users\stepa\repos2\00_Zachet_InfTheory\Lab5.0\Lab5.0\obj\Debug\Lab5.0.pdb

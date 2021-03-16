@@ -1,0 +1,145 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
+
+namespace Lab1._0
+{               
+    class Program
+    {
+        static int numberOfChars = 30000;      
+        static Dictionary<string, double> dicti1 = new Dictionary<string, double>();
+        static Dictionary<string, double> dicti2 = new Dictionary<string, double>();
+        static Dictionary<string, double> dicti3 = new Dictionary<string, double>();
+        static int numberOfLettersInABlock = 1;
+
+        static void Main(string[] args)
+        {
+            dicti1.Add("a", (double)1 / (double)3);
+            dicti1.Add("b", (double)1 / (double)3);
+            dicti1.Add("c", (double)1 / (double)3);
+            fileCreation_3(dicti1, "F1");
+
+            dicti2.Add("a", (double)1 / (double)9);
+            dicti2.Add("b", (double)2 / (double)9);
+            dicti2.Add("c", (double)6 / (double)9);
+            fileCreation_3(dicti2, "F2");
+
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
+
+            dicti1 = new Dictionary<string, double>();
+            dicti1.Add("aa", (double)2 / (double)9);
+            dicti1.Add("ab", (double)2 / (double)9);
+            dicti1.Add("ac", (double)2 / (double)9);
+            dicti1.Add("ba", (double)2 / (double)9);
+            dicti1.Add("bb", (double)2 / (double)9);
+            dicti1.Add("bc", (double)2 / (double)9);
+            dicti1.Add("ca", (double)2 / (double)9);
+            dicti1.Add("cb", (double)2 / (double)9);
+            dicti1.Add("cc", (double)2 / (double)9);
+            numberOfLettersInABlock = 2;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
+
+            numberOfLettersInABlock = 3;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
+
+            numberOfLettersInABlock = 4;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
+
+            numberOfLettersInABlock = 20;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
+			
+            numberOfLettersInABlock = 2;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
+            dicti2 = new Dictionary<string, double>();
+            dicti2.Add("aa", (double)2 / (double)81);
+            dicti2.Add("ab", (double)2 * 2 / (double)81);
+            dicti2.Add("ac", (double)2 * 2 / (double)27);
+            dicti2.Add("ba", (double)2 * 2 / (double)81);
+            dicti2.Add("bb", (double)2 * 4 / (double)81);
+            dicti2.Add("bc", (double)2 * 12 / (double)81);
+            dicti2.Add("ca", (double)2 * 2 / (double)27);
+            dicti2.Add("cb", (double)2 * 12 / (double)81);
+            dicti2.Add("cc", (double)2 * 36 / (double)81);
+
+            
+            numberOfLettersInABlock = 3;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
+
+            numberOfLettersInABlock = 4;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
+
+            numberOfLettersInABlock = 20;
+            dicti3 = new Dictionary<string, double>();
+            countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
+
+            Console.ReadKey();
+        }
+        static double ShennonFormulaForEnthropy(Dictionary<string, double> dict, int numberOfLettersInABlock)
+        {
+            double sum = 0;
+            foreach (var item in dict)
+            {
+                sum += item.Value * Math.Log(1 / item.Value, 2);
+            }
+            return sum / numberOfLettersInABlock;
+        }
+        static void countProbabilitiesBasedOnRealFrequencyInFile(string path, Dictionary<string, double> dict, int numberOfLettersInABlock)
+        {
+            string str;
+            using (StreamReader sr = File.OpenText(path))
+            {
+                str = sr.ReadToEnd();
+            }
+            char[] str_chars = str.ToCharArray();
+            for (int i = 0; i < numberOfChars - numberOfLettersInABlock; i++)
+            {
+                string block = str_chars[i].ToString();
+                for (int j = 1; j < numberOfLettersInABlock; j++)
+                {
+                    block += str_chars[i + j].ToString();
+                }
+                if (dict.ContainsKey(block))
+                {
+                    dict[block] += ((double)1 / ((double)numberOfChars / (double)numberOfLettersInABlock));
+                }
+                else
+                    dict.Add(block, ((double)1 / ((double)numberOfChars / (double)numberOfLettersInABlock)));
+            }            
+        }
+        static void fileCreation_3(Dictionary<string, double> dict, string fileName)
+        {
+            var rand = new Random();
+            string path = @"C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/" + fileName + ".txt";
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    for (int i = 0; i < numberOfChars; i++)
+                    {
+                        double num = rand.NextDouble();
+                        double sum = 0;
+                        foreach (var item in dict)
+                        {
+                            sum += item.Value;
+                            if (num <= sum)
+                            {
+                                sw.Write(item.Key);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }      
+    }
+}

@@ -16,8 +16,8 @@ namespace Lab1._0
     {
         static int numberOfChars = 30000;
         // static double[] probabilities = {(double) 1 / (double)5, (double)1 / (double)3, (double)1 / (double)2 };
-        static string[] alphabet = { "a", "b", "c" };
-        static double[] probabilities = { 0.1, 0.3, 0.6 };//this needs to be sorted in ascending order. The above array of probabilities 
+        // static string[] alphabet = { "a", "b", "c" };
+        //static double[] probabilities = { 0.1, 0.3, 0.6 };//this needs to be sorted in ascending order. The above array of probabilities 
         //should also be sorted, so that the indexes of symbols and their probabilities are the same.
         static Dictionary<string, double> dicti1 = new Dictionary<string, double>();
         static Dictionary<string, double> dicti2 = new Dictionary<string, double>();
@@ -29,34 +29,34 @@ namespace Lab1._0
             dicti1.Add("a", (double)1 / (double)3);
             dicti1.Add("b", (double)1 / (double)3);
             dicti1.Add("c", (double)1 / (double)3);
-            fileCreation_3(dicti1, "F1");
+            fileCreation_3(dicti1, "F1");           //created a first file
 
             dicti2.Add("a", (double)1 / (double)9);
             dicti2.Add("b", (double)2 / (double)9);
             dicti2.Add("c", (double)6 / (double)9);
-            fileCreation_3(dicti2, "F2");
+            fileCreation_3(dicti2, "F2");           //CREATED A SECOND FILE
 
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Файл 1:\n" + "Оценка энтропии 1:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
             Console.WriteLine("Теоретическая энтропия 1: " + ShennonFormulaForEnthropy(dicti1, numberOfLettersInABlock));
 
             dicti1 = new Dictionary<string, double>();
-            dicti1.Add("aa", (double)2 / (double)9);
-            dicti1.Add("ab", (double)2 / (double)9);
-            dicti1.Add("ac", (double)2 / (double)9);
-            dicti1.Add("ba", (double)2 / (double)9);
-            dicti1.Add("bb", (double)2 / (double)9);
-            dicti1.Add("bc", (double)2 / (double)9);
-            dicti1.Add("ca", (double)2 / (double)9);
-            dicti1.Add("cb", (double)2 / (double)9);
-            dicti1.Add("cc", (double)2 / (double)9);
+            dicti1.Add("aa", (double)1 / (double)9);
+            dicti1.Add("ab", (double)1 / (double)9);
+            dicti1.Add("ac", (double)1 / (double)9);
+            dicti1.Add("ba", (double)1 / (double)9);
+            dicti1.Add("bb", (double)1 / (double)9);
+            dicti1.Add("bc", (double)1 / (double)9);
+            dicti1.Add("ca", (double)1 / (double)9);
+            dicti1.Add("cb", (double)1 / (double)9);
+            dicti1.Add("cc", (double)1 / (double)9);
             numberOfLettersInABlock = 2;
             dicti3 = new Dictionary<string, double>();
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 2:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
             Console.WriteLine("Теоретическая энтропия 2: " + ShennonFormulaForEnthropy(dicti1, numberOfLettersInABlock));
 
-            numberOfLettersInABlock = 3;
+           /* numberOfLettersInABlock = 3;
             dicti3 = new Dictionary<string, double>();
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 3:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
@@ -69,7 +69,7 @@ namespace Lab1._0
             numberOfLettersInABlock = 20;
             dicti3 = new Dictionary<string, double>();
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F1.txt", dicti3, numberOfLettersInABlock);
-            Console.WriteLine("Оценка энтропии 20:       " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
+            Console.WriteLine("Оценка энтропии 20:       " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));*/
 
             //Настраиваемые вероятности:
                         numberOfLettersInABlock = 1;
@@ -83,19 +83,19 @@ namespace Lab1._0
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 2:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
             dicti2 = new Dictionary<string, double>();
-            dicti2.Add("aa", (double)2 / (double)81);
-            dicti2.Add("ab", (double)2 * 2 / (double)81);
-            dicti2.Add("ac", (double)2 * 2 / (double)27);
-            dicti2.Add("ba", (double)2 * 2 / (double)81);
-            dicti2.Add("bb", (double)2 * 4 / (double)81);
-            dicti2.Add("bc", (double)2 * 12 / (double)81);
-            dicti2.Add("ca", (double)2 * 2 / (double)27);
-            dicti2.Add("cb", (double)2 * 12 / (double)81);
-            dicti2.Add("cc", (double)2 * 36 / (double)81);
+            dicti2.Add("aa", (double)1 / (double)81);
+            dicti2.Add("ab", (double) 2 / (double)81);
+            dicti2.Add("ac", (double) 2 / (double)27);
+            dicti2.Add("ba", (double) 2 / (double)81);
+            dicti2.Add("bb", (double) 4 / (double)81);
+            dicti2.Add("bc", (double) 12 / (double)81);
+            dicti2.Add("ca", (double) 2 / (double)27);
+            dicti2.Add("cb", (double) 12 / (double)81);
+            dicti2.Add("cc", (double) 36 / (double)81);
 
             Console.WriteLine("Теоретическая энтропия 2: " + ShennonFormulaForEnthropy(dicti2, numberOfLettersInABlock));
 
-            numberOfLettersInABlock = 3;
+            /*numberOfLettersInABlock = 3;
             dicti3 = new Dictionary<string, double>();
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 3:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
@@ -108,10 +108,10 @@ namespace Lab1._0
             numberOfLettersInABlock = 20;
             dicti3 = new Dictionary<string, double>();
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab1.0/F2.txt", dicti3, numberOfLettersInABlock);
-            Console.WriteLine("Оценка энтропии 20:       " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
+            Console.WriteLine("Оценка энтропии 20:       " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));*/
 
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
         static double ShennonFormulaForEnthropy(Dictionary<string, double> dict, int numberOfLettersInABlock)
         {//Количество информации, которое мы получаем, достигает максимального значения, если события равновероятны... Здесь, видимо,
@@ -122,7 +122,7 @@ namespace Lab1._0
             {
                 sum += item.Value * Math.Log(1 / item.Value, 2);
             }
-            return sum / numberOfLettersInABlock;
+            return sum / numberOfLettersInABlock;//ВЕЗДЕ Д.Б. примерно 1.58
         }
         static void countProbabilitiesBasedOnRealFrequencyInFile(string path, Dictionary<string, double> dict, int numberOfLettersInABlock)
         {
@@ -143,10 +143,10 @@ namespace Lab1._0
                 }
                 if (dict.ContainsKey(block))
                 {
-                    dict[block] += ((double)1 / ((double)numberOfChars / (double)numberOfLettersInABlock));
+                    dict[block] += ((double)1 / ((double)numberOfChars));/// (double)numberOfLettersInABlock));
                 }
                 else
-                    dict.Add(block, ((double)1 / ((double)numberOfChars / (double)numberOfLettersInABlock)));
+                    dict.Add(block, ((double)1 / ((double)numberOfChars)));// / (double)numberOfLettersInABlock))) ;
             }//up to here all occurences of blocks are counted and frequencies(counted probabilities) are counted.
             //Time to use Shennon's formula                      
         }
@@ -174,8 +174,8 @@ namespace Lab1._0
                 }
             }
         }
-        static double[] CountProbabilities(string path, double[] probs)//here and below are wrong way functions 
-                                                                       //counting probabilities based on existing files with text
+        /*static double[] CountProbabilities(string path, double[] probs)              //here and below are wrong way functions 
+                                                                                    //counting probabilities based on existing files with text
         {
             double[] result = new double[10];
 
@@ -218,11 +218,11 @@ namespace Lab1._0
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    /*                    Array.Sort(probabilities);//have sorted
+                    *//*                    Array.Sort(probabilities);//have sorted
                                         for (int i = 0; i < probabilities.Length; i++)
                                         {
                                             Console.WriteLine(probabilities[i]);
-                                        }*/
+                                        }*//*
                     // Console.ReadLine();
                     int index = 0;
                     for (int i = 0; i < numberOfChars; i++)
@@ -261,6 +261,6 @@ namespace Lab1._0
                     }
                 }
             }
-        }
+        }*/
     }
 }
