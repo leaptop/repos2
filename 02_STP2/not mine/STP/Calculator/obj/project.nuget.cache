@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "s6oT1OlUKnsKsjok/RtmTpESDfjdOGpj9JWUfeTIDBxFK0wq5Fw6249FWbmCrb0uOh6svTtM1FgssboQ8J3FhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Calculator\\Calculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\stepa\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\extended.wpf.toolkit.3.8.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Extended.Wpf.Toolkit 3.8.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

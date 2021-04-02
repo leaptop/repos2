@@ -1,0 +1,8 @@
+E:\Programs\СТП\Numbers\bin\Release\netcoreapp3.0\Numbers.deps.json
+E:\Programs\СТП\Numbers\bin\Release\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Numbers\bin\Release\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Numbers\obj\Release\netcoreapp3.0\Numbers.AssemblyInfoInputs.cache
+E:\Programs\СТП\Numbers\obj\Release\netcoreapp3.0\Numbers.AssemblyInfo.cs
+E:\Programs\СТП\Numbers\obj\Release\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Numbers\obj\Release\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Numbers\obj\Release\netcoreapp3.0\Numbers.csprojAssemblyReference.cache

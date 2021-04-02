@@ -1,0 +1,149 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Editors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Editors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Editors.dll": {}
+        }
+      },
+      "Numbers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Numbers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Numbers.dll": {}
+        }
+      },
+      "Polynomials/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Polynomials.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Polynomials.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Editors/1.0.0": {
+      "type": "project",
+      "path": "../Editors/Editors.csproj",
+      "msbuildProject": "../Editors/Editors.csproj"
+    },
+    "Numbers/1.0.0": {
+      "type": "project",
+      "path": "../Numbers/Numbers.csproj",
+      "msbuildProject": "../Numbers/Numbers.csproj"
+    },
+    "Polynomials/1.0.0": {
+      "type": "project",
+      "path": "../Polynomial/Polynomials.csproj",
+      "msbuildProject": "../Polynomial/Polynomials.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "Editors >= 1.0.0",
+      "Numbers >= 1.0.0",
+      "Polynomials >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\TheEsus\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Running\\Running.csproj",
+      "projectName": "Running",
+      "projectPath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Running\\Running.csproj",
+      "packagesPath": "C:\\Users\\TheEsus\\.nuget\\packages\\",
+      "outputPath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Running\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\TheEsus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
+          "projectReferences": {
+            "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Editors\\Editors.csproj": {
+              "projectPath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Editors\\Editors.csproj"
+            },
+            "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Numbers\\Numbers.csproj": {
+              "projectPath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Numbers\\Numbers.csproj"
+            },
+            "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Polynomial\\Polynomials.csproj": {
+              "projectPath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Polynomial\\Polynomials.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "targetAlias": "netcoreapp3.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.0.3, 3.0.3]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

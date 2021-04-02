@@ -1,0 +1,25 @@
+E:\Programs\СТП\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.deps.json
+E:\Programs\СТП\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.dll
+E:\Programs\СТП\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.pdb
+E:\Programs\СТП\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfoInputs.cache
+E:\Programs\СТП\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfo.cs
+E:\Programs\СТП\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.dll
+E:\Programs\СТП\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.pdb
+E:\Programs\СТП\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.deps.json
+C:\Users\coolr\Desktop\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.dll
+C:\Users\coolr\Desktop\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.pdb
+C:\Users\coolr\Desktop\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.dll
+C:\Users\coolr\Desktop\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\bin\Debug\netcoreapp3.0\Polynomials.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Polynomial\obj\Debug\netcoreapp3.0\Polynomials.pdb

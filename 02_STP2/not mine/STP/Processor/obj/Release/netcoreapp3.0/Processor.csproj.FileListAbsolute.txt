@@ -1,0 +1,11 @@
+E:\Programs\СТП\Processor\bin\Release\netcoreapp3.0\Processor.deps.json
+E:\Programs\СТП\Processor\bin\Release\netcoreapp3.0\Processor.dll
+E:\Programs\СТП\Processor\bin\Release\netcoreapp3.0\Processor.pdb
+E:\Programs\СТП\Processor\bin\Release\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Processor\bin\Release\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.csprojAssemblyReference.cache
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.AssemblyInfoInputs.cache
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.AssemblyInfo.cs
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.csproj.CopyComplete
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.dll
+E:\Programs\СТП\Processor\obj\Release\netcoreapp3.0\Processor.pdb

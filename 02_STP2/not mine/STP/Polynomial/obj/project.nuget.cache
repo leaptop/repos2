@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3l8xFYEDeCwWLqV3Xv4XGEyTDt2+0907jf3JEPpupmpMtcZv9B5IYiedCk1ZhuK3MqWoSpEWJo6FjR05GWZIkQ==",
+  "success": true,
+  "projectFilePath": "D:\\4_course\\8semestr\\LASTSEM\\ОЧНОЕ. Лабораторные работы-20210202\\Lab_2021\\Lab_2021\\posledniy_semak\\STP\\Polynomial\\Polynomials.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TheEsus\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\TheEsus\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\TheEsus\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

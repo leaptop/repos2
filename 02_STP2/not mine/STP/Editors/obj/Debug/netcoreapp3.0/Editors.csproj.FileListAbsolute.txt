@@ -1,0 +1,46 @@
+E:\Programs\СТП\Editors\bin\Debug\netcoreapp3.0\Editors.deps.json
+E:\Programs\СТП\Editors\bin\Debug\netcoreapp3.0\Editors.dll
+E:\Programs\СТП\Editors\bin\Debug\netcoreapp3.0\Editors.pdb
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.csprojAssemblyReference.cache
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfoInputs.cache
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfo.cs
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.dll
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.pdb
+E:\Programs\СТП\Editors\bin\Debug\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Editors\bin\Debug\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\Editors\bin\Debug\netcoreapp3.0\Editors.deps.json
+C:\Users\coolr\Desktop\STP\Editors\bin\Debug\netcoreapp3.0\Editors.dll
+C:\Users\coolr\Desktop\STP\Editors\bin\Debug\netcoreapp3.0\Editors.pdb
+C:\Users\coolr\Desktop\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\coolr\Desktop\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.dll
+C:\Users\coolr\Desktop\STP\Editors\obj\Debug\netcoreapp3.0\Editors.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\bin\Debug\netcoreapp3.0\Editors.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\bin\Debug\netcoreapp3.0\Editors.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\bin\Debug\netcoreapp3.0\Editors.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CopyComplete
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Editors\obj\Debug\netcoreapp3.0\Editors.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\bin\Debug\netcoreapp3.0\Editors.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\bin\Debug\netcoreapp3.0\Editors.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\bin\Debug\netcoreapp3.0\Editors.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.AssemblyInfo.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.csproj.CopyComplete
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Editors\obj\Debug\netcoreapp3.0\Editors.pdb

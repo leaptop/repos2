@@ -1,0 +1,6 @@
+E:\Programs\СТП\Complex\obj\Debug\Complex.csprojAssemblyReference.cache
+E:\Programs\СТП\Complex\bin\Debug\Complex.exe.config
+E:\Programs\СТП\Complex\bin\Debug\Complex.exe
+E:\Programs\СТП\Complex\bin\Debug\Complex.pdb
+E:\Programs\СТП\Complex\obj\Debug\Complex.exe
+E:\Programs\СТП\Complex\obj\Debug\Complex.pdb

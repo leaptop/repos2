@@ -1,0 +1,52 @@
+﻿<Window x:Class="Lab1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="409" Width="274" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Margin="0,0,0,0" VerticalAlignment="Top" Height="20" Grid.ColumnSpan="4">
+            <MenuItem Header="История" Name="historyItem" Click="historyItem_Click"/>
+            <MenuItem Header="Справка" Name="helpItem" Click="helpItem_Click"/>
+        </Menu>
+        <TextBox x:Name="inputTB" Margin="10,46,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Grid.ColumnSpan="4" Height="18"/>
+        <Slider x:Name="inputBaseSlider" Margin="10,90,10,0" VerticalAlignment="Top" SmallChange="1" Value="10" Minimum="2" Maximum="16" Grid.ColumnSpan="4" Height="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,25,0,0" Text="Input" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="28"/>
+        <TextBlock x:Name="inputBaseLabel" Margin="10,69,10,0" Text="Input base: 10" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="outputTB" Margin="10,144,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" Grid.ColumnSpan="4" Height="18"/>
+        <Slider x:Name="outputBaseSlider" Margin="10,188,10,0" VerticalAlignment="Top" SmallChange="1" Value="16" Minimum="2" Maximum="16" Grid.ColumnSpan="4" Height="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,123,0,0" Text="Output" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="38"/>
+        <TextBlock x:Name="outputBaseLabel" Margin="10,167,10,0" Text="Output base: 16" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Grid.ColumnSpan="4"/>
+
+        <Button Name="button0" Content="0" Margin="10,229,5,0" VerticalAlignment="Top" Height="20" Foreground="#FF0015EC"/>
+        <Button Name="button1" Content="1" Margin="5,229,5,0" VerticalAlignment="Top" Height="20" Grid.Column="1" Foreground="#FF0015EC"/>
+        <Button Name="button2" Content="2" Margin="5,229,5,0" VerticalAlignment="Top" Height="20" Grid.Column="2" Foreground="#FF0015EC"/>
+        <Button Name="button3" Content="3" Margin="5,229,10,0" VerticalAlignment="Top" Height="20" Grid.Column="3" Foreground="#FF0015EC"/>
+        <Button Name="button4" Content="4" Margin="10,254,5,0" VerticalAlignment="Top" Height="20" Foreground="#FF0015EC"/>
+        <Button Name="button5" Content="5" Margin="5,254,5,0" VerticalAlignment="Top" Height="20" Grid.Column="1" Foreground="#FF0015EC"/>
+        <Button Name="button6" Content="6" Margin="5,254,5,0" VerticalAlignment="Top" Height="20" Grid.Column="2" Foreground="#FF0015EC"/>
+        <Button Name="button7" Content="7" Margin="5,254,10,0" VerticalAlignment="Top" Height="20" Grid.Column="3" Foreground="#FF0015EC"/>
+        <Button Name="button8" Content="8" Margin="9,279,5,0" VerticalAlignment="Top" Height="20" Foreground="#FF0015EC"/>
+        <Button Name="button9" Content="9" Margin="5,279,5,0" VerticalAlignment="Top" Height="20" Grid.Column="1" Foreground="#FF0015EC"/>
+        <Button Name="buttonA" Content="A" Margin="5,279,5,0" VerticalAlignment="Top" Height="20" Grid.Column="2" Foreground="#FF0015EC"/>
+        <Button Name="buttonB" Content="B" Margin="5,279,11,0" VerticalAlignment="Top" Height="20" Grid.Column="3" Foreground="#FF0015EC"/>
+        <Button Name="buttonC" Content="C" Margin="9,304,5,0" VerticalAlignment="Top" Height="20" Foreground="#FF0015EC"/>
+        <Button Name="buttonD" Content="D" Margin="5,304,5,0" VerticalAlignment="Top" Height="20" Grid.Column="1" Foreground="#FF0015EC"/>
+        <Button Name="buttonE" Content="E" Margin="5,304,5,0" VerticalAlignment="Top" Height="20" Grid.Column="2" Foreground="#FF0015EC"/>
+        <Button Name="buttonF" Content="F" Margin="5,304,11,0" VerticalAlignment="Top" Height="20" Grid.Column="3" Foreground="#FF0015EC"/>
+        <Button x:Name="buttonSeparator" Content="," Margin="9,329,5,0" VerticalAlignment="Top" Height="20" Click="buttonSeparator_Click"/>
+        <Button x:Name="buttonExecute" Content="Execute" Margin="5,329,11,0" VerticalAlignment="Top" Height="20" Grid.Column="3" Click="buttonExecute_Click"/>
+        <Button x:Name="buttonClear" Content="CE" Margin="5,329,5,0" VerticalAlignment="Top" Height="20" Grid.Column="2" Click="buttonClear_Click"/>
+        <Button x:Name="buttonBackspace" Content="BS" Margin="5,329,5,0" VerticalAlignment="Top" Height="20" Grid.Column="1" Click="buttonBackspace_Click"/>
+
+        
+    </Grid>
+</Window>

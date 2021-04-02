@@ -19,10 +19,14 @@ namespace Lab4._0
         static double codeWordAverageLength = 0;
         static void Main(string[] args)
         {
-            readAFileToString();
+            string path = "C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab4.0/Program.txt";
+            using (StreamReader sr = File.OpenText(path))
+            {
+                input = sr.ReadToEnd();
+            }
             HuffmanTree huffmanTree = new HuffmanTree();
             huffmanTree.Build(input);
-            codeWordAverageLength = huffmanTree.printTreeAndCountAverageLength();
+            codeWordAverageLength = huffmanTree.printTreeAndCountAverageLength(input);
             BitArray encoded = huffmanTree.Encode(input);
 
             string path2 = "C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab4.0/TextConverted.txt";
@@ -45,10 +49,14 @@ namespace Lab4._0
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab4.0/TextConverted.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 3:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
 
+            double wholeFileEntropy = Math.Ceiling( Math.Log(huffmanTree.Frequencies.Count, 2));
             Console.WriteLine("Средняя длина кодового слова: " + codeWordAverageLength + " бит");
-            Console.WriteLine("Избыточность: " + (codeWordAverageLength - first));
+            Console.WriteLine("Избыточность: " + (wholeFileEntropy - codeWordAverageLength));
 
-            Console.ReadLine();
+
+
+            Console.ReadLine();//информативность символов сжатого кода становится выше, поэтому энтропия стремится к максимальной(для 
+            //двоичного алфавита к 1)
 
         }
         static double ShennonFormulaForEnthropy(Dictionary<string, double> dict, int numberOfLettersInABlock)
@@ -80,24 +88,16 @@ namespace Lab4._0
                 }
                 if (dict.ContainsKey(block))
                 {
-                    dict[block] += ((double)1 / ((double)numberOfChars));//   / (double)numberOfLettersInABlock));
+                    dict[block] += ((double)1 / ((double)numberOfChars));
                 }
                 else
-                    dict.Add(block, ((double)1 / ((double)numberOfChars)));// / (double)numberOfLettersInABlock))) ;
-            }
-        }
-        public static void readAFileToString()
-        {
-            string path = "C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab4.0/Hyperion.txt";
-            using (StreamReader sr = File.OpenText(path))
-            {
-                input = sr.ReadToEnd();
+                    dict.Add(block, ((double)1 / ((double)numberOfChars)));
             }
         }
     }
     public class HuffmanTree
     {
-        private List<Node> nodes = new List<Node>();
+        public List<Node> nodes = new List<Node>();
         public Node Root { get; set; }
         public Dictionary<char, int> Frequencies = new Dictionary<char, int>();
 
@@ -128,7 +128,7 @@ namespace Lab4._0
                     List<Node> taken = orderedNodes.Take(2).ToList<Node>();//берём 2 элемента из начала и делаем из них List
 
                     // Create a parent node by combining the frequencies
-                    Node parent = new Node()                
+                    Node parent = new Node()
                     {
                         Symbol = '*',//У нас 2 или более узлов, соотвтетсвенно данный узел не будет листом и его называем звёздочкой. 
                         Frequency = taken[0].Frequency + taken[1].Frequency,//Складываю частоты. В начале - это наименьшие частоты
@@ -144,26 +144,40 @@ namespace Lab4._0
             }
         }
 
-        public double printTreeAndCountAverageLength()
+        public double printTreeAndCountAverageLength(string inp)
         {
             double L = 0;
+            List<Noda> ln = new List<Noda>();
             foreach (var item in Frequencies)
             {
-                BitArray bitarr = Encode(item.Key.ToString());
-                Console.Write(item.Key.ToString() + " - ");
+                BitArray bitarr = Encode(item.Key.ToString());               
                 string codeWord = "";
                 foreach (bool itemInner in bitarr)
                 {
                     if (itemInner)
+                    {
                         codeWord += "1";
+                    }
                     else codeWord += "0";
                 }
-                Console.WriteLine(codeWord);
-                L += codeWord.Length;
+                ln.Add(new Noda() { frequency = item.Value, symbol = item.Key, codeInString = codeWord });
+                L += codeWord.Length * (item.Value / (double)inp.Length);
             }
-            return L / (double)Frequencies.Count;
-        }
+            List<Noda> SortedList = ln.OrderByDescending(o => o.frequency).ToList();
+            foreach (var item in SortedList)
+            {
+                Console.WriteLine(item.symbol.ToString() + " - " + item.codeInString);
+            }
 
+            return L;
+        }
+        public class Noda
+        {
+            public int frequency { get; set; }
+            public char symbol { get; set; }
+            public BitArray code { get; set; }
+            public string codeInString { get; set; }
+        }
         public BitArray Encode(string source)
         {
             List<bool> encodedSource = new List<bool>();
@@ -215,7 +229,6 @@ namespace Lab4._0
         {
             return (node.Left == null && node.Right == null);
         }
-
     }
     public class Node
     {

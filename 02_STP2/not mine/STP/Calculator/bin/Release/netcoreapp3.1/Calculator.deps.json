@@ -1,0 +1,78 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Calculator/1.0.0": {
+        "dependencies": {
+          "Editors": "1.0.0",
+          "Memory": "1.0.0",
+          "Numbers": "1.0.0",
+          "Processor": "1.0.0"
+        },
+        "runtime": {
+          "Calculator.dll": {}
+        }
+      },
+      "Editors/1.0.0": {
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "runtime": {
+          "Editors.dll": {}
+        }
+      },
+      "Memory/1.0.0": {
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "runtime": {
+          "Memory.dll": {}
+        }
+      },
+      "Numbers/1.0.0": {
+        "runtime": {
+          "Numbers.dll": {}
+        }
+      },
+      "Processor/1.0.0": {
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "runtime": {
+          "Processor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Calculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Editors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Memory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Numbers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Processor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

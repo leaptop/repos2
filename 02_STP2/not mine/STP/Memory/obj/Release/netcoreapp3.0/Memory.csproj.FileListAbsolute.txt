@@ -1,0 +1,11 @@
+E:\Programs\СТП\Memory\bin\Release\netcoreapp3.0\Memory.deps.json
+E:\Programs\СТП\Memory\bin\Release\netcoreapp3.0\Memory.dll
+E:\Programs\СТП\Memory\bin\Release\netcoreapp3.0\Memory.pdb
+E:\Programs\СТП\Memory\bin\Release\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Memory\bin\Release\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.csprojAssemblyReference.cache
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.AssemblyInfoInputs.cache
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.AssemblyInfo.cs
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.csproj.CopyComplete
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.dll
+E:\Programs\СТП\Memory\obj\Release\netcoreapp3.0\Memory.pdb

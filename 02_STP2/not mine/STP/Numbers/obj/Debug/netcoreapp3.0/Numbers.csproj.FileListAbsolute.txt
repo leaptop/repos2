@@ -1,0 +1,34 @@
+E:\Programs\СТП\Numbers\bin\Debug\netcoreapp3.0\Numbers.deps.json
+E:\Programs\СТП\Numbers\bin\Debug\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Numbers\bin\Debug\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfoInputs.cache
+E:\Programs\СТП\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfo.cs
+E:\Programs\СТП\Numbers\obj\Debug\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Numbers\obj\Debug\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Numbers\obj\Debug\netcoreapp3.0\Numbers.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.deps.json
+C:\Users\coolr\Desktop\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\coolr\Desktop\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\coolr\Desktop\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\coolr\Desktop\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.AssemblyInfo.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Numbers\obj\Debug\netcoreapp3.0\Numbers.pdb

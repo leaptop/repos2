@@ -19,7 +19,7 @@ namespace Lab5._0
         static double codeWordAverageLength = 0;
         static void Main(string[] args)
         {
-            string path = "C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab5.0/Program.txt";
+            string path = "C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab5.0/Hyperion.txt";
             using (StreamReader sr = File.OpenText(path))
             {
                 input = sr.ReadToEnd();
@@ -27,7 +27,7 @@ namespace Lab5._0
             // input = "hi hippie";
             HuffmanTree huffmanTree = new HuffmanTree();
             huffmanTree.Build(input);
-            codeWordAverageLength = huffmanTree.printTreeAndCountAverageLength();
+            huffmanTree.printTree();
             // codeWordAverageLength = huffmanTree.printTreeAndCountAverageLengthOriginal();
             //BitArray encoded = huffmanTree.EncodeOriginal(input);
             List<int> encoded = huffmanTree.Encode(input);
@@ -57,11 +57,24 @@ namespace Lab5._0
             countProbabilitiesBasedOnRealFrequencyInFile("C:/Users/stepa/repos2/00_Zachet_InfTheory/Lab5.0/TextConverted.txt", dicti3, numberOfLettersInABlock);
             Console.WriteLine("Оценка энтропии 3:        " + ShennonFormulaForEnthropy(dicti3, numberOfLettersInABlock));
 
-            Console.WriteLine("Средняя длина кодового слова: " + codeWordAverageLength + " бит");
-            Console.WriteLine("Избыточность: " + (codeWordAverageLength - first));
+            univerTask();
 
             Console.ReadLine();
-
+        }
+        static Dictionary<string, double> dictiUniver = new Dictionary<string, double>();
+        static void univerTask()
+        {
+            numberOfLettersInABlock = 1;
+            dictiUniver.Add("a", 0.15);
+            dictiUniver.Add("b", 0.2);
+            dictiUniver.Add("c", 0.01);
+            dictiUniver.Add("d", 0.03);
+            dictiUniver.Add("e", 0.05);
+            dictiUniver.Add("f", 0.01);
+            dictiUniver.Add("g", 0.2);
+            dictiUniver.Add("h", 0.017);
+            dictiUniver.Add("k", 0.36);
+            Console.WriteLine("Оценка энтропии  универ:        " + ShennonFormulaForEnthropy(dictiUniver, numberOfLettersInABlock));
         }
         static double ShennonFormulaForEnthropy(Dictionary<string, double> dict, int numberOfLettersInABlock)
         {//Количество информации, которое мы получаем, достигает максимального значения, если события равновероятны... Здесь, видимо,
@@ -105,6 +118,50 @@ namespace Lab5._0
         public Node Root { get; set; }
         public Dictionary<char, int> Frequencies = new Dictionary<char, int>();
 
+        public void BuildUniver(string source)
+        {
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (!Frequencies.ContainsKey(source[i]))
+                {
+                    Frequencies.Add(source[i], 0);
+                }
+
+                Frequencies[source[i]]++;//Считаем кол-во вхождений каждого символа
+            }
+
+            foreach (KeyValuePair<char, int> symbol in Frequencies)//для каждого символа алфавита создаём Node
+            {
+                nodes.Add(new Node() { Symbol = symbol.Key, Frequency = symbol.Value });
+            }
+            //Для тернарного дерева число листьев д.б. нечётным, чтобы дерево построилось:
+            if (nodes.Count % 2 == 0)
+                nodes.Add(new Node() { Symbol = '₵', Frequency = 0 });
+
+            while (nodes.Count > 1)
+            {
+                List<Node> orderedNodes = nodes.OrderBy(node => node.Frequency).ToList<Node>();//После каждого создания нового родителя сортирую узлы по частотам. По возрастанию.
+                //В итоге дерево собирается так как надо(по правилам построения дерева Хаффмана)(новые узлы сортируются по частотам(вероятностям появления символов) и только потом дерево продолжает построение).
+                if (orderedNodes.Count >= 3)
+                {
+                    List<Node> taken = orderedNodes.Take(3).ToList<Node>();//берём 3 элемента из начала и делаем из них List
+                    // Create a parent node by combining the frequencies:
+                    Node parent = new Node()
+                    {
+                        Symbol = '*',//У нас 2 или более узлов, соотвтетсвенно данный узел не будет листом и его называем звёздочкой. 
+                        Frequency = taken[0].Frequency + taken[1].Frequency + taken[2].Frequency,//Складываю частоты. В начале - это наименьшие частоты
+                        Left = taken[0],
+                        Center = taken[1],
+                        Right = taken[2]
+                    };
+                    nodes.Remove(taken[0]);
+                    nodes.Remove(taken[1]);
+                    nodes.Remove(taken[2]);
+                    nodes.Add(parent);
+                }
+                this.Root = nodes.FirstOrDefault();//Корнем дерева назначаю просто первый или null из nodes
+            }
+        }
         public void Build(string source)
         {
             for (int i = 0; i < source.Length; i++)
@@ -149,14 +206,12 @@ namespace Lab5._0
                 this.Root = nodes.FirstOrDefault();//Корнем дерева назначаю просто первый или null из nodes
             }
         }
-
-        public double printTreeAndCountAverageLength()
+        public void printTree()
         {
-            double L = 0;
+            List<Noda> ln = new List<Noda>();
             foreach (var item in Frequencies)
             {
                 List<int> bitarr = Encode(item.Key.ToString());
-                Console.Write(item.Key.ToString() + " - ");
                 string codeWord = "";
                 foreach (int itemInner in bitarr)
                 {
@@ -165,10 +220,20 @@ namespace Lab5._0
                     else if (itemInner == 1) codeWord += "1";
                     else codeWord += "2";
                 }
-                Console.WriteLine(codeWord);
-                L += codeWord.Length;
+                ln.Add(new Noda() { frequency = item.Value, symbol = item.Key, codeInString = codeWord });
             }
-            return L / (double)Frequencies.Count;
+            List<Noda> SortedList = ln.OrderByDescending(o => o.frequency).ToList();
+            foreach (var item in SortedList)
+            {
+                Console.WriteLine(item.symbol.ToString() + " - " + item.codeInString);
+            }
+        }
+        public class Noda
+        {
+            public int frequency { get; set; }
+            public char symbol { get; set; }
+            public BitArray code { get; set; }
+            public string codeInString { get; set; }
         }
 
         public List<int> Encode(string source)
@@ -263,7 +328,7 @@ namespace Lab5._0
                 {
                     List<int> leftPath = new List<int>();
                     leftPath.AddRange(data);
-                    leftPath.Add(0);//пририсовываем циферки к рёбрам(стрелкам на нижние узлы)
+                    leftPath.Add(2);//пририсовываем циферки к рёбрам(стрелкам на нижние узлы)
 
                     left = Left.Traverse(symbol, leftPath);//В Traverse передаю уже сохранённый leftPath, а там(в следующем рекурсивном вызове Traverse) создаётся ещё один leftPath и
                     //к нему опять же приписывается тот leftPath, который был передан при вызове Traverse (leftPath.AddRange(data);), а также пририсовывается соответствующее пути название ребра
@@ -286,7 +351,7 @@ namespace Lab5._0
                 {
                     List<int> rightPath = new List<int>();
                     rightPath.AddRange(data);
-                    rightPath.Add(2);
+                    rightPath.Add(0);
 
                     right = Right.Traverse(symbol, rightPath);
                 }

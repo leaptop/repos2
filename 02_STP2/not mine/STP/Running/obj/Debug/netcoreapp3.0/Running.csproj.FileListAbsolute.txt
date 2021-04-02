@@ -1,0 +1,57 @@
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.exe
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.deps.json
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.json
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.dev.json
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.dll
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Running.pdb
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.csprojAssemblyReference.cache
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfoInputs.cache
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfo.cs
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.csproj.CopyComplete
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.dll
+E:\Programs\СТП\Running\obj\Debug\netcoreapp3.0\Running.pdb
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Editors.dll
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Editors.pdb
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Polynomials.dll
+E:\Programs\СТП\Running\bin\Debug\netcoreapp3.0\Polynomials.pdb
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.exe
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.deps.json
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.json
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.dev.json
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.dll
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Running.pdb
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Editors.dll
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Polynomials.dll
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Editors.pdb
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\coolr\Desktop\STP\Running\bin\Debug\netcoreapp3.0\Polynomials.pdb
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.dll
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.pdb
+C:\Users\coolr\Desktop\STP\Running\obj\Debug\netcoreapp3.0\Running.genruntimeconfig.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.exe
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.runtimeconfig.dev.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Running.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Editors.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Polynomials.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Editors.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\bin\Debug\netcoreapp3.0\Polynomials.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.csproj.CopyComplete
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Running\obj\Debug\netcoreapp3.0\Running.genruntimeconfig.cache

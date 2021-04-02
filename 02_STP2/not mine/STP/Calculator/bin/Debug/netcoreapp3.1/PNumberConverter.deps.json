@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "PNumberConverter/1.0.0": {
+        "dependencies": {
+          "Editors": "1.0.0"
+        },
+        "runtime": {
+          "PNumberConverter.dll": {}
+        }
+      },
+      "Editors/1.0.0": {
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "runtime": {
+          "Editors.dll": {}
+        }
+      },
+      "Numbers/1.0.0": {
+        "runtime": {
+          "Numbers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PNumberConverter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Editors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Numbers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

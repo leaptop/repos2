@@ -1,0 +1,292 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Extended.Wpf.Toolkit/3.8.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.dll": {},
+          "lib/net40/Xceed.Wpf.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll": {},
+          "lib/net40/Xceed.Wpf.AvalonDock.dll": {},
+          "lib/net40/Xceed.Wpf.Toolkit.dll": {}
+        },
+        "resource": {
+          "lib/net40/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net40/de/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40/es/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net40/fr/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40/hu/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/net40/it/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net40/pt-BR/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net40/ro/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/net40/ru/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Editors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Editors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Editors.dll": {}
+        }
+      },
+      "Memory/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Memory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Memory.dll": {}
+        }
+      },
+      "Numbers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Numbers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Numbers.dll": {}
+        }
+      },
+      "PNumberConverter/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Editors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PNumberConverter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PNumberConverter.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Processor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Processor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Processor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Extended.Wpf.Toolkit/3.8.1": {
+      "sha512": "eSD4/BY/xV29KaQi9A65VscpeU3rSrlvadIUepSx5ukeUajW3ph8+n4AlOswRMszbD4DDmrJ4g5O51bCUpiOjw==",
+      "type": "package",
+      "path": "extended.wpf.toolkit/3.8.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "extended.wpf.toolkit.3.8.1.nupkg.sha512",
+        "extended.wpf.toolkit.nuspec",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.dll",
+        "lib/net40/Xceed.Wpf.Toolkit.dll",
+        "lib/net40/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/de/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/es/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/fr/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/hu/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/it/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/pt-BR/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/ro/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/ru/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll",
+        "tools/install.ps1"
+      ]
+    },
+    "Editors/1.0.0": {
+      "type": "project",
+      "path": "../Editors/Editors.csproj",
+      "msbuildProject": "../Editors/Editors.csproj"
+    },
+    "Memory/1.0.0": {
+      "type": "project",
+      "path": "../Memory/Memory.csproj",
+      "msbuildProject": "../Memory/Memory.csproj"
+    },
+    "Numbers/1.0.0": {
+      "type": "project",
+      "path": "../Numbers/Numbers.csproj",
+      "msbuildProject": "../Numbers/Numbers.csproj"
+    },
+    "PNumberConverter/1.0.0": {
+      "type": "project",
+      "path": "../PNumberConverter/PNumberConverter.csproj",
+      "msbuildProject": "../PNumberConverter/PNumberConverter.csproj"
+    },
+    "Processor/1.0.0": {
+      "type": "project",
+      "path": "../Processor/Processor.csproj",
+      "msbuildProject": "../Processor/Processor.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Editors >= 1.0.0",
+      "Extended.Wpf.Toolkit >= 3.8.1",
+      "Memory >= 1.0.0",
+      "Numbers >= 1.0.0",
+      "PNumberConverter >= 1.0.0",
+      "Processor >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\stepa\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Calculator\\Calculator.csproj",
+      "projectName": "Calculator",
+      "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Calculator\\Calculator.csproj",
+      "packagesPath": "C:\\Users\\stepa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Calculator\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\stepa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Editors\\Editors.csproj": {
+              "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Editors\\Editors.csproj"
+            },
+            "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Memory\\Memory.csproj": {
+              "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Memory\\Memory.csproj"
+            },
+            "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Numbers\\Numbers.csproj": {
+              "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Numbers\\Numbers.csproj"
+            },
+            "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\PNumberConverter\\PNumberConverter.csproj": {
+              "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\PNumberConverter\\PNumberConverter.csproj"
+            },
+            "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Processor\\Processor.csproj": {
+              "projectPath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Processor\\Processor.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "Extended.Wpf.Toolkit": {
+            "target": "Package",
+            "version": "[3.8.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Extended.Wpf.Toolkit 3.8.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

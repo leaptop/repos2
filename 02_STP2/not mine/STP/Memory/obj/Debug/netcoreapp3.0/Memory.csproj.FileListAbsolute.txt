@@ -1,0 +1,46 @@
+E:\Programs\СТП\Memory\bin\Debug\netcoreapp3.0\Memory.deps.json
+E:\Programs\СТП\Memory\bin\Debug\netcoreapp3.0\Memory.dll
+E:\Programs\СТП\Memory\bin\Debug\netcoreapp3.0\Memory.pdb
+E:\Programs\СТП\Memory\bin\Debug\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Memory\bin\Debug\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.csprojAssemblyReference.cache
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfoInputs.cache
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfo.cs
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CopyComplete
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.dll
+E:\Programs\СТП\Memory\obj\Debug\netcoreapp3.0\Memory.pdb
+C:\Users\coolr\Desktop\STP\Memory\bin\Debug\netcoreapp3.0\Memory.deps.json
+C:\Users\coolr\Desktop\STP\Memory\bin\Debug\netcoreapp3.0\Memory.dll
+C:\Users\coolr\Desktop\STP\Memory\bin\Debug\netcoreapp3.0\Memory.pdb
+C:\Users\coolr\Desktop\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\coolr\Desktop\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.dll
+C:\Users\coolr\Desktop\STP\Memory\obj\Debug\netcoreapp3.0\Memory.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\bin\Debug\netcoreapp3.0\Memory.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\bin\Debug\netcoreapp3.0\Memory.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\bin\Debug\netcoreapp3.0\Memory.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CopyComplete
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Memory\obj\Debug\netcoreapp3.0\Memory.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\bin\Debug\netcoreapp3.0\Memory.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\bin\Debug\netcoreapp3.0\Memory.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\bin\Debug\netcoreapp3.0\Memory.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\bin\Debug\netcoreapp3.0\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.AssemblyInfo.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.csproj.CopyComplete
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Memory\obj\Debug\netcoreapp3.0\Memory.pdb

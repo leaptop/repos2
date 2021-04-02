@@ -1,0 +1,8 @@
+E:\Programs\СТП\Sets\bin\Release\netcoreapp3.0\Sets.deps.json
+E:\Programs\СТП\Sets\bin\Release\netcoreapp3.0\Sets.dll
+E:\Programs\СТП\Sets\bin\Release\netcoreapp3.0\Sets.pdb
+E:\Programs\СТП\Sets\obj\Release\netcoreapp3.0\Sets.AssemblyInfoInputs.cache
+E:\Programs\СТП\Sets\obj\Release\netcoreapp3.0\Sets.AssemblyInfo.cs
+E:\Programs\СТП\Sets\obj\Release\netcoreapp3.0\Sets.dll
+E:\Programs\СТП\Sets\obj\Release\netcoreapp3.0\Sets.pdb
+E:\Programs\СТП\Sets\obj\Release\netcoreapp3.0\Sets.csprojAssemblyReference.cache

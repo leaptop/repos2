@@ -1,0 +1,61 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Running/1.0.0": {
+        "dependencies": {
+          "Editors": "1.0.0",
+          "Numbers": "1.0.0",
+          "Polynomials": "1.0.0"
+        },
+        "runtime": {
+          "Running.dll": {}
+        }
+      },
+      "Editors/1.0.0": {
+        "dependencies": {
+          "Numbers": "1.0.0"
+        },
+        "runtime": {
+          "Editors.dll": {}
+        }
+      },
+      "Numbers/1.0.0": {
+        "runtime": {
+          "Numbers.dll": {}
+        }
+      },
+      "Polynomials/1.0.0": {
+        "runtime": {
+          "Polynomials.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Running/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Editors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Numbers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Polynomials/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complex", "Complex.csproj", "{70DECC5A-DD50-4C15-BBE4-C3D623A89FB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexTests", "..\ComplexTests\ComplexTests.csproj", "{F1D7FFE5-B327-49E6-9CA9-AC94C2733AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70DECC5A-DD50-4C15-BBE4-C3D623A89FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DECC5A-DD50-4C15-BBE4-C3D623A89FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DECC5A-DD50-4C15-BBE4-C3D623A89FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DECC5A-DD50-4C15-BBE4-C3D623A89FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D7FFE5-B327-49E6-9CA9-AC94C2733AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D7FFE5-B327-49E6-9CA9-AC94C2733AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D7FFE5-B327-49E6-9CA9-AC94C2733AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D7FFE5-B327-49E6-9CA9-AC94C2733AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2983A073-5AFA-48AF-B078-6FEDD3905B13}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+E:\Programs\СТП\Polynomial\bin\Release\netcoreapp3.0\Polynomials.deps.json
+E:\Programs\СТП\Polynomial\bin\Release\netcoreapp3.0\Polynomials.dll
+E:\Programs\СТП\Polynomial\bin\Release\netcoreapp3.0\Polynomials.pdb
+E:\Programs\СТП\Polynomial\obj\Release\netcoreapp3.0\Polynomials.AssemblyInfoInputs.cache
+E:\Programs\СТП\Polynomial\obj\Release\netcoreapp3.0\Polynomials.AssemblyInfo.cs
+E:\Programs\СТП\Polynomial\obj\Release\netcoreapp3.0\Polynomials.dll
+E:\Programs\СТП\Polynomial\obj\Release\netcoreapp3.0\Polynomials.pdb
+E:\Programs\СТП\Polynomial\obj\Release\netcoreapp3.0\Polynomials.csprojAssemblyReference.cache

@@ -1,0 +1,212 @@
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.exe
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.deps.json
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.json
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Editors.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Memory.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Numbers.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Processor.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Editors.pdb
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Memory.pdb
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Numbers.pdb
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Processor.pdb
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\App.g.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.cache
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.lref
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\MainWindow.baml
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.g.resources
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfo.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CopyComplete
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.Toolkit.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+E:\Programs\СТП\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.g.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.baml
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.g.cs
+E:\Programs\СТП\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.baml
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.g.cs
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.g.cs
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.cache
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.lref
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.exe
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.deps.json
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.json
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.Toolkit.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.dll
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.pdb
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.pdb
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.pdb
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\coolr\Desktop\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.pdb
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.baml
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.baml
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.g.resources
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.genruntimeconfig.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.exe
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.Toolkit.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\App.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.lref
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.g.resources
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CopyComplete
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.genruntimeconfig.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.dev.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.exe
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.runtimeconfig.dev.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Xceed.Wpf.Toolkit.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Editors.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Memory.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\bin\Debug\netcoreapp3.1\Processor.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.lref
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\HelpWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\SettingsWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.g.resources
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.AssemblyInfo.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.csproj.CopyComplete
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\Calculator\obj\Debug\netcoreapp3.1\Calculator.genruntimeconfig.cache

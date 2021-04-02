@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jIR9t4EXlwnMN2BrdZ18B5j43zZXT2bs5IGjs3iFBBM3UbX8rXJYfzXNr0sCO67rT+FqN3HCAiWSOOOgkqqBrA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\stepa\\repos2\\02_STP2\\not mine\\STP\\Memory\\Memory.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\stepa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\stepa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\stepa\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

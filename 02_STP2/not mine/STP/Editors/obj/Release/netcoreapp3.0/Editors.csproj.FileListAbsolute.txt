@@ -1,0 +1,11 @@
+E:\Programs\СТП\Editors\bin\Release\netcoreapp3.0\Editors.deps.json
+E:\Programs\СТП\Editors\bin\Release\netcoreapp3.0\Editors.dll
+E:\Programs\СТП\Editors\bin\Release\netcoreapp3.0\Editors.pdb
+E:\Programs\СТП\Editors\bin\Release\netcoreapp3.0\Numbers.dll
+E:\Programs\СТП\Editors\bin\Release\netcoreapp3.0\Numbers.pdb
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.csprojAssemblyReference.cache
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.AssemblyInfoInputs.cache
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.AssemblyInfo.cs
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.csproj.CopyComplete
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.dll
+E:\Programs\СТП\Editors\obj\Release\netcoreapp3.0\Editors.pdb

@@ -1,0 +1,109 @@
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csprojAssemblyReference.cache
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\App.g.cs
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.cache
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.lref
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.deps.json
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.json
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.dev.json
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.dll
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.dll
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.pdb
+E:\Programs\СТП\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.pdb
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.baml
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.g.resources
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfoInputs.cache
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfo.cs
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CopyComplete
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.dll
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.pdb
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.g.cs
+E:\Programs\СТП\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.baml
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.deps.json
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.json
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.dev.json
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.dll
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.dll
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.pdb
+C:\Users\coolr\Desktop\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.pdb
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csprojAssemblyReference.cache
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.g.cs
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.cache
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.lref
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.baml
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.g.resources
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfoInputs.cache
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfo.cs
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CopyComplete
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\coolr\Desktop\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.genruntimeconfig.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.deps.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.dev.json
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csprojAssemblyReference.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\App.g.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.lref
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.g.resources
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfoInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfo.cs
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CoreCompileInputs.cache
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CopyComplete
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.dll
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.pdb
+D:\4_course\8semestr\LASTSEM\ОЧНОЕ. Лабораторные работы-20210202\Lab_2021\Lab_2021\posledniy_semak\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.genruntimeconfig.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.exe
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.deps.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.runtimeconfig.dev.json
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Editors.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\bin\Debug\netcoreapp3.1\Numbers.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csprojAssemblyReference.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter_MarkupCompile.lref
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\AboutWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\HistoryWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.g.resources
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfoInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.AssemblyInfo.cs
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CoreCompileInputs.cache
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.csproj.CopyComplete
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.dll
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.pdb
+C:\Users\stepa\repos2\02_STP2\not mine\STP\PNumberConverter\obj\Debug\netcoreapp3.1\PNumberConverter.genruntimeconfig.cache
